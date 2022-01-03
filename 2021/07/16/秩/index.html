@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="秩的定义最常用的方法是求行阶梯非零行数   “≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0 k阶子式 k阶子式是方阵 故k≤min(n, m) 求秩秩，是非零子式的最高阶数 故暴力法的话，从$$k_{max}$$开始往下 而面对高阶矩阵，暴力法不行了 需借助矩阵的性质求秩 12经初等变化，矩阵的秩不变行阶梯矩阵的秩等于其非零行数    行阶梯矩阵最底行全为0，且每行左起第一个不为0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="秩">
+<meta property="og:url" content="http://example.com/2021/07/16/%E7%A7%A9/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="秩的定义最常用的方法是求行阶梯非零行数   “≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0 k阶子式 k阶子式是方阵 故k≤min(n, m) 求秩秩，是非零子式的最高阶数 故暴力法的话，从$$k_{max}$$开始往下 而面对高阶矩阵，暴力法不行了 需借助矩阵的性质求秩 12经初等变化，矩阵的秩不变行阶梯矩阵的秩等于其非零行数    行阶梯矩阵最底行全为0，且每行左起第一个不为0">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210716150427858.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210729162151492.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210729162013742.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210716150745647.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210729165536959.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210805170854460.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210820191932230.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210821232028396.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210821232111703.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210821232414573.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210821233319993.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210821233746933.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210822162816462.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210822163211931.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210822164222248.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210822164237617.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210822164448344.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210822164500901.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210822165013281.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210824115201334.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210824115250329.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210824120236974.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210824120243020.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210824120303428.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210824120308676.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210824121426700.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210824121442617.png">
+<meta property="article:published_time" content="2021-07-16T07:01:54.000Z">
+<meta property="article:modified_time" content="2021-12-06T07:05:14.000Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210716150427858.png">
+
+<link rel="canonical" href="http://example.com/2021/07/16/%E7%A7%A9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>秩 | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/16/%E7%A7%A9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          秩
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-16 15:01:54" itemprop="dateCreated datePublished" datetime="2021-07-16T15:01:54+08:00">2021-07-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 15:05:14" itemprop="dateModified" datetime="2021-12-06T15:05:14+08:00">2021-12-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="秩的定义"><a href="#秩的定义" class="headerlink" title="秩的定义"></a>秩的定义</h1><p><font color=red>最常用的方法是求行阶梯非零行数</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716150427858.png" alt="image-20210716150427858"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729162151492.png" alt="image-20210729162151492"></p>
+<p><font color=red>“≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0</font></p>
+<h1 id="k阶子式"><a href="#k阶子式" class="headerlink" title="k阶子式"></a>k阶子式</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729162013742.png" alt="image-20210729162013742"></p>
+<p><font color=red>k阶子式是方阵</font></p>
+<p><font color=blue>故k≤min(n, m)</font></p>
+<h1 id="求秩"><a href="#求秩" class="headerlink" title="求秩"></a>求秩</h1><p><font color=red>秩，是非零子式的最高阶数</font></p>
+<p>故暴力法的话，从$$k_{max}$$开始往下</p>
+<p>而面对高阶矩阵，暴力法不行了</p>
+<p>需借助矩阵的性质求秩</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">经初等变化，矩阵的秩不变</span><br><span class="line">行阶梯矩阵的秩等于其非零行数</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="行阶梯矩阵"><a href="#行阶梯矩阵" class="headerlink" title="行阶梯矩阵"></a>行阶梯矩阵</h1><p>最底行全为0，且每行左起第一个不为0 的元素下面全是0</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716150745647.png" alt="image-20210716150745647"></p>
+<h4 id="化行阶梯的核心思想"><a href="#化行阶梯的核心思想" class="headerlink" title="化行阶梯的核心思想"></a><font color=red>化行阶梯的核心思想</font></h4><p>最有力的武器1</p>
+<p>上层的1把其下面的1全给化掉</p>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729165536959.png" alt="image-20210729165536959"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805170854460.png" alt="image-20210805170854460"></p>
+<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820191932230.png" alt="image-20210820191932230"></p>
+<p>补充性质：</p>
+<p><font color=blue>满秩矩阵一定是可逆矩阵，可逆矩阵一定是满秩矩阵</font></p>
+<p><font color=red>非零矩阵的秩大于等于1</font></p>
+<h2 id="伴随矩阵的秩"><a href="#伴随矩阵的秩" class="headerlink" title="伴随矩阵的秩"></a>伴随矩阵的秩</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821232028396.png" alt="image-20210821232028396"></p>
+<p>对应的性质</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821232111703.png" alt="image-20210821232111703"></p>
+<h2 id="伴随矩阵的秩1"><a href="#伴随矩阵的秩1" class="headerlink" title="伴随矩阵的秩1"></a>伴随矩阵的秩1</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821232414573.png" alt="image-20210821232414573"></p>
+<p><font color=red>补充说明</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821233319993.png" alt="image-20210821233319993"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821233746933.png" alt="image-20210821233746933"></p>
+<p><font color=red>没见过这些题型，你怎么做，淦</font></p>
+<hr>
+<h2 id="AB的秩【线性方程组-不可逆矩阵】"><a href="#AB的秩【线性方程组-不可逆矩阵】" class="headerlink" title="AB的秩【线性方程组+不可逆矩阵】"></a>AB的秩【线性方程组+不可逆矩阵】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822162816462.png" alt="image-20210822162816462"></p>
+<p>补充说明：</p>
+<p><font color=red>AB其实就相当于方程组Ax</font>，又因为β都不是解，故AB≠O，即AB的秩至少是1</p>
+<p><font color=red>若B可逆，则有r(AB)=r(A)</font></p>
+<p><font color=red>不可逆矩阵有一性质，秩不满</font>，故有r(B)≤2</p>
+<p>最后PS</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822163211931.png" alt="image-20210822163211931"></p>
+<hr>
+<h2 id="分块矩阵与秩"><a href="#分块矩阵与秩" class="headerlink" title="分块矩阵与秩"></a>分块矩阵与秩</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822164222248.png" alt="image-20210822164222248"></p>
+<p><font color=red>遇到这种我知道它是什么，但不精通的，就别推理了</font></p>
+<p><font color=red>用暴力法举反例排除才是正解</font></p>
+<p><font color=blue>推理举反例排除远远不如举实例排除</font></p>
+<p><font color=green>因为推理的时候容易想当然，从而忽略很多东西</font></p>
+<p>选项A：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822164237617.png" alt="image-20210822164237617"></p>
+<p>选项B：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822164448344.png" alt="image-20210822164448344"></p>
+<p>选项C：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822164500901.png" alt="image-20210822164500901"></p>
+<p>选项D：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822165013281.png" alt="image-20210822165013281"></p>
+<p><font color=red>也别嫌麻烦，一个个试，能排除一个是一个</font></p>
+<p><font color=blue>一种例子试四下，ABCD选项，效率可能会高一些</font></p>
+<h2 id="矩阵乘积为0，推秩不等式"><a href="#矩阵乘积为0，推秩不等式" class="headerlink" title="矩阵乘积为0，推秩不等式"></a>矩阵乘积为0，推秩不等式</h2><p>乘积与秩</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824115201334.png" alt="image-20210824115201334"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824115250329.png" alt="image-20210824115250329"></p>
+<p><font color=red>一己之力</font></p>
+<p><font color=red>非零矩阵的秩大于等于1</font></p>
+<h2 id="假设未知数推秩不等式"><a href="#假设未知数推秩不等式" class="headerlink" title="假设未知数推秩不等式"></a>假设未知数推秩不等式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824120236974.png" alt="image-20210824120236974"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824120243020.png" alt="image-20210824120243020"></p>
+<p>解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824120303428.png" alt="image-20210824120303428"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824120308676.png" alt="image-20210824120308676"></p>
+<p><font color=red>含未知数也可以用行阶梯先求一个抽象的秩范围</font></p>
+<p>还有很容易在做题过程中忽略的一个很重要的范围条件</p>
+<p><font color=red>非零矩阵的秩大于等于1</font></p>
+<p>如果忽略了这个就会出现有两个选项排除不了</p>
+<p>最后补充一个可能之前没注意过的知识点</p>
+<p>r(AB)性质中的 “n” 指的是<strong>A的列数或B的行数</strong></p>
+<p>小于3or4，则取小的3</p>
+<p>小于3</p>
+<h2 id="恒等式的坑"><a href="#恒等式的坑" class="headerlink" title="恒等式的坑"></a>恒等式的坑</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824121426700.png" alt="image-20210824121426700"></p>
+<p>解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824121442617.png" alt="image-20210824121442617"></p>
+<p><font color=red>D的表述并不是说r(A)=1, r(A-E)=1</font></p>
+<p><font color=red>我们常用恒等式，但这存在的坑一定要小心</font></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/16/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/" rel="prev" title="线性方程组">
+      <i class="fa fa-chevron-left"></i> 线性方程组
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/16/%E6%A0%91/" rel="next" title="树">
+      树 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%A9%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">秩的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#k%E9%98%B6%E5%AD%90%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">k阶子式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%82%E7%A7%A9"><span class="nav-number">3.</span> <span class="nav-text">求秩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9F%A9%E9%98%B5"><span class="nav-number">4.</span> <span class="nav-text">行阶梯矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%96%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">化行阶梯的核心思想</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">例题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">6.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-number">6.1.</span> <span class="nav-text">伴随矩阵的秩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A91"><span class="nav-number">6.2.</span> <span class="nav-text">伴随矩阵的秩1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AB%E7%9A%84%E7%A7%A9%E3%80%90%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84-%E4%B8%8D%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5%E3%80%91"><span class="nav-number">6.3.</span> <span class="nav-text">AB的秩【线性方程组+不可逆矩阵】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5%E4%B8%8E%E7%A7%A9"><span class="nav-number">6.4.</span> <span class="nav-text">分块矩阵与秩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E7%A7%AF%E4%B8%BA0%EF%BC%8C%E6%8E%A8%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">6.5.</span> <span class="nav-text">矩阵乘积为0，推秩不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%87%E8%AE%BE%E6%9C%AA%E7%9F%A5%E6%95%B0%E6%8E%A8%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">6.6.</span> <span class="nav-text">假设未知数推秩不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%81%92%E7%AD%89%E5%BC%8F%E7%9A%84%E5%9D%91"><span class="nav-number">6.7.</span> <span class="nav-text">恒等式的坑</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Hello World">
+<meta property="og:type" content="website">
+<meta property="og:title" content="藏经阁">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="Hello World">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/01/18%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/01/18%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/" class="post-title-link" itemprop="url">18年政治真题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-01 08:30:35 / Modified: 09:06:58" itemprop="dateCreated datePublished" datetime="2021-12-01T08:30:35+08:00">2021-12-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083142452.png" alt="image-20211201083142452"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083153019.png" alt="image-20211201083153019"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083803442.png" alt="image-20211201083803442"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083203920.png" alt="image-20211201083203920"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083212484.png" alt="image-20211201083212484"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083218590.png" alt="image-20211201083218590"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083818987.png" alt="image-20211201083818987"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083235820.png" alt="image-20211201083235820"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083244153.png" alt="image-20211201083244153"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083834982.png" alt="image-20211201083834982"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083632188.png" alt="image-20211201083632188"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083644936.png" alt="image-20211201083644936"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083917959.png" alt="image-20211201083917959"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083653139.png" alt="image-20211201083653139"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083703668.png" alt="image-20211201083703668"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083712319.png" alt="image-20211201083712319"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201083928958.png" alt="image-20211201083928958"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/27/19%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/27/19%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/" class="post-title-link" itemprop="url">19年政治真题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-27 20:56:55" itemprop="dateCreated datePublished" datetime="2021-11-27T20:56:55+08:00">2021-11-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-01 08:30:08" itemprop="dateModified" datetime="2021-12-01T08:30:08+08:00">2021-12-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080718255.png" alt="image-20211201080718255"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080729179.png" alt="image-20211201080729179"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201081017123.png" alt="image-20211201081017123"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080740731.png" alt="image-20211201080740731"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080747274.png" alt="image-20211201080747274"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080757670.png" alt="image-20211201080757670"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201081028813.png" alt="image-20211201081028813"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080807056.png" alt="image-20211201080807056"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080816390.png" alt="image-20211201080816390"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201081043558.png" alt="image-20211201081043558"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080825154.png" alt="image-20211201080825154"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080836259.png" alt="image-20211201080836259"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201081056486.png" alt="image-20211201081056486"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080852711.png" alt="image-20211201080852711"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080900818.png" alt="image-20211201080900818"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080913267.png" alt="image-20211201080913267"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201081114617.png" alt="image-20211201081114617"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/27/20%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/27/20%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/" class="post-title-link" itemprop="url">20年政治真题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-27 20:56:45" itemprop="dateCreated datePublished" datetime="2021-11-27T20:56:45+08:00">2021-11-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-18 20:42:30" itemprop="dateModified" datetime="2021-12-18T20:42:30+08:00">2021-12-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="大题"><a href="#大题" class="headerlink" title="大题"></a>大题</h1><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127205813575.png" alt="image-20211127205813575"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127205917032.png"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127205903202.png" alt="image-20211127205903202"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127211843678.png" alt="image-20211127211843678"></p>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127205945580.png" alt="image-20211127205945580"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127205958960.png" alt="image-20211127205958960"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210008439.png" alt="image-20211127210008439"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210016033.png" alt="image-20211127210016033"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211128174758301.png" alt="image-20211128174758301"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211128174806637.png" alt="image-20211128174806637"></p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210025596.png" alt="image-20211127210025596"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210032343.png" alt="image-20211127210032343"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210039956.png" alt="image-20211127210039956"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211128181617958.png" alt="image-20211128181617958"></p>
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210052396.png" alt="image-20211127210052396"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210103578.png" alt="image-20211127210103578"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080508690.png" alt="image-20211201080508690"></p>
+<h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210110615.png" alt="image-20211127210110615"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210117860.png" alt="image-20211127210117860"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211127210122955.png" alt="image-20211127210122955"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201080620463.png" alt="image-20211201080620463"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/ocd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/22/ocd/" class="post-title-link" itemprop="url">ocd</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-22 14:21:40 / Modified: 15:33:46" itemprop="dateCreated datePublished" datetime="2021-11-22T14:21:40+08:00">2021-11-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="video"><a href="#video" class="headerlink" title="video"></a>video</h1><p>do not be the organizer</p>
+<p>not good enough</p>
+<p>仪式性</p>
+<p>会发生什么</p>
+<p>古怪的</p>
+<p>将会发生，想很多</p>
+<p>很不安和很焦虑时寻求帮助</p>
+<p>不确定性的不适</p>
+<p>“总有伤害别人的冲动和想法，一个人的时候倒不会强迫”</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122142844415.png" alt="image-20211122142844415"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122142907710.png" alt="image-20211122142907710"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122143041425.png" alt="image-20211122143041425"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122143132366.png" alt="image-20211122143132366"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122143441253.png" alt="image-20211122143441253"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122143457895.png" alt="image-20211122143457895"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122143528145.png" alt="image-20211122143528145"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122143807677.png" alt="image-20211122143807677"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122143816335.png" alt="image-20211122143816335"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122143919208.png" alt="image-20211122143919208"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122143957797.png" alt="image-20211122143957797"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122144026059.png" alt="image-20211122144026059"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122144035364.png" alt="image-20211122144035364"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122144330950.png" alt="image-20211122144330950"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122144338589.png" alt="image-20211122144338589"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122145311944.png" alt="image-20211122145311944"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122145326656.png" alt="image-20211122145326656"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122145403288.png" alt="image-20211122145403288"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122145706924.png" alt="image-20211122145706924"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122145754551.png" alt="image-20211122145754551"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122145819268.png" alt="image-20211122145819268"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122151353532.png" alt="image-20211122151353532"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122152429987.png" alt="image-20211122152429987"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122152708392.png" alt="image-20211122152708392"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122152840575.png" alt="image-20211122152840575"></p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122153342092.png" alt="image-20211122153342092"></p>
+<h1 id="sougen"><a href="#sougen" class="headerlink" title="sougen"></a>sougen</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211122145103088.png" alt="image-20211122145103088"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E6%94%BF%E6%B2%BB%E5%A4%A7%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/16/%E6%94%BF%E6%B2%BB%E5%A4%A7%E9%A2%98/" class="post-title-link" itemprop="url">政治大题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-16 14:09:07" itemprop="dateCreated datePublished" datetime="2021-11-16T14:09:07+08:00">2021-11-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-05 10:42:38" itemprop="dateModified" datetime="2021-12-05T10:42:38+08:00">2021-12-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>辩证唯物主义</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116141443992.png" alt="image-20211116141443992"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116141711091.png" alt="image-20211116141711091"></p>
+<p>依据：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116141829549.png" alt="image-20211116141829549"></p>
+<p>疫情防控的启示</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116142137798.png" alt="image-20211116142137798"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116142259301.png" alt="image-20211116142259301"></p>
+<p>从小点出发</p>
+<p>所以各章的思维导图很重要</p>
+<p>科学、真理</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116142647132.png" alt="image-20211116142647132"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116142636773.png" alt="image-20211116142636773"></p>
+<p>政治大题需要发散</p>
+<p>科学—真理</p>
+<p>“甘拜下风” 谬误</p>
+<p>则该题讨论的是真理与谬误的关系</p>
+<p>最后再结合材料解释一下</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116142832784.png" alt="image-20211116142832784"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116142915095.png" alt="image-20211116142915095"></p>
+<p>科学实验—实践</p>
+<p>然后得到一些理论成果—认识</p>
+<p>则该题讨论时间与认识的关系</p>
+<p>然后拿实验结果与前人的结论对比，辩证</p>
+<p>否定之否定</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116143741675.png" alt="image-20211116143741675"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116143856510.png" alt="image-20211116143856510"></p>
+<p>在哲学原理中选</p>
+<p>先说明要用的原理是什么</p>
+<p>然后说明联系</p>
+<p>然后结合材料分析</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116143952845.png" alt="image-20211116143952845"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116144006320.png" alt="image-20211116144006320"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116144013480.png" alt="image-20211116144013480"></p>
+<p>“唯物辩证法认为……“ 说明原理</p>
+<p>然后揭露联系</p>
+<p>然后结合材料分析</p>
+<p>十四五时期的重要性</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116144129393.png" alt="image-20211116144129393"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116144637849.png" alt="image-20211116144637849"></p>
+<p>硬背</p>
+<p>没啥好说的</p>
+<p>2035目标的意义</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116144656880.png" alt="image-20211116144656880"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116144714000.png" alt="image-20211116144714000"></p>
+<p>硬背</p>
+<p>为什么说”……“</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116144736276.png" alt="image-20211116144736276"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116144800810.png" alt="image-20211116144800810"></p>
+<p>说明人大制度是什么，体现了什么</p>
+<p>来做解释</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116145016389.png" alt="image-20211116145016389"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116145058977.png" alt="image-20211116145058977"></p>
+<p>”启示“ 在这里是 ”应该怎么做“</p>
+<p>其次是确认主体</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116145220331.png" alt="image-20211116145220331"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116145231458.png" alt="image-20211116145231458"></p>
+<p>材料主要介绍到了人大的一些具体制度、工作</p>
+<p>所以大题的主题不是个人</p>
+<p>而是国家、政府</p>
+<p>则回答 ”坚持xxx“ 的那些说法</p>
+<p>为什么说”……“</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116145413404.png" alt="image-20211116145413404"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116145429959.png" alt="image-20211116145429959"></p>
+<p>很明显是讲政府与市场的关系</p>
+<p>那就回答呗</p>
+<p>然后题目是 ”为什么“</p>
+<p>不用先提结论，直接进入分析</p>
+<p>然后多半得讲到一些不好的后果</p>
+<p>然后得到结论 ”我们必须正确处理市场和政府的关系，…“ 然后再点明怎么样的关系</p>
+<p>如何 问题</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116145534672.png" alt="image-20211116145534672"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116145800974.png" alt="image-20211116145800974"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116145810220.png" alt="image-20211116145810220"></p>
+<p>首先把口语化的说法转化成理论</p>
+<p>然后则从主体政府的角度出发谈谈措施</p>
+<p>针对 ”转变政府职能“ 该怎么做</p>
+<p>为什么说</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150102242.png" alt="image-20211116150102242"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150138555.png" alt="image-20211116150138555"></p>
+<p>回答抗日战争胜利的意义</p>
+<p>如何</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150200178.png" alt="image-20211116150200178"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150217575.png" alt="image-20211116150217575"></p>
+<p>先解释抗战精神是什么</p>
+<p>再谈谈我们该怎么做</p>
+<p>为什么说</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150246043.png" alt="image-20211116150246043"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150300836.png" alt="image-20211116150300836"></p>
+<p>回答意义</p>
+<p>如何理解</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150310663.png" alt="image-20211116150310663"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150325877.png" alt="image-20211116150325877"></p>
+<p>其实类似于问 ”为什么“</p>
+<p>回答的话也是从其意义</p>
+<p>五四运动有很多标志性的意义</p>
+<p>中国共产党如何完成xxx的</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150537265.png" alt="image-20211116150537265"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150552051.png" alt="image-20211116150552051"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150412615.png" alt="image-20211116150412615"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150423548.png" alt="image-20211116150423548"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150432866.png" alt="image-20211116150432866"></p>
+<p>这里则是相当于一个综述</p>
+<p>对中国革命做一个综述</p>
+<p>从中国共产党诞生开始</p>
+<p>挑重要部分讲</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150711751.png" alt="image-20211116150711751"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211116150741049.png" alt="image-20211116150741049"></p>
+<p>讲其意义</p>
+<p>讲其取得的成果</p>
+<h1 id="实时"><a href="#实时" class="headerlink" title="实时"></a>实时</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211205103941360.png" alt="image-20211205103941360"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211205104025521.png" alt="image-20211205104025521"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211205104132623.png" alt="image-20211205104132623"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211205104139892.png" alt="image-20211205104139892"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211205104210925.png" alt="image-20211205104210925"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211205104217007.png" alt="image-20211205104217007"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211205104225073.png" alt="image-20211205104225073"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/14/vrc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/14/vrc/" class="post-title-link" itemprop="url">vrc</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-14 16:36:46 / Modified: 16:55:30" itemprop="dateCreated datePublished" datetime="2021-11-14T16:36:46+08:00">2021-11-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Malay"><a href="#Malay" class="headerlink" title="Malay"></a>Malay</h1><p>客家话</p>
+<p>29°</p>
+<p>没有冬天</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211114163933913.png" alt="image-20211114163933913"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211114164231397.png" alt="image-20211114164231397"></p>
+<p>ambuyat</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E6%A2%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/13/%E6%A2%97/" class="post-title-link" itemprop="url">梗</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-13 14:54:36" itemprop="dateCreated datePublished" datetime="2021-11-13T14:54:36+08:00">2021-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-14 14:22:18" itemprop="dateModified" datetime="2021-11-14T14:22:18+08:00">2021-11-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="lol"><a href="#lol" class="headerlink" title="lol"></a>lol</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113145444829.png" alt="image-20211113145444829"></p>
+<h1 id="um"><a href="#um" class="headerlink" title="um"></a>um</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113145624908.png" alt="image-20211113145624908"></p>
+<h1 id="dude"><a href="#dude" class="headerlink" title="dude"></a>dude</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211114142127774.png" alt="image-20211114142127774"></p>
+<h1 id="bro"><a href="#bro" class="headerlink" title="bro"></a>bro</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211114142215140.png" alt="image-20211114142215140"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E5%85%83%E5%AE%87%E5%AE%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/13/%E5%85%83%E5%AE%87%E5%AE%99/" class="post-title-link" itemprop="url">元宇宙</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-13 12:24:58 / Modified: 13:08:46" itemprop="dateCreated datePublished" datetime="2021-11-13T12:24:58+08:00">2021-11-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="赌博坐庄"><a href="#赌博坐庄" class="headerlink" title="赌博坐庄"></a>赌博坐庄</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113122506272.png" alt="image-20211113122506272"></p>
+<h1 id="压榨"><a href="#压榨" class="headerlink" title="压榨"></a>压榨</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113122639205.png" alt="image-20211113122639205"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113122625209.png" alt="image-20211113122625209"></p>
+<p>没有监管的去中心化。。。</p>
+<p>绝对的自由，会造成绝对的压榨</p>
+<h1 id="房东、地主"><a href="#房东、地主" class="headerlink" title="房东、地主"></a>房东、地主</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113123113016.png" alt="image-20211113123113016"></p>
+<h1 id="元宇宙条件"><a href="#元宇宙条件" class="headerlink" title="元宇宙条件"></a>元宇宙条件</h1><p>VR 虚拟世界</p>
+<p>去中心化</p>
+<p>经济交易</p>
+<h1 id="元宇宙、平台、抽成"><a href="#元宇宙、平台、抽成" class="headerlink" title="元宇宙、平台、抽成"></a>元宇宙、平台、抽成</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113122846818.png" alt="image-20211113122846818"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113122911314.png" alt="image-20211113122911314"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113123001072.png" alt="image-20211113123001072"></p>
+<h1 id="比特币"><a href="#比特币" class="headerlink" title="比特币"></a>比特币</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113123226637.png" alt="image-20211113123226637"></p>
+<h1 id="csgo-磨损"><a href="#csgo-磨损" class="headerlink" title="csgo 磨损"></a>csgo 磨损</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113123250171.png" alt="image-20211113123250171"></p>
+<h1 id="ucg和pcg"><a href="#ucg和pcg" class="headerlink" title="ucg和pcg"></a>ucg和pcg</h1><p>pcg产能有限</p>
+<p>ucg产能优势</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113124500796.png" alt="image-20211113124500796"></p>
+<p>UCG创作难度</p>
+<h1 id="通胀"><a href="#通胀" class="headerlink" title="通胀"></a>通胀</h1><p>每过18年</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113123440244.png" alt="image-20211113123440244"></p>
+<h1 id="纺织业与游戏"><a href="#纺织业与游戏" class="headerlink" title="纺织业与游戏"></a>纺织业与游戏</h1><p>链条</p>
+<p>人们的生活的刚需</p>
+<p>寄托（古代是文学艺术等）</p>
+<h1 id="元宇宙实现"><a href="#元宇宙实现" class="headerlink" title="元宇宙实现"></a>元宇宙实现</h1><p>16K 180Hz</p>
+<p>可靠的实现方式是画面传输</p>
+<p>但是网络传输目前也还满足不了</p>
+<h1 id="虚拟经济的成本"><a href="#虚拟经济的成本" class="headerlink" title="虚拟经济的成本"></a>虚拟经济的成本</h1><p>代码，这次失败了，我还可以在这个基础上再搞</p>
+<p>毕竟代码已经做出来了</p>
+<h1 id="b站"><a href="#b站" class="headerlink" title="b站"></a>b站</h1><p>我看了三分钟，觉得这个视频不咋滴，如果反转了告诉我一声</p>
+<p>（你妈逼有功夫bb这一大串东西没耐心看）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113125250773.png" alt="image-20211113125250773"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113125311616.png" alt="image-20211113125311616"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113125819315.png" alt="image-20211113125819315"></p>
+<h1 id="VR"><a href="#VR" class="headerlink" title="VR"></a>VR</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113130843025.png" alt="image-20211113130843025"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/13/%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%80%83/" class="post-title-link" itemprop="url">数学模拟考</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-13 11:12:01" itemprop="dateCreated datePublished" datetime="2021-11-13T11:12:01+08:00">2021-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-03 10:12:32" itemprop="dateModified" datetime="2021-12-03T10:12:32+08:00">2021-12-03</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="11-12"><a href="#11-12" class="headerlink" title="11/12"></a>11/12</h1><p><font color=red>不要太在意一气呵成</font></p>
+<p>就挑软柿子捏</p>
+<p>也别老是墙头草</p>
+<p>不管想不想的出来，规定花一定时间</p>
+<p>想出来了好，想不出来了再跳</p>
+<p>还有一个要注意的是对待有思路但是花时间的题目</p>
+<p>在可以接受的范围内，多花几分钟没问题</p>
+<p>如果到多花十分钟的程度的话，那没必要了</p>
+<p>直接先做简单的</p>
+<p>采取这种策略的原因是我发现到后面时间不足的时候</p>
+<p>我基本都是有思路的，而且不用花很多时间</p>
+<p>但是因为前边已经花掉很多时间去暴力处理了</p>
+<p>所以这里无力回天</p>
+<p>导致时间利用效率变低</p>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><p>花了1小时</p>
+<p>最花时间的地方：一个是在高阶导数硬导，另一个是暴力枚举</p>
+<p>如果这两个时间把握好的话，选择题50分钟应该可以搞定选择题</p>
+<p>选择题有些题目得四个选项都看</p>
+<p>耗费时间，但是。。一旦选错就丢四分</p>
+<p>相当于一个大题痛失的分值了</p>
+<p><font color=red>何不采取相同的策略</font></p>
+<p>挑简单的做，目测需要花费大量时间的搁后边</p>
+<p>同时不要顾虑沉没成本，该放弃就放弃</p>
+<p>壮士断腕</p>
+<h3 id="填空"><a href="#填空" class="headerlink" title="填空"></a>填空</h3><p>花了43 mins</p>
+<p>原因是不想选择题那样各个选项都看</p>
+<p>提示少了，应试技巧少了</p>
+<p>但是花的时间也少了</p>
+<p>对基础好的考生来说是好的</p>
+<h2 id="大题"><a href="#大题" class="headerlink" title="大题"></a>大题</h2><p>这次考试只剩下77分钟写大题</p>
+<p>大题总分94分</p>
+<p>可以说是比例有些失衡</p>
+<p>大题的时间应该在100分钟左右</p>
+<p>（不然很多你能做的题也只能丢）</p>
+<p>大题总共8题</p>
+<p>高数6题，线性代数2题</p>
+<p>正确的应对策略应该还是先写简单的！</p>
+<p>高数简单的写完了应该转向线性代数简单的</p>
+<p>（第一小题）</p>
+<p>然后再花时间在高数难度大的大题里抢分</p>
+<p>然后是线性代数（因为我本身对高数更熟悉，更好抢分）</p>
+<h2 id="错误的抢分"><a href="#错误的抢分" class="headerlink" title="错误的抢分"></a>错误的抢分</h2><p>噼里啪啦写一堆，才两分</p>
+<h2 id="函数定义域的讨论"><a href="#函数定义域的讨论" class="headerlink" title="函数定义域的讨论"></a>函数定义域的讨论</h2><p>基本每次都涉及得到</p>
+<h2 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h2><p>写每个答案之前都回想一下需不需要乘以倍数或者正负号</p>
+<h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><p>一挤就容易出错</p>
+<p>一步一步都写出来。。md算我求你了</p>
+<p>别想东想西的</p>
+<p>眼睛盯着草稿，一个数字一个字母地写出来</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211115180800792.png" alt="image-20211115180800792"></p>
+<h2 id="快"><a href="#快" class="headerlink" title="快"></a>快</h2><p>我现在的基础没必要快</p>
+<p>踏踏实实把一字一句写好就能拿可观的分数</p>
+<p>最怕的是噼里啪啦写一堆，花的时间还多，最后没分</p>
+<p>（一快必犯错）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211115180755792.png" alt="image-20211115180755792"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211115180750043.png" alt="image-20211115180750043"></p>
+<p>答题卡上写大题的时候也不要快。。。</p>
+<p>求你了，一点一点来好嘛</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211115181435092.png" alt="image-20211115181435092"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211115181221083.png" alt="image-20211115181221083"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>选择填空加起来56分</p>
+<p>还有94分在后面</p>
+<p>线性代数部分太陌生了</p>
+<p>不行的</p>
+<h1 id="12-3"><a href="#12-3" class="headerlink" title="12/3"></a>12/3</h1><p>实际运用到的应试技巧：</p>
+<p>先看简单的选项</p>
+<p>先行跳过难题</p>
+<p>果断点，就像sougen一样</p>
+<p>然后是草稿</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/72267a3ffe7c0a100c0189bfd6e617b.jpg" alt="72267a3ffe7c0a100c0189bfd6e617b"></p>
+<p>一开始草稿还工整，紧凑</p>
+<p>但是后来就拉了</p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><h3 id="x-0处不可导"><a href="#x-0处不可导" class="headerlink" title="x=0处不可导"></a>x=0处不可导</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211203094516336.png" alt="image-20211203094516336"></p>
+<p>答案：D</p>
+<p>很聪明，这次知道怎么处理绝对值了</p>
+<p>但是判断是否可导还差点功夫</p>
+<p>只知道导，而忽略了定义式</p>
+<h3 id="考研数学没有蠢题"><a href="#考研数学没有蠢题" class="headerlink" title="考研数学没有蠢题"></a>考研数学没有蠢题</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922205155694.png" alt="image-20210922205155694"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922205837030.png" alt="image-20210922205837030"></p>
+<p>当时我就奇怪，为什么一样的积分限要分开写</p>
+<p>mdddddd</p>
+<p>一个符号一个符号去比对！！！</p>
+<p>下次遇到这种情况</p>
+<p>比起一个劲的计算去撞</p>
+<p>观察省功夫得多</p>
+<p>然后是求积分的技巧</p>
+<p>构造出新的函数，然后一元去积那块区域</p>
+<h3 id="证不熟悉规律"><a href="#证不熟悉规律" class="headerlink" title="证不熟悉规律"></a>证不熟悉规律</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922205213784.png" alt="image-20210922205213784"></p>
+<p>很可能是A</p>
+<p>利用BCD错误的选项来消耗我们的时间</p>
+<p>最好的应对就是拼命找BCD的反例</p>
+<p>而不是找符合规律的例子</p>
+<p>B:</p>
+<p>A=$\begin{pmatrix}1&amp;0 \0&amp;0\end{pmatrix}$</p>
+<p>B=$\begin{pmatrix}1&amp;1 \1&amp;1\end{pmatrix}$</p>
+<p>BA=$\begin{pmatrix}1&amp;0\1&amp;0\end{pmatrix}$</p>
+<p>$\begin{pmatrix} 1&amp;0&amp;1&amp;0\0&amp;0&amp;1&amp;0\end{pmatrix}$</p>
+<p>r=2&gt;$r(A)$</p>
+<p>D：</p>
+<p>$ \begin{pmatrix}0&amp;1&amp;1&amp;0\0&amp;0&amp;0&amp;0\ \end{pmatrix} $</p>
+<p>r=1</p>
+<p>对AB转置后</p>
+<p>$ \begin{pmatrix}0&amp;0&amp;1&amp;0\1&amp;0&amp;0&amp;0\ \end{pmatrix} $</p>
+<p>r=2</p>
+<h3 id="比较大小"><a href="#比较大小" class="headerlink" title="比较大小"></a>比较大小</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922205053092.png" alt="image-20210922205053092"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922205717126.png" alt="image-20210922205717126"></p>
+<p>对称区间，立刻反应到奇偶性</p>
+<p>这尼玛和做脑经急转弯一样</p>
+<p>还挺有意思</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E4%B8%AD%E5%9B%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/13/%E4%B8%AD%E5%9B%BD/" class="post-title-link" itemprop="url">中国</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-13 10:47:47 / Modified: 10:48:00" itemprop="dateCreated datePublished" datetime="2021-11-13T10:47:47+08:00">2021-11-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211113104757553.png" alt="image-20211113104757553"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</body>
+</html>

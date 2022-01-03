@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Hello World">
+<meta property="og:type" content="website">
+<meta property="og:title" content="藏经阁">
+<meta property="og:url" content="http://example.com/page/7/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="Hello World">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/03/%E6%94%BF%E6%B2%BB%E8%A7%82%E5%BF%B5%E7%BA%A0%E9%94%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/03/%E6%94%BF%E6%B2%BB%E8%A7%82%E5%BF%B5%E7%BA%A0%E9%94%99/" class="post-title-link" itemprop="url">政治观念纠错</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-03 09:48:22" itemprop="dateCreated datePublished" datetime="2021-09-03T09:48:22+08:00">2021-09-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-25 09:05:34" itemprop="dateModified" datetime="2021-11-25T09:05:34+08:00">2021-11-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="马原"><a href="#马原" class="headerlink" title="马原"></a>马原</h1><h2 id="矛盾的同一性寓于斗争性之中【X】【-】"><a href="#矛盾的同一性寓于斗争性之中【X】【-】" class="headerlink" title="矛盾的同一性寓于斗争性之中【X】【++++】"></a>矛盾的同一性寓于斗争性之中【X】【++++】</h2><p>矛盾的斗争性寓于同一性的说法才正确</p>
+<p><strong>先有了同一的概念才有斗争</strong></p>
+<p>这两者确实分有先后</p>
+<h2 id="劳动、观念"><a href="#劳动、观念" class="headerlink" title="劳动、观念"></a>劳动、观念</h2><p>劳动即实践</p>
+<p>观念即意识</p>
+<h2 id="实事求是"><a href="#实事求是" class="headerlink" title="实事求是"></a>实事求是</h2><p>不是实是求是</p>
+<h1 id="毛中特"><a href="#毛中特" class="headerlink" title="毛中特"></a>毛中特</h1><h2 id="半封建半殖民地社会与中国共产党无关【X】"><a href="#半封建半殖民地社会与中国共产党无关【X】" class="headerlink" title="半封建半殖民地社会与中国共产党无关【X】"></a>半封建半殖民地社会与中国共产党无关【X】</h2><p>中国共产党成立那会，中国还是半殖民地半封建社会</p>
+<p>辛亥革命胜利是在1912年</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/02/%E6%94%BF%E6%B2%BB%E9%94%99%E9%A2%98%E9%9B%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/02/%E6%94%BF%E6%B2%BB%E9%94%99%E9%A2%98%E9%9B%86/" class="post-title-link" itemprop="url">政治错题集</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-02 21:13:54" itemprop="dateCreated datePublished" datetime="2021-09-02T21:13:54+08:00">2021-09-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-21 10:49:46" itemprop="dateModified" datetime="2021-12-21T10:49:46+08:00">2021-12-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="马哲概论"><a href="#马哲概论" class="headerlink" title="马哲概论"></a>马哲概论</h1><h2 id="旧唯物主义的缺点【-】"><a href="#旧唯物主义的缺点【-】" class="headerlink" title="旧唯物主义的缺点【+】"></a>旧唯物主义的缺点【+】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210902211522105.png" alt="image-20210902211522105"></p>
+<p>答案：B</p>
+<p>旧哲学只是理解、感悟，而没有进行实践</p>
+<p>“人的感性活动” 其中的活动即对应了实践</p>
+<h2 id="发展开放性"><a href="#发展开放性" class="headerlink" title="发展开放性"></a>发展开放性</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210902211641431.png" alt="image-20210902211641431"></p>
+<p>答案：D</p>
+<p>容易以为没有这个特性</p>
+<h2 id="马克思主义的特性【-】"><a href="#马克思主义的特性【-】" class="headerlink" title="马克思主义的特性【+】"></a>马克思主义的特性【+】</h2><p>（多选）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210902211717781.png" alt="image-20210902211717781"></p>
+<p>答案：BDC</p>
+<p>A：阶级概念，自古就有</p>
+<p>人民这个概念是之后才有的</p>
+<p>D：革命不能乱革，需要科学、合理地去革命</p>
+<p>需要有理论指导</p>
+<h1 id="辩证法、认识论"><a href="#辩证法、认识论" class="headerlink" title="辩证法、认识论"></a>辩证法、认识论</h1><h2 id="统一和对立的理解不够深刻"><a href="#统一和对立的理解不够深刻" class="headerlink" title="统一和对立的理解不够深刻"></a>统一和对立的理解不够深刻</h2><p>（多选）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210902215120488.png" alt="image-20210902215120488"></p>
+<p>答案：CD         我的答案：BC</p>
+<p>A：意识是对物质的反映</p>
+<p>B：独立性是对立，相对独立性其实说的是同一性</p>
+<p>与题干想表达的意思不符</p>
+<p>D：说 ”反映“ 这个主体不符，倒是钻牛角尖了</p>
+<h2 id="劳动就是实践【-】"><a href="#劳动就是实践【-】" class="headerlink" title="劳动就是实践【+】"></a>劳动就是实践【+】</h2><p>主体混淆</p>
+<p>（多选）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210902215846166.png" alt="image-20210902215846166"></p>
+<p>答案：ABD        我的答案：BCD</p>
+<p>A：<strong>劳动其实是实践</strong>，实践确实是起关键作用</p>
+<p>C：<strong>与创造性对应的是意识的主观能动性</strong></p>
+<p>而C所言主体是实践，故排除</p>
+<h2 id="默认材料【-】"><a href="#默认材料【-】" class="headerlink" title="默认材料【+】"></a>默认材料【+】</h2><p>（多选）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210902220103545.png" alt="image-20210902220103545"></p>
+<p>答案：BC        我的答案：BCD</p>
+<p>不能完全掌握，那就利用好它</p>
+<p>A：改造规律？</p>
+<p>D：由于自身能力有限，故需要处在复杂的社会关系中，共同合作进行实践活动</p>
+<p>对应了人发挥主观能动性的需要</p>
+<p>但是荀子说的话里没有需要合作的意思，故不选</p>
+<p>虽然没有 “根据上述材料，下面说法正确的是” 这样的说明，但默认。。。</p>
+<h2 id="考研政治的审题"><a href="#考研政治的审题" class="headerlink" title="考研政治的审题"></a>考研政治的审题</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210902220445510.png" alt="image-20210902220445510"></p>
+<p>答案：AB</p>
+<p>C：没有对应题干中的要求 “从实践是人与自然关系的基础的角度来看……”</p>
+<h2 id="内部矛盾与发展"><a href="#内部矛盾与发展" class="headerlink" title="内部矛盾与发展"></a>内部矛盾与发展</h2><p>（多选）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210903094251855.png" alt="image-20210903094251855"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210903094302370.png" alt="image-20210903094302370"></p>
+<p>答案：ABC</p>
+<p>C：同则不继</p>
+<h1 id="唯物史观"><a href="#唯物史观" class="headerlink" title="唯物史观"></a>唯物史观</h1><h2 id="社会意识的相对独立性"><a href="#社会意识的相对独立性" class="headerlink" title="社会意识的相对独立性"></a>社会意识的相对独立性</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210906210158912.png" alt="image-20210906210158912"></p>
+<p>答案：C</p>
+<h2 id="社会意识是什么【-】"><a href="#社会意识是什么【-】" class="headerlink" title="社会意识是什么【+】"></a>社会意识是什么【+】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210906210340200.png" alt="image-20210906210340200"></p>
+<p>答案：C</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210904111334757.png" alt="image-20210904111334757"></p>
+<p>社会意识首先是意识</p>
+<p>然后 “社会” 即与人有关</p>
+<p>也就是人创造出来的一些成型的意识，我们称之为 “社会意识”</p>
+<p>其中非社会意识即全社会通用的（不受国家不同而不同的）</p>
+<h2 id="唯物史观的先进性【-】"><a href="#唯物史观的先进性【-】" class="headerlink" title="唯物史观的先进性【+】"></a>唯物史观的先进性【+】</h2><p>（多选）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210906210433053.png" alt="image-20210906210433053"></p>
+<p>答案：CD</p>
+<p>A：“自然界” </p>
+<p>唯物史观讨论的是人类社会，不涉及自然界（那是达尔文）</p>
+<p>B：唯物史观并不认可精神力量</p>
+<p>马克思讲意识存在并不意味着有精神力量存在</p>
+<h2 id="社会存在与人的社会关系"><a href="#社会存在与人的社会关系" class="headerlink" title="社会存在与人的社会关系"></a>社会存在与人的社会关系</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210906210923010.png" alt="image-20210906210923010"></p>
+<p>答案：ABC</p>
+<p>D：题干都提示透了 “社会实践和物质生活条件”</p>
+<h2 id="社会意识与人的社会关系【-】"><a href="#社会意识与人的社会关系【-】" class="headerlink" title="社会意识与人的社会关系【+】"></a>社会意识与人的社会关系【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210906211151353.png" alt="image-20210906211151353"></p>
+<p>答案：AC</p>
+<p>B：片面了（只讲到了最表层，我们能看到的东西），其实还包括剥削与被剥削、产品分配等等</p>
+<p>D：生产关系是人们劳动生产中的一个概念，故属于社会存在</p>
+<p><font color=red>误认为 “关系” 是社会意识，这是个坑</font></p>
+<h2 id="生产力基本要素的组合【-】"><a href="#生产力基本要素的组合【-】" class="headerlink" title="生产力基本要素的组合【+】"></a>生产力基本要素的组合【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210906211503723.png" alt="image-20210906211503723"></p>
+<p>答案：ABCD</p>
+<p>B：用高科技工具生产，生产力一般都是说更高</p>
+<p>生产力的基本要素：劳动资料，劳动对象，劳动者（准备顺序）</p>
+<p>劳动资料：人进行劳动的（物质）条件</p>
+<p>劳动对象：劳动的对象</p>
+<p>生产资料：劳动资料和劳动对象</p>
+<p>生产资料+劳动者=生产力</p>
+<h2 id="阶级斗争与社会【-】"><a href="#阶级斗争与社会【-】" class="headerlink" title="阶级斗争与社会【+】"></a>阶级斗争与社会【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210906211650232.png" alt="image-20210906211650232"></p>
+<p>答案：CD</p>
+<p>A：单单说资本家，片面了</p>
+<p>B：<strong>社会基本矛盾</strong>才会从根本上影响社会形态的更替</p>
+<h2 id="国家与阶级矛盾【-】"><a href="#国家与阶级矛盾【-】" class="headerlink" title="国家与阶级矛盾【+】"></a>国家与阶级矛盾【+】</h2><p>上层建筑的主导和核心</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210906211952472.png" alt="image-20210906211952472"></p>
+<p>答案：BC</p>
+<p>A：<strong>政治</strong>上层建筑占主导地位</p>
+<p>D：政治法律思想是观念上层建筑，<strong>国家政权</strong>是上层建筑的核心</p>
+<h2 id="社会形态与民族矛盾【-】"><a href="#社会形态与民族矛盾【-】" class="headerlink" title="社会形态与民族矛盾【+】"></a>社会形态与民族矛盾【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210906212301264.png" alt="image-20210906212301264"></p>
+<p>答案：ABC</p>
+<p>D：<font color=red>社会形态更替归根到底是社会基本矛盾的结果</font></p>
+<p>与民族矛盾没直接关系</p>
+<h2 id="社会基本矛盾可否解决【-】"><a href="#社会基本矛盾可否解决【-】" class="headerlink" title="社会基本矛盾可否解决【+】"></a>社会基本矛盾可否解决【+】</h2><p>社会基本矛盾可以采取阶级斗争、社会革命、改革等多种方式解决</p>
+<p>正是在解决社会基本矛盾的过程中，社会得到了全面进步</p>
+<h1 id="马克思政治经济学"><a href="#马克思政治经济学" class="headerlink" title="马克思政治经济学"></a>马克思政治经济学</h1><h2 id="资本主义生产关系的产生"><a href="#资本主义生产关系的产生" class="headerlink" title="资本主义生产关系的产生"></a>资本主义生产关系的产生</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907095504641.png" alt="image-20210907095504641"></p>
+<p>答案：A</p>
+<p>雇佣关系和高利贷</p>
+<p>手工业者和商人</p>
+<h2 id="具体劳动和抽象劳动"><a href="#具体劳动和抽象劳动" class="headerlink" title="具体劳动和抽象劳动"></a>具体劳动和抽象劳动</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907095705114.png" alt="image-20210907095705114"></p>
+<p>答案：B</p>
+<p>联系到实际的一般就是具体的具体劳动了</p>
+<p>抽象劳动，即是劳动的抽象概念，泛指人的体力和脑力的消耗</p>
+<h2 id="个别劳动生产率与社会劳动生产率【-】"><a href="#个别劳动生产率与社会劳动生产率【-】" class="headerlink" title="个别劳动生产率与社会劳动生产率【+】"></a>个别劳动生产率与社会劳动生产率【+】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907100002345.png" alt="image-20210907100002345"></p>
+<p>答案：A</p>
+<p>个别劳动生产率≠社会必要劳动时间</p>
+<h2 id="等价物【-】"><a href="#等价物【-】" class="headerlink" title="等价物【+】"></a>等价物【+】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907100124780.png" alt="image-20210907100124780"></p>
+<p>答案：A</p>
+<p>原始的 “物物交换” 就是简单的价值形式</p>
+<p>2把斧子换1头羊</p>
+<p>这其实没有等价的概念，只是大家觉得各自合适就换了</p>
+<h2 id="私有制商品经济的基本矛盾【-】"><a href="#私有制商品经济的基本矛盾【-】" class="headerlink" title="私有制商品经济的基本矛盾【+】"></a>私有制商品经济的基本矛盾【+】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907100313628.png" alt="image-20210907100313628"></p>
+<p>答案：D</p>
+<h2 id="货币转化为资本的条件【-】"><a href="#货币转化为资本的条件【-】" class="headerlink" title="货币转化为资本的条件【+】"></a>货币转化为资本的条件【+】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907100401388.png" alt="image-20210907100401388"></p>
+<p>答案：B</p>
+<p>资本，也就暗示了资本家剥削劳动人民，也就需要“劳动力”这个概念了</p>
+<h2 id="利润与剩余价值【-】"><a href="#利润与剩余价值【-】" class="headerlink" title="利润与剩余价值【+】"></a>利润与剩余价值【+】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907100650817.png" alt="image-20210907100650817"></p>
+<p>答案：B</p>
+<p>B：投资人先垫付了一些资本，才能得到利润，即产物</p>
+<p>CD：说法都是正确的，但是题干所言 “不同之处”</p>
+<h2 id="垄断价格的计算"><a href="#垄断价格的计算" class="headerlink" title="垄断价格的计算"></a>垄断价格的计算</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210905162749631.png" alt="image-20210905162749631"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210905162759259.png" alt="image-20210905162759259"></p>
+<h2 id="抽象劳动与具体劳动【-】"><a href="#抽象劳动与具体劳动【-】" class="headerlink" title="抽象劳动与具体劳动【+】"></a>抽象劳动与具体劳动【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907100921978.png" alt="image-20210907100921978"></p>
+<p>答案：CD</p>
+<p>A：金—装饰</p>
+<p>BCD：</p>
+<p>具体劳动形成商品的使用价值</p>
+<p>抽象劳动形成商品的价值实体</p>
+<h2 id="价值与交换"><a href="#价值与交换" class="headerlink" title="价值与交换"></a>价值与交换</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907101117083.png" alt="image-20210907101117083"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907101123364.png" alt="image-20210907101123364"></p>
+<p>答案：ABC</p>
+<p>C：做错的原因是我当时想着 “没交换哪来的价值”</p>
+<p>但C的主要意思是<font color=blue>他们都有同一的“价值” 所以可以按照一定比例进行交换</font></p>
+<h2 id="使用价值总量的提高【-】"><a href="#使用价值总量的提高【-】" class="headerlink" title="使用价值总量的提高【+】"></a>使用价值总量的提高【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907101414875.png" alt="image-20210907101414875"></p>
+<p>答案：AB</p>
+<p>B：<strong>使用价值与社会必要劳动时间没有关系</strong></p>
+<p>社会劳动生产率的提高，会使得生产商品的数量增多，也就使得使用价值总量提高</p>
+<p>D：<strong>劳动时间不变，价值量则不变</strong></p>
+<h2 id="价值规律的主要内容【-】"><a href="#价值规律的主要内容【-】" class="headerlink" title="价值规律的主要内容【+】"></a>价值规律的主要内容【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907101742475.png" alt="image-20210907101742475"></p>
+<p>答案：BC</p>
+<p>A：该选项说的没错，也确实和价值规律有关系</p>
+<p>但它是价值规律的表现形式，不是主要内容，故不选</p>
+<h2 id="资本主义劳动的特点【-】"><a href="#资本主义劳动的特点【-】" class="headerlink" title="资本主义劳动的特点【+】"></a>资本主义劳动的特点【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907101936356.png" alt="image-20210907101936356"></p>
+<p>答案：AC</p>
+<p>B：说法确实是对的，也符合资本主义劳动过程的特点</p>
+<p>但是不符合角度的限制—题干中的 “要素被占有”</p>
+<p>D：同B</p>
+<h2 id="平均利润率与资本积累【-】"><a href="#平均利润率与资本积累【-】" class="headerlink" title="平均利润率与资本积累【+】"></a>平均利润率与资本积累【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907102228631.png" alt="image-20210907102228631"></p>
+<p>答案：ABD</p>
+<p>这里的“资本家”是一整个群体，而不是单单个人</p>
+<p>C：随着资本积累，面包越来越少，平均利润率会降低（就先这么简单理解吧）</p>
+<p>D：相对过剩人口，不是我们计划生育讨论的那个人口</p>
+<p>而是指的失业问题（有机器，人就不需要那么多了，也就人口过剩了）</p>
+<h2 id="资本积累的源泉"><a href="#资本积累的源泉" class="headerlink" title="资本积累的源泉"></a>资本积累的源泉</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907112251061.png" alt="image-20210907112251061"></p>
+<p>答案：ABCD</p>
+<p>A：剩余价值是资本积累的唯一源泉，而资本积累是扩大再生产的重要源泉</p>
+<h2 id="社会再生产顺利进行的条件【-】"><a href="#社会再生产顺利进行的条件【-】" class="headerlink" title="社会再生产顺利进行的条件【+】"></a>社会再生产顺利进行的条件【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907112629389.png" alt="image-20210907112629389"></p>
+<p>答案：ABD</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211019151923284.png" alt="image-20211019151923284"></p>
+<p>D：交换</p>
+<p>政治概念就是这样</p>
+<h2 id="资本主义意识形态的本质"><a href="#资本主义意识形态的本质" class="headerlink" title="资本主义意识形态的本质"></a>资本主义意识形态的本质</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907112933837.png" alt="image-20210907112933837"></p>
+<p>答案：ABC</p>
+<p>C：背吧，这”体现“ 也可以作 ‘本质”</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907113033446.png" alt="image-20210907113033446"></p>
+<h2 id="资本主义新变化【-】"><a href="#资本主义新变化【-】" class="headerlink" title="资本主义新变化【+】"></a>资本主义新变化【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907113202478.png" alt="image-20210907113202478"></p>
+<p>答案：BC</p>
+<p>B：新变化就是与国家合作上了</p>
+<h2 id="资本主义的局限性【-】"><a href="#资本主义的局限性【-】" class="headerlink" title="资本主义的局限性【+】"></a>资本主义的局限性【+】</h2><p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210907113328614.png" alt="image-20210907113328614"></p>
+<p>答案：ABC</p>
+<p>A：局部有促进，但是整体是阻碍</p>
+<p>C：资本控制政治，这是不合理的</p>
+<p>D：这更像是在说资本主义与其他社会制度的兼容性，而不是资本主义自身</p>
+<h1 id="科学社会主义"><a href="#科学社会主义" class="headerlink" title="科学社会主义"></a>科学社会主义</h1><h1 id="思想修养"><a href="#思想修养" class="headerlink" title="思想修养"></a>思想修养</h1><h2 id="信念信仰"><a href="#信念信仰" class="headerlink" title="信念信仰"></a>信念信仰</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102350817.png" alt="image-20211214102350817"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102415461.png" alt="image-20211214102415461"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102444460.png" alt="image-20211214102444460"></p>
+<p>答案：</p>
+<p>A</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102511060.png" alt="image-20211214102511060"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102517528.png" alt="image-20211214102517528"></p>
+<p>答案：</p>
+<p>C</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102614793.png" alt="image-20211214102614793"></p>
+<p>答案：</p>
+<p>B</p>
+<p>人与禽兽，强调 “人伦”</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102705433.png" alt="image-20211214102705433"></p>
+<p>答案：</p>
+<p>C</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102713832.png" alt="image-20211214102713832"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102733808.png" alt="image-20211214102733808"></p>
+<p>答案：</p>
+<p>A</p>
+<p>“花香”和“苦寒”</p>
+<p>“宝剑”和“辛苦磨砺”</p>
+<p>讨论的范畴是苦乐</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102756934.png" alt="image-20211214102756934"></p>
+<p>没有提到顺境</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102900421.png" alt="image-20211214102900421"></p>
+<p>答案：</p>
+<p>B</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211214102920360.png" alt="image-20211214102920360"></p>
+<p>答案：</p>
+<p>D</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215085459171.png" alt="image-20211215085459171"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215085520753.png" alt="image-20211215085520753"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>D：共产主义</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215085635108.png" alt="image-20211215085635108"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>C：个人理想从属于社会理想</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215085709325.png" alt="image-20211215085709325"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>D：民族精神核心确实是爱国主义，但是时代精神不是，时代精神的核心是改革创新</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215090119596.png" alt="image-20211215090119596"></p>
+<p>答案：</p>
+<p>ABCD</p>
+<p>A：臣心，忠心</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215090212492.png" alt="image-20211215090212492"></p>
+<p>答案：</p>
+<p>BCD</p>
+<p>A：不是现阶段的</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215090233121.png" alt="image-20211215090233121"></p>
+<p>答案：</p>
+<p>AB</p>
+<p>C：爱国主义随国家的产生而产生</p>
+<p>随国家的灭亡而灭亡</p>
+<p>D：在阶级社会是具有阶级性的</p>
+<p>已有一致性也有差异性，甚至是对立性</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215091755216.png" alt="image-20211215091755216"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215091802748.png" alt="image-20211215091802748"></p>
+<p>答案：</p>
+<p>ABD</p>
+<p>C：</p>
+<p>《中华人民共和国宪法》和《香港特别行政区基本法》</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215091845745.png" alt="image-20211215091845745"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>A：人生目的决定人生道路</p>
+<p>方向确实重要</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215092000524.png" alt="image-20211215092000524"></p>
+<p>答案：</p>
+<p>BCD</p>
+<p>A：是增强创新能力的方法</p>
+<p>不是树立意识的方法</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215092034765.png" alt="image-20211215092034765"></p>
+<p>答案：</p>
+<p>AD</p>
+<p>C：题干谈论的是社会价值</p>
+<p>而不是自我价值</p>
+<p>扣题干，扣题干</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215092106724.png" alt="image-20211215092106724"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215092117651.png" alt="image-20211215092117651"></p>
+<p>答案：</p>
+<p>BCD</p>
+<p>A：与科学知识无关</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215093611620.png" alt="image-20211215093611620"></p>
+<p>答案：</p>
+<p>CD</p>
+<h1 id="道德修养"><a href="#道德修养" class="headerlink" title="道德修养"></a>道德修养</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215093643027.png" alt="image-20211215093643027"></p>
+<p>答案：</p>
+<p>D</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215093657291.png" alt="image-20211215093657291"></p>
+<p>答案：</p>
+<p>B</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215093732355.png" alt="image-20211215093732355"></p>
+<p>答案：</p>
+<p>A</p>
+<p>劳动是人和动物的区别</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215093752123.png" alt="image-20211215093752123"></p>
+<p>答案：</p>
+<p>A</p>
+<p>自古</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215093823123.png" alt="image-20211215093823123"></p>
+<p>答案：</p>
+<p>C</p>
+<p>实践实践实践</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215093854827.png" alt="image-20211215093854827"></p>
+<p>答案：</p>
+<p>C</p>
+<p>A：法治社会</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094002011.png" alt="image-20211215094002011"></p>
+<p>答案：</p>
+<p>C</p>
+<p>B：广泛性是迷惑项</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094037344.png" alt="image-20211215094037344"></p>
+<p>答案：</p>
+<p>B</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094115487.png" alt="image-20211215094115487"></p>
+<p>答案：</p>
+<p>ABCD</p>
+<p>CD：正确的必然说法</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094137236.png" alt="image-20211215094137236"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>D：与题干对着干</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094301204.png" alt="image-20211215094301204"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>D：特指在阶级社会，与题干表达的概况不符</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094359712.png" alt="image-20211215094359712"></p>
+<p>答案：</p>
+<p>AC</p>
+<p>D：中华优秀传统文化才是历史底蕴</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094436251.png" alt="image-20211215094436251"></p>
+<p>答案：</p>
+<p>BCD</p>
+<p>A：道义力量主要指人民性、先进性、真实性，与A无关</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094710520.png" alt="image-20211215094710520"></p>
+<p>答案：</p>
+<p>BCD</p>
+<p>A：明显与BCD格格不入，A是历史，讲的是历史意义</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094735468.png" alt="image-20211215094735468"></p>
+<p>答案：</p>
+<p>BCD</p>
+<p>A：社会公德</p>
+<p>D：个人品德是主体精神力量</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094814243.png" alt="image-20211215094814243"></p>
+<p>答案：</p>
+<p>ABCD</p>
+<p>D：遵纪守法也是公德</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215094837531.png" alt="image-20211215094837531"></p>
+<p>答案：</p>
+<p>AD</p>
+<p>BC：仁爱</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215095009362.png" alt="image-20211215095009362"></p>
+<p>答案：</p>
+<p>ACD</p>
+<p>B：迷惑项</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215095031690.png" alt="image-20211215095031690"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>D：物质利益片面了</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211215095100863.png" alt="image-20211215095100863"></p>
+<p>答案：</p>
+<p>ACD</p>
+<p>B：活动方式多种多样，并不是普遍一样的</p>
+<h1 id="法律基础"><a href="#法律基础" class="headerlink" title="法律基础"></a>法律基础</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220144412035.png" alt="image-20211220144412035"></p>
+<p>答案：</p>
+<p>D</p>
+<p>我的答案：C</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220144441820.png" alt="image-20211220144441820"></p>
+<p>答案：</p>
+<p>D</p>
+<p>我的答案：B</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220144548820.png" alt="image-20211220144548820"></p>
+<p>答案：</p>
+<p>A</p>
+<p>我的答案：B</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220144614018.png" alt="image-20211220144614018"></p>
+<p>答案：</p>
+<p>A</p>
+<p>我的答案：D</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220144650841.png" alt="image-20211220144650841"></p>
+<p>答案：</p>
+<p>A</p>
+<p>我的答案：B</p>
+<p>人民代表大会制度是政体</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145104689.png" alt="image-20211220145104689"></p>
+<p>答案：</p>
+<p>C</p>
+<p>我的答案：B</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145232396.png" alt="image-20211220145232396"></p>
+<p>答案：</p>
+<p>B</p>
+<p>我的答案：A</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145316664.png" alt="image-20211220145316664"></p>
+<p>答案：D</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145347077.png" alt="image-20211220145347077"></p>
+<p>答案：</p>
+<p>Ｂ</p>
+<p>我的答案：Ｄ</p>
+<p>罚款：行政</p>
+<p>罚金：刑事</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145440725.png" alt="image-20211220145440725"></p>
+<p>答案：</p>
+<p>Ｄ</p>
+<p>我的答案：Ａ</p>
+<p>Ａ：前提</p>
+<p>Ｂ：重点</p>
+<p>Ｄ：保障</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145520181.png" alt="image-20211220145520181"></p>
+<p>答案：Ｂ</p>
+<p>我的答案：Ｃ</p>
+<p>Ｃ：统帅</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145555804.png" alt="image-20211220145555804"></p>
+<p>答案：Ａ</p>
+<p>Ｄ：被强制执行的对象</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145639477.png" alt="image-20211220145639477"></p>
+<p>答案：</p>
+<p>ABD</p>
+<p>我的答案：ABCD</p>
+<p>C：强制作用错误</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145734989.png" alt="image-20211220145734989"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>我的答案：AC</p>
+<p>B：总量</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145843307.png" alt="image-20211220145843307"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145850267.png" alt="image-20211220145850267"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>我的答案：AB</p>
+<p>C：劳动</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220145930428.png" alt="image-20211220145930428"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>我的答案：BC</p>
+<p>A：随着社会历史不断发展而不断变化</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150023436.png" alt="image-20211220150023436"></p>
+<p>答案：</p>
+<p>AD</p>
+<p>我的答案：ACD</p>
+<p>C：捏造</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150054671.png" alt="image-20211220150054671"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>我的答案：ABCD</p>
+<p>D：不是至上性的内容</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150151180.png" alt="image-20211220150151180"></p>
+<p>答案：</p>
+<p>BCD</p>
+<p>我的答案：AC</p>
+<p>A：权利公平，而不是权力公平</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150300475.png" alt="image-20211220150300475"></p>
+<p>答案：</p>
+<p>ACD</p>
+<p>我的答案：BCD</p>
+<p>A：《》颁布后</p>
+<p>C：司法解释</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150408242.png" alt="image-20211220150408242"></p>
+<p>答案：</p>
+<p>ACD</p>
+<p>我的答案：ABCD</p>
+<p>B：执法与题干的司法不符</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150519916.png" alt="image-20211220150519916"></p>
+<p>答案：</p>
+<p>ABD</p>
+<p>我的答案：ABCD</p>
+<p>C：1/5以上提议，2/3通过</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150610518.png" alt="image-20211220150610518"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150615379.png" alt="image-20211220150615379"></p>
+<p>答案：</p>
+<p>ACD</p>
+<p>我的答案：ABC</p>
+<p>B：人民主权≠人权</p>
+<p>D：与民息息相关</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150842354.png" alt="image-20211220150842354"></p>
+<p>答案：</p>
+<p>ABD</p>
+<p>我的答案：ABCD</p>
+<p>C：讼诉中的原则</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150914834.png" alt="image-20211220150914834"></p>
+<p>答案：</p>
+<p>ACD</p>
+<p>我的答案：ABCD</p>
+<p>B：不是基本原则</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220150954207.png" alt="image-20211220150954207"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>我的答案：ABCD</p>
+<p>B：刑法</p>
+<p>D：就是</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220151121186.png" alt="image-20211220151121186"></p>
+<p>答案：</p>
+<p>ABCD</p>
+<p>我的答案：</p>
+<p>ABC</p>
+<p>D：也可以呀~</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220151214437.png" alt="image-20211220151214437"></p>
+<p>答案：</p>
+<p>ABCD</p>
+<p>我的答案：AB</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220151322021.png" alt="image-20211220151322021"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>我的答案：AB</p>
+<p>C：这都不敢？</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220151439707.png" alt="image-20211220151439707"></p>
+<p>答案：</p>
+<p>BD</p>
+<p>我的答案：ABCD</p>
+<p>AC：社会主义法律体系的特点</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220151547618.png" alt="image-20211220151547618"></p>
+<p>答案：</p>
+<p>ABC</p>
+<p>我的答案：AC</p>
+<p>B：民主</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220151631763.png" alt="image-20211220151631763"></p>
+<p>答案：</p>
+<p>ABCD</p>
+<p>我的答案：BD</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220151700352.png" alt="image-20211220151700352"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220151704793.png" alt="image-20211220151704793"></p>
+<p>答案：</p>
+<p>AB</p>
+<p>我的答案：ABCD</p>
+<p>C：财产权利</p>
+<p>D：人身权利</p>
+<p>题干要求的是社会经济权利</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220151857145.png" alt="image-20211220151857145"></p>
+<p>答案：</p>
+<p>ACD</p>
+<p>我的答案：</p>
+<p>ABD</p>
+<p>B：行政部门执法，而不是党</p>
+<p>C：全力配合支持</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220152005062.png" alt="image-20211220152005062"></p>
+<p>答案：</p>
+<p>CD</p>
+<p>我的答案：ABCD</p>
+<p>AB：题干要求方式上的区别，而AB所言是依据</p>
+<p>多选</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211220152229567.png" alt="image-20211220152229567"></p>
+<p>答案：</p>
+<p>ABD</p>
+<p>我的答案：AD</p>
+<p>B：道德和法治是相互渗透的</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/29/%E8%80%83%E7%A0%94%E6%8A%A5%E5%90%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/29/%E8%80%83%E7%A0%94%E6%8A%A5%E5%90%8D/" class="post-title-link" itemprop="url">考研报名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-29 09:30:03 / Modified: 09:32:08" itemprop="dateCreated datePublished" datetime="2021-08-29T09:30:03+08:00">2021-08-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h1><p>9.16预报名（或二十几号）</p>
+<p>填一些信息</p>
+<p>看院校网报和报考点</p>
+<p>10月10号正式报名</p>
+<h1 id="缴费"><a href="#缴费" class="headerlink" title="缴费"></a>缴费</h1><p>缴费成功报名信息才有效</p>
+<p>报考号</p>
+<h1 id="确认"><a href="#确认" class="headerlink" title="确认"></a>确认</h1><p>11月多</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/27/%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/27/%E4%BA%8C%E6%AC%A1%E5%9E%8B/" class="post-title-link" itemprop="url">二次型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-08-27 11:03:40" itemprop="dateCreated datePublished" datetime="2021-08-27T11:03:40+08:00">2021-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-29 11:59:06" itemprop="dateModified" datetime="2021-11-29T11:59:06+08:00">2021-11-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="二次型的理解"><a href="#二次型的理解" class="headerlink" title="二次型的理解"></a>二次型的理解</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083406791.png" alt="image-20210924083406791"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083434396.png" alt="image-20210924083434396"></p>
+<h1 id="标准型"><a href="#标准型" class="headerlink" title="标准型"></a>标准型</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083209812.png" alt="image-20210924083209812"></p>
+<h2 id="正负惯性系数"><a href="#正负惯性系数" class="headerlink" title="正负惯性系数"></a>正负惯性系数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083233963.png" alt="image-20210924083233963"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083246627.png" alt="image-20210924083246627"></p>
+<h1 id="由方程得到二次型的矩阵"><a href="#由方程得到二次型的矩阵" class="headerlink" title="由方程得到二次型的矩阵"></a>由方程得到二次型的矩阵</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927202858519.png" alt="image-20210927202858519"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927202751872.png" alt="image-20210927202751872"></p>
+<h2 id="易错题"><a href="#易错题" class="headerlink" title="易错题"></a>易错题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827111219465.png" alt="image-20210827111219465"></p>
+<p>不能直接把123456填上去</p>
+<p><font color=red>因为二次型的矩阵应该是对称的</font></p>
+<p>正确的做法应该是把二次型的矩阵形式先化成方程</p>
+<p>然后再由此得到二次型的矩阵</p>
+<p>大致解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827111505230.png" alt="image-20210827111505230"></p>
+<h1 id="合同"><a href="#合同" class="headerlink" title="合同"></a>合同</h1><h2 id="合同变换的意义"><a href="#合同变换的意义" class="headerlink" title="合同变换的意义"></a>合同变换的意义</h2><p>把一个复杂的二次型转变为一个简单的二次型</p>
+<h2 id="合同相关定理"><a href="#合同相关定理" class="headerlink" title="合同相关定理"></a>合同相关定理</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827114401963.png" alt="image-20210827114401963"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827114525102.png" alt="image-20210827114525102"></p>
+<p><font color=red>他们的不同之处在于定理2正交变换的系数λ是特征值</font></p>
+<p>定理1中的系数d则不一定</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827114726745.png" alt="image-20210827114726745"></p>
+<h2 id="配方变换【小题】"><a href="#配方变换【小题】" class="headerlink" title="配方变换【小题】"></a>配方变换【小题】</h2><h2 id="正交变换【大题-重点】"><a href="#正交变换【大题-重点】" class="headerlink" title="正交变换【大题+重点】"></a>正交变换【大题+重点】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827115223513.png" alt="image-20210827115223513"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827115239829.png" alt="image-20210827115239829"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827115250664.png" alt="image-20210827115250664"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/21/%E7%9F%A9%E9%98%B5%E7%AD%89%E4%BB%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/21/%E7%9F%A9%E9%98%B5%E7%AD%89%E4%BB%B7/" class="post-title-link" itemprop="url">矩阵等价</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-21 22:29:24 / Modified: 23:18:18" itemprop="dateCreated datePublished" datetime="2021-08-21T22:29:24+08:00">2021-08-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="等价矩阵"><a href="#等价矩阵" class="headerlink" title="等价矩阵"></a>等价矩阵</h1><p>矩阵A经过有限次初等变换变成矩阵，则称A与B等价</p>
+<h1 id="等价的条件"><a href="#等价的条件" class="headerlink" title="等价的条件"></a>等价的条件</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821231553487.png" alt="image-20210821231553487"></p>
+<p>答案：D</p>
+<p>等价有一个性质 — <strong>秩相等</strong></p>
+<p>行阶梯把A的秩求出来，然后把选项带入B矩阵</p>
+<p>看到符合题意的只有D</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821231810742.png" alt="image-20210821231810742"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/16/%E5%85%8B%E6%8B%89%E9%BB%98%E6%B3%95%E5%88%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/16/%E5%85%8B%E6%8B%89%E9%BB%98%E6%B3%95%E5%88%99/" class="post-title-link" itemprop="url">克拉默法则</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-08-16 16:02:23" itemprop="dateCreated datePublished" datetime="2021-08-16T16:02:23+08:00">2021-08-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-25 21:37:12" itemprop="dateModified" datetime="2021-08-25T21:37:12+08:00">2021-08-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="克拉默法则"><a href="#克拉默法则" class="headerlink" title="克拉默法则"></a>克拉默法则</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825212934839.png" alt="image-20210825212934839"></p>
+<p>“只有零解” — <strong>有唯一解</strong></p>
+<p><font color=red>即没有基础解系那样无限的解</font></p>
+<p>有非零解 — <strong>具体再看秩</strong></p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825211410630.png" alt="image-20210825211410630"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825211418783.png" alt="image-20210825211418783"></p>
+<p><font color=red>别把行列式的值和秩联系在一起</font></p>
+<p><font color=red>这两者没有必然关系</font></p>
+<p><font color=red>行列式为0，也可以满秩</font></p>
+<p><font color=blue>记忆克拉默更好的方法是行列式的值作分母</font></p>
+<p><font color=blue>不为0才可以用</font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/09/dict/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/09/dict/" class="post-title-link" itemprop="url">dict</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-09 10:33:17 / Modified: 11:12:56" itemprop="dateCreated datePublished" datetime="2021-08-09T10:33:17+08:00">2021-08-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://download.huzheng.org/zh_CN/">词库下载链接</a></p>
+<p>使用方法：</p>
+<p>把下载的文件解压两次</p>
+<p>然后用Golden dict 去扫描</p>
+<h2 id="查词快捷键"><a href="#查词快捷键" class="headerlink" title="查词快捷键"></a>查词快捷键</h2><p>ESC</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/08/%E7%9F%A9%E9%98%B5%E5%88%86%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/08/%E7%9F%A9%E9%98%B5%E5%88%86%E5%9D%97/" class="post-title-link" itemprop="url">矩阵分块</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-08-08 12:56:45" itemprop="dateCreated datePublished" datetime="2021-08-08T12:56:45+08:00">2021-08-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-17 12:52:24" itemprop="dateModified" datetime="2021-11-17T12:52:24+08:00">2021-11-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="计算行列式"><a href="#计算行列式" class="headerlink" title="计算行列式"></a>计算行列式</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921123503672.png" alt="image-20210921123503672"></p>
+<p>Ps：不是对角相乘然后减，而是</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211117125126114.png" alt="image-20211117125126114"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921123519973.png" alt="image-20210921123519973"></p>
+<p>对角存在0才可以这么算，不然</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211117110033093.png" alt="image-20211117110033093"></p>
+<p>不要顾虑每行</p>
+<p>只想着一路干下去</p>
+<p>然后用余子式展开</p>
+<h1 id="基本法则"><a href="#基本法则" class="headerlink" title="基本法则"></a>基本法则</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816155713800.png" alt="image-20210816155713800"></p>
+<h2 id="运算的例题"><a href="#运算的例题" class="headerlink" title="运算的例题"></a>运算的例题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816155930658.png" alt="image-20210816155930658"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816160005011.png" alt="image-20210816160005011"></p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="该怎么分块"><a href="#该怎么分块" class="headerlink" title="该怎么分块"></a>该怎么分块</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210818170918565.png" alt="image-20210818170918565"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210818170940259.png" alt="image-20210818170940259"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210818171032474.png" alt="image-20210818171032474"></p>
+<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816160036053.png" alt="image-20210816160036053"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808125653709.png" alt="image-20210808125653709"></p>
+<p>矩阵相乘为0，则矩阵B的每一列都是Ax=0的解</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/06/%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/06/%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5/" class="post-title-link" itemprop="url">相似矩阵</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-08-06 15:26:48" itemprop="dateCreated datePublished" datetime="2021-08-06T15:26:48+08:00">2021-08-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-09 19:48:42" itemprop="dateModified" datetime="2021-11-09T19:48:42+08:00">2021-11-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210806153010238.png" alt="image-20210806153010238"></p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210806152932908.png" alt="image-20210806152932908"></p>
+<p><font color=blue>注意，这是单向的箭头</font></p>
+<h2 id="相似对角化"><a href="#相似对角化" class="headerlink" title="相似对角化"></a>相似对角化</h2><p><font color=red>重点在于研究对角阵的相似</font></p>
+<p>因为对角阵有很多方便的性质—便于计算等</p>
+<h3 id="对角化的条件"><a href="#对角化的条件" class="headerlink" title="对角化的条件"></a>对角化的条件</h3><p>两个充要，两个充分</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210806153813044.png" alt="image-20210806153813044"></p>
+<p>r(λE-A) 指的是线性相关特征向量的的个数</p>
+<p>i重特征值，即有几个相等的特征值</p>
+<p>等式左边 n-r(λE-A) <strong>求的是有几个线性无关的特征向量</strong></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210806154250604.png" alt="image-20210806154250604"></p>
+<p><strong>n个不同的特征值，即表示有n个线性无关的特征向量</strong></p>
+<p><font color=red>n个线性无关的特征向量即不在同一方向上的向量</font></p>
+<h4 id="对称阵"><a href="#对称阵" class="headerlink" title="对称阵"></a>对称阵</h4><p>$$A^T=A$$</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210806154645071.png" alt="image-20210806154645071"></p>
+<p>例题：</p>
+<p>判断是否可以对角化</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210806155835262.png" alt="image-20210806155835262"></p>
+<p>首先，不是对称阵</p>
+<p>特征值也没直接得</p>
+<p>那就得算</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210806162916411.png" alt="image-20210806162916411"></p>
+<hr>
+<h2 id="证矩阵不相似"><a href="#证矩阵不相似" class="headerlink" title="证矩阵不相似"></a>证矩阵不相似</h2><p><font color=green>上面的性质，只要有一个不满足，则可以说矩阵不相似</font></p>
+<h2 id="证明矩阵相似"><a href="#证明矩阵相似" class="headerlink" title="证明矩阵相似"></a>证明矩阵相似</h2><p><font color=blue>利用相似的传递性</font></p>
+<p>A~对角阵C</p>
+<p>B~对角阵C</p>
+<p>然后A~B</p>
+<p>这里可能会有一个误区</p>
+<p>A与对角阵C不相似</p>
+<p>B与对角阵C不相似</p>
+<p>但是A和B还是有可能相似的</p>
+<h1 id="找相似矩阵"><a href="#找相似矩阵" class="headerlink" title="找相似矩阵"></a>找相似矩阵</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922212012686.png" alt="image-20210922212012686"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922205204244.png" alt="image-20210922205204244"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922211619685.png" alt="image-20210922211619685"></p>
+<p><font color=red>把不满足相似矩阵性质的选项给排除</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922212025342.png" alt="image-20210922212025342"></p>
+<hr>
+<h2 id="求可逆矩阵P"><a href="#求可逆矩阵P" class="headerlink" title="求可逆矩阵P"></a>求可逆矩阵P</h2><p>有大前提</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816172028349.png" alt="image-20210816172028349"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805174922011.png" alt="image-20210805174922011"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805174745089.png" alt="image-20210805174745089"></p>
+<p>现阶段就先记吧</p>
+<p>$$P^{-1}AP$$的结果硬记吧</p>
+<p>由特征值组成的的对角矩阵</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805173951531.png" alt="image-20210805173951531"></p>
+<h2 id="可能考点"><a href="#可能考点" class="headerlink" title="可能考点"></a>可能考点</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816172354415.png" alt="image-20210816172354415"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816172344508.png" alt="image-20210816172344508"></p>
+<p>但这种题目计算量不小</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/05/%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E4%B8%8E%E6%97%A0%E5%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/05/%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E4%B8%8E%E6%97%A0%E5%85%B3/" class="post-title-link" itemprop="url">线性相关与无关</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-08-05 14:28:35" itemprop="dateCreated datePublished" datetime="2021-08-05T14:28:35+08:00">2021-08-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-16 17:25:12" itemprop="dateModified" datetime="2021-08-16T17:25:12+08:00">2021-08-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="什么是线性相关、无关"><a href="#什么是线性相关、无关" class="headerlink" title="什么是线性相关、无关"></a>什么是线性相关、无关</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805143201690.png" alt="image-20210805143201690"></p>
+<p><strong>m个n维向量</strong>说的其实就是Ax=0的矩阵A</p>
+<p>k则是向量x</p>
+<h3 id="什么是线性无关的解"><a href="#什么是线性无关的解" class="headerlink" title="什么是线性无关的解"></a>什么是线性无关的解</h3><p>意思是解之间无法通过乘k变换而来</p>
+<h3 id="换个说法"><a href="#换个说法" class="headerlink" title="换个说法"></a>换个说法</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805143152680.png" alt="image-20210805143152680"></p>
+<p><font color=red>方程组有非零解，不是零0矩阵就ok</font></p>
+<h3 id="一些性质"><a href="#一些性质" class="headerlink" title="一些性质"></a>一些性质</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805143814258.png" alt="image-20210805143814258"></p>
+<p>都根据定义去理解</p>
+<p>（1）零向量外的k配0，零向量随便配，最后和为0，则线性相关</p>
+<p>（2）成比例先初等变化出0</p>
+<p>（3）对单一向量来说，不全为0，则称无关</p>
+<p>因为只有k=0时结果才为0</p>
+<p>（4）两个向量成比例则平行—从原点出发到某点，成比例即在一条直线上</p>
+<p>（5）在同一平面是他们相关的最基本的条件，<strong>在同一平面了，再考虑比例</strong></p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805171235633.png" alt="image-20210805171235633"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805171755080.png" alt="image-20210805171755080"></p>
+<p><font color=red>任何行列式都可以化成上下三角形</font></p>
+<p><strong>变形原则</strong>：用上层的1消下面的，然后就不再看上层</p>
+<p>利用已成的0，肆意上下相消</p>
+<p><strong>向量组与方程组</strong></p>
+<hr>
+<hr>
+<h4 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805143448657.png" alt="image-20210805143448657"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</body>
+</html>

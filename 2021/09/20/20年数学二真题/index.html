@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="选择题定积分的等价无穷小代换不用两两比较 被积函数也可以使用等价无穷小代换   严格意义上来说，这都不是定积分 因为积出来的仍然是一个函数式子 间断点的个数  不是任何极限都需要洛 因为这都不是0&#x2F;0 洛出来反而有错误 定积分  以为指导方法了，反而快，粗心 高阶导数  泰勒公式不能单纯把“-x”带入到“x” 0处的n阶导，n大于等于3，已经暗示了用泰勒展开 偏导数和分段函数偏导也有定义式   导">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20年数学二真题">
+<meta property="og:url" content="http://example.com/2021/09/20/20%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="选择题定积分的等价无穷小代换不用两两比较 被积函数也可以使用等价无穷小代换   严格意义上来说，这都不是定积分 因为积出来的仍然是一个函数式子 间断点的个数  不是任何极限都需要洛 因为这都不是0&#x2F;0 洛出来反而有错误 定积分  以为指导方法了，反而快，粗心 高阶导数  泰勒公式不能单纯把“-x”带入到“x” 0处的n阶导，n大于等于3，已经暗示了用泰勒展开 偏导数和分段函数偏导也有定义式   导">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920200722792.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920201612141.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920200749952.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920203015904.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920203024284.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920200802220.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920203310407.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920200817735.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920203412558.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920200832753.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920205143868.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920200900628.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920200918962.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920205521121.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921002426183.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920200934345.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920205531286.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920233505615.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210805173951531.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920235511754.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921000801251.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122647613.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122820984.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122732348.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122827774.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122719482.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122839634.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122747606.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122847959.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122753812.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122922196.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921125750832.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921130138270.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122806078.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210921122942491.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210925155226812.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210925155248478.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210925155258569.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210925161112927.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210630102311236.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210925161644718.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926085236971.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926090859574.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926090912657.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926093246936.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926093412778.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926150524968.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926093914494.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926094050057.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926094058583.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210705162324894.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926162643659.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210706154421591.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210706155034325.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210708121701240.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210708122117803.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210926163416074.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210706163317329.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210706163630234.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210706163310523.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927104035920.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927104055027.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927104104677.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927112613306.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927112551334.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210714230508553.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210911111217783.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927115607098.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927202936962.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927203121698.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210929170431286.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210929170546526.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210929170854644.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210929170921154.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210929171300425.png">
+<meta property="article:published_time" content="2021-09-20T07:23:04.000Z">
+<meta property="article:modified_time" content="2021-09-29T13:57:16.000Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210920200722792.png">
+
+<link rel="canonical" href="http://example.com/2021/09/20/20%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>20年数学二真题 | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/20/20%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20年数学二真题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-20 15:23:04" itemprop="dateCreated datePublished" datetime="2021-09-20T15:23:04+08:00">2021-09-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-29 21:57:16" itemprop="dateModified" datetime="2021-09-29T21:57:16+08:00">2021-09-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="定积分的等价无穷小代换"><a href="#定积分的等价无穷小代换" class="headerlink" title="定积分的等价无穷小代换"></a>定积分的等价无穷小代换</h2><p><font color=red>不用两两比较</font></p>
+<p><font color=red>被积函数也可以使用等价无穷小代换</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920200722792.png" alt="image-20210920200722792"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920201612141.png" alt="image-20210920201612141"></p>
+<p>严格意义上来说，这都不是定积分</p>
+<p>因为积出来的仍然是一个函数式子</p>
+<h2 id="间断点的个数"><a href="#间断点的个数" class="headerlink" title="间断点的个数"></a>间断点的个数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920200749952.png" alt="image-20210920200749952"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920203015904.png" alt="image-20210920203015904"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920203024284.png" alt="image-20210920203024284"></p>
+<p><font color=red>不是任何极限都需要洛</font></p>
+<p>因为这都不是0/0</p>
+<p>洛出来反而有错误</p>
+<h2 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920200802220.png" alt="image-20210920200802220"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920203310407.png" alt="image-20210920203310407"></p>
+<p><font color=red>以为指导方法了，反而快，粗心</font></p>
+<h2 id="高阶导数"><a href="#高阶导数" class="headerlink" title="高阶导数"></a>高阶导数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920200817735.png" alt="image-20210920200817735"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920203412558.png" alt="image-20210920203412558"></p>
+<p><font color=red>泰勒公式不能单纯把“-x”带入到“x”</font></p>
+<p>0处的n阶导，n大于等于3，已经暗示了用泰勒展开</p>
+<h2 id="偏导数和分段函数"><a href="#偏导数和分段函数" class="headerlink" title="偏导数和分段函数"></a>偏导数和分段函数</h2><p><font color=red>偏导也有定义式</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920200832753.png" alt="image-20210920200832753"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920205143868.png" alt="image-20210920205143868"></p>
+<h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920200900628.png" alt="image-20210920200900628"></p>
+<p>答案:B</p>
+<p>暴力</p>
+<p>$$f(x)=e^{2x}$$</p>
+<h2 id="A-X-0的通解【-】"><a href="#A-X-0的通解【-】" class="headerlink" title="A*X=0的通解【+++++】"></a>A*X=0的通解【+++++】</h2><p><font color=red>线性无关的理解</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920200918962.png" alt="image-20210920200918962"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920205521121.png" alt="image-20210920205521121"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921002426183.png" alt="image-20210921002426183"></p>
+<p>|A|=0故$$A^*A=0$$</p>
+<p>又$$A^*X=0$$</p>
+<p>则A的列向量为$$A^*$$的解</p>
+<p>也说A的3个线性无关的列向量为$$A^*$$的解</p>
+<h2 id="相似矩阵【-】"><a href="#相似矩阵【-】" class="headerlink" title="相似矩阵【+++++】"></a>相似矩阵【+++++】</h2><p><font color=red>特征值和特征向量的定义</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920200934345.png" alt="image-20210920200934345"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920205531286.png" alt="image-20210920205531286"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920233505615.png" alt="image-20210920233505615"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805173951531.png" alt="image-20210805173951531"></p>
+<p>$$A(α_1,α_2,α_3)$$ 是矩阵乘法运算，α都是列向量</p>
+<p>看$$α_1$$那一列</p>
+<p>A的每一行都会乘$$α_1$$</p>
+<p>n行组成了$$λ_1α_1$$列向量</p>
+<p>同理就得到了</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920235511754.png" alt="image-20210920235511754"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921000801251.png" alt="image-20210921000801251"></p>
+<h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1><h2 id="已知参数方程求dy-dx"><a href="#已知参数方程求dy-dx" class="headerlink" title="已知参数方程求dy/dx"></a>已知参数方程求dy/dx</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122647613.png" alt="image-20210921122647613"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122820984.png" alt="image-20210921122820984"></p>
+<h2 id="二重积分"><a href="#二重积分" class="headerlink" title="二重积分"></a>二重积分</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122732348.png" alt="image-20210921122732348"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122827774.png" alt="image-20210921122827774"></p>
+<h2 id="全微分"><a href="#全微分" class="headerlink" title="全微分"></a>全微分</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122719482.png" alt="image-20210921122719482"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122839634.png" alt="image-20210921122839634"></p>
+<h2 id="二重积分的应用"><a href="#二重积分的应用" class="headerlink" title="二重积分的应用"></a>二重积分的应用</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122747606.png" alt="image-20210921122747606"></p>
+<p> <img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122847959.png" alt="image-20210921122847959"></p>
+<p>“一侧 ” 为一半</p>
+<h2 id="导数方程与特征方程"><a href="#导数方程与特征方程" class="headerlink" title="导数方程与特征方程"></a>导数方程与特征方程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122753812.png" alt="image-20210921122753812"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122922196.png" alt="image-20210921122922196"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921125750832.png" alt="image-20210921125750832"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921130138270.png" alt="image-20210921130138270"></p>
+<h2 id="计算行列式"><a href="#计算行列式" class="headerlink" title="计算行列式"></a>计算行列式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122806078.png" alt="image-20210921122806078"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921122942491.png" alt="image-20210921122942491"></p>
+<p>（我自己做的话应该是无脑余子式展开）</p>
+<h1 id="解答题"><a href="#解答题" class="headerlink" title="解答题"></a>解答题</h1><h2 id="渐近线方程"><a href="#渐近线方程" class="headerlink" title="渐近线方程"></a>渐近线方程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925155226812.png" alt="image-20210925155226812"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925155248478.png" alt="image-20210925155248478"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925155258569.png" alt="image-20210925155258569"></p>
+<p>错误示范（<font color=blue>不能书写局部洛必达</font>，<font color=red>不能局部代换之后进行加减法</font>）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925161112927.png" alt="image-20210925161112927"></p>
+<p>来看看正常的不涉及加减的局部代换</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630102311236.png" alt="image-20210630102311236"></p>
+<p>关于该题答案中没有解析的步骤</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925161644718.png" alt="image-20210925161644718"></p>
+<hr>
+<h2 id="定积分xt"><a href="#定积分xt" class="headerlink" title="定积分xt"></a>定积分xt</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926085236971.png" alt="image-20210926085236971"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926090859574.png" alt="image-20210926090859574"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926090912657.png" alt="image-20210926090912657"></p>
+<p>xt式解法：直接挪出，换元挪出</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926093246936.png" alt="image-20210926093246936"></p>
+<p>我当时自己做的（做错了）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926093412778.png" alt="image-20210926093412778"></p>
+<p><font color=blue>定义式都没用，你就想拿这10分？</font></p>
+<p>我自己重新整理的题解：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926150524968.png" alt="image-20210926150524968"></p>
+<hr>
+<h2 id="隐函数的极值"><a href="#隐函数的极值" class="headerlink" title="隐函数的极值"></a>隐函数的极值</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926093914494.png" alt="image-20210926093914494"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926094050057.png" alt="image-20210926094050057"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926094058583.png" alt="image-20210926094058583"></p>
+<p> <img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705162324894.png" alt="image-20210705162324894"></p>
+<h2 id="旋转体的体积"><a href="#旋转体的体积" class="headerlink" title="旋转体的体积"></a>旋转体的体积</h2><p><font color=red>求函数式也是这题的重点</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926162643659.png" alt="image-20210926162643659"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706154421591.png" alt="image-20210706154421591"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706155034325.png" alt="image-20210706155034325"></p>
+<p>这里我自己的解法更容易理解，把旋转体分成两部分</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210708121701240.png" alt="image-20210708121701240"></p>
+<p>然后利用底d高积分</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210708122117803.png" alt="image-20210708122117803"></p>
+<p>Ps：</p>
+<p>arctan根号3=60°</p>
+<p>三角函数更多可参考</p>
+<p>画出区域后乱积都</p>
+<p>这里我其实更想提f(x)的求法</p>
+<p>由于被式子右边的复杂给迷惑了</p>
+<p>做的时候迷失了方向，总以为要做什么因式分解之类的</p>
+<p>但实际上，其本质就是<font color=red>两个式子，两个未知数的方程组</font></p>
+<p>消去一个未知数即可</p>
+<p>有时候找解题思路的时候甚至可以这样</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926163416074.png" alt="image-20210926163416074"></p>
+<hr>
+<h2 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h2><p><font color=red>“原式解定积分”</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706163317329.png" alt="image-20210706163317329"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706163630234.png" alt="image-20210706163630234"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706163310523.png" alt="image-20210706163310523"></p>
+<p>Ps：</p>
+<p>换元后，这里不需要对dx和dy做下放处理</p>
+<p>需要做的是把dx和dy换成dθ和dr并重新确定积分限</p>
+<p>一般是后积θ，因为积分限角度是常数</p>
+<p>积分限参考上面画的函数图像的范围</p>
+<p>积dr时，θ相当于常数可以先移到外面</p>
+<h2 id="中值定理证明题"><a href="#中值定理证明题" class="headerlink" title="中值定理证明题"></a>中值定理证明题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927104035920.png" alt="image-20210927104035920"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927104055027.png" alt="image-20210927104055027"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927104104677.png" alt="image-20210927104104677"></p>
+<p>就没见过积$$e^{t^2}$$的</p>
+<p>说明题目有别的路走</p>
+<p>换元、构造</p>
+<p>（2）与（1）不一定有联系</p>
+<p>也就是说，（1）不会做，（2）也可能能拿分</p>
+<p>眼看没什么思路，就硬试</p>
+<p>罗尔、拉格朗日、柯西</p>
+<p>根据多出来的ln2，构造g(x)=lnx</p>
+<p>就试出来了</p>
+<p>并不可怕！</p>
+<hr>
+<h2 id="导数大题"><a href="#导数大题" class="headerlink" title="导数大题"></a>导数大题</h2><p><font color=red>二阶线性微分方程通解</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927112613306.png" alt="image-20210927112613306"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927112551334.png" alt="image-20210927112551334"></p>
+<p>①涉及到二阶导的题目一般都会考到</p>
+<p><font color=red>设p=y’</font></p>
+<p>②答案解析中的那种切线方程的形式很便利</p>
+<p>答案解释：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210714230508553.png" alt="image-20210714230508553"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911111217783.png" alt="image-20210911111217783"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927115607098.png" alt="image-20210927115607098"></p>
+<h2 id="二次型合同"><a href="#二次型合同" class="headerlink" title="二次型合同"></a>二次型合同</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927202936962.png" alt="image-20210927202936962"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927203121698.png" alt="image-20210927203121698"></p>
+<p>行列式为0，仅表示秩不满</p>
+<p>并不能说其秩是2</p>
+<p>故还需要验算</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210929170431286.png" alt="image-20210929170431286"></p>
+<p>第二题难度较大，之后再研究</p>
+<h2 id="证明可逆矩阵及相似矩阵"><a href="#证明可逆矩阵及相似矩阵" class="headerlink" title="证明可逆矩阵及相似矩阵"></a>证明可逆矩阵及相似矩阵</h2><p> <img src="https://gitee.com/simple_one1/pic/raw/master/image-20210929170546526.png" alt="image-20210929170546526"></p>
+<p><font color=red>反证法</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210929170854644.png" alt="image-20210929170854644"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210929170921154.png" alt="image-20210929170921154"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210929171300425.png" alt="image-20210929171300425"></p>
+<p><font color=red>相似矩阵，配凑是核心</font></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/19/19%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/" rel="prev" title="19年数学二真题">
+      <i class="fa fa-chevron-left"></i> 19年数学二真题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/21/18%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/" rel="next" title="18年数学二真题">
+      18年数学二真题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">选择题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E7%AD%89%E4%BB%B7%E6%97%A0%E7%A9%B7%E5%B0%8F%E4%BB%A3%E6%8D%A2"><span class="nav-number">1.1.</span> <span class="nav-text">定积分的等价无穷小代换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B4%E6%96%AD%E7%82%B9%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">间断点的个数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="nav-number">1.3.</span> <span class="nav-text">定积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%AF%BC%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">高阶导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%8F%E5%AF%BC%E6%95%B0%E5%92%8C%E5%88%86%E6%AE%B5%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.</span> <span class="nav-text">偏导数和分段函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0"><span class="nav-number">1.6.</span> <span class="nav-text">导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-X-0%E7%9A%84%E9%80%9A%E8%A7%A3%E3%80%90-%E3%80%91"><span class="nav-number">1.7.</span> <span class="nav-text">A*X&#x3D;0的通解【+++++】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%E3%80%90-%E3%80%91"><span class="nav-number">1.8.</span> <span class="nav-text">相似矩阵【+++++】</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">填空题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B%E6%B1%82dy-dx"><span class="nav-number">2.1.</span> <span class="nav-text">已知参数方程求dy&#x2F;dx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86"><span class="nav-number">2.2.</span> <span class="nav-text">二重积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%BE%AE%E5%88%86"><span class="nav-number">2.3.</span> <span class="nav-text">全微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">2.4.</span> <span class="nav-text">二重积分的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0%E6%96%B9%E7%A8%8B%E4%B8%8E%E7%89%B9%E5%BE%81%E6%96%B9%E7%A8%8B"><span class="nav-number">2.5.</span> <span class="nav-text">导数方程与特征方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">2.6.</span> <span class="nav-text">计算行列式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">解答题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%90%E8%BF%91%E7%BA%BF%E6%96%B9%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">渐近线方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86xt"><span class="nav-number">3.2.</span> <span class="nav-text">定积分xt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%90%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E5%80%BC"><span class="nav-number">3.3.</span> <span class="nav-text">隐函数的极值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E4%BD%93%E7%9A%84%E4%BD%93%E7%A7%AF"><span class="nav-number">3.4.</span> <span class="nav-text">旋转体的体积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E8%BD%AC%E6%9E%81%E5%9D%90%E6%A0%87"><span class="nav-number">3.5.</span> <span class="nav-text">复杂二重积分转极坐标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E%E9%A2%98"><span class="nav-number">3.6.</span> <span class="nav-text">中值定理证明题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0%E5%A4%A7%E9%A2%98"><span class="nav-number">3.7.</span> <span class="nav-text">导数大题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E5%90%88%E5%90%8C"><span class="nav-number">3.8.</span> <span class="nav-text">二次型合同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5%E5%8F%8A%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5"><span class="nav-number">3.9.</span> <span class="nav-text">证明可逆矩阵及相似矩阵</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Dynamic scale up and downFeign for rest client Fault tolerancehystrixservice shut down, then give some default response GatewayNetflix API gatewayrating limiting  tracingZipkin Distributed Tracing (wh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud-Tutorial">
+<meta property="og:url" content="http://example.com/2021/12/29/SpringCloud-Tutorial/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="Dynamic scale up and downFeign for rest client Fault tolerancehystrixservice shut down, then give some default response GatewayNetflix API gatewayrating limiting  tracingZipkin Distributed Tracing (wh">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211229135259084.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211229135928243.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211229145753209.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211229140541204.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211229150941801.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211229233854233.png">
+<meta property="article:published_time" content="2021-12-29T05:40:11.000Z">
+<meta property="article:modified_time" content="2021-12-30T00:50:16.000Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211229135259084.png">
+
+<link rel="canonical" href="http://example.com/2021/12/29/SpringCloud-Tutorial/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>SpringCloud-Tutorial | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/SpringCloud-Tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpringCloud-Tutorial
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-29 13:40:11" itemprop="dateCreated datePublished" datetime="2021-12-29T13:40:11+08:00">2021-12-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-30 08:50:16" itemprop="dateModified" datetime="2021-12-30T08:50:16+08:00">2021-12-30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Dynamic-scale-up-and-down"><a href="#Dynamic-scale-up-and-down" class="headerlink" title="Dynamic scale up and down"></a>Dynamic scale up and down</h1><p>Feign for rest client</p>
+<h1 id="Fault-tolerance"><a href="#Fault-tolerance" class="headerlink" title="Fault tolerance"></a>Fault tolerance</h1><h2 id="hystrix"><a href="#hystrix" class="headerlink" title="hystrix"></a>hystrix</h2><p>service shut down, then give some default response</p>
+<h1 id="Gateway"><a href="#Gateway" class="headerlink" title="Gateway"></a>Gateway</h1><h2 id="Netflix-API-gateway"><a href="#Netflix-API-gateway" class="headerlink" title="Netflix API gateway"></a>Netflix API gateway</h2><p>rating limiting </p>
+<h2 id="tracing"><a href="#tracing" class="headerlink" title="tracing"></a>tracing</h2><p>Zipkin Distributed Tracing</p>
+<p>(when the request go)</p>
+<h1 id="Scalable"><a href="#Scalable" class="headerlink" title="Scalable"></a>Scalable</h1><p>可升级的</p>
+<h1 id="Cloud-native-application"><a href="#Cloud-native-application" class="headerlink" title="Cloud native application"></a>Cloud native application</h1><p>Spring Cloud build default cloud native app</p>
+<h1 id="Spring-Cloud-and-Spring-Boot"><a href="#Spring-Cloud-and-Spring-Boot" class="headerlink" title="Spring Cloud and Spring Boot"></a>Spring Cloud and Spring Boot</h1><p>where you can run jar</p>
+<p>and you can run spring cloud app</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229135259084.png" alt="image-20211229135259084"></p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Config-Server"><a href="#Config-Server" class="headerlink" title="Config Server"></a>Config Server</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229135928243.png" alt="image-20211229135928243"></p>
+<p>Config server can store the config</p>
+<p>refresh the config as the schedule </p>
+<p>you don’t need to shut down the service and redeploy</p>
+<p>or the config notify the micro to refresh</p>
+<h2 id="Service-Discovery"><a href="#Service-Discovery" class="headerlink" title="Service Discovery"></a>Service Discovery</h2><p>micro service know where they live</p>
+<p>know the current URL, status</p>
+<p>Netflix Eureka</p>
+<p>zookeeper</p>
+<p>consul</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229145753209.png" alt="image-20211229145753209"></p>
+<h2 id="Circuit-Breakers"><a href="#Circuit-Breakers" class="headerlink" title="Circuit Breakers"></a>Circuit Breakers</h2><p>fault tolorance</p>
+<h2 id="Routing-and-Message"><a href="#Routing-and-Message" class="headerlink" title="Routing and Message"></a>Routing and Message</h2><p>request between micro service</p>
+<h2 id="API-Gateway"><a href="#API-Gateway" class="headerlink" title="API Gateway"></a>API Gateway</h2><p>client to the micro service</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229140541204.png" alt="image-20211229140541204"></p>
+<p>确实，不仅仅是微服务之间需要discovery</p>
+<p>client和server之间则是API Gateway 在帮忙</p>
+<h2 id="Tracing"><a href="#Tracing" class="headerlink" title="Tracing"></a>Tracing</h2><p>debugging</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229150941801.png" alt="image-20211229150941801"></p>
+<h2 id="CI-pipelines-and-testing"><a href="#CI-pipelines-and-testing" class="headerlink" title="CI pipelines and testing"></a>CI pipelines and testing</h2><p>??</p>
+<p>test between the micro services</p>
+<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><h2 id="Spring-cloud-CLI"><a href="#Spring-cloud-CLI" class="headerlink" title="Spring cloud CLI"></a>Spring cloud CLI</h2><h1 id="Spring-boot-CLI"><a href="#Spring-boot-CLI" class="headerlink" title="Spring boot CLI"></a>Spring boot CLI</h1><p><a target="_blank" rel="noopener" href="https://repo.spring.io/ui/native/release/org/springframework/boot/spring-boot-cli">仓库</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring install org.springframework.cloud:spring-cloud-cli:1.4.0.RELEASE</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229233854233.png" alt="image-20211229233854233"></p>
+<p>spring-boot-starter-parent的父依赖是spring-boot-dependences，里面管理了所有需要的默认的依赖版本。</p>
+<p>Spring Cloud CLI 2.1.x will work with Spring Boot CLI 2.1.x<br>Spring Cloud CLI 2.0.x will work with Spring Boot CLI 2.0.x<br>Spring Cloud CLI 1.4.x will work with Spring Boot CLI 1.5.x</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/29/Springboot-Helloworld/" rel="prev" title="SpringBoot Helloworld">
+      <i class="fa fa-chevron-left"></i> SpringBoot Helloworld
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/29/SpringCloud-HelloWorld/" rel="next" title="SpringCloud-HelloWorld">
+      SpringCloud-HelloWorld <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dynamic-scale-up-and-down"><span class="nav-number">1.</span> <span class="nav-text">Dynamic scale up and down</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fault-tolerance"><span class="nav-number">2.</span> <span class="nav-text">Fault tolerance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hystrix"><span class="nav-number">2.1.</span> <span class="nav-text">hystrix</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gateway"><span class="nav-number">3.</span> <span class="nav-text">Gateway</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Netflix-API-gateway"><span class="nav-number">3.1.</span> <span class="nav-text">Netflix API gateway</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tracing"><span class="nav-number">3.2.</span> <span class="nav-text">tracing</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scalable"><span class="nav-number">4.</span> <span class="nav-text">Scalable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-native-application"><span class="nav-number">5.</span> <span class="nav-text">Cloud native application</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Cloud-and-Spring-Boot"><span class="nav-number">6.</span> <span class="nav-text">Spring Cloud and Spring Boot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuration"><span class="nav-number">6.1.</span> <span class="nav-text">Configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Config-Server"><span class="nav-number">6.1.1.</span> <span class="nav-text">Config Server</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-Discovery"><span class="nav-number">6.2.</span> <span class="nav-text">Service Discovery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-Breakers"><span class="nav-number">6.3.</span> <span class="nav-text">Circuit Breakers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Routing-and-Message"><span class="nav-number">6.4.</span> <span class="nav-text">Routing and Message</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API-Gateway"><span class="nav-number">6.5.</span> <span class="nav-text">API Gateway</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tracing"><span class="nav-number">6.6.</span> <span class="nav-text">Tracing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CI-pipelines-and-testing"><span class="nav-number">6.7.</span> <span class="nav-text">CI pipelines and testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins"><span class="nav-number">6.8.</span> <span class="nav-text">Jenkins</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-cloud-CLI"><span class="nav-number">6.9.</span> <span class="nav-text">Spring cloud CLI</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-boot-CLI"><span class="nav-number">7.</span> <span class="nav-text">Spring boot CLI</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</body>
+</html>

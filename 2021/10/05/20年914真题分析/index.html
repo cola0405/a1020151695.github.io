@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="选择题时间复杂度 答案：D C 就挖坑等人跳的 n&#x2F;2,(n&#x2F;2)&#x2F;2…这样的才是logn 该题是n^2,(n+1)^2… 应该选D “平均” 概念的理解  答案：B （0+127）&#x2F;2&#x3D;63.5 考点在于“最少移动次数为1” 进栈操作 答案：C 具体情况具体分析 1…n说明下标n是有的 且初始以n处为起始进栈 又top为n+1，故变换到合理的n后再赋值 三维数组 答案：B 5*3*3&#x3D;45 【无">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20年914真题分析">
+<meta property="og:url" content="http://example.com/2021/10/05/20%E5%B9%B4914%E7%9C%9F%E9%A2%98%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="选择题时间复杂度 答案：D C 就挖坑等人跳的 n&#x2F;2,(n&#x2F;2)&#x2F;2…这样的才是logn 该题是n^2,(n+1)^2… 应该选D “平均” 概念的理解  答案：B （0+127）&#x2F;2&#x3D;63.5 考点在于“最少移动次数为1” 进栈操作 答案：C 具体情况具体分析 1…n说明下标n是有的 且初始以n处为起始进栈 又top为n+1，故变换到合理的n后再赋值 三维数组 答案：B 5*3*3&#x3D;45 【无">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005221635224.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005222157184.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005222317233.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005222638871.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005222913531.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005223707886.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005223945654.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005224006955.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005225034016.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005225023434.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005224029221.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005224050237.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006001049415.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006152453441.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006152503114.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006152728330.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210714181322866.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006153406733.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006153818532.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006160157328.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006160413864.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006161737065.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006162758651.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006162843694.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006163527858.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006163621105.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006163836790.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211008201850415.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211006163845932.png">
+<meta property="article:published_time" content="2021-10-05T14:15:59.000Z">
+<meta property="article:modified_time" content="2021-10-08T12:47:48.000Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005221635224.png">
+
+<link rel="canonical" href="http://example.com/2021/10/05/20%E5%B9%B4914%E7%9C%9F%E9%A2%98%E5%88%86%E6%9E%90/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>20年914真题分析 | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/05/20%E5%B9%B4914%E7%9C%9F%E9%A2%98%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20年914真题分析
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-10-05 22:15:59" itemprop="dateCreated datePublished" datetime="2021-10-05T22:15:59+08:00">2021-10-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-08 20:47:48" itemprop="dateModified" datetime="2021-10-08T20:47:48+08:00">2021-10-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005221635224.png" alt="image-20211005221635224"></p>
+<p>答案：D</p>
+<p>C 就挖坑等人跳的</p>
+<p>n/2,(n/2)/2…这样的才是logn</p>
+<p>该题是n^2,(n+1)^2…</p>
+<p>应该选D</p>
+<h2 id="“平均”-概念的理解"><a href="#“平均”-概念的理解" class="headerlink" title="“平均” 概念的理解"></a>“平均” 概念的理解</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005222157184.png" alt="image-20211005222157184"></p>
+<p> 答案：B</p>
+<p>（0+127）/2=63.5</p>
+<p>考点在于“最少移动次数为1”</p>
+<h2 id="进栈操作"><a href="#进栈操作" class="headerlink" title="进栈操作"></a>进栈操作</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005222317233.png" alt="image-20211005222317233"></p>
+<p>答案：C</p>
+<p>具体情况具体分析</p>
+<p>1…n说明下标n是有的</p>
+<p>且初始以n处为起始进栈</p>
+<p>又top为n+1，故变换到合理的n后再赋值</p>
+<h2 id="三维数组"><a href="#三维数组" class="headerlink" title="三维数组"></a>三维数组</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005222638871.png" alt="image-20211005222638871"></p>
+<p>答案：B</p>
+<p>5*3*3=45</p>
+<h2 id="【无向图】边与顶点的数量关系"><a href="#【无向图】边与顶点的数量关系" class="headerlink" title="【无向图】边与顶点的数量关系"></a>【无向图】边与顶点的数量关系</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005222913531.png" alt="image-20211005222913531"></p>
+<p>答案：C</p>
+<p>非连通，则空闲一个点</p>
+<p>其余点进行全连接</p>
+<p>发现8个点全连接的边数（7+6+5+4+3+2+1=28）</p>
+<p>则有9各点即可做到有28条边但非连通</p>
+<h2 id="【有向图】边与顶点的数量关系"><a href="#【有向图】边与顶点的数量关系" class="headerlink" title="【有向图】边与顶点的数量关系"></a>【有向图】边与顶点的数量关系</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005223707886.png" alt="image-20211005223707886"></p>
+<p>答案：B</p>
+<p>考了无向图之后来一个有向图挖坑，真贱</p>
+<p>暴力法得到B</p>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005223945654.png" alt="image-20211005223945654"></p>
+<p>答案：B</p>
+<h2 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005224006955.png" alt="image-20211005224006955"></p>
+<p>答案：D</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005225034016.png" alt="image-20211005225034016"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005225023434.png" alt="image-20211005225023434"></p>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005224029221.png" alt="image-20211005224029221"></p>
+<p>答案：B</p>
+<p>首末对调，重新调整未确定的堆（未确定的整个数列）</p>
+<h2 id="堆排序-1"><a href="#堆排序-1" class="headerlink" title="堆排序"></a>堆排序</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005224050237.png" alt="image-20211005224050237"></p>
+<p>答案：B</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006001049415.png" alt="image-20211006001049415"></p>
+<h1 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h1><h2 id="图的邻接表"><a href="#图的邻接表" class="headerlink" title="图的邻接表"></a>图的邻接表</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006152453441.png" alt="image-20211006152453441"></p>
+<p>答：邻接表表示法是一种链式储存结构，由一个顺序存储的顶点表和n个链表存储的边表组成。</p>
+<p>顶点的表目有两个域：顶点数据、指向此顶点边表的指针。</p>
+<p>边表的表目有两个域：与顶点相连的点的序号、指向下一个表目的指针。</p>
+<h2 id="循环队列的理解"><a href="#循环队列的理解" class="headerlink" title="循环队列的理解"></a>循环队列的理解</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006152503114.png" alt="image-20211006152503114"></p>
+<p>答：循环队列是为了解决顺序队列的 “假溢出” 问题提出的</p>
+<p>而顺序栈只在一端进行插入和删除操作，引进循环顺序栈并无实际意义</p>
+<h3 id="假溢出"><a href="#假溢出" class="headerlink" title="假溢出"></a>假溢出</h3><p>上图c明明还有空闲空间，但是队列无法新增元素</p>
+<p>（rear指不过去）</p>
+<p>故称“假溢出”</p>
+<h1 id="数据结构理解"><a href="#数据结构理解" class="headerlink" title="数据结构理解"></a>数据结构理解</h1><h2 id="画出最小生成树"><a href="#画出最小生成树" class="headerlink" title="画出最小生成树"></a>画出最小生成树</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006152728330.png" alt="image-20211006152728330"></p>
+<p><strong>有起点a，暗示使用Prim算法</strong></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210714181322866.png" alt="image-20210714181322866"></p>
+<h2 id="根据序列画出二叉树"><a href="#根据序列画出二叉树" class="headerlink" title="根据序列画出二叉树"></a>根据序列画出二叉树</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006153406733.png" alt="image-20211006153406733"></p>
+<p>答案：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006153818532.png" alt="image-20211006153818532"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006160157328.png" alt="image-20211006160157328"></p>
+<h2 id="二叉排序树的删除操作"><a href="#二叉排序树的删除操作" class="headerlink" title="二叉排序树的删除操作"></a>二叉排序树的删除操作</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006160413864.png" alt="image-20211006160413864"></p>
+<p>答案：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006161737065.png" alt="image-20211006161737065"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006162758651.png" alt="image-20211006162758651"></p>
+<h2 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006162843694.png" alt="image-20211006162843694"></p>
+<p>答：时间复杂度为$$O(log_2n)$$</p>
+<p>要计算k=k+1的执行次数</p>
+<p>对于for循环：因为$$n=2^t$$故有$$T_0(n)=O(log_2n)$$</p>
+<p>对于while循环：仅有n&gt;=1的判断故有$$T_1(n)=O(1)$$</p>
+<p>综上：$$T(n) = T_0(n)*T_1(n) = O(log_2n)*O(1) = O(log_2n)$$</p>
+<h1 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h1><h2 id="按时间复杂度设计算法"><a href="#按时间复杂度设计算法" class="headerlink" title="按时间复杂度设计算法"></a>按时间复杂度设计算法</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006163527858.png" alt="image-20211006163527858"></p>
+<h2 id="链表逆序"><a href="#链表逆序" class="headerlink" title="链表逆序"></a>链表逆序</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006163621105.png" alt="image-20211006163621105"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span>  <span class="comment">// 结点类型描述</span></span><br><span class="line">    ElemType data;  <span class="comment">// 数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> *<span class="title">next</span>;</span>  <span class="comment">// 指针域</span></span><br><span class="line">&#125;LNode;</span><br><span class="line"><span class="function">LNode <span class="title">Reverse</span><span class="params">(LNode *L)</span></span>&#123;</span><br><span class="line">    LNode *p,*q;  <span class="comment">// mid为工作指针，right为后继指针，防止断链</span></span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    L-&gt;next=null;  <span class="comment">// 先将头结点指向空</span></span><br><span class="line">    <span class="keyword">while</span>(p!=null)&#123;</span><br><span class="line">        q=p-&gt;next;  <span class="comment">// 保存后继节点</span></span><br><span class="line">        p-&gt;next=L;</span><br><span class="line">        L=p;  <span class="comment">// 逐步调整头结点，直到原链表最后一个元素</span></span><br><span class="line">        p=q;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="单链表的创建和反向输出"><a href="#单链表的创建和反向输出" class="headerlink" title="单链表的创建和反向输出"></a>单链表的创建和反向输出</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006163836790.png" alt="image-20211006163836790"></p>
+<p>品</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008201850415.png" alt="image-20211008201850415"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">	ElemType data;</span><br><span class="line">	Struct Lnode *next;</span><br><span class="line">&#125; LNode, *LinkList;  <span class="comment">// ！！！！！ 类似于 node *p,说是p为node的指针，则有LinkList是LNode的指针</span></span><br><span class="line"></span><br><span class="line"><span class="function">LinkList <span class="title">createList</span><span class="params">(LinkList &amp;L)</span></span>&#123;</span><br><span class="line">	LNode *head;</span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	L=(LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">	L-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">	<span class="keyword">while</span>(x!=<span class="number">9999</span>)&#123;  <span class="comment">// 设置终止条件</span></span><br><span class="line">		head=(LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">		head-&gt;data=x;</span><br><span class="line">		head-&gt;next=L-&gt;next;</span><br><span class="line">		L-&gt;next=head;  <span class="comment">// 品</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> L;  <span class="comment">// L为该单链表的头结点</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LNode <span class="title">Reverse</span><span class="params">(LNode *head)</span></span>&#123;</span><br><span class="line">    LNode *p,*q;  </span><br><span class="line">    p=head-&gt;next;</span><br><span class="line">    head-&gt;next=null;  </span><br><span class="line">    <span class="keyword">while</span>(p!=null)&#123;</span><br><span class="line">        q=p-&gt;next;  <span class="comment">// 先用q记录p的next结点</span></span><br><span class="line">        p-&gt;next=head;  <span class="comment">// 进行逆序操作</span></span><br><span class="line">        head=p;   <span class="comment">// 更新头结点</span></span><br><span class="line">        p=q;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverserPrint</span><span class="params">(LNode *head)</span></span>&#123;</span><br><span class="line">	LNode *p=head;  <span class="comment">// 不能拿元指针操作</span></span><br><span class="line">	<span class="keyword">while</span>(p!=null)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,p-&gt;data);</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006163845932.png" alt="image-20211006163845932"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> len,<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> low,mid,high;</span><br><span class="line">	low=<span class="number">0</span>;</span><br><span class="line">	high=len<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span>(low&lt;=high)&#123;</span><br><span class="line">		mid=(low+high)/<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span>(a[mid]==x) <span class="keyword">return</span> mid;</span><br><span class="line">		<span class="keyword">if</span>(a[mid]&lt;x)&#123;</span><br><span class="line">			low=mid+<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			high=mid<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/03/914%E9%A2%98%E5%BA%93/" rel="prev" title="914题库">
+      <i class="fa fa-chevron-left"></i> 914题库
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/06/%E7%9F%A9%E9%98%B5%E4%B8%8E%E6%95%B0%E7%BB%84/" rel="next" title="矩阵与数组">
+      矩阵与数组 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">选择题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">1.1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%9C%E5%B9%B3%E5%9D%87%E2%80%9D-%E6%A6%82%E5%BF%B5%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">1.2.</span> <span class="nav-text">“平均” 概念的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E6%A0%88%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.</span> <span class="nav-text">进栈操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.4.</span> <span class="nav-text">三维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E6%97%A0%E5%90%91%E5%9B%BE%E3%80%91%E8%BE%B9%E4%B8%8E%E9%A1%B6%E7%82%B9%E7%9A%84%E6%95%B0%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="nav-number">1.5.</span> <span class="nav-text">【无向图】边与顶点的数量关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E6%9C%89%E5%90%91%E5%9B%BE%E3%80%91%E8%BE%B9%E4%B8%8E%E9%A1%B6%E7%82%B9%E7%9A%84%E6%95%B0%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="nav-number">1.6.</span> <span class="nav-text">【有向图】边与顶点的数量关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS"><span class="nav-number">1.7.</span> <span class="nav-text">BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E8%A1%A8"><span class="nav-number">1.8.</span> <span class="nav-text">散列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F"><span class="nav-number">1.9.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F-1"><span class="nav-number">1.10.</span> <span class="nav-text">堆排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">简答题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8"><span class="nav-number">2.1.</span> <span class="nav-text">图的邻接表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">2.2.</span> <span class="nav-text">循环队列的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%87%E6%BA%A2%E5%87%BA"><span class="nav-number">2.2.1.</span> <span class="nav-text">假溢出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%90%86%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">数据结构理解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%BB%E5%87%BA%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-number">3.1.</span> <span class="nav-text">画出最小生成树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E5%BA%8F%E5%88%97%E7%94%BB%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.2.</span> <span class="nav-text">根据序列画出二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E7%9A%84%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="nav-number">3.3.</span> <span class="nav-text">二叉排序树的删除操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">3.4.</span> <span class="nav-text">时间复杂度分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">算法设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%AE%BE%E8%AE%A1%E7%AE%97%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">按时间复杂度设计算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E9%80%86%E5%BA%8F"><span class="nav-number">4.2.</span> <span class="nav-text">链表逆序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E5%8F%8D%E5%90%91%E8%BE%93%E5%87%BA"><span class="nav-number">4.3.</span> <span class="nav-text">单链表的创建和反向输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-number">4.4.</span> <span class="nav-text">二分查找</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</body>
+</html>

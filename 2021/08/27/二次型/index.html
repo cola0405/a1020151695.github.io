@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="二次型的理解  标准型 正负惯性系数 由方程得到二次型的矩阵  易错题 不能直接把123456填上去 因为二次型的矩阵应该是对称的 正确的做法应该是把二次型的矩阵形式先化成方程 然后再由此得到二次型的矩阵 大致解析：  合同合同变换的意义把一个复杂的二次型转变为一个简单的二次型 合同相关定理  他们的不同之处在于定理2正交变换的系数λ是特征值 定理1中的系数d则不一定  配方变换【小题】正交变换【">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二次型">
+<meta property="og:url" content="http://example.com/2021/08/27/%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="二次型的理解  标准型 正负惯性系数 由方程得到二次型的矩阵  易错题 不能直接把123456填上去 因为二次型的矩阵应该是对称的 正确的做法应该是把二次型的矩阵形式先化成方程 然后再由此得到二次型的矩阵 大致解析：  合同合同变换的意义把一个复杂的二次型转变为一个简单的二次型 合同相关定理  他们的不同之处在于定理2正交变换的系数λ是特征值 定理1中的系数d则不一定  配方变换【小题】正交变换【">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210924083406791.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210924083434396.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210924083209812.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210924083233963.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210924083246627.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927202858519.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927202751872.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210827111219465.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210827111505230.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210827114401963.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210827114525102.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210827114726745.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210827115223513.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210827115239829.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210827115250664.png">
+<meta property="article:published_time" content="2021-08-27T03:03:40.000Z">
+<meta property="article:modified_time" content="2021-11-29T03:59:06.000Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210924083406791.png">
+
+<link rel="canonical" href="http://example.com/2021/08/27/%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>二次型 | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/27/%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          二次型
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-08-27 11:03:40" itemprop="dateCreated datePublished" datetime="2021-08-27T11:03:40+08:00">2021-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-29 11:59:06" itemprop="dateModified" datetime="2021-11-29T11:59:06+08:00">2021-11-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="二次型的理解"><a href="#二次型的理解" class="headerlink" title="二次型的理解"></a>二次型的理解</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083406791.png" alt="image-20210924083406791"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083434396.png" alt="image-20210924083434396"></p>
+<h1 id="标准型"><a href="#标准型" class="headerlink" title="标准型"></a>标准型</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083209812.png" alt="image-20210924083209812"></p>
+<h2 id="正负惯性系数"><a href="#正负惯性系数" class="headerlink" title="正负惯性系数"></a>正负惯性系数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083233963.png" alt="image-20210924083233963"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924083246627.png" alt="image-20210924083246627"></p>
+<h1 id="由方程得到二次型的矩阵"><a href="#由方程得到二次型的矩阵" class="headerlink" title="由方程得到二次型的矩阵"></a>由方程得到二次型的矩阵</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927202858519.png" alt="image-20210927202858519"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927202751872.png" alt="image-20210927202751872"></p>
+<h2 id="易错题"><a href="#易错题" class="headerlink" title="易错题"></a>易错题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827111219465.png" alt="image-20210827111219465"></p>
+<p>不能直接把123456填上去</p>
+<p><font color=red>因为二次型的矩阵应该是对称的</font></p>
+<p>正确的做法应该是把二次型的矩阵形式先化成方程</p>
+<p>然后再由此得到二次型的矩阵</p>
+<p>大致解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827111505230.png" alt="image-20210827111505230"></p>
+<h1 id="合同"><a href="#合同" class="headerlink" title="合同"></a>合同</h1><h2 id="合同变换的意义"><a href="#合同变换的意义" class="headerlink" title="合同变换的意义"></a>合同变换的意义</h2><p>把一个复杂的二次型转变为一个简单的二次型</p>
+<h2 id="合同相关定理"><a href="#合同相关定理" class="headerlink" title="合同相关定理"></a>合同相关定理</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827114401963.png" alt="image-20210827114401963"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827114525102.png" alt="image-20210827114525102"></p>
+<p><font color=red>他们的不同之处在于定理2正交变换的系数λ是特征值</font></p>
+<p>定理1中的系数d则不一定</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827114726745.png" alt="image-20210827114726745"></p>
+<h2 id="配方变换【小题】"><a href="#配方变换【小题】" class="headerlink" title="配方变换【小题】"></a>配方变换【小题】</h2><h2 id="正交变换【大题-重点】"><a href="#正交变换【大题-重点】" class="headerlink" title="正交变换【大题+重点】"></a>正交变换【大题+重点】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827115223513.png" alt="image-20210827115223513"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827115239829.png" alt="image-20210827115239829"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210827115250664.png" alt="image-20210827115250664"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/21/%E7%9F%A9%E9%98%B5%E7%AD%89%E4%BB%B7/" rel="prev" title="矩阵等价">
+      <i class="fa fa-chevron-left"></i> 矩阵等价
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/29/%E8%80%83%E7%A0%94%E6%8A%A5%E5%90%8D/" rel="next" title="考研报名">
+      考研报名 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">二次型的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">标准型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E8%B4%9F%E6%83%AF%E6%80%A7%E7%B3%BB%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">正负惯性系数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B1%E6%96%B9%E7%A8%8B%E5%BE%97%E5%88%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B%E7%9A%84%E7%9F%A9%E9%98%B5"><span class="nav-number">3.</span> <span class="nav-text">由方程得到二次型的矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%93%E9%94%99%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">易错题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%88%E5%90%8C"><span class="nav-number">4.</span> <span class="nav-text">合同</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%90%8C%E5%8F%98%E6%8D%A2%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-number">4.1.</span> <span class="nav-text">合同变换的意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%90%8C%E7%9B%B8%E5%85%B3%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.</span> <span class="nav-text">合同相关定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E6%96%B9%E5%8F%98%E6%8D%A2%E3%80%90%E5%B0%8F%E9%A2%98%E3%80%91"><span class="nav-number">4.3.</span> <span class="nav-text">配方变换【小题】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E3%80%90%E5%A4%A7%E9%A2%98-%E9%87%8D%E7%82%B9%E3%80%91"><span class="nav-number">4.4.</span> <span class="nav-text">正交变换【大题+重点】</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</body>
+</html>

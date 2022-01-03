@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="平均查找长度（ASL） 顺序查找的ASL “最少最多的一半” 这个规律算起来确实效率高 所以在线性表的情况下，就用那个规律 折半查找（二分查找） 没有想当然的先比较“高低中”，而是一直取中，直到low&#x3D;high 有一个细节的地方要注意 1234...    high&#x3D;mid-1;  &#x2F;*需要注意这里的±1，这也是low&#x3D;high的key*&#x2F;...    low&#x3D;mid+1;   注意实操 还有一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="查找">
+<meta property="og:url" content="http://example.com/2021/07/24/%E6%9F%A5%E6%89%BE/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="平均查找长度（ASL） 顺序查找的ASL “最少最多的一半” 这个规律算起来确实效率高 所以在线性表的情况下，就用那个规律 折半查找（二分查找） 没有想当然的先比较“高低中”，而是一直取中，直到low&#x3D;high 有一个细节的地方要注意 1234...    high&#x3D;mid-1;  &#x2F;*需要注意这里的±1，这也是low&#x3D;high的key*&#x2F;...    low&#x3D;mid+1;   注意实操 还有一个">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211007213311438.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211007212043155.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210726145004216.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210726145929418.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210726145621991.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210726142900110.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211007212100260.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211007212930433.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211010213314623.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210726151351422.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211010222116323.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210726154937079.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211010113225334.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211010113649081.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211010152117695.png">
+<meta property="article:published_time" content="2021-07-24T07:50:15.000Z">
+<meta property="article:modified_time" content="2021-12-02T01:15:12.000Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211007213311438.png">
+
+<link rel="canonical" href="http://example.com/2021/07/24/%E6%9F%A5%E6%89%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>查找 | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/24/%E6%9F%A5%E6%89%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          查找
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-24 15:50:15" itemprop="dateCreated datePublished" datetime="2021-07-24T15:50:15+08:00">2021-07-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-02 09:15:12" itemprop="dateModified" datetime="2021-12-02T09:15:12+08:00">2021-12-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="平均查找长度（ASL）"><a href="#平均查找长度（ASL）" class="headerlink" title="平均查找长度（ASL）"></a>平均查找长度（ASL）</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007213311438.png" alt="image-20211007213311438"></p>
+<h1 id="顺序查找的ASL"><a href="#顺序查找的ASL" class="headerlink" title="顺序查找的ASL"></a>顺序查找的ASL</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007212043155.png" alt="image-20211007212043155"></p>
+<p>“最少最多的一半” 这个规律算起来确实效率高</p>
+<p>所以在线性表的情况下，就用那个规律</p>
+<h1 id="折半查找（二分查找）"><a href="#折半查找（二分查找）" class="headerlink" title="折半查找（二分查找）"></a>折半查找（二分查找）</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726145004216.png" alt="image-20210726145004216"></p>
+<p>没有想当然的先比较“高低中”，而是一直取中，<font color=blue>直到low=high</font></p>
+<p>有一个细节的地方要注意</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">    high=mid<span class="number">-1</span>;  <span class="comment">/*需要注意这里的±1，这也是low=high的key*/</span></span><br><span class="line">...</span><br><span class="line">    low=mid+<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726145929418.png" alt="image-20210726145929418"></p>
+<p><font color=red>注意实操</font></p>
+<p><font color=red>还有一个细节要注意</font></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid=(low+high)/<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>c语言默认是截断</p>
+<p>但是下面的判定树是分成向下取整和向上取整两种</p>
+<hr>
+<h2 id="折半查找的次数"><a href="#折半查找的次数" class="headerlink" title="折半查找的次数"></a>折半查找的次数</h2><p>$$x=log_{2}n +1$$</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726145621991.png" alt="image-20210726145621991"></p>
+<p><font color=blue>建议实操理解二分查找</font></p>
+<p>“1“ 是 low==high 时的比较</p>
+<hr>
+<p>易错题</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726142900110.png" alt="image-20210726142900110"></p>
+<p><font color=green>rnm，换我代码来怎么不能实现了，退钱！！！</font></p>
+<hr>
+<h2 id="折半查找与二叉树"><a href="#折半查找与二叉树" class="headerlink" title="折半查找与二叉树"></a>折半查找与二叉树</h2><p><font color=red>判定结果相当于平衡二叉树</font></p>
+<p>平衡二叉树：任一结点左右子树深度之差不超过1</p>
+<p>原因：A[1…11]</p>
+<p>第一个找的元素(1+11)/2=6，<font color=blue>算法的“相加除以2”，使得左右均衡，即深度之差不超过1</font></p>
+<p>相关例题：</p>
+<h2 id="折半查找的ASL"><a href="#折半查找的ASL" class="headerlink" title="折半查找的ASL"></a>折半查找的ASL</h2><p>折半查找判定树</p>
+<p><font color=red>因为二分查找是在有序的情况下进行，所以不能直接对源数列进行二分查找</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007212100260.png" alt="image-20211007212100260"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007212930433.png" alt="image-20211007212930433"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211010213314623.png" alt="image-20211010213314623"></p>
+<h3 id="错误的折半查找判定树"><a href="#错误的折半查找判定树" class="headerlink" title="错误的折半查找判定树"></a>错误的折半查找判定树</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726151351422.png" alt="image-20210726151351422"></p>
+<p>答案：A</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211010222116323.png" alt="image-20211010222116323"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726154937079.png" alt="image-20210726154937079"></p>
+<h2 id="折半查找和二叉排序树"><a href="#折半查找和二叉排序树" class="headerlink" title="折半查找和二叉排序树"></a>折半查找和二叉排序树</h2><p>它们的时间性能<font color=red>有时相同</font></p>
+<p>不至于无法比较，因为他们的<strong>核心思想确实类似</strong></p>
+<hr>
+<h1 id="分块查找（索引顺序查找、索引查找）"><a href="#分块查找（索引顺序查找、索引查找）" class="headerlink" title="分块查找（索引顺序查找、索引查找）"></a>分块查找（索引顺序查找、索引查找）</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211010113225334.png" alt="image-20211010113225334"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211010113649081.png" alt="image-20211010113649081"></p>
+<p>分好块，找出各块最大关键字</p>
+<p>即可建立索引表</p>
+<h1 id="分块查找ASL"><a href="#分块查找ASL" class="headerlink" title="分块查找ASL"></a>分块查找ASL</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211010152117695.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/24/%E6%A1%B6%E6%8E%92%E5%BA%8F/" rel="prev" title="桶排序">
+      <i class="fa fa-chevron-left"></i> 桶排序
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/24/914%E5%A4%A7%E7%BA%B2/" rel="next" title="914大纲">
+      914大纲 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B3%E5%9D%87%E6%9F%A5%E6%89%BE%E9%95%BF%E5%BA%A6%EF%BC%88ASL%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">平均查找长度（ASL）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84ASL"><span class="nav-number">2.</span> <span class="nav-text">顺序查找的ASL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE%EF%BC%88%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">折半查找（二分查找）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE%E7%9A%84%E6%AC%A1%E6%95%B0"><span class="nav-number">3.1.</span> <span class="nav-text">折半查找的次数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.2.</span> <span class="nav-text">折半查找与二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE%E7%9A%84ASL"><span class="nav-number">3.3.</span> <span class="nav-text">折半查找的ASL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E7%9A%84%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E6%A0%91"><span class="nav-number">3.3.1.</span> <span class="nav-text">错误的折半查找判定树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE%E5%92%8C%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91"><span class="nav-number">3.4.</span> <span class="nav-text">折半查找和二叉排序树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE%EF%BC%88%E7%B4%A2%E5%BC%95%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E3%80%81%E7%B4%A2%E5%BC%95%E6%9F%A5%E6%89%BE%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">分块查找（索引顺序查找、索引查找）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BEASL"><span class="nav-number">5.</span> <span class="nav-text">分块查找ASL</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</body>
+</html>
