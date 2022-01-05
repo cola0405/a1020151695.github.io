@@ -177,6 +177,380 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/05/%E5%BE%AE%E8%BD%AFAI%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/05/%E5%BE%AE%E8%BD%AFAI%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">微软AI训练营笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-05 09:53:25 / Modified: 09:56:22" itemprop="dateCreated datePublished" datetime="2022-01-05T09:53:25+08:00">2022-01-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="微软的产品"><a href="#微软的产品" class="headerlink" title="微软的产品"></a>微软的产品</h1><p>Bing是微软的产品</p>
+<p>微软把自己的服务部署在自己的服务器Azure</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/05/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/05/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">实训笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-05 09:34:15 / Modified: 09:34:39" itemprop="dateCreated datePublished" datetime="2022-01-05T09:34:15+08:00">2022-01-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><p>html里使用vue.js</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p>make the code easier and convenient to use</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Using computed method : &#123;&#123;getfullname&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">   <span class="attr">computed</span> :&#123;</span><br><span class="line">      <span class="attr">getfullname</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="built_in">this</span>.firstname +<span class="string">&quot; &quot;</span>+ <span class="built_in">this</span>.lastname;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>数据绑定</p>
+<p>输入框的值改变，下面p标签内的内容也改变</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;message&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Enter a message&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Message is: &#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> STORAGE_KEY = <span class="string">&quot;todos-vuejs-2.0&quot;</span>;</span><br><span class="line">      <span class="keyword">var</span> todoStorage = &#123;</span><br><span class="line">          <span class="attr">fetch</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="keyword">var</span> todos = <span class="built_in">JSON</span>.parse(<span class="built_in">localStorage</span>.getItem(STORAGE_KEY) || <span class="string">&quot;[]&quot;</span>);</span><br><span class="line">              todos.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">todo, index</span>) </span>&#123;</span><br><span class="line">                  todo.id = index;</span><br><span class="line">              &#125;);</span><br><span class="line">              todoStorage.uid = todos.length;</span><br><span class="line">              <span class="keyword">return</span> todos;</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="attr">save</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;    <span class="comment">// 使得todos刷新后仍然存在</span></span><br><span class="line">              <span class="built_in">localStorage</span>.setItem(STORAGE_KEY, <span class="built_in">JSON</span>.stringify(todos));</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="lt-strong-gt-标签"><a href="#lt-strong-gt-标签" class="headerlink" title="&lt;strong&gt;标签"></a>&lt;strong&gt;标签</h2><p>&lt;strong&gt; 标签是一个<strong>短语标签</strong></p>
+<p>用来定义计算机程序的样本重要的文本。</p>
+<p> &lt;strong&gt; 标签和 &lt;em&gt; 标签一样，用于强调文本，但它强调的程度更强一些。</p>
+<h2 id="lt-section-gt-标签"><a href="#lt-section-gt-标签" class="headerlink" title="&lt;section&gt;标签"></a>&lt;section&gt;标签</h2><p>The <code>&lt;section&gt;</code> tag defines a section in a document.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>The section element<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>WWF History<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>WWF&#x27;s Symbol<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the same year of the establishment of WWF.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211231201711985.png" alt="image-20211231201711985"></p>
+<h2 id="叉叉"><a href="#叉叉" class="headerlink" title="叉叉"></a>叉叉</h2><p>并不是图片，而是有颜色的 X</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211231201910554.png" alt="image-20211231201910554"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.todo-list</span> <span class="selector-tag">li</span> <span class="selector-class">.destroy</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: none;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">right</span>: <span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">40px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">	<span class="attribute">margin</span>: auto <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#cc9a9a</span>;</span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">11px</span>;</span><br><span class="line">	<span class="attribute">transition</span>: color <span class="number">0.2s</span> ease-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.todo-list</span> <span class="selector-tag">li</span> <span class="selector-class">.destroy</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#af5b5e</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.todo-list</span> <span class="selector-tag">li</span> <span class="selector-class">.destroy</span>:after &#123;</span><br><span class="line">	content: <span class="string">&#x27;×&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.todo-list</span> <span class="selector-tag">li</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.destroy</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">removeTodo: <span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">this</span>.todos.splice(<span class="built_in">this</span>.todos.indexOf(todo), <span class="number">1</span>);</span><br><span class="line">            &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>todos是一个Array</p>
+<p>该方法表示从todo开始，移除1个元素</p>
+<h2 id="trim"><a href="#trim" class="headerlink" title="trim"></a>trim</h2><p>remove whitespace characters from the start and end of a string</p>
+<h2 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">, <span class="attr">watch</span>: &#123;      <span class="comment">// observe and react to data changes on a Vue instance</span></span><br><span class="line">             <span class="attr">todos</span>: &#123;</span><br><span class="line">                 <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;  <span class="comment">// 如果todos发生改变，即时存起来</span></span><br><span class="line">                     todoStorage.save(todos);</span><br><span class="line">                 &#125;,</span><br><span class="line">                 <span class="attr">deep</span>: <span class="literal">true</span></span><br><span class="line">             &#125;</span><br><span class="line">         &#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="mount"><a href="#mount" class="headerlink" title="mount"></a>mount</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.$mount(<span class="string">&quot;.todoapp&quot;</span>); </span><br><span class="line"><span class="comment">// This code creates a new instance of Vue and mounts it on the HTML element with the ID of app</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="array-push"><a href="#array-push" class="headerlink" title="array push"></a>array push</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.todos.push(&#123;</span><br><span class="line">                   <span class="attr">id</span>: todoStorage.uid++,</span><br><span class="line">                   title: value,</span><br><span class="line">                   <span class="attr">completed</span>: <span class="literal">false</span>    <span class="comment">// completed 字段</span></span><br><span class="line">               &#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="array-filter"><a href="#array-filter" class="headerlink" title="array filter"></a>array filter</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> filters = &#123;</span><br><span class="line">          <span class="attr">all</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> todos;</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="attr">active</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> todos.filter(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;	<span class="comment">// filter 是array的方法</span></span><br><span class="line">                  <span class="keyword">return</span> !todo.completed;				<span class="comment">// 表示返回还未完成的todo</span></span><br><span class="line">              &#125;);</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="attr">completed</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> todos.filter(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</span><br><span class="line">                  <span class="keyword">return</span> todo.completed;</span><br><span class="line">              &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="ECMAScript和JavaScript"><a href="#ECMAScript和JavaScript" class="headerlink" title="ECMAScript和JavaScript"></a>ECMAScript和JavaScript</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220101094709730.png" alt="image-20220101094709730"></p>
+<h1 id="响应式网页设计"><a href="#响应式网页设计" class="headerlink" title="响应式网页设计"></a>响应式网页设计</h1><p>Responsive web design</p>
+<blockquote>
+<p><strong>Responsive web design</strong> (<strong>RWD</strong>) or <strong>responsive design</strong> is an approach to <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Web_design">web design</a> that aims to make web pages render well on a variety of devices and window or screen sizes from minimum to maximum display size to ensure usability and satisfaction.</p>
+</blockquote>
+<p>例如：弹性布局</p>
+<p>百分号%，而不是固定长度px</p>
+<h1 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h1><p>同步编程简单来说就是，发出一个任务，然后等待执行。</p>
+<p>而异步编程就是，发出一个任务，不等待结果，就继续发出下一个任务。</p>
+<h1 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 赋值</span></span><br><span class="line"><span class="keyword">var</span> func1 = <span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>) </span>&#123;  &#125;</span><br><span class="line"><span class="comment">// 函数作为参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    fn()</span><br><span class="line">&#125;   </span><br><span class="line"><span class="comment">// 函数作为返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/04/hnsc%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/04/hnsc%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">hnsc笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-04 15:38:22" itemprop="dateCreated datePublished" datetime="2022-01-04T15:38:22+08:00">2022-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-05 09:38:03" itemprop="dateModified" datetime="2022-01-05T09:38:03+08:00">2022-01-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="IntelliJ"><a href="#IntelliJ" class="headerlink" title="IntelliJ"></a>IntelliJ</h1><h2 id="intellij-快捷键"><a href="#intellij-快捷键" class="headerlink" title="intellij 快捷键"></a>intellij 快捷键</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> + delete  // 删除当前行</span><br><span class="line"><span class="built_in">command</span> + ,  // 设置</span><br><span class="line"><span class="built_in">command</span> + up + a // Find Action</span><br><span class="line">run dashboard // 一键同时跑多个应用</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="intellij-插件"><a href="#intellij-插件" class="headerlink" title="intellij 插件"></a>intellij 插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Code Glance  // 代码预览</span><br><span class="line">Free Mybatis plugin  // mapper生成，跳转</span><br><span class="line">Rainbow Brackets // 彩色括号</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="JDK16"><a href="#JDK16" class="headerlink" title="JDK16"></a>JDK16</h2><p>删啦！！！！</p>
+<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>版本信息在pom中都有</p>
+<h2 id="Spring-Boot-版本"><a href="#Spring-Boot-版本" class="headerlink" title="Spring Boot 版本"></a>Spring Boot 版本</h2><p>去这个网站<a target="_blank" rel="noopener" href="https://mvnrepository.com/search?q=spring-boot-starter%EF%BC%8C%E6%89%BE%E5%88%B0%E8%87%AA%E5%B7%B1%E6%83%B3%E8%A6%81%E7%9A%84spring-boot-starter%E7%89%88%E6%9C%AC%EF%BC%8C%E5%A4%8D%E5%88%B6%E4%B8%8B%E6%9D%A5%EF%BC%8C%E6%9B%BF%E6%8D%A2%E5%88%B0%E7%88%B6%E7%89%88%E6%9C%AC%E4%B8%8B%E3%80%82">https://mvnrepository.com/search?q=spring-boot-starter，找到自己想要的spring-boot-starter版本，复制下来，替换到父版本下。</a></p>
+<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="鉴权"><a href="#鉴权" class="headerlink" title="鉴权"></a>鉴权</h2><p>sa-token</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/sa-token-demo">实例</a></p>
+<p><a target="_blank" rel="noopener" href="https://sa-token.dev33.cn/doc/index.html#/use/jur-auth">官方文档</a></p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>Setting - Editor - Live Templetes</p>
+<p>建一个comment组（右边的 + ，Templates group）</p>
+<p>然后在组里加head和ctr</p>
+<p>（之后，输入head，然后tab，注释就出来了）</p>
+<p>head :</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Cola</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> $date$</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@email</span> 1020151695@qq.com</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<p>ctr :</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> 查看面试邀请列表</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> cola</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@url</span> /interview/inviteList</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@method</span> GET</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<p>然后这里的 $date$</p>
+<p>还需要”Edit variables”</p>
+<p>然后 “define” 里选择Java</p>
+<p>（表示应用在Java文件中）</p>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><p>PageHelper</p>
+<h2 id="复杂SQL语句"><a href="#复杂SQL语句" class="headerlink" title="复杂SQL语句"></a>复杂SQL语句</h2><p>尽量不在一个查询之后，再进行迭代查询</p>
+<p>绝大部分情况都是可以合成一个sql的</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 定时任务</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 多种情况的update</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## sql日期的比较</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Date</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## formatter</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## log 导致应用启动失败</span><br><span class="line"></span><br><span class="line">（找找错误提示）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## LocalDateTime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 接口返回值框架</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## swagger</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">https://blog.csdn.net/zhangcongyi420/article/details/119151683</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## knife4j</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">JDK13</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## mapper</span><br><span class="line"></span><br><span class="line">数据库</span><br><span class="line"></span><br><span class="line">xxxMapper.xml</span><br><span class="line"></span><br><span class="line">```xml</span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectCompAllUser&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.hnsc.cloud.controller.response.CompUserItemResp&quot;</span>&gt;</span></span><br><span class="line">        select u.id, u.username as userName,u.real_name as realName, aui.job_num as jobNum, u.phone,u.email,GROUP_CONCAT(r.title separator &#x27;;&#x27;) as role</span><br><span class="line">        from user as u</span><br><span class="line">        left join user_company_relation as ucr on u.id = ucr.user_id</span><br><span class="line">        left join additional_user_info as aui on u.id = aui.user_id</span><br><span class="line">        left join user_role as ur on ur.uid = u.id</span><br><span class="line">        left join role as r on r.id = ur.role_id</span><br><span class="line">        <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;key!=&#x27;&#x27; and key!=null&quot;</span>&gt;</span> and (u.real_name like concat(&#x27;%&#x27;,#&#123;key&#125;,&#x27;%&#x27;) or aui.job_num like concat(&#x27;%&#x27;,#&#123;key&#125;,&#x27;%&#x27;)) <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot; roleList.size()&gt;0&quot;</span>&gt;</span>and r.name IN</span><br><span class="line">                <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">&quot;roleList&quot;</span> <span class="attr">item</span>=<span class="string">&quot;item&quot;</span> <span class="attr">index</span>=<span class="string">&quot;index&quot;</span> <span class="attr">open</span>=<span class="string">&quot;(&quot;</span> <span class="attr">close</span>=<span class="string">&quot;)&quot;</span> <span class="attr">separator</span>=<span class="string">&quot;,&quot;</span>&gt;</span></span><br><span class="line">                    #&#123;item&#125;</span><br><span class="line">                <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;cid!=null&quot;</span>&gt;</span> and ucr.company_id = #&#123;cid&#125; <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line">        GROUP BY u.id, u.username , u.real_name, aui.job_num , u.phone,u.email</span><br><span class="line">        ORDER BY u.id desc</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="left-join"><a href="#left-join" class="headerlink" title="left join"></a>left join</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211231101503642.png" alt="image-20211231101503642"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211231101531918.png" alt="image-20211231101531918"></p>
+<h2 id="封装自己的Request对象"><a href="#封装自己的Request对象" class="headerlink" title="封装自己的Request对象"></a>封装自己的Request对象</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation(&quot;查看面试邀请列表&quot;)</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/inviteList&quot;)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> RQL <span class="title">getInterviewInviteList</span><span class="params">(GetInterviewInviteListRequest request, <span class="meta">@NotBlank(message = &quot;token未找到&quot;)</span> <span class="meta">@RequestHeader(&quot;token&quot;)</span> String token)</span> </span>&#123;</span><br><span class="line">    List&lt;InterviewItemResp&gt; respList=interviewService.getInterviewInviteList(request.getPositionId(),request.getPage(),request.getSize(),token);</span><br><span class="line">    <span class="keyword">return</span> RQL.codeEnum(CodeEnum.SUCCESS).putData(respList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以设置默认值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GetInterviewInviteListRequest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer page = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer size = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Long positionId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分页-1"><a href="#分页-1" class="headerlink" title="分页"></a>分页</h2><p>PageHelper</p>
+<p>只有紧跟在<code>PageHelper.startPage</code>方法后的<strong>第一个</strong>Mybatis的<strong>查询（Select）</strong>方法会被分页。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PageHelper.startPage(page,size);</span><br><span class="line">List&lt;CompInterview&gt; compInterviewList = compInterviewMapper.selectAllComInterviewByPositionId(positionId);</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Select(&quot;select * from comp_interview where position_id=#&#123;positionId&#125;&quot;)</span></span><br><span class="line">   <span class="function">List&lt;CompInterview&gt; <span class="title">selectAllComInterviewByPositionId</span><span class="params">(<span class="meta">@Param(&quot;positionId&quot;)</span> Long positionId)</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span>  <span class="comment">// 省去代码中大量的get()、 set()、 toString()等方法</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span>  <span class="comment">// 除了get 之外的构造方法</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Transactional</span>  <span class="comment">// 事务行为</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation(&quot;通过电子邮件来修改密码&quot;)</span> <span class="comment">// 描述行为</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="comment">//It&#x27;s a convenient annotation that combines @Controller and @ResponseBody</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+
+<p>空白的Service</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">	<span class="function">UserLoginResp <span class="title">login</span><span class="params">(String phone,String password)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原因：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    ...			<span class="comment">//实现在这里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="token"><a href="#token" class="headerlink" title="token"></a>token</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&quot;ret&quot;</span>:40001,<span class="string">&quot;message&quot;</span>:<span class="string">&quot;header缺失:token&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解决：</p>
+<p>从用户登录成功那的“返回示例”那拿的（没过期）</p>
+<p>Postman 在headers中添加token</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XLK5CVhOlFKlgjGwvXBe21HfAmQL8qftEbHSBVvn3axD1jJaiMbdOXwlGaU1FqIBNdDUa44qWWLfwERogBEKllxmjcVMAY6kI6MvXioTZ8Rc6UySDtpb8X0PKzJ8JnBb</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;ret&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;message&quot;</span>: <span class="string">&quot;成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    url = ossUtil.upload(ossPath, file,<span class="number">1000</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    CodeEnum.error_upload_institution.newException();</span><br><span class="line">    log.error(<span class="string">&quot;上传表格失败。&quot;</span>, e);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">file.delete();  <span class="comment">// 删除</span></span><br></pre></td></tr></table></figure>
+
+<p>上传到oss，返回url</p>
+<h1 id="Nacos"><a href="#Nacos" class="headerlink" title="Nacos"></a>Nacos</h1><p>(Naming Configuration Service)</p>
+<p>注册中心+配置中心</p>
+<p>Nacos=Eureka+Config+Bus</p>
+<h2 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211230105332635.png" alt="image-20211230105332635"></p>
+<p>Nacos 可以把哪个provider告诉给客户端知道</p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>冒烟测试</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/SpringCloud-HelloWorld/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -390,99 +764,6 @@
       
           <h1 id="建立项目"><a href="#建立项目" class="headerlink" title="建立项目"></a>建立项目</h1><p>JDK不一致会有问题（404），但是idea并不报错</p>
 <p><a target="_blank" rel="noopener" href="https://start.aliyun.com/">https://start.aliyun.com/</a></p>
-<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>Web-SpringBoot web</p>
-<h1 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h1><p>建立包，然后</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span>  	<span class="comment">// http://localhost:8080/hello</span></span><br><span class="line">    <span class="meta">@ResponseBody</span>  				<span class="comment">// 不进行页面跳转，而是返回字符串</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="Dao"><a href="#Dao" class="headerlink" title="Dao"></a>Dao</h1><h2 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Entity(name = &quot;tb_user&quot;)</span>       <span class="comment">// 实体类，值为表名</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span>  <span class="comment">//主键自增</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="keyword">private</span> String role;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="数据库访问接口"><a href="#数据库访问接口" class="headerlink" title="数据库访问接口"></a>数据库访问接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">User</span>,<span class="title">Long</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Query(value = &quot;select COUNT(*) from tb_user where role = &#x27;USER&#x27;&quot;,nativeQuery = true)</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">getUserNum</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="数据库接口参数"><a href="#数据库接口参数" class="headerlink" title="数据库接口参数"></a>数据库接口参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/db_authority?serverTimezone=GMT%2B8</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=123456</span><br><span class="line">spring.jpa.hibernate.naming.physical-strategy= org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl</span><br></pre></td></tr></table></figure>
-
-
-
-<p>解释：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span><br></pre></td></tr></table></figure>
-
-<p>依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="dao调用"><a href="#dao调用" class="headerlink" title="dao调用"></a>dao调用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line">UserRepository userRepository;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/getUserNum&quot;)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getUserNum</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> userRepository.getUserNum();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/Springboot_Helloworld/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/29/Springboot_Helloworld/" class="post-title-link" itemprop="url">SpringBoot Helloworld</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-29 08:35:54 / Modified: 14:11:02" itemprop="dateCreated datePublished" datetime="2021-12-29T08:35:54+08:00">2021-12-29</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="建立项目"><a href="#建立项目" class="headerlink" title="建立项目"></a>建立项目</h1><p>JDK不一致会有问题（404），但是idea并不报错</p>
 <h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>Web-SpringBoot web</p>
 <h1 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h1><p>建立包，然后</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span>  	<span class="comment">// http://localhost:8080/hello</span></span><br><span class="line">    <span class="meta">@ResponseBody</span>  				<span class="comment">// 不进行页面跳转，而是返回字符串</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -983,137 +1264,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/01/16%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/01/16%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/" class="post-title-link" itemprop="url">16年政治真题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-01 08:31:07 / Modified: 08:31:08" itemprop="dateCreated datePublished" datetime="2021-12-01T08:31:07+08:00">2021-12-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/01/17%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/01/17%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/" class="post-title-link" itemprop="url">17年政治真题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-01 08:30:57 / Modified: 09:16:10" itemprop="dateCreated datePublished" datetime="2021-12-01T08:30:57+08:00">2021-12-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090729569.png" alt="image-20211201090729569"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090925870.png" alt="image-20211201090925870"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090932209.png" alt="image-20211201090932209"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090744724.png" alt="image-20211201090744724"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090940745.png" alt="image-20211201090940745"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090753062.png" alt="image-20211201090753062"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090952145.png" alt="image-20211201090952145"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090824049.png" alt="image-20211201090824049"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090829174.png" alt="image-20211201090829174"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201091002998.png" alt="image-20211201091002998"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201090834983.png" alt="image-20211201090834983"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201091011799.png" alt="image-20211201091011799"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1181,7 +1335,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-count">288</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
