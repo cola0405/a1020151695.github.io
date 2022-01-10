@@ -177,6 +177,485 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">微信公众号开发</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-09 23:21:14 / Modified: 23:29:18" itemprop="dateCreated datePublished" datetime="2022-01-09T23:21:14+08:00">2022-01-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="扫码关注公众号获取验证码"><a href="#扫码关注公众号获取验证码" class="headerlink" title="扫码关注公众号获取验证码"></a>扫码关注公众号获取验证码</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109232843586.png" alt="image-20220109232843586"></p>
+<p>主要流程：</p>
+<p>用户点击“关注公众号领取”，发送请求到公众号的个人服务器</p>
+<p>个人服务器向微信的接口请求生成导向公众号的“二维码”，并返回到前端</p>
+<p>用户微信扫码后，被导航到公众号那</p>
+<p>同时，微信的服务器会向开发者推送消息</p>
+<p>目标地址为这里的URL</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109232626285.png" alt="image-20220109232626285"></p>
+<p>后端拿一个RequestMapping接收就行</p>
+<p>然后，产生一个验证码</p>
+<p>再调用微信的“发送消息给用户”的接口，把时效验证码推送给用户即可</p>
+<p>（服务器本身也做好准备，把该验证码存在当前Session里，供验证用户输入使用）</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/pycharm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/09/pycharm/" class="post-title-link" itemprop="url">pycharm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-09 14:10:54 / Modified: 14:55:14" itemprop="dateCreated datePublished" datetime="2022-01-09T14:10:54+08:00">2022-01-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="添加conda的环境"><a href="#添加conda的环境" class="headerlink" title="添加conda的环境"></a>添加conda的环境</h2><p>Setting - Project - Python Interpreter - Add - System Interpreter</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109145510823.png" alt="image-20220109145510823"> </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/Jupyter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/09/Jupyter/" class="post-title-link" itemprop="url">Jupyter</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-09 14:09:25 / Modified: 14:56:48" itemprop="dateCreated datePublished" datetime="2022-01-09T14:09:25+08:00">2022-01-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109141029319.png" alt="image-20220109141029319"></p>
+<h2 id="为什么使用Jupyter"><a href="#为什么使用Jupyter" class="headerlink" title="为什么使用Jupyter"></a>为什么使用Jupyter</h2><p>可局部运行代码</p>
+<p>保存的文件名为 .ipynb</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/08/%E8%B6%8A%E5%8D%97%E8%AF%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/08/%E8%B6%8A%E5%8D%97%E8%AF%AD/" class="post-title-link" itemprop="url">越南语</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-08 23:59:54" itemprop="dateCreated datePublished" datetime="2022-01-08T23:59:54+08:00">2022-01-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-09 08:05:07" itemprop="dateModified" datetime="2022-01-09T08:05:07+08:00">2022-01-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="字母"><a href="#字母" class="headerlink" title="字母"></a>字母</h1><h2 id="a"><a href="#a" class="headerlink" title="a"></a>a</h2><p>a:</p>
+<h2 id="a-1"><a href="#a-1" class="headerlink" title="ă"></a>ă</h2><p>啊！？</p>
+<h2 id="a-2"><a href="#a-2" class="headerlink" title="â"></a>â</h2><p>嘴圆，发a+呃！？</p>
+<h2 id="b"><a href="#b" class="headerlink" title="b"></a>b</h2><p>双唇紧闭，b出来</p>
+<h2 id="c"><a href="#c" class="headerlink" title="c"></a>c</h2><p>个儿</p>
+<h2 id="d"><a href="#d" class="headerlink" title="d"></a>d</h2><p>衣惹（一个，别发成两个）</p>
+<h2 id="d-1"><a href="#d-1" class="headerlink" title="đ"></a>đ</h2><p>the</p>
+<h2 id="e"><a href="#e" class="headerlink" title="e"></a>e</h2><p>smile</p>
+<p>ei</p>
+<h2 id="e-1"><a href="#e-1" class="headerlink" title="ê"></a>ê</h2><p>kiss</p>
+<p>ei</p>
+<h2 id="g"><a href="#g" class="headerlink" title="g"></a>g</h2><p>葛</p>
+<h2 id="h"><a href="#h" class="headerlink" title="h"></a>h</h2><p>he 第三声</p>
+<h2 id="i"><a href="#i" class="headerlink" title="i"></a>i</h2><p>e（英文字母）</p>
+<h2 id="k"><a href="#k" class="headerlink" title="k"></a>k</h2><p>加（客）</p>
+<h2 id="l"><a href="#l" class="headerlink" title="l"></a>l</h2><p>了</p>
+<h2 id="m"><a href="#m" class="headerlink" title="m"></a>m</h2><p>m（英文字母） mer</p>
+<h2 id="n"><a href="#n" class="headerlink" title="n"></a>n</h2><p>m（英文字母） ner</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/07/python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/07/python/" class="post-title-link" itemprop="url">python</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-07 15:47:24" itemprop="dateCreated datePublished" datetime="2022-01-07T15:47:24+08:00">2022-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-09 16:54:57" itemprop="dateModified" datetime="2022-01-09T16:54:57+08:00">2022-01-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="python-降级"><a href="#python-降级" class="headerlink" title="python 降级"></a>python 降级</h1><p>打开anaconda prompt</p>
+<p>然后输入指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install python=3.6</span><br></pre></td></tr></table></figure>
+
+
+
+<p>anaconda 是包管理工具</p>
+<p>python降级时，还会帮我们做环境适配</p>
+<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.loc[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109150630032.png" alt="image-20220109150630032"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res[<span class="string">&#x27;Facenet_cosine&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109150809565.png" alt="image-20220109150809565"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(similar_rates[similar_rates&lt;<span class="number">2</span>][similar_rates&gt;<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109151433500.png" alt="image-20220109151433500"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/07/github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/07/github/" class="post-title-link" itemprop="url">github</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-07 10:34:26 / Modified: 10:35:37" itemprop="dateCreated datePublished" datetime="2022-01-07T10:34:26+08:00">2022-01-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="liscence"><a href="#liscence" class="headerlink" title="liscence"></a>liscence</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107103504247.png" alt="image-20220107103504247"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/05/mac-mysql-%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/05/mac-mysql-%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">mac-mysql-安装</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-05 11:36:39 / Modified: 11:38:37" itemprop="dateCreated datePublished" datetime="2022-01-05T11:36:39+08:00">2022-01-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>官网下载社区版，指定版本（太新的用不了）</p>
+<p>Server version: 5.6.39 MySQL Community Server (GPL)</p>
+<p>然后，workbench的话</p>
+<p>5.2.40</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/05/%E5%BE%AE%E8%BD%AFAI%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -200,10 +679,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-01-05 09:53:25 / Modified: 09:56:22" itemprop="dateCreated datePublished" datetime="2022-01-05T09:53:25+08:00">2022-01-05</time>
+              <time title="Created: 2022-01-05 09:53:25" itemprop="dateCreated datePublished" datetime="2022-01-05T09:53:25+08:00">2022-01-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-07 11:48:06" itemprop="dateModified" datetime="2022-01-07T11:48:06+08:00">2022-01-07</time>
+              </span>
 
           
 
@@ -218,6 +703,272 @@
       
           <h1 id="微软的产品"><a href="#微软的产品" class="headerlink" title="微软的产品"></a>微软的产品</h1><p>Bing是微软的产品</p>
 <p>微软把自己的服务部署在自己的服务器Azure</p>
+<h2 id="Hackathon"><a href="#Hackathon" class="headerlink" title="Hackathon"></a>Hackathon</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105101825322.png" alt="image-20220105101825322"></p>
+<h2 id="二次广告"><a href="#二次广告" class="headerlink" title="二次广告"></a>二次广告</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105103448931.png" alt="image-20220105103448931"></p>
+<h2 id="虚拟老师"><a href="#虚拟老师" class="headerlink" title="虚拟老师"></a>虚拟老师</h2><p>在线英语教学市场准备迎接虚拟老师</p>
+<p>1000+堂课就可以训练出一个虚拟老师</p>
+<h2 id="VIPKid"><a href="#VIPKid" class="headerlink" title="VIPKid"></a>VIPKid</h2><p>外教英语</p>
+<p>已经用过虚拟老师了</p>
+<h2 id="AI技术"><a href="#AI技术" class="headerlink" title="AI技术"></a>AI技术</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105103730230.png" alt="image-20220105103730230"></p>
+<h2 id="chat-bot"><a href="#chat-bot" class="headerlink" title="chat bot"></a>chat bot</h2><p>80% 已经是很好的了</p>
+<h2 id="SAAS"><a href="#SAAS" class="headerlink" title="SAAS"></a>SAAS</h2><p>现在很多的AI 都是SaaS了</p>
+<p>调接口</p>
+<h2 id="Responsable-AI"><a href="#Responsable-AI" class="headerlink" title="Responsable AI"></a>Responsable AI</h2><p>（负责任的AI）</p>
+<p>“我是AI”</p>
+<p>工具，还是武器？——直面人类科技最紧迫的争议性问题</p>
+<h2 id="AI的透明性"><a href="#AI的透明性" class="headerlink" title="AI的透明性"></a>AI的透明性</h2><blockquote>
+<p>如果 人工智能的内部工作机制完全处于暗箱之中，公众怎么可能会 对人工智能有信心，同时未来的监管机构又怎么来评估对前4条 准则的遵守情况？</p>
+</blockquote>
+<h2 id="隐私保护"><a href="#隐私保护" class="headerlink" title="隐私保护"></a>隐私保护</h2><p>一键删除所有数据</p>
+<h2 id="责任"><a href="#责任" class="headerlink" title="责任"></a>责任</h2><p>自动驾驶—驾驶人，因为是驾驶人启用了自动驾驶的功能</p>
+<p>特斯拉也改了广告标语，不是完成全部工作，而只是作为一个辅助功能</p>
+<h1 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h1><p>就像是前好多年时的计算机、网络</p>
+<h2 id="图灵测试"><a href="#图灵测试" class="headerlink" title="图灵测试"></a>图灵测试</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105134730992.png" alt="image-20220105134730992"></p>
+<p>看人能否能区分人的回答和AI的回答</p>
+<p>目前还没有能通过图灵测试的AI</p>
+<h2 id="发展史"><a href="#发展史" class="headerlink" title="发展史"></a>发展史</h2><p>现在处于第三轮的顶峰（深蓝，阿尔法狗）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105135112839.png" alt="image-20220105135112839"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105135010332.png" alt="image-20220105135010332"></p>
+<p>第三次顶峰的原因</p>
+<p>数据和算力的飞跃</p>
+<h2 id="TPU"><a href="#TPU" class="headerlink" title="TPU"></a>TPU</h2><p>专门训练Tensorflow</p>
+<h1 id="深度学习-深度神经网络"><a href="#深度学习-深度神经网络" class="headerlink" title="深度学习(深度神经网络)"></a>深度学习(深度神经网络)</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105135914892.png" alt="image-20220105135914892"></p>
+<p>分类：</p>
+<p>CV、自然语言、语音处理</p>
+<p>传统机器学习，我们知道它干了什么事</p>
+<p>但是深度学习。。。</p>
+<p>（还有人在研究每一层到底在干什么）</p>
+<h2 id="深度神经网络"><a href="#深度神经网络" class="headerlink" title="深度神经网络"></a>深度神经网络</h2><p>隐藏层数较多的</p>
+<p>参数量大</p>
+<p>需要很多标注数据</p>
+<p>但其泛化能力强</p>
+<p>现在上百层上千层已经不是问题了。。。</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105140923729.png" alt="image-20220105140923729"></p>
+<h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>sigmoid 是激活函数</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107094432522.png" alt="image-20220107094432522"></p>
+<p>ReLu、Leaky ReLu</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107091959977.png" alt="image-20220107091959977"></p>
+<p>激活函数共性 - 非线性</p>
+<p>线性的叠加还是线性的</p>
+<p>加入激活函数的话，为了有非线性性</p>
+<p>z=wx+b</p>
+<p>a=sigmoid(x)</p>
+<p>一开始随机w、b</p>
+<p>之后通过不断拟合，使得loss最小</p>
+<p>（使得a与y接近 - 交叉熵函数）</p>
+<p>得到w、b</p>
+<h2 id="交叉熵函数"><a href="#交叉熵函数" class="headerlink" title="交叉熵函数"></a>交叉熵函数</h2><p>loss(a)</p>
+<p>可以转化为 loss(w,b)</p>
+<p>然后使用梯度下降法不断迭代，达到一个最优的结果</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0689(20220107-094635).PNG" alt="IMG_0689(20220107-094635)"></p>
+<h2 id="前向传播"><a href="#前向传播" class="headerlink" title="前向传播"></a>前向传播</h2><p>直接得出a</p>
+<p>设置参数，得出预测</p>
+<h2 id="反向传播算法（反向传播）"><a href="#反向传播算法（反向传播）" class="headerlink" title="反向传播算法（反向传播）"></a>反向传播算法（反向传播）</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107094839313.png" alt="image-20220107094839313"></p>
+<p>反向得出参数值</p>
+<h2 id="步长（学习率）"><a href="#步长（学习率）" class="headerlink" title="步长（学习率）"></a>步长（学习率）</h2><p>步长太小，会影响收敛速度</p>
+<p>主要调的就是这个</p>
+<h2 id="权重初始化"><a href="#权重初始化" class="headerlink" title="权重初始化"></a>权重初始化</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107105619872.png" alt="image-20220107105619872"></p>
+<p>防止梯度爆炸</p>
+<h2 id="复杂一些的神经网络的反向传播推导"><a href="#复杂一些的神经网络的反向传播推导" class="headerlink" title="复杂一些的神经网络的反向传播推导"></a>复杂一些的神经网络的反向传播推导</h2><h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><p>神经元和连接</p>
+<p>神经网络的结构还有多种</p>
+<p>CNN、 等等</p>
+<h2 id="神经网络的层数"><a href="#神经网络的层数" class="headerlink" title="神经网络的层数"></a>神经网络的层数</h2><p>输入层排除在外</p>
+<p>最简单的神经网络1层</p>
+<p>既是隐层也是输出层</p>
+<h2 id="全连接的神经网络xx"><a href="#全连接的神经网络xx" class="headerlink" title="全连接的神经网络xx"></a>全连接的神经网络xx</h2><h2 id="深度学习的发展"><a href="#深度学习的发展" class="headerlink" title="深度学习的发展"></a>深度学习的发展</h2><p>随着算力和数据的发展，深度学习迅速发展</p>
+<p>语音识别和图像识别体现出了深度学习的新生强大力量</p>
+<h2 id="不可知性"><a href="#不可知性" class="headerlink" title="不可知性"></a>不可知性</h2><p>模仿人脑</p>
+<p>人脑本身还不可知</p>
+<p>神经网络也具有一定不可知性</p>
+<p>像是古人在炼丹</p>
+<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107103556027.png" alt="image-20220107103556027"></p>
+<h2 id="k-fold-cross-validation"><a href="#k-fold-cross-validation" class="headerlink" title="k-fold cross validation"></a>k-fold cross validation</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107103645170.png" alt="image-20220107103645170"></p>
+<h2 id="high-bias-and-high-variance"><a href="#high-bias-and-high-variance" class="headerlink" title="high bias and high variance"></a>high bias and high variance</h2><p>偏差与方差</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107104009963.png" alt="image-20220107104009963"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107104210981.png" alt="image-20220107104210981"></p>
+<p>过拟合，方差高</p>
+<p>欠拟合，验证集都不太行，偏差严重</p>
+<p>我们想要的是偏差和方差都低</p>
+<h2 id="正则化xx"><a href="#正则化xx" class="headerlink" title="正则化xx"></a>正则化xx</h2><p>L2 普遍使用</p>
+<p>dropout 关闭一些神经元</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107104839074.png" alt="image-20220107104839074"></p>
+<p>参数少，训练快，反而准确率更高</p>
+<p>（避免过拟合）</p>
+<p>dropout 习惯0.4 ~ 0.5</p>
+<h2 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107105028867.png" alt="image-20220107105028867"></p>
+<p>应用在数据量不足的情况</p>
+<p>需要召回率高</p>
+<p>尽可能找出各种奇形怪状的（旋转、平移、镜像）</p>
+<p>那么这个数据增强就派上用场了</p>
+<p>（提高泛化能力）</p>
+<h2 id="归一化xx"><a href="#归一化xx" class="headerlink" title="归一化xx"></a>归一化xx</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107105317517.png" alt="image-20220107105317517"></p>
+<p>代码可以帮你做掉</p>
+<h2 id="批量梯度性下降（Bath-GD）xx"><a href="#批量梯度性下降（Bath-GD）xx" class="headerlink" title="批量梯度性下降（Bath GD）xx"></a>批量梯度性下降（Bath GD）xx</h2><p>一次拿m个样本进行训练</p>
+<p>很多数据的时候，梯度下降太慢了</p>
+<p>100w</p>
+<h2 id="小批量梯度下降（mini-Bath-GD）xx"><a href="#小批量梯度下降（mini-Bath-GD）xx" class="headerlink" title="小批量梯度下降（mini-Bath GD）xx"></a>小批量梯度下降（mini-Bath GD）xx</h2><p>64 128 </p>
+<h2 id="Adam算法"><a href="#Adam算法" class="headerlink" title="Adam算法"></a>Adam算法</h2><p>Adam = 动量梯度下降 + RMsProp</p>
+<p>无脑用Adam算法</p>
+<p>解决摆动幅度过大的问题</p>
+<p>b1 = 0.9</p>
+<p>b2 = 0.999</p>
+<p>3 = 10的-8次方</p>
+<h2 id="超参数xx"><a href="#超参数xx" class="headerlink" title="超参数xx"></a>超参数xx</h2><p>很固定很固定的</p>
+<h2 id="学习率衰减xx"><a href="#学习率衰减xx" class="headerlink" title="学习率衰减xx"></a>学习率衰减xx</h2><h2 id="跳出局部最优xx"><a href="#跳出局部最优xx" class="headerlink" title="跳出局部最优xx"></a>跳出局部最优xx</h2><h1 id="迁移学习xx"><a href="#迁移学习xx" class="headerlink" title="迁移学习xx"></a>迁移学习xx</h1><p>现在一般都是迁移学习</p>
+<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105141426414.png" alt="image-20220105141426414"></p>
+<h2 id="目标函数（损失函数）"><a href="#目标函数（损失函数）" class="headerlink" title="目标函数（损失函数）"></a>目标函数（损失函数）</h2><h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106135511223.png" alt="image-20220106135511223"></p>
+<p>奖励机制</p>
+<p>走迷宫，撞墙扣分</p>
+<h2 id="生成对抗网络（GAN）"><a href="#生成对抗网络（GAN）" class="headerlink" title="生成对抗网络（GAN）"></a>生成对抗网络（GAN）</h2><h2 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h2><p>模型、数据、算法</p>
+<h2 id="统计学"><a href="#统计学" class="headerlink" title="统计学"></a>统计学</h2><p>《统计学习方法》</p>
+<p>李航 清华大学出版社</p>
+<h2 id="模型分类"><a href="#模型分类" class="headerlink" title="模型分类"></a>模型分类</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106135036390.png" alt="image-20220106135036390"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105164705159.png" alt="image-20220105164705159"></p>
+<h3 id="分类模型"><a href="#分类模型" class="headerlink" title="分类模型"></a>分类模型</h3><p>KNN、NB（朴素贝叶斯）、DT（决策树）、LR（逻辑回归）</p>
+<p>SVC（support vector）</p>
+<h3 id="回归模型"><a href="#回归模型" class="headerlink" title="回归模型"></a>回归模型</h3><p>（预测，有一个return）</p>
+<p>线性回归、SVR</p>
+<h3 id="聚类模型"><a href="#聚类模型" class="headerlink" title="聚类模型"></a>聚类模型</h3><p>（无监督）</p>
+<p>K-Means</p>
+<h3 id="特殊的模型"><a href="#特殊的模型" class="headerlink" title="特殊的模型"></a>特殊的模型</h3><p>HMM、CRF</p>
+<h3 id="无监督学习和有监督学习"><a href="#无监督学习和有监督学习" class="headerlink" title="无监督学习和有监督学习"></a>无监督学习和有监督学习</h3><p>不需要标注数据</p>
+<p>监督学习：有正确答案，是猫是狗</p>
+<p>半监督是之后的热点，比较难</p>
+<p>（现在没有完美的解决方案）</p>
+<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h2 id="数据集-1"><a href="#数据集-1" class="headerlink" title="数据集"></a>数据集</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106140628139.png" alt="image-20220106140628139"></p>
+<p>验证集：调参</p>
+<p>测试集：验证</p>
+<h2 id="准确率"><a href="#准确率" class="headerlink" title="准确率"></a>准确率</h2><p>其中还涉及到混淆矩阵</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106141745314.png" alt="image-20220106141745314"></p>
+<h2 id="精确率和召回率"><a href="#精确率和召回率" class="headerlink" title="精确率和召回率"></a>精确率和召回率</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106141818732.png" alt="image-20220106141818732"></p>
+<p>新冠检测，宁可错s，不放过一个</p>
+<p>上面这两者，鱼与熊掌不可兼得</p>
+<p>看应用场景</p>
+<p>精确率高：测出是假币，尽量100%就是假币</p>
+<p>召回率高：全部个体里，有问题的都已测出</p>
+<h2 id="不平衡的数据集"><a href="#不平衡的数据集" class="headerlink" title="不平衡的数据集"></a>不平衡的数据集</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106142641703.png" alt="image-20220106142641703"></p>
+<h2 id="数据集网站"><a href="#数据集网站" class="headerlink" title="数据集网站"></a>数据集网站</h2><p>kaggle</p>
+<h2 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106141609660.png" alt="image-20220106141609660"></p>
+<p>越靠近左上角，模型越好（100%阳性）</p>
+<p>B比AC要好</p>
+<h2 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h2><h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><p>错误、冗余、异常值</p>
+<h2 id="数据编码"><a href="#数据编码" class="headerlink" title="数据编码"></a>数据编码</h2><h2 id="数据归一化"><a href="#数据归一化" class="headerlink" title="数据归一化"></a>数据归一化</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106103958585.png" alt="image-20220106103958585"></p>
+<p>Pandas、Dataframe</p>
+<h2 id="特征抽取"><a href="#特征抽取" class="headerlink" title="特征抽取"></a>特征抽取</h2><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h2><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>简单，通用</p>
+<p>但不保证最优解</p>
+<h1 id="分类器"><a href="#分类器" class="headerlink" title="分类器"></a>分类器</h1><h2 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h2><p>阈值</p>
+<h2 id="线性回归与分类器"><a href="#线性回归与分类器" class="headerlink" title="线性回归与分类器"></a>线性回归与分类器</h2><p>如果有一点比较偏则影响很大</p>
+<h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>逻辑回归 = 线性回归 + Sigmoid函数</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106150128763.png" alt="image-20220106150128763"></p>
+<h2 id="目标函数（损失函数）-1"><a href="#目标函数（损失函数）-1" class="headerlink" title="目标函数（损失函数）"></a>目标函数（损失函数）</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106150636664.png" alt="image-20220106150636664"></p>
+<p>为了方便后面的计算</p>
+<h2 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106150827683.png" alt="image-20220106150827683"></p>
+<p>P(A|B)=1/6</p>
+<p>在B的前提下，A的概率</p>
+<p>20个人，男生有6个，穿白袜子的人4个</p>
+<p>穿白袜子的人里，是男生，的概率是0.25，则4x0.25=1，则只有一个男生穿了白袜子</p>
+<p>则一个人是男生，他穿袜子，真的概率是1/6</p>
+<p>“朴素”</p>
+<p>特征之间相互独立</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106151755049.png" alt="image-20220106151755049"></p>
+<p>数据集中没有，不代表现实中没有（多变量的情况）</p>
+<h2 id="分类器实例"><a href="#分类器实例" class="headerlink" title="分类器实例"></a>分类器实例</h2><p>识别十二生肖</p>
+<p>若干个二元分类</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106150731203.png" alt="image-20220106150731203"></p>
+<h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106152100069.png" alt="image-20220106152100069"></p>
+<p>叶子节点是返回结果</p>
+<h2 id="决策树生成算法"><a href="#决策树生成算法" class="headerlink" title="决策树生成算法"></a>决策树生成算法</h2><h2 id="ID3"><a href="#ID3" class="headerlink" title="ID3"></a>ID3</h2><p>筛选offer</p>
+<p>薪资低于多少的直接不要</p>
+<h2 id="C45"><a href="#C45" class="headerlink" title="C45"></a>C45</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106152846452.png" alt="image-20220106152846452"></p>
+<h2 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h2><h1 id="聚类-Clustering"><a href="#聚类-Clustering" class="headerlink" title="聚类 Clustering"></a>聚类 Clustering</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106153115031.png" alt="image-20220106153115031"></p>
+<h2 id="欧氏距离"><a href="#欧氏距离" class="headerlink" title="欧氏距离"></a>欧氏距离</h2><p>（一般是欧式距离）</p>
+<p>表示相近</p>
+<h2 id="余弦距离"><a href="#余弦距离" class="headerlink" title="余弦距离"></a>余弦距离</h2><h2 id="曼哈顿距离"><a href="#曼哈顿距离" class="headerlink" title="曼哈顿距离"></a>曼哈顿距离</h2><h2 id="KNN算法"><a href="#KNN算法" class="headerlink" title="KNN算法"></a>KNN算法</h2><p>有监督</p>
+<h2 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h2><p>无监督</p>
+<p>除了名字相似，没什么联系的</p>
+<p>k 人工指定</p>
+<h2 id="Lloyd-算法"><a href="#Lloyd-算法" class="headerlink" title="Lloyd 算法"></a>Lloyd 算法</h2><p>是K-Means 的标准方法，但是没有办法保证最优解</p>
+<p>3次聚类，选一个指标最好的</p>
+<p>（避免局部最优）</p>
+<p>对非球形簇的效果不咋好</p>
+<h1 id="谱聚类"><a href="#谱聚类" class="headerlink" title="谱聚类"></a>谱聚类</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106154757309.png" alt="image-20220106154757309"></p>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="Python-机器学习包-scikit-learn"><a href="#Python-机器学习包-scikit-learn" class="headerlink" title="Python 机器学习包 scikit-learn"></a>Python 机器学习包 scikit-learn</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106160445059.png" alt="image-20220106160445059"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106161143799.png" alt="image-20220106161143799"></p>
+<h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106170608708.png" alt="image-20220106170608708"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106171204547.png" alt="image-20220106171204547"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106171221060.png" alt="image-20220106171221060"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106171239685.png" alt="image-20220106171239685"></p>
+<h1 id="计算机视觉（CV-computer-version）"><a href="#计算机视觉（CV-computer-version）" class="headerlink" title="计算机视觉（CV computer version）"></a>计算机视觉（CV computer version）</h1><p>照片唱歌，随着歌曲而动嘴</p>
+<h2 id="图像处理"><a href="#图像处理" class="headerlink" title="图像处理"></a>图像处理</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105141639228.png" alt="image-20220105141639228"></p>
+<h2 id="deepface"><a href="#deepface" class="headerlink" title="deepface"></a>deepface</h2><h2 id="yolo"><a href="#yolo" class="headerlink" title="yolo"></a>yolo</h2><p>目标检测</p>
+<h1 id="first-order-model"><a href="#first-order-model" class="headerlink" title="first order model"></a>first order model</h1><p>checkpoint</p>
+<p>tar 放到目录下</p>
+<h1 id="语音处理"><a href="#语音处理" class="headerlink" title="语音处理"></a>语音处理</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105142001960.png" alt="image-20220105142001960"></p>
+<h2 id="微软speech-studio"><a href="#微软speech-studio" class="headerlink" title="微软speech studio"></a>微软speech studio</h2><p>情感能力调节技术</p>
+<h2 id="TTS"><a href="#TTS" class="headerlink" title="TTS"></a>TTS</h2><h1 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a>自然语言处理</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105142236010.png" alt="image-20220105142236010"></p>
+<p>主要处理文本</p>
+<h2 id="GTP-3xx"><a href="#GTP-3xx" class="headerlink" title="GTP-3xx"></a>GTP-3xx</h2><h2 id="知识图谱xx"><a href="#知识图谱xx" class="headerlink" title="知识图谱xx"></a>知识图谱xx</h2><p>谷歌提出来的</p>
+<p>连接主义和符号主义</p>
+<h2 id="连接主义xx"><a href="#连接主义xx" class="headerlink" title="连接主义xx"></a>连接主义xx</h2><h2 id="符号主义xx"><a href="#符号主义xx" class="headerlink" title="符号主义xx"></a>符号主义xx</h2><h1 id="AI-人才栈"><a href="#AI-人才栈" class="headerlink" title="AI 人才栈"></a>AI 人才栈</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105145623375.png" alt="image-20220105145623375"></p>
+<h2 id="算法工程师"><a href="#算法工程师" class="headerlink" title="算法工程师"></a>算法工程师</h2><p>现在基本上是博士（还得是top的高校）</p>
+<p>（以前有硕士）</p>
+<p>新算法的研究</p>
+<p>阿里达摩院</p>
+<h2 id="KPI"><a href="#KPI" class="headerlink" title="KPI"></a>KPI</h2><p>部门/个人的业绩指标</p>
+<p>量化绩效管理</p>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>几百G甚至上T的数据处理</p>
+<p>对多线程的需求很大</p>
+<h2 id="测试pipeline"><a href="#测试pipeline" class="headerlink" title="测试pipeline"></a>测试pipeline</h2><h2 id="模型的部署"><a href="#模型的部署" class="headerlink" title="模型的部署"></a>模型的部署</h2><h2 id="数据标注"><a href="#数据标注" class="headerlink" title="数据标注"></a>数据标注</h2><blockquote>
+<p>在我的理解来看，数据标注是非常非常重要的</p>
+<p>（验证标注质量）</p>
+</blockquote>
+<h2 id="数学储备"><a href="#数学储备" class="headerlink" title="数学储备"></a>数学储备</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105164537475.png" alt="image-20220105164537475"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106091506181.png" alt="image-20220106091506181"></p>
+<h1 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h1><p>大概有两种分析：描述性分析和预测性分析（推送、用户需求）</p>
+<h2 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h2><blockquote>
+<p>极大似然估计太重要太重要了</p>
+</blockquote>
+<h2 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h2><h2 id="信息熵-1"><a href="#信息熵-1" class="headerlink" title="信息熵"></a>信息熵</h2><h1 id="数据处理数据可视化"><a href="#数据处理数据可视化" class="headerlink" title="数据处理数据可视化"></a>数据处理数据可视化</h1><h2 id="塔夫特原则"><a href="#塔夫特原则" class="headerlink" title="塔夫特原则"></a>塔夫特原则</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106105259381.png" alt="image-20220106105259381"></p>
+<h3 id="尊重事实"><a href="#尊重事实" class="headerlink" title="尊重事实"></a>尊重事实</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106105649029.png" alt="image-20220106105649029"></p>
+<p>就差了3cm</p>
+<p>但是比例看起来好像差了10几cm</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106113244160.png" alt="image-20220106113244160"></p>
+<h3 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h3><p>比例尺，不同颜色的点代表什么</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106111711526.png" alt="image-20220106111711526"></p>
+<p>###内容重要形式</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106110039933.png" alt="image-20220106110039933"></p>
+<p>右边一目了然最好</p>
+<p>左边的太多噪声了</p>
+<h2 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h2><h3 id="直方图histogram"><a href="#直方图histogram" class="headerlink" title="直方图histogram"></a>直方图histogram</h3><h3 id="KDE图"><a href="#KDE图" class="headerlink" title="KDE图"></a>KDE图</h3><p>平滑</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106110939071.png" alt="image-20220106110939071"></p>
+<h3 id="箱形图（盒）"><a href="#箱形图（盒）" class="headerlink" title="箱形图（盒）"></a>箱形图（盒）</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106111046266.png" alt="image-20220106111046266"></p>
+<p>上/下四分位数：25%</p>
+<p>异常值：上下限之外的值</p>
+<p>（和传统的异常值不是一个概念）</p>
+<h3 id="小提琴图"><a href="#小提琴图" class="headerlink" title="小提琴图"></a>小提琴图</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106111336119.png" alt="image-20220106111336119"></p>
+<h3 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h3><p>和直方图的区别</p>
+<h3 id="多维度散点图"><a href="#多维度散点图" class="headerlink" title="多维度散点图"></a>多维度散点图</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106111711526.png"></p>
+<p>不同颜色再做区分</p>
+<h3 id="热力图"><a href="#热力图" class="headerlink" title="热力图"></a>热力图</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106112147292.png" alt="image-20220106112147292"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106112253289.png" alt="image-20220106112253289"></p>
+<p>用颜色表达程度</p>
+<p>（更多是基于地理信息，如：天气信息、人口流动）</p>
+<h3 id="高维数据可视化"><a href="#高维数据可视化" class="headerlink" title="高维数据可视化"></a>高维数据可视化</h3><p>现在依旧是问题</p>
+<p>尽量避免</p>
+<h2 id="数据可视化与机器学习"><a href="#数据可视化与机器学习" class="headerlink" title="数据可视化与机器学习"></a>数据可视化与机器学习</h2><p>聚类可视化来选择更加合适的模型</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106112923076.png" alt="image-20220106112923076"></p>
+<p>单单看数据没感觉的</p>
+<p>可视化出来之后，能更清晰选择拟合方式</p>
+<h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><h2 id="卷积-Filter"><a href="#卷积-Filter" class="headerlink" title="卷积 Filter"></a>卷积 Filter</h2><p>乘卷积核（fliter kernel），就把矩阵给卷起来了</p>
+<h2 id="填充-Paddingxx"><a href="#填充-Paddingxx" class="headerlink" title="填充 Paddingxx"></a>填充 Paddingxx</h2><h2 id="步幅-Stride"><a href="#步幅-Stride" class="headerlink" title="步幅 Stride"></a>步幅 Stride</h2><h2 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h2><p>压缩且保留信息</p>
+<p>卷积层 + 池化层 = layer</p>
+<h3 id="平均池化xx"><a href="#平均池化xx" class="headerlink" title="平均池化xx"></a>平均池化xx</h3><h2 id="神经网络一般结构"><a href="#神经网络一般结构" class="headerlink" title="神经网络一般结构"></a>神经网络一般结构</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107112816793.png" alt="image-20220107112816793"></p>
+<h2 id="LeNet-8-1998-xx"><a href="#LeNet-8-1998-xx" class="headerlink" title="LeNet-8 (1998)xx"></a>LeNet-8 (1998)xx</h2><h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><h2 id="VGG-16（2015）"><a href="#VGG-16（2015）" class="headerlink" title="VGG-16（2015）"></a>VGG-16（2015）</h2><p>16个卷积层，16个全连接层</p>
+<p>1.38亿个参数</p>
+<h2 id="Inception-Network-2014"><a href="#Inception-Network-2014" class="headerlink" title="Inception Network(2014)"></a>Inception Network(2014)</h2><p>v3</p>
+<h2 id="为什么卷积有效"><a href="#为什么卷积有效" class="headerlink" title="为什么卷积有效"></a>为什么卷积有效</h2><h1 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h1><p>抽象之后，可以有这样的问题</p>
+<p>“有没有连续但是不可比较的数据”</p>
+<p>有！如颜色RGB，数值连续，但是没有优劣之分</p>
 
       
     </div>
@@ -407,7 +1158,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-05 09:38:03" itemprop="dateModified" datetime="2022-01-05T09:38:03+08:00">2022-01-05</time>
+                <time title="Modified: 2022-01-09 09:11:22" itemprop="dateModified" datetime="2022-01-09T09:11:22+08:00">2022-01-09</time>
               </span>
 
           
@@ -515,11 +1266,56 @@
 
 
 
+<h2 id="后端拿token有什么用"><a href="#后端拿token有什么用" class="headerlink" title="后端拿token有什么用"></a>后端拿token有什么用</h2><p>sa-token 解析token</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (SaTempUtil.parseToken(token, Long.class) != <span class="keyword">null</span>) &#123;</span><br><span class="line">    uid = SaTempUtil.parseToken(token, Long.class);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (StpUtil.getLoginId() != <span class="keyword">null</span>) &#123;</span><br><span class="line">    uid = Long.parseLong(StpUtil.getLoginId().toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
 
+<h2 id="post请求传参"><a href="#post请求传参" class="headerlink" title="post请求传参"></a>post请求传参</h2><p>post请求一般不用form-data（显式）</p>
+<p>而是通过json形式</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106113743600.png"></p>
+<p>然后后端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterviewReinviteRequest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotNull(message = &quot;面试id不能为空&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Long interviewId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> RQL <span class="title">interviewReInvite</span><span class="params">(<span class="meta">@Valid</span> <span class="meta">@RequestBody</span> InterviewReinviteRequest interviewReinviteRequest)</span></span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="参数命名"><a href="#参数命名" class="headerlink" title="参数命名"></a>参数命名</h2><p>表示消息的未读状态</p>
+<p>我用的是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Integer messageStatus;</span><br></pre></td></tr></table></figure>
+
+<p>原因是考虑到以后可能会有 “已读未回” 消息的情况</p>
+<p>为了可扩展性吧</p>
+<p>牺牲了可读性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean unRead;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="该接口面向的用户是谁"><a href="#该接口面向的用户是谁" class="headerlink" title="该接口面向的用户是谁"></a>该接口面向的用户是谁</h2><p>是单单普通用户</p>
+<p>还是这个系统的全部用户，包括企业用户、教培机构、管理员</p>
+<h2 id="mybatis-生成"><a href="#mybatis-生成" class="headerlink" title="mybatis 生成"></a>mybatis 生成</h2><h2 id="Mybatis-变量别名"><a href="#Mybatis-变量别名" class="headerlink" title="Mybatis 变量别名"></a>Mybatis 变量别名</h2><h2 id="Service-加在哪"><a href="#Service-加在哪" class="headerlink" title="@Service 加在哪"></a>@Service 加在哪</h2><p>Impl</p>
+<h2 id="push代码前"><a href="#push代码前" class="headerlink" title="push代码前"></a>push代码前</h2><p>沿着流程走一遍，看哪里还存在注释等的问题</p>
+<h2 id="git修改comment"><a href="#git修改comment" class="headerlink" title="git修改comment"></a>git修改comment</h2><p>修改最后一次的提交</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --force</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="mysql多条件"><a href="#mysql多条件" class="headerlink" title="mysql多条件"></a>mysql多条件</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span>  <span class="keyword">or</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="mysql-多条件嵌套"><a href="#mysql-多条件嵌套" class="headerlink" title="mysql 多条件嵌套"></a>mysql 多条件嵌套</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span> (status <span class="operator">!=</span> <span class="number">-1</span> <span class="keyword">or</span> status <span class="operator">!=</span> <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -531,724 +1327,16 @@
 <p>Nacos=Eureka+Config+Bus</p>
 <h2 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211230105332635.png" alt="image-20211230105332635"></p>
 <p>Nacos 可以把哪个provider告诉给客户端知道</p>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>冒烟测试</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/SpringCloud-HelloWorld/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/29/SpringCloud-HelloWorld/" class="post-title-link" itemprop="url">SpringCloud-HelloWorld</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-29 14:47:14 / Modified: 14:48:38" itemprop="dateCreated datePublished" datetime="2021-12-29T14:47:14+08:00">2021-12-29</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229144749944.png" alt="image-20211229144749944"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229144820871.png" alt="image-20211229144820871"></p>
-<p>then the server will know to get which yml</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/SpringCloud-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/29/SpringCloud-Tutorial/" class="post-title-link" itemprop="url">SpringCloud-Tutorial</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-12-29 13:40:11" itemprop="dateCreated datePublished" datetime="2021-12-29T13:40:11+08:00">2021-12-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-30 08:50:16" itemprop="dateModified" datetime="2021-12-30T08:50:16+08:00">2021-12-30</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Dynamic-scale-up-and-down"><a href="#Dynamic-scale-up-and-down" class="headerlink" title="Dynamic scale up and down"></a>Dynamic scale up and down</h1><p>Feign for rest client</p>
-<h1 id="Fault-tolerance"><a href="#Fault-tolerance" class="headerlink" title="Fault tolerance"></a>Fault tolerance</h1><h2 id="hystrix"><a href="#hystrix" class="headerlink" title="hystrix"></a>hystrix</h2><p>service shut down, then give some default response</p>
-<h1 id="Gateway"><a href="#Gateway" class="headerlink" title="Gateway"></a>Gateway</h1><h2 id="Netflix-API-gateway"><a href="#Netflix-API-gateway" class="headerlink" title="Netflix API gateway"></a>Netflix API gateway</h2><p>rating limiting </p>
-<h2 id="tracing"><a href="#tracing" class="headerlink" title="tracing"></a>tracing</h2><p>Zipkin Distributed Tracing</p>
-<p>(when the request go)</p>
-<h1 id="Scalable"><a href="#Scalable" class="headerlink" title="Scalable"></a>Scalable</h1><p>可升级的</p>
-<h1 id="Cloud-native-application"><a href="#Cloud-native-application" class="headerlink" title="Cloud native application"></a>Cloud native application</h1><p>Spring Cloud build default cloud native app</p>
-<h1 id="Spring-Cloud-and-Spring-Boot"><a href="#Spring-Cloud-and-Spring-Boot" class="headerlink" title="Spring Cloud and Spring Boot"></a>Spring Cloud and Spring Boot</h1><p>where you can run jar</p>
-<p>and you can run spring cloud app</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229135259084.png" alt="image-20211229135259084"></p>
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Config-Server"><a href="#Config-Server" class="headerlink" title="Config Server"></a>Config Server</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229135928243.png" alt="image-20211229135928243"></p>
-<p>Config server can store the config</p>
-<p>refresh the config as the schedule </p>
-<p>you don’t need to shut down the service and redeploy</p>
-<p>or the config notify the micro to refresh</p>
-<h2 id="Service-Discovery"><a href="#Service-Discovery" class="headerlink" title="Service Discovery"></a>Service Discovery</h2><p>micro service know where they live</p>
-<p>know the current URL, status</p>
-<p>Netflix Eureka</p>
-<p>zookeeper</p>
-<p>consul</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229145753209.png" alt="image-20211229145753209"></p>
-<h2 id="Circuit-Breakers"><a href="#Circuit-Breakers" class="headerlink" title="Circuit Breakers"></a>Circuit Breakers</h2><p>fault tolorance</p>
-<h2 id="Routing-and-Message"><a href="#Routing-and-Message" class="headerlink" title="Routing and Message"></a>Routing and Message</h2><p>request between micro service</p>
-<h2 id="API-Gateway"><a href="#API-Gateway" class="headerlink" title="API Gateway"></a>API Gateway</h2><p>client to the micro service</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229140541204.png" alt="image-20211229140541204"></p>
-<p>确实，不仅仅是微服务之间需要discovery</p>
-<p>client和server之间则是API Gateway 在帮忙</p>
-<h2 id="Tracing"><a href="#Tracing" class="headerlink" title="Tracing"></a>Tracing</h2><p>debugging</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229150941801.png" alt="image-20211229150941801"></p>
-<h2 id="CI-pipelines-and-testing"><a href="#CI-pipelines-and-testing" class="headerlink" title="CI pipelines and testing"></a>CI pipelines and testing</h2><p>??</p>
-<p>test between the micro services</p>
-<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><h2 id="Spring-cloud-CLI"><a href="#Spring-cloud-CLI" class="headerlink" title="Spring cloud CLI"></a>Spring cloud CLI</h2><h1 id="Spring-boot-CLI"><a href="#Spring-boot-CLI" class="headerlink" title="Spring boot CLI"></a>Spring boot CLI</h1><p><a target="_blank" rel="noopener" href="https://repo.spring.io/ui/native/release/org/springframework/boot/spring-boot-cli">仓库</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring install org.springframework.cloud:spring-cloud-cli:1.4.0.RELEASE</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229233854233.png" alt="image-20211229233854233"></p>
-<p>spring-boot-starter-parent的父依赖是spring-boot-dependences，里面管理了所有需要的默认的依赖版本。</p>
-<p>Spring Cloud CLI 2.1.x will work with Spring Boot CLI 2.1.x<br>Spring Cloud CLI 2.0.x will work with Spring Boot CLI 2.0.x<br>Spring Cloud CLI 1.4.x will work with Spring Boot CLI 1.5.x</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/Springboot-Helloworld/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/29/Springboot-Helloworld/" class="post-title-link" itemprop="url">SpringBoot Helloworld</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-12-29 08:35:54" itemprop="dateCreated datePublished" datetime="2021-12-29T08:35:54+08:00">2021-12-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-30 09:46:28" itemprop="dateModified" datetime="2021-12-30T09:46:28+08:00">2021-12-30</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="建立项目"><a href="#建立项目" class="headerlink" title="建立项目"></a>建立项目</h1><p>JDK不一致会有问题（404），但是idea并不报错</p>
-<p><a target="_blank" rel="noopener" href="https://start.aliyun.com/">https://start.aliyun.com/</a></p>
-<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>Web-SpringBoot web</p>
-<h1 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h1><p>建立包，然后</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span>  	<span class="comment">// http://localhost:8080/hello</span></span><br><span class="line">    <span class="meta">@ResponseBody</span>  				<span class="comment">// 不进行页面跳转，而是返回字符串</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="Dao"><a href="#Dao" class="headerlink" title="Dao"></a>Dao</h1><h2 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Entity(name = &quot;tb_user&quot;)</span>       <span class="comment">// 实体类，值为表名</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span>  <span class="comment">//主键自增</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="keyword">private</span> String role;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="数据库访问接口"><a href="#数据库访问接口" class="headerlink" title="数据库访问接口"></a>数据库访问接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">User</span>,<span class="title">Long</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Query(value = &quot;select COUNT(*) from tb_user where role = &#x27;USER&#x27;&quot;,nativeQuery = true)</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">getUserNum</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="数据库接口参数"><a href="#数据库接口参数" class="headerlink" title="数据库接口参数"></a>数据库接口参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/db_authority?serverTimezone=GMT%2B8</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=123456</span><br><span class="line">spring.jpa.hibernate.naming.physical-strategy= org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl</span><br></pre></td></tr></table></figure>
-
-
-
-<p>解释：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span><br></pre></td></tr></table></figure>
-
-<p>依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="dao调用"><a href="#dao调用" class="headerlink" title="dao调用"></a>dao调用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line">UserRepository userRepository;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/getUserNum&quot;)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getUserNum</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> userRepository.getUserNum();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/14/%E6%94%BF%E6%B2%BB%E5%A4%A7%E9%A2%98%E8%83%8C%E8%AF%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/14/%E6%94%BF%E6%B2%BB%E5%A4%A7%E9%A2%98%E8%83%8C%E8%AF%B5/" class="post-title-link" itemprop="url">政治大题背诵</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-12-14 09:06:14" itemprop="dateCreated datePublished" datetime="2021-12-14T09:06:14+08:00">2021-12-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-24 15:02:40" itemprop="dateModified" datetime="2021-12-24T15:02:40+08:00">2021-12-24</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="人民群众"><a href="#人民群众" class="headerlink" title="人民群众"></a>人民群众</h1><p>在社会历史的发展过程中，人民群众起着决定性的作用</p>
-<p>人民群众是社会实践的主体，在创造历史的过程中起着决定性的作用</p>
-<p>人民群众是具有变革旧的生产关系的愿望的社会力量</p>
-<p>人民群众是具有变革旧的社会制度和思想观念的社会力量</p>
-<p><strong>人民群众是顺应社会发展的社会力量</strong></p>
-<p><strong>唯物史观要求我们</strong>坚持全心全意为人民服务的<strong>马克思主义的群众的观点</strong></p>
-<p>坚持贯彻党的群众路线，一切为了群众，一切依赖群众，从群众中来，到群众中去</p>
-<p>人民群众是社会历史实践的主体，在创造历史的过程中起着决定性的作用</p>
-<p>人民群众是顺应社会历史发展的社会力量</p>
-<p>人民群众是具有变革旧的生产关系愿望的社会力量</p>
-<p>人民群众是具有变革旧的社会制度和思想观念愿望的社会力量</p>
-<p>唯物史观认为，我们应该坚持<strong>全心全意为人民服务</strong>的马克思主义群众观点</p>
-<p>坚持贯彻党的群众路线，一切为了群众，一切依赖群众，从群众中来，到群众中去</p>
-<h1 id="社会主义核心价值观"><a href="#社会主义核心价值观" class="headerlink" title="社会主义核心价值观"></a>社会主义核心价值观</h1><p>社会主义核心价值观是当代中国精神的集中体现</p>
-<p>国家勋章和xxx是在全社会弘扬社会主义核心价值观的重要形式</p>
-<p>彰显了国家坚持和发展<strong>中国特色社会主义核心价值观遵循的力度</strong></p>
-<p>有助于鼓励更多的人向受彰者学习，有利于<strong>让社会主义核心价值观影响更多的人</strong></p>
-<p>有助于发挥社会主义核心价值观的<strong>凝聚力和向心力</strong></p>
-<p>进一步<strong>增进社会的团结和谐</strong></p>
-<p>社会主义核心价值观是当代中国精神的集中体现</p>
-<p>xxx是在全社会弘扬社会主义核心价值观的重要形式</p>
-<p><strong>彰显了国家坚持和发展中国特色社会主义核心价值观遵循的力度</strong></p>
-<p>有助于鼓励人们向受彰者学习</p>
-<p><strong>有助于进一步加强社会主义核心价值观的影响力</strong></p>
-<p>有助于发挥社会主义核心价值观的凝聚力和向心力</p>
-<p>有助于维护社会的团结和谐</p>
-<h1 id="新阶段"><a href="#新阶段" class="headerlink" title="新阶段"></a>新阶段</h1><p>党的十八大以来，党中央把握发展的新阶段变化</p>
-<p>把逐步实现全体人民共同富裕摆在了更加重要的位置上</p>
-<p><strong>推动区域协调发展，采取有力的措施保障和改善民生</strong></p>
-<p><strong>打赢脱贫攻坚战全面建成小康社会</strong></p>
-<p><strong>为促进共同富裕创造了良好的条件</strong></p>
-<p>现在已经到了扎实推进共同富裕的历史新阶段</p>
-<p>我们正在向第二个百年奋斗目标<strong>迈进</strong></p>
-<p>适应我国社会主要矛盾的变化</p>
-<p>更好地满足人民日益增长的美好生活需要</p>
-<p><strong>必须促进</strong>全体人民共同富裕作<strong>为人民谋幸福</strong>的着力点</p>
-<p><strong>不断夯(hang)实党的长期执政基础</strong></p>
-<p>高质量发展需要高质量劳动者</p>
-<p>只有促进共同富裕，提高城乡居民收入，<strong>提高人力资本</strong></p>
-<p>才能<strong>提高全要素劳动生产率</strong></p>
-<p><strong>夯实高质量发展的动力基础</strong></p>
-<p>当前全球收入不平等的<strong>问题突出</strong></p>
-<p>一些国家<strong>贫富分化严重，中产阶级塌陷，社会撕裂， 社会极化，民粹主义泛滥</strong></p>
-<p>教训十分深刻，<strong>我国必须坚决防止两极分化</strong></p>
-<p>促进共同富裕，<strong>实现社会和谐安定</strong></p>
-<p>共同富裕是社会主义的本质要求，是<strong>中国式现代化的重要特征</strong></p>
-<p>自党的十八大以来，我国取得了许多历史性的成就</p>
-<p>也来到了新的一个发展阶段</p>
-<p>党也把共同富裕放在来越来越重要的位置上</p>
-<p>现在已经到了扎实推进共同富裕的阶段</p>
-<p> 在新发展阶段，需要我们具备辩证发展的眼光，知道量变质变的规律，知道量变质变是相互渗透的</p>
-<p>唯物辩证法认为，事物是永恒发展的</p>
-<p>中国特色社会主义也在不断发展</p>
-<p>从改革开放以来，特别是党的十八大以来，我国取得了许多历史性的成就</p>
-<p>为实现第二个百年奋斗目标奠定了坚实的基础</p>
-<p>事物的发展是不断进行量变的积累，然后产生质变的过程</p>
-<p>我国的长期目标是建设社会主义现代化强国，实现中华民族伟大复兴</p>
-<p>要实现这个长期目标，需要不断进行量变的积累，跨越多个不同的阶段</p>
-<p>而新发展阶段就是其中的一个阶段</p>
-<p>在事物发展的过程中，量变质变是相互渗透的</p>
-<p>在不断积累量变的过程中，会产生阶段性的质变</p>
-<p>我国的基本国情没有发生改变</p>
-<p>仍然处于社会主义初级阶段</p>
-<p>新发展阶段是社会主义初级阶段中的其中一个阶段</p>
-<p>但它是一个新的起点，取得了一定的阶段性成就</p>
-<h1 id="真理与谬误"><a href="#真理与谬误" class="headerlink" title="真理与谬误"></a>真理与谬误</h1><p>真理和谬误是<strong>对立统一的关系</strong></p>
-<p>真理与谬误是两种不同的认识</p>
-<p>真理是对<strong>客观事物及规律</strong>的正确反映</p>
-<p>谬误是对客观事物及规律的歪曲反映</p>
-<p>真理和谬误是统一的</p>
-<p>他们相互依存，相互转化</p>
-<p>真理和谬误是相比较而存在的</p>
-<p>所以我们<strong>既要坚持真理的一元性与谬误作斗争</strong></p>
-<p>同时也要<strong>促进谬误在一定条件下向真理的转化</strong></p>
-<h1 id="度"><a href="#度" class="headerlink" title="度"></a>度</h1><p>做事情要把握尺度</p>
-<p>度是量和质的统一</p>
-<p>如果超过了度，事物将会发生变化，转化成它物</p>
-<p>在工作中，如果我们超过了底线，其性质就会发生改变</p>
-<p>就有可能犯下大错误</p>
-<p>因此必须在底线范围内进行实践</p>
-<p>积极发挥主观能动性。</p>
-<p>只有充分发挥主观能动性才能更好地认识规律、利用规律</p>
-<p>把握工作的主动权</p>
-<h1 id="实践和认识"><a href="#实践和认识" class="headerlink" title="实践和认识"></a>实践和认识</h1><p>实践和认识是辩证统一的</p>
-<p>实践是认识的来源、基础和前提</p>
-<p>实践决定认识，是认识发展的动力</p>
-<p>也是检验认识是否具有真理性的唯一标准</p>
-<p>同时认识指导实践又具有能动的反作用</p>
-<p>认识指导实践，为实践服务，认识价值的实现需要在实践中完成</p>
-<p>所以我们要坚持一切从实际出发，实事求是，坚持改造主观世界和客观世界相统一</p>
-<p>认识就是在实践的基础上，从感性认识到理性认识</p>
-<p>再从理性认识到实践的两次辩证飞跃的过程</p>
-<p>认识是反复性和无限性的统一</p>
-<h1 id="对立统一"><a href="#对立统一" class="headerlink" title="对立统一"></a>对立统一</h1><p>对立统一规律是指矛盾双方既存在相互分离、相互排斥的对立性</p>
-<p>也存在相互依存，在一定条件下相互转化的统一性</p>
-<p>二者作为<strong>矛盾的根本属性</strong>，不可分割共同促进事物的发展</p>
-<p>xxx<strong>的事例揭示出深刻的对立统一规律</strong></p>
-<p>xxx<strong>正是深刻把握了xxx的矛盾统一性</strong></p>
-<p>利用科技知识将xxx转化为xxx</p>
-<p>把对xxx危害转化成为了xxx益处</p>
-<p>因此，“小发明”就可以解决人类在环境资源方面的大问题</p>
-<h1 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h1><p>唯物辩证法认为规律是事物所固有的、本质的、必然的联系</p>
-<p>具有不以人的主观意志为转移的客观性</p>
-<p>人类不能随意创造、修改和消灭规律</p>
-<p>但人们可以充分发挥主观能动性去认识和利用规律</p>
-<h1 id="联系"><a href="#联系" class="headerlink" title="联系"></a>联系</h1><p>联系的观点是唯物辩证法的总观点和总特征之一</p>
-<p>世上所有事物都不是孤立存在的</p>
-<p>所有事物必然存在于相互联系中</p>
-<p>对立统一规律是唯物辩证法的本质和核心</p>
-<p>它揭示了事物之间联系的根本内容和发展动力</p>
-<p>自然界的生物之间存在着既相互对立的又相互依赖的对立统一关系</p>
-<p>矛盾的同一性和斗争性相互联接、相辅相成，构成是事物发展的矛盾运动，共同促进事物的发展</p>
-<p>xxx体现了生物之间相互依赖、相互斗争的关系</p>
-<h1 id="肖1"><a href="#肖1" class="headerlink" title="肖1"></a>肖1</h1><h2 id="人与自然"><a href="#人与自然" class="headerlink" title="人与自然"></a>人与自然</h2><p>自然界是人类社会形成的自然基础</p>
-<p>人类社会的存在和发展又反过来影响并不断改变着自然界</p>
-<p>实践是使物质世界分化为自然界与人类社会的历史前提</p>
-<p>又是使自然界和人类社会统一起来的现实基础</p>
-<p>人类在实践活动中按照自己的意愿改造世界的同时必须遵循自然规律</p>
-<p>否则将会导致人与自然关系的失衡</p>
-<p>正确的实践观点是理解人与自然关系、实现人与自然和谐统一的关键</p>
-<p>人与自然是生命共同体，人类必须尊重自然、顺应自然、保护自然</p>
-<p>推动实现碳达峰、碳中和目标就是要合理地调节人与自然之间的物质变换</p>
-<h2 id="自然环境"><a href="#自然环境" class="headerlink" title="自然环境"></a>自然环境</h2><p>自然地理环境是指与人类社会所处的地理位置相联系的自然条件的总和</p>
-<p>是人类社会生存和发展永恒的、必要的条件</p>
-<p>是人们生存和发展的自然基础</p>
-<p>自然地理环境提供了社会生活和生产资料的来源</p>
-<p>离开一定的自然条件，人们就不可能进行生活和生产</p>
-<p>自然的地理环境的优劣对社会发展起促进或延缓的作用</p>
-<p>自然生态平衡对社会生活起着重要作用</p>
-<p>合理地利用自然资源，保护生态平衡是社会得以正常发展的必要条件</p>
-<h2 id="联系-1"><a href="#联系-1" class="headerlink" title="联系"></a>联系</h2><p>世界是物质同一性和多样性的统一</p>
-<p>物质世界包含着不同的物质现象和物质形态</p>
-<p>不同物质层次和物质结构</p>
-<p>不同物质过程和物质活动</p>
-<p>包含着自然界和人类社会</p>
-<p>联系具有客观性</p>
-<p>事物的联系是事物本身所固有的不是主观臆想的</p>
-<p>不以人的主观意志为转移</p>
-<p>联系具有普遍性</p>
-<p>任何事物都不能孤立存在，都同其他事物处于一定的相互联系中</p>
-<p>整个世界是一个相互联系的统一整体</p>
-<p>联系具有多样性</p>
-<p>世界上的事物是多样的，事物之间的联系也是多样的</p>
-<p>他们之间相互影响、相互制约、相互作用</p>
-<p><strong>要做到人与自然和谐共处，就必须要保护好生物多样性</strong></p>
-<h2 id="共同富裕"><a href="#共同富裕" class="headerlink" title="共同富裕"></a>共同富裕</h2><p>第一，打赢脱贫攻坚战，全面建成小康社会，为促进共同富裕创造了良好条件</p>
-<p>脱贫攻坚、全面小康、共同富裕三者是<strong>梯次推进</strong>、循序渐进的</p>
-<p>脱贫攻坚是全面小康的重要内容和底线任务</p>
-<p>全面小康是实现共同富裕的重要基础</p>
-<p>共同富裕是脱贫攻坚和全面小康的目的所在</p>
-<p>第二，共同富裕是<strong>社会主义现代化的一个重要目标</strong>和中国式现代化的重要特征</p>
-<p>现在，我们正在向<strong>全面建设社会主义现代化强国</strong>的第二个百年奋斗目标迈进</p>
-<p>为了更好适应我国社会主要矛盾的变化，更好地满足人民日益增长的美好生活需要</p>
-<p><strong>必须把共同富裕作为为人民谋幸福的着力点</strong></p>
-<p><strong>不断夯实党长期执政基础</strong></p>
-<p>第三，共同富裕是高质量发展的需要</p>
-<p>高质量发展需要高素质的劳动者</p>
-<p>只有促进共同富裕，提高城乡居民收入，<strong>提高人力资本</strong>，才能提高全要素生产率</p>
-<p>夯实高质量发展的动力基础</p>
-<p>第四，实现共同富裕不仅是经济问题，更是关系党执政的政治问题</p>
-<p>我国发展不平衡不充分的问题仍然突出，<strong>城乡区域发展和收入分配差距较大</strong></p>
-<p>必须坚决防止两极分化，促进共同富裕，实现社会和谐安定</p>
-<p>第五，共同富裕是社会主义的本质要求，是<strong>中国共产党矢志不渝的奋斗目标</strong></p>
-<p><strong>是为人民谋幸福的初心</strong>，也是人民群众的<strong>共同期盼</strong></p>
-<h2 id="共同富裕的分配问题"><a href="#共同富裕的分配问题" class="headerlink" title="共同富裕的分配问题"></a>共同富裕的分配问题</h2><p>推动共同富裕，需要正确处理效率与公平的关系，构建初次分配、再分配、三次分配协调配套的基础性制度安排</p>
-<p>加大税收、社保、转移支付等调节力度并提高精准性</p>
-<p>扩大中等收入群体比重，增加低收入人群体收入</p>
-<p>合理调节高收入，取缔非法收入</p>
-<p>形成中间大、两头小的分配结构</p>
-<p>是收入分配调节既能够分好蛋糕</p>
-<p>又有利于进一步做大蛋糕</p>
-<p>促进社会公平正义</p>
-<p>促进人的全面发展</p>
-<p>使全体人民朝着共同富裕目标扎实推进</p>
-<h2 id="高质量新发展理念"><a href="#高质量新发展理念" class="headerlink" title="高质量新发展理念"></a>高质量新发展理念</h2><p>要在高质量发展中促进共同富裕，这指明了共同富裕的实现途径和努力方向</p>
-<p>第一，推动共同富裕，解决发展问题是第一位的。</p>
-<p>发展是实现人民幸福的关键</p>
-<p>我国仍然是世界上最大的发展中国家</p>
-<p>我们仍然要用发展的办法解决前进中的问题</p>
-<p>第二，新时代的发展必须完整、准确、全面贯彻新发展理念，实现高质量发展。</p>
-<p>没有高质量发展，实现共同富裕无从谈起。</p>
-<p>高质量发展，就是能够很好满足人民日益增长的美好生活需要的发展</p>
-<p>就是创新成为第一动力、协调成为内生特点、绿色成为普遍形态、开放称为必由之路、共享成为根本目的的发展。</p>
-<p>推动高质量发展的过程就是增强发展的平衡性、协调性、包容性</p>
-<p>持续缩小成效、区域发展差距</p>
-<p>解决发展不平衡不充分这一主要矛盾</p>
-<p>从源头上打好共同富裕基础的过程</p>
-<h2 id="党的建设"><a href="#党的建设" class="headerlink" title="党的建设"></a>党的建设</h2><p>第一，我们党历来高度重视总结历史经验。</p>
-<p>当历史上的第一个、第二个历史决议</p>
-<p>实事求是是总结党的重大历史事件和重要经验教训</p>
-<p>在重大历史关头统一了全党思想和行动，对推动党和人民事业发挥了重要引领作用</p>
-<p>第二，现在，距离第二个历史决议指定已经过去了40年。</p>
-<p>40年来，党和国家事业大大向前发展了，党的理论和实践也大大向前发展了。</p>
-<p>全面总结党的百年奋斗重大成就和历史经验，是开启全面建设社会主义现代化国家新征程、在新时代坚持和发展中国特色社会主义的需要</p>
-<p>是增强“四个意识”，坚定“四个自信”，做到“两个维护”确保全党步调一致向前进的需要</p>
-<p>是推进党的自我革命，提高全党斗争本领和应对风险挑战能力、永葆党的生机活力、团结带领全国各族人民为实现中华民族伟大复兴的中国梦而继续奋斗的需要</p>
-<h2 id="坚持党的领导"><a href="#坚持党的领导" class="headerlink" title="坚持党的领导"></a>坚持党的领导</h2><p>坚强的领导核心和科学的理论指导，是关乎党和国家前途命运</p>
-<p>党和人民事业成败的根本性问题</p>
-<p>第一，一个国家、一个政党，领导核心至关重要。</p>
-<p>确立习近平同志党中央的核心、全党的核心地位，是时代呼唤、历史选择、民心所向。坚定用户和维护习近平总书记的核心地位，全党就有定盘星，全国人民就有主心骨，中华“复兴”号巨轮就有掌舵者</p>
-<p>第二， 确立习近平新时代中国特色社会主义思想的指导地位，我们党就能在中华民族伟大复兴战略全局和世界百年未有之大变局深度演进互动的复杂条件下，坚持正确前进方向，就能始终把握发展规律</p>
-<p>运用科学世界观和方法论谋划事业发展</p>
-<p>应对风险挑战</p>
-<p>带领全国各族人民不断开辟中华民族伟大复兴的光明前景</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/08/%E8%AE%B0%E5%BF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/08/%E8%AE%B0%E5%BF%86/" class="post-title-link" itemprop="url">记忆</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-08 09:56:59 / Modified: 10:13:36" itemprop="dateCreated datePublished" datetime="2021-12-08T09:56:59+08:00">2021-12-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211208095748283.png" alt="image-20211208095748283"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/06/914%E7%9F%A9%E9%98%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/06/914%E7%9F%A9%E9%98%B5/" class="post-title-link" itemprop="url">914矩阵</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-06 09:52:59 / Modified: 10:12:56" itemprop="dateCreated datePublished" datetime="2021-12-06T09:52:59+08:00">2021-12-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211206095307821.png" alt="image-20211206095307821"></p>
-<h1 id="普通转置"><a href="#普通转置" class="headerlink" title="普通转置"></a>普通转置</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211206095829503.png" alt="image-20211206095829503"></p>
-<p>t个元素的m*n矩阵</p>
-<p>普通转置算法的时间复杂度O(n*t)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/05/914%E6%9C%80%E5%90%8E%E5%86%B2%E5%88%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/05/914%E6%9C%80%E5%90%8E%E5%86%B2%E5%88%BA/" class="post-title-link" itemprop="url">914最后冲刺</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-05 11:34:26 / Modified: 11:37:22" itemprop="dateCreated datePublished" datetime="2021-12-05T11:34:26+08:00">2021-12-05</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="12-5"><a href="#12-5" class="headerlink" title="12/5"></a>12/5</h1><p>期望 </p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211205113441478.png" alt="image-20211205113441478"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726142517834.png" alt="image-20210726142517834"></p>
-<p>$$\frac{1}{2}$$ x 1+ $$\frac{1}{3}$$ x 2 + $$\frac{1}{6}$$ x 3 = $$\frac{5}{3}$$</p>
+<h1 id="开会"><a href="#开会" class="headerlink" title="开会"></a>开会</h1><p>讨论接口设计</p>
+<p>首先，观点要表数清楚</p>
+<p>确保大家明白你是什么意思</p>
+<p>其次，参考别人的网站是怎么做的</p>
+<p>他们已经是考虑详尽的</p>
+<p>意见极其不和时，参考别人的网站就像</p>
+<p>无意义的争辩很浪费时间</p>
+<p>谁都无法说服对方</p>
+<p>直接摆例子是最有效的</p>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>冒烟测试</p>
 
       
     </div>
@@ -1267,7 +1355,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1335,7 +1423,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">288</span>
+          <span class="site-state-item-count">295</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

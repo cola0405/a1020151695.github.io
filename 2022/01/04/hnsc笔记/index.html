@@ -29,9 +29,10 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211231101503642.png">
 <meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211231101531918.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20220106113743600.png">
 <meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211230105332635.png">
 <meta property="article:published_time" content="2022-01-04T07:38:22.000Z">
-<meta property="article:modified_time" content="2022-01-05T01:38:03.874Z">
+<meta property="article:modified_time" content="2022-01-09T01:11:22.766Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -214,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-05 09:38:03" itemprop="dateModified" datetime="2022-01-05T09:38:03+08:00">2022-01-05</time>
+                <time title="Modified: 2022-01-09 09:11:22" itemprop="dateModified" datetime="2022-01-09T09:11:22+08:00">2022-01-09</time>
               </span>
 
           
@@ -322,11 +323,56 @@
 
 
 
+<h2 id="后端拿token有什么用"><a href="#后端拿token有什么用" class="headerlink" title="后端拿token有什么用"></a>后端拿token有什么用</h2><p>sa-token 解析token</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (SaTempUtil.parseToken(token, Long.class) != <span class="keyword">null</span>) &#123;</span><br><span class="line">    uid = SaTempUtil.parseToken(token, Long.class);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (StpUtil.getLoginId() != <span class="keyword">null</span>) &#123;</span><br><span class="line">    uid = Long.parseLong(StpUtil.getLoginId().toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
 
+<h2 id="post请求传参"><a href="#post请求传参" class="headerlink" title="post请求传参"></a>post请求传参</h2><p>post请求一般不用form-data（显式）</p>
+<p>而是通过json形式</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106113743600.png"></p>
+<p>然后后端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterviewReinviteRequest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotNull(message = &quot;面试id不能为空&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Long interviewId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> RQL <span class="title">interviewReInvite</span><span class="params">(<span class="meta">@Valid</span> <span class="meta">@RequestBody</span> InterviewReinviteRequest interviewReinviteRequest)</span></span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="参数命名"><a href="#参数命名" class="headerlink" title="参数命名"></a>参数命名</h2><p>表示消息的未读状态</p>
+<p>我用的是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Integer messageStatus;</span><br></pre></td></tr></table></figure>
+
+<p>原因是考虑到以后可能会有 “已读未回” 消息的情况</p>
+<p>为了可扩展性吧</p>
+<p>牺牲了可读性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean unRead;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="该接口面向的用户是谁"><a href="#该接口面向的用户是谁" class="headerlink" title="该接口面向的用户是谁"></a>该接口面向的用户是谁</h2><p>是单单普通用户</p>
+<p>还是这个系统的全部用户，包括企业用户、教培机构、管理员</p>
+<h2 id="mybatis-生成"><a href="#mybatis-生成" class="headerlink" title="mybatis 生成"></a>mybatis 生成</h2><h2 id="Mybatis-变量别名"><a href="#Mybatis-变量别名" class="headerlink" title="Mybatis 变量别名"></a>Mybatis 变量别名</h2><h2 id="Service-加在哪"><a href="#Service-加在哪" class="headerlink" title="@Service 加在哪"></a>@Service 加在哪</h2><p>Impl</p>
+<h2 id="push代码前"><a href="#push代码前" class="headerlink" title="push代码前"></a>push代码前</h2><p>沿着流程走一遍，看哪里还存在注释等的问题</p>
+<h2 id="git修改comment"><a href="#git修改comment" class="headerlink" title="git修改comment"></a>git修改comment</h2><p>修改最后一次的提交</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --force</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="mysql多条件"><a href="#mysql多条件" class="headerlink" title="mysql多条件"></a>mysql多条件</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span>  <span class="keyword">or</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="mysql-多条件嵌套"><a href="#mysql-多条件嵌套" class="headerlink" title="mysql 多条件嵌套"></a>mysql 多条件嵌套</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span> (status <span class="operator">!=</span> <span class="number">-1</span> <span class="keyword">or</span> status <span class="operator">!=</span> <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -338,7 +384,16 @@
 <p>Nacos=Eureka+Config+Bus</p>
 <h2 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211230105332635.png" alt="image-20211230105332635"></p>
 <p>Nacos 可以把哪个provider告诉给客户端知道</p>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>冒烟测试</p>
+<h1 id="开会"><a href="#开会" class="headerlink" title="开会"></a>开会</h1><p>讨论接口设计</p>
+<p>首先，观点要表数清楚</p>
+<p>确保大家明白你是什么意思</p>
+<p>其次，参考别人的网站是怎么做的</p>
+<p>他们已经是考虑详尽的</p>
+<p>意见极其不和时，参考别人的网站就像</p>
+<p>无意义的争辩很浪费时间</p>
+<p>谁都无法说服对方</p>
+<p>直接摆例子是最有效的</p>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>冒烟测试</p>
 
     </div>
 
@@ -419,7 +474,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IntelliJ"><span class="nav-number">1.</span> <span class="nav-text">IntelliJ</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#intellij-%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">1.1.</span> <span class="nav-text">intellij 快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intellij-%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">intellij 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK16"><span class="nav-number">1.3.</span> <span class="nav-text">JDK16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC"><span class="nav-number">1.4.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot-%E7%89%88%E6%9C%AC"><span class="nav-number">1.5.</span> <span class="nav-text">Spring Boot 版本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java"><span class="nav-number">2.</span> <span class="nav-text">Java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%89%B4%E6%9D%83"><span class="nav-number">2.1.</span> <span class="nav-text">鉴权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">2.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5"><span class="nav-number">2.3.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82SQL%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.4.</span> <span class="nav-text">复杂SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#left-join"><span class="nav-number">2.5.</span> <span class="nav-text">left join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E8%87%AA%E5%B7%B1%E7%9A%84Request%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.6.</span> <span class="nav-text">封装自己的Request对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5-1"><span class="nav-number">2.7.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3"><span class="nav-number">2.8.</span> <span class="nav-text">注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service"><span class="nav-number">2.9.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token"><span class="nav-number">2.10.</span> <span class="nav-text">token</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%BA%8A"><span class="nav-number">3.</span> <span class="nav-text">图床</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nacos"><span class="nav-number">4.</span> <span class="nav-text">Nacos</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0"><span class="nav-number">4.1.</span> <span class="nav-text">服务发现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IntelliJ"><span class="nav-number">1.</span> <span class="nav-text">IntelliJ</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#intellij-%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">1.1.</span> <span class="nav-text">intellij 快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intellij-%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">intellij 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK16"><span class="nav-number">1.3.</span> <span class="nav-text">JDK16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC"><span class="nav-number">1.4.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot-%E7%89%88%E6%9C%AC"><span class="nav-number">1.5.</span> <span class="nav-text">Spring Boot 版本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java"><span class="nav-number">2.</span> <span class="nav-text">Java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%89%B4%E6%9D%83"><span class="nav-number">2.1.</span> <span class="nav-text">鉴权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">2.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5"><span class="nav-number">2.3.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82SQL%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.4.</span> <span class="nav-text">复杂SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#left-join"><span class="nav-number">2.5.</span> <span class="nav-text">left join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E8%87%AA%E5%B7%B1%E7%9A%84Request%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.6.</span> <span class="nav-text">封装自己的Request对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5-1"><span class="nav-number">2.7.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3"><span class="nav-number">2.8.</span> <span class="nav-text">注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service"><span class="nav-number">2.9.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token"><span class="nav-number">2.10.</span> <span class="nav-text">token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E6%8B%BFtoken%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8"><span class="nav-number">2.11.</span> <span class="nav-text">后端拿token有什么用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#post%E8%AF%B7%E6%B1%82%E4%BC%A0%E5%8F%82"><span class="nav-number">2.12.</span> <span class="nav-text">post请求传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E5%91%BD%E5%90%8D"><span class="nav-number">2.13.</span> <span class="nav-text">参数命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A5%E6%8E%A5%E5%8F%A3%E9%9D%A2%E5%90%91%E7%9A%84%E7%94%A8%E6%88%B7%E6%98%AF%E8%B0%81"><span class="nav-number">2.14.</span> <span class="nav-text">该接口面向的用户是谁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis-%E7%94%9F%E6%88%90"><span class="nav-number">2.15.</span> <span class="nav-text">mybatis 生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis-%E5%8F%98%E9%87%8F%E5%88%AB%E5%90%8D"><span class="nav-number">2.16.</span> <span class="nav-text">Mybatis 变量别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-%E5%8A%A0%E5%9C%A8%E5%93%AA"><span class="nav-number">2.17.</span> <span class="nav-text">@Service 加在哪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push%E4%BB%A3%E7%A0%81%E5%89%8D"><span class="nav-number">2.18.</span> <span class="nav-text">push代码前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E4%BF%AE%E6%94%B9comment"><span class="nav-number">2.19.</span> <span class="nav-text">git修改comment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql%E5%A4%9A%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.20.</span> <span class="nav-text">mysql多条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql-%E5%A4%9A%E6%9D%A1%E4%BB%B6%E5%B5%8C%E5%A5%97"><span class="nav-number">2.21.</span> <span class="nav-text">mysql 多条件嵌套</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%BA%8A"><span class="nav-number">3.</span> <span class="nav-text">图床</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nacos"><span class="nav-number">4.</span> <span class="nav-text">Nacos</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0"><span class="nav-number">4.1.</span> <span class="nav-text">服务发现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E4%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">开会</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis"><span class="nav-number">6.</span> <span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">7.</span> <span class="nav-text">测试</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -435,7 +490,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">288</span>
+          <span class="site-state-item-count">295</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
