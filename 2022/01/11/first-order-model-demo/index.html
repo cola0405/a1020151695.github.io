@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="构建环境1pip install -r requirements.txt    视频转换的准备借助 face-alignment 获取crop视频的参数 123456git clone https:&#x2F;&#x2F;github.com&#x2F;1adrianb&#x2F;face-alignmentcd face-alignmentpip install -r requirements.txtpython setup.py i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="first-order-model-demo">
+<meta property="og:url" content="http://example.com/2022/01/11/first-order-model-demo/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="构建环境1pip install -r requirements.txt    视频转换的准备借助 face-alignment 获取crop视频的参数 123456git clone https:&#x2F;&#x2F;github.com&#x2F;1adrianb&#x2F;face-alignmentcd face-alignmentpip install -r requirements.txtpython setup.py i">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20220111125244953.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20220111133302445.png">
+<meta property="article:published_time" content="2022-01-11T04:38:11.000Z">
+<meta property="article:modified_time" content="2022-01-11T07:11:02.413Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20220111125244953.png">
+
+<link rel="canonical" href="http://example.com/2022/01/11/first-order-model-demo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>first-order-model-demo | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/first-order-model-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          first-order-model-demo
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-11 12:38:11 / Modified: 15:11:02" itemprop="dateCreated datePublished" datetime="2022-01-11T12:38:11+08:00">2022-01-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="构建环境"><a href="#构建环境" class="headerlink" title="构建环境"></a>构建环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="视频转换的准备"><a href="#视频转换的准备" class="headerlink" title="视频转换的准备"></a>视频转换的准备</h2><p>借助 face-alignment 获取crop视频的参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/1adrianb/face-alignment</span><br><span class="line"><span class="built_in">cd</span> face-alignment</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line">python setup.py install</span><br><span class="line"></span><br><span class="line">python crop-video.py --inp super-idol.mp4 --cpu</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i super-idol.mp4 -ss 0.0 -t 14.366666666666667 -filter:v <span class="string">&quot;crop=643:643:7:134, scale=256:256&quot;</span> crop.mp4</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="numpy版本不适配的问题"><a href="#numpy版本不适配的问题" class="headerlink" title="numpy版本不适配的问题"></a>numpy版本不适配的问题</h3><p>可以单独把 crop-video.py copy使用</p>
+<p>它并不依赖于first-order-model</p>
+<h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/taichi-256.yaml --driving_video ./crop.mp4 --source_image captain.jpg --checkpoint ./taichi-cpk.pth.tar --relative --adapt_scale --cpu</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/dataset_name.yaml --driving_video path/to/driving --source_image path/to/<span class="built_in">source</span> --checkpoint path/to/checkpoint --relative --adapt_scale</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled-1"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled-1" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="这种python-项目都创建新虚拟环境吧"><a href="#这种python-项目都创建新虚拟环境吧" class="headerlink" title="这种python 项目都创建新虚拟环境吧"></a>这种python 项目都创建新虚拟环境吧</h2><p>别去影响自己原来的库</p>
+<h2 id="Anaconda可以不可创建任意版本的python解释器"><a href="#Anaconda可以不可创建任意版本的python解释器" class="headerlink" title="Anaconda可以不可创建任意版本的python解释器"></a>Anaconda可以不可创建任意版本的python解释器</h2><p>没有任意版本，但确实还有其他版本，比如说3.7等等</p>
+<p>然后再Pycharm里选conda的环境</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220111125244953.png" alt="image-20220111125244953"></p>
+<h2 id="进入虚拟的python环境"><a href="#进入虚拟的python环境" class="headerlink" title="进入虚拟的python环境"></a>进入虚拟的python环境</h2><p>在Pycharm中打开命令行即可以进入到虚拟环境中</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220111133302445.png" alt="image-20220111133302445"></p>
+<h2 id="checkpoint-是什么"><a href="#checkpoint-是什么" class="headerlink" title="checkpoint 是什么"></a>checkpoint 是什么</h2><p>二进制文件，储存了模型中的各个变量</p>
+<p>没有什么数据结构</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/10/hibernate-demo/" rel="prev" title="hibernate-demo">
+      <i class="fa fa-chevron-left"></i> hibernate-demo
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/11/mac/" rel="next" title="mac">
+      mac <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">构建环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E8%BD%AC%E6%8D%A2%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">视频转换的准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy%E7%89%88%E6%9C%AC%E4%B8%8D%E9%80%82%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">numpy版本不适配的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AssertionError-Torch-not-compiled-with-CUDA-enabled"><span class="nav-number">2.2.</span> <span class="nav-text">AssertionError: Torch not compiled with CUDA enabled</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85ffmpeg"><span class="nav-number">3.</span> <span class="nav-text">安装ffmpeg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C"><span class="nav-number">4.</span> <span class="nav-text">运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AssertionError-Torch-not-compiled-with-CUDA-enabled-1"><span class="nav-number">4.1.</span> <span class="nav-text">AssertionError: Torch not compiled with CUDA enabled</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E7%A7%8Dpython-%E9%A1%B9%E7%9B%AE%E9%83%BD%E5%88%9B%E5%BB%BA%E6%96%B0%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%90%A7"><span class="nav-number">5.</span> <span class="nav-text">这种python 项目都创建新虚拟环境吧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda%E5%8F%AF%E4%BB%A5%E4%B8%8D%E5%8F%AF%E5%88%9B%E5%BB%BA%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E7%9A%84python%E8%A7%A3%E9%87%8A%E5%99%A8"><span class="nav-number">6.</span> <span class="nav-text">Anaconda可以不可创建任意版本的python解释器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E8%99%9A%E6%8B%9F%E7%9A%84python%E7%8E%AF%E5%A2%83"><span class="nav-number">7.</span> <span class="nav-text">进入虚拟的python环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#checkpoint-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">8.</span> <span class="nav-text">checkpoint 是什么</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">305</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</body>
+</html>

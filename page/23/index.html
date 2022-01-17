@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/30/Spring-Boot-cmd/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/24/N-TCP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -191,7 +191,204 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/30/Spring-Boot-cmd/" class="post-title-link" itemprop="url">Spring Boot cmd</a>
+            <a href="/2021/05/24/N-TCP/" class="post-title-link" itemprop="url">N-TCP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-24 08:26:52 / Modified: 21:49:34" itemprop="dateCreated datePublished" datetime="2021-05-24T08:26:52+08:00">2021-05-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Transmission Control Protocol</p>
+<p>TCP连接的建立（三次握手）</p>
+<p>第一次握手（A发给B）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524084347239.png" alt="image-20210524084347239"></p>
+<p>然后SYN置为1（set）</p>
+<p>随机初始序号2319633865</p>
+<p>然后自己的序号sequence number为0 （自己的序号也可称为相对序号，relative sequence number）</p>
+<p>第二次握手（B回复A）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524084547340.png" alt="image-20210524084547340"></p>
+<p>首先看Ack部分</p>
+<p>ack=A自己序号+1即0+1=1 （relative ack number）</p>
+<p>然后下面的ack序号为A的初始随机序号+1即2319633865+1=231963386</p>
+<p>再是自己的序号从0开始</p>
+<p>又随机生成一个序号670416643发给A</p>
+<p>第三次握手（A回复B）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524084814392.png" alt="image-20210524084814392"></p>
+<p>A自己的序号=原序号+1即0+1=1</p>
+<p>然后随机序号也+1</p>
+<p>接下来是Ack部分</p>
+<p>ack=B自己的序号+1即0+1=1</p>
+<p>然后ack随机序号=B的随即序号+1即670416643+1=670416644</p>
+<p>以上数据确认都没问题的话，就可以分配端口资源（套接字）然后正式建立连接了</p>
+<p>Conclusion：</p>
+<p>随机序号的作用</p>
+<p>答：一定程度上防止TCP syn 攻击</p>
+<p>建立连接时的标志位</p>
+<p>答：涉及连接建立的TCP报文，SYN都置1，回复方的ACK置为1（第二次和第三次握手）</p>
+<p>ACK和ack是不一样的，一个是标志位，一个是序号</p>
+<p>ACK再标志位中的全称叫 Acknowledgment</p>
+<p>关于相对序号</p>
+<p>答:初始双方都是0，然后收到对方回复的ack后才有机会增加</p>
+<hr>
+<p> TCP连接的释放</p>
+<p>（1）A发给B（A准备关闭连接）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524212654486.png" alt="image-20210524212654486"></p>
+<p>主要是在标志位FIN置为1</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524212759858.png"></p>
+<p>Ps：SYN在连接释放时置为0</p>
+<p>（2）B回复A</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213038001.png" alt="image-20210524213038001"></p>
+<p>ack加1</p>
+<p>但是！relative sequence number 并未做加1操作</p>
+<p>再看标志位</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213208909.png" alt="image-20210524213208909"></p>
+<p>FIN置为0，ACK置为1</p>
+<p>此时，A的发送通道就关闭了，即A不能主动发送数据包到B了（但是可以被动回复B）</p>
+<p>（建立连接后有两条通路，分别是A和B的发送通道）</p>
+<p>（3）B发给A（B也准备关闭连接）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213407417.png" alt="image-20210524213407417"></p>
+<p>relative sequence number 仍未做加1操作</p>
+<p>ack也没有做加1操作</p>
+<p>（也就是说，和之前B回复给A的数据包序号都一样）</p>
+<p>再看标志位</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213548780.png" alt="image-20210524213548780"></p>
+<p>FIN置为了1</p>
+<p>（4）A回复B</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213612152.png" alt="image-20210524213612152"></p>
+<p>relative sequence number 未做加1操作</p>
+<p>ack加1了</p>
+<p>再看标志位</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213917593.png" alt="image-20210524213917593"></p>
+<p>关于ack的总结</p>
+<p>ack加1表示接收方确实受到了</p>
+<p>每次回复时，ack都会加1</p>
+<p>但是，连续发送两个TCP数据报，relative sequence number 是不会变化的（因为期间并没有收到对方的ack）</p>
+<p>只有收到了对方的ack，相对序号才有加的机会</p>
+<hr>
+<p>误区</p>
+<p>序号每次只会加1</p>
+<p>答：不对</p>
+<p>举个例子</p>
+<p>发送方，此时相对序号为769，发送了一个600字节数据</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524214756347.png" alt="image-20210524214756347"></p>
+<p>接收方的回复</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524214911160.png" alt="image-20210524214911160"></p>
+<p>ack=769+600=1369</p>
+<p>所以说，序号与发送数据的大小有关</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Bootstrap-Tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/11/Bootstrap-Tutorial/" class="post-title-link" itemprop="url">Bootstrap Tutorial</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-11 10:28:02 / Modified: 10:28:40" itemprop="dateCreated datePublished" datetime="2021-05-11T10:28:02+08:00">2021-05-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">integrity</span>=<span class="string">&quot;sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0&quot;</span> <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js&quot;</span> <span class="attr">integrity</span>=<span class="string">&quot;sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8&quot;</span> <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Ajax-Tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/11/Ajax-Tutorial/" class="post-title-link" itemprop="url">Ajax Tutorial</a>
         </h2>
 
         <div class="post-meta">
@@ -201,14 +398,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-03-30 10:19:10" itemprop="dateCreated datePublished" datetime="2021-03-30T10:19:10+08:00">2021-03-30</time>
+              <time title="Created: 2021-05-11 10:26:00" itemprop="dateCreated datePublished" datetime="2021-05-11T10:26:00+08:00">2021-05-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-05 09:44:54" itemprop="dateModified" datetime="2022-01-05T09:44:54+08:00">2022-01-05</time>
+                <time title="Modified: 2021-06-18 22:59:10" itemprop="dateModified" datetime="2021-06-18T22:59:10+08:00">2021-06-18</time>
               </span>
 
           
@@ -222,80 +419,396 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>run app</p>
+          <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">            <span class="attr">type</span>: <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="string">&quot;http://localhost:8080/getRecord?area=&quot;</span>+area,</span><br><span class="line">            <span class="attr">dataType</span>: <span class="string">&quot;json&quot;</span>,</span><br><span class="line">            <span class="attr">jsonp</span>: <span class="string">&quot;callback&quot;</span>,</span><br><span class="line">            <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(json);</span><br><span class="line">                <span class="keyword">let</span> mainBody = <span class="built_in">document</span>.getElementById(<span class="string">&quot;main-body&quot;</span>);</span><br><span class="line">                <span class="keyword">let</span> table = <span class="string">&quot;&lt;table class=&#x27;table&#x27;&gt;&quot;</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">const</span> key <span class="keyword">in</span> json)&#123;</span><br><span class="line">                    table += <span class="string">&quot;&lt;tr&gt;&lt;td&gt;&quot;</span>+key+<span class="string">&quot;&lt;/td&gt;&lt;td&gt;&quot;</span>+json[key]+<span class="string">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;</span></span><br><span class="line">                &#125;</span><br><span class="line">                table+=<span class="string">&quot;&lt;/table&gt;&quot;</span></span><br><span class="line">                mainBody.innerHTML=table;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h4 id="ajax不发送请求"><a href="#ajax不发送请求" class="headerlink" title="ajax不发送请求"></a>ajax不发送请求</h4><p>原因：没有正确引入jquery</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>虽然某些别的js脚本也有引入jquery</p>
+<p>但是那个版本可能不支持ajax</p>
+<p>以导致ajax失效</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/HTML-Input/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/11/HTML-Input/" class="post-title-link" itemprop="url">HTML Input</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-11 09:42:57 / Modified: 09:43:18" itemprop="dateCreated datePublished" datetime="2021-05-11T09:42:57+08:00">2021-05-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>get content</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> area = <span class="built_in">document</span>.getElementById(<span class="string">&quot;area&quot;</span>).value;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Spring-Boot-Static-Page/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/11/Spring-Boot-Static-Page/" class="post-title-link" itemprop="url">Spring Boot Static Page</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-11 09:23:38" itemprop="dateCreated datePublished" datetime="2021-05-11T09:23:38+08:00">2021-05-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-05 09:46:49" itemprop="dateModified" datetime="2022-01-05T09:46:49+08:00">2022-01-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/META-INF/resources/  </span><br><span class="line">/resources/  </span><br><span class="line">/<span class="keyword">static</span>/  </span><br><span class="line">/<span class="keyword">public</span>/</span><br></pre></td></tr></table></figure>
+
+<p>Then access directly</p>
+<h4 id="Spring-Boot保存文件"><a href="#Spring-Boot保存文件" class="headerlink" title="Spring Boot保存文件"></a>Spring Boot保存文件</h4><p>/ 根目录在static内</p>
+<p>不加的话，新建的文件在项目根目录</p>
+<p>外部请求文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080/data.csv</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Spring-Boot-Return/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/11/Spring-Boot-Return/" class="post-title-link" itemprop="url">Spring Boot Return</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-11 09:22:42" itemprop="dateCreated datePublished" datetime="2021-05-11T09:22:42+08:00">2021-05-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-17 21:40:08" itemprop="dateModified" datetime="2021-06-17T21:40:08+08:00">2021-06-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Map to Json</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ObjectMapper objectMapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">objectMapper.writeValueAsString(map);</span><br></pre></td></tr></table></figure>
+
+<p>error:</p>
+<blockquote>
+<p>Check your ViewResolver setup!</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ResponseBody</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="返回实体类-Vue-数据传输"><a href="#返回实体类-Vue-数据传输" class="headerlink" title="返回实体类 Vue 数据传输"></a>返回实体类 Vue 数据传输</h4><p>实体类的id你不另外赋值他也会传过去</p>
+<p>结合vue </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-button @click=&quot;handleClick(scope.row)&quot; type=&quot;text&quot; size=&quot;small&quot;&gt;详细信息&lt;/el-button&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(row.id)</span><br></pre></td></tr></table></figure>
+
+<p>很棒</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/28/Spring-Boot-exp2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/28/Spring-Boot-exp2/" class="post-title-link" itemprop="url">Spring Boot_exp2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-28 16:33:16" itemprop="dateCreated datePublished" datetime="2021-04-28T16:33:16+08:00">2021-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-05 09:42:54" itemprop="dateModified" datetime="2022-01-05T09:42:54+08:00">2022-01-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>list元素重复</p>
+<p>list元素数量不对</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/26/Load-Balance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/26/Load-Balance/" class="post-title-link" itemprop="url">Load Balance</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-26 21:18:25 / Modified: 21:32:24" itemprop="dateCreated datePublished" datetime="2021-04-26T21:18:25+08:00">2021-04-26</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://spring.io/guides/gs/spring-cloud-loadbalancer/">Tutorial</a></p>
+<ol>
+<li><p>New two project</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">say-hello   // real-service</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user   // balance-server</span><br></pre></td></tr></table></figure>
+
+<p>with maven</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">say-hello need modules: Spring Web</span><br><span class="line">user   need modules: Cloud Loadbalancer and Spring Reactive Web</span><br></pre></td></tr></table></figure></li>
+<li><p>Implement</p>
+</li>
+</ol>
+<blockquote>
+<p>Note:</p>
+<p>refactor package name</p>
+</blockquote>
+<p>refactor application.properties</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=user</span><br><span class="line">server.port=8888  // app will run on the port</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Run App</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run</span><br></pre></td></tr></table></figure>
 
-<p>get jar</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package</span><br></pre></td></tr></table></figure>
+<p>run on multiple port</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=9999</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>Tip:</p>
-<p>execute mvn goal or configure env</p>
-</blockquote>
+<p>test in browser (8888 is balance server)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:8888/hi</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/30/Spring-Boot-Test/">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Flux&lt;List&lt;ServiceInstance&gt;&gt; get() &#123;</span><br><span class="line">    <span class="keyword">return</span> Flux.just(Arrays</span><br><span class="line">            .asList(<span class="keyword">new</span> DefaultServiceInstance(serviceId + <span class="string">&quot;1&quot;</span>, serviceId, <span class="string">&quot;localhost&quot;</span>, <span class="number">8090</span>, <span class="keyword">false</span>),</span><br><span class="line">                    <span class="keyword">new</span> DefaultServiceInstance(serviceId + <span class="string">&quot;2&quot;</span>, serviceId, <span class="string">&quot;localhost&quot;</span>, <span class="number">9092</span>, <span class="keyword">false</span>),</span><br><span class="line">                    <span class="keyword">new</span> DefaultServiceInstance(serviceId + <span class="string">&quot;3&quot;</span>, serviceId, <span class="string">&quot;localhost&quot;</span>, <span class="number">9999</span>, <span class="keyword">false</span>)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/30/Spring-Boot-Test/" class="post-title-link" itemprop="url">Spring Boot Test</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-30 09:28:29 / Modified: 09:45:08" itemprop="dateCreated datePublished" datetime="2021-03-30T09:28:29+08:00">2021-03-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error</span><br><span class="line">MockMvc null pointer</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">solution</span><br><span class="line">add @RunWith(SpringRunner.class) before the class</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> freejim.icu.exp1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.MediaType;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.MockMvc;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.request.MockMvcRequestBuilders;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.hamcrest.Matchers.equalTo;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;</span><br><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="meta">@AutoConfigureMockMvc</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MockMvc mvc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        mvc.perform(MockMvcRequestBuilders.get(<span class="string">&quot;/&quot;</span>).accept(MediaType.APPLICATION_JSON))</span><br><span class="line">                .andExpect(status().isOk())</span><br><span class="line">                .andExpect(content().string(equalTo(<span class="string">&quot;Hello, world&quot;</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<p>balance server will balance to these three ports</p>
+<p>once a target port got some problems, you may see browser will get error</p>
+<p>but refresh it, it will be ok, because it is balanced to another ok port</p>
 
       
     </div>
@@ -315,7 +828,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/28/lms-docker/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/26/Spring-Boot-with-Docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -329,144 +842,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/28/lms-docker/" class="post-title-link" itemprop="url">lms docker</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-28 13:20:42 / Modified: 13:21:10" itemprop="dateCreated datePublished" datetime="2021-03-28T13:20:42+08:00">2021-03-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 8080:80 -it lms:v1 /bin/bash</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/28/Dockerfile-Error/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/28/Dockerfile-Error/" class="post-title-link" itemprop="url">Dockerfile Error</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-28 13:06:22 / Modified: 13:11:48" itemprop="dateCreated datePublished" datetime="2021-03-28T13:06:22+08:00">2021-03-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Temporary failure resolving ‘archive.ubuntu.com’</span><br></pre></td></tr></table></figure>
-
-<p><strong>快速解决方法：</strong></p>
-<p>修改/etc/default/docker文件，取消如下行前边的注释：</p>
-<blockquote>
-<p>DOCKER_OPTS=”–dns 8.8.8.8 –dns 8.8.4.4”</p>
-</blockquote>
-<p>结果：</p>
-<p>修改配置并重新启动docker服务后，docker build命令正常。</p>
-<blockquote>
-<p>service docker restart</p>
-</blockquote>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">when docker build error</span><br><span class="line">when you fix it</span><br><span class="line">it will continue, not from begining</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/28/Dockerfile-Basic/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/28/Dockerfile-Basic/" class="post-title-link" itemprop="url">Dockerfile Basic</a>
+            <a href="/2021/04/26/Spring-Boot-with-Docker/" class="post-title-link" itemprop="url">Spring Boot with Docker</a>
         </h2>
 
         <div class="post-meta">
@@ -476,14 +852,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-03-28 12:58:51" itemprop="dateCreated datePublished" datetime="2021-03-28T12:58:51+08:00">2021-03-28</time>
+              <time title="Created: 2021-04-26 09:37:54" itemprop="dateCreated datePublished" datetime="2021-04-26T09:37:54+08:00">2021-04-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-26 09:34:44" itemprop="dateModified" datetime="2021-04-26T09:34:44+08:00">2021-04-26</time>
+                <time title="Modified: 2022-01-05 09:48:16" itemprop="dateModified" datetime="2022-01-05T09:48:16+08:00">2022-01-05</time>
               </span>
 
           
@@ -497,23 +873,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>new a file named “Dockerfile”</p>
-<p>then</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build .  // will exec the dockerfile auto</span><br></pre></td></tr></table></figure>
+          <ol>
+<li>Jar</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Dockerfile</li>
+</ol>
+<p>new a “Dockerfile”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:16-jdk-alpine</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ADD docker_demo-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;app.jar&quot;]</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Build images</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t demo/hello .</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Run App</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 8080:8080 demo/hello</span><br></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<p>will show the container id and container  name</p>
-<p>with name, you can start the container</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start container_name</span><br></pre></td></tr></table></figure>
-
-<p>then</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop container_name</span><br><span class="line">docker restart container_name</span><br></pre></td></tr></table></figure>
-
-
-
+<p>（要连接数据库的，还得先构建数据库）</p>
+<h4 id="Spring-Boot-云服务器-Mysql"><a href="#Spring-Boot-云服务器-Mysql" class="headerlink" title="Spring Boot 云服务器 Mysql"></a>Spring Boot 云服务器 Mysql</h4><p>docker拉镜像建立MySQL方便</p>
 
       
     </div>
@@ -533,7 +917,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/28/Docker-Basic/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/26/Idea-shortcut/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -547,120 +931,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/28/Docker-Basic/" class="post-title-link" itemprop="url">Docker Basic</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-28 12:49:35" itemprop="dateCreated datePublished" datetime="2021-03-28T12:49:35+08:00">2021-03-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-26 09:37:08" itemprop="dateModified" datetime="2021-04-26T09:37:08+08:00">2021-04-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>start docker daemon</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<p>images list</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-
-<p>delete images</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi id</span><br></pre></td></tr></table></figure>
-
-<p>container status</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>Container</p>
-<p>run container</p>
-<p>1.check images</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-
-<p>2.run images and attach it</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -i -t rastasheep/ubuntu-sshd:18.04 /bin/bash</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-t: 在新容器内指定一个伪终端或终端。</span><br><span class="line"></span><br><span class="line">-i: 允许你对容器内的标准输入 (STDIN) 进行交互。</span><br></pre></td></tr></table></figure>
-
-<p>3.exit</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
-
-<p>4.daemon model</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name ubuntu-test ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-d daemon</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>container operation </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker start (container id)</span><br><span class="line">docker stop (container id)</span><br><span class="line">docker restart (container id)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>Image</p>
-<p>Reuse</p>
-<p>1.export container</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker export 1e560fca3906 &gt; ubuntu.tar</span><br></pre></td></tr></table></figure>
-
-<p>2.import </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ./ubuntu.tar | docker import - test/ubuntu:v1</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker import http://example.com/exampleimage.tgz example/imagerepo</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/27/pip/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/27/pip/" class="post-title-link" itemprop="url">pip</a>
+            <a href="/2021/04/26/Idea-shortcut/" class="post-title-link" itemprop="url">Idea shortcut</a>
         </h2>
 
         <div class="post-meta">
@@ -671,7 +942,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-03-27 19:34:20 / Modified: 21:02:14" itemprop="dateCreated datePublished" datetime="2021-03-27T19:34:20+08:00">2021-03-27</time>
+              <time title="Created: 2021-04-26 09:25:43 / Modified: 09:26:34" itemprop="dateCreated datePublished" datetime="2021-04-26T09:25:43+08:00">2021-04-26</time>
             </span>
 
           
@@ -685,217 +956,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-
-
-<p>update pip</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
-
-<p>use mirror</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r ./requirements.txt -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">报错</span><br><span class="line">The repository located at pypi.douban.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS it is recommended to use HTTPS instead, otherwise you may silence this warning and allow it anyways with &#x27;--trusted-host pypi.douban.com&#x27;.</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解决</span><br><span class="line">将url中的http修改为https</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux 下pip无法安装的，pip3支持</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/27/WSL-Mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/27/WSL-Mysql/" class="post-title-link" itemprop="url">WSL Mysql</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-27 19:31:41 / Modified: 19:33:20" itemprop="dateCreated datePublished" datetime="2021-03-27T19:31:41+08:00">2021-03-27</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql --version</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/mysql start</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/27/Python-Project/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/27/Python-Project/" class="post-title-link" itemprop="url">Python Project</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-27 19:00:07 / Modified: 19:34:34" itemprop="dateCreated datePublished" datetime="2021-03-27T19:00:07+08:00">2021-03-27</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/27/WSL-Ngnix/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/27/WSL-Ngnix/" class="post-title-link" itemprop="url">WSL Ngnix</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-27 18:50:47 / Modified: 18:50:56" itemprop="dateCreated datePublished" datetime="2021-03-27T18:50:47+08:00">2021-03-27</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>以Ubuntu为例，它的软件库中已有Nginx安装包，可通过控制台安装，输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br></pre></td></tr></table></figure>
-
+          <p>double click “Ctrl” – run any command</p>
 
       
     </div>
@@ -914,7 +975,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/22/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/24/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/22/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/24/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -982,7 +1043,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">295</span>
+          <span class="site-state-item-count">305</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
