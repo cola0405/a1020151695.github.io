@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/24/N-TCP/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/04/Vue-%E8%B7%AF%E7%94%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -191,204 +191,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/05/24/N-TCP/" class="post-title-link" itemprop="url">N-TCP</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-05-24 08:26:52 / Modified: 21:49:34" itemprop="dateCreated datePublished" datetime="2021-05-24T08:26:52+08:00">2021-05-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Transmission Control Protocol</p>
-<p>TCP连接的建立（三次握手）</p>
-<p>第一次握手（A发给B）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524084347239.png" alt="image-20210524084347239"></p>
-<p>然后SYN置为1（set）</p>
-<p>随机初始序号2319633865</p>
-<p>然后自己的序号sequence number为0 （自己的序号也可称为相对序号，relative sequence number）</p>
-<p>第二次握手（B回复A）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524084547340.png" alt="image-20210524084547340"></p>
-<p>首先看Ack部分</p>
-<p>ack=A自己序号+1即0+1=1 （relative ack number）</p>
-<p>然后下面的ack序号为A的初始随机序号+1即2319633865+1=231963386</p>
-<p>再是自己的序号从0开始</p>
-<p>又随机生成一个序号670416643发给A</p>
-<p>第三次握手（A回复B）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524084814392.png" alt="image-20210524084814392"></p>
-<p>A自己的序号=原序号+1即0+1=1</p>
-<p>然后随机序号也+1</p>
-<p>接下来是Ack部分</p>
-<p>ack=B自己的序号+1即0+1=1</p>
-<p>然后ack随机序号=B的随即序号+1即670416643+1=670416644</p>
-<p>以上数据确认都没问题的话，就可以分配端口资源（套接字）然后正式建立连接了</p>
-<p>Conclusion：</p>
-<p>随机序号的作用</p>
-<p>答：一定程度上防止TCP syn 攻击</p>
-<p>建立连接时的标志位</p>
-<p>答：涉及连接建立的TCP报文，SYN都置1，回复方的ACK置为1（第二次和第三次握手）</p>
-<p>ACK和ack是不一样的，一个是标志位，一个是序号</p>
-<p>ACK再标志位中的全称叫 Acknowledgment</p>
-<p>关于相对序号</p>
-<p>答:初始双方都是0，然后收到对方回复的ack后才有机会增加</p>
-<hr>
-<p> TCP连接的释放</p>
-<p>（1）A发给B（A准备关闭连接）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524212654486.png" alt="image-20210524212654486"></p>
-<p>主要是在标志位FIN置为1</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524212759858.png"></p>
-<p>Ps：SYN在连接释放时置为0</p>
-<p>（2）B回复A</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213038001.png" alt="image-20210524213038001"></p>
-<p>ack加1</p>
-<p>但是！relative sequence number 并未做加1操作</p>
-<p>再看标志位</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213208909.png" alt="image-20210524213208909"></p>
-<p>FIN置为0，ACK置为1</p>
-<p>此时，A的发送通道就关闭了，即A不能主动发送数据包到B了（但是可以被动回复B）</p>
-<p>（建立连接后有两条通路，分别是A和B的发送通道）</p>
-<p>（3）B发给A（B也准备关闭连接）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213407417.png" alt="image-20210524213407417"></p>
-<p>relative sequence number 仍未做加1操作</p>
-<p>ack也没有做加1操作</p>
-<p>（也就是说，和之前B回复给A的数据包序号都一样）</p>
-<p>再看标志位</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213548780.png" alt="image-20210524213548780"></p>
-<p>FIN置为了1</p>
-<p>（4）A回复B</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213612152.png" alt="image-20210524213612152"></p>
-<p>relative sequence number 未做加1操作</p>
-<p>ack加1了</p>
-<p>再看标志位</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524213917593.png" alt="image-20210524213917593"></p>
-<p>关于ack的总结</p>
-<p>ack加1表示接收方确实受到了</p>
-<p>每次回复时，ack都会加1</p>
-<p>但是，连续发送两个TCP数据报，relative sequence number 是不会变化的（因为期间并没有收到对方的ack）</p>
-<p>只有收到了对方的ack，相对序号才有加的机会</p>
-<hr>
-<p>误区</p>
-<p>序号每次只会加1</p>
-<p>答：不对</p>
-<p>举个例子</p>
-<p>发送方，此时相对序号为769，发送了一个600字节数据</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524214756347.png" alt="image-20210524214756347"></p>
-<p>接收方的回复</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210524214911160.png" alt="image-20210524214911160"></p>
-<p>ack=769+600=1369</p>
-<p>所以说，序号与发送数据的大小有关</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Bootstrap-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/11/Bootstrap-Tutorial/" class="post-title-link" itemprop="url">Bootstrap Tutorial</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-05-11 10:28:02 / Modified: 10:28:40" itemprop="dateCreated datePublished" datetime="2021-05-11T10:28:02+08:00">2021-05-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">integrity</span>=<span class="string">&quot;sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0&quot;</span> <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js&quot;</span> <span class="attr">integrity</span>=<span class="string">&quot;sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8&quot;</span> <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Ajax-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/11/Ajax-Tutorial/" class="post-title-link" itemprop="url">Ajax Tutorial</a>
+            <a href="/2021/06/04/Vue-%E8%B7%AF%E7%94%B1/" class="post-title-link" itemprop="url">Vue 路由</a>
         </h2>
 
         <div class="post-meta">
@@ -398,14 +201,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-05-11 10:26:00" itemprop="dateCreated datePublished" datetime="2021-05-11T10:26:00+08:00">2021-05-11</time>
+              <time title="Created: 2021-06-04 17:07:49" itemprop="dateCreated datePublished" datetime="2021-06-04T17:07:49+08:00">2021-06-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-18 22:59:10" itemprop="dateModified" datetime="2021-06-18T22:59:10+08:00">2021-06-18</time>
+                <time title="Modified: 2021-06-11 08:51:46" itemprop="dateModified" datetime="2021-06-11T08:51:46+08:00">2021-06-11</time>
               </span>
 
           
@@ -419,396 +222,313 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <h2 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;hello.html&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">            <span class="attr">type</span>: <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="string">&quot;http://localhost:8080/getRecord?area=&quot;</span>+area,</span><br><span class="line">            <span class="attr">dataType</span>: <span class="string">&quot;json&quot;</span>,</span><br><span class="line">            <span class="attr">jsonp</span>: <span class="string">&quot;callback&quot;</span>,</span><br><span class="line">            <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(json);</span><br><span class="line">                <span class="keyword">let</span> mainBody = <span class="built_in">document</span>.getElementById(<span class="string">&quot;main-body&quot;</span>);</span><br><span class="line">                <span class="keyword">let</span> table = <span class="string">&quot;&lt;table class=&#x27;table&#x27;&gt;&quot;</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">const</span> key <span class="keyword">in</span> json)&#123;</span><br><span class="line">                    table += <span class="string">&quot;&lt;tr&gt;&lt;td&gt;&quot;</span>+key+<span class="string">&quot;&lt;/td&gt;&lt;td&gt;&quot;</span>+json[key]+<span class="string">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;</span></span><br><span class="line">                &#125;</span><br><span class="line">                table+=<span class="string">&quot;&lt;/table&gt;&quot;</span></span><br><span class="line">                mainBody.innerHTML=table;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>hello.html和index.html同级</p>
+<hr>
+<h4 id="直接的页面跳转"><a href="#直接的页面跳转" class="headerlink" title="直接的页面跳转"></a>直接的页面跳转</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.$router.push(<span class="string">&#x27;/url&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 <hr>
-<h4 id="ajax不发送请求"><a href="#ajax不发送请求" class="headerlink" title="ajax不发送请求"></a>ajax不发送请求</h4><p>原因：没有正确引入jquery</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>虽然某些别的js脚本也有引入jquery</p>
-<p>但是那个版本可能不支持ajax</p>
-<p>以导致ajax失效</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/HTML-Input/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/11/HTML-Input/" class="post-title-link" itemprop="url">HTML Input</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-05-11 09:42:57 / Modified: 09:43:18" itemprop="dateCreated datePublished" datetime="2021-05-11T09:42:57+08:00">2021-05-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>get content</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> area = <span class="built_in">document</span>.getElementById(<span class="string">&quot;area&quot;</span>).value;</span><br></pre></td></tr></table></figure>
+<h2 id="组件切换-初始化时没有routers-js的情况"><a href="#组件切换-初始化时没有routers-js的情况" class="headerlink" title="组件切换(初始化时没有routers.js的情况)"></a>组件切换(初始化时没有routers.js的情况)</h2><p><a target="_blank" rel="noopener" href="https://github.com/a1020151695/vue-component-shift">DEMO</a></p>
+<p>1.引入VueRouter，统一管理路由</p>
+<p>main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="keyword">import</span> routers <span class="keyword">from</span> <span class="string">&#x27;./routers&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&#x27;history&#x27;</span>,</span><br><span class="line">  <span class="attr">routes</span>: routers</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  router,</span><br><span class="line">  <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
+<p>2.新建routers.js（和main.js同级）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">&#x27;./components/Home.vue&#x27;</span>  <span class="comment">// 引入要显示的组件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routers = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/home&#x27;</span>,  <span class="comment">// 设置好route</span></span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;home&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: Home</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> routers</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Spring-Boot-Static-Page/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/11/Spring-Boot-Static-Page/" class="post-title-link" itemprop="url">Spring Boot Static Page</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-11 09:23:38" itemprop="dateCreated datePublished" datetime="2021-05-11T09:23:38+08:00">2021-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-05 09:46:49" itemprop="dateModified" datetime="2022-01-05T09:46:49+08:00">2022-01-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/META-INF/resources/  </span><br><span class="line">/resources/  </span><br><span class="line">/<span class="keyword">static</span>/  </span><br><span class="line">/<span class="keyword">public</span>/</span><br></pre></td></tr></table></figure>
-
-<p>Then access directly</p>
-<h4 id="Spring-Boot保存文件"><a href="#Spring-Boot保存文件" class="headerlink" title="Spring Boot保存文件"></a>Spring Boot保存文件</h4><p>/ 根目录在static内</p>
-<p>不加的话，新建的文件在项目根目录</p>
-<p>外部请求文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080/data.csv</span><br></pre></td></tr></table></figure>
+<p>4.自定义组件 Home.vue（在components/）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;p&gt;xxxxxx&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        name: &quot;Home&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+<p>3.App.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;img alt=&quot;Vue logo&quot; src=&quot;./assets/logo.png&quot;&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;router-link to=&quot;/home&quot;&gt;Test&lt;/router-link&gt;</span><br><span class="line">    &lt;router-view/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Spring-Boot-Return/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/11/Spring-Boot-Return/" class="post-title-link" itemprop="url">Spring Boot Return</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-11 09:22:42" itemprop="dateCreated datePublished" datetime="2021-05-11T09:22:42+08:00">2021-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-17 21:40:08" itemprop="dateModified" datetime="2021-06-17T21:40:08+08:00">2021-06-17</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Map to Json</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ObjectMapper objectMapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">objectMapper.writeValueAsString(map);</span><br></pre></td></tr></table></figure>
-
-<p>error:</p>
+<hr>
 <blockquote>
-<p>Check your ViewResolver setup!</p>
+<p>初始化有router的话，直接在其index.js下改就行了</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ResponseBody</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/03/HTTP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/03/HTTP/" class="post-title-link" itemprop="url">HTTP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-03 10:29:39" itemprop="dateCreated datePublished" datetime="2021-06-03T10:29:39+08:00">2021-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-06 15:15:20" itemprop="dateModified" datetime="2021-06-06T15:15:20+08:00">2021-06-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Content-Encoding"><a href="#Content-Encoding" class="headerlink" title="Content-Encoding"></a>Content-Encoding</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">浏览器发送请求时，通过 Accept-Encoding 带上自己支持的内容编码格式列表</span><br><span class="line">服务端从中挑选一种用来对正文进行编码，并通过 Content-Encoding 响应头指明选定的格式</span><br><span class="line">浏览器拿到响应正文后，依据 Content-Encoding 进行解压</span><br><span class="line">内容编码目的是优化传输内容大小，通俗地讲就是进行压缩</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Cache</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Web页面设计中，建少HTTP请求可以提高页面响应速度。</span><br><span class="line">浏览器在第一次访问页面时下载的资源会缓存起来</span><br><span class="line">第二次访问时会判断在缓存中是否已有该资源并且有没有更新过</span><br><span class="line">如果已有该资源且没有更新过，则去缓存去取</span><br><span class="line">这样减少了下载资源的时间。</span><br><span class="line">原理上是通过HTTP Rquest Header中的 if-modifaders中的last-modified来实现</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/01/Vue-Tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/01/Vue-Tutorial/" class="post-title-link" itemprop="url">Vue Tutorial</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-01 10:56:08" itemprop="dateCreated datePublished" datetime="2021-06-01T10:56:08+08:00">2021-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-03 21:15:19" itemprop="dateModified" datetime="2022-01-03T21:15:19+08:00">2022-01-03</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://blog.jetbrains.com/webstorm/2019/03/get-started-building-apps-with-vue-js-in-webstorm/">官方介绍</a></p>
+<h1 id="Vue目录结构"><a href="#Vue目录结构" class="headerlink" title="Vue目录结构"></a>Vue目录结构</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">├── build                      // 构建相关  </span><br><span class="line">├── config                     // 配置相关</span><br><span class="line">├── src                        // 源代码</span><br><span class="line">│   ├── api                    // 所有请求</span><br><span class="line">│   ├── assets                 // 主题 字体等静态资源</span><br><span class="line">│   ├── components             // 全局公用组件</span><br><span class="line">│   ├── directive              // 全局指令</span><br><span class="line">│   ├── filtres                // 全局 filter</span><br><span class="line">│   ├── icons                  // 项目所有 svg icons</span><br><span class="line">│   ├── lang                   // 国际化 language</span><br><span class="line">│   ├── mock                   // 项目mock 模拟数据</span><br><span class="line">│   ├── router                 // 路由</span><br><span class="line">│   ├── store                  // 全局 store管理</span><br><span class="line">│   ├── styles                 // 全局样式</span><br><span class="line">│   ├── utils                  // 全局公用方法</span><br><span class="line">│   ├── vendor                 // 公用vendor</span><br><span class="line">│   ├── views                   // view</span><br><span class="line">│   ├── App.vue                // 入口页面</span><br><span class="line">│   ├── main.js                // 入口 加载组件 初始化等</span><br><span class="line">│   └── permission.js          // 权限管理</span><br><span class="line">├── static                     // 第三方不打包资源</span><br><span class="line">│   └── Tinymce                // 富文本</span><br><span class="line">├── .babelrc                   // babel-loader 配置</span><br><span class="line">├── eslintrc.js                // eslint 配置项</span><br><span class="line">├── .gitignore                 // git 忽略项</span><br><span class="line">├── favicon.ico                // favicon图标</span><br><span class="line">├── index.html                 // html模板</span><br><span class="line">└── package.json               // package.json</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p><img src="https://www.runoob.com/wp-content/uploads/2017/01/B6E593E3-F284-4C58-A610-94C6ACDAD485.jpg" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th>build</th>
+<th>项目构建(webpack)相关代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>config</td>
+<td>配置目录，包括端口号等。我们初学可以使用默认的。</td>
+</tr>
+<tr>
+<td>node_modules</td>
+<td>npm 加载的项目依赖模块</td>
+</tr>
+<tr>
+<td>src</td>
+<td>这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：assets: 放置一些图片，如logo等。components: 目录里面放了一个组件文件，可以不用。App.vue: 项目入口文件，我们也可以直接将组件写这里，而不使用 components 目录。main.js: 项目的核心文件。</td>
+</tr>
+<tr>
+<td>static</td>
+<td>静态资源目录，如图片、字体等。</td>
+</tr>
+<tr>
+<td>test</td>
+<td>初始测试目录，可删除</td>
+</tr>
+<tr>
+<td>.xxxx文件</td>
+<td>这些是一些配置文件，包括语法配置，git配置等。</td>
+</tr>
+<tr>
+<td>index.html</td>
+<td>首页入口文件，你可以添加一些 meta 信息或统计代码啥的。</td>
+</tr>
+<tr>
+<td>package.json</td>
+<td>项目配置文件。</td>
+</tr>
+</tbody></table>
+<p>Webstorm项目构建工具</p>
+<blockquote>
+<p>By default, all the apps generated with the Vue CLI use the webpack dev server</p>
+</blockquote>
+<p>Components</p>
+<blockquote>
+<p>Vue is a framework for building modularized front-end apps, so it considers files with the .vue extension as components.</p>
+</blockquote>
+<blockquote>
+<p>Components contain three sections for code: template (HTML), script (JavaScript or TypeScript), and styles (CSS or any stylesheet language).</p>
+</blockquote>
+<p>App.vue</p>
+<blockquote>
+<p>The project template creates a file called <em>App.vue</em> which is the primary component that is attached to the root element defined in the Vue instance.</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;img alt=&quot;Vue logo&quot; src=&quot;./assets/logo.png&quot;&gt;</span><br><span class="line">    &lt;HelloWorld/&gt;  // 创建好的组件可以当作自定义标签使用</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;  // 导入Helloworld组件，下面两步都不可少</span><br><span class="line">import HelloWorld from &#x27;./components/HelloWorld.vue&#x27; </span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;App&#x27;,</span><br><span class="line">  components: &#123;  </span><br><span class="line">    HelloWorld</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数据传递"><a href="#数据传递" class="headerlink" title="数据传递"></a>数据传递</h1><p>Helloworld.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;HelloWorld&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    msg: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>reveals the <code>msg</code> variable as a property (called <code>props</code>) of the component, and that is how the message data is passed into the HelloWorld component.</p>
+</blockquote>
+<p>How to pass data</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;img alt=&quot;Vue logo&quot; src=&quot;./assets/logo.png&quot;&gt;</span><br><span class="line">    &lt;HelloWorld msg=&quot;Jim&quot;/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>访问assert内的文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./assets/logo.png&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 
 <hr>
-<h4 id="返回实体类-Vue-数据传输"><a href="#返回实体类-Vue-数据传输" class="headerlink" title="返回实体类 Vue 数据传输"></a>返回实体类 Vue 数据传输</h4><p>实体类的id你不另外赋值他也会传过去</p>
-<p>结合vue </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-button @click=&quot;handleClick(scope.row)&quot; type=&quot;text&quot; size=&quot;small&quot;&gt;详细信息&lt;/el-button&gt;</span><br></pre></td></tr></table></figure>
+<p>export</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,  <span class="comment">// 其他文件import当前vue时用的名字</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(row.id)</span><br></pre></td></tr></table></figure>
 
-<p>很棒</p>
 
-      
-    </div>
+<p>main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>  <span class="comment">// 从文件中导入App组件</span></span><br><span class="line"></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span>  <span class="comment">// 关闭生产模式</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;  <span class="comment">// 创建了vue实例</span></span><br><span class="line">  <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(App),</span><br><span class="line">&#125;).$mount(<span class="string">&#x27;#app&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/28/Spring-Boot-exp2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/28/Spring-Boot-exp2/" class="post-title-link" itemprop="url">Spring Boot_exp2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-28 16:33:16" itemprop="dateCreated datePublished" datetime="2021-04-28T16:33:16+08:00">2021-04-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-05 09:42:54" itemprop="dateModified" datetime="2022-01-05T09:42:54+08:00">2022-01-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>list元素重复</p>
-<p>list元素数量不对</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/26/Load-Balance/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/26/Load-Balance/" class="post-title-link" itemprop="url">Load Balance</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-26 21:18:25 / Modified: 21:32:24" itemprop="dateCreated datePublished" datetime="2021-04-26T21:18:25+08:00">2021-04-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://spring.io/guides/gs/spring-cloud-loadbalancer/">Tutorial</a></p>
-<ol>
-<li><p>New two project</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">say-hello   // real-service</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user   // balance-server</span><br></pre></td></tr></table></figure>
-
-<p>with maven</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">say-hello need modules: Spring Web</span><br><span class="line">user   need modules: Cloud Loadbalancer and Spring Reactive Web</span><br></pre></td></tr></table></figure></li>
-<li><p>Implement</p>
-</li>
-</ol>
 <blockquote>
-<p>Note:</p>
-<p>refactor package name</p>
+<p>The call to $mount(‘#app’); attaches the Vue instance to the root DOM element, which is an element with an id of “app”. You can find the root element inside of public\index.html</p>
 </blockquote>
-<p>refactor application.properties</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=user</span><br><span class="line">server.port=8888  // app will run on the port</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">noscript</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>We&#x27;re sorry but &lt;%= htmlWebpackPlugin.options.title %&gt; doesn&#x27;t work properly without JavaScript enabled. Please enable it to continue.<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- built files will be auto injected --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li>Run App</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run</span><br></pre></td></tr></table></figure>
+<hr>
+<p>method</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;HelloWorld&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    // msg: String</span><br><span class="line">  &#125;,</span><br><span class="line">  data: function () &#123;</span><br><span class="line">    return &#123;msg:&quot;Welcome!&quot;&#125;;  // msg is like variable name</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    changeMessage:function () &#123;  // changeMessage is like method name, which is used for invoke</span><br><span class="line">      this.msg=&quot;Welcome man&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>run on multiple port</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=9999</span><br></pre></td></tr></table></figure>
-
-<p>test in browser (8888 is balance server)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:8888/hi</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=&quot;changeMessage&quot;&gt;Change Message&lt;/button&gt;</span><br></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Flux&lt;List&lt;ServiceInstance&gt;&gt; get() &#123;</span><br><span class="line">    <span class="keyword">return</span> Flux.just(Arrays</span><br><span class="line">            .asList(<span class="keyword">new</span> DefaultServiceInstance(serviceId + <span class="string">&quot;1&quot;</span>, serviceId, <span class="string">&quot;localhost&quot;</span>, <span class="number">8090</span>, <span class="keyword">false</span>),</span><br><span class="line">                    <span class="keyword">new</span> DefaultServiceInstance(serviceId + <span class="string">&quot;2&quot;</span>, serviceId, <span class="string">&quot;localhost&quot;</span>, <span class="number">9092</span>, <span class="keyword">false</span>),</span><br><span class="line">                    <span class="keyword">new</span> DefaultServiceInstance(serviceId + <span class="string">&quot;3&quot;</span>, serviceId, <span class="string">&quot;localhost&quot;</span>, <span class="number">9999</span>, <span class="keyword">false</span>)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>balance server will balance to these three ports</p>
-<p>once a target port got some problems, you may see browser will get error</p>
-<p>but refresh it, it will be ok, because it is balanced to another ok port</p>
+
+
+
+<p>localhost显示的首页</p>
+<h1 id="默认首页"><a href="#默认首页" class="headerlink" title="默认首页"></a>默认首页</h1><p>其实就是 public 文件夹中的index.html</p>
+<p>然后其用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="WebStorm与Vue"><a href="#WebStorm与Vue" class="headerlink" title="WebStorm与Vue"></a>WebStorm与Vue</h1><p>虽然最新版的前端开发利器WebStorm支持了Vue，但是大部分人的WebStorm依然是默认不支持Vue的老版本（比如之前的我），所以需要手动添加WebStorm对Vue的支持。要想让WebStorm支持Vue主要分两步，第一步是安装Vue.js插件，使得WebStorm能够对Vue语法进行提示；第二步是配置Vue模板，即快速创建Vue文件</p>
+<h1 id="Vuex-Store"><a href="#Vuex-Store" class="headerlink" title="Vuex-Store"></a>Vuex-Store</h1><p>vuex的store 统一管理多个模块的数据，如：token，用户信息</p>
+<p>如果没有必要，页面本身存储数据就行，不用存在Store里</p>
+<h1 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220103200927673.png" alt="image-20220103200927673"></p>
+<h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">LoginByUsername</span>(<span class="params">&#123; commit &#125;, userInfo</span>)</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> username = userInfo.username.trim()</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    loginByUsername(username, userInfo.password).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> data = response.data</span><br><span class="line">      Cookies.set(<span class="string">&#x27;Token&#x27;</span>, response.data.token) <span class="comment">//登录成功后将token存储在cookie之中</span></span><br><span class="line">      commit(<span class="string">&#x27;SET_TOKEN&#x27;</span>, data.token)</span><br><span class="line">      resolve()</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">      reject(error)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>cookie 储存服务器返回的token</p>
+<p>则完成了保存用户的登录状态的功能</p>
+<p>再设置Token有效期（Expires/Max-Age）为Session，即浏览器关闭即丢失</p>
+<p>（也可以设置成1周）</p>
+<h1 id="钩子"><a href="#钩子" class="headerlink" title="钩子"></a>钩子</h1><p>与生命周期相关的被调函数</p>
+<p>如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="权限验证"><a href="#权限验证" class="headerlink" title="权限验证"></a>权限验证</h1><p>前端验证还是后端验证？</p>
+<p>若后端验证，则每增加一个页面，后端就要动一下</p>
+<p>若前端验证，则只在前端动就行</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220103203722855.png" alt="image-20220103203722855"></p>
+<h1 id="next"><a href="#next" class="headerlink" title="next()"></a>next()</h1><p>放行，中断当前导航，执行新的导航</p>
 
       
     </div>
@@ -828,7 +548,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/26/Spring-Boot-with-Docker/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/31/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -842,7 +562,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/26/Spring-Boot-with-Docker/" class="post-title-link" itemprop="url">Spring Boot with Docker</a>
+            <a href="/2021/05/31/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">不定积分</a>
         </h2>
 
         <div class="post-meta">
@@ -852,14 +572,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-04-26 09:37:54" itemprop="dateCreated datePublished" datetime="2021-04-26T09:37:54+08:00">2021-04-26</time>
+              <time title="Created: 2021-05-31 21:05:49" itemprop="dateCreated datePublished" datetime="2021-05-31T21:05:49+08:00">2021-05-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-05 09:48:16" itemprop="dateModified" datetime="2022-01-05T09:48:16+08:00">2022-01-05</time>
+                <time title="Modified: 2021-12-08 19:26:12" itemprop="dateModified" datetime="2021-12-08T19:26:12+08:00">2021-12-08</time>
               </span>
 
           
@@ -873,31 +593,87 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ol>
-<li>Jar</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Dockerfile</li>
-</ol>
-<p>new a “Dockerfile”</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:16-jdk-alpine</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ADD docker_demo-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;app.jar&quot;]</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Build images</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t demo/hello .</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Run App</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 8080:8080 demo/hello</span><br></pre></td></tr></table></figure>
-
-
-
-<p>（要连接数据库的，还得先构建数据库）</p>
-<h4 id="Spring-Boot-云服务器-Mysql"><a href="#Spring-Boot-云服务器-Mysql" class="headerlink" title="Spring Boot 云服务器 Mysql"></a>Spring Boot 云服务器 Mysql</h4><p>docker拉镜像建立MySQL方便</p>
+          <h1 id="常用积分公式"><a href="#常用积分公式" class="headerlink" title="常用积分公式"></a>常用积分公式</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710191205817.png" alt="image-20210710191205817"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710191219867.png" alt="image-20210710191219867"></p>
+<h1 id="换元积分（提上去，一类换元）"><a href="#换元积分（提上去，一类换元）" class="headerlink" title="换元积分（提上去，一类换元）"></a>换元积分（提上去，一类换元）</h1><h2 id="x型"><a href="#x型" class="headerlink" title="x型"></a>x型</h2><p><strong>因为常为分式的形式，故要熟练掌握反三角函数的积分</strong></p>
+<p>1+1/(x^2)</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702112814733.png" alt="image-20210702112814733"></p>
+<p>x高次</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702112730971.png" alt="image-20210702112730971"></p>
+<p>括号高次</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702112759624.png" alt="image-20210702112759624"></p>
+<p>根号x作分母</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702113755970.png" alt="image-20210702113755970"></p>
+<p>平分差</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702113837273.png" alt="image-20210702113837273"></p>
+<h2 id="三角函数换元（也叫二类换元，一类换元解决不了时可考虑）"><a href="#三角函数换元（也叫二类换元，一类换元解决不了时可考虑）" class="headerlink" title="三角函数换元（也叫二类换元，一类换元解决不了时可考虑）"></a>三角函数换元（也叫二类换元，一类换元解决不了时可考虑）</h2><p>减法换sin</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702114031386.png" alt="image-20210702114031386"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702114142648.png" alt="image-20210702114142648"></p>
+<p>加法换tan（接sec）</p>
+<p>参考</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702114106450.png" alt="image-20210702114106450"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702114157944.png" alt="image-20210702114157944"></p>
+<h2 id="指数型（灵活变换指数）"><a href="#指数型（灵活变换指数）" class="headerlink" title="指数型（灵活变换指数）"></a>指数型（灵活变换指数）</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702113025510.png" alt="image-20210702113025510"></p>
+<h2 id="对数ln型"><a href="#对数ln型" class="headerlink" title="对数ln型"></a>对数ln型</h2><p>1/x</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702113206839.png" alt="image-20210702113206839"></p>
+<p>1+lnx</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702113217696.png" alt="image-20210702113217696"></p>
+<p>1-lnx</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702113255441.png" alt="image-20210702113255441"></p>
+<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><p>sin和cos</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702113352468.png" alt="image-20210702113352468"></p>
+<p>反三角函数</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702113416362.png" alt="image-20210702113416362"></p>
+<h1 id="分部积分"><a href="#分部积分" class="headerlink" title="分部积分"></a>分部积分</h1><h2 id="定积分的分部积分"><a href="#定积分的分部积分" class="headerlink" title="定积分的分部积分"></a>定积分的分部积分</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710184752866.png" alt="image-20210710184752866"></p>
+<h2 id="x乘指数"><a href="#x乘指数" class="headerlink" title="x乘指数"></a>x乘指数</h2><p>x乘ex（e的指数为一次）这是最简单的分部积分</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702201749367.png" alt="image-20210702201749367"></p>
+<p>e的指数不为1（无法直接分部，要把e的指数换元成一次后才可）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702201900509.png" alt="image-20210702201900509"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702201904005.png" alt="image-20210702201904005"></p>
+<h2 id="x乘对数"><a href="#x乘对数" class="headerlink" title="x乘对数"></a>x乘对数</h2><p>和指数型相反，这需要把ln留下，让他被动上去，然后把他导掉</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702202628850.png" alt="image-20210702202628850"></p>
+<h2 id="x乘三角函数"><a href="#x乘三角函数" class="headerlink" title="x乘三角函数"></a>x乘三角函数</h2><p>先把三角函数的幂降到一次（降幂公式），然后分部把三角函数提上去就解决了</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702203111988.png" alt="image-20210702203111988"></p>
+<p><font color=red>区分是三角函数的平方还是x的平方</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710185533795.png" alt="image-20210710185533795"></p>
+<p>若三角函数在分母，则借助sec或者csc，不过还得熟悉tan和cot的积分</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702203230575.png" alt="image-20210702203230575"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702203814033.png" alt="image-20210702203814033"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702203836515.png" alt="image-20210702203836515"></p>
+<h2 id="x乘反三角函数"><a href="#x乘反三角函数" class="headerlink" title="x乘反三角函数"></a>x乘反三角函数</h2><p>使反三角函数被动上，然后化乘x的式子后再继续积分</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702204034476.png" alt="image-20210702204034476"></p>
+<p>贴一个离谱到死的积分，长长见识就好了</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702210653840.png" alt="image-20210702210653840"></p>
+<p>如果x无法直接上则试试拆项</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702204201018.png" alt="image-20210702204201018"></p>
+<p>反三角函数高次，则利用分部来降幂</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702210525733.png" alt="image-20210702210525733"></p>
+<h2 id="指数乘三角函数"><a href="#指数乘三角函数" class="headerlink" title="指数乘三角函数"></a>指数乘三角函数</h2><p>多次提三角轮回</p>
+<p>Ps：还是要做一遍，最后关于I的处理要注意</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702210756849.png" alt="image-20210702210756849"></p>
+<p>若三角函数为高次则需要降幂</p>
+<p>参考</p>
+<p>（指数如果不为一次则估计需要换元）</p>
+<p>千万要注意常数项，要实操</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702210805245.png" alt="image-20210702210805245"></p>
+<h2 id="sec的奇数次方"><a href="#sec的奇数次方" class="headerlink" title="sec的奇数次方"></a>sec的奇数次方</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702212324510.png" alt="image-20210702212324510"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702212259649.png" alt="image-20210702212259649"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706165003721.png" alt="image-20210706165003721"></p>
+<h2 id="分部积分处理两重积分"><a href="#分部积分处理两重积分" class="headerlink" title="分部积分处理两重积分"></a>分部积分处理两重积分</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710184953550.png" alt="image-20210710184953550"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710185005392.png" alt="image-20210710185005392"></p>
+<hr>
+<h1 id="分式积分法"><a href="#分式积分法" class="headerlink" title="分式积分法"></a>分式积分法</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713185400775.png" alt="image-20210713185400775"></p>
+<p>解析：</p>
+<h2 id="分离常数法"><a href="#分离常数法" class="headerlink" title="分离常数法"></a>分离常数法</h2><p>拆项的目的是为了把分子的最高幂降到<font color=red>分母最高幂-1</font></p>
+<p>随之最后配凑一次提到d，然后再利用完全平方式和反三角函数求解</p>
+<p>复杂配凑步骤</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713190208064.png" alt="image-20210713190208064"></p>
+<p>完全平方式结合反三角函数</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713190944258.png" alt="image-20210713190944258"></p>
+<h2 id="待定系数法"><a href="#待定系数法" class="headerlink" title="待定系数法"></a>待定系数法</h2><p>例题</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713191244531.png" alt="image-20210713191244531"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713191237874.png" alt="image-20210713191237874"></p>
+<p>解析:</p>
+<p>把ABCD括号都去了再组合</p>
+<p>利用恒等式求解ABCD</p>
 
       
     </div>
@@ -917,7 +693,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/26/Idea-shortcut/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/30/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%85%AC%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -931,7 +707,75 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/26/Idea-shortcut/" class="post-title-link" itemprop="url">Idea shortcut</a>
+            <a href="/2021/05/30/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%85%AC%E5%BC%8F/" class="post-title-link" itemprop="url">三角函数公式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-30 20:34:29" itemprop="dateCreated datePublished" datetime="2021-05-30T20:34:29+08:00">2021-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-12 12:12:36" itemprop="dateModified" datetime="2021-07-12T12:12:36+08:00">2021-07-12</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="sec和tan"><a href="#sec和tan" class="headerlink" title="sec和tan"></a>sec和tan</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702205142002.png"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702205300517.png" alt="image-20210702205300517"></p>
+<h4 id="万能公式"><a href="#万能公式" class="headerlink" title="万能公式"></a>万能公式</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702205643797.png" alt="image-20210702205643797"></p>
+<h4 id="降幂公式"><a href="#降幂公式" class="headerlink" title="降幂公式"></a>降幂公式</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210702210012319.png" alt="image-20210702210012319"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/30/%E6%88%90%E9%83%BD%E4%BF%A1%E6%81%AF%E5%B7%A5%E7%A8%8B%E5%A4%A7%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/30/%E6%88%90%E9%83%BD%E4%BF%A1%E6%81%AF%E5%B7%A5%E7%A8%8B%E5%A4%A7%E5%AD%A6/" class="post-title-link" itemprop="url">成都信息工程大学</a>
         </h2>
 
         <div class="post-meta">
@@ -942,7 +786,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-04-26 09:25:43 / Modified: 09:26:34" itemprop="dateCreated datePublished" datetime="2021-04-26T09:25:43+08:00">2021-04-26</time>
+              <time title="Created: 2021-05-30 19:50:07 / Modified: 19:50:24" itemprop="dateCreated datePublished" datetime="2021-05-30T19:50:07+08:00">2021-05-30</time>
             </span>
 
           
@@ -956,7 +800,331 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>double click “Ctrl” – run any command</p>
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530092023694.png" alt="image-20210530092023694"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530092044306.png" alt="image-20210530092044306"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530092106506.png" alt="image-20210530092106506"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530092202161.png" alt="image-20210530092202161"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530091910920.png" alt="image-20210530091910920"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530091926951.png" alt="image-20210530091926951"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/30/%E6%88%90%E9%83%BD%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/30/%E6%88%90%E9%83%BD%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/" class="post-title-link" itemprop="url">成都理工大学</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-30 19:49:33 / Modified: 19:49:52" itemprop="dateCreated datePublished" datetime="2021-05-30T19:49:33+08:00">2021-05-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530090057651.png" alt="image-20210530090057651"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530090116490.png" alt="image-20210530090116490"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530090331200.png" alt="image-20210530090331200"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530090340075.png" alt="image-20210530090340075"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530090348067.png" alt="image-20210530090348067"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530090357204.png" alt="image-20210530090357204"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/30/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/30/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6/" class="post-title-link" itemprop="url">西南科技大学</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-30 19:48:58 / Modified: 19:54:30" itemprop="dateCreated datePublished" datetime="2021-05-30T19:48:58+08:00">2021-05-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530090901098.png" alt="image-20210530090901098"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530091022080.png" alt="image-20210530091022080"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530091033354.png" alt="image-20210530091033354"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530091052640.png" alt="image-20210530091052640"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530091102542.png" alt="image-20210530091102542"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530091431085.png" alt="image-20210530091431085"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210530195405472.png" alt="image-20210530195405472"></p>
+<p><img src="C:\Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20210530195428120.png" alt="image-20210530195422207"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/29/%E7%BD%91%E7%BB%9C%E5%B1%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/29/%E7%BD%91%E7%BB%9C%E5%B1%82/" class="post-title-link" itemprop="url">网络层</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-29 12:10:49" itemprop="dateCreated datePublished" datetime="2021-05-29T12:10:49+08:00">2021-05-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-25 16:23:32" itemprop="dateModified" datetime="2021-06-25T16:23:32+08:00">2021-06-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>网络层功能</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">异构网络互联</span><br><span class="line"></span><br><span class="line">网络层的目的是实现两个端系统之间的数据透明传送，具体功能包括寻址和路由选择、连接的建立、保持和终止</span><br></pre></td></tr></table></figure>
+
+<p>中继设备</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">物理层的中继系统：中继器，集线器Hub</span><br><span class="line"></span><br><span class="line">数据链路层的中继系统：网桥，交换机</span><br><span class="line"></span><br><span class="line">网络层的中继系统：路由器</span><br><span class="line"></span><br><span class="line">网络层以上的中继系统：网关</span><br></pre></td></tr></table></figure>
+
+
+
+<p>流量控制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">接收方告诉发送方，我接收不了那么多了，你待会再发</span><br></pre></td></tr></table></figure>
+
+
+
+<p>拥塞控制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">首先是拥塞————网络负载增加但是吞吐量减小</span><br><span class="line">基于储存转发的机制而出现的现象</span><br></pre></td></tr></table></figure>
+
+<p>路由算法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">距离-向量路由算法 例如：RIP</span><br><span class="line">链路状态路由算法 例如：OSPF</span><br></pre></td></tr></table></figure>
+
+<p>路由收敛</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">路由链路自学习到稳定</span><br></pre></td></tr></table></figure>
+
+
+
+<p>RIP</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">路由表:</span><br><span class="line">&lt; 目的网络，距离，下一跳路由器 &gt;</span><br><span class="line"></span><br><span class="line">简述：</span><br><span class="line">每30秒广播一次更新路由（只传给相邻的路由）</span><br><span class="line">对于从X传来的RIP报文，把所有下一跳的地址都改为X，并且距离都加1</span><br><span class="line">注意：</span><br><span class="line">1.是修改传过来的报文，而不是修改自己的表</span><br><span class="line">2.RIP报文中的内容其实是发送方的路由表</span><br><span class="line"></span><br><span class="line">接下来才是更新接收方的路由表：</span><br><span class="line">（1）如果RIP报文中有新的目的网络，则直接添加到路由表</span><br><span class="line">（2）如果RIP报文中出现已有目的网络，而且路由表中下一跳地址是X，则直接替换（更新状态）</span><br><span class="line">（3）如果RIP报文中出现已有目的网络，但是下一跳地址不是X，则路由表取最小值</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210529125158034.png" alt="image-20210529125158034"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210529125236146.png" alt="image-20210529125236146"></p>
+<p>RIP特点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">优点：</span><br><span class="line">实现简单，开销小，收敛快</span><br><span class="line"></span><br><span class="line">缺点:</span><br><span class="line">当出现故障时，坏消息传播得慢，收敛慢</span><br><span class="line">（故障信息只能一跳一跳地传，远处路由知道得慢）</span><br><span class="line">最大距离为15（16表示不可达）</span><br><span class="line">储存的是完整的路由表，如果网络规模大的话，开销大</span><br><span class="line">RIP不管开销，认为跳数最少得就是最优</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>OSPF</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用Dijkstra算法构建最优链路</span><br><span class="line">每10秒发送一个Hello分组，验证可达性</span><br><span class="line">如果40秒没有收到某路由的Hello分组，则表示其不可达了</span><br></pre></td></tr></table></figure>
+
+<p>关于Dijkstra算法可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/a10201516595/article/details/103646663">这篇文章</a></p>
+<p>报文</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不用UDP，直接用IP数据报传输</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210529125328527.png" alt="image-20210529125328527"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">区域标识符：看下图理解区域</span><br><span class="line">路由器标识符：发送方的IP</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210529125541423.png" alt="image-20210529125541423"></p>
+<p>OSPF特殊路由器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">R6：自治系统边界路由器——与外界别的自治系统联系</span><br><span class="line">R3，R7，R4：区域边界路由器——把各区域与主干区域连接起来</span><br><span class="line">主干区域内的都叫主干路由器（包括上面提到的四个特殊路由器）</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>OSPF种类</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210529125831974.png" alt="image-20210529125831974"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210529125841175.png" alt="image-20210529125841175"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/25/Spring-Security-Fliter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/25/Spring-Security-Fliter/" class="post-title-link" itemprop="url">Spring Security Fliter</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-25 10:28:44" itemprop="dateCreated datePublished" datetime="2021-05-25T10:28:44+08:00">2021-05-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-20 18:05:22" itemprop="dateModified" datetime="2021-06-20T18:05:22+08:00">2021-06-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Difference from addBefore and addAfter</p>
+<h4 id="Security-拦截多请求"><a href="#Security-拦截多请求" class="headerlink" title="Security 拦截多请求"></a>Security 拦截多请求</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http.antMatcher(<span class="string">&quot;/user/**&quot;</span>).antMatcher(<span class="string">&quot;/login/dgut&quot;</span>).authorizeRequests()...</span><br></pre></td></tr></table></figure>
+
+<p>xxxxxxxxxxxxxxxxxx</p>
 
       
     </div>
@@ -975,7 +1143,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/22/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/24/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/22/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/24/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1043,7 +1211,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">305</span>
+          <span class="site-state-item-count">317</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

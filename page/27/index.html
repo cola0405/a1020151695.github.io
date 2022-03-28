@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/08/cmd-Shortcut/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/20/Blockchain-Doubt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -191,7 +191,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/08/cmd-Shortcut/" class="post-title-link" itemprop="url">cmd Shortcut</a>
+            <a href="/2021/03/20/Blockchain-Doubt/" class="post-title-link" itemprop="url">Blockchain Doubt</a>
         </h2>
 
         <div class="post-meta">
@@ -200,19 +200,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-03-08 21:28:30 / Modified: 21:29:04" itemprop="dateCreated datePublished" datetime="2021-03-08T21:28:30+08:00">2021-03-08</time>
+              <time title="Created: 2021-03-20 14:51:15" itemprop="dateCreated datePublished" datetime="2021-03-20T14:51:15+08:00">2021-03-20</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Shortcut/" itemprop="url" rel="index"><span itemprop="name">Shortcut</span></a>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
                 </span>
-            </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-22 18:56:38" itemprop="dateModified" datetime="2021-03-22T18:56:38+08:00">2021-03-22</time>
+              </span>
 
           
 
@@ -225,33 +222,163 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>1.源文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere]</span><br><span class="line">&quot;ShowBasedOnVelocityId&quot;=dword:00639bc8</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere\command]</span><br><span class="line">@=&quot;cmd.exe /s /k pushd \&quot;%V\&quot;&quot;</span><br></pre></td></tr></table></figure>
+          <p>What if received two new, different block at the same time</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Nodes always consider the longest chain to be the correct one and will keep working on</span><br><span class="line">extending it.</span><br><span class="line"></span><br><span class="line">If two nodes broadcast different versions of the next block simultaneously, some</span><br><span class="line">nodes may receive one or the other first. In that case, they work on the first one they received,but save the other branch in case it becomes longer.</span><br><span class="line"></span><br><span class="line">The tie will be broken when the next proof-of-work is found and one branch becomes longer; the nodes that were working on the other</span><br><span class="line">branch will then switch to the longer one.</span><br></pre></td></tr></table></figure>
 
-<p>2.想要Windows Terminal </p>
-<p>把其快捷方式放到System32下（即和cmd.exe一起）</p>
-<p>然后</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere]</span><br><span class="line">&quot;ShowBasedOnVelocityId&quot;=dword:00639bc8</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere\command]</span><br><span class="line">@=&quot;wt.exe cmd.exe /s /k pushd \&quot;%V\&quot;&quot;</span><br></pre></td></tr></table></figure>
+<p>When to mine</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">After validating transactions, a bitcoin node will add them to the memory pool, or transaction pool, where transactions await until they can be included (mined) into a block.</span><br></pre></td></tr></table></figure>
 
-<p>pushd 相当于cd</p>
-<p>你也可以在cmd下输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmd pushd g:</span><br></pre></td></tr></table></figure>
+<p>The connection between transaction, block and miner</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">New transactions are broadcast to all nodes</span><br><span class="line">Each node collects new transactions into a block.</span><br><span class="line">Each node works on finding a difficult proof-of-work for its block.</span><br><span class="line">When a node finds a proof-of-work, it broadcasts the block to all nodes.</span><br><span class="line">Nodes accept the block only if all transactions in it are valid and not already spent.</span><br><span class="line">Nodes express their acceptance of the block by working on creating the next block in the chain, using the hash of the accepted block as the previous hash.</span><br></pre></td></tr></table></figure>
 
-<p>相当于</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd g:</span><br></pre></td></tr></table></figure>
 
-<p>具体原理我不是很想研究。。</p>
-<p>会用就好了 这玩意儿</p>
-<p>3.进入注册表</p>
-<p>win+r</p>
-<p>regedit </p>
-<p>你可以根据源代码找到注册表的对应位置</p>
-<p>4.这里是微软介绍reg的<a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/help/310516/how-to-add-modify-or-delete-registry-subkeys-and-values-by-using-a-reg">文档</a></p>
-<p>虽然我看不太懂</p>
-<p>简单地说了最上面的version不是简单的注释</p>
-<p>而是对应了不同的windows版本</p>
-<p>然后下面的是具体的值的设置</p>
-<p>你也可以一GUI的形式到regedit下修改</p>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Public distributed ledger: A distributed ledger is a record of all transactions maintained in the blockchain network across the globe. In the network, the validation of transactions is done by bitcoin users.</span><br></pre></td></tr></table></figure>
+
+<p>Digital key</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The digital keys are not actually stored in the network, but are instead created and stored by users in a file, or simple database, called a wallet. </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The digital keys in a user’s wallet are completely independent of the bitcoin protocol and can be generated and managed by the user’s wallet software without reference to the blockchain or access to the internet. </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">That&#x27;s true, beacuse the validation is decryption with public key string</span><br></pre></td></tr></table></figure>
+
+
+
+<p>What is public key and private key</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">help understand:</span><br><span class="line"></span><br><span class="line">Think of the public key as similar to a bank account number and the private key as similar to the secret PIN, or signature on a check, that provides control over the account. </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Relation between private key, public key and bitcoin address:</span><br><span class="line"></span><br><span class="line">From the private key, we use elliptic curve multiplication, a one-way cryptographic function, to generate a public key (K). From the public key (K), we use a one-way cryptographic hash function to generate a bitcoin address (A).</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beneficiaries:</span><br><span class="line"></span><br><span class="line">However, not all bitcoin addresses represent public keys; they can also represent other beneficiaries such as scripts, as we will see later in this chapter. </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">key store:</span><br><span class="line"></span><br><span class="line">In most wallet implementations, the private and public keys are stored together as a key pair for convenience. However, the public key can be calculated from the private key, so storing only the private key is also possible.</span><br></pre></td></tr></table></figure>
+
+
+
+<p>How to make public key and private key</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">private key:</span><br><span class="line"></span><br><span class="line">The bitcoin private key is just a number. You can pick your private keys randomly using just a coin, pencil, and paper: toss a coin 256 times and you have the binary digits of a random private key you can use in a bitcoin wallet. The public key can then be generated from the private key.</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The public key is calculated from the private key using elliptic curve multiplication</span><br><span class="line"></span><br><span class="line">Elliptic curve multiplication is a type of function that cryptographers </span><br><span class="line">call a &quot;one-way&quot; function: it is easy to do in one direction and </span><br><span class="line">impossible to do in the reverse direction</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Then how verify signature with only public key?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>What is “beneficiaries”</p>
+<p><a target="_blank" rel="noopener" href="https://www.novixys.com/blog/python-crypto-basics-building-blockchain/">Digital Signature Tutorial</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Digital Signature:</span><br><span class="line">A digital signature is a method of cryptographically assuring a receiver (Bob) that the message is from a specified party (Alice). </span><br><span class="line"></span><br><span class="line">Alice prepares a data buffer, computes a secure checksum, encrypts the checksum using her private key, and sends the data buffer and the encrypted checksum to Bob. </span><br><span class="line"></span><br><span class="line">Bob unencrypts the checksum using Alice’s public key, computes the checksum of the data buffer with the same algorithm as used by Alice and compares the two checksums.</span><br><span class="line"></span><br><span class="line">If they match, the data buffer was prepared by Alice and has not been modified in-transit.</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Blockchain is visual, is it unsecured?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The visible information is just public key, so don&#x27;t worry</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Hack boardcast?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;boardcast&quot; is a action</span><br></pre></td></tr></table></figure>
+
+
+
+<p>How to get real-time balance</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">double spend</span><br></pre></td></tr></table></figure>
+
+
+
+<p>What is timestamp use for?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">The timestamp proves that the data must have existed at the</span><br><span class="line">time, obviously, in order to get into the hash. Each timestamp includes the previous timestamp in</span><br><span class="line">its hash, forming a chain, with each additional timestamp reinforcing the ones before it.</span><br><span class="line"> -- from &quot;Bitcoin: A Peer-to-Peer Electronic Cash System&quot;</span><br></pre></td></tr></table></figure>
+
+<p>What if hack p2p server</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useless, beacuse blockchain use public key and private key, not real ip address</span><br></pre></td></tr></table></figure>
+
+
+
+<p>When valid transaction, do we need send so many requests?</p>
+<p>save ip address in a table</p>
+<p>a transaction a block?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Good miners accept all transactions with the standard 0.0001 BTC fee (which is mainly a spam prevention measure). Bad miners are selfish and avoid including transactions to decrease their propogation time. For example, look at this block to see an example where a miner didn&#x27;t include any transactions except for their own reward transaction.</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.blockchain.com/explorer">Trade Info</a></p>
+<p>Language</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">点对点网络的实现和并发处理才是开发的难点，所以对于那些网络编程能力强，对并发处理简单的语言，人们就特别偏爱。也因此，Nodejs开发区块链应用，逐渐变得更加流行，Go语言也在逐渐兴起。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Why say</p>
+<blockquote>
+<p>Wallets are really keychains containing pairs of private/public keys</p>
+</blockquote>
+<h4 id="Nondeterministic-Random-Wallets"><a href="#Nondeterministic-Random-Wallets" class="headerlink" title="Nondeterministic (Random) Wallets"></a>Nondeterministic (Random) Wallets</h4><p>from:<a target="_blank" rel="noopener" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc">https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">The disadvantage of random keys is that if you generate many of them you must keep copies of all of them, meaning that the wallet must be backed up frequently.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A Type-0 nondeterministic wallet is a poor choice of wallet, especially if you want to avoid address reuse because it means managing many keys</span><br></pre></td></tr></table></figure>
+
+<h4 id="HD-Wallets-BIP-32-BIP-44"><a href="#HD-Wallets-BIP-32-BIP-44" class="headerlink" title="HD Wallets (BIP-32/BIP-44)"></a>HD Wallets (BIP-32/BIP-44)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HD wallets contain keys derived in a tree structure, such that a parent key can derive a sequence of children keys, each of which can derive a sequence of grandchildren keys, and so on, to an infinite depth. </span><br></pre></td></tr></table></figure>
+
+<p><img src="G:\Blog\source_posts\Blockchain-Doubt\Snipaste_2021-03-21_16-15-50.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">The second advantage of HD wallets is that users can create a sequence of public keys without having access to the corresponding private keys.</span><br><span class="line">this allows HD wallets to be used on an insecure server</span><br><span class="line">server doesn’t have the private keys that can spend the funds.</span><br></pre></td></tr></table></figure>
+
+<p>WTF???</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">you may notice a few things about this transaction, mostly the things that are missing! </span><br><span class="line">Where is Alice’s address? Where is Bob’s address? </span><br><span class="line">Where is the 0.1 input &quot;sent&quot; by Alice? </span><br><span class="line"></span><br><span class="line">In bitcoin, there are no coins, no senders, no recipients, no balances, no accounts, and no addresses. </span><br><span class="line"></span><br><span class="line">All those things are constructed at a higher level for the benefit of the user, to make things easier to understand.</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="What-Is-UTXO"><a href="#What-Is-UTXO" class="headerlink" title="What Is UTXO?"></a>What Is UTXO?</h2><p>The term UTXO refers to the amount of digital <a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/c/currency.asp">currency</a> someone has left remaining after executing a <a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/c/cryptocurrency.asp">cryptocurrency</a> transaction such as <a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/b/bitcoin.asp">bitcoin</a>. The letters stand for unspent transaction output.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">When we say that a user’s wallet has &quot;received&quot; bitcoin, what we mean is that the wallet has detected an UTXO that can be spent with one of the keys controlled by that wallet. Thus, a user’s bitcoin &quot;balance&quot; is the sum of all UTXO that user’s wallet can spend and which may be scattered among hundreds of transactions and hundreds of blocks.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Conclusion, &quot;balance&quot; should be calculate from the blockchain</span><br></pre></td></tr></table></figure>
+
+<p>Will it hard to calculate the balance?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Most wallets maintain a database or use a database service to store a quick reference set of all the UTXO they can spend with the keys they control.</span><br></pre></td></tr></table></figure>
+
+<p>Understand “Soft Fork” after the “Consensus”</p>
+<p>Fee</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Yes. Transaction fees cover the mining network fees and the Blockchain infrastructure necessary to ensure fast and reliable transaction confirmation times. Miners prioritize transactions based on fees, so the higher the fee, the greater chance your transaction has of being completed quickly. A fee that’s too low runs the risk of never being confirmed. Your Blockchain wallet will recommend a fee for you to use based on the current network conditions and the size of your transaction. You can choose to set your own fee for bitcoin, but we only recommend that for more advanced users.</span><br></pre></td></tr></table></figure>
+
+
+
+<p>What distributed ledger</p>
+<p>amount of bitcoin </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">approximately the year 2140, when all bitcoin (20.99999998 million) will have been issued. After 2140, no new bitcoin will be issued.</span><br></pre></td></tr></table></figure>
+
+<p>what is public ledger</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Bitcoin has no central authority, yet somehow every full node has a complete copy of a public ledger that it can trust as the authoritative record. </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>what is “script “in blockchain</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Mining pool</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Their mining hardware remains connected to the pool server while mining, synchronizing their efforts with the other miners. Thus, the pool miners share the effort to mine a block and then share in the rewards.</span><br><span class="line"></span><br><span class="line">Successful blocks pay the reward to a pool bitcoin address, rather than individual miners. The pool server will periodically make payments to the miners&#x27; bitcoin addresses</span><br></pre></td></tr></table></figure>
+
+<p>defect of pool server</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">If the pool server is down or is slowed by a denial-of-service attack, the pool miners cannot mine. In 2011, to resolve these issues of centralization, a new pool mining method was proposed and implemented: P2Pool, a peer-to-peer mining pool without a central operator.</span><br></pre></td></tr></table></figure>
+
+<p>p2Pool</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">implementing a parallel blockchain-like system called a share chain</span><br><span class="line"></span><br><span class="line">the share chain allows all pool miners to keep track of all shares using a decentralized consensus mechanism like bitcoin’s blockchain consensus mechanism.</span><br><span class="line"></span><br><span class="line">undetermined...</span><br></pre></td></tr></table></figure>
+
+<p>what is Consensus Attacks</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>solo mining</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Or he might not find a block for 5 years and suffer a big financial loss. </span><br></pre></td></tr></table></figure>
+
+<p>“block height”</p>
+<p>“Bitcoin Core”</p>
+<p>“full node”</p>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Transaction outputs consist of two parts:</span><br><span class="line"></span><br><span class="line">An amount of bitcoin, denominated in satoshis, the smallest bitcoin unit</span><br><span class="line"></span><br><span class="line">A cryptographic puzzle that determines the conditions required to spend the output</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -271,7 +398,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/08/WSL-conflict/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/20/Blockchain-In-Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -285,7 +412,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/08/WSL-conflict/" class="post-title-link" itemprop="url">WSL conflict</a>
+            <a href="/2021/03/20/Blockchain-In-Python/" class="post-title-link" itemprop="url">Blockchain In Python</a>
         </h2>
 
         <div class="post-meta">
@@ -296,7 +423,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-03-08 20:34:40 / Modified: 20:40:02" itemprop="dateCreated datePublished" datetime="2021-03-08T20:34:40+08:00">2021-03-08</time>
+              <time title="Created: 2021-03-20 09:44:23 / Modified: 10:04:58" itemprop="dateCreated datePublished" datetime="2021-03-20T09:44:23+08:00">2021-03-20</time>
             </span>
 
           
@@ -310,12 +437,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>“cmd” with “administrator”</p>
-<p>(Some simulator(e.g. Android simulator ) need to close hp-v virtual machine in win10)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /set hypervisorlaunchtype off</span><br></pre></td></tr></table></figure>
+          <p>Hash a object</p>
+<p>Wrong example</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> sha256</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">t</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(sha256(<span class="built_in">str</span>(t()).encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()))  <span class="comment"># wrong!</span></span><br><span class="line">													 <span class="comment"># str(t()) is just a address</span></span><br></pre></td></tr></table></figure>
 
-<p>open WSL(WSL base on hp-v virtual machine in win10)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /set hypervisorlaunchtype auto</span><br></pre></td></tr></table></figure>
+<p>Correct example</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> sha256  <span class="comment"># need string</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">t</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="built_in">print</span>(sha256(<span class="built_in">str</span>(t().__hash__()).encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()) <span class="comment"># display in hex</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">output:   // string length = 64</span><br><span class="line">58c32e31cc29e9164710dc7571d83200d5f6ff044170e4b299ed8096b4de529e  </span><br></pre></td></tr></table></figure>
+
+
 
 
       
@@ -336,7 +467,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/08/Typora-Shortcut/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/15/Neural-Network-Tutorial/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -350,7 +481,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/08/Typora-Shortcut/" class="post-title-link" itemprop="url">Typora Shortcut</a>
+            <a href="/2021/03/15/Neural-Network-Tutorial/" class="post-title-link" itemprop="url">Neural Network Tutorial</a>
         </h2>
 
         <div class="post-meta">
@@ -361,7 +492,83 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-03-08 20:32:56 / Modified: 20:33:56" itemprop="dateCreated datePublished" datetime="2021-03-08T20:32:56+08:00">2021-03-08</time>
+              <time title="Created: 2021-03-15 18:29:34 / Modified: 18:53:32" itemprop="dateCreated datePublished" datetime="2021-03-15T18:29:34+08:00">2021-03-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="image-20210315182943083.png" alt="image-20210315182943083"></p>
+<p>Evaluation </p>
+<p><img src="image-20210315183210362.png" alt="image-20210315183210362"></p>
+<p><img src="image-20210315184205591.png" alt="image-20210315184205591"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Initialize the network with random weights and biases,then adjust them</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Training tells which changes to weights matters the most</span><br></pre></td></tr></table></figure>
+
+<p>Get the cost</p>
+<p><img src="image-20210315183527242.png" alt="image-20210315183527242"></p>
+<p><img src="image-20210315184433132.png" alt="image-20210315184433132"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The last layer</span><br></pre></td></tr></table></figure>
+
+<p>What does middle layer do?</p>
+<p><img src="image-20210315184946375.png" alt="image-20210315184946375"></p>
+<p><img src="image-20210315185212933.png" alt="image-20210315185212933"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Random weights and bias, then seems like getting a new data array (mess image)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/14/Network-Layer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/14/Network-Layer/" class="post-title-link" itemprop="url">Network Layer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-14 16:24:53 / Modified: 16:25:30" itemprop="dateCreated datePublished" datetime="2021-03-14T16:24:53+08:00">2021-03-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -369,7 +576,11 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Shortcut/" itemprop="url" rel="index"><span itemprop="name">Shortcut</span></a>
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/Basic/" itemprop="url" rel="index"><span itemprop="name">Basic</span></a>
                 </span>
             </span>
 
@@ -384,118 +595,226 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>编辑</p>
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">应用层（Application Layer），主要负责应用与网络之间的通信。</span><br><span class="line">运输层（Transport Layer），主要负责两台主机的进程间通信。</span><br><span class="line">网络层（Network Layer），主要负责网络中不同主机之间的通信。</span><br><span class="line">数据链路层（Data Link Layer），主要负责数据在链路中的传输。</span><br><span class="line">物理层（Physical Layer），主要负责数据与物理媒体之间转换。</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/13/X86-ARM-and-M1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/13/X86-ARM-and-M1/" class="post-title-link" itemprop="url">X86,ARM and M1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-13 12:13:23 / Modified: 12:31:46" itemprop="dateCreated datePublished" datetime="2021-03-13T12:13:23+08:00">2021-03-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer/Chip/" itemprop="url" rel="index"><span itemprop="name">Chip</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>simple instruction set</p>
+<p>complex instruction set</p>
+<p>GPU inside M1</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/13/802-11ax-Wi-Fi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/13/802-11ax-Wi-Fi/" class="post-title-link" itemprop="url">802.11ax Wi-Fi</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-03-13 11:04:52" itemprop="dateCreated datePublished" datetime="2021-03-13T11:04:52+08:00">2021-03-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-14 18:04:52" itemprop="dateModified" datetime="2021-03-14T18:04:52+08:00">2021-03-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/Wi-Fi/" itemprop="url" rel="index"><span itemprop="name">Wi-Fi</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/IEEE_802.11ax">Wikipedia</a></p>
 <table>
 <thead>
 <tr>
-<th><a target="_blank" rel="noopener" href="https://defkey.com/what-means/ctrl-h">Ctrl + H</a></th>
-<th>Replace</th>
+<th align="center">Feature</th>
+<th align="center"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/802.11ac">802.11ac</a></th>
+<th align="center">802.11ax</th>
+<th align="center">Comment</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><a target="_blank" rel="noopener" href="https://defkey.com/what-means/ctrl-d">Ctrl + D</a></td>
-<td>Select Word</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/OFDMA">OFDMA</a></td>
+<td align="center">Not available</td>
+<td align="center">Centrally controlled medium access with dynamic assignment of 26, 52, 106, 242(?), 484(?), or 996(?) tones per station. Each tone consists of a single subcarrier of 78.125 kHz bandwidth. Therefore, bandwidth occupied by a single OFDMA transmission is between 2.03125 MHz and ca. 80 MHz bandwidth.</td>
+<td align="center">OFDMA segregates the spectrum in time-frequency <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Resource_Unit">resource units (RUs)</a>. A central coordinating entity (the AP in 802.11ax) assigns RUs for reception or transmission to associated stations. Through the central scheduling of the RUs contention overhead can be avoided, which increases efficiency in scenarios of dense deployments.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://defkey.com/what-means/ctrl-l">Ctrl + L</a></td>
-<td>Select Line/Sentence</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multi-user_MIMO">Multi-user MIMO (MU-MIMO)</a></td>
+<td align="center">Available in <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Telecommunications_link#Downlink">Downlink</a> direction</td>
+<td align="center">Available in Downlink and <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Telecommunications_link#Uplink">Uplink</a> direction</td>
+<td align="center">With Downlink MU MIMO an AP may transmit concurrently to multiple stations and with Uplink MU MIMO an AP may simultaneously receive from multiple stations. Whereas OFDMA separates receivers to different RUs, with MU MIMO the devices are separated to different spatial streams. In 802.11ax, MU MIMO and OFDMA technologies can be used simultaneously. To enable uplink MU transmissions, the AP transmits a new control frame (Trigger) which contains scheduling information (RUs allocations for stations, modulation and coding scheme (MCS) that shall be used for each station). Furthermore, Trigger also provides synchronization for an uplink transmission, since the transmission starts <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Short_Interframe_Space">SIFS</a> after the end of Trigger.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://defkey.com/what-means/ctrl-home">Ctrl + Home</a></td>
-<td>Jump to Top</td>
+<td align="center">Trigger-based Random Access</td>
+<td align="center">Not available</td>
+<td align="center">Allows performing UL OFDMA transmissions by stations which are not allocated RUs directly.</td>
+<td align="center">In Trigger frame, the AP specifies scheduling information about subsequent UL MU transmission. However, several RUs can be assigned for random access. Stations which are not assigned RUs directly can perform transmissions within RUs assigned for random access. To reduce collision probability (i.e. situation when two or more stations select the same <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Resource_Unit">RU</a> for transmission), the 802.11ax amendment specifies special OFDMA back-off procedure. Random access is favorable for transmitting buffer status reports when the AP has no information about pending UL traffic at a station.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://defkey.com/what-means/ctrl-end">Ctrl + End</a></td>
-<td>Jump to Bottom</td>
+<td align="center">Spatial frequency reuse</td>
+<td align="center">Not available</td>
+<td align="center">Coloring enables devices to differentiate transmissions in their own network from transmissions in neighboring networks.Adaptive Power and Sensitivity Thresholds allows dynamically adjusting transmit power and signal detection threshold to increase spatial reuse.</td>
+<td align="center">Without spatial reuse capabilities devices refuse transmitting concurrently to transmissions ongoing in other, neighboring networks. With coloring, a wireless transmission is marked at its very beginning helping surrounding devices to decide if a simultaneous use of the wireless medium is permissible or not. A station is allowed to consider the wireless medium as idle and start a new transmission even if the detected signal level from a neighboring network exceeds legacy signal detection threshold, provided that the transmit power for the new transmission is appropriately decreased.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://defkey.com/what-means/f3">F3</a></td>
-<td>Find Next</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Network_allocation_vector">NAV</a></td>
+<td align="center">Single NAV</td>
+<td align="center">Two NAVs</td>
+<td align="center">In dense deployment scenarios, NAV value set by a frame originated from one network may be easily reset by a frame originated from another network, which leads to misbehavior and collisions. To avoid this, each 802.11ax station will maintain two separate NAVs — one NAV is modified by frames originated from a network the station is associated with, the other NAV is modified by frames originated from overlapped networks.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://defkey.com/what-means/shift-f3">↑  Shift + F3</a></td>
-<td>Find Previous</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/IEEE_802.11ah#Target_Wake_Time">Target Wake Time (TWT)</a></td>
+<td align="center">Not available</td>
+<td align="center">TWT reduces power consumption and medium access contention.</td>
+<td align="center">TWT is a concept developed in <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/802.11ah">802.11ah</a>. It allows devices to wake up at other periods than the beacon transmission period. Furthermore, the AP may group device to different TWT period thereby reducing the number of devices contending simultaneously for the wireless medium.</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td align="center">Fragmentation</td>
+<td align="center">Static fragmentation</td>
+<td align="center">Dynamic fragmentation</td>
+<td align="center">With static fragmentation all fragments of a data packet are of equal size except for the last fragment. With dynamic fragmentation a device may fill available RUs of other opportunities to transmit up to the available maximum duration. Thus, dynamic fragmentation helps reduce overhead.</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Guard_interval">Guard interval</a> duration</td>
+<td align="center">0.4 µs or 0.8 µs</td>
+<td align="center">0.8 µs, 1.6 µs or 3.2 µs</td>
+<td align="center">Extended guard interval durations allow for better protection against signal delay spread as it occurs in outdoor environments.</td>
+</tr>
+<tr>
+<td align="center">Symbol duration</td>
+<td align="center">3.2 µs</td>
+<td align="center">12.8 µs</td>
+<td align="center">Since the subcarrier spacing is reduced by a factor of 4, the OFDM symbol duration is increased by a factor of 4 as well. Extended symbol durations allow for increased efficiency.[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/IEEE_802.11ax#cite_note-LongerSymbolDuration-14">11]</a></td>
 </tr>
 </tbody></table>
-<p>段落</p>
-<table>
-<thead>
-<tr>
-<th><a target="_blank" rel="noopener" href="https://defkey.com/what-means/ctrl-1">Ctrl + 1</a>~6</th>
-<th>set Heading 1</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a target="_blank" rel="noopener" href="https://defkey.com/what-means/ctrl-t">Ctrl + T</a></td>
-<td>Table</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>格式</p>
-<table>
-<thead>
-<tr>
-<th>[Ctrl + ↑  Shift + <code>](https://defkey.com/what-means/ctrl-shift-</code>)</th>
-<th>Code</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a target="_blank" rel="noopener" href="https://defkey.com/what-means/ctrl-k">Ctrl + K</a></td>
-<td>Hyperlink</td>
-</tr>
-<tr>
-<td>``</td>
-<td>代码</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>视图</p>
-<table>
-<thead>
-<tr>
-<th><a target="_blank" rel="noopener" href="https://defkey.com/what-means/ctrl-shift-minus">Ctrl + ↑  Shift + -</a></th>
-<th>缩放</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Ctrl+shift+l</td>
-<td>侧边栏</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
+<p>OFDMA</p>
+<p>BSS Color</p>
 
       
     </div>
@@ -515,7 +834,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/08/Python-Flask/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/Blockchain-Example-In-JS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -529,7 +848,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/08/Python-Flask/" class="post-title-link" itemprop="url">Python Flask</a>
+            <a href="/2021/03/11/Blockchain-Example-In-JS/" class="post-title-link" itemprop="url">Blockchain Example In JS</a>
         </h2>
 
         <div class="post-meta">
@@ -538,21 +857,27 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-03-08 20:30:35 / Modified: 20:31:38" itemprop="dateCreated datePublished" datetime="2021-03-08T20:30:35+08:00">2021-03-08</time>
+              <time title="Created: 2021-03-11 15:16:39" itemprop="dateCreated datePublished" datetime="2021-03-11T15:16:39+08:00">2021-03-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-12 10:28:34" itemprop="dateModified" datetime="2021-03-12T10:28:34+08:00">2021-03-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                  <a href="/categories/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/Flask/" itemprop="url" rel="index"><span itemprop="name">Flask</span></a>
+                  <a href="/categories/Tutorial/Blockchain/" itemprop="url" rel="index"><span itemprop="name">Blockchain</span></a>
                 </span>
             </span>
 
@@ -567,287 +892,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>1.Listener </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.run(host=<span class="string">&#x27;0.0.0.0&#x27;</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h2><h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Open source developers from every continent use npm to share and borrow packages</span><br></pre></td></tr></table></figure>
 
-<p>2.Template</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span>():</span></span><br><span class="line">   <span class="keyword">return</span> <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">   app.run(host=<span class="string">&#x27;0.0.0.0&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">It&#x27;s like &quot;pip&quot; in Python, which is use for installing moudle</span><br></pre></td></tr></table></figure>
 
+<h4 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">As an asynchronous event-driven JavaScript runtime</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Use for running js program </span><br></pre></td></tr></table></figure>
 
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-install-setup.html">Tutorial of installing node.js </a> （Support Windows、Linux、Mac, but  recommend Windows ）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由于新版的nodejs已经集成了npm，所以npm也一并安装好了</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-npm.html">Config npm</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install npm -g</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/08/Leetcode-Rule/">
+<blockquote>
+<p>Note:</p>
+<p>This mirror is use for us to download modules with high speed</p>
+</blockquote>
+<h4 id="Necessary-Module"><a href="#Necessary-Module" class="headerlink" title="Necessary Module"></a>Necessary Module</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save crypto-js</span><br></pre></td></tr></table></figure>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/08/Leetcode-Rule/" class="post-title-link" itemprop="url">Leetcode Rule</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-08 20:17:22 / Modified: 20:20:12" itemprop="dateCreated datePublished" datetime="2021-03-08T20:17:22+08:00">2021-03-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1</p>
-<p>don’t</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">x:<span class="built_in">int</span></span>)</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>2</p>
-<p>自定义数据结构</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br></pre></td></tr></table></figure>
-
-<p>3</p>
-<p>set hash 导致输出导致OJ上不一致</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">太狠了</span><br></pre></td></tr></table></figure>
-
-<p>4</p>
-<p>leetcode 全局还是传参</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">传参！</span><br></pre></td></tr></table></figure>
-
-<p>5</p>
-<p>库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findOrder</span>(<span class="params">self, numCourses, prerequisites</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type numCourses: int</span></span><br><span class="line"><span class="string">        :type prerequisites: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/07/Spring-MVC-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/07/Spring-MVC-Tutorial/" class="post-title-link" itemprop="url">Spring MVC Tutorial</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-01-07 22:48:22 / Modified: 23:12:34" itemprop="dateCreated datePublished" datetime="2021-01-07T22:48:22+08:00">2021-01-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringMVC/" itemprop="url" rel="index"><span itemprop="name">SpringMVC</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringMVC/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.New a Empty Maven project</p>
-<p>2.Add “Web” module</p>
-<p>Go to “Project Structure” – “Modules”</p>
-<p>3.Config dependencies</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<p>Recommended Editor – <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Vscode</a>（Support Windows、Linux、Mac）</p>
 <hr>
-<p>4.New “ApplicationContext.xml” in classpath</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xmlns:mvc</span>=<span class="string">&quot;http://www.springframework.org/schema/mvc&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:annotation-driven</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:default-servlet-handler</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;xxx&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>Blockchain Valid (check whether the blockchain is valid)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">SHA256 = <span class="built_in">require</span>(<span class="string">&#x27;crypto-js/sha256&#x27;</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Block</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">index,timestamp,data,previousHash=<span class="string">&#x27;&#x27;</span></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.index = index;</span><br><span class="line">        <span class="built_in">this</span>.timestamp = timestamp;</span><br><span class="line">        <span class="built_in">this</span>.data = data;</span><br><span class="line">        <span class="built_in">this</span>.previousHash = previousHash;</span><br><span class="line">        <span class="built_in">this</span>.hash = <span class="built_in">this</span>.caculateHash();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">caculateHash</span>(<span class="params"></span>)</span>&#123;  <span class="comment">// hash all elements in a block</span></span><br><span class="line">        <span class="keyword">return</span> SHA256(<span class="built_in">this</span>.index+<span class="built_in">this</span>.previousHash+<span class="built_in">this</span>.timestamp+<span class="built_in">JSON</span>.stringify(<span class="built_in">this</span>.data)).toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blockchain</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.chain = [<span class="built_in">this</span>.createGenesisBlock()];  <span class="comment">// the first block called &quot;Genesis&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">createGenesisBlock</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Block(<span class="number">0</span>,<span class="string">&quot;01/01/2020&quot;</span>,<span class="string">&quot;Genesis block&quot;</span>,<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">getLatesBlock</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.chain[<span class="built_in">this</span>.chain.length-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">addBlock</span>(<span class="params">newBlock</span>)</span>&#123; </span><br><span class="line">        newBlock.previousHash = <span class="built_in">this</span>.getLatesBlock().hash;</span><br><span class="line">        newBlock.hash = newBlock.caculateHash();</span><br><span class="line">        <span class="built_in">this</span>.chain.push(newBlock);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">isChainValid</span>(<span class="params"></span>)</span>&#123;  	</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;<span class="built_in">this</span>.chain.length; i++)&#123;</span><br><span class="line">            <span class="keyword">const</span> currentBlock = <span class="built_in">this</span>.chain[i];</span><br><span class="line">            <span class="keyword">const</span> previousBlock = <span class="built_in">this</span>.chain[i-<span class="number">1</span>];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (currentBlock.caculateHash() !== currentBlock.hash)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;		<span class="comment">// check current block</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (currentBlock.previousHash !== previousBlock.hash)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;      <span class="comment">// check previous block along the chain</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> jtcoin = <span class="keyword">new</span> Blockchain();</span><br><span class="line">jtcoin.addBlock(<span class="keyword">new</span> Block(<span class="number">1</span>,<span class="string">&quot;01/02/2020&quot;</span>,&#123;<span class="attr">amount</span>:<span class="number">4</span>&#125;));</span><br><span class="line">jtcoin.addBlock(<span class="keyword">new</span> Block(<span class="number">2</span>,<span class="string">&quot;01/03/2020&quot;</span>,&#123;<span class="attr">amount</span>:<span class="number">10</span>&#125;));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(jtcoin,<span class="literal">null</span>,<span class="number">4</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Is the chain valid? &#x27;</span> + jtcoin.isChainValid());</span><br><span class="line"></span><br><span class="line">jtcoin.chain[<span class="number">1</span>].data = &#123;<span class="attr">amount</span>:<span class="number">5</span>&#125;;</span><br><span class="line">jtcoin.chain[<span class="number">1</span>].hash = jtcoin.chain[<span class="number">1</span>].caculateHash();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;tamper&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Is the chain valid? &#x27;</span> + jtcoin.isChainValid());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(jtcoin,<span class="literal">null</span>,<span class="number">4</span>));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>Description</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">annotation-driven --  Spring MVC Controller programming model</span><br><span class="line">default-servlet-handler -- Configures a handler for serving static resources</span><br></pre></td></tr></table></figure>
+<p>proof-of-work (It can also be called “mine”)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">SHA256 = <span class="built_in">require</span>(<span class="string">&#x27;crypto-js/sha256&#x27;</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Block</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">index,timestamp,data,previousHash=<span class="string">&#x27;&#x27;</span></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.index = index;</span><br><span class="line">        <span class="built_in">this</span>.timestamp = timestamp;</span><br><span class="line">        <span class="built_in">this</span>.data = data;</span><br><span class="line">        <span class="built_in">this</span>.previousHash = previousHash;</span><br><span class="line">        <span class="built_in">this</span>.hash = <span class="built_in">this</span>.caculateHash();</span><br><span class="line">        <span class="built_in">this</span>.nonce = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">caculateHash</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SHA256(<span class="built_in">this</span>.index+<span class="built_in">this</span>.previousHash+<span class="built_in">this</span>.timestamp+<span class="built_in">JSON</span>.stringify(<span class="built_in">this</span>.data)+<span class="built_in">this</span>.nonce).toString();</span><br><span class="line">        <span class="comment">// you need to update this hash method,</span></span><br><span class="line">        <span class="comment">// because you change the content of block</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">mineBlock</span>(<span class="params">difficulty</span>)</span>&#123;  <span class="comment">// proof of work</span></span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">this</span>.hash.substring(<span class="number">0</span>,difficulty) !== <span class="built_in">Array</span>(difficulty+<span class="number">1</span>).join(<span class="string">&#x27;0&#x27;</span>))&#123;</span><br><span class="line">            <span class="built_in">this</span>.nonce++;   <span class="comment">// try to get correct hash by changing this variable  </span></span><br><span class="line">            <span class="built_in">this</span>.hash = <span class="built_in">this</span>.caculateHash();  </span><br><span class="line">            <span class="comment">// &quot;correct hash&quot; is the correct amount &#x27;0&#x27; in the head of the hash value </span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;Block mined hash:&quot;</span> + <span class="built_in">this</span>.hash);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blockchain</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.chain = [<span class="built_in">this</span>.createGenesisBlock()];</span><br><span class="line">        <span class="built_in">this</span>.difficulty = <span class="number">5</span> </span><br><span class="line">        <span class="comment">// which means five &#x27;0&#x27; in the head of the hash</span></span><br><span class="line">        <span class="comment">// when &#x27;difficulty&#x27; get bigger,</span></span><br><span class="line">        <span class="comment">// miner will spent more time to mine</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">createGenesisBlock</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Block(<span class="number">0</span>,<span class="string">&quot;01/01/2020&quot;</span>,<span class="string">&quot;Genesis block&quot;</span>,<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">getLatesBlock</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.chain[<span class="built_in">this</span>.chain.length-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">addBlock</span>(<span class="params">newBlock</span>)</span>&#123;</span><br><span class="line">        newBlock.previousHash = <span class="built_in">this</span>.getLatesBlock().hash;</span><br><span class="line">        newBlock.mineBlock(<span class="built_in">this</span>.difficulty);</span><br><span class="line">        <span class="built_in">this</span>.chain.push(newBlock);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">isChainValid</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;<span class="built_in">this</span>.chain.length; i++)&#123;</span><br><span class="line">            <span class="keyword">const</span> currentBlock = <span class="built_in">this</span>.chain[i]; </span><br><span class="line">            <span class="keyword">const</span> previousBlock = <span class="built_in">this</span>.chain[i-<span class="number">1</span>];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (currentBlock.caculateHash() !== currentBlock.hash)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (currentBlock.previousHash !== previousBlock.hash)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> jtcoin = <span class="keyword">new</span> Blockchain();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Mining...&quot;</span>);</span><br><span class="line">jtcoin.addBlock(<span class="keyword">new</span> Block(<span class="number">1</span>,<span class="string">&quot;01/02/2020&quot;</span>,&#123;<span class="attr">amount</span>:<span class="number">4</span>&#125;));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Mining...&quot;</span>);</span><br><span class="line">jtcoin.addBlock(<span class="keyword">new</span> Block(<span class="number">2</span>,<span class="string">&quot;01/03/2020&quot;</span>,&#123;<span class="attr">amount</span>:<span class="number">10</span>&#125;));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>5.Config “web.xml”</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:ApplicationContext.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>6.Build Artifact</p>
-<p>Go to “Project Structure”</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Web Application exploded</span><br></pre></td></tr></table></figure>
-
-<p>Introduction</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The dependencies will be put in a folder named &quot;lib&quot; in &quot;WEB-INF&quot;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>7.Configure Tomcat</p>
-<p>Go to “Deployment” </p>
-<p>Put war in it</p>
-<p>Then change the “Application context” to “/“</p>
-<p>So that you can access your application directly </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>END</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/06/Android-Tool-Bar-On-Top/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/06/Android-Tool-Bar-On-Top/" class="post-title-link" itemprop="url">Android Tool Bar (On Top)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-01-06 13:42:39 / Modified: 13:44:24" itemprop="dateCreated datePublished" datetime="2021-01-06T13:42:39+08:00">2021-01-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>XML</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Toolbar</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/tool_bar_for_student_signState&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_weight</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:navigationIcon</span>=<span class="string">&quot;@drawable/back&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:background</span>=<span class="string">&quot;@color/xui_config_color_titlebar&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:titleTextColor</span>=<span class="string">&quot;@color/white&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_gravity</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">&quot;打卡&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">&quot;@color/white&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">&quot;20sp&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Toolbar</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>ConfigBackButton</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">configBackButton</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">val</span> backBtn = view?.findViewById&lt;Toolbar&gt;(R.id.tool_bar_for_student_signState)</span><br><span class="line">    backBtn?.setNavigationOnClickListener &#123;</span><br><span class="line">        SignDataForStudent.DISPLAY_TYPE = SignDataForStudent.DISPLAY_SIGN_FIRST</span><br><span class="line">        StudentActivity.tabSegment?.selectTab(<span class="number">1</span>)</span><br><span class="line">        NavUtil.navController?.popBackStack()</span><br><span class="line">        NavUtil.navController?.navigate(R.id.signDataForStudent)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<p>Balance (how many coins in you account)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">SHA256 = <span class="built_in">require</span>(<span class="string">&#x27;crypto-js/sha256&#x27;</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Transaction</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">fromAddress,toAddress,amount</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.fromAddress = fromAddress;</span><br><span class="line">        <span class="built_in">this</span>.toAddress = toAddress;</span><br><span class="line">        <span class="built_in">this</span>.amount = amount;  <span class="comment">// the amount of money</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Block</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">timestamp,transactions,previousHash=<span class="string">&#x27;&#x27;</span></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.timestamp = timestamp;</span><br><span class="line">        <span class="built_in">this</span>.transactions = transactions;</span><br><span class="line">        <span class="built_in">this</span>.previousHash = previousHash;</span><br><span class="line">        <span class="built_in">this</span>.hash = <span class="built_in">this</span>.caculateHash();</span><br><span class="line">        <span class="built_in">this</span>.nonce = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">caculateHash</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SHA256(<span class="built_in">this</span>.previousHash+<span class="built_in">this</span>.timestamp+<span class="built_in">JSON</span>.stringify(<span class="built_in">this</span>.transactions)+<span class="built_in">this</span>.nonce).toString(); </span><br><span class="line">        <span class="comment">// you need to update this hash method,</span></span><br><span class="line">        <span class="comment">// because you change the content of block</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">mineBlock</span>(<span class="params">difficulty</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">this</span>.hash.substring(<span class="number">0</span>,difficulty) !== <span class="built_in">Array</span>(difficulty+<span class="number">1</span>).join(<span class="string">&#x27;0&#x27;</span>))&#123;</span><br><span class="line">            <span class="built_in">this</span>.nonce++;</span><br><span class="line">            <span class="built_in">this</span>.hash = <span class="built_in">this</span>.caculateHash();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;Block mined hash:&quot;</span> + <span class="built_in">this</span>.hash);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blockchain</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.chain = [<span class="built_in">this</span>.createGenesisBlock()];</span><br><span class="line">        <span class="built_in">this</span>.difficulty = <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">this</span>.pendingTransactions = [];</span><br><span class="line">        <span class="built_in">this</span>.mineReward = <span class="number">100</span>; <span class="comment">// reward for miner</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">createGenesisBlock</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Block(<span class="string">&quot;01/01/2020&quot;</span>,<span class="string">&quot;Genesis block&quot;</span>,<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">getLatesBlock</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.chain[<span class="built_in">this</span>.chain.length-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">addBlock</span>(<span class="params">newBlock</span>)</span>&#123;</span><br><span class="line">        newBlock.previousHash = <span class="built_in">this</span>.getLatesBlock().hash;</span><br><span class="line">        newBlock.mineBlock(<span class="built_in">this</span>.difficulty);</span><br><span class="line">        <span class="built_in">this</span>.chain.push(newBlock);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">isChainValid</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;<span class="built_in">this</span>.chain.length; i++)&#123;</span><br><span class="line">            <span class="keyword">const</span> currentBlock = <span class="built_in">this</span>.chain[i];</span><br><span class="line">            <span class="keyword">const</span> previousBlock = <span class="built_in">this</span>.chain[i-<span class="number">1</span>];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (currentBlock.caculateHash() !== currentBlock.hash)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (currentBlock.previousHash !== previousBlock.hash)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">minePendingTransactions</span>(<span class="params">mineRewardAddress</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> block = <span class="keyword">new</span> Block(<span class="keyword">new</span> <span class="built_in">Date</span>(), <span class="built_in">this</span>.pendingTransactions);</span><br><span class="line">        block.mineBlock(<span class="built_in">this</span>.difficulty);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;Block successfully minded!&#x27;</span>);</span><br><span class="line">        <span class="built_in">this</span>.chain.push(block);</span><br><span class="line">        <span class="built_in">this</span>.pendingTransactions = [<span class="keyword">new</span> Transaction(<span class="literal">null</span>,mineRewardAddress,<span class="built_in">this</span>.mineReward)];</span><br><span class="line">        <span class="comment">// send mineReward to miner</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">createTransaction</span>(<span class="params">transaction</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.pendingTransactions.push(transaction);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">getBalanceOfAddress</span>(<span class="params">address</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> balance = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> block <span class="keyword">of</span> <span class="built_in">this</span>.chain)&#123;  </span><br><span class="line">            <span class="comment">// balance should be caculated everytime from the beginning of the chain</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">const</span> trans <span class="keyword">of</span> block.transactions)&#123;</span><br><span class="line">                <span class="keyword">if</span> (trans.fromAddress == address)&#123;</span><br><span class="line">                    balance -= trans.amount;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(trans.toAddress == address)&#123;</span><br><span class="line">                    balance += trans.amount;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> balance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> jtcoin = <span class="keyword">new</span> Blockchain();</span><br><span class="line">jtcoin.createTransaction(<span class="keyword">new</span> Transaction(<span class="string">&#x27;address1&#x27;</span>,<span class="string">&#x27;address2&#x27;</span>,<span class="number">100</span>));</span><br><span class="line">jtcoin.createTransaction(<span class="keyword">new</span> Transaction(<span class="string">&#x27;address2&#x27;</span>,<span class="string">&#x27;address1&#x27;</span>,<span class="number">50</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;\n Starting the miner...&#x27;</span>);</span><br><span class="line"></span><br><span class="line">jtcoin.minePendingTransactions(<span class="string">&#x27;jtaddress&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;jtaddress balance is &#x27;</span> + jtcoin.getBalanceOfAddress(<span class="string">&#x27;jtaddress&#x27;</span>));</span><br><span class="line"></span><br><span class="line">jtcoin.minePendingTransactions(<span class="string">&#x27;jtaddress&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;jtaddress new balance is &#x27;</span> + jtcoin.getBalanceOfAddress(<span class="string">&#x27;jtaddress&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;address1 balance is &#x27;</span> + jtcoin.getBalanceOfAddress(<span class="string">&#x27;address2&#x27;</span>));</span><br></pre></td></tr></table></figure>
 
 
       
@@ -868,7 +944,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/06/Android-Swip-Refresh/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/08/VS-Error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -882,7 +958,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/06/Android-Swip-Refresh/" class="post-title-link" itemprop="url">Android Swip Refresh</a>
+            <a href="/2021/03/08/VS-Error/" class="post-title-link" itemprop="url">VS Error</a>
         </h2>
 
         <div class="post-meta">
@@ -891,23 +967,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-06 13:39:00 / Modified: 13:43:54" itemprop="dateCreated datePublished" datetime="2021-01-06T13:39:00+08:00">2021-01-06</time>
+              <time title="Created: 2021-03-08 21:52:12" itemprop="dateCreated datePublished" datetime="2021-03-08T21:52:12+08:00">2021-03-08</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-05 09:52:00" itemprop="dateModified" datetime="2022-01-05T09:52:00+08:00">2022-01-05</time>
               </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
 
           
 
@@ -920,12 +989,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>XML</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">androidx.swiperefreshlayout.widget.SwipeRefreshLayout</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:id</span>=<span class="string">&quot;@+id/location_swipe_for_student&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:layout_height</span>=<span class="string">&quot;100dp&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">androidx.swiperefreshlayout.widget.SwipeRefreshLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: The following VS instances are excluded because the English language pack is unavailable.</span><br></pre></td></tr></table></figure>
 
-<p>Config</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">configSwipeRefresh</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> swipe =</span><br><span class="line">        view?.findViewById&lt;SwipeRefreshLayout&gt;(R.id.location_swipe_for_student)</span><br><span class="line">    swipe?.setOnRefreshListener &#123;</span><br><span class="line">        MapUtil.mLocationClient?.startLocation()</span><br><span class="line">        refreshActivity()</span><br><span class="line">        swipe.isRefreshing = <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Solve </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I have re-installed vs2017 with English language pack to solve this problem.</span><br></pre></td></tr></table></figure>
 
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20201115190024960.png" alt="image-20201115190024960"></p>
 
       
     </div>
@@ -945,7 +1014,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/06/Android-Add-Views/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/08/Android-Studio-SDK-config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -959,7 +1028,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/06/Android-Add-Views/" class="post-title-link" itemprop="url">Android Add Views</a>
+            <a href="/2021/03/08/Android-Studio-SDK-config/" class="post-title-link" itemprop="url">Android Studio SDK config</a>
         </h2>
 
         <div class="post-meta">
@@ -970,20 +1039,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-06 13:33:16 / Modified: 13:45:40" itemprop="dateCreated datePublished" datetime="2021-01-06T13:33:16+08:00">2021-01-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
+              <time title="Created: 2021-03-08 21:39:26 / Modified: 21:40:26" itemprop="dateCreated datePublished" datetime="2021-03-08T21:39:26+08:00">2021-03-08</time>
             </span>
 
           
@@ -997,11 +1053,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Example</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">signDataView = SuperTextView(requireContext())</span><br><span class="line">buildSignDataView(signDataView, signData)</span><br><span class="line">activity?.runOnUiThread &#123;</span><br><span class="line">	signDataListLayout?.addView(signDataView)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Emulator: emulator: ERROR: Unknown AVD name [Pixel_2_API_29], use -list-avds</span><br></pre></td></tr></table></figure>
 
 
 
+<p>出现这种情况一般是.android文件不在ANDROID_SDK_HOME目录下<br>只需要将系统默认的存放文件的地方：C:/用户/***/.android 复制到你ANDROID_SDK_HOME所指目录下即可</p>
 
       
     </div>
@@ -1021,7 +1077,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/06/Android-Layout-Parameter/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/08/Google-E-mail-Gmail/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -1035,7 +1091,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/06/Android-Layout-Parameter/" class="post-title-link" itemprop="url">Android Layout Parameter</a>
+            <a href="/2021/03/08/Google-E-mail-Gmail/" class="post-title-link" itemprop="url">Google E-mail Gmail</a>
         </h2>
 
         <div class="post-meta">
@@ -1046,7 +1102,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-06 13:30:11 / Modified: 13:44:50" itemprop="dateCreated datePublished" datetime="2021-01-06T13:30:11+08:00">2021-01-06</time>
+              <time title="Created: 2021-03-08 21:37:51 / Modified: 21:38:28" itemprop="dateCreated datePublished" datetime="2021-03-08T21:37:51+08:00">2021-03-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1054,11 +1110,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                  <a href="/categories/Google/" itemprop="url" rel="index"><span itemprop="name">Google</span></a>
                 </span>
             </span>
 
@@ -1073,14 +1125,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Build</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> layoutParamsForInfoUnit: LinearLayout.LayoutParams? = <span class="literal">null</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">buildLayoutParamsForInfoUnit</span><span class="params">(context: <span class="type">Context</span>?)</span></span>&#123;</span><br><span class="line">layoutParamsForInfoUnit =</span><br><span class="line">                LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DpUtil.dip2px(context,<span class="number">100f</span>))</span><br><span class="line">layoutParamsForInfoUnit?.setMargins(DpUtil.dip2px(context, <span class="number">10f</span>), DpUtil.dip2px(context,<span class="number">10f</span>), DpUtil.dip2px(context,<span class="number">10f</span>), <span class="number">0</span>) <span class="comment">// left,top,right,bottom</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Use</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">signDataView!!.layoutParams = LayoutUtil.layoutParamsForInfoUnit</span><br></pre></td></tr></table></figure>
-
-
-
+          <p>QQ邮箱中选择gmail注册</p>
+<p>中国的电话号码前加+86</p>
 
       
     </div>
@@ -1099,7 +1145,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/26/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/28/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/26/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/28/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1167,7 +1213,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">305</span>
+          <span class="site-state-item-count">317</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
