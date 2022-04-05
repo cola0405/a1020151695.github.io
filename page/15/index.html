@@ -177,6 +177,1028 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/16/%E7%A7%A9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/16/%E7%A7%A9/" class="post-title-link" itemprop="url">秩</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-16 15:01:54" itemprop="dateCreated datePublished" datetime="2021-07-16T15:01:54+08:00">2021-07-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 15:05:14" itemprop="dateModified" datetime="2021-12-06T15:05:14+08:00">2021-12-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="秩的定义"><a href="#秩的定义" class="headerlink" title="秩的定义"></a>秩的定义</h1><p><font color=red>最常用的方法是求行阶梯非零行数</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716150427858.png" alt="image-20210716150427858"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729162151492.png" alt="image-20210729162151492"></p>
+<p><font color=red>“≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0</font></p>
+<h1 id="k阶子式"><a href="#k阶子式" class="headerlink" title="k阶子式"></a>k阶子式</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729162013742.png" alt="image-20210729162013742"></p>
+<p><font color=red>k阶子式是方阵</font></p>
+<p><font color=blue>故k≤min(n, m)</font></p>
+<h1 id="求秩"><a href="#求秩" class="headerlink" title="求秩"></a>求秩</h1><p><font color=red>秩，是非零子式的最高阶数</font></p>
+<p>故暴力法的话，从$$k_{max}$$开始往下</p>
+<p>而面对高阶矩阵，暴力法不行了</p>
+<p>需借助矩阵的性质求秩</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">经初等变化，矩阵的秩不变</span><br><span class="line">行阶梯矩阵的秩等于其非零行数</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="行阶梯矩阵"><a href="#行阶梯矩阵" class="headerlink" title="行阶梯矩阵"></a>行阶梯矩阵</h1><p>最底行全为0，且每行左起第一个不为0 的元素下面全是0</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716150745647.png" alt="image-20210716150745647"></p>
+<h4 id="化行阶梯的核心思想"><a href="#化行阶梯的核心思想" class="headerlink" title="化行阶梯的核心思想"></a><font color=red>化行阶梯的核心思想</font></h4><p>最有力的武器1</p>
+<p>上层的1把其下面的1全给化掉</p>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729165536959.png" alt="image-20210729165536959"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210805170854460.png" alt="image-20210805170854460"></p>
+<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820191932230.png" alt="image-20210820191932230"></p>
+<p>补充性质：</p>
+<p><font color=blue>满秩矩阵一定是可逆矩阵，可逆矩阵一定是满秩矩阵</font></p>
+<p><font color=red>非零矩阵的秩大于等于1</font></p>
+<h2 id="伴随矩阵的秩"><a href="#伴随矩阵的秩" class="headerlink" title="伴随矩阵的秩"></a>伴随矩阵的秩</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821232028396.png" alt="image-20210821232028396"></p>
+<p>对应的性质</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821232111703.png" alt="image-20210821232111703"></p>
+<h2 id="伴随矩阵的秩1"><a href="#伴随矩阵的秩1" class="headerlink" title="伴随矩阵的秩1"></a>伴随矩阵的秩1</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821232414573.png" alt="image-20210821232414573"></p>
+<p><font color=red>补充说明</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821233319993.png" alt="image-20210821233319993"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821233746933.png" alt="image-20210821233746933"></p>
+<p><font color=red>没见过这些题型，你怎么做，淦</font></p>
+<hr>
+<h2 id="AB的秩【线性方程组-不可逆矩阵】"><a href="#AB的秩【线性方程组-不可逆矩阵】" class="headerlink" title="AB的秩【线性方程组+不可逆矩阵】"></a>AB的秩【线性方程组+不可逆矩阵】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822162816462.png" alt="image-20210822162816462"></p>
+<p>补充说明：</p>
+<p><font color=red>AB其实就相当于方程组Ax</font>，又因为β都不是解，故AB≠O，即AB的秩至少是1</p>
+<p><font color=red>若B可逆，则有r(AB)=r(A)</font></p>
+<p><font color=red>不可逆矩阵有一性质，秩不满</font>，故有r(B)≤2</p>
+<p>最后PS</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822163211931.png" alt="image-20210822163211931"></p>
+<hr>
+<h2 id="分块矩阵与秩"><a href="#分块矩阵与秩" class="headerlink" title="分块矩阵与秩"></a>分块矩阵与秩</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822164222248.png" alt="image-20210822164222248"></p>
+<p><font color=red>遇到这种我知道它是什么，但不精通的，就别推理了</font></p>
+<p><font color=red>用暴力法举反例排除才是正解</font></p>
+<p><font color=blue>推理举反例排除远远不如举实例排除</font></p>
+<p><font color=green>因为推理的时候容易想当然，从而忽略很多东西</font></p>
+<p>选项A：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822164237617.png" alt="image-20210822164237617"></p>
+<p>选项B：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822164448344.png" alt="image-20210822164448344"></p>
+<p>选项C：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822164500901.png" alt="image-20210822164500901"></p>
+<p>选项D：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822165013281.png" alt="image-20210822165013281"></p>
+<p><font color=red>也别嫌麻烦，一个个试，能排除一个是一个</font></p>
+<p><font color=blue>一种例子试四下，ABCD选项，效率可能会高一些</font></p>
+<h2 id="矩阵乘积为0，推秩不等式"><a href="#矩阵乘积为0，推秩不等式" class="headerlink" title="矩阵乘积为0，推秩不等式"></a>矩阵乘积为0，推秩不等式</h2><p>乘积与秩</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824115201334.png" alt="image-20210824115201334"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824115250329.png" alt="image-20210824115250329"></p>
+<p><font color=red>一己之力</font></p>
+<p><font color=red>非零矩阵的秩大于等于1</font></p>
+<h2 id="假设未知数推秩不等式"><a href="#假设未知数推秩不等式" class="headerlink" title="假设未知数推秩不等式"></a>假设未知数推秩不等式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824120236974.png" alt="image-20210824120236974"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824120243020.png" alt="image-20210824120243020"></p>
+<p>解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824120303428.png" alt="image-20210824120303428"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824120308676.png" alt="image-20210824120308676"></p>
+<p><font color=red>含未知数也可以用行阶梯先求一个抽象的秩范围</font></p>
+<p>还有很容易在做题过程中忽略的一个很重要的范围条件</p>
+<p><font color=red>非零矩阵的秩大于等于1</font></p>
+<p>如果忽略了这个就会出现有两个选项排除不了</p>
+<p>最后补充一个可能之前没注意过的知识点</p>
+<p>r(AB)性质中的 “n” 指的是<strong>A的列数或B的行数</strong></p>
+<p>小于3or4，则取小的3</p>
+<p>小于3</p>
+<h2 id="恒等式的坑"><a href="#恒等式的坑" class="headerlink" title="恒等式的坑"></a>恒等式的坑</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824121426700.png" alt="image-20210824121426700"></p>
+<p>解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824121442617.png" alt="image-20210824121442617"></p>
+<p><font color=red>D的表述并不是说r(A)=1, r(A-E)=1</font></p>
+<p><font color=red>我们常用恒等式，但这存在的坑一定要小心</font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/16/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/16/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/" class="post-title-link" itemprop="url">线性方程组</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-16 14:43:10" itemprop="dateCreated datePublished" datetime="2021-07-16T14:43:10+08:00">2021-07-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-25 21:36:04" itemprop="dateModified" datetime="2021-08-25T21:36:04+08:00">2021-08-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716144321774.png" alt="image-20210716144321774"></p>
+<h1 id="齐次线性方程组"><a href="#齐次线性方程组" class="headerlink" title="齐次线性方程组"></a>齐次线性方程组</h1><p>“<strong>齐次</strong>”—等号右端全为0</p>
+<h2 id="相关表达"><a href="#相关表达" class="headerlink" title="相关表达"></a>相关表达</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808120253348.png" alt="image-20210808120253348"></p>
+<p><strong>重点理解Ax=0</strong></p>
+<p>Ax两个矩阵相乘后得到矩阵为0矩阵，即矩阵内每个元素为0</p>
+<p>即得到齐次线性方程组</p>
+<hr>
+<h2 id="方程组的解"><a href="#方程组的解" class="headerlink" title="方程组的解"></a>方程组的解</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808120523013.png" alt="image-20210808120523013"></p>
+<p>解析：</p>
+<p>m&lt;n，即行&lt;列，即方程少（一行一个方程），未知数多（列多）</p>
+<p>因为限制条件少，故解就多</p>
+<p>一旦有一个非零解，则会有无穷多个解</p>
+<p>原因是<strong>方程组中，k提公因式，然后k*0仍为0，方程组仍然成立</strong>，即又有一个解</p>
+<p>而后研究特殊的解—线性无关的解</p>
+<h3 id="什么是线性无关的解"><a href="#什么是线性无关的解" class="headerlink" title="什么是线性无关的解"></a>什么是线性无关的解</h3><p>意思是解之间无法通过乘k变换而来</p>
+<p>然后这些解组成–<strong>-极大无关组</strong></p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808122657850.png" alt="image-20210808122657850"></p>
+<p>证明：</p>
+<p>将其带入Ax=0得A(ku+ku+…) </p>
+<p>把A乘进去</p>
+<p>把每项的k提出来—kAu=k*0=0</p>
+<p>则方程仍然成立</p>
+<p>得证</p>
+<hr>
+<h2 id="基础解系"><a href="#基础解系" class="headerlink" title="基础解系"></a>基础解系</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808123205371.png" alt="image-20210808123205371"></p>
+<h2 id="解方程组【含基础解系】"><a href="#解方程组【含基础解系】" class="headerlink" title="解方程组【含基础解系】"></a>解方程组【含基础解系】</h2><p>步骤：（<font color=red>这是对于有基础解系的线性方程组而言</font>）</p>
+<p>对系数矩阵做初等行变换，得行阶梯矩阵</p>
+<p>求秩，取自由变量，然后由下往上解方程得到基础解系</p>
+<p>最后k1,k2得到通解</p>
+<p><font color=red>这要与求特征向量区分开来哦！</font></p>
+<h4 id="自由向量的个数"><a href="#自由向量的个数" class="headerlink" title="自由向量的个数"></a>自由向量的个数</h4><p>n-r(A)</p>
+<p>注意不同的说法</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822160930410.png" alt="image-20210822160930410"></p>
+<p><font color=blue>意思是只有1个自由向量</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822161012309.png" alt="image-20210822161012309"></p>
+<p>意思同上（就是只有一个基础解系的意思）</p>
+<h4 id="自由变量、自由向量与基础解系的关系"><a href="#自由变量、自由向量与基础解系的关系" class="headerlink" title="自由变量、自由向量与基础解系的关系"></a>自由变量、自由向量与基础解系的关系</h4><p>自由变量<strong>只是用于求基础解系的一个中间量</strong></p>
+<p>自由变量可以根据原矩阵推出一个自由向量</p>
+<p>这个自由向量则是可以通过基础解系线性表示出来的<strong>其中一个特解</strong></p>
+<p>（基础解系可以线性表示出无数个符合方程组条件的解）</p>
+<p>上面的自由向量则是那无限多解的其中之一</p>
+<hr>
+<h4 id="找自由变量"><a href="#找自由变量" class="headerlink" title="找自由变量"></a>找自由变量</h4><p>每行做起第一个不为0的元素代表的未知数(<font color=green>叫主元</font>)不作自由变量</p>
+<p>下面例子中即用蓝色笔标记的分别对应x1和x2</p>
+<p>故自由变量取余下的x3和x4</p>
+<p>分别取到(1,0)和(0,1)</p>
+<p>三个自由变量则(1,0,0)、(0,1,0)、(0,0,1)</p>
+<h4 id="由下往上解方程"><a href="#由下往上解方程" class="headerlink" title="由下往上解方程"></a>由下往上解方程</h4><p>最后一行都是0，没啥用</p>
+<p>第二行和第一行，带入x得：</p>
+<p>$$\begin{cases} 0x_1+x_2+2x_3+\frac{4}{3}x_4=0\1x_1+2x_2+2x_3+1x_4=0\end{cases}$$</p>
+<p>分别带入(1,0)和(0,1) — x3和x4</p>
+<p>则可以解出剩余的x1和x2</p>
+<h4 id="典型例题"><a href="#典型例题" class="headerlink" title="典型例题"></a>典型例题</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716152615169.png"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716152406346.png" alt="image-20210716152406346"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716152555908.png" alt="image-20210716152555908"></p>
+<p>补：∀k1,k2</p>
+<p>补充说明，那其实就做了解的线性变换</p>
+<p><font color=red>这里的n指的是x的底数</font>$$x_n$$</p>
+<p>另外一种设自由变量的方法</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825213340162.png" alt="image-20210825213340162"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825213348359.png" alt="image-20210825213348359"></p>
+<hr>
+<h4 id="含未知数求通解"><a href="#含未知数求通解" class="headerlink" title="含未知数求通解"></a>含未知数求通解</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808125157944.png" alt="image-20210808125157944"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808125230086.png" alt="image-20210808125230086"></p>
+<hr>
+<h4 id="【逆向】已知基础解系求齐次线-性方程"><a href="#【逆向】已知基础解系求齐次线-性方程" class="headerlink" title="【逆向】已知基础解系求齐次线#性方程"></a>【逆向】已知基础解系求齐次线#性方程</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808125926556.png" alt="image-20210808125926556"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808130028684.png" alt="image-20210808130028684"></p>
+<p>解析：</p>
+<p><font color=red>关键是对问题进行转化</font></p>
+<p>利用矩阵分块的一个性质</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210808125653709.png" alt="image-20210808125653709"></p>
+<p>矩阵相乘为0，则矩阵B的每一列都是Ax=0的解</p>
+<p>回归题目，接下来只要求(u1,u2)的基础解系即可求得$$A^T$$，进而可以求得$$A^T$$，然后得到齐次线性方程组</p>
+<hr>
+<h4 id="【抽象】求通解"><a href="#【抽象】求通解" class="headerlink" title="【抽象】求通解"></a>【抽象】求通解</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809140455889.png"></p>
+<p>Ps：<font color=red>A*X</font>，不是伴随矩阵</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809140523930.png" alt="image-20210809140523930"></p>
+<p>懂得问题转化</p>
+<p>其实是求AX=0的线性无关解</p>
+<p>补充几个定理：</p>
+<p><font color=red>n阶可逆矩阵的秩为n</font></p>
+<p><font color=red>初等矩阵都是可逆矩阵</font></p>
+<p><font color=red>奇异矩阵不可逆</font></p>
+<p><font color=red>奇异矩阵的秩不是满秩</font></p>
+<p><font color=red>矩阵的列秩等于行秩</font></p>
+<hr>
+<h2 id="解方程组【不含基础解系】"><a href="#解方程组【不含基础解系】" class="headerlink" title="解方程组【不含基础解系】"></a>解方程组【不含基础解系】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825210808094.png" alt="image-20210825210808094"></p>
+<p>解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825210835187.png" alt="image-20210825210835187"></p>
+<p><font color=blue>唯一解为：</font>$$\frac{D_i}{D}$$</p>
+<hr>
+<h1 id="非齐次线性方程组"><a href="#非齐次线性方程组" class="headerlink" title="非齐次线性方程组"></a>非齐次线性方程组</h1><p>r(A)=r(A|b)，无解</p>
+<p>r(A)&lt;r(A|b)，有无穷解—自由变量</p>
+<p><font color=red>b是方程组等式右边</font></p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825213417884.png" alt="image-20210825213417884"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825213424503.png" alt="image-20210825213424503"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210825213441485.png" alt="image-20210825213441485"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/16/%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/16/%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2/" class="post-title-link" itemprop="url">初等变换</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-07-16 14:39:43 / Modified: 15:01:04" itemprop="dateCreated datePublished" datetime="2021-07-16T14:39:43+08:00">2021-07-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="导学"><a href="#导学" class="headerlink" title="导学"></a>导学</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716144243574.png" alt="image-20210716144243574"></p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716144910143.png" alt="image-20210716144910143"></p>
+<p>例子:</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716145331657.png" alt="image-20210716145331657"></p>
+<h4 id="初等矩阵"><a href="#初等矩阵" class="headerlink" title="初等矩阵"></a>初等矩阵</h4><p> 单位阵一次初等变化可得到的矩阵</p>
+<h4 id="初等矩阵性质"><a href="#初等矩阵性质" class="headerlink" title="初等矩阵性质"></a>初等矩阵性质</h4><p><font color=red>左乘行变换</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716145245704.png" alt="image-20210716145245704"></p>
+<p><font color=red>右乘列变换</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716145443463.png" alt="image-20210716145443463"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716145628907.png" alt="image-20210716145628907"></p>
+<p>例子:</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716145720350.png" alt="image-20210716145720350"></p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716150034698.png" alt="image-20210716150034698"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716150056916.png" alt="image-20210716150056916"></p>
+<h4 id="行变换"><a href="#行变换" class="headerlink" title="行变换"></a>行变换</h4><p>方程组</p>
+<h4 id="列变换"><a href="#列变换" class="headerlink" title="列变换"></a>列变换</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/15/%E7%9F%A9%E9%98%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/15/%E7%9F%A9%E9%98%B5/" class="post-title-link" itemprop="url">矩阵</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-15 22:38:09" itemprop="dateCreated datePublished" datetime="2021-07-15T22:38:09+08:00">2021-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-21 15:10:36" itemprop="dateModified" datetime="2021-12-21T15:10:36+08:00">2021-12-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715223824361.png" alt="image-20210715223824361"></p>
+<h2 id="矩阵相乘的几何意义"><a href="#矩阵相乘的几何意义" class="headerlink" title="矩阵相乘的几何意义"></a>矩阵相乘的几何意义</h2><p>可以当函数映射理解</p>
+<p>将一个坐标系中所有的点映射到另一个坐标系中去。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-7c112086236c44e75053b2002f87f673_1440w.jpg" alt="img"></p>
+<p><img src="https://pic4.zhimg.com/80/v2-bd7e28dbda00e5c01393e79989f1b3d3_1440w.jpg" alt="img"></p>
+<h1 id="矩阵的阶数"><a href="#矩阵的阶数" class="headerlink" title="矩阵的阶数"></a>矩阵的阶数</h1><h1 id="伴随矩阵"><a href="#伴随矩阵" class="headerlink" title="伴随矩阵"></a>伴随矩阵</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715225251922.png" alt="image-20210715225251922"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716142701332.png" alt="image-20210716142701332"></p>
+<h2 id="易错"><a href="#易错" class="headerlink" title="易错"></a>易错</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210818181840977.png" alt="image-20210818181840977"></p>
+<p><font color=red>暴力法求解时容易把C和D选项搞混</font></p>
+<p>出错的原因就在于伴随矩阵的计算</p>
+<p>p50</p>
+<h2 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728132840568.png" alt="image-20210728132840568"></p>
+<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820191637103.png" alt="image-20210820191637103"></p>
+<p>另外注意：$$(A+B)^{ *}≠A^{ *} +B^{ *}$$</p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809163239446.png" alt="image-20210809163239446"></p>
+<p><font color=red>注意</font></p>
+<p>$$A^{-1}$$是指取逆，这是传统代数运算不一样的地方</p>
+<h2 id="秩"><a href="#秩" class="headerlink" title="秩"></a>秩</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809142648290.png" alt="image-20210809142648290"></p>
+<p><font color=red>r&lt;n，并不表示改矩阵不可逆，因为行阶梯不一定是上三角</font></p>
+<h2 id="求伴随矩阵"><a href="#求伴随矩阵" class="headerlink" title="求伴随矩阵"></a>求伴随矩阵</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728133838070.png" alt="image-20210728133838070"></p>
+<p>例题</p>
+<h3 id="定义法"><a href="#定义法" class="headerlink" title="定义法"></a>定义法</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728134045195.png" alt="image-20210728134045195"></p>
+<p><font color=red>总结：主对调，副变号</font></p>
+<h3 id="【方程】公式"><a href="#【方程】公式" class="headerlink" title="【方程】公式"></a>【方程】公式</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816231715005.png" alt="image-20210816231715005"></p>
+<p>会了上面的公式，这题随便做</p>
+<p><strong>求分块矩阵的行列式</strong></p>
+<p>涉及到的公式</p>
+<p>可以用用暴力求AB相乘的行列式的值</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816224442472.png" alt="image-20210816224442472"></p>
+<hr>
+<h1 id="逆矩阵"><a href="#逆矩阵" class="headerlink" title="逆矩阵"></a>逆矩阵</h1><p><font color=red>可逆这个性质很好用</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716143513163.png" alt="image-20210716143513163"></p>
+<h2 id="逆矩阵性质"><a href="#逆矩阵性质" class="headerlink" title="逆矩阵性质"></a>逆矩阵性质</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820191249920.png" alt="image-20210820191249920"></p>
+<h2 id="求逆矩阵"><a href="#求逆矩阵" class="headerlink" title="求逆矩阵"></a>求逆矩阵</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820191403630.png" alt="image-20210820191403630"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211117145544285.png"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211109183234711.png" alt="image-20211109183234711"></p>
+<h3 id="用伴随"><a href="#用伴随" class="headerlink" title="用伴随"></a>用伴随</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816232344458.png" alt="image-20210816232344458"></p>
+<p><font color=red>伴随别忘了-1系数</font></p>
+<p>知道公式随便做</p>
+<h3 id="利用逆矩阵的性质"><a href="#利用逆矩阵的性质" class="headerlink" title="利用逆矩阵的性质"></a>利用逆矩阵的性质</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816232535638.png" alt="image-20210816232535638"></p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>$$|A^{-1}|=\frac{1}{|A|}$$</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816232707413.png" alt="image-20210816232707413"></p>
+<hr>
+<p>补充定理：</p>
+<p><font color=red>n阶可逆矩阵的秩为n</font></p>
+<p><font color=red>矩阵的列秩等于行秩</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809142350490.png" alt="image-20210809142350490"></p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809140455889.png" alt="image-20210809140455889"></p>
+<p>Ps：<font color=red>A*X</font>，不是伴随矩阵</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809140523930.png" alt="image-20210809140523930"></p>
+<p>需要补充几个定理：</p>
+<p><font color=red>n阶可逆矩阵的秩为n</font></p>
+<p><font color=red>初等矩阵都是可逆矩阵</font></p>
+<p><font color=red>奇异矩阵不可逆</font></p>
+<p><font color=red>奇异矩阵的秩不是满秩</font></p>
+<p><font color=red>矩阵的列秩等于行秩</font></p>
+<hr>
+<h2 id="可逆的充要条件"><a href="#可逆的充要条件" class="headerlink" title="可逆的充要条件"></a>可逆的充要条件</h2><p>n阶矩阵可逆的充要条件</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809141252619.png" alt="image-20210809141252619"></p>
+<p>例题</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716143259952.png" alt="image-20210716143259952"></p>
+<h2 id="抽象用定义"><a href="#抽象用定义" class="headerlink" title="抽象用定义"></a>抽象用定义</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716143734264.png" alt="image-20210716143734264"></p>
+<p><font color=red>厚礼蟹，这定义用的也太庙了</font></p>
+<p>以后看到 “4E” 类似的都得偷着乐了~</p>
+<p>类似的题目</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210818165730705.png" alt="image-20210818165730705"></p>
+<p> <strong>具体的用矩阵初等变换</strong></p>
+<h1 id="矩阵不可逆的性质"><a href="#矩阵不可逆的性质" class="headerlink" title="矩阵不可逆的性质"></a>矩阵不可逆的性质</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210822162537312.png" alt="image-20210822162537312"></p>
+<hr>
+<h1 id="行阶梯矩阵"><a href="#行阶梯矩阵" class="headerlink" title="行阶梯矩阵"></a>行阶梯矩阵</h1><p><strong>最底行全为0，且每行左起第一个不为0 的元素下面全是0</strong></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716150745647.png" alt="image-20210716150745647"></p>
+<p>这种形式好用余子式展开</p>
+<p>然后计算行列式的值</p>
+<h1 id="同型矩阵"><a href="#同型矩阵" class="headerlink" title="同型矩阵"></a>同型矩阵</h1><p>A和B都是mxn的矩阵</p>
+<h1 id="零矩阵"><a href="#零矩阵" class="headerlink" title="零矩阵"></a>零矩阵</h1><p>全部元素都是0，记为0</p>
+<h1 id="行向量和列向量"><a href="#行向量和列向量" class="headerlink" title="行向量和列向量"></a>行向量和列向量</h1><p>只有一行/列的矩阵</p>
+<h1 id="单位矩阵E"><a href="#单位矩阵E" class="headerlink" title="单位矩阵E"></a>单位矩阵E</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716144733607.png" alt="image-20210716144733607"></p>
+<h2 id="左行右列"><a href="#左行右列" class="headerlink" title="左行右列"></a>左行右列</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820190618108.png" alt="image-20210820190618108"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820190746409.png" alt="image-20210820190746409"></p>
+<p>例子：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820190833086.png" alt="image-20210820190833086"></p>
+<p>右列，做初等列变换</p>
+<p>把A的第1列和第2列互换</p>
+<h2 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h2><p>单位阵的转置是它自己</p>
+<p>E^2^=E</p>
+<p>AE=EA=A</p>
+<p>E相当于“1”</p>
+<h1 id="数量阵"><a href="#数量阵" class="headerlink" title="数量阵"></a>数量阵</h1><p>主对角线元素都为k，其余元素都为0</p>
+<h1 id="对角阵"><a href="#对角阵" class="headerlink" title="对角阵"></a>对角阵</h1><p>主对角线元素外的元素都为0</p>
+<h1 id="上下三角阵"><a href="#上下三角阵" class="headerlink" title="上下三角阵"></a>上下三角阵</h1><p>主对角以下（上）的元素都为0</p>
+<h1 id="对称矩阵"><a href="#对称矩阵" class="headerlink" title="对称矩阵"></a>对称矩阵</h1><p>判定条件：$A^T=A$</p>
+<p>但直观表现为</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210806154645071.png"></p>
+<h1 id="反对称矩阵"><a href="#反对称矩阵" class="headerlink" title="反对称矩阵"></a>反对称矩阵</h1><p>$$A^T=-A$$</p>
+<h1 id="实对称阵"><a href="#实对称阵" class="headerlink" title="实对称阵"></a>实对称阵</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816164830923.png" alt="image-20210816164830923"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816170159635.png" alt="image-20210816170159635"></p>
+<h1 id="正交矩阵"><a href="#正交矩阵" class="headerlink" title="正交矩阵"></a>正交矩阵</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211129120547708.png" alt="image-20211129120547708"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201235819193.png" alt="image-20211201235819193"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211201235900742.png" alt="image-20211201235900742"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211129121915039.png" alt="image-20211129121915039"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816170141121.png" alt="image-20210816170141121"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816170223175.png" alt="image-20210816170223175"></p>
+<p>Q，即求出A的特征向量后再进行施密特正交化</p>
+<p>然后算出∧的值</p>
+<p>再拿这个对比另外一种题型</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816170410965.png" alt="image-20210816170410965"></p>
+<p>∧可取A的特征值构成的对角阵，然后解A即可</p>
+<p>相对比上面就是少了正交化的步骤</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816172028349.png"></p>
+<h1 id="正定矩阵"><a href="#正定矩阵" class="headerlink" title="正定矩阵"></a>正定矩阵</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211129155715137.png" alt="image-20211129155715137"></p>
+<p>正定矩阵的判定：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211129155849454.png" alt="image-20211129155849454"></p>
+<p>3）矩阵 A 的所有子矩阵的行列式值均大于零；</p>
+<p> 4）矩阵 A 的所有主元(pivots)均大于零；</p>
+<p>主元就是每个非零行第一个非零元素就是主元</p>
+<h1 id="奇异矩阵"><a href="#奇异矩阵" class="headerlink" title="奇异矩阵"></a>奇异矩阵</h1><p>行列式等于0的方阵</p>
+<p>且该矩阵的秩不是满秩</p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809140455889.png" alt="image-20210809140455889"></p>
+<p>Ps：<font color=red>A*X</font>，不是伴随矩阵</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809140523930.png" alt="image-20210809140523930"></p>
+<p>需要补充几个定理：</p>
+<p><font color=red>n阶可逆矩阵的秩为n</font></p>
+<p><font color=red>初等矩阵都是可逆矩阵</font></p>
+<p><font color=red>奇异矩阵不可逆</font></p>
+<p><font color=red>奇异矩阵的秩不是满秩</font></p>
+<h1 id="特例矩阵"><a href="#特例矩阵" class="headerlink" title="特例矩阵"></a>特例矩阵</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729144656153.png" alt="image-20210729144656153"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729144712611.png" alt="image-20210729144712611"></p>
+<p>$$A^3=O$$</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211109184403951.png" alt="image-20211109184403951"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211203100930506.png" alt="image-20211203100930506"></p>
+<p>答案：A</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211203100855156.png" alt="image-20211203100855156"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211203100905674.png" alt="image-20211203100905674"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824123355236.png" alt="image-20210824123355236"></p>
+<p>答案：n</p>
+<p>（填空题也可以暴力）</p>
+<h1 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h1><p>“det”— 表示行列式的值</p>
+<p>“adj” — 表示一个矩阵的伴随矩阵</p>
+<p>“∧” — 对角阵，也叫 diag</p>
+<h1 id="矩阵初等变换"><a href="#矩阵初等变换" class="headerlink" title="矩阵初等变换"></a>矩阵初等变换</h1><p>1、交换矩阵的第i行与第j行的位置</p>
+<p>2、以非零数k乘以矩阵的第i行的每个元素</p>
+<p>3、把矩阵的第i行的每个元素的k倍加到第j行的对应元素上去</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821225200621.png" alt="image-20210821225200621"></p>
+<h2 id="初等变换技巧"><a href="#初等变换技巧" class="headerlink" title="初等变换技巧"></a>初等变换技巧</h2><h1 id="矩阵基本运算"><a href="#矩阵基本运算" class="headerlink" title="矩阵基本运算"></a>矩阵基本运算</h1><h2 id="加法（需同型）"><a href="#加法（需同型）" class="headerlink" title="加法（需同型）"></a>加法（<font color=red>需同型</font>）</h2><p>对应位置的加起来即可</p>
+<h2 id="数乘"><a href="#数乘" class="headerlink" title="数乘"></a>数乘</h2><p>数k乘矩阵中的每一个元素</p>
+<h2 id="矩阵与矩阵相乘（行等于列）"><a href="#矩阵与矩阵相乘（行等于列）" class="headerlink" title="矩阵与矩阵相乘（行等于列）"></a>矩阵与矩阵相乘（<font color=red>行等于列</font>）</h2><p>乘出来的结果是<font color=red> “左行x右列”</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715224059028.png" alt="image-20210715224059028"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715224146409.png" alt="image-20210715224146409"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715224218930.png" alt="image-20210715224218930"></p>
+<p>总结</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715224350195.png" alt="image-20210715224350195"></p>
+<p>例题</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715225129558.png" alt="image-20210715225129558"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715225119097.png" alt="image-20210715225119097"></p>
+<h2 id="相乘结果是矩阵还是数"><a href="#相乘结果是矩阵还是数" class="headerlink" title="相乘结果是矩阵还是数"></a>相乘结果是矩阵还是数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715225024739.png" alt="image-20210715225024739"><br>列阵在前</p>
+<h2 id="矩阵相乘结合律"><a href="#矩阵相乘结合律" class="headerlink" title="矩阵相乘结合律"></a>矩阵相乘结合律</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728132401362.png" alt="image-20210728132401362"></p>
+<h2 id="特殊矩阵乘法"><a href="#特殊矩阵乘法" class="headerlink" title="特殊矩阵乘法"></a>特殊矩阵乘法</h2><p><font color=blue>乘为A、B可交换</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715224600391.png" alt="image-20210715224600391"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715224618783.png" alt="image-20210715224618783"></p>
+<h2 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h2><p>将A的所有元素绕着一条从第1行第1列元素出发的右下方45度的射线作镜面反转</p>
+<p>特例</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728130605230.png" alt="image-20210728130605230"></p>
+<p>另一个理解：<font color=blue>行列互换</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728131522274.png" alt="image-20210728131522274"></p>
+<p>（注意下标）</p>
+<h2 id="转置性质"><a href="#转置性质" class="headerlink" title="转置性质"></a>转置性质</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728131749365.png" alt="image-20210728131749365"></p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728132108177.png" alt="image-20210728132108177"></p>
+<hr>
+<h2 id="方阵的行列式"><a href="#方阵的行列式" class="headerlink" title="方阵的行列式"></a>方阵的行列式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728132444916.png" alt="image-20210728132444916"></p>
+<p>注意|A+B|≠|A|+|B|</p>
+<hr>
+<h2 id="【配凑】矩阵的代数运算"><a href="#【配凑】矩阵的代数运算" class="headerlink" title="【配凑】矩阵的代数运算"></a>【配凑】矩阵的代数运算</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816224209081.png" alt="image-20210816224209081"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816224255539.png" alt="image-20210816224255539"></p>
+<p><font color=red>这配凑搞得我头皮发麻</font></p>
+<p>其中涉及到的相关公式：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816224442472.png" alt="image-20210816224442472"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816230017127.png" alt="image-20210816230017127"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816224653836.png" alt="image-20210816224653836"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816225711614.png" alt="image-20210816225711614"></p>
+<hr>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="规律题"><a href="#规律题" class="headerlink" title="规律题"></a>规律题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729150618318.png" alt="image-20210729150618318"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729150642735.png" alt="image-20210729150642735"></p>
+<p><font color=red>0,1,3,6,10 为自然数前n项和</font></p>
+<p><font color=red>下面的数学归纳法步骤不可少</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210729152705802.png" alt="image-20210729152705802"></p>
+<h2 id="高次矩阵"><a href="#高次矩阵" class="headerlink" title="高次矩阵"></a>高次矩阵</h2><h3 id="成比例"><a href="#成比例" class="headerlink" title="成比例"></a>成比例</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810154403265.png" alt="image-20210810154403265"></p>
+<p><font color=red>各行成比例—拆项合并</font></p>
+<p><font color=red>列阵在前</font></p>
+<hr>
+<h3 id="【结合律】不成比例"><a href="#【结合律】不成比例" class="headerlink" title="【结合律】不成比例"></a>【结合律】不成比例</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810161021079.png" alt="image-20210810161021079"></p>
+<p><font color=red>不成比例，则暴力试试看</font></p>
+<p><font color=red>结合律，可随意结合，但是不可以更改前后顺序</font></p>
+<h3 id="【分数】不成比例"><a href="#【分数】不成比例" class="headerlink" title="【分数】不成比例"></a>【分数】不成比例</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810161615885.png" alt="image-20210810161615885"></p>
+<h2 id="主对角、副对角"><a href="#主对角、副对角" class="headerlink" title="主对角、副对角"></a>主对角、副对角</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810162039062.png" alt="image-20210810162039062"></p>
+<p><font color=red>AE=A</font></p>
+<p>这道题我的做法是</p>
+<p>$$(A^{2})^{6}=E$$</p>
+<p><font color=red>主对角的n次方，可以直接放进去次方</font></p>
+<p>然后，$$A^{13}=AA^{12}=AE=A$$ 得解</p>
+<hr>
+<h5 id="A-n-B-E-n"><a href="#A-n-B-E-n" class="headerlink" title="$$A^n=(B+E)^n$$"></a>$$A^n=(B+E)^n$$</h5><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810163942470.png" alt="image-20210810163942470"></p>
+<h2 id="【表达式】求未知矩阵"><a href="#【表达式】求未知矩阵" class="headerlink" title="【表达式】求未知矩阵"></a>【表达式】求未知矩阵</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810170321103.png" alt="image-20210810170321103"></p>
+<p><font color=red>方程两边同时乘以逆矩阵，消！</font></p>
+<p><font color=red>可在表达式层面先进行化简</font></p>
+<h2 id="矩阵方程"><a href="#矩阵方程" class="headerlink" title="矩阵方程"></a>矩阵方程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824123355236.png" alt="image-20210824123355236"></p>
+<p> 解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824123348602.png" alt="image-20210824123348602"></p>
+<p>一般用的技巧有</p>
+<p><font color=red>提公因式</font></p>
+<p>有E出现，一般还涉及到定理：</p>
+<p><font color=red>乘积为E则有互逆</font></p>
+<p>然后，有互逆则有<strong>矩阵可逆</strong></p>
+<p>也就说明了其为<strong>满秩</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/15/%E4%BD%99%E5%AD%90%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/15/%E4%BD%99%E5%AD%90%E5%BC%8F/" class="post-title-link" itemprop="url">余子式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-15 22:17:10" itemprop="dateCreated datePublished" datetime="2021-07-15T22:17:10+08:00">2021-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-10 15:39:52" itemprop="dateModified" datetime="2021-08-10T15:39:52+08:00">2021-08-10</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715221850448.png" alt="image-20210715221850448"></p>
+<p>余子式不强调正负号</p>
+<p>代数余子式强调正负号</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715221952478.png" alt="image-20210715221952478"></p>
+<p><font color=red>余子式的值与aij所在行和列的其他元素的值是不影响的</font></p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="基础例题"><a href="#基础例题" class="headerlink" title="基础例题"></a>基础例题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810150734086.png" alt="image-20210810150734086"></p>
+<p>一定注意别漏了$$(-1)^{i+j}$$</p>
+<h2 id="【观念崩塌】待定行列式"><a href="#【观念崩塌】待定行列式" class="headerlink" title="【观念崩塌】待定行列式"></a>【观念崩塌】待定行列式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810152755083.png" alt="image-20210810152755083"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810153551101.png" alt="image-20210810153551101"></p>
+<p>知识点：</p>
+<p><font color=red>求余子式时，不可以用初等变换后的行列式，而要用原式</font></p>
+<p><font color=red>行列式的本质是一个值</font></p>
+<p><font color=red>只要上下三角的对角线元素定了，其他的可以乱来</font></p>
+<p><font color=red>只要不影响行列式的值，随便乱来</font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/15/%E6%95%B0%E5%88%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/15/%E6%95%B0%E5%88%97/" class="post-title-link" itemprop="url">数列</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-07-15 22:10:34 / Modified: 22:16:16" itemprop="dateCreated datePublished" datetime="2021-07-15T22:10:34+08:00">2021-07-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="前n项和"><a href="#前n项和" class="headerlink" title="前n项和"></a>前n项和</h4><h5 id="等差数列"><a href="#等差数列" class="headerlink" title="等差数列"></a>等差数列</h5><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715221209073.png" alt="image-20210715221209073"></p>
+<p><font color=red>上底加下底乘高除以二</font></p>
+<h5 id="等比数列"><a href="#等比数列" class="headerlink" title="等比数列"></a>等比数列</h5><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715221229333.png" alt="image-20210715221229333"></p>
+<h5 id="常见求和公式"><a href="#常见求和公式" class="headerlink" title="常见求和公式"></a>常见求和公式</h5><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715221331175.png" alt="image-20210715221331175"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/15/%E8%A1%8C%E5%88%97%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/15/%E8%A1%8C%E5%88%97%E5%BC%8F/" class="post-title-link" itemprop="url">行列式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-15 21:48:01" itemprop="dateCreated datePublished" datetime="2021-07-15T21:48:01+08:00">2021-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-25 21:26:02" itemprop="dateModified" datetime="2021-08-25T21:26:02+08:00">2021-08-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>性质和展开公式</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715223846561.png" alt="image-20210715223846561"></p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>n阶行列式每一项是取自不同行、不同列、的n个元素的乘积，共有n!项</p>
+<p><font color=red>行列式是数，矩阵是表格</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210721121152750.png" alt="image-20210721121152750"></p>
+<p>-1的幂为逆序数</p>
+<p>先把行下标顺排再对j求全排列</p>
+<p>全排列的个数为n!</p>
+<p>3x3的行列式即</p>
+<p>3!=6</p>
+<p>共有6个式子相加（各个式子的正负由各排列的逆序数决定）</p>
+<h1 id="行列式与矩阵"><a href="#行列式与矩阵" class="headerlink" title="行列式与矩阵"></a>行列式与矩阵</h1><p><font color=red>行列式一定是方阵，而矩阵不一定</font></p>
+<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><p>行列式与其转置对应的行列式的值是相等的</p>
+<p>A为n阶行列式，k为常数$$|(kA)^*|=|k^{n-1}A^*|=k^{(n-1)n}|A^*|$$（伴随）</p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809163239446.png" alt="image-20210809163239446"></p>
+<h1 id="行列式的正负"><a href="#行列式的正负" class="headerlink" title="行列式的正负"></a>行列式的正负</h1><p>当行下标顺排时，由列下标排列的逆序数决定</p>
+<p>(-1)^n</p>
+<h1 id="逆序数"><a href="#逆序数" class="headerlink" title="逆序数"></a>逆序数</h1><p>顺序，123456</p>
+<p>逆序则反之</p>
+<p>例子:</p>
+<p> 3, 2, 1 </p>
+<p>3后面比3小的数有两个，则3的逆序数是2</p>
+<p>2后面比2小的数有一个，则2的逆序数是1</p>
+<p>1后面比1小的数有零个，则0的逆序数为0</p>
+<p>则上面排列的逆序数为2+1+0=3</p>
+<p>顺排的逆序数为0</p>
+<h1 id="进阶练习"><a href="#进阶练习" class="headerlink" title="进阶练习"></a>进阶练习</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724195539572.png" alt="image-20210724195539572"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724195913234.png" alt="image-20210724195913234"></p>
+<hr>
+<h1 id="主对角线行列式"><a href="#主对角线行列式" class="headerlink" title="主对角线行列式"></a>主对角线行列式</h1><h2 id="主对角线行列式-1"><a href="#主对角线行列式-1" class="headerlink" title="主对角线行列式"></a>主对角线行列式</h2><p>逆序数为0，所以没有前缀</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715222541325.png" alt="image-20210715222541325"></p>
+<h2 id="副对角线行列式"><a href="#副对角线行列式" class="headerlink" title="副对角线行列式"></a>副对角线行列式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210715222613378.png" alt="image-20210715222613378"></p>
+<p><font color=red>有一个笼统的证明</font></p>
+<p>把下三角转化成上三角，即副对角线变为了主对角线</p>
+<p>具体转化：</p>
+<p>最后一行和第一行调换，倒数第二行和第二行调换</p>
+<p>又根据初等变化性质，调换一次符号换一次</p>
+<p>故最后行列式的方向还需要根据调换次数确定</p>
+<hr>
+<h1 id="初等变换"><a href="#初等变换" class="headerlink" title="初等变换"></a>初等变换</h1><h5 id="1-行列互换，其值不变（区别于下面的“两行互换”）"><a href="#1-行列互换，其值不变（区别于下面的“两行互换”）" class="headerlink" title="1.行列互换，其值不变（区别于下面的“两行互换”）"></a>1.行列互换，其值不变（区别于下面的“两行互换”）</h5><p>行有的性质对列同样适用</p>
+<p>行和列可以说是一样的</p>
+<p>拓展</p>
+<p>行列式与它的转置行列式相等</p>
+<p><font color=red>怎么样才叫转置</font></p>
+<p>直观来看，将A的所有元素绕着一条从第1行第1列元素出发的右下方45度的射线作镜面反转</p>
+<p>做题的时候偶然发现，把行列式转置后上下调换，效果相当于逆时针转90°</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725141748513.png" alt="image-20210725141748513"></p>
+<h5 id="2-两行-列-互换，行列式的值变号"><a href="#2-两行-列-互换，行列式的值变号" class="headerlink" title="2.两行(列)互换，行列式的值变号"></a>2.两行(列)互换，行列式的值变号</h5><p>对此拓展</p>
+<p><strong>两行(列)相等，行列式的值为0</strong></p>
+<p>恒等式证明</p>
+<h5 id="3-以行-列-为单位提公因式"><a href="#3-以行-列-为单位提公因式" class="headerlink" title="3.以行(列)为单位提公因式"></a>3.以行(列)为单位提公因式</h5><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210721122357944.png" alt="image-20210721122357944"></p>
+<p>拓展</p>
+<p><strong>行列式中如果有两行（列）元素成比例，则此行列式等于零</strong></p>
+<p>提公因式后，成比例的行(列)其实就是相等的，即值为0</p>
+<h5 id="4-某行-列-的k倍加到另一行-列-，行列式的值不变"><a href="#4-某行-列-的k倍加到另一行-列-，行列式的值不变" class="headerlink" title="4.某行(列)的k倍加到另一行(列)，行列式的值不变"></a>4.某行(列)的k倍加到另一行(列)，行列式的值不变</h5><h2 id="上下翻转"><a href="#上下翻转" class="headerlink" title="上下翻转"></a>上下翻转</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725133521545.png" alt="image-20210725133521545"></p>
+<p>解析：</p>
+<p><font color=red>按正常思维，首尾交换一次即可，但是会出现”3/2”的问题故不好处理</font></p>
+<p>故这里选择交换n-1次，一阶一阶得往上换</p>
+<p>然后有等差数列</p>
+<p>a<del>1</del>=n-1</p>
+<p>a<del>n</del>=0</p>
+<p>a<del>n-1</del>=1</p>
+<p>故上述-1的幂为S<del>n-1</del></p>
+<p>即<font color=blue>(上底+下底) x 高 / 2</font></p>
+<p>$$ \frac{(a_1+a_{n-1})(n-1)}{2}$$ = $$\frac{n(n-1)}{2}$$</p>
+<p>故得解</p>
+<hr>
+<h1 id="余子式"><a href="#余子式" class="headerlink" title="余子式"></a>余子式</h1><p>余子式其实也是行列式</p>
+<hr>
+<h1 id="计算行列式的值"><a href="#计算行列式的值" class="headerlink" title="计算行列式的值"></a>计算行列式的值</h1><h2 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h2><p>$$|kA|=k^n|A|$$</p>
+<h2 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h2><h3 id="逐行"><a href="#逐行" class="headerlink" title="逐行"></a>逐行</h3><p>例子：</p>
+<p>用第三行消第四行</p>
+<p>用第二行消第三行</p>
+<h3 id="利用中间行："><a href="#利用中间行：" class="headerlink" title="利用中间行："></a>利用中间行：</h3><p>利用第三行消第二行和第四行</p>
+<h3 id="利用各行消一行"><a href="#利用各行消一行" class="headerlink" title="利用各行消一行"></a>利用各行消一行</h3><p>利用第二三四行消第一行</p>
+<h1 id="行列式展开"><a href="#行列式展开" class="headerlink" title="行列式展开"></a>行列式展开</h1><h3 id="按第一行展开"><a href="#按第一行展开" class="headerlink" title="按第一行展开"></a>按第一行展开</h3><p>行元素求和</p>
+<h3 id="按第一列展开"><a href="#按第一列展开" class="headerlink" title="按第一列展开"></a>按第一列展开</h3><p>列元素求和</p>
+<h3 id="余子式展开"><a href="#余子式展开" class="headerlink" title="余子式展开"></a>余子式展开</h3><p>行列式的值=∑（每一行元素 x 其对应的代数余子式 x (-1)^i+j）</p>
+<p>例题</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210721125544234.png" alt="image-20210721125544234"></p>
+<h1 id="拉普拉斯"><a href="#拉普拉斯" class="headerlink" title="拉普拉斯"></a>拉普拉斯</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210721124111001.png" alt="image-20210721124111001"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210721123936085.png" alt="image-20210721123936085"></p>
+<p>例题</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210721130324740.png" alt="image-20210721130324740"></p>
+<p>还可以通过换行来凑拉普拉斯</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728124849538.png" alt="image-20210728124849538"></p>
+<hr>
+<h1 id="范德蒙式"><a href="#范德蒙式" class="headerlink" title="范德蒙式"></a>范德蒙式</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210721124334992.png" alt="image-20210721124334992"></p>
+<p><font color=red>上式表示：行列式 D 的值为所有的(x<del>i</del> - x<del>j</del>)的乘积（其中 i &gt; j）</font></p>
+<p>Ps：</p>
+<p>遍历</p>
+<p>i，j 不是指二维数组，而是二重循环的i、j</p>
+<p><font color=red>只看次数为1，带x的那一行</font></p>
+<p>例子：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210721124444375.png" alt="image-20210721124444375"></p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809153346123.png" alt="image-20210809153346123"></p>
+<h1 id="上下三角形"><a href="#上下三角形" class="headerlink" title="上下三角形"></a>上下三角形</h1><p>对角线元素乘积</p>
+<h1 id="爪型"><a href="#爪型" class="headerlink" title="爪型"></a>爪型</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809152604569.png" alt="image-20210809152604569"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809152640809.png" alt="image-20210809152640809"></p>
+<h1 id="特殊式"><a href="#特殊式" class="headerlink" title="特殊式"></a>特殊式</h1><p>对角线的元素都相等</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210721125800701.png" alt="image-20210721125800701"> </p>
+<p>加起，提公因式，消0</p>
+<hr>
+<h2 id="启蒙题"><a href="#启蒙题" class="headerlink" title="启蒙题"></a>启蒙题</h2><p><font color=red>按列展开和按行展开的差距</font></p>
+<p>我们要选择正确的策略</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210728125310237.png" alt="image-20210728125310237"></p>
+<hr>
+<h1 id="行列式计算练习"><a href="#行列式计算练习" class="headerlink" title="行列式计算练习"></a>行列式计算练习</h1><h2 id="基础运算书写格式"><a href="#基础运算书写格式" class="headerlink" title="基础运算书写格式"></a>基础运算书写格式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724201111946.png" alt="image-20210724201111946"></p>
+<p>后半部分不建议像答案那样做，简单三阶行列式直接暴力干更快</p>
+<hr>
+<h2 id="1122初等变化的坑"><a href="#1122初等变化的坑" class="headerlink" title="1122初等变化的坑"></a>1122初等变化的坑</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724201705879.png" alt="image-20210724201705879"></p>
+<p>捏吗</p>
+<p><font color=red>误区：</font></p>
+<p>消出有一列全为0，最后行列式的值为0</p>
+<p>不允许行列变化<strong>并行进行</strong></p>
+<p><strong>如果允许并行变化的话，任意行列式都可以化出一列全为0</strong></p>
+<p>正确解法：</p>
+<p>如果是自己算的话推荐可变则变</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724202658657.png" alt="image-20210724202658657"></p>
+<p>不然则老老实实算</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724202724684.png" alt="image-20210724202724684"></p>
+<hr>
+<h2 id="提公因式"><a href="#提公因式" class="headerlink" title="提公因式"></a>提公因式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724203146451.png" alt="image-20210724203146451"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724203520878.png" alt="image-20210724203520878"></p>
+<hr>
+<h2 id="挖坑等人跳"><a href="#挖坑等人跳" class="headerlink" title="挖坑等人跳"></a>挖坑等人跳</h2><p><font color=blue>不可化拉普拉斯的就认清现实吧，老实降阶</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724203801821.png" alt="image-20210724203801821"></p>
+<hr>
+<h2 id="行列式拆项"><a href="#行列式拆项" class="headerlink" title="行列式拆项"></a>行列式拆项</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725122939846.png" alt="image-20210725122939846"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725123011948.png" alt="image-20210725123011948"></p>
+<p>本题考查的首先是拆卸，其次</p>
+<p><font color=red>如果有两行(列)成比例，则行列式值为0</font></p>
+<hr>
+<h2 id="完全平方式"><a href="#完全平方式" class="headerlink" title="完全平方式"></a>完全平方式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725124042154.png" alt="image-20210725124042154"></p>
+<hr>
+<h2 id="类范德蒙的坑"><a href="#类范德蒙的坑" class="headerlink" title="类范德蒙的坑"></a>类范德蒙的坑</h2><p>含范德蒙的推导</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725124840365.png" alt="image-20210725124840365"></p>
+<p>后半部分因式分解的太抽象了，淦</p>
+<p><font color=red>有了公因式什么都好办</font></p>
+<hr>
+<h2 id="数学归纳法"><a href="#数学归纳法" class="headerlink" title="数学归纳法"></a>数学归纳法</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725130705943.png" alt="image-20210725130705943"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725130711207.png" alt="image-20210725130711207"></p>
+<hr>
+<h1 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h1><h2 id="【抽象】求-A-λE"><a href="#【抽象】求-A-λE" class="headerlink" title="【抽象】求|A-λE|"></a>【抽象】求|A-λE|</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809144920942.png" alt="image-20210809144920942"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809145007051.png" alt="image-20210809145007051"></p>
+<p><font color=red>多0，基本就是余子式展开了</font></p>
+<h2 id="【抽象】对角线"><a href="#【抽象】对角线" class="headerlink" title="【抽象】对角线"></a>【抽象】对角线</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809145816405.png" alt="image-20210809145816405"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809145807771.png" alt="image-20210809145807771"></p>
+<p><font color=red>纯种，无脑2048</font></p>
+<h2 id="【ab】对角线"><a href="#【ab】对角线" class="headerlink" title="【ab】对角线"></a>【ab】对角线</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809152132642.png" alt="image-20210809152132642"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809152142926.png" alt="image-20210809152142926"></p>
+<p><font color=red>分类处理，而不是无脑2048</font></p>
+<h2 id="一阶行列式"><a href="#一阶行列式" class="headerlink" title="一阶行列式"></a>一阶行列式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809161955658.png" alt="image-20210809161955658"></p>
+<p>行列式的初等变换的厉害在这里体现的淋漓尽致</p>
+<p>方法二则是适用一阶行列式简单的性质</p>
+<h2 id="行列式与矩阵混淆-给出特征值"><a href="#行列式与矩阵混淆-给出特征值" class="headerlink" title="行列式与矩阵混淆+给出特征值"></a>行列式与矩阵混淆+给出特征值</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809164643566.png" alt="image-20210809164643566"></p>
+<p><font color=red>不要提前把里面的矩阵当成行列式把值算出来</font></p>
+<p>而且，弄混行列式和矩阵一个而很严重的后果就是<strong>数乘的结果不一样</strong></p>
+<p>对于行列式—kA，乘进某一行或后一列就行</p>
+<p>而对于矩阵—kA，矩阵内每一个元素都得乘上</p>
+<p>另外补充一些技巧：</p>
+<p><font color=red>给出特征值，我们可以把抽象A直接对角具现化</font></p>
+<h2 id="给出伴随矩阵的特征值"><a href="#给出伴随矩阵的特征值" class="headerlink" title="给出伴随矩阵的特征值"></a>给出伴随矩阵的特征值</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210809165501550.png" alt="image-20210809165501550"></p>
+<p><font color=red>首先是根据伴随矩阵的特征值求出原矩阵的特征值</font></p>
+<p>然后是利用特征值的性质求解</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/14/%E5%85%88%E5%BA%8F%E3%80%81%E4%B8%AD%E5%BA%8F%E3%80%81%E5%90%8E%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -427,550 +1449,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/14/%E9%98%9F%E5%88%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/14/%E9%98%9F%E5%88%97/" class="post-title-link" itemprop="url">队列</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-14 17:13:44" itemprop="dateCreated datePublished" datetime="2021-07-14T17:13:44+08:00">2021-07-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-04 15:51:04" itemprop="dateModified" datetime="2021-12-04T15:51:04+08:00">2021-12-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="队列的数据结构"><a href="#队列的数据结构" class="headerlink" title="队列的数据结构"></a>队列的数据结构</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210714171716754.png" alt="image-20210714171716754"></p>
-<h1 id="假溢出"><a href="#假溢出" class="headerlink" title="假溢出"></a>假溢出</h1><p>上图c明明还有空闲空间，但是队列无法新增元素</p>
-<p>（rear指不过去）</p>
-<p>故称“假溢出”</p>
-<h1 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h1><p>循环队列是为了解决顺序队列的 “假溢出” 问题提出的</p>
-<p>而顺序栈只在一端进行插入和删除操作，引进循环顺序栈并无实际意义</p>
-<h1 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210714172332232.png" alt="image-20210714172332232"></p>
-<p>判断队列满</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211125152502975.png" alt="image-20211125152502975"></p>
-<p>队列空</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211125152544740.png" alt="image-20211125152544740"></p>
-<h1 id="链式队列"><a href="#链式队列" class="headerlink" title="链式队列"></a>链式队列</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211013194434226.png" alt="image-20211013194434226"></p>
-<p>头结点front</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211013194639742.png" alt="image-20211013194639742"></p>
-<p>出队</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211125214922547.png" alt="image-20211125214922547"></p>
-<p>（头结点不带数据）</p>
-<p>出入队列代码</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211013194726427.png" alt="image-20211013194726427"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/14/%D5%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/14/%D5%BB/" class="post-title-link" itemprop="url">栈</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-14 17:13:35" itemprop="dateCreated datePublished" datetime="2021-07-14T17:13:35+08:00">2021-07-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-06 10:19:50" itemprop="dateModified" datetime="2021-12-06T10:19:50+08:00">2021-12-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="基本描述"><a href="#基本描述" class="headerlink" title="基本描述"></a>基本描述</h1><p>栈顶：top</p>
-<p>栈底：bottom（base）</p>
-<p>栈：S</p>
-<h1 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003152945549.png" alt="image-20211003152945549"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003152953724.png" alt="image-20211003152953724"></p>
-<p>在严蔚敏的教材里，栈顶指针和栈底指针都有</p>
-<p>而在王道中</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003153101541.png" alt="image-20211003153101541"></p>
-<p>引起注意哈</p>
-<h2 id="栈空判定"><a href="#栈空判定" class="headerlink" title="栈空判定"></a>栈空判定</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003152529968.png" alt="image-20211003152529968"></p>
-<p>上述文本意思是说</p>
-<p>考试时</p>
-<p>判定空栈的条件是 <font color=red>top=base</font></p>
-<h1 id="链栈"><a href="#链栈" class="headerlink" title="链栈"></a>链栈</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211206094125929.png" alt="image-20211206094125929"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Pop_LinkedStack</span><span class="params">(LinkedStack top,elemtype *x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkedStackNode *node;</span><br><span class="line">	<span class="keyword">if</span>(top-&gt;next == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		node = top-&gt;next;</span><br><span class="line">		*x = node-&gt;data;</span><br><span class="line">		top-&gt;next = node-&gt;next;</span><br><span class="line">		<span class="built_in">free</span>(node);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Push_LinkedStack</span><span class="params">(LinkedStack top,elemtype x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkedStackNode * node = (LinkedStackNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkedStackNode));</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">if</span>(node == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		node-&gt;data = x;</span><br><span class="line">		node-&gt;next = top-&gt;next;</span><br><span class="line">		top-&gt;next = node;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211204153253779.png" alt="image-20211204153253779"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211204153301290.png" alt="image-20211204153301290"> </p>
-<p>逆序</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(SqStack &amp;S)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(i=S.top;i&gt;=S.top/<span class="number">2</span>;i--)&#123;</span><br><span class="line">		temp=S.data[i];</span><br><span class="line">		S.data[i]=S.data[S.top-i];</span><br><span class="line">		S.data[S.top-i]=temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>返回栈底元素</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElemType <span class="title">getBase</span><span class="params">(SqStack S)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(S.top==<span class="number">-1</span>)<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> S.data[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h1 id="共享栈"><a href="#共享栈" class="headerlink" title="共享栈"></a>共享栈</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211206101308158.png" alt="image-20211206101308158"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitDupStack</span><span class="params">(DupStack &amp;S)</span></span>&#123;</span><br><span class="line">	S=(DupStack)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(DupStack));</span><br><span class="line">	S-&gt;lefttop=<span class="number">-1</span>;</span><br><span class="line">	S-&gt;righttop=MAXNUM;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pushDupStack</span><span class="params">(DupStack &amp;S,<span class="keyword">char</span> status,ElemType x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(s.lefttop+<span class="number">1</span>==S.righttop)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">if</span>(status==<span class="string">&#x27;L&#x27;</span>)S.data[++S.lefttop]=x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (status==<span class="string">&#x27;R&#x27;</span>)S.data[--S.righttop]=x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElemType <span class="title">popDupStack</span><span class="params">(DupStack &amp;S,<span class="keyword">char</span> status)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(status==<span class="string">&#x27;L&#x27;</span>)<span class="keyword">return</span> S.data[S.lefttop--];</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (status==<span class="string">&#x27;R&#x27;</span>)<span class="keyword">return</span> S.data[S.righttop--];</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/13/%E5%8D%95%E8%B0%83%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/13/%E5%8D%95%E8%B0%83%E6%80%A7/" class="post-title-link" itemprop="url">单调性</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-07-13 17:52:59 / Modified: 18:04:18" itemprop="dateCreated datePublished" datetime="2021-07-13T17:52:59+08:00">2021-07-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="单调函数遇上单调函数"><a href="#单调函数遇上单调函数" class="headerlink" title="单调函数遇上单调函数"></a>单调函数遇上单调函数</h4><p>加减的单调性易懂</p>
-<p>而乘除的单调性是不确定的</p>
-<p>例子：</p>
-<p>y=x 和 y=-x，一个是增函数，一个是减函数</p>
-<p>它们的乘积为 y=x^2</p>
-<p>这个函数在（-∞,0] 是减函数</p>
-<p>在[0，+∞）是增函数</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/13/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E6%9E%81%E5%80%BC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/13/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E6%9E%81%E5%80%BC/" class="post-title-link" itemprop="url">一元函数极值</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-13 16:54:13" itemprop="dateCreated datePublished" datetime="2021-07-13T16:54:13+08:00">2021-07-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-16 08:29:42" itemprop="dateModified" datetime="2021-12-16T08:29:42+08:00">2021-12-16</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="极值点判定"><a href="#极值点判定" class="headerlink" title="极值点判定"></a>极值点判定</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917095045695.png" alt="image-20210917095045695"></p>
-<h2 id="混xy求极值点"><a href="#混xy求极值点" class="headerlink" title="混xy求极值点"></a>混xy求极值点</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917094431449.png" alt="image-20210917094431449"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917094423583.png" alt="image-20210917094423583"></p>
-<p><font color=red>y与x是有关的，导时相当于复合函数</font></p>
-<p>导为0，求出来的是驻点</p>
-<p>还需进一步确认极值点</p>
-<h2 id="分段函数求极值"><a href="#分段函数求极值" class="headerlink" title="分段函数求极值"></a>分段函数求极值</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713173935279.png" alt="image-20210713173935279"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713173942838.png" alt="image-20210713173942838"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713174203461.png" alt="image-20210713174203461"></p>
-<p>解析：</p>
-<p>连续不一定可导</p>
-<p>然后是求极值的证明规范值得学习（绿色划线部分，包括上面<font color=red>f’(x)=0或f(x)不可导的点</font>）</p>
-<p>关于f(x)不可导的点：</p>
-<p><font color=red>如果x0处，左边导数大于0，右边导数小于0则可认为该点为极大值点</font></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/13/%E6%9E%81%E5%80%BC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/13/%E6%9E%81%E5%80%BC/" class="post-title-link" itemprop="url">极值</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-07-13 16:53:57 / Modified: 16:53:58" itemprop="dateCreated datePublished" datetime="2021-07-13T16:53:57+08:00">2021-07-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/12/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">三角函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-07-12 12:13:11 / Modified: 12:13:50" itemprop="dateCreated datePublished" datetime="2021-07-12T12:13:11+08:00">2021-07-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="三角函数公式"><a href="#三角函数公式" class="headerlink" title="三角函数公式"></a>三角函数公式</h4><p>链接</p>
-<h4 id="三角函数图像"><a href="#三角函数图像" class="headerlink" title="三角函数图像"></a>三角函数图像</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/12/%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0/" class="post-title-link" itemprop="url">定积分与导数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-12 12:05:41" itemprop="dateCreated datePublished" datetime="2021-07-12T12:05:41+08:00">2021-07-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-26 10:13:58" itemprop="dateModified" datetime="2021-09-26T10:13:58+08:00">2021-09-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="导定积分"><a href="#导定积分" class="headerlink" title="导定积分"></a>导定积分</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912152916696.png" alt="image-20210912152916696"></p>
-<p>一般公式（f()内含xy两个变量）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926101337211.png" alt="image-20210926101337211"></p>
-<h1 id="积分上限函数"><a href="#积分上限函数" class="headerlink" title="积分上限函数"></a>积分上限函数</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926085515773.png" alt="image-20210926085515773"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926085524805.png" alt="image-20210926085524805"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926085530395.png" alt="image-20210926085530395"></p>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926085704118.png" alt="image-20210926085704118"></p>
-<h2 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h2><h3 id="直接挪出"><a href="#直接挪出" class="headerlink" title="直接挪出"></a>直接挪出</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926092837259.png" alt="image-20210926092837259"></p>
-<h3 id="换元挪出"><a href="#换元挪出" class="headerlink" title="换元挪出"></a>换元挪出<img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926092827536.png" alt="image-20210926092827536"></h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210926092817606.png" alt="image-20210926092817606"></p>
-<h1 id="定积分x和t"><a href="#定积分x和t" class="headerlink" title="定积分x和t"></a>定积分x和t</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210623172504701.png" alt="image-20210623172504701"></p>
-<p>Ps：千万别忘了更新换元后的积分限</p>
-<p>相关例题</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705113023818.png" alt="image-20210705113023818"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705113001247.png" alt="image-20210705113001247"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705113012768.png" alt="image-20210705113012768"></p>
-<p>Ps：</p>
-<p>新得到的g(x)中含1/x，则g(x)需讨论分段函数</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1038,7 +1520,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">317</span>
+          <span class="site-state-item-count">321</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

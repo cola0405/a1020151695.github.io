@@ -177,6 +177,696 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/16/todolist-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/16/todolist-demo/" class="post-title-link" itemprop="url">todolist-demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-16 20:44:22" itemprop="dateCreated datePublished" datetime="2022-01-16T20:44:22+08:00">2022-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-18 09:24:03" itemprop="dateModified" datetime="2022-01-18T09:24:03+08:00">2022-01-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="enter键入"><a href="#enter键入" class="headerlink" title="enter键入"></a>enter键入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input @keyup.enter=&quot;addTodo&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="component-命名"><a href="#component-命名" class="headerlink" title="component 命名"></a>component 命名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:Todo</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="新增项"><a href="#新增项" class="headerlink" title="新增项"></a>新增项</h2><h2 id="关闭eslint"><a href="#关闭eslint" class="headerlink" title="关闭eslint"></a>关闭eslint</h2><p>实在太烦了</p>
+<p>进package.json删了，然后</p>
+<h2 id="component引入"><a href="#component引入" class="headerlink" title="component引入"></a>component引入</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Todo <span class="keyword">from</span> <span class="string">&#x27;@/components/Todo&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>不用在export中命名</p>
+<p>除非你要起别名</p>
+<h2 id="默认import和export-default"><a href="#默认import和export-default" class="headerlink" title="默认import和export default"></a>默认import和export default</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>淦，一开始表示找不到，我还以为漏装了一个包，结果。。。</p>
+<p><code>./store</code>表示的是src下的目录</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220116225345082.png" alt="image-20220116225345082"></p>
+<p>而且，如果目标目录下有index，且没有指定from哪一个js文件</p>
+<p>此时，会默认from <code>index.js</code></p>
+<p>然后，再index.js中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123;  </span><br><span class="line">     realconsole</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> realconsole <span class="keyword">from</span> <span class="string">&#x27;./xxx&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>但是，还需要注意export default，这叫默认导出</p>
+<p>也就是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>此时，要import这个store的话</p>
+<p>乱来都行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hello <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>（相当于可以外边给名字）</p>
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>父传子</p>
+<h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p>函数，返回值</p>
+<h2 id="style-scoped"><a href="#style-scoped" class="headerlink" title="style scoped"></a>style scoped</h2><p>在vue文件中的style标签上，有一个特殊的属性：scoped。 当一个style标签拥有scoped属性时，它的CSS样式就只能作用于当前的组件</p>
+<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>实时获取值，赋值</p>
+<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>v-bind是单向绑定，而v-model 是双向绑定</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数表达式更适用于那些本来需要匿名函数的地方</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcName</span>(<span class="params">params</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> params + <span class="number">2</span>;</span><br><span class="line"> &#125;</span><br><span class="line">funcName(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>可以简洁地表示为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcName = <span class="function">(<span class="params">params</span>) =&gt;</span> params + <span class="number">2</span></span><br><span class="line">funcName(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>如果只有一个参数，可以省略括号: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">params =&gt; params + <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>如果不需要参数，则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">() =&gt;&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果该箭头函数有不止一条语句，则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(params,...) =&gt;&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><p>简单声明一个函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果想让它匿名，成为没有名字的function</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样是会报错的</p>
+<p>需要</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>现在不会报错，但是改函数也不会被调用</p>
+<p>应该再加一个括号</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>如果还想要传参</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>+name);</span><br><span class="line">&#125;)(<span class="string">&quot;cola&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>应用场景</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sub=<span class="built_in">document</span>.querySelector(<span class="string">&quot;#sub&quot;</span>);</span><br><span class="line">sub.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">    <span class="attr">fn</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/16/blog-app-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/16/blog-app-demo/" class="post-title-link" itemprop="url">blog-app-demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-16 12:10:40 / Modified: 17:31:23" itemprop="dateCreated datePublished" datetime="2022-01-16T12:10:40+08:00">2022-01-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Gridsome"><a href="#Gridsome" class="headerlink" title="Gridsome"></a>Gridsome</h2><p>基于 Vue.js 构建的 Jamstack 框架</p>
+<p>项目结构的<a target="_blank" rel="noopener" href="https://gridsome.org/docs/directory-structure/">说明</a></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220116135353925.png" alt="image-20220116135353925"></p>
+<p>与传统vue的mount并不完全一致</p>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><p>包管理工具</p>
+<h2 id="vuetify"><a href="#vuetify" class="headerlink" title="vuetify"></a>vuetify</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220116135224033.png" alt="image-20220116135224033"></p>
+<h2 id="npm-install-–save-dev"><a href="#npm-install-–save-dev" class="headerlink" title="npm install –save-dev"></a>npm install –save-dev</h2><p>save to dev的<code>dependencies</code></p>
+<p>vue项目run dev 的都需要那个dev的args</p>
+<h2 id="export-default-component"><a href="#export-default-component" class="headerlink" title="export default component"></a>export default component</h2><h2 id="v-app"><a href="#v-app" class="headerlink" title="v-app"></a>v-app</h2><h2 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h2><p>占坑</p>
+<h2 id="gridsome-main"><a href="#gridsome-main" class="headerlink" title="gridsome main"></a>gridsome main</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import DefaultLayout from &#x27;~/layouts/Default.vue&#x27;</span><br><span class="line"></span><br><span class="line">export default function (Vue, &#123; router, head, isClient &#125;) &#123;</span><br><span class="line">  // Set default layout as a global component</span><br><span class="line">  Vue.component(&#x27;Layout&#x27;, DefaultLayout)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>DefaultLayout 只是相当于别名一样的东西</p>
+<p>Layout 这个标签名，则是映射到Default.vue中</p>
+<p>main中导入的这个Layout标签是全局使用的</p>
+<p>Default.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;layout&quot;&gt;</span><br><span class="line">    &lt;header class=&quot;header&quot;&gt;</span><br><span class="line">      &lt;strong&gt;</span><br><span class="line">        &lt;g-link to=&quot;/&quot;&gt;&#123;&#123; $static.metadata.siteName &#125;&#125;&lt;/g-link&gt;</span><br><span class="line">      &lt;/strong&gt;</span><br><span class="line">      &lt;nav class=&quot;nav&quot;&gt;</span><br><span class="line">        &lt;g-link class=&quot;nav__link&quot; to=&quot;/&quot;&gt;Home&lt;/g-link&gt;</span><br><span class="line">        &lt;g-link class=&quot;nav__link&quot; to=&quot;/about/&quot;&gt;About&lt;/g-link&gt;</span><br><span class="line">      &lt;/nav&gt;</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;slot/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>g-link</code> 是页面跳转的标签</p>
+<p>导航跳转时，只有<code>slot</code>标签里的内容会发生改变</p>
+<p><code>/</code>是跳转到<code>src/pages/index.vue</code></p>
+<p><code>/about</code>是跳转到 <code>src/pages/about.vue</code></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220116143715716.png" alt="image-20220116143715716"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220116142916017.png" alt="image-20220116142916017"></p>
+<p>Layout 再main中已经设置成全局的一个标签</p>
+<p>古不用再export引入</p>
+<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><p>安装的包会自动更新到package.json的</p>
+<h2 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/manim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/11/manim/" class="post-title-link" itemprop="url">manim</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-11 16:54:43" itemprop="dateCreated datePublished" datetime="2022-01-11T16:54:43+08:00">2022-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-12 14:08:04" itemprop="dateModified" datetime="2022-01-12T14:08:04+08:00">2022-01-12</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220111165502148.png" alt="image-20220111165502148"></p>
+<p><a target="_blank" rel="noopener" href="https://3b1b.github.io/manim/getting_started/example_scenes.html">视频网站</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/manim-demo">demo</a></p>
+<h2 id="鼠标怎么隐藏"><a href="#鼠标怎么隐藏" class="headerlink" title="鼠标怎么隐藏"></a>鼠标怎么隐藏</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/brew/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/11/brew/" class="post-title-link" itemprop="url">brew</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-11 14:25:25 / Modified: 15:27:43" itemprop="dateCreated datePublished" datetime="2022-01-11T14:25:25+08:00">2022-01-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Brew"><a href="#Brew" class="headerlink" title="Brew"></a>Brew</h1><h2 id="ustc"><a href="#ustc" class="headerlink" title="ustc"></a>ustc</h2><p>中科大的源</p>
+<h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>Homebrew is a free and open-source software package management system </p>
+<p>that simplifies the installation of software on Apple’s operating system, macOS, as well as Linux. </p>
+<p>The name is intended to suggest the idea of building software on the Mac depending on the user’s taste.</p>
+<h1 id="源"><a href="#源" class="headerlink" title="源"></a>源</h1><p>查看brew.git的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote -v</span><br></pre></td></tr></table></figure>
+
+<p>查看homebrew-core.git的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo homebrew/core)</span>&quot;</span> &amp;&amp; git remote -v</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="中科大（ffmpeg装不了）"><a href="#中科大（ffmpeg装不了）" class="headerlink" title="中科大（ffmpeg装不了）"></a>中科大（ffmpeg装不了）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.ustc.edu.cn/brew.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git</span><br></pre></td></tr></table></figure>
+
+
+
+<p>bootle domain</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+
+
+<p>刷新源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="阿里"><a href="#阿里" class="headerlink" title="阿里"></a>阿里</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git</span><br></pre></td></tr></table></figure>
+
+
+
+<p>bootle domain</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+
+
+<p>刷新源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="官方"><a href="#官方" class="headerlink" title="官方"></a>官方</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote set-url origin https://github.com/Homebrew/brew.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span> &amp;&amp; git remote set-url origin https://github.com/Homebrew/homebrew-core.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask&quot;</span> &amp;&amp; git remote set-url origin https://github.com/Homebrew/homebrew-cask</span><br></pre></td></tr></table></figure>
+
+
+
+<p>bootle domain，把别的源注释掉就行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.zshrc</span><br><span class="line"><span class="comment"># export HOMEBREW_BOTTLE_DOMAIN=xxxxxxxxx</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+
+
+<p>刷新源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/ffmpeg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/11/ffmpeg/" class="post-title-link" itemprop="url">ffmpeg</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-11 13:58:15" itemprop="dateCreated datePublished" datetime="2022-01-11T13:58:15+08:00">2022-01-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/mac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/11/mac/" class="post-title-link" itemprop="url">mac</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-11 13:38:08" itemprop="dateCreated datePublished" datetime="2022-01-11T13:38:08+08:00">2022-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-31 08:17:40" itemprop="dateModified" datetime="2022-01-31T08:17:40+08:00">2022-01-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="mac-cpu-占用率大于100"><a href="#mac-cpu-占用率大于100" class="headerlink" title="mac cpu 占用率大于100"></a>mac cpu 占用率大于100</h2><p>支持多线程的程序，在1s内，在CPU0占用了0.7s，在CPU1占用了0.8</p>
+<p>则CPU占用率为150%</p>
+<h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><p>The Z shell (also known as zsh ) is a Unix shell</p>
+<p>that <strong>is built on top of bash</strong> (the default shell for macOS) with additional features.</p>
+<p>It’s recommended to use zsh over bash . </p>
+<p>It’s also highly recommended to install a framework with zsh as it makes dealing with configuration, plugins and themes a lot nicer.</p>
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>假设我的代理http端口是：1087，socket是：869</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export https_proxy=http://127.0.0.1:1087 http_proxy=http://127.0.0.1:1087 all_proxy=socks5://127.0.0.1:869</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="su"><a href="#su" class="headerlink" title="su"></a>su</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+
+<p>设置了root密码之后，就可以正常使用 su 了</p>
+<h2 id="修改电脑名称"><a href="#修改电脑名称" class="headerlink" title="修改电脑名称"></a>修改电脑名称</h2><p>设置 - 共享 - 修改电脑名称</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/first-order-model-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/11/first-order-model-demo/" class="post-title-link" itemprop="url">first-order-model-demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-11 12:38:11 / Modified: 15:11:02" itemprop="dateCreated datePublished" datetime="2022-01-11T12:38:11+08:00">2022-01-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="构建环境"><a href="#构建环境" class="headerlink" title="构建环境"></a>构建环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="视频转换的准备"><a href="#视频转换的准备" class="headerlink" title="视频转换的准备"></a>视频转换的准备</h2><p>借助 face-alignment 获取crop视频的参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/1adrianb/face-alignment</span><br><span class="line"><span class="built_in">cd</span> face-alignment</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line">python setup.py install</span><br><span class="line"></span><br><span class="line">python crop-video.py --inp super-idol.mp4 --cpu</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i super-idol.mp4 -ss 0.0 -t 14.366666666666667 -filter:v <span class="string">&quot;crop=643:643:7:134, scale=256:256&quot;</span> crop.mp4</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="numpy版本不适配的问题"><a href="#numpy版本不适配的问题" class="headerlink" title="numpy版本不适配的问题"></a>numpy版本不适配的问题</h3><p>可以单独把 crop-video.py copy使用</p>
+<p>它并不依赖于first-order-model</p>
+<h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/taichi-256.yaml --driving_video ./crop.mp4 --source_image captain.jpg --checkpoint ./taichi-cpk.pth.tar --relative --adapt_scale --cpu</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/dataset_name.yaml --driving_video path/to/driving --source_image path/to/<span class="built_in">source</span> --checkpoint path/to/checkpoint --relative --adapt_scale</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled-1"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled-1" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="这种python-项目都创建新虚拟环境吧"><a href="#这种python-项目都创建新虚拟环境吧" class="headerlink" title="这种python 项目都创建新虚拟环境吧"></a>这种python 项目都创建新虚拟环境吧</h2><p>别去影响自己原来的库</p>
+<h2 id="Anaconda可以不可创建任意版本的python解释器"><a href="#Anaconda可以不可创建任意版本的python解释器" class="headerlink" title="Anaconda可以不可创建任意版本的python解释器"></a>Anaconda可以不可创建任意版本的python解释器</h2><p>没有任意版本，但确实还有其他版本，比如说3.7等等</p>
+<p>然后再Pycharm里选conda的环境</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220111125244953.png" alt="image-20220111125244953"></p>
+<h2 id="进入虚拟的python环境"><a href="#进入虚拟的python环境" class="headerlink" title="进入虚拟的python环境"></a>进入虚拟的python环境</h2><p>在Pycharm中打开命令行即可以进入到虚拟环境中</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220111133302445.png" alt="image-20220111133302445"></p>
+<h2 id="checkpoint-是什么"><a href="#checkpoint-是什么" class="headerlink" title="checkpoint 是什么"></a>checkpoint 是什么</h2><p>二进制文件，储存了模型中的各个变量</p>
+<p>没有什么数据结构</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/10/hibernate-demo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -370,764 +1060,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/pycharm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/09/pycharm/" class="post-title-link" itemprop="url">pycharm</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-01-09 14:10:54 / Modified: 14:55:14" itemprop="dateCreated datePublished" datetime="2022-01-09T14:10:54+08:00">2022-01-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="添加conda的环境"><a href="#添加conda的环境" class="headerlink" title="添加conda的环境"></a>添加conda的环境</h2><p>Setting - Project - Python Interpreter - Add - System Interpreter</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109145510823.png" alt="image-20220109145510823"> </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/Jupyter/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/09/Jupyter/" class="post-title-link" itemprop="url">Jupyter</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-01-09 14:09:25 / Modified: 14:56:48" itemprop="dateCreated datePublished" datetime="2022-01-09T14:09:25+08:00">2022-01-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109141029319.png" alt="image-20220109141029319"></p>
-<h2 id="为什么使用Jupyter"><a href="#为什么使用Jupyter" class="headerlink" title="为什么使用Jupyter"></a>为什么使用Jupyter</h2><p>可局部运行代码</p>
-<p>保存的文件名为 .ipynb</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/08/%E8%B6%8A%E5%8D%97%E8%AF%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/08/%E8%B6%8A%E5%8D%97%E8%AF%AD/" class="post-title-link" itemprop="url">越南语</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-08 23:59:54" itemprop="dateCreated datePublished" datetime="2022-01-08T23:59:54+08:00">2022-01-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-09 08:05:07" itemprop="dateModified" datetime="2022-01-09T08:05:07+08:00">2022-01-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="字母"><a href="#字母" class="headerlink" title="字母"></a>字母</h1><h2 id="a"><a href="#a" class="headerlink" title="a"></a>a</h2><p>a:</p>
-<h2 id="a-1"><a href="#a-1" class="headerlink" title="ă"></a>ă</h2><p>啊！？</p>
-<h2 id="a-2"><a href="#a-2" class="headerlink" title="â"></a>â</h2><p>嘴圆，发a+呃！？</p>
-<h2 id="b"><a href="#b" class="headerlink" title="b"></a>b</h2><p>双唇紧闭，b出来</p>
-<h2 id="c"><a href="#c" class="headerlink" title="c"></a>c</h2><p>个儿</p>
-<h2 id="d"><a href="#d" class="headerlink" title="d"></a>d</h2><p>衣惹（一个，别发成两个）</p>
-<h2 id="d-1"><a href="#d-1" class="headerlink" title="đ"></a>đ</h2><p>the</p>
-<h2 id="e"><a href="#e" class="headerlink" title="e"></a>e</h2><p>smile</p>
-<p>ei</p>
-<h2 id="e-1"><a href="#e-1" class="headerlink" title="ê"></a>ê</h2><p>kiss</p>
-<p>ei</p>
-<h2 id="g"><a href="#g" class="headerlink" title="g"></a>g</h2><p>葛</p>
-<h2 id="h"><a href="#h" class="headerlink" title="h"></a>h</h2><p>he 第三声</p>
-<h2 id="i"><a href="#i" class="headerlink" title="i"></a>i</h2><p>e（英文字母）</p>
-<h2 id="k"><a href="#k" class="headerlink" title="k"></a>k</h2><p>加（客）</p>
-<h2 id="l"><a href="#l" class="headerlink" title="l"></a>l</h2><p>了</p>
-<h2 id="m"><a href="#m" class="headerlink" title="m"></a>m</h2><p>m（英文字母） mer</p>
-<h2 id="n"><a href="#n" class="headerlink" title="n"></a>n</h2><p>m（英文字母） ner</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/07/python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/07/python/" class="post-title-link" itemprop="url">python</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-07 15:47:24" itemprop="dateCreated datePublished" datetime="2022-01-07T15:47:24+08:00">2022-01-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-11 16:46:13" itemprop="dateModified" datetime="2022-01-11T16:46:13+08:00">2022-01-11</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="python-降级"><a href="#python-降级" class="headerlink" title="python 降级"></a>python 降级</h1><p>打开anaconda prompt</p>
-<p>然后输入指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install python=3.6</span><br></pre></td></tr></table></figure>
-
-
-
-<p>anaconda 是包管理工具</p>
-<p>python降级时，还会帮我们做环境适配</p>
-<h1 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall Pillow</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pillow==8.1.1</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-r, --requirement</span><br><span class="line"><span class="comment"># Install from the given requirements file. This option can be used multiple times.</span></span><br></pre></td></tr></table></figure>
-
-<p>不知道怎么用命令行参数的时候</p>
-<p>直接去<a target="_blank" rel="noopener" href="https://pip.pypa.io/en/stable/cli/pip_install/">官方文档</a></p>
-<p>那里肯定有的</p>
-<h2 id="python环境继承全局"><a href="#python环境继承全局" class="headerlink" title="python环境继承全局"></a>python环境继承全局</h2><p>pip会影响全局吗</p>
-<h2 id="pypi"><a href="#pypi" class="headerlink" title="pypi"></a>pypi</h2><p>The Python Package Index </p>
-<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.loc[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109150630032.png" alt="image-20220109150630032"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res[<span class="string">&#x27;Facenet_cosine&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109150809565.png" alt="image-20220109150809565"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(similar_rates[similar_rates&lt;<span class="number">2</span>][similar_rates&gt;<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109151433500.png" alt="image-20220109151433500"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/07/github/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/07/github/" class="post-title-link" itemprop="url">github</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-01-07 10:34:26 / Modified: 10:35:37" itemprop="dateCreated datePublished" datetime="2022-01-07T10:34:26+08:00">2022-01-07</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="liscence"><a href="#liscence" class="headerlink" title="liscence"></a>liscence</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107103504247.png" alt="image-20220107103504247"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/05/mac-mysql-%E5%AE%89%E8%A3%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/05/mac-mysql-%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">mac-mysql-安装</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-01-05 11:36:39 / Modified: 11:38:37" itemprop="dateCreated datePublished" datetime="2022-01-05T11:36:39+08:00">2022-01-05</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>官网下载社区版，指定版本（太新的用不了）</p>
-<p>Server version: 5.6.39 MySQL Community Server (GPL)</p>
-<p>然后，workbench的话</p>
-<p>5.2.40</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/05/%E5%BE%AE%E8%BD%AFAI%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/05/%E5%BE%AE%E8%BD%AFAI%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">微软AI训练营笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-05 09:53:25" itemprop="dateCreated datePublished" datetime="2022-01-05T09:53:25+08:00">2022-01-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-07 11:48:06" itemprop="dateModified" datetime="2022-01-07T11:48:06+08:00">2022-01-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="微软的产品"><a href="#微软的产品" class="headerlink" title="微软的产品"></a>微软的产品</h1><p>Bing是微软的产品</p>
-<p>微软把自己的服务部署在自己的服务器Azure</p>
-<h2 id="Hackathon"><a href="#Hackathon" class="headerlink" title="Hackathon"></a>Hackathon</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105101825322.png" alt="image-20220105101825322"></p>
-<h2 id="二次广告"><a href="#二次广告" class="headerlink" title="二次广告"></a>二次广告</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105103448931.png" alt="image-20220105103448931"></p>
-<h2 id="虚拟老师"><a href="#虚拟老师" class="headerlink" title="虚拟老师"></a>虚拟老师</h2><p>在线英语教学市场准备迎接虚拟老师</p>
-<p>1000+堂课就可以训练出一个虚拟老师</p>
-<h2 id="VIPKid"><a href="#VIPKid" class="headerlink" title="VIPKid"></a>VIPKid</h2><p>外教英语</p>
-<p>已经用过虚拟老师了</p>
-<h2 id="AI技术"><a href="#AI技术" class="headerlink" title="AI技术"></a>AI技术</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105103730230.png" alt="image-20220105103730230"></p>
-<h2 id="chat-bot"><a href="#chat-bot" class="headerlink" title="chat bot"></a>chat bot</h2><p>80% 已经是很好的了</p>
-<h2 id="SAAS"><a href="#SAAS" class="headerlink" title="SAAS"></a>SAAS</h2><p>现在很多的AI 都是SaaS了</p>
-<p>调接口</p>
-<h2 id="Responsable-AI"><a href="#Responsable-AI" class="headerlink" title="Responsable AI"></a>Responsable AI</h2><p>（负责任的AI）</p>
-<p>“我是AI”</p>
-<p>工具，还是武器？——直面人类科技最紧迫的争议性问题</p>
-<h2 id="AI的透明性"><a href="#AI的透明性" class="headerlink" title="AI的透明性"></a>AI的透明性</h2><blockquote>
-<p>如果 人工智能的内部工作机制完全处于暗箱之中，公众怎么可能会 对人工智能有信心，同时未来的监管机构又怎么来评估对前4条 准则的遵守情况？</p>
-</blockquote>
-<h2 id="隐私保护"><a href="#隐私保护" class="headerlink" title="隐私保护"></a>隐私保护</h2><p>一键删除所有数据</p>
-<h2 id="责任"><a href="#责任" class="headerlink" title="责任"></a>责任</h2><p>自动驾驶—驾驶人，因为是驾驶人启用了自动驾驶的功能</p>
-<p>特斯拉也改了广告标语，不是完成全部工作，而只是作为一个辅助功能</p>
-<h1 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h1><p>就像是前好多年时的计算机、网络</p>
-<h2 id="图灵测试"><a href="#图灵测试" class="headerlink" title="图灵测试"></a>图灵测试</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105134730992.png" alt="image-20220105134730992"></p>
-<p>看人能否能区分人的回答和AI的回答</p>
-<p>目前还没有能通过图灵测试的AI</p>
-<h2 id="发展史"><a href="#发展史" class="headerlink" title="发展史"></a>发展史</h2><p>现在处于第三轮的顶峰（深蓝，阿尔法狗）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105135112839.png" alt="image-20220105135112839"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105135010332.png" alt="image-20220105135010332"></p>
-<p>第三次顶峰的原因</p>
-<p>数据和算力的飞跃</p>
-<h2 id="TPU"><a href="#TPU" class="headerlink" title="TPU"></a>TPU</h2><p>专门训练Tensorflow</p>
-<h1 id="深度学习-深度神经网络"><a href="#深度学习-深度神经网络" class="headerlink" title="深度学习(深度神经网络)"></a>深度学习(深度神经网络)</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105135914892.png" alt="image-20220105135914892"></p>
-<p>分类：</p>
-<p>CV、自然语言、语音处理</p>
-<p>传统机器学习，我们知道它干了什么事</p>
-<p>但是深度学习。。。</p>
-<p>（还有人在研究每一层到底在干什么）</p>
-<h2 id="深度神经网络"><a href="#深度神经网络" class="headerlink" title="深度神经网络"></a>深度神经网络</h2><p>隐藏层数较多的</p>
-<p>参数量大</p>
-<p>需要很多标注数据</p>
-<p>但其泛化能力强</p>
-<p>现在上百层上千层已经不是问题了。。。</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105140923729.png" alt="image-20220105140923729"></p>
-<h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>sigmoid 是激活函数</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107094432522.png" alt="image-20220107094432522"></p>
-<p>ReLu、Leaky ReLu</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107091959977.png" alt="image-20220107091959977"></p>
-<p>激活函数共性 - 非线性</p>
-<p>线性的叠加还是线性的</p>
-<p>加入激活函数的话，为了有非线性性</p>
-<p>z=wx+b</p>
-<p>a=sigmoid(x)</p>
-<p>一开始随机w、b</p>
-<p>之后通过不断拟合，使得loss最小</p>
-<p>（使得a与y接近 - 交叉熵函数）</p>
-<p>得到w、b</p>
-<h2 id="交叉熵函数"><a href="#交叉熵函数" class="headerlink" title="交叉熵函数"></a>交叉熵函数</h2><p>loss(a)</p>
-<p>可以转化为 loss(w,b)</p>
-<p>然后使用梯度下降法不断迭代，达到一个最优的结果</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0689(20220107-094635).PNG" alt="IMG_0689(20220107-094635)"></p>
-<h2 id="前向传播"><a href="#前向传播" class="headerlink" title="前向传播"></a>前向传播</h2><p>直接得出a</p>
-<p>设置参数，得出预测</p>
-<h2 id="反向传播算法（反向传播）"><a href="#反向传播算法（反向传播）" class="headerlink" title="反向传播算法（反向传播）"></a>反向传播算法（反向传播）</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107094839313.png" alt="image-20220107094839313"></p>
-<p>反向得出参数值</p>
-<h2 id="步长（学习率）"><a href="#步长（学习率）" class="headerlink" title="步长（学习率）"></a>步长（学习率）</h2><p>步长太小，会影响收敛速度</p>
-<p>主要调的就是这个</p>
-<h2 id="权重初始化"><a href="#权重初始化" class="headerlink" title="权重初始化"></a>权重初始化</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107105619872.png" alt="image-20220107105619872"></p>
-<p>防止梯度爆炸</p>
-<h2 id="复杂一些的神经网络的反向传播推导"><a href="#复杂一些的神经网络的反向传播推导" class="headerlink" title="复杂一些的神经网络的反向传播推导"></a>复杂一些的神经网络的反向传播推导</h2><h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><p>神经元和连接</p>
-<p>神经网络的结构还有多种</p>
-<p>CNN、 等等</p>
-<h2 id="神经网络的层数"><a href="#神经网络的层数" class="headerlink" title="神经网络的层数"></a>神经网络的层数</h2><p>输入层排除在外</p>
-<p>最简单的神经网络1层</p>
-<p>既是隐层也是输出层</p>
-<h2 id="全连接的神经网络xx"><a href="#全连接的神经网络xx" class="headerlink" title="全连接的神经网络xx"></a>全连接的神经网络xx</h2><h2 id="深度学习的发展"><a href="#深度学习的发展" class="headerlink" title="深度学习的发展"></a>深度学习的发展</h2><p>随着算力和数据的发展，深度学习迅速发展</p>
-<p>语音识别和图像识别体现出了深度学习的新生强大力量</p>
-<h2 id="不可知性"><a href="#不可知性" class="headerlink" title="不可知性"></a>不可知性</h2><p>模仿人脑</p>
-<p>人脑本身还不可知</p>
-<p>神经网络也具有一定不可知性</p>
-<p>像是古人在炼丹</p>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107103556027.png" alt="image-20220107103556027"></p>
-<h2 id="k-fold-cross-validation"><a href="#k-fold-cross-validation" class="headerlink" title="k-fold cross validation"></a>k-fold cross validation</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107103645170.png" alt="image-20220107103645170"></p>
-<h2 id="high-bias-and-high-variance"><a href="#high-bias-and-high-variance" class="headerlink" title="high bias and high variance"></a>high bias and high variance</h2><p>偏差与方差</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107104009963.png" alt="image-20220107104009963"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107104210981.png" alt="image-20220107104210981"></p>
-<p>过拟合，方差高</p>
-<p>欠拟合，验证集都不太行，偏差严重</p>
-<p>我们想要的是偏差和方差都低</p>
-<h2 id="正则化xx"><a href="#正则化xx" class="headerlink" title="正则化xx"></a>正则化xx</h2><p>L2 普遍使用</p>
-<p>dropout 关闭一些神经元</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107104839074.png" alt="image-20220107104839074"></p>
-<p>参数少，训练快，反而准确率更高</p>
-<p>（避免过拟合）</p>
-<p>dropout 习惯0.4 ~ 0.5</p>
-<h2 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107105028867.png" alt="image-20220107105028867"></p>
-<p>应用在数据量不足的情况</p>
-<p>需要召回率高</p>
-<p>尽可能找出各种奇形怪状的（旋转、平移、镜像）</p>
-<p>那么这个数据增强就派上用场了</p>
-<p>（提高泛化能力）</p>
-<h2 id="归一化xx"><a href="#归一化xx" class="headerlink" title="归一化xx"></a>归一化xx</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107105317517.png" alt="image-20220107105317517"></p>
-<p>代码可以帮你做掉</p>
-<h2 id="批量梯度性下降（Bath-GD）xx"><a href="#批量梯度性下降（Bath-GD）xx" class="headerlink" title="批量梯度性下降（Bath GD）xx"></a>批量梯度性下降（Bath GD）xx</h2><p>一次拿m个样本进行训练</p>
-<p>很多数据的时候，梯度下降太慢了</p>
-<p>100w</p>
-<h2 id="小批量梯度下降（mini-Bath-GD）xx"><a href="#小批量梯度下降（mini-Bath-GD）xx" class="headerlink" title="小批量梯度下降（mini-Bath GD）xx"></a>小批量梯度下降（mini-Bath GD）xx</h2><p>64 128 </p>
-<h2 id="Adam算法"><a href="#Adam算法" class="headerlink" title="Adam算法"></a>Adam算法</h2><p>Adam = 动量梯度下降 + RMsProp</p>
-<p>无脑用Adam算法</p>
-<p>解决摆动幅度过大的问题</p>
-<p>b1 = 0.9</p>
-<p>b2 = 0.999</p>
-<p>3 = 10的-8次方</p>
-<h2 id="超参数xx"><a href="#超参数xx" class="headerlink" title="超参数xx"></a>超参数xx</h2><p>很固定很固定的</p>
-<h2 id="学习率衰减xx"><a href="#学习率衰减xx" class="headerlink" title="学习率衰减xx"></a>学习率衰减xx</h2><h2 id="跳出局部最优xx"><a href="#跳出局部最优xx" class="headerlink" title="跳出局部最优xx"></a>跳出局部最优xx</h2><h1 id="迁移学习xx"><a href="#迁移学习xx" class="headerlink" title="迁移学习xx"></a>迁移学习xx</h1><p>现在一般都是迁移学习</p>
-<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105141426414.png" alt="image-20220105141426414"></p>
-<h2 id="目标函数（损失函数）"><a href="#目标函数（损失函数）" class="headerlink" title="目标函数（损失函数）"></a>目标函数（损失函数）</h2><h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106135511223.png" alt="image-20220106135511223"></p>
-<p>奖励机制</p>
-<p>走迷宫，撞墙扣分</p>
-<h2 id="生成对抗网络（GAN）"><a href="#生成对抗网络（GAN）" class="headerlink" title="生成对抗网络（GAN）"></a>生成对抗网络（GAN）</h2><h2 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h2><p>模型、数据、算法</p>
-<h2 id="统计学"><a href="#统计学" class="headerlink" title="统计学"></a>统计学</h2><p>《统计学习方法》</p>
-<p>李航 清华大学出版社</p>
-<h2 id="模型分类"><a href="#模型分类" class="headerlink" title="模型分类"></a>模型分类</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106135036390.png" alt="image-20220106135036390"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105164705159.png" alt="image-20220105164705159"></p>
-<h3 id="分类模型"><a href="#分类模型" class="headerlink" title="分类模型"></a>分类模型</h3><p>KNN、NB（朴素贝叶斯）、DT（决策树）、LR（逻辑回归）</p>
-<p>SVC（support vector）</p>
-<h3 id="回归模型"><a href="#回归模型" class="headerlink" title="回归模型"></a>回归模型</h3><p>（预测，有一个return）</p>
-<p>线性回归、SVR</p>
-<h3 id="聚类模型"><a href="#聚类模型" class="headerlink" title="聚类模型"></a>聚类模型</h3><p>（无监督）</p>
-<p>K-Means</p>
-<h3 id="特殊的模型"><a href="#特殊的模型" class="headerlink" title="特殊的模型"></a>特殊的模型</h3><p>HMM、CRF</p>
-<h3 id="无监督学习和有监督学习"><a href="#无监督学习和有监督学习" class="headerlink" title="无监督学习和有监督学习"></a>无监督学习和有监督学习</h3><p>不需要标注数据</p>
-<p>监督学习：有正确答案，是猫是狗</p>
-<p>半监督是之后的热点，比较难</p>
-<p>（现在没有完美的解决方案）</p>
-<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h2 id="数据集-1"><a href="#数据集-1" class="headerlink" title="数据集"></a>数据集</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106140628139.png" alt="image-20220106140628139"></p>
-<p>验证集：调参</p>
-<p>测试集：验证</p>
-<h2 id="准确率"><a href="#准确率" class="headerlink" title="准确率"></a>准确率</h2><p>其中还涉及到混淆矩阵</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106141745314.png" alt="image-20220106141745314"></p>
-<h2 id="精确率和召回率"><a href="#精确率和召回率" class="headerlink" title="精确率和召回率"></a>精确率和召回率</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106141818732.png" alt="image-20220106141818732"></p>
-<p>新冠检测，宁可错s，不放过一个</p>
-<p>上面这两者，鱼与熊掌不可兼得</p>
-<p>看应用场景</p>
-<p>精确率高：测出是假币，尽量100%就是假币</p>
-<p>召回率高：全部个体里，有问题的都已测出</p>
-<h2 id="不平衡的数据集"><a href="#不平衡的数据集" class="headerlink" title="不平衡的数据集"></a>不平衡的数据集</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106142641703.png" alt="image-20220106142641703"></p>
-<h2 id="数据集网站"><a href="#数据集网站" class="headerlink" title="数据集网站"></a>数据集网站</h2><p>kaggle</p>
-<h2 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106141609660.png" alt="image-20220106141609660"></p>
-<p>越靠近左上角，模型越好（100%阳性）</p>
-<p>B比AC要好</p>
-<h2 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h2><h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><p>错误、冗余、异常值</p>
-<h2 id="数据编码"><a href="#数据编码" class="headerlink" title="数据编码"></a>数据编码</h2><h2 id="数据归一化"><a href="#数据归一化" class="headerlink" title="数据归一化"></a>数据归一化</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106103958585.png" alt="image-20220106103958585"></p>
-<p>Pandas、Dataframe</p>
-<h2 id="特征抽取"><a href="#特征抽取" class="headerlink" title="特征抽取"></a>特征抽取</h2><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h2><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>简单，通用</p>
-<p>但不保证最优解</p>
-<h1 id="分类器"><a href="#分类器" class="headerlink" title="分类器"></a>分类器</h1><h2 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h2><p>阈值</p>
-<h2 id="线性回归与分类器"><a href="#线性回归与分类器" class="headerlink" title="线性回归与分类器"></a>线性回归与分类器</h2><p>如果有一点比较偏则影响很大</p>
-<h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>逻辑回归 = 线性回归 + Sigmoid函数</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106150128763.png" alt="image-20220106150128763"></p>
-<h2 id="目标函数（损失函数）-1"><a href="#目标函数（损失函数）-1" class="headerlink" title="目标函数（损失函数）"></a>目标函数（损失函数）</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106150636664.png" alt="image-20220106150636664"></p>
-<p>为了方便后面的计算</p>
-<h2 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106150827683.png" alt="image-20220106150827683"></p>
-<p>P(A|B)=1/6</p>
-<p>在B的前提下，A的概率</p>
-<p>20个人，男生有6个，穿白袜子的人4个</p>
-<p>穿白袜子的人里，是男生，的概率是0.25，则4x0.25=1，则只有一个男生穿了白袜子</p>
-<p>则一个人是男生，他穿袜子，真的概率是1/6</p>
-<p>“朴素”</p>
-<p>特征之间相互独立</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106151755049.png" alt="image-20220106151755049"></p>
-<p>数据集中没有，不代表现实中没有（多变量的情况）</p>
-<h2 id="分类器实例"><a href="#分类器实例" class="headerlink" title="分类器实例"></a>分类器实例</h2><p>识别十二生肖</p>
-<p>若干个二元分类</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106150731203.png" alt="image-20220106150731203"></p>
-<h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106152100069.png" alt="image-20220106152100069"></p>
-<p>叶子节点是返回结果</p>
-<h2 id="决策树生成算法"><a href="#决策树生成算法" class="headerlink" title="决策树生成算法"></a>决策树生成算法</h2><h2 id="ID3"><a href="#ID3" class="headerlink" title="ID3"></a>ID3</h2><p>筛选offer</p>
-<p>薪资低于多少的直接不要</p>
-<h2 id="C45"><a href="#C45" class="headerlink" title="C45"></a>C45</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106152846452.png" alt="image-20220106152846452"></p>
-<h2 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h2><h1 id="聚类-Clustering"><a href="#聚类-Clustering" class="headerlink" title="聚类 Clustering"></a>聚类 Clustering</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106153115031.png" alt="image-20220106153115031"></p>
-<h2 id="欧氏距离"><a href="#欧氏距离" class="headerlink" title="欧氏距离"></a>欧氏距离</h2><p>（一般是欧式距离）</p>
-<p>表示相近</p>
-<h2 id="余弦距离"><a href="#余弦距离" class="headerlink" title="余弦距离"></a>余弦距离</h2><h2 id="曼哈顿距离"><a href="#曼哈顿距离" class="headerlink" title="曼哈顿距离"></a>曼哈顿距离</h2><h2 id="KNN算法"><a href="#KNN算法" class="headerlink" title="KNN算法"></a>KNN算法</h2><p>有监督</p>
-<h2 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h2><p>无监督</p>
-<p>除了名字相似，没什么联系的</p>
-<p>k 人工指定</p>
-<h2 id="Lloyd-算法"><a href="#Lloyd-算法" class="headerlink" title="Lloyd 算法"></a>Lloyd 算法</h2><p>是K-Means 的标准方法，但是没有办法保证最优解</p>
-<p>3次聚类，选一个指标最好的</p>
-<p>（避免局部最优）</p>
-<p>对非球形簇的效果不咋好</p>
-<h1 id="谱聚类"><a href="#谱聚类" class="headerlink" title="谱聚类"></a>谱聚类</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106154757309.png" alt="image-20220106154757309"></p>
-<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="Python-机器学习包-scikit-learn"><a href="#Python-机器学习包-scikit-learn" class="headerlink" title="Python 机器学习包 scikit-learn"></a>Python 机器学习包 scikit-learn</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106160445059.png" alt="image-20220106160445059"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106161143799.png" alt="image-20220106161143799"></p>
-<h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106170608708.png" alt="image-20220106170608708"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106171204547.png" alt="image-20220106171204547"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106171221060.png" alt="image-20220106171221060"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106171239685.png" alt="image-20220106171239685"></p>
-<h1 id="计算机视觉（CV-computer-version）"><a href="#计算机视觉（CV-computer-version）" class="headerlink" title="计算机视觉（CV computer version）"></a>计算机视觉（CV computer version）</h1><p>照片唱歌，随着歌曲而动嘴</p>
-<h2 id="图像处理"><a href="#图像处理" class="headerlink" title="图像处理"></a>图像处理</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105141639228.png" alt="image-20220105141639228"></p>
-<h2 id="deepface"><a href="#deepface" class="headerlink" title="deepface"></a>deepface</h2><h2 id="yolo"><a href="#yolo" class="headerlink" title="yolo"></a>yolo</h2><p>目标检测</p>
-<h1 id="first-order-model"><a href="#first-order-model" class="headerlink" title="first order model"></a>first order model</h1><p>checkpoint</p>
-<p>tar 放到目录下</p>
-<h1 id="语音处理"><a href="#语音处理" class="headerlink" title="语音处理"></a>语音处理</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105142001960.png" alt="image-20220105142001960"></p>
-<h2 id="微软speech-studio"><a href="#微软speech-studio" class="headerlink" title="微软speech studio"></a>微软speech studio</h2><p>情感能力调节技术</p>
-<h2 id="TTS"><a href="#TTS" class="headerlink" title="TTS"></a>TTS</h2><h1 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a>自然语言处理</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105142236010.png" alt="image-20220105142236010"></p>
-<p>主要处理文本</p>
-<h2 id="GTP-3xx"><a href="#GTP-3xx" class="headerlink" title="GTP-3xx"></a>GTP-3xx</h2><h2 id="知识图谱xx"><a href="#知识图谱xx" class="headerlink" title="知识图谱xx"></a>知识图谱xx</h2><p>谷歌提出来的</p>
-<p>连接主义和符号主义</p>
-<h2 id="连接主义xx"><a href="#连接主义xx" class="headerlink" title="连接主义xx"></a>连接主义xx</h2><h2 id="符号主义xx"><a href="#符号主义xx" class="headerlink" title="符号主义xx"></a>符号主义xx</h2><h1 id="AI-人才栈"><a href="#AI-人才栈" class="headerlink" title="AI 人才栈"></a>AI 人才栈</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105145623375.png" alt="image-20220105145623375"></p>
-<h2 id="算法工程师"><a href="#算法工程师" class="headerlink" title="算法工程师"></a>算法工程师</h2><p>现在基本上是博士（还得是top的高校）</p>
-<p>（以前有硕士）</p>
-<p>新算法的研究</p>
-<p>阿里达摩院</p>
-<h2 id="KPI"><a href="#KPI" class="headerlink" title="KPI"></a>KPI</h2><p>部门/个人的业绩指标</p>
-<p>量化绩效管理</p>
-<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>几百G甚至上T的数据处理</p>
-<p>对多线程的需求很大</p>
-<h2 id="测试pipeline"><a href="#测试pipeline" class="headerlink" title="测试pipeline"></a>测试pipeline</h2><h2 id="模型的部署"><a href="#模型的部署" class="headerlink" title="模型的部署"></a>模型的部署</h2><h2 id="数据标注"><a href="#数据标注" class="headerlink" title="数据标注"></a>数据标注</h2><blockquote>
-<p>在我的理解来看，数据标注是非常非常重要的</p>
-<p>（验证标注质量）</p>
-</blockquote>
-<h2 id="数学储备"><a href="#数学储备" class="headerlink" title="数学储备"></a>数学储备</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220105164537475.png" alt="image-20220105164537475"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106091506181.png" alt="image-20220106091506181"></p>
-<h1 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h1><p>大概有两种分析：描述性分析和预测性分析（推送、用户需求）</p>
-<h2 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h2><blockquote>
-<p>极大似然估计太重要太重要了</p>
-</blockquote>
-<h2 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h2><h2 id="信息熵-1"><a href="#信息熵-1" class="headerlink" title="信息熵"></a>信息熵</h2><h1 id="数据处理数据可视化"><a href="#数据处理数据可视化" class="headerlink" title="数据处理数据可视化"></a>数据处理数据可视化</h1><h2 id="塔夫特原则"><a href="#塔夫特原则" class="headerlink" title="塔夫特原则"></a>塔夫特原则</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106105259381.png" alt="image-20220106105259381"></p>
-<h3 id="尊重事实"><a href="#尊重事实" class="headerlink" title="尊重事实"></a>尊重事实</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106105649029.png" alt="image-20220106105649029"></p>
-<p>就差了3cm</p>
-<p>但是比例看起来好像差了10几cm</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106113244160.png" alt="image-20220106113244160"></p>
-<h3 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h3><p>比例尺，不同颜色的点代表什么</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106111711526.png" alt="image-20220106111711526"></p>
-<p>###内容重要形式</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106110039933.png" alt="image-20220106110039933"></p>
-<p>右边一目了然最好</p>
-<p>左边的太多噪声了</p>
-<h2 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h2><h3 id="直方图histogram"><a href="#直方图histogram" class="headerlink" title="直方图histogram"></a>直方图histogram</h3><h3 id="KDE图"><a href="#KDE图" class="headerlink" title="KDE图"></a>KDE图</h3><p>平滑</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106110939071.png" alt="image-20220106110939071"></p>
-<h3 id="箱形图（盒）"><a href="#箱形图（盒）" class="headerlink" title="箱形图（盒）"></a>箱形图（盒）</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106111046266.png" alt="image-20220106111046266"></p>
-<p>上/下四分位数：25%</p>
-<p>异常值：上下限之外的值</p>
-<p>（和传统的异常值不是一个概念）</p>
-<h3 id="小提琴图"><a href="#小提琴图" class="headerlink" title="小提琴图"></a>小提琴图</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106111336119.png" alt="image-20220106111336119"></p>
-<h3 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h3><p>和直方图的区别</p>
-<h3 id="多维度散点图"><a href="#多维度散点图" class="headerlink" title="多维度散点图"></a>多维度散点图</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106111711526.png"></p>
-<p>不同颜色再做区分</p>
-<h3 id="热力图"><a href="#热力图" class="headerlink" title="热力图"></a>热力图</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106112147292.png" alt="image-20220106112147292"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106112253289.png" alt="image-20220106112253289"></p>
-<p>用颜色表达程度</p>
-<p>（更多是基于地理信息，如：天气信息、人口流动）</p>
-<h3 id="高维数据可视化"><a href="#高维数据可视化" class="headerlink" title="高维数据可视化"></a>高维数据可视化</h3><p>现在依旧是问题</p>
-<p>尽量避免</p>
-<h2 id="数据可视化与机器学习"><a href="#数据可视化与机器学习" class="headerlink" title="数据可视化与机器学习"></a>数据可视化与机器学习</h2><p>聚类可视化来选择更加合适的模型</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106112923076.png" alt="image-20220106112923076"></p>
-<p>单单看数据没感觉的</p>
-<p>可视化出来之后，能更清晰选择拟合方式</p>
-<h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><h2 id="卷积-Filter"><a href="#卷积-Filter" class="headerlink" title="卷积 Filter"></a>卷积 Filter</h2><p>乘卷积核（fliter kernel），就把矩阵给卷起来了</p>
-<h2 id="填充-Paddingxx"><a href="#填充-Paddingxx" class="headerlink" title="填充 Paddingxx"></a>填充 Paddingxx</h2><h2 id="步幅-Stride"><a href="#步幅-Stride" class="headerlink" title="步幅 Stride"></a>步幅 Stride</h2><h2 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h2><p>压缩且保留信息</p>
-<p>卷积层 + 池化层 = layer</p>
-<h3 id="平均池化xx"><a href="#平均池化xx" class="headerlink" title="平均池化xx"></a>平均池化xx</h3><h2 id="神经网络一般结构"><a href="#神经网络一般结构" class="headerlink" title="神经网络一般结构"></a>神经网络一般结构</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220107112816793.png" alt="image-20220107112816793"></p>
-<h2 id="LeNet-8-1998-xx"><a href="#LeNet-8-1998-xx" class="headerlink" title="LeNet-8 (1998)xx"></a>LeNet-8 (1998)xx</h2><h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><h2 id="VGG-16（2015）"><a href="#VGG-16（2015）" class="headerlink" title="VGG-16（2015）"></a>VGG-16（2015）</h2><p>16个卷积层，16个全连接层</p>
-<p>1.38亿个参数</p>
-<h2 id="Inception-Network-2014"><a href="#Inception-Network-2014" class="headerlink" title="Inception Network(2014)"></a>Inception Network(2014)</h2><p>v3</p>
-<h2 id="为什么卷积有效"><a href="#为什么卷积有效" class="headerlink" title="为什么卷积有效"></a>为什么卷积有效</h2><h1 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h1><p>抽象之后，可以有这样的问题</p>
-<p>“有没有连续但是不可比较的数据”</p>
-<p>有！如颜色RGB，数值连续，但是没有优劣之分</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1195,7 +1131,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">317</span>
+          <span class="site-state-item-count">321</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
