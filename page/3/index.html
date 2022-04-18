@@ -177,6 +177,302 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/13/vue-admin-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/13/vue-admin-demo/" class="post-title-link" itemprop="url">vue-admin-demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-13 20:38:08" itemprop="dateCreated datePublished" datetime="2022-02-13T20:38:08+08:00">2022-02-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-03-02 19:22:56" itemprop="dateModified" datetime="2022-03-02T19:22:56+08:00">2022-03-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>demo</p>
+<p><a target="_blank" rel="noopener" href="https://element.eleme.cn/#/en-US/component/container">文档</a></p>
+<p>Ps：</p>
+<p>用的框架是<code>Element</code></p>
+<p><code>vue-element-admin</code>只是使用<code>element</code>框架，做出来的一个成品</p>
+<p>所以，要查文档，应该到<code>element</code>的文档去查</p>
+<h2 id="Vue创建项目"><a href="#Vue创建项目" class="headerlink" title="Vue创建项目"></a>Vue创建项目</h2><p>不要用那个eslint</p>
+<p>别忘了router</p>
+<h2 id="Vue路由"><a href="#Vue路由" class="headerlink" title="Vue路由"></a>Vue路由</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  <span class="attr">routes</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;Layout&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: Layout,</span><br><span class="line">      <span class="comment">// 嵌套路由</span></span><br><span class="line">      <span class="attr">children</span>: [&#123;</span><br><span class="line">        <span class="comment">// 这里不设置值，是把main作为默认页面</span></span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>, </span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;Main&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: Main</span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;User&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: User</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Vue引入框架"><a href="#Vue引入框架" class="headerlink" title="Vue引入框架"></a>Vue引入框架</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install element</span><br></pre></td></tr></table></figure>
+
+<p>main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加element-ui</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span>;</span><br><span class="line">Vue.use(ElementUI);</span><br></pre></td></tr></table></figure>
+
+<p>main中引入的，全局可以直接用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-container&gt;</span><br><span class="line">    &lt;el-header&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        I am Header</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    &lt;/el-header&gt;</span><br><span class="line"></span><br><span class="line">    &lt;el-container&gt;</span><br><span class="line">      &lt;el-aside&gt;</span><br><span class="line">        &lt;p&gt;aside&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;aside1&lt;/p&gt;</span><br><span class="line">      &lt;/el-aside&gt;</span><br><span class="line">      &lt;el-main&gt;</span><br><span class="line">        &lt;!-- 主界面的路由，在index.js --&gt;</span><br><span class="line">        &lt;router-view/&gt;</span><br><span class="line">      &lt;/el-main&gt;</span><br><span class="line">    &lt;/el-container&gt;</span><br><span class="line">  &lt;/el-container&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只是部分相关代码</span></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Layout&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: Layout,</span><br><span class="line">    <span class="attr">children</span>:[&#123;</span><br><span class="line">      <span class="attr">path</span>:<span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>:<span class="string">&#x27;Main&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>:Main</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;User&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: User</span><br><span class="line">      &#125;</span><br><span class="line">      ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Vue-preset"><a href="#Vue-preset" class="headerlink" title="Vue preset"></a>Vue preset</h2><p>vue 创建项目时的预设文件</p>
+<p><code>.vuerc</code>没有前缀</p>
+<p>位置在<code>/User/用户名/.vuerc</code></p>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220213203837247.png" alt="image-20220213203837247"></p>
+<h1 id="Vue颜色"><a href="#Vue颜色" class="headerlink" title="Vue颜色"></a>Vue颜色</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 背景，淡青色的那种</span><br><span class="line">background-color: aliceblue;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="颜色搭配"><a href="#颜色搭配" class="headerlink" title="颜色搭配"></a>颜色搭配</h2><h1 id="Vue事件"><a href="#Vue事件" class="headerlink" title="Vue事件"></a>Vue事件</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-menu-item v-on:click=&quot;toWeatherPage()&quot;&gt;&lt;/el-menu-item&gt;</span><br><span class="line">...</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  ...</span><br><span class="line">  methods:&#123;</span><br><span class="line">    toWeatherPage :function()&#123;</span><br><span class="line">      this.$router.push(&#123;path:&#x27;/weather&#x27;&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/24/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/24/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="post-title-link" itemprop="url">线性回归</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-24 16:01:48 / Modified: 17:03:18" itemprop="dateCreated datePublished" datetime="2022-01-24T16:01:48+08:00">2022-01-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h1><p>least sqaure method</p>
+<p>顾名思义，找到合适的参数，使得取到minimum of the square</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220124160550012.png" alt="image-20220124160550012"></p>
+<p>那怎么找到那个参数呢</p>
+<p>梯度下降 - Grandient Descend</p>
+<h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><p>Grandient Descend</p>
+<p>最快取得函数最小值的一种方法（即解决上面 “使得sum of square 最小” 的问题）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220124162232558.png" alt="image-20220124162232558"></p>
+<p>Grandient：斜率</p>
+<p>当前位置最快下降的位置，是沿着当前点的切线的方向</p>
+<p>实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x**<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradient_descend</span>():</span></span><br><span class="line">    times = <span class="number">20</span></span><br><span class="line">    alpha = <span class="number">0.1</span></span><br><span class="line">    x0 = <span class="number">10</span></span><br><span class="line">    y0 = f(x0)</span><br><span class="line">    x = np.linspace(-<span class="number">10</span>,<span class="number">10</span>)</span><br><span class="line">    plt.figure()</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;x&#x27;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">    plt.plot(x,f(x))</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(times):</span><br><span class="line">        dot_x = x0</span><br><span class="line">        dot_y = y0</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;第%d次迭代：x=%f,y=%f&quot;</span>%(i+<span class="number">1</span>, x0, y0))</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 2x为y=x^2的导数</span></span><br><span class="line">        x0 = x0 - alpha*<span class="number">2</span>*x0</span><br><span class="line">        y0 = f(x0)</span><br><span class="line">        </span><br><span class="line">        plt.plot([dot_x,x0],[dot_y,y0],<span class="string">&#x27;go&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    gradient_descend()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220124170157518.png" alt="image-20220124170157518"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220124170210590.png" alt="image-20220124170210590"></p>
+<h1 id="线性回归实现"><a href="#线性回归实现" class="headerlink" title="线性回归实现"></a>线性回归实现</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/17/%E7%AE%97%E6%B3%95%E8%AF%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/17/%E7%AE%97%E6%B3%95%E8%AF%BE/" class="post-title-link" itemprop="url">算法课</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-17 19:27:56" itemprop="dateCreated datePublished" datetime="2022-01-17T19:27:56+08:00">2022-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-28 10:45:13" itemprop="dateModified" datetime="2022-01-28T10:45:13+08:00">2022-01-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="规律题"><a href="#规律题" class="headerlink" title="规律题"></a>规律题</h2><p>多动手推样例</p>
+<p>多观察，抽象</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="空间限制"><a href="#空间限制" class="headerlink" title="空间限制"></a>空间限制</h2><p>7个0没问题</p>
+<p>数组大小8个0有点危险</p>
+<p>9个0肯定爆了</p>
+<h2 id="练习读题"><a href="#练习读题" class="headerlink" title="练习读题"></a>练习读题</h2><p>上来把题目说一下</p>
+<h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><h2 id="公式法"><a href="#公式法" class="headerlink" title="公式法"></a>公式法</h2><p>结果就出来了</p>
+<p>第 i 组是什么</p>
+<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>flying window</p>
+<h2 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h2><h2 id="max取最大值"><a href="#max取最大值" class="headerlink" title="max取最大值"></a>max取最大值</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="comment">// 这个不可少，是在std库里的max</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p>多少个</p>
+<p>数值大小</p>
+<p>估计时间复杂度</p>
+<p>估计数据类型 long long</p>
+<h2 id="桶计数"><a href="#桶计数" class="headerlink" title="桶计数"></a>桶计数</h2><p>数的最大值作范围，数组开这么大</p>
+<p>需要考虑数据范围</p>
+<h2 id="简单的升级"><a href="#简单的升级" class="headerlink" title="简单的升级"></a>简单的升级</h2><h2 id="模"><a href="#模" class="headerlink" title="模"></a>模</h2><p>每次取模</p>
+<p>然后数组count</p>
+<h2 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h2><p>3个for</p>
+<p>前缀和优化掉一个</p>
+<p>起码让小数据过</p>
+<h2 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">memset</span>(s,<span class="number">0</span>,<span class="keyword">sizeof</span>(s));	<span class="comment">// 数组清0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="空间时间"><a href="#空间时间" class="headerlink" title="空间时间"></a>空间时间</h2><p>数据范围离谱</p>
+<p>我们就拿时间换空间</p>
+<h2 id="层次"><a href="#层次" class="headerlink" title="层次"></a>层次</h2><p>俯视算法题。。</p>
+<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><h2 id="为什么模质数"><a href="#为什么模质数" class="headerlink" title="为什么模质数"></a>为什么模质数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220122165547080.png" alt="image-20220122165547080"></p>
+<h2 id="链表与邻接表"><a href="#链表与邻接表" class="headerlink" title="链表与邻接表"></a>链表与邻接表</h2><p>链表操作起来麻烦，我们用邻接表</p>
+<h2 id="邻接表解决hash冲突"><a href="#邻接表解决hash冲突" class="headerlink" title="邻接表解决hash冲突"></a>邻接表解决hash冲突</h2><h2 id="Prefix-Sum-amp-Fifference"><a href="#Prefix-Sum-amp-Fifference" class="headerlink" title="Prefix Sum &amp; Fifference"></a>Prefix Sum &amp; Fifference</h2><h3 id="1D"><a href="#1D" class="headerlink" title="1D"></a>1D</h3><h3 id="2D"><a href="#2D" class="headerlink" title="2D"></a>2D</h3><h3 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h3><h3 id="差分矩阵"><a href="#差分矩阵" class="headerlink" title="差分矩阵"></a>差分矩阵</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220124100724583.png" alt="image-20220124100724583"></p>
+<h2 id="Two-Pointer"><a href="#Two-Pointer" class="headerlink" title="Two Pointer"></a>Two Pointer</h2><h2 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h2><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p>求树的深度</p>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><p>两点连通的问题</p>
+<p>O(n+e)</p>
+<h3 id="连通问题上，与DFS的对比"><a href="#连通问题上，与DFS的对比" class="headerlink" title="连通问题上，与DFS的对比"></a>连通问题上，与DFS的对比</h3><p>DFS - O(n+e) 只能找某一对</p>
+<p>并查集 - O(n+e) 找全部对</p>
+<h3 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h3><p>什么样的进行merge</p>
+<h3 id="路径压缩"><a href="#路径压缩" class="headerlink" title="路径压缩"></a>路径压缩</h3><p>丢掉了具体的路径信息</p>
+<p>只知道两点的连接关系</p>
+<p>一棵树，A到B，只有唯一的一条路径</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/16/todolist-demo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -863,203 +1159,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/10/hibernate-demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/10/hibernate-demo/" class="post-title-link" itemprop="url">hibernate-demo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-01-10 19:56:52 / Modified: 22:48:07" itemprop="dateCreated datePublished" datetime="2022-01-10T19:56:52+08:00">2022-01-10</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/hibernate-demo">demo</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/10/Redis-demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/10/Redis-demo/" class="post-title-link" itemprop="url">Redis-demo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-01-10 16:44:31 / Modified: 22:50:03" itemprop="dateCreated datePublished" datetime="2022-01-10T16:44:31+08:00">2022-01-10</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.redis.io/releases/redis-6.2.6.tar.gz</span><br><span class="line">tar xzf redis-6.2.6.tar.gz</span><br><span class="line"><span class="built_in">cd</span> redis-6.2.6</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">src/redis-server</span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220110164650786.png" alt="image-20220110164650786"></p>
-<p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/redis-demo">demo</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">微信公众号开发</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-01-09 23:21:14 / Modified: 23:29:18" itemprop="dateCreated datePublished" datetime="2022-01-09T23:21:14+08:00">2022-01-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="扫码关注公众号获取验证码"><a href="#扫码关注公众号获取验证码" class="headerlink" title="扫码关注公众号获取验证码"></a>扫码关注公众号获取验证码</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109232843586.png" alt="image-20220109232843586"></p>
-<p>主要流程：</p>
-<p>用户点击“关注公众号领取”，发送请求到公众号的个人服务器</p>
-<p>个人服务器向微信的接口请求生成导向公众号的“二维码”，并返回到前端</p>
-<p>用户微信扫码后，被导航到公众号那</p>
-<p>同时，微信的服务器会向开发者推送消息</p>
-<p>目标地址为这里的URL</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109232626285.png" alt="image-20220109232626285"></p>
-<p>后端拿一个RequestMapping接收就行</p>
-<p>然后，产生一个验证码</p>
-<p>再调用微信的“发送消息给用户”的接口，把时效验证码推送给用户即可</p>
-<p>（服务器本身也做好准备，把该验证码存在当前Session里，供验证用户输入使用）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1131,7 +1230,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">321</span>
+          <span class="site-state-item-count">324</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

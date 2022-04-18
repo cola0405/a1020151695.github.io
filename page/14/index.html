@@ -177,6 +177,191 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/24/%E6%A1%B6%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/24/%E6%A1%B6%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">桶排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-07-24 15:41:59 / Modified: 15:44:18" itemprop="dateCreated datePublished" datetime="2021-07-24T15:41:59+08:00">2021-07-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724154203967.png" alt="image-20210724154203967"></p>
+<p>区分桶排序和计数排序，csdn乌烟瘴气的，不少人把这两个排序给混了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Bucket Sort in Python</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bucketSort</span>(<span class="params">array</span>):</span></span><br><span class="line">    bucket = []</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create empty buckets</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array)):</span><br><span class="line">        bucket.append([])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Insert elements into their respective buckets</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> array:</span><br><span class="line">        index_b = <span class="built_in">int</span>(<span class="number">10</span> * j)</span><br><span class="line">        bucket[index_b].append(j)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Sort the elements of each bucket</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array)):</span><br><span class="line">        bucket[i] = <span class="built_in">sorted</span>(bucket[i])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get the sorted elements</span></span><br><span class="line">    k = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(bucket[i])):</span><br><span class="line">            array[k] = bucket[i][j]</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> array</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">array = [<span class="number">.42</span>, <span class="number">.32</span>, <span class="number">.33</span>, <span class="number">.52</span>, <span class="number">.37</span>, <span class="number">.47</span>, <span class="number">.51</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Sorted Array in descending order is&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(bucketSort(array))</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/24/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/24/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">计数排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-07-24 15:35:16 / Modified: 15:38:06" itemprop="dateCreated datePublished" datetime="2021-07-24T15:35:16+08:00">2021-07-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724153522482.png" alt="image-20210724153522482"></p>
+<h4 id="实现逻辑"><a href="#实现逻辑" class="headerlink" title="实现逻辑"></a>实现逻辑</h4><p>找到最大最小值，然后开辟相应跨度的数组（length=max-min+1），再把序列各数统计起来</p>
+<p>最后根据统计结果，展开序列</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/24/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/24/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">基数排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-07-24 11:19:32 / Modified: 15:31:34" itemprop="dateCreated datePublished" datetime="2021-07-24T11:19:32+08:00">2021-07-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724152941912.png" alt="image-20210724152941912"></p>
+<h4 id="实现逻辑"><a href="#实现逻辑" class="headerlink" title="实现逻辑"></a>实现逻辑</h4><p>① 将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。<br>② 从最低位开始，依次进行一次排序。<br>③ 这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。</p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>时间复杂度：O(kn)</p>
+<p>空间复杂度：O(k+n)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/24/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -699,354 +884,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/16/%E9%80%92%E5%BD%92%E5%BF%AB%E9%80%9F%E5%B9%82%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/16/%E9%80%92%E5%BD%92%E5%BF%AB%E9%80%9F%E5%B9%82%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">递归快速幂算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-07-16 22:35:28 / Modified: 22:38:36" itemprop="dateCreated datePublished" datetime="2021-07-16T22:35:28+08:00">2021-07-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>l例题</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716223603154.png" alt="image-20210716223603154"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> qpow(a,n<span class="number">-1</span>)*a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = qpow(a,n/<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">return</span> temp*temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/16/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/16/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">二叉树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-16 21:44:36" itemprop="dateCreated datePublished" datetime="2021-07-16T21:44:36+08:00">2021-07-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-25 20:26:16" itemprop="dateModified" datetime="2021-11-25T20:26:16+08:00">2021-11-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="二叉树节点数"><a href="#二叉树节点数" class="headerlink" title="二叉树节点数"></a>二叉树节点数</h1><h2 id="暴力法【规律题】"><a href="#暴力法【规律题】" class="headerlink" title="暴力法【规律题】"></a>暴力法【规律题】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210830113630156.png" alt="image-20210830113630156"></p>
-<p>自己构一个符合条件的树</p>
-<p>然后一个个去排除就好</p>
-<p>答案：D、A</p>
-<h2 id="特殊值法"><a href="#特殊值法" class="headerlink" title="特殊值法"></a>特殊值法</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210830113044602.png" alt="image-20210830113044602"></p>
-<p>答案：D</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210830113054791.png" alt="image-20210830113054791"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210830113015560.png" alt="image-20210830113015560"></p>
-<p><font color=red>如果是笼统的二叉树（不是完全二叉树等）则可以考虑特殊值的做法</font></p>
-<h1 id="二叉树的高度"><a href="#二叉树的高度" class="headerlink" title="二叉树的高度"></a>二叉树的高度</h1><p><font color=red>根节点，h=1</font></p>
-<p>左孩子，h=2</p>
-<h1 id="第h层的结点数"><a href="#第h层的结点数" class="headerlink" title="第h层的结点数"></a>第h层的结点数</h1><p>$$2^{(h-1)}$$ （根h=1）</p>
-<p>第h层以前的节点数（当前层最大节点数-1）</p>
-<p>如：h=7,该层最多有64个节点</p>
-<p>之前则有63个节点</p>
-<p>节点总数则为63+64=127</p>
-<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><p>二叉排序树查找算法的性能取决于二叉树的结构$$O(logn)$$</p>
-<p>其中平衡二叉树是最合适的（<strong>一种特殊类型的二叉排序树</strong>）</p>
-<p>任一结点左右子树深度之差不超过1</p>
-<p>即不会存在左子树一路往下的情况</p>
-<p><font color=red>平衡二叉树本身还要求有序</font></p>
-<p>也就是说，二叉树的插入需要调整</p>
-<h2 id="平衡二叉树调整的方法（注意描述）"><a href="#平衡二叉树调整的方法（注意描述）" class="headerlink" title="平衡二叉树调整的方法（注意描述）"></a>平衡二叉树调整的方法（注意描述）</h2><p>LL型（右单旋转）、RR型（左单旋转）、LR型（先左后右双旋转）、RL型（先右后左双旋转）</p>
-<p><font color=blue>看食指</font></p>
-<p>右单旋转</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003205804405.png" alt="image-20211003205804405"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211004001731267.png" alt="image-20211004001731267"></p>
-<p>左单旋转</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003205824678.png" alt="image-20211003205824678"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211004001712517.png" alt="image-20211004001712517"></p>
-<p>简单LR即左、右孩子</p>
-<p>需要有两步调整</p>
-<p>“先左后右双旋转”</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003205855151.png" alt="image-20211003205855151"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211004001433972.png" alt="image-20211004001433972"></p>
-<p>简单RL</p>
-<p>“先右后左双旋转”</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003234117810.png" alt="image-20211003234117810"></p>
-<p>下面是<font color=blue>进阶理解</font></p>
-<h2 id="进阶平衡二叉树调整的梳理"><a href="#进阶平衡二叉树调整的梳理" class="headerlink" title="进阶平衡二叉树调整的梳理"></a>进阶平衡二叉树调整的梳理</h2><p>因为最小平衡子树已经满了，简单的旋转已经解决不了问题了</p>
-<p>所以一定要放在大树中调整，往右边有空的地方挪</p>
-<p><font color=red>在最小不平衡子树中选根</font></p>
-<p>直链选第1个，弯的选第2个</p>
-<p>然后断开的结点，按大小关系先判定放到左子树还是右子树</p>
-<p>其中的依据 “比B大，比A小”</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003232628377.png" alt="image-20211003232628377"></p>
-<p><font color=red>做题的时候，要把示意图画出来再做，脑补容易出错</font></p>
-<h3 id="没有重视“最小不平衡子树”"><a href="#没有重视“最小不平衡子树”" class="headerlink" title="没有重视“最小不平衡子树”"></a>没有重视“最小不平衡子树”</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003235718107.png" alt="image-20211003235718107"></p>
-<p>若一昧套公式</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003235956388.png" alt="image-20211003235956388"></p>
-<p>正确的调整（选自严蔚敏的教材）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211004000025629.png" alt="image-20211004000025629"></p>
-<h2 id="平衡二叉树进阶型"><a href="#平衡二叉树进阶型" class="headerlink" title="平衡二叉树进阶型"></a>平衡二叉树进阶型</h2><p><font color=red>先处理最小不平衡树</font></p>
-<p><strong>谨遵示意图</strong></p>
-<h3 id="LL型"><a href="#LL型" class="headerlink" title="LL型"></a>LL型</h3><p>第一个L指根结点的左子树</p>
-<p>第二个L指在左子树根节点的左子树上插入新节点</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003211617104.png"></p>
-<p>$$B_R$$在rushB变化后仍然是B的右子树，A的左子树 </p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003211043364.png" alt="image-20211003211043364"></p>
-<h3 id="RR"><a href="#RR" class="headerlink" title="RR"></a>RR</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003211900506.png" alt="image-20211003211900506"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003211911317.png" alt="image-20211003211911317"></p>
-<h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003211932496.png" alt="image-20211003211932496"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003211943724.png" alt="image-20211003211943724"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003211952461.png" alt="image-20211003211952461"></p>
-<h3 id="RL"><a href="#RL" class="headerlink" title="RL"></a>RL</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003212104265.png" alt="image-20211003212104265"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003212109959.png" alt="image-20211003212109959"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003212118065.png" alt="image-20211003212118065"></p>
-<h2 id="平衡因子（AVL）"><a href="#平衡因子（AVL）" class="headerlink" title="平衡因子（AVL）"></a>平衡因子（AVL）</h2><p>平衡因子（BF,Balance Factor）</p>
-<p>$$h_{左子树}-h_{右子树}$$</p>
-<p>平衡二叉树中不存在平衡因子大于1的节点</p>
-<p>在一棵平衡二叉树中，节点的平衡因子只能取-1、1或者0</p>
-<p>例题：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925111621584.png" alt="image-20210925111621584"></p>
-<p>答案：B</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925114231859.png" alt="image-20210925114231859"></p>
-<p>已经展开来的子树不可再展开</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211125100600797.png" alt="image-20211125100600797"></p>
-<h1 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h1><p>度都为2</p>
-<h1 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h1><p>h-1层为满二叉树</p>
-<p>h层靠左</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716214724483.png" alt="image-20210716214724483"></p>
-<h2 id="完全二叉树的思维误区"><a href="#完全二叉树的思维误区" class="headerlink" title="完全二叉树的思维误区"></a>完全二叉树的思维误区</h2><p>“完全二叉树第6层有8个叶子节点”</p>
-<p>但第7层可能还有叶子节点</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820233216849.png" alt="image-20210820233216849"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820233534149.png" alt="image-20210820233534149"></p>
-<p>答案：C</p>
-<p>$$2^{6}-1+(32-8)*2=111$$</p>
-<p>加深完全二叉树的理解</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210820234033844.png" alt="image-20210820234033844"></p>
-<p>答案：A</p>
-<p>3个叶子节点需要2个双亲结点</p>
-<p>则有（16-2）+3=17</p>
-<h2 id="已知叶子节点个数推完全二叉树"><a href="#已知叶子节点个数推完全二叉树" class="headerlink" title="已知叶子节点个数推完全二叉树"></a>已知叶子节点个数推完全二叉树</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210821173044669.png" alt="image-20210821173044669"></p>
-<p>答案：B</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211125105943553.png" alt="image-20211125105943553"></p>
-<h2 id="判断两结点是否同层"><a href="#判断两结点是否同层" class="headerlink" title="判断两结点是否同层"></a>判断两结点是否同层</h2><p><img src="C:\Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20210830110800310.png" alt="image-20210830110800310"></p>
-<p>答案：A</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210830110823984.png" alt="image-20210830110823984"></p>
-<p>符号的意思是向下取整（相当于截断）</p>
-<hr>
-<h1 id="储存结构"><a href="#储存结构" class="headerlink" title="储存结构"></a>储存结构</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716214603785.png" alt="image-20210716214603785"></p>
-<h1 id="二叉排序树BST（二叉查找树，二叉搜索树）"><a href="#二叉排序树BST（二叉查找树，二叉搜索树）" class="headerlink" title="二叉排序树BST（二叉查找树，二叉搜索树）"></a>二叉排序树BST（二叉查找树，二叉搜索树）</h1><p>左&lt;根&lt;右</p>
-<p><font color=red>中序出来时递增序列</font></p>
-<h2 id="二叉排序树插入"><a href="#二叉排序树插入" class="headerlink" title="二叉排序树插入"></a>二叉排序树插入</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716215110097.png" alt="image-20210716215110097"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716215137051.png" alt="image-20210716215137051"></p>
-<h2 id="二叉排序树构造"><a href="#二叉排序树构造" class="headerlink" title="二叉排序树构造"></a>二叉排序树构造</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716215223689.png" alt="image-20210716215223689"></p>
-<h2 id="二叉排序树查找算法"><a href="#二叉排序树查找算法" class="headerlink" title="二叉排序树查找算法"></a>二叉排序树查找算法</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716214958703.png" alt="image-20210716214958703"></p>
-<h2 id="二叉排序树的删除"><a href="#二叉排序树的删除" class="headerlink" title="二叉排序树的删除"></a>二叉排序树的删除</h2><p>中序遍历作为切入点</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006160748651.png" alt="image-20211006160748651"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006160759328.png" alt="image-20211006160759328"></p>
-<p>例题：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716220542797.png" alt="image-20210716220542797"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006162758651.png" alt="image-20211006162758651"></p>
-<h1 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h1><p>带权路径最短的树（<font color=red>不一定是完全二叉树</font>）</p>
-<p>哈夫曼树不唯一，但是权值之和唯一</p>
-<p>如果遇到2+3=5，不要跳到坑里去！（若涉及概率，则根节点必为100%）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003201745945.png" alt="image-20211003201745945"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003201828274.png" alt="image-20211003201828274"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003201804152.png" alt="image-20211003201804152"></p>
-<h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p>重点在于</p>
-<p><font color=red>选取根权值最小的两个树合并成一棵树，加入到森林，并删除原来森林中的那两棵树</font></p>
-<p><font color=blue>重新选择权值最小的树</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003202059180.png" alt="image-20211003202059180"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211004201256357.png" alt="image-20211004201256357"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211004201244922.png" alt="image-20211004201244922"></p>
-<p>一步步稳扎稳打，虚假的权值圈起来，真值不圈即可</p>
-<p>每次都得画出来，排列好</p>
-<p>不然必定出错</p>
-<h1 id="二叉树的转换"><a href="#二叉树的转换" class="headerlink" title="二叉树的转换"></a>二叉树的转换</h1><h2 id="森林转化为二叉树"><a href="#森林转化为二叉树" class="headerlink" title="森林转化为二叉树"></a>森林转化为二叉树</h2><p>熟了的话看这个就够了：</p>
-<p>利用<strong>迭代器</strong>，然后</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007162832765.png" alt="image-20211007162832765"></p>
-<p>多叉树调整完后，横虚线链起来，again（根都是兄弟）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007164622875.png" alt="image-20211007164622875"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007164554397.png" alt="image-20211007164554397"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007151923460.png" alt="image-20211007151923460"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007151942353.png" alt="image-20211007151942353"></p>
-<p> 解析</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007162641692.png" alt="image-20211007162641692"></p>
-<h2 id="多叉树转化为二叉树"><a href="#多叉树转化为二叉树" class="headerlink" title="多叉树转化为二叉树"></a>多叉树转化为二叉树</h2><p>（详细可参考上面的森林转化成二叉树）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007162832765.png" alt="image-20211007162832765"></p>
-<p>对一棵多叉树来说，根节点是没有兄弟节点的</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007163524778.png" alt="image-20211007163524778"></p>
-<h1 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211009154157596.png" alt="image-20211009154157596"></p>
-<p>不是传统意义上的树</p>
-<p>可以看到有些结点上有两个值</p>
-<p>它们叫做 ”关键字“</p>
-<p>B树多路平衡查找树</p>
-<p>在$$O(log_2n)$$的基础上再压榨空间，使得查询效率更快</p>
-<p>由此也需要一套新的规则</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211010160350285.png" alt="image-20211010160350285"></p>
-<h2 id="B树的高度范围"><a href="#B树的高度范围" class="headerlink" title="B树的高度范围"></a>B树的高度范围</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211010160511674.png" alt="image-20211010160511674"></p>
-<h2 id="外部结点"><a href="#外部结点" class="headerlink" title="外部结点"></a>外部结点</h2><p>可以视为外部结点或类似于折半查找判定树的查找失败结点</p>
-<p>实际上这些结点不存在，指向这些结点的指针为空</p>
-<h2 id="B树插入"><a href="#B树插入" class="headerlink" title="B树插入"></a>B树插入</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211009160901537.png" alt="image-20211009160901537"></p>
-<h2 id="B树分裂"><a href="#B树分裂" class="headerlink" title="B树分裂"></a>B树分裂</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211009161037166.png" alt="image-20211009161037166"></p>
-<p>再满则往上一个维度丢</p>
-<h2 id="B树删除"><a href="#B树删除" class="headerlink" title="B树删除"></a>B树删除</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211009161836433.png" alt="image-20211009161836433"></p>
-<p>类似二叉排序树BST删除根节点的操作</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211009162324152.png" alt="image-20211009162226081"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211009162428990.png" alt="image-20211009162428990"></p>
-<p>兄弟不够借时，必然是可以进行合并成新叶子结点的</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/16/%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/16/%E6%A0%91/" class="post-title-link" itemprop="url">树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-07-16 17:55:35 / Modified: 18:10:06" itemprop="dateCreated datePublished" datetime="2021-07-16T17:55:35+08:00">2021-07-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="度"><a href="#度" class="headerlink" title="度"></a>度</h4><p>一个结点子结点的个数</p>
-<h4 id="求树的叶子结点"><a href="#求树的叶子结点" class="headerlink" title="求树的叶子结点"></a>求树的叶子结点</h4><p>例题</p>
-<p>设某课树的度为3，其中度为3,2,1的结点个数分别为3,0,4.则该树中的叶子结点个数为多少？</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716180807588.png" alt="image-20210716180807588"></p>
-<p>总结一下就是：</p>
-<p><font color=red>Σ(结点数 x 结点度) - (总节点数 - 1)</font></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1118,7 +955,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">321</span>
+          <span class="site-state-item-count">324</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
