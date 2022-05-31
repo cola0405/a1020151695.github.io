@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/23/%E5%AE%9A%E7%A7%AF%E5%88%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -191,7 +191,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/23/%E5%AE%9A%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">定积分</a>
+            <a href="/2021/07/04/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">二重积分</a>
         </h2>
 
         <div class="post-meta">
@@ -201,14 +201,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-06-23 16:46:33" itemprop="dateCreated datePublished" datetime="2021-06-23T16:46:33+08:00">2021-06-23</time>
+              <time title="Created: 2021-07-04 17:16:42" itemprop="dateCreated datePublished" datetime="2021-07-04T17:16:42+08:00">2021-07-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-29 22:01:34" itemprop="dateModified" datetime="2021-09-29T22:01:34+08:00">2021-09-29</time>
+                <time title="Modified: 2021-12-10 11:57:22" itemprop="dateModified" datetime="2021-12-10T11:57:22+08:00">2021-12-10</time>
               </span>
 
           
@@ -222,340 +222,964 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="积分法"><a href="#积分法" class="headerlink" title="积分法"></a>积分法</h1><p>链接</p>
-<h1 id="定积分与极限"><a href="#定积分与极限" class="headerlink" title="定积分与极限"></a>定积分与极限</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912152916696.png" alt="image-20210912152916696"></p>
+          <h1 id="理解二重积分"><a href="#理解二重积分" class="headerlink" title="理解二重积分"></a>理解二重积分</h1><p>一重积分积出面，二重积分积出体</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922211003119.png" alt="image-20210922211003119"></p>
+<h1 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h1><p><font color=red>“原式解定积分”</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706163317329.png" alt="image-20210706163317329"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706163630234.png" alt="image-20210706163630234"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706163310523.png" alt="image-20210706163310523"></p>
+<p>Ps：</p>
+<p>换元后，这里不需要对dx和dy做下放处理</p>
+<p>需要做的是把dx和dy换成dθ和dr并重新确定积分限</p>
+<p>一般是后积θ，因为积分限角度是常数</p>
+<p>积分限参考上面画的函数图像的范围</p>
+<p>积dr时，θ相当于常数可以先移到外面</p>
+<p>设计到sec的奇数次积分可参考</p>
+<h1 id="二重积分改变积分顺序"><a href="#二重积分改变积分顺序" class="headerlink" title="二重积分改变积分顺序"></a>二重积分改变积分顺序</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704183533426.png" alt="image-20210704183533426"></p>
+<p>用积分限的上下确定积分区域</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704185959377.png"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704183015340.png" alt="image-20210704183015340"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704190313855.png" alt="image-20210704190313855"></p>
+<p>Ps：</p>
+<p><strong>因为sinx/x对于dy来说相当于常数，所以可以随意移出去</strong></p>
+<p>然后关于xsinx的积分，则使用x乘sin型分部积分</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704182956051.png" alt="image-20210704182956051"></p>
+<p>在平面直角坐标系中画出积分限的图像</p>
+<p>两块区域合成一片区域，然后只对那新的一块区域进行积分即可</p>
+<hr>
+<h1 id="奇偶性求二重积分"><a href="#奇偶性求二重积分" class="headerlink" title="奇偶性求二重积分"></a>奇偶性求二重积分</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922211403467.png" alt="image-20210922211403467"></p>
+<h1 id="明确一些概念"><a href="#明确一些概念" class="headerlink" title="明确一些概念"></a>明确一些概念</h1><h2 id="二重积分和二次积分"><a href="#二重积分和二次积分" class="headerlink" title="二重积分和二次积分"></a>二重积分和二次积分</h2><p>严格意义上来说上面这些是二次积分，二重积分是这样的</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704191305150.png" alt="image-20210704191305150"></p>
+<h2 id="X型和Y型"><a href="#X型和Y型" class="headerlink" title="X型和Y型"></a>X型和Y型</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704191456461.png" alt="image-20210704191456461"></p>
+<p>X型即dy，积分限用x表示</p>
+<hr>
+<h1 id="二重积分法"><a href="#二重积分法" class="headerlink" title="二重积分法"></a>二重积分法</h1><p>先积的是x，则提出无关的y，就容易了</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706155710893.png" alt="image-20210706155710893"></p>
+<h1 id="二重积分比较大小"><a href="#二重积分比较大小" class="headerlink" title="二重积分比较大小"></a>二重积分比较大小</h1><p>当积分限一样时，比较被积函数的大小即可</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707171633757.png" alt="image-20210707171633757"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210919093335656.png" alt="image-20210919093335656"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210919092542955.png" alt="image-20210919092542955"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E6%95%B0%E5%AD%A6%E5%BA%94%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/04/%E6%95%B0%E5%AD%A6%E5%BA%94%E8%AF%95/" class="post-title-link" itemprop="url">数学应试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-04 13:33:41" itemprop="dateCreated datePublished" datetime="2021-07-04T13:33:41+08:00">2021-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-12 14:28:28" itemprop="dateModified" datetime="2021-12-12T14:28:28+08:00">2021-12-12</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210804232626728.png" alt="image-20210804232626728"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210804232640037.png" alt="image-20210804232640037"></p>
+<h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="考研数学怎么出题"><a href="#考研数学怎么出题" class="headerlink" title="考研数学怎么出题"></a>考研数学怎么出题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707174505197.png" alt="image-20210707174505197"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707175835450.png" alt="image-20210707175835450"></p>
+<p>上式中的分母(x-a)^2不可以直接当作(x-a)来带进定义式</p>
+<p>因为这是x逼近与a，(x-a)的值不能直接当0处理</p>
+<p>正确打开上式的方式的是<strong>洛必达</strong></p>
+<p>很容易忽略的一点，已知条件为<strong>相切，除了告知导数值相等外，该点的函数值也是相等的</strong></p>
+<p>但是等值代换确是可以</p>
+<p><font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font></p>
+<p>可以得出f(x)=g(x)但是0/0的极限值为0是得不出来的</p>
+<h2 id="题意构造法"><a href="#题意构造法" class="headerlink" title="题意构造法"></a>题意构造法</h2><p><font color=blue>根据题意去构造</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704133409946.png" alt="image-20210704133409946"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704133856494.png" alt="image-20210704133856494"></p>
+<h2 id="便利构造法"><a href="#便利构造法" class="headerlink" title="便利构造法"></a>便利构造法</h2><p><font color=blue>题目的限制条件少，可以选择简单的实例暴力排除</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816233102055.png" alt="image-20210816233102055"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816233402686.png" alt="image-20210816233402686"></p>
+<h2 id="提高暴力法效率"><a href="#提高暴力法效率" class="headerlink" title="提高暴力法效率"></a>提高暴力法效率</h2><p> 一个例子试四次，把ABCD选项都试一遍</p>
+<p>效率可能会更高</p>
+<h2 id="N问题"><a href="#N问题" class="headerlink" title="N问题"></a>N问题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102424227.png" alt="image-20210912102424227"></p>
+<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
+<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102432946.png" alt="image-20210912102432946"></p>
+<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
+<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
+<h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1><h2 id="填空题也可以暴力法"><a href="#填空题也可以暴力法" class="headerlink" title="填空题也可以暴力法"></a>填空题也可以暴力法</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824123355236.png" alt="image-20210824123355236"></p>
+<p>暴力法：</p>
+<p>假设出复合符合题意的AB</p>
+<p>乘积等于和，比较容易想到的是2*2=2+2</p>
+<p>则有：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824123552288.png" alt="image-20210824123552288"></p>
+<p>然后一个例子一般是不能确认答案的</p>
+<p>一般再来一个，AB搞成3阶的</p>
+<p>若一致无矛盾，则OK了</p>
+<p>正确解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824123348602.png" alt="image-20210824123348602"></p>
+<h2 id="暴力中的暴力"><a href="#暴力中的暴力" class="headerlink" title="暴力中的暴力"></a>暴力中的暴力</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912154824033.png" alt="image-20210912154824033"></p>
+<p><font color=red>“x” 趋于0才可以代换</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915170816342.png" alt="image-20210915170816342"></p>
+<p>答案：1</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915184622874.png" alt="image-20210915184622874"></p>
+<p><font color=red>两次暴力，一般答案就不带参数了，放心写</font></p>
+<h2 id="特殊值法的坑"><a href="#特殊值法的坑" class="headerlink" title="特殊值法的坑"></a>特殊值法的坑</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913092334055.png" alt="image-20210913092334055"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913092406321.png" alt="image-20210913092406321"></p>
+<p>特殊值法确实使得即算方便了</p>
+<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
+<p><font color=red>答案带参数</font></p>
+<p>再回到这道题（尽力观察吧，看参数是否会影响洛的结果）</p>
+<p>这道题其实不难看出来</p>
+<p>利用$$e^{- \infty }$$的特殊性</p>
+<hr>
+<h2 id="出题人不一定是坏人"><a href="#出题人不一定是坏人" class="headerlink" title="出题人不一定是坏人"></a>出题人不一定是坏人</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913161744051.png" alt="image-20210913161744051"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913161753855.png" alt="image-20210913161753855"></p>
+<p><font color=red>顺着出题人的意思走，就不会迷失于间断点的三个判定规则了</font></p>
+<p>虽然我个人不确定f(x) 的间断点只有两个</p>
+<p>但这现成的两个 <font color=blue>“没有定义的点”</font> 完全可以先顺着出题人的意思先用起来（有矛盾的地方再说）</p>
+<p>错误解法：</p>
+<p><font color=red>忽略了洛必达也是有条件的</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913162253174.png" alt="image-20210913162253174"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913162146786.png" alt="image-20210913162146786"></p>
+<h1 id="习惯"><a href="#习惯" class="headerlink" title="习惯"></a>习惯</h1><p>不急于求成，一步步稳扎稳打，草稿工整（以备验算）</p>
+<p><font color=red>如何有效验算呢</font></p>
+<p>答案稀奇古怪时记得多个心眼</p>
+<h2 id="鼠目寸光"><a href="#鼠目寸光" class="headerlink" title="鼠目寸光"></a>鼠目寸光</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102424227.png" alt="image-20210912102424227"></p>
+<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
+<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102432946.png" alt="image-20210912102432946"></p>
+<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
+<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
+<p>牛牛牛</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211109192656441.png" alt="image-20211109192656441"></p>
+<p>1-cos 不用代换，而是用来洛</p>
+<hr>
+<h2 id="暗示可消"><a href="#暗示可消" class="headerlink" title="暗示可消"></a>暗示可消</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920090246718.png" alt="image-20210920090246718"></p>
+<h2 id="这明明是错误的"><a href="#这明明是错误的" class="headerlink" title="这明明是错误的"></a>这明明是错误的</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210923192202477.png" alt="image-20210923192202477"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210923192426446.png" alt="image-20210923192426446"></p>
+<p>我错选了A，因为λ为1的时候看到都没问题</p>
+<p>就选了最前面的A（为了贪时间）</p>
+<p>明明知道肯定不选A的—–<font color=red>无论如何各种路实际走一下，碰出个不一样的答案</font></p>
+<h1 id="恒等式的坑"><a href="#恒等式的坑" class="headerlink" title="恒等式的坑"></a>恒等式的坑</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824121426700.png" alt="image-20210824121426700"></p>
+<p>解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824121442617.png" alt="image-20210824121442617"></p>
+<p><font color=red>D的表述并不是说r(A)=1, r(A-E)=1</font></p>
+<p>我们常用恒等式，但这存在的坑一定要小心</p>
+<h1 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h1><h2 id="最终的eln"><a href="#最终的eln" class="headerlink" title="最终的eln"></a>最终的eln</h2><p><font color=red>最终结果一般要把eln给化掉</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912160003298.png" alt="image-20210912160003298"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912160017462.png" alt="image-20210912160017462"></p>
+<p>我的答案：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912160111597.png" alt="image-20210912160111597"></p>
+<h2 id="最后的正负号"><a href="#最后的正负号" class="headerlink" title="最后的正负号"></a>最后的正负号</h2><p>拿笔算</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911173122229.png" alt="image-20210911173122229"></p>
+<p>解析：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911173411512.png" alt="image-20210911173411512"></p>
+<p><font color=red>出题人喜欢在符号上挖坑</font></p>
+<p>辛辛苦苦做出来了，但是符号没搞对</p>
+<p>最好的应对方法是:</p>
+<p><font color=blue size=5>不嫌麻烦，每一行都不省略</font></p>
+<h2 id="特殊值法的坑-1"><a href="#特殊值法的坑-1" class="headerlink" title="特殊值法的坑"></a>特殊值法的坑</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913092334055.png" alt="image-20210913092334055"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913092406321.png" alt="image-20210913092406321"></p>
+<p>特殊值法确实使得即算方便了</p>
+<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
+<p><font color=red>答案带参数</font></p>
+<p>再回到这道题</p>
+<p>利用$$e^{- \infty }$$的特殊性</p>
+<h1 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h1><h2 id="左右导数"><a href="#左右导数" class="headerlink" title="左右导数"></a>左右导数</h2><p>$$f’_{+}(2)$$</p>
+<p>$$f’_{-}(1)$$</p>
+<h2 id="由得"><a href="#由得" class="headerlink" title="由得"></a>由得</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210910173732467.png" alt="image-20210910173732467"></p>
+<h2 id="罗尔定理连写"><a href="#罗尔定理连写" class="headerlink" title="罗尔定理连写"></a>罗尔定理连写</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210910173827428.png" alt="image-20210910173827428"></p>
+<h2 id="计算过程"><a href="#计算过程" class="headerlink" title="计算过程"></a>计算过程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211212083410490.png" alt="image-20211212083410490"></p>
+<h1 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h1><h2 id="复杂导数运算"><a href="#复杂导数运算" class="headerlink" title="复杂导数运算"></a>复杂导数运算</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917161714247.png" alt="image-20210917161714247"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917162025829.png" alt="image-20210917162025829"></p>
+<p><font color=red>两条路线，截然不同的难度</font></p>
+<h2 id="求极限–局部代换禁止【-】"><a href="#求极限–局部代换禁止【-】" class="headerlink" title="求极限–局部代换禁止【+】"></a>求极限–局部代换禁止【+】</h2><p><font color=red>还涉及到了局部代换禁止</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133241463.png" alt="image-20210918133241463"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133253104.png" alt="image-20210918133253104"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133307940.png" alt="image-20210918133307940"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133910385.png" alt="image-20210918133910385"></p>
+<p><font color=red>局部代换禁止</font></p>
+<p>错误示范</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918135630515.png" alt="image-20210918135630515"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211110094252565.png" alt="image-20211110094252565"></p>
+<p><font color=red>根号也洛它，因为没路走了</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211110094123935.png" alt="image-20211110094123935"></p>
+<h2 id="化简"><a href="#化简" class="headerlink" title="化简"></a>化简</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914101304444.png" alt="image-20210914101304444"></p>
+<h2 id="复杂根号的求导"><a href="#复杂根号的求导" class="headerlink" title="复杂根号的求导"></a>复杂根号的求导</h2><p>（已知参数方程求导数）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704135103082.png" alt="image-20210704135103082"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704135010581.png" alt="image-20210704135010581"></p>
+<p><font color=red>不要慌，大多时候都是可以抵消掉的</font></p>
+<p><font color=red>你应该开心才是</font></p>
+<h2 id="配凑幂"><a href="#配凑幂" class="headerlink" title="配凑幂"></a>配凑幂</h2><p><font color=red>解决幂问题的方法不止eln一种</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912110039065.png" alt="image-20210912110039065"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912110022191.png" alt="image-20210912110022191"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912110030545.png" alt="image-20210912110030545"></p>
+<h2 id="分式相减【-】"><a href="#分式相减【-】" class="headerlink" title="分式相减【+】"></a>分式相减【+】</h2><p><font color=red>分式相减，合一下试试</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912155007856.png" alt="image-20210912155007856"></p>
+<p>答案：2</p>
+<p>$$arctanx\backsim x$$</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912155407095.png" alt="image-20210912155407095"></p>
+<h2 id="分式的浪漫【-】"><a href="#分式的浪漫【-】" class="headerlink" title="分式的浪漫【+】"></a>分式的浪漫【+】</h2><p><font color=red>其实不仅限于eln，遇到分式都可以洛洛</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912161726673.png" alt="image-20210912161726673"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912161915863.png" alt="image-20210912161915863"></p>
+<h2 id="指数函数"><a href="#指数函数" class="headerlink" title="指数函数"></a>指数函数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913154045916.png" alt="image-20210913154045916"></p>
+<h2 id="三角函数与三角函数"><a href="#三角函数与三角函数" class="headerlink" title="三角函数与三角函数"></a>三角函数与三角函数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913105004393.png" alt="image-20210913105004393"></p>
+<h2 id="最值问题灵活处理"><a href="#最值问题灵活处理" class="headerlink" title="最值问题灵活处理"></a>最值问题灵活处理</h2><p><font color=red>利用不等式变形，转化了问题</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917170324709.png" alt="image-20210917170324709"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917170330272.png" alt="image-20210917170330272"></p>
+<p>我错误的解法是硬从f(x)出发</p>
+<p>然后走了很多弯路（<font color=red>其实做的时候就应该发觉了，这是不归路</font>）</p>
+<p><font color=blue>方向对了，少走很多弯路</font></p>
+<h2 id="绝对值和反常积分【-】"><a href="#绝对值和反常积分【-】" class="headerlink" title="绝对值和反常积分【+】"></a>绝对值和反常积分【+】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924170033261.png" alt="image-20210924170033261"></p>
+<p><font color=red>遇到绝对值的第一反应就是去绝对值</font></p>
+<p><font color=red>反常积分通常与奇偶性结合考察</font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E5%AF%BC%E6%95%B0%E5%92%8C%E5%BE%AE%E5%88%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/04/%E5%AF%BC%E6%95%B0%E5%92%8C%E5%BE%AE%E5%88%86/" class="post-title-link" itemprop="url">导数和微分</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-04 13:16:12" itemprop="dateCreated datePublished" datetime="2021-07-04T13:16:12+08:00">2021-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-17 16:14:38" itemprop="dateModified" datetime="2021-09-17T16:14:38+08:00">2021-09-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="常用导数公式"><a href="#常用导数公式" class="headerlink" title="常用导数公式"></a>常用导数公式</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706175938655.png" alt="image-20210706175938655"></p>
+<h1 id="导数定义式"><a href="#导数定义式" class="headerlink" title="导数定义式"></a>导数定义式</h1><h2 id="导数定义式变形【-】"><a href="#导数定义式变形【-】" class="headerlink" title="导数定义式变形【+++++】"></a>导数定义式变形【+++++】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914201539038.png" alt="image-20210914201539038"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914201548218.png" alt="image-20210914201548218"></p>
+<p><font color=red>key抓着就代到定义式里去先，其他该配合的配合就好了</font></p>
+<p><font color=red>负的Δx是出题</font></p>
+<h1 id="对x求导和对a-x求导"><a href="#对x求导和对a-x求导" class="headerlink" title="对x求导和对a+x求导"></a>对x求导和对a+x求导</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915111514931.png" alt="image-20210915111514931"></p>
+<p>$$f’()$$都是统一向<font color=red>自变量</font>求导</p>
+<p>而不是x+1</p>
+<h1 id="已知f-x-求f’-x-【-】"><a href="#已知f-x-求f’-x-【-】" class="headerlink" title="已知f(x)求f’(x)【+++++】"></a>已知f(x)求f’(x)【+++++】</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713171423821.png" alt="image-20210713171423821"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713171434551.png" alt="image-20210713171434551"></p>
+<p>主要是在<font color=red>临界值的特殊处理</font></p>
+<p>导数存在的充要条件：<strong>左右导数都存在且相等</strong></p>
+<h2 id="已知f-x-求f’-x-【品】"><a href="#已知f-x-求f’-x-【品】" class="headerlink" title="已知f(x)求f’(x)【品】"></a>已知f(x)求f’(x)【品】</h2><p><font color=red>一点红型</font></p>
+<p><font color=red>分段函数连续性与导数的关系</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094107331.png" alt="image-20210914094107331"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094328582.png" alt="image-20210914094328582"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094353550.png" alt="image-20210914094353550"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094410790.png" alt="image-20210914094410790"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094450641.png" alt="image-20210914094450641"></p>
+<p><font color=red>f(0)=C，不能得出f’(0)=0</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914095228755.png" alt="image-20210914095228755"></p>
+<p>而应该用定义式去求该点的导数</p>
+<p>然后需要求出式子中未知的b</p>
+<p>据题意“处处可导”，则在x=0处也可导</p>
+<p>又根据“可导必连续” 则可以向分段函数列等式求出b</p>
+<p><font color=blue>最后是注意定义域的书写</font></p>
+<p><font color=red>抽象f(x)的定义域并不是我们默认的(-∞,+∞)</font></p>
+<h2 id="导数定义式与连续性【品】"><a href="#导数定义式与连续性【品】" class="headerlink" title="导数定义式与连续性【品】"></a>导数定义式与连续性【品】</h2><p><font color=red>导数定义式与连续性对分段函数的应用场景</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914192448500.png" alt="image-20210914192448500"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914192508457.png" alt="image-20210914192508457"></p>
+<p><font color=red>“只要考虑f(x)在x=0点的情况”</font></p>
+<p>$$f(x)$$可导（没说处处可导，故不能用连续性的性质），即应用<font color=blue>导数的定义式</font></p>
+<p>$$f’(x)$$连续，即 极限=$$f’(x_0)$$</p>
+<p>$$f(x)$$的归属：<font color=blue>有定义域的一方</font></p>
+<p>$$f’(x_0)$$的归属：<font color=blue>有定义域的一方</font></p>
+<h1 id="求单调区间"><a href="#求单调区间" class="headerlink" title="求单调区间"></a>求单调区间</h1><p>一阶导为0</p>
+<p>再根据函数大致图像确定单调区间，需画表格</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917160411181.png" alt="image-20210917160411181"></p>
+<h1 id="求极值点"><a href="#求极值点" class="headerlink" title="求极值点"></a>求极值点</h1><p>一阶导为0的点为驻点</p>
+<p>驻点左右侧一阶导符号相反，该点则为极值点</p>
+<h1 id="什么是微分"><a href="#什么是微分" class="headerlink" title="什么是微分"></a>什么是微分</h1><p>是指函数在某一点处（趋近于无穷小）的变化量，是一种变化的量</p>
+<p>例如：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704131919185.png" alt="image-20210704131919185"></p>
+<h1 id="已知参数方程求导数"><a href="#已知参数方程求导数" class="headerlink" title="已知参数方程求导数"></a>已知参数方程求导数</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704140731623.png" alt="image-20210704140731623"></p>
+<p>技巧：dt/dx的倒数</p>
+<h1 id="拐点和驻点"><a href="#拐点和驻点" class="headerlink" title="拐点和驻点"></a>拐点和驻点</h1><p>驻点是<font color=blue>一阶导数等于零</font>的点</p>
+<p>拐点是指<font color=red>曲线斜率变化的单调性发生改变</font>（具体看下面解析）</p>
+<h2 id="拐点的性质"><a href="#拐点的性质" class="headerlink" title="拐点的性质"></a>拐点的性质</h2><p>拐点处二阶导为0</p>
+<h2 id="拐点的判定"><a href="#拐点的判定" class="headerlink" title="拐点的判定"></a>拐点的判定</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210909195119120.png" alt="image-20210909195119120"></p>
+<h2 id="拐点的理解【-】"><a href="#拐点的理解【-】" class="headerlink" title="拐点的理解【+++++】"></a>拐点的理解【+++++】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210909195642982.png" alt="image-20210909195642982"></p>
+<p>左半部分，曲线斜率逐渐增大</p>
+<p>右半部分，曲线斜率逐渐减小</p>
+<p>而产生这一转变的那一个点就是拐点</p>
+<p>加深理解</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210909200539992.png" alt="image-20210909200539992"></p>
+<p><font color=red>曲线斜率变化的单调性发生改变</font></p>
+<p>据此，再反过来理解拐点的判定条件</p>
+<p>①三阶导不为0，才可能会发生这种转变</p>
+<p>②二阶导异号，即斜率变化的单调性相异</p>
+<h2 id="凹凸区间"><a href="#凹凸区间" class="headerlink" title="凹凸区间"></a>凹凸区间</h2><p>凹区间斜率逐渐增大（二阶导＞0）</p>
+<p>凸区间斜率逐渐减小（二阶导＜0）</p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706181858166.png" alt="image-20210706181858166"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706181850242.png" alt="image-20210706181850242"></p>
+<h1 id="考研数学怎么考导数"><a href="#考研数学怎么考导数" class="headerlink" title="考研数学怎么考导数"></a>考研数学怎么考导数</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707174505197.png" alt="image-20210707174505197"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707175835450.png" alt="image-20210707175835450"></p>
+<p>上式中的分母(x-a)^2不可以直接当作(x-a)来带进定义式</p>
+<p>因为这是x逼近与a，(x-a)的值不能直接当0处理</p>
+<p>正确打开上式的方式的是<strong>洛必达</strong></p>
+<p>很容易忽略的一点，已知条件为<strong>相切，除了告知导数值相等外，该点的函数值也是相等的</strong></p>
+<p>但是等值代换确是可以</p>
+<p><font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E5%8F%AF%E5%AF%BC%E3%80%81%E5%8F%AF%E5%BE%AE%E3%80%81%E5%8F%AF%E7%A7%AF%E3%80%81%E8%BF%9E%E7%BB%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/04/%E5%8F%AF%E5%AF%BC%E3%80%81%E5%8F%AF%E5%BE%AE%E3%80%81%E5%8F%AF%E7%A7%AF%E3%80%81%E8%BF%9E%E7%BB%AD/" class="post-title-link" itemprop="url">可导、可微、可积、连续</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-04 12:43:45" itemprop="dateCreated datePublished" datetime="2021-07-04T12:43:45+08:00">2021-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-06 10:42:30" itemprop="dateModified" datetime="2021-07-06T10:42:30+08:00">2021-07-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一元记文字，多元记图</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705102538087.png" alt="image-20210705102538087"></p>
+<p>可导一定连续，连续不一定可导</p>
+<p>可微与可导是一样的</p>
+<p><strong>可积不一定连续，连续一定可积</strong></p>
+<p>不连续则一定不可导（同样适用于二阶导数）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704131526632.png" alt="image-20210704131526632"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704131454235.png" alt="image-20210704131454235"></p>
+<h4 id="导数与偏导数"><a href="#导数与偏导数" class="headerlink" title="导数与偏导数"></a>导数与偏导数</h4><p>可导指的是偏导数存在,即沿x轴,y轴方向的导数存在</p>
+<p>Ps：</p>
+<p>多元函数才有偏导的概念</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/04/%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F/" class="post-title-link" itemprop="url">泰勒公式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-04 09:31:45" itemprop="dateCreated datePublished" datetime="2021-07-04T09:31:45+08:00">2021-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-09 10:40:22" itemprop="dateModified" datetime="2021-07-09T10:40:22+08:00">2021-07-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="泰勒公式"><a href="#泰勒公式" class="headerlink" title="泰勒公式"></a>泰勒公式</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704093245996.png" alt="image-20210704093245996"></p>
+<p>x0取0时即麦克劳林公式</p>
+<p>而对sin来说</p>
+<p>sin0=0故跳着取奇数项</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210709104008555.png" alt="image-20210709104008555"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/30/%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/30/%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">反三角函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-30 19:58:25" itemprop="dateCreated datePublished" datetime="2021-06-30T19:58:25+08:00">2021-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-12 10:32:50" itemprop="dateModified" datetime="2021-09-12T10:32:50+08:00">2021-09-12</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><font color=red>注意区分：</font>$$sin^2x和sinx^2$$</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210708122202956.png" alt="image-20210708122202956"></p>
+<p>Ps：arctan根号3=60°</p>
+<h4 id="反三角函数图像"><a href="#反三角函数图像" class="headerlink" title="反三角函数图像"></a>反三角函数图像</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630200552384.png" alt="image-20210630200552384"></p>
+<p>（翻面再转90度）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630200612832.png" alt="image-20210630200612832"></p>
+<p>如果没有纸的话</p>
+<p>关于y轴对称后再顺时针90度转一下</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/30/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/30/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%80%A7/" class="post-title-link" itemprop="url">函数的连续性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-30 16:58:35" itemprop="dateCreated datePublished" datetime="2021-06-30T16:58:35+08:00">2021-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-12 12:10:26" itemprop="dateModified" datetime="2021-07-12T12:10:26+08:00">2021-07-12</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="重要定理"><a href="#重要定理" class="headerlink" title="重要定理"></a>重要定理</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630170017286.png" alt="image-20210630170017286"></p>
+<h4 id="间断点"><a href="#间断点" class="headerlink" title="间断点"></a>间断点</h4><p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/06/30/%E9%97%B4%E6%96%AD%E7%82%B9/">链接</a></p>
+<h4 id="证明函数在某点连续"><a href="#证明函数在某点连续" class="headerlink" title="证明函数在某点连续"></a>证明函数在某点连续</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705110107690.png" alt="image-20210705110107690"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/30/%E9%97%B4%E6%96%AD%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/30/%E9%97%B4%E6%96%AD%E7%82%B9/" class="post-title-link" itemprop="url">间断点</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-30 16:56:22" itemprop="dateCreated datePublished" datetime="2021-06-30T16:56:22+08:00">2021-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 21:09:40" itemprop="dateModified" datetime="2021-09-13T21:09:40+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="间断点划分"><a href="#间断点划分" class="headerlink" title="间断点划分"></a>间断点划分</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210909095233236.png" alt="image-20210909095233236"></p>
+<p>key：符号正负</p>
+<h1 id="各种类型间断点的函数图像"><a href="#各种类型间断点的函数图像" class="headerlink" title="各种类型间断点的函数图像"></a>各种类型间断点的函数图像</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630194734783.png" alt="image-20210630194734783"></p>
+<h1 id="什么叫“左右极限至少有一个不存在”"><a href="#什么叫“左右极限至少有一个不存在”" class="headerlink" title="什么叫“左右极限至少有一个不存在”"></a>什么叫“左右极限至少有一个不存在”</h1><p>左右极限为无穷时，即称为“极限不存在”</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630194837869.png" alt="image-20210630194837869"></p>
+<h1 id="间断点判断"><a href="#间断点判断" class="headerlink" title="间断点判断"></a>间断点判断</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210909095310868.png" alt="image-20210909095310868"></p>
+<p>Ps：判断是否为间断点时，直接x0</p>
+<p>判断具体是哪类间断点时，需要用到左右极限</p>
+<h1 id="求间断点个数"><a href="#求间断点个数" class="headerlink" title="求间断点个数"></a>求间断点个数</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630171428082.png" alt="image-20210630171428082"></p>
+<p>错误解法：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630171651371.png"></p>
+<p>注意，x-&gt;0时，sinx是趋近于0的</p>
+<p><font color=red>即问题其实是∞·0</font></p>
+<p>不能用这样的暴力法</p>
+<p>正确的解法是遵循x-&gt;0的暗示，利用等价无穷小求x=0时的极限</p>
+<p>（乘除可带换，求出是0就是极限为0，可去间断点）</p>
+<h1 id="原封不动"><a href="#原封不动" class="headerlink" title="原封不动"></a>原封不动</h1><p>值为无穷或0时，原封不动</p>
+<p>再求极限</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630184128576.png" alt="image-20210630184128576"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630195549794.png" alt="image-20210630195549794"></p>
+<p>关于①的易错：</p>
+<p>容易偷换概念成：$$\frac{lnx}{e^x-1}$$</p>
+<p><font color=red>因为$ln(1+x)$在x趋于0时值为0，故原封不动</font></p>
+<p><font color=red>有0时，联想到等价代换，方便解决问题</font></p>
+<h1 id="间断点定义的掌握【-】"><a href="#间断点定义的掌握【-】" class="headerlink" title="间断点定义的掌握【++++】"></a>间断点定义的掌握【++++】</h1><p><font color=red>洛必达是有条件的</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913161744051.png" alt="image-20210913161744051"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913161753855.png" alt="image-20210913161753855"></p>
+<p><font color=red>顺着出题人的意思走，就不会迷失于间断点的三个判定规则了</font></p>
+<p>虽然我个人不确定f(x) 的间断点只有两个</p>
+<p>但这现成的两个 <font color=blue>“没有定义的点”</font> 完全可以先顺着出题人的意思先用起来（有矛盾的地方再说）</p>
+<p>错误解法：</p>
+<p><font color=red>忽略了洛必达也是有条件的</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913162253174.png" alt="image-20210913162253174"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913162146786.png" alt="image-20210913162146786"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/30/%E6%9E%81%E9%99%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/30/%E6%9E%81%E9%99%90/" class="post-title-link" itemprop="url">极限</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-30 09:25:40" itemprop="dateCreated datePublished" datetime="2021-06-30T09:25:40+08:00">2021-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-25 16:18:30" itemprop="dateModified" datetime="2021-09-25T16:18:30+08:00">2021-09-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="局部的极限【-】"><a href="#局部的极限【-】" class="headerlink" title="局部的极限【++++++】"></a>局部的极限【++++++】</h1><p><font color=red>终于理解到了</font></p>
+<p>不能局部洛必达、不能局部带入的原因（误差不能忽略，导致结果不同）</p>
+<h1 id="一题搞懂代换和洛必达的局限性"><a href="#一题搞懂代换和洛必达的局限性" class="headerlink" title="一题搞懂代换和洛必达的局限性"></a>一题搞懂代换和洛必达的局限性</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925155248478.png" alt="image-20210925155248478"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925155258569.png" alt="image-20210925155258569"></p>
+<p>错误示范（<font color=blue>不能书写局部洛必达</font>，<font color=red>不能局部代换之后进行加减法</font>）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925161112927.png" alt="image-20210925161112927"></p>
+<p>来看看正常的不涉及加减的局部代换</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630102311236.png" alt="image-20210630102311236"></p>
+<p>关于该题答案中没有解析的步骤</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210925161644718.png" alt="image-20210925161644718"></p>
+<h1 id="求极限的方法总结"><a href="#求极限的方法总结" class="headerlink" title="求极限的方法总结"></a>求极限的方法总结</h1><p>—等价无穷小—有理数运算法则—洛必达—泰勒—夹逼—单调</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630094814469.png" alt="image-20210630094814469"></p>
+<p>常用结论绿色部分，证明利用指数型无穷小代换（转化成eln 下面有相关题目）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630094820296.png" alt="image-20210630094820296"></p>
+<p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/07/04/%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F/">泰勒公式参考</a></p>
+<p>单看是没用的，要通过做题熟练才可以</p>
+<h2 id="别用常规规律【-】"><a href="#别用常规规律【-】" class="headerlink" title="别用常规规律【++++++】"></a>别用常规规律【++++++】</h2><p><font color=red> “1的任何次方都是1” 那你就完了</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630102311236.png" alt="image-20210630102311236"></p>
+<h2 id="求极限好用的规律"><a href="#求极限好用的规律" class="headerlink" title="求极限好用的规律"></a>求极限好用的规律</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911180624162.png" alt="image-20210911180624162"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912154609811.png" alt="image-20210912154609811"></p>
+<h2 id="泰勒【祖】"><a href="#泰勒【祖】" class="headerlink" title="泰勒【祖】"></a>泰勒【祖】</h2><p><font color=red>泰勒的条件—趋于0</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912095226129.png" alt="image-20210912095226129"></p>
+<p><img src="https://pic3.zhimg.com/80/v2-1a8a9989e10507de70e7ffe7b0e8cb6d_720w.jpg?source=1940ef5c" alt="img"></p>
+<h3 id="泰勒推导"><a href="#泰勒推导" class="headerlink" title="泰勒推导"></a>泰勒推导</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915181237580.png" alt="image-20210915181237580"></p>
+<h3 id="泰勒的书写"><a href="#泰勒的书写" class="headerlink" title="泰勒的书写"></a>泰勒的书写</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915181335070.png" alt="image-20210915181335070"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915181318307.png" alt="image-20210915181318307"></p>
+<p>n个$$o(x^4)$$的和仍为$$o(x^4)$$</p>
+<h3 id="泰勒引诱【-】"><a href="#泰勒引诱【-】" class="headerlink" title="泰勒引诱【++++++】"></a>泰勒引诱【++++++】</h3><p><font color=red>注意区分：</font>$$sin^2x和sinx^2$$</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912095131031.png" alt="image-20210912095131031"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912095328001.png" alt="image-20210912095328001"></p>
+<p><font color=red>第一反应等价代换行不通，约不尽</font></p>
+<p><font color=red>再看到分母这种“孤儿”，多半就是泰勒了</font></p>
+<p><font color=blue>用泰勒的话，就尽量保留多的sin来进行抵消</font></p>
+<p><font color=green>我做的时候不会泰勒，用的硬洛（三角函数与洛其实很契合）</font></p>
+<h3 id="高次泰勒【-】"><a href="#高次泰勒【-】" class="headerlink" title="高次泰勒【++++++】"></a>高次泰勒【++++++】</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912164442498.png" alt="image-20210912164442498"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912164433989.png" alt="image-20210912164433989"></p>
+<p><font color=red>泰勒有条件，所以要同除构趋于0</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912165746568.png" alt="image-20210912165746568"></p>
+<h2 id="等价无穷小代换"><a href="#等价无穷小代换" class="headerlink" title="等价无穷小代换"></a>等价无穷小代换</h2><p><font color=red>本质是泰勒展开的简单形式</font></p>
+<p>常见参照表</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911175808955.png" alt="image-20210911175808955"></p>
+<p>Ps：</p>
+<p>$$(1+x)^a-1\backsim ax$$的a可以是分数，即根号</p>
+<p>需要1的地方可配凑</p>
+<p>$$ln(1+x)$$ 的 “x” 可以是复杂式子，但无论如何，它必须趋于0 </p>
+<p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/06/30/%E6%97%A0%E7%A9%B7%E5%B0%8F%E9%87%8F/">具体练习</a></p>
+<h3 id="等价无穷小使用的条件"><a href="#等价无穷小使用的条件" class="headerlink" title="等价无穷小使用的条件"></a>等价无穷小使用的条件</h3><p><font color=red>首先无穷小只是泰勒展开式在特定情况下的应用而已</font></p>
+<p><font color=red>无穷小其实只是用了第一项，有些情况不能用就是因为</font></p>
+<p><font color=red>这道题极限需要泰勒展开到第二项第三项这样</font></p>
+<h2 id="洛必达"><a href="#洛必达" class="headerlink" title="洛必达"></a>洛必达</h2><p><font color=red>可中途化简，使得求导更容易</font></p>
+<p><font color=blue>但是化简过程中需保证洛必达的使用条件</font></p>
+<h3 id="洛必达是有条件的【-】"><a href="#洛必达是有条件的【-】" class="headerlink" title="洛必达是有条件的【++++++】"></a>洛必达是有条件的【++++++】</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913162146786.png" alt="image-20210913162146786"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914084339321.png" alt="image-20210914084339321"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914084423590.png" alt="image-20210914084423590"></p>
+<p><font color=red>涉及到极限的各种题型都是要把抽象的极限给求出来</font></p>
+<p><font color=blue>因抽象，所以不一定能洛</font></p>
+<p>错误解法：<img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914085417466.png" alt="image-20210914085417466"></p>
+<p>x＞0的时候纯属是碰巧</p>
+<p>（lim下是谁，谁就是主体）</p>
+<h3 id="洛必达的极限与原极限"><a href="#洛必达的极限与原极限" class="headerlink" title="洛必达的极限与原极限"></a>洛必达的极限与原极限</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915120709026.png" alt="image-20210915120709026"></p>
+<h3 id="抽象但可以洛的原因"><a href="#抽象但可以洛的原因" class="headerlink" title="抽象但可以洛的原因"></a>抽象但可以洛的原因</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912153008015.png" alt="image-20210912153008015"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912153002137.png" alt="image-20210912153002137"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912152916696.png" alt="image-20210912152916696"></p>
+<p><font color=red>之所以可以洛的原因是分母为0</font></p>
+<h3 id="三角函数与洛必达很契合"><a href="#三角函数与洛必达很契合" class="headerlink" title="三角函数与洛必达很契合"></a>三角函数与洛必达很契合</h3><h3 id="洛符"><a href="#洛符" class="headerlink" title="洛符"></a>洛符</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912100522739.png" alt="image-20210912100522739"></p>
+<h3 id="不允许的局部洛必达"><a href="#不允许的局部洛必达" class="headerlink" title="不允许的局部洛必达"></a>不允许的局部洛必达</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915104954983.png" alt="image-20210915104954983"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915105014111.png" alt="image-20210915105014111"></p>
+<h2 id="极限四则运算法则"><a href="#极限四则运算法则" class="headerlink" title="极限四则运算法则"></a>极限四则运算法则</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102424227.png" alt="image-20210912102424227"></p>
+<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
+<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102432946.png" alt="image-20210912102432946"></p>
+<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
+<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
+<h2 id="定积分与极限"><a href="#定积分与极限" class="headerlink" title="定积分与极限"></a>定积分与极限</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912152916696.png" alt="image-20210912152916696"></p>
 <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912153008015.png" alt="image-20210912153008015"></p>
 <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912153002137.png" alt="image-20210912153002137"></p>
-<h2 id="曲线弧长"><a href="#曲线弧长" class="headerlink" title="曲线弧长"></a>曲线弧长</h2><p>链接</p>
-<h1 id="定积分的特殊性质"><a href="#定积分的特殊性质" class="headerlink" title="定积分的特殊性质"></a>定积分的特殊性质</h1><h2 id="对称区间"><a href="#对称区间" class="headerlink" title="对称区间"></a>对称区间</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0226.PNG" alt="IMG_0226"></p>
-<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0230.PNG" alt="IMG_0230"></p>
-<p>其中还要熟悉三角函数常见的积分，变形</p>
-<p>如：二次sec的积分、sin扔到后面变cos</p>
-<h2 id="周期函数"><a href="#周期函数" class="headerlink" title="周期函数"></a>周期函数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210623181735432.png" alt="image-20210623181735432"></p>
-<h1 id="伽马函数"><a href="#伽马函数" class="headerlink" title="伽马函数"></a>伽马函数</h1><h2 id="常用表格"><a href="#常用表格" class="headerlink" title="常用表格"></a>常用表格</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921125655160.png" alt="image-20210921125655160"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921125706461.png" alt="image-20210921125706461"></p>
-<h2 id="核心公式"><a href="#核心公式" class="headerlink" title="核心公式"></a>核心公式</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921125750832.png" alt="image-20210921125750832"></p>
-<h2 id="基本数值"><a href="#基本数值" class="headerlink" title="基本数值"></a>基本数值</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210921125928358.png" alt="image-20210921125928358"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/23/%E7%89%A9%E7%90%86%E5%B1%82/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/23/%E7%89%A9%E7%90%86%E5%B1%82/" class="post-title-link" itemprop="url">物理层</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-06-23 08:39:10 / Modified: 09:39:02" itemprop="dateCreated datePublished" datetime="2021-06-23T08:39:10+08:00">2021-06-23</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>x香农公式：</p>
-<p>奈氏准则</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/20/Spring-Boot-%E8%BF%94%E5%9B%9ECSV/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/20/Spring-Boot-%E8%BF%94%E5%9B%9ECSV/" class="post-title-link" itemprop="url">Spring Boot 返回CSV</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-06-20 16:00:47 / Modified: 16:02:34" itemprop="dateCreated datePublished" datetime="2021-06-20T16:00:47+08:00">2021-06-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最需要明确的一点: 不同于浏览器，axois是无法直接通过请求进行文件下载的</p>
-<p>正确方式:</p>
-<p>前端：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">        <span class="attr">withCredentials</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;/admin/data.csv&#x27;</span>,</span><br><span class="line">        <span class="attr">responseType</span>: <span class="string">&#x27;blob&#x27;</span>,</span><br><span class="line">        <span class="attr">timeout</span>: <span class="number">4000</span>,</span><br><span class="line">        <span class="attr">data</span>: <span class="built_in">this</span>.tableData</span><br><span class="line">      &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res)</span><br><span class="line">        <span class="keyword">let</span> url = <span class="built_in">window</span>.URL.createObjectURL(<span class="keyword">new</span> Blob([res.data]))</span><br><span class="line">        <span class="keyword">let</span> link = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">        link.style.display = <span class="string">&#x27;none&#x27;</span></span><br><span class="line">        link.href = url</span><br><span class="line">        link.setAttribute(<span class="string">&#x27;download&#x27;</span>, <span class="string">&#x27;data.csv&#x27;</span>)</span><br><span class="line">        <span class="built_in">document</span>.body.appendChild(link)</span><br><span class="line">        link.click()</span><br><span class="line">      &#125;, <span class="function"><span class="params">ErrorEvent</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.$message(<span class="string">&#x27;请求数据失败&#x27;</span>)</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>后端</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/admin/data.csv&quot;)</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getExcel</span><span class="params">(<span class="meta">@RequestBody</span> JSONArray array, HttpServletResponse response)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        System.out.println(array);</span><br><span class="line">        String csvContent = analyseService.buildCSV(array);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        response.setContentType(<span class="string">&quot;multipart/form-data&quot;</span>);</span><br><span class="line">        response.setHeader(<span class="string">&quot;Content-Disposition&quot;</span>, <span class="string">&quot;attachment;fileName=data.csv&quot;</span>);</span><br><span class="line">        OutputStream out = response.getOutputStream();</span><br><span class="line">        out.write(csvContent.getBytes());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/vue-%E7%89%88%E6%9C%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/vue-%E7%89%88%E6%9C%AC/" class="post-title-link" itemprop="url">vue 版本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-06-19 11:46:20 / Modified: 11:47:06" itemprop="dateCreated datePublished" datetime="2021-06-19T11:46:20+08:00">2021-06-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>安装新的版本前，需要先把之前安装的版本卸载掉。</p>
-<p>vue卸载：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall vue-cli -g（3.0以下版本卸载）</span><br><span class="line">npm uninstall -g @vue/cli（3.0以上版本卸载）</span><br></pre></td></tr></table></figure>
-
-
-
-<p>vue安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli （安装的是最新版）</span><br><span class="line">npm install vue-cli@2.9.6 （指定版本安装【指定版本为3.0以下版本】，其中2.9.6为版本号）</span><br><span class="line">npm install -g @vue/cli@3.11.0（指定版本安装【指定版本为3.0以上版本】，其中3.11.0为版本号）</span><br></pre></td></tr></table></figure>
-
-
-
-<p>vue版本查看：vue -V<br>————————————————<br>版权声明：本文为CSDN博主「IT_ms」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/IT_moshang/article/details/106470754">https://blog.csdn.net/IT_moshang/article/details/106470754</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/Linux-nodejs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/Linux-nodejs/" class="post-title-link" itemprop="url">Linux nodejs</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-06-19 11:12:19 / Modified: 11:18:44" itemprop="dateCreated datePublished" datetime="2021-06-19T11:12:19+08:00">2021-06-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="Linux-nodejs-安装"><a href="#Linux-nodejs-安装" class="headerlink" title="Linux nodejs 安装"></a>Linux nodejs 安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nodejs</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install npm</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/docker-mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/docker-mysql/" class="post-title-link" itemprop="url">docker mysql</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-06-19 10:01:58 / Modified: 10:45:34" itemprop="dateCreated datePublished" datetime="2021-06-19T10:01:58+08:00">2021-06-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># docker 中下载 mysql</span><br><span class="line">docker pull mysql</span><br><span class="line"></span><br><span class="line">#启动</span><br><span class="line">docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Lzslov123! -d mysql</span><br><span class="line"></span><br><span class="line">#进入容器</span><br><span class="line">docker exec -it mysql bash</span><br><span class="line"></span><br><span class="line">#登录mysql</span><br><span class="line">mysql -u root -p</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;Lzslov123!&#x27;;</span><br><span class="line"></span><br><span class="line">#添加远程登录用户</span><br><span class="line">CREATE USER &#x27;liaozesong&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;Lzslov123!&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;liaozesong&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>说是mysql镜像，但是其实还是依赖于linux</p>
+<h2 id="夹逼"><a href="#夹逼" class="headerlink" title="夹逼"></a>夹逼</h2><h3 id="夹逼-拉格朗日求极限"><a href="#夹逼-拉格朗日求极限" class="headerlink" title="夹逼+拉格朗日求极限"></a>夹逼+拉格朗日求极限</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210923091111857.png" alt="image-20210923091111857"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210923091311151.png" alt="image-20210923091311151"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210923091458455.png" alt="image-20210923091458455"></p>
+<p>移项</p>
+<h2 id="单调有界"><a href="#单调有界" class="headerlink" title="单调有界"></a>单调有界</h2><h3 id="单调有界的第n和n-1项【-】"><a href="#单调有界的第n和n-1项【-】" class="headerlink" title="单调有界的第n和n-1项【++++++】"></a>单调有界的第n和n-1项【++++++】</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913095042529.png" alt="image-20210913095042529"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913095109662.png" alt="image-20210913095109662"></p>
+<p>f(x) 单调递增，且f(x) &lt; 2 并不能说明f(x) 就收敛于2</p>
+<p><font color=red>它还可能收敛与小于2的某个值</font></p>
+<p>这里设为a</p>
+<p>f(x) 的值即是$$x_n$$的值</p>
+<p>也就是说$$x_n$$单调有界</p>
+<p>则可认为$$x_n=x_{n-1}=a$$</p>
+<h2 id="易错题"><a href="#易错题" class="headerlink" title="易错题"></a>易错题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710171337995.png" alt="image-20210710171337995"></p>
+<p>错误解法</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710171609403.png"></p>
+<p>（这样 “偏袒” 是会出事的）</p>
+<p>正确解法：</p>
+<p><font color=red size=5>eln后洛</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710171811759.png" alt="image-20210710171811759"></p>
+<h3 id="1的任意次方陷阱【-】"><a href="#1的任意次方陷阱【-】" class="headerlink" title="1的任意次方陷阱【++++++】"></a>1的任意次方陷阱【++++++】</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915095156221.png" alt="image-20210915095156221"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915095211806.png" alt="image-20210915095211806"></p>
+<p><font color=red>“1的任意次方的结果是1” 基本都是坑</font></p>
+<p>错误解法及启迪：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915100642776.png" alt="image-20210915100642776"></p>
+<h1 id="极限的考点"><a href="#极限的考点" class="headerlink" title="极限的考点"></a>极限的考点</h1><h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914084339321.png" alt="image-20210914084339321"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914084423590.png" alt="image-20210914084423590"></p>
+<p><font color=red>涉及到极限的各种题型都是要把抽象的极限给求出来</font></p>
+<p><font color=blue>因抽象，所以不一定能洛</font></p>
 <hr>
+<h1 id="等价无穷小"><a href="#等价无穷小" class="headerlink" title="等价无穷小"></a>等价无穷小</h1><h2 id="说法一"><a href="#说法一" class="headerlink" title="说法一"></a>说法一</h2><p>求N阶导之后变成不是无穷小它就是N阶无穷小</p>
+<p>这样也就可以理解了</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630091757441.png" alt="image-20210630091757441"></p>
+<h2 id="说法二"><a href="#说法二" class="headerlink" title="说法二"></a>说法二</h2><p>a是b的n阶无穷小</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913102017925.png" alt="image-20210913102017925"></p>
+<h2 id="积分与无穷小的阶"><a href="#积分与无穷小的阶" class="headerlink" title="积分与无穷小的阶"></a>积分与无穷小的阶</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913102250649.png" alt="image-20210913102250649"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913102334534.png" alt="image-20210913102334534"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913102340626.png" alt="image-20210913102340626"></p>
+<p><font color=red>无穷小的阶说到底还是求极限</font></p>
+<p>也就是说，对待积分的方法还是和求极限的时候一样</p>
+<p>用洛必达+定积分的导</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912152916696.png" alt="image-20210912152916696"></p>
+<h2 id="求无穷小阶数的捷径【-】"><a href="#求无穷小阶数的捷径【-】" class="headerlink" title="求无穷小阶数的捷径【++++++】"></a>求无穷小阶数的捷径【++++++】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913104335234.png" alt="image-20210913104335234"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913104345249.png" alt="image-20210913104345249"></p>
+<p><font color=red>分式上下约分</font></p>
+<p>分子直接少了一个因式</p>
+<p>洛起来畅通无阻</p>
+<p>20年真题</p>
+<p>（求导时记得无穷小量的代换）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630091331826.png" alt="image-20210630091331826"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630091918464.png" alt="image-20210630091918464"></p>
+<p>这里需要注意的是x-&gt;0，x^-1其实是无穷大</p>
+<p>即比出来x的指数是复数，则结果为无穷大</p>
+<h1 id="渐近线"><a href="#渐近线" class="headerlink" title="渐近线"></a>渐近线</h1><p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/07/05/%E6%B8%90%E8%BF%91%E7%BA%BF/">链接</a></p>
 
       
     </div>
@@ -575,7 +1199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-tutorial/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/30/%E6%97%A0%E7%A9%B7%E5%A4%A7%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -589,7 +1213,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-tutorial/" class="post-title-link" itemprop="url">云服务器 tutorial</a>
+            <a href="/2021/06/30/%E6%97%A0%E7%A9%B7%E5%A4%A7%E9%87%8F/" class="post-title-link" itemprop="url">无穷大量</a>
         </h2>
 
         <div class="post-meta">
@@ -600,213 +1224,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-19 09:02:29 / Modified: 11:18:12" itemprop="dateCreated datePublished" datetime="2021-06-19T09:02:29+08:00">2021-06-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="云服务器文件传输"><a href="#云服务器文件传输" class="headerlink" title="云服务器文件传输"></a>云服务器文件传输</h4><p>Windows到Linux</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp D:\Resource\hello.txt root@192.168.0.1:/home/admin</span><br></pre></td></tr></table></figure>
-
-<p>Linux到Windows</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp root@:/home/admin/hello.txt D:\resource\</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h4 id="云服务器-Connect-timed-out"><a href="#云服务器-Connect-timed-out" class="headerlink" title="云服务器 Connect timed out"></a>云服务器 Connect timed out</h4><p>mysql Connect timed out</p>
-<p>安全组得配置</p>
-<p>开放3306端口</p>
-<hr>
-<h4 id="云服务器和校园网"><a href="#云服务器和校园网" class="headerlink" title="云服务器和校园网"></a>云服务器和校园网</h4><p>云服务器是访问不到校园网的主机的</p>
-<hr>
-<h4 id="云服务器简陋部署vue"><a href="#云服务器简陋部署vue" class="headerlink" title="云服务器简陋部署vue"></a>云服务器简陋部署vue</h4><p>如果想要最快部署vue 的话</p>
-<p>利用git把项目部署到服务器是最快的</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/docker-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/docker-tutorial/" class="post-title-link" itemprop="url">docker tutorial</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-19 08:55:16" itemprop="dateCreated datePublished" datetime="2021-06-19T08:55:16+08:00">2021-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-20 16:27:32" itemprop="dateModified" datetime="2021-06-20T16:27:32+08:00">2021-06-20</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="docker-install"><a href="#docker-install" class="headerlink" title="docker install"></a>docker install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">DRY_RUN=1 sh ./get-docker.sh</span><br><span class="line">sudo sh get-docker.sh</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h4 id="docker-导入文件"><a href="#docker-导入文件" class="headerlink" title="docker 导入文件"></a>docker 导入文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp 你的文件路径 容器长ID:docker容器路径</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp /var/backup/nginx.zip 68b99:/cert</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>Docker 部署使用localhost时，一定要注意容器与容器，容器与主机之间的关系</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/%E8%85%BE%E8%AE%AF%E9%98%B2%E6%B0%B4%E5%A2%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/%E8%85%BE%E8%AE%AF%E9%98%B2%E6%B0%B4%E5%A2%99/" class="post-title-link" itemprop="url">腾讯防水墙</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-06-19 00:22:03 / Modified: 00:22:04" itemprop="dateCreated datePublished" datetime="2021-06-19T00:22:03+08:00">2021-06-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/18/js-%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/18/js-%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/" class="post-title-link" itemprop="url">js 页面跳转</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-06-18 22:45:59 / Modified: 22:46:00" itemprop="dateCreated datePublished" datetime="2021-06-18T22:45:59+08:00">2021-06-18</time>
+              <time title="Created: 2021-06-30 08:49:46 / Modified: 08:49:48" itemprop="dateCreated datePublished" datetime="2021-06-30T08:49:46+08:00">2021-06-30</time>
             </span>
 
           
@@ -838,7 +1256,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/20/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/22/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/20/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/22/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -906,16 +1324,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">324</span>
+          <span class="site-state-item-count">333</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

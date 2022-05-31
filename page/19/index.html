@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/07/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -191,7 +191,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/07/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="post-title-link" itemprop="url">微分方程</a>
+            <a href="/2021/07/11/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">插入排序</a>
         </h2>
 
         <div class="post-meta">
@@ -201,14 +201,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-07 09:42:28" itemprop="dateCreated datePublished" datetime="2021-07-07T09:42:28+08:00">2021-07-07</time>
+              <time title="Created: 2021-07-11 21:35:12" itemprop="dateCreated datePublished" datetime="2021-07-11T21:35:12+08:00">2021-07-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-16 11:16:14" itemprop="dateModified" datetime="2021-12-16T11:16:14+08:00">2021-12-16</time>
+                <time title="Modified: 2021-09-27 17:17:56" itemprop="dateModified" datetime="2021-09-27T17:17:56+08:00">2021-09-27</time>
               </span>
 
           
@@ -222,74 +222,63 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="什么是微分方程"><a href="#什么是微分方程" class="headerlink" title="什么是微分方程"></a>什么是微分方程</h1><p>表示未知函数的导数和自变量关系的方程</p>
-<h1 id="微分方程的阶"><a href="#微分方程的阶" class="headerlink" title="微分方程的阶"></a>微分方程的阶</h1><p>最高阶导数的阶数</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707094811726.png" alt="image-20210707094811726"></p>
-<h1 id="通解和特解"><a href="#通解和特解" class="headerlink" title="通解和特解"></a>通解和特解</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707094325973.png" alt="image-20210707094325973"></p>
-<h2 id="通解的例子"><a href="#通解的例子" class="headerlink" title="通解的例子"></a>通解的例子</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707094952450.png" alt="image-20210707094952450"></p>
-<p>(1-3)是(1-1)的通解</p>
-<h2 id="特解和通解之间的关系"><a href="#特解和通解之间的关系" class="headerlink" title="特解和通解之间的关系"></a>特解和通解之间的关系</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707095141686.png" alt="image-20210707095141686"></p>
-<p>例子</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707095244171.png" alt="image-20210707095244171"></p>
+          <h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h4><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4><h5 id="核心思想-1"><a href="#核心思想-1" class="headerlink" title="核心思想"></a>核心思想</h5><p><font color=red>新建子序列，不断挪位置, 然后最后把目标元素插入正确位置</font></p>
+<p>Ps :</p>
+<p>这和冒泡排序有所不同,冒泡排序是一路对换位置, 换上去</p>
+<p><font color=red>而直接插入排序是先挪好位置然后把目标元素插入</font></p>
+<p>(当前代码的排序规则是从小到大)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">straightInsertSort</span><span class="params">(ElemType <span class="built_in">array</span>[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,target,temp;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">array</span>[i]&lt;<span class="built_in">array</span>[i<span class="number">-1</span>])&#123;</span><br><span class="line">            temp=<span class="built_in">array</span>[i];</span><br><span class="line">            <span class="built_in">array</span>[i]=<span class="built_in">array</span>[i<span class="number">-1</span>];        </span><br><span class="line">            <span class="keyword">for</span>(target=i<span class="number">-1</span>;temp&lt;<span class="built_in">array</span>[target<span class="number">-1</span>];target--)&#123;       </span><br><span class="line">                <span class="built_in">array</span>[target]=<span class="built_in">array</span>[target<span class="number">-1</span>];      <span class="comment">// 不断往后挪出空位，直到找到正确位置</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">array</span>[target]=temp;        <span class="comment">// 找到目标位置后，则放入</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927171701536.png" alt="image-20210927171701536"></p>
+<p>对应已经排好序的数列，插入排序的<strong>时间复杂度是O(n)</strong></p>
+<p><font color=red>只比较一次即插入</font></p>
+<h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4><p>相对比上面的边比较边移动，这里是利用二分法先找到合适位置，然后再统一移动</p>
+<p>这样做的话，不需要每一个都进行比较O(x^2^)而是O(nlog<del>2</del>n)</p>
+<p>但是这仅仅是比较次数减少，其移动的次数没有减少</p>
+<p>故折半插入排序的<strong>时间复杂度仍为O(n^2^)</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">midInsertSort</span><span class="params">(ElemType <span class="built_in">array</span>[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,target,temp,low,mid,high;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        temp=<span class="built_in">array</span>[i];</span><br><span class="line">        low=<span class="number">0</span>;</span><br><span class="line">        high=i<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(low&lt;high)&#123;        <span class="comment">//i之前的数列已排序，可二分思想</span></span><br><span class="line">            mid=(low+high)/<span class="number">2</span>;       <span class="comment">// 二分法快速找座位（直接插入排序是一个个比较大小地来找）</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">array</span>[mid]&gt;temp)&#123;</span><br><span class="line">                high=mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                low=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(target=i;target&gt;high;target--)&#123;</span><br><span class="line">            <span class="built_in">array</span>[target]=<span class="built_in">array</span>[target<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">array</span>[target]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927171732955.png" alt="image-20210927171732955"></p>
+<p><font color=red>while的条件不可改</font></p>
+<p>直接看代码的话，这里的逻辑会把人绕晕</p>
+<p>需要明确一下方向</p>
+<p>先看while循环内部</p>
+<p>①当要插入的元素的值小于mid的值（<font color=red>这里的while没有主动跳出语句，故最后都会收敛于low=high</font>）</p>
+<p>则应该插入到mid的左边，即mid-1处</p>
+<p><font color=red>转换一下思维，相当于把mid右挪，然后把目标元素插入到空出的位置</font></p>
+<p>然后看第二个for循环（<font color=green>用于挪元素</font>）</p>
+<p><font color=blue>结合while内的high=mid-1和 j &gt;=high+1，表示即把原mid给右挪了</font>（这里的+1花点时间理解一下就懂了）</p>
+<p>最后插入目标元素到空出的位置即可</p>
+<p><font color=red>间接实现了插入到mid左边</font></p>
+<p>②当要插入的元素的值大于mid的值</p>
+<p>则插入到mid+1处</p>
+<p><font color=blue>结合while内的high不变和 j &gt;=high+1，表示即把原mid+1给右挪了</font>（和上面区分开来）</p>
+<p>然后把目标元素插入到mid+1处</p>
+<p><font color=green>老铁没毛病</font></p>
 <hr>
-<h1 id="齐次"><a href="#齐次" class="headerlink" title="齐次"></a>齐次</h1><h2 id="齐次微分方程"><a href="#齐次微分方程" class="headerlink" title="齐次微分方程"></a>齐次微分方程</h2><p>能用y/x表示导数</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707095617452.png" alt="image-20210707095617452"></p>
-<h2 id="齐次线性微分方程"><a href="#齐次线性微分方程" class="headerlink" title="齐次线性微分方程"></a>齐次线性微分方程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911105303883.png" alt="image-20210911105303883"></p>
-<p>右侧为0</p>
-<h2 id="详细解析"><a href="#详细解析" class="headerlink" title="详细解析"></a>详细解析</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911110403585.png" alt="image-20210911110403585"></p>
-<h1 id="齐次微分方程-1"><a href="#齐次微分方程-1" class="headerlink" title="齐次微分方程"></a>齐次微分方程</h1><h2 id="可分离变量的方程"><a href="#可分离变量的方程" class="headerlink" title="可分离变量的方程"></a>可分离变量的方程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911101233765.png" alt="image-20210911101233765"></p>
-<p><font color=blue>移项、积分</font></p>
-<h3 id="因式分解"><a href="#因式分解" class="headerlink" title="因式分解"></a>因式分解</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911102500243.png" alt="image-20210911102500243"></p>
-<p><font color=red>因式分解，硬把xy拆分开来</font></p>
-<p><font color=red>这是这类题最基本的解题方法</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911102909343.png" alt="image-20210911102909343"></p>
-<h3 id="对数型"><a href="#对数型" class="headerlink" title="对数型"></a>对数型</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911103415792.png" alt="image-20210911103415792"></p>
-<p><font color=red>注意书写格式，y≠0</font></p>
-<p><font color=red>对数型一般要化简成Ce的形式</font></p>
-<p>还利用通解公式：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911111622560.png" alt="image-20210911111622560"></p>
-<h2 id="齐次线性方程"><a href="#齐次线性方程" class="headerlink" title="齐次线性方程"></a>齐次线性方程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911110647561.png" alt="image-20210911110647561"></p>
-<p><font color=red>y=ux，分别对方程两边求导</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210714230508553.png" alt="image-20210714230508553"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713194241741.png" alt="image-20210713194241741"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911110819675.png" alt="image-20210911110819675"></p>
-<h1 id="一阶线性微分方程"><a href="#一阶线性微分方程" class="headerlink" title="一阶线性微分方程"></a>一阶线性微分方程</h1><p><font color=red>多了 “线性” 二字</font></p>
-<h2 id="一阶齐次线性微分方程"><a href="#一阶齐次线性微分方程" class="headerlink" title="一阶齐次线性微分方程"></a>一阶齐次线性微分方程</h2><h3 id="形如"><a href="#形如" class="headerlink" title="形如"></a>形如</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210714230508553.png" alt="image-20210714230508553"></p>
-<h3 id="通解"><a href="#通解" class="headerlink" title="通解"></a>通解</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911111217783.png" alt="image-20210911111217783"></p>
-<h3 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713194241741.png" alt="image-20210713194241741"></p>
-<h3 id="套公式"><a href="#套公式" class="headerlink" title="套公式"></a>套公式</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911111622560.png" alt="image-20210911111622560"></p>
-<h2 id="一阶非齐次线性微分方程"><a href="#一阶非齐次线性微分方程" class="headerlink" title="一阶非齐次线性微分方程"></a>一阶非齐次线性微分方程</h2><h3 id="形如-1"><a href="#形如-1" class="headerlink" title="形如"></a>形如</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210714231349638.png" alt="image-20210714231349638"></p>
-<h3 id="通解-1"><a href="#通解-1" class="headerlink" title="通解"></a>通解</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911111324670.png" alt="image-20210911111324670"></p>
-<h3 id="推导过程-1"><a href="#推导过程-1" class="headerlink" title="推导过程"></a>推导过程</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210714231338019.png" alt="image-20210714231338019"></p>
-<p>通解</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713194528489.png" alt="image-20210713194528489"></p>
-<h3 id="直接套公式"><a href="#直接套公式" class="headerlink" title="直接套公式"></a>直接套公式</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911112023765.png" alt="image-20210911112023765"></p>
-<p>就可以了</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713193005592.png" alt="image-20210713193005592"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713193349110.png" alt="image-20210713193349110"></p>
-<h3 id="dx-dy-型（变形后再套）"><a href="#dx-dy-型（变形后再套）" class="headerlink" title="dx/dy 型（变形后再套）"></a>dx/dy 型（变形后再套）</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911112132385.png" alt="image-20210911112132385"> </p>
-<h1 id="高阶线性微分方程"><a href="#高阶线性微分方程" class="headerlink" title="高阶线性微分方程"></a>高阶线性微分方程</h1><h2 id="常系数齐次线性微分方程"><a href="#常系数齐次线性微分方程" class="headerlink" title="常系数齐次线性微分方程"></a>常系数齐次线性微分方程</h2><p><font color=red>上面齐次微分方程的系数是P(x)，不是常数，以此区分开来</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707101330325.png" alt="image-20210707101330325"></p>
-<h2 id="常系数非齐次线性微分方程"><a href="#常系数非齐次线性微分方程" class="headerlink" title="常系数非齐次线性微分方程"></a>常系数非齐次线性微分方程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707101649488.png" alt="image-20210707101649488"></p>
-<p>Ps：</p>
-<p>特解中的λ和特征方程的解无关，而是与f(x)联系</p>
-<p>“k为特征方程含根λ的重复次数”解释：在f(x)中得到λ的值，再看特征方程的解中有几个和λ值相等的解</p>
-<p>“Q(x)与P(x)同次”解释：若P(x)中有x，则设Q(x)=b0x+b1</p>
-<p>具体看例题</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707103234211.png" alt="image-20210707103234211"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210708101658924.png" alt="image-20210708101658924"></p>
-<p>Ps：</p>
-<p><font color=red>非齐次的通解=齐次通解+特解</font></p>
-<p>NM，这特解代入走一遍我人没了</p>
-<hr>
-<p>还有一种更简单的，不含ex（即λ=0）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707103328214.png" alt="image-20210707103328214"></p>
-<p>真题</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707101901899.png" alt="image-20210707101901899"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707101850780.png" alt="image-20210707101850780"></p>
-<p>Ps：</p>
-<p>给出的通解其实告知了我们特解为ex</p>
-<p>则把特解代入原式即可求解c的值</p>
-<hr>
+<h4 id="希尔排序（该方法比较抽象，注意看解析）"><a href="#希尔排序（该方法比较抽象，注意看解析）" class="headerlink" title="希尔排序（该方法比较抽象，注意看解析）"></a>希尔排序（该方法比较抽象，注意看解析）</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724102118554.png" alt="image-20210724102118554"></p>
+<p>这是一个分组插入排序的算法</p>
+<p>分组规则：根据步长将不相邻的n个元素构成一个分组</p>
+<p>然后对各个分组进行插入排序，<font color=red>即相对于上面直接插入排序，这里交换位置的规则是</font></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[j+dk] = A[j]; <span class="comment">/*间隔dk进行交换*/</span></span><br></pre></td></tr></table></figure>
+
+<p>而直接插入排序的交换规则是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[j+<span class="number">1</span>] A[j];</span><br></pre></td></tr></table></figure>
+
+<p>步长的变换规律：o(log<del>2</del>n)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dk=dk/<span class="number">2</span>  </span><br></pre></td></tr></table></figure>
+
+<p>直到步长为1时</p>
+<p>即为直接插入排序</p>
+<h5 id="不直接进行插入排序的原因"><a href="#不直接进行插入排序的原因" class="headerlink" title="不直接进行插入排序的原因"></a>不直接进行插入排序的原因</h5><p>直接插入排序对于已经排好序的数列时间复杂度是O(n)</p>
+<p>最坏是O(n^2^)</p>
+<p>所以这里采用希尔分组先对数列进行一个大概的排序（<font color=green>可以理解为预处理</font>）</p>
+<p><font color=red>“大概的排序”，即上面说的有步长间隔的插入排序</font></p>
+<p>使其<strong>基本有序</strong>后，再进行直接插入排序，则可以提高直接插入排序的效率</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724101606130.png" alt="image-20210724101606130"></p>
+<p>希尔排序的时间复杂度较为复杂</p>
+<p>大概知道就好，一般为O(n^1.3^)</p>
+<p>最坏为O(n^2^)</p>
 
       
     </div>
@@ -309,7 +298,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/06/%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -323,7 +312,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/06/%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">反常积分</a>
+            <a href="/2021/07/11/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">选择排序</a>
         </h2>
 
         <div class="post-meta">
@@ -333,14 +322,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-06 18:55:34" itemprop="dateCreated datePublished" datetime="2021-07-06T18:55:34+08:00">2021-07-06</time>
+              <time title="Created: 2021-07-11 21:31:24" itemprop="dateCreated datePublished" datetime="2021-07-11T21:31:24+08:00">2021-07-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-08 15:03:42" itemprop="dateModified" datetime="2021-12-08T15:03:42+08:00">2021-12-08</time>
+                <time title="Modified: 2021-12-02 09:18:34" itemprop="dateModified" datetime="2021-12-02T09:18:34+08:00">2021-12-02</time>
               </span>
 
           
@@ -354,26 +343,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>分为无穷积分和瑕积分</p>
-<h4 id="无穷积分"><a href="#无穷积分" class="headerlink" title="无穷积分"></a>无穷积分</h4><p>积分限带无穷</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706190730876.png" alt="image-20210706190730876"></p>
-<p>遇到的坑</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706194719745.png" alt="image-20210706194719745"></p>
-<p><font color=red>x遇上e^-x时，把ex放到底下洛</font></p>
-<h4 id="瑕积分"><a href="#瑕积分" class="headerlink" title="瑕积分"></a>瑕积分</h4><h5 id="瑕点"><a href="#瑕点" class="headerlink" title="瑕点"></a>瑕点</h5><p>被积函数f在点a近旁是无界的，点a称为f的瑕点</p>
-<p>例子</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706190616699.png" alt="image-20210706190616699"></p>
-<p>该积分使用分部积分，是x乘对数型，可参考</p>
-<p>$-\frac{1}{4}$</p>
-<h4 id="反常积分敛散性"><a href="#反常积分敛散性" class="headerlink" title="反常积分敛散性"></a>反常积分敛散性</h4><p>极限存在即收敛（结果为无穷即不存在，发散）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706195419370.png" alt="image-20210706195419370"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706195453116.png" alt="image-20210706195453116"></p>
-<p>Ps：</p>
-<p>A为x乘ex型，利用分部积分</p>
-<p>B直接法即可</p>
-<p>C是第一类换元，把1/(1+x^2)提上去</p>
-<p>D为反常积分发散的具体例子（无穷即为不存在）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706195628521.png" alt="image-20210706195628521"></p>
+          <h1 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h1><p>相比交换排序多了选最值的环节（简单选择排序、堆排序）</p>
+<h1 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h1><p><font color=red>选到最值后swap</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210711213238436.png" alt="image-20210711213238436"></p>
+<h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><p>链接</p>
 
       
     </div>
@@ -393,7 +366,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/05/%E6%97%8B%E8%BD%AC%E4%BD%93%E4%BD%93%E7%A7%AF/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -407,7 +380,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/05/%E6%97%8B%E8%BD%AC%E4%BD%93%E4%BD%93%E7%A7%AF/" class="post-title-link" itemprop="url">旋转体体积</a>
+            <a href="/2021/07/11/%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">排序</a>
         </h2>
 
         <div class="post-meta">
@@ -417,14 +390,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-05 18:03:54" itemprop="dateCreated datePublished" datetime="2021-07-05T18:03:54+08:00">2021-07-05</time>
+              <time title="Created: 2021-07-11 10:56:12" itemprop="dateCreated datePublished" datetime="2021-07-11T10:56:12+08:00">2021-07-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-13 19:52:22" itemprop="dateModified" datetime="2021-07-13T19:52:22+08:00">2021-07-13</time>
+                <time title="Modified: 2021-10-05 23:19:10" itemprop="dateModified" datetime="2021-10-05T23:19:10+08:00">2021-10-05</time>
               </span>
 
           
@@ -438,35 +411,237 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>重在画图</p>
+          <h4 id="排序算法的稳定性"><a href="#排序算法的稳定性" class="headerlink" title="排序算法的稳定性"></a>排序算法的稳定性</h4><p>A sorting algorithm is said to be stable if two objects with equal keys appear in the same order in sorted output as they appear in the input array to be sorted.</p>
+<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p>未排序的元素插入已排序的序列（直接插入排序）</p>
+<p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/07/11/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">链接</a></p>
+<h4 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h4><p>一边遍历一边交换位置，找到合适位置了就停止（冒泡排序）</p>
+<p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/07/11/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/">链接</a></p>
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>没有 “合适的位置” ，每趟都是遍历完全（简单选择排序、堆排序）</p>
+<p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/07/11/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/">链接</a></p>
+<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/11/%E5%9B%BE/" class="post-title-link" itemprop="url">图</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-11 10:08:19" itemprop="dateCreated datePublished" datetime="2021-07-11T10:08:19+08:00">2021-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-18 20:42:12" itemprop="dateModified" datetime="2021-12-18T20:42:12+08:00">2021-12-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810210652318.png" alt="image-20210810210652318"></p>
+<p><font color=red>由定义可知，图的边是线段，而不能是射线</font></p>
+<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><h1 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h1><h2 id="【经典、无脑】最多"><a href="#【经典、无脑】最多" class="headerlink" title="【经典、无脑】最多"></a>【经典、无脑】最多</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812151706440.png" alt="image-20210812151706440"></p>
+<p>无脑代公式：</p>
+<p>$$\frac{1}{2}\sum (度数*定点个数)$$= 总边数</p>
+<p>$$(4<em>5+3</em>4+2n)/2=23$$</p>
+<p>得n=7</p>
+<p>则5+4+7=16，选D</p>
+<h2 id="【经典、无脑】至少"><a href="#【经典、无脑】至少" class="headerlink" title="【经典、无脑】至少"></a>【经典、无脑】至少</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812152525449.png" alt="image-20210812152525449"></p>
+<p>和上面不一样的是，这里我们需要根据题意 “至少” 选择度的最大的2</p>
+<p>然后再代公式</p>
+<p>得n=4</p>
+<p>3+4+4=11，故选B</p>
+<hr>
+<h1 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h1><p>就一个考点</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812143546128.png" alt="image-20210812143546128"></p>
+<p><font color=red>图相关的题，第一件事就是确认是有向图还是无向图</font></p>
+<p>看到无向图，直接上票</p>
+<p> 再有一点就是，出/入度是对有向图而言的</p>
+<p>无向图只有 “度” 的概念</p>
+<h1 id="拓扑序列"><a href="#拓扑序列" class="headerlink" title="拓扑序列"></a>拓扑序列</h1><p>对于一个有向无环图，顶点活动网中将活动按发生的先后次序进行的一种排列。</p>
+<p><strong>每个活动的所有前驱活动都排在该活动的前面</strong></p>
+<p><font color=blue>如果有向图邻接矩阵对角线以下的元素都为0，则一定存在拓扑序列</font></p>
+<h1 id="环"><a href="#环" class="headerlink" title="环"></a>环</h1><p><font color=red>这是一个很容易让人混乱的考点</font></p>
+<p>（n-1）是**环的临界条件 **，一旦边数大于（n-1）则必然构成环</p>
+<p>逻辑证明：</p>
+<p>n个点，则（n-1）条边是图<strong>不构成环的极限</strong></p>
+<p><strong>再多一条边，无论如何都会成环</strong></p>
+<hr>
+<h1 id="连通图"><a href="#连通图" class="headerlink" title="连通图"></a>连通图</h1><p>图中任意两个点可达即可</p>
+<p>否则为非连通图</p>
+<h2 id="顶点与边的数量关系"><a href="#顶点与边的数量关系" class="headerlink" title="顶点与边的数量关系"></a>顶点与边的数量关系</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008103453561.png" alt="image-20211008103453561"></p>
+<p>现在到回来看就明白为什么是(n-1)(n-2)了</p>
+<p>n-1为基，减掉的那个1为孤儿亚索</p>
+<p>然后再利用n(n-1)/2得到满接的边数</p>
+<p>即为临界状态</p>
 <p>例题</p>
-<h5 id="环曲面体积分"><a href="#环曲面体积分" class="headerlink" title="环曲面体积分"></a>环曲面体积分</h5><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705180413077.png" alt="image-20210705180413077"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705180430975.png" alt="image-20210705180430975"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705180759598.png" alt="image-20210705180759598"></p>
-<p>俯视图</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705180443440.png" alt="image-20210705180443440"></p>
-<p>使用底面积x高的方法求体积</p>
-<p>底的话时相当于求环的面积，大圆减小圆</p>
-<p>由于高用y积分表示，故底也用y表示x，然后</p>
-<p>由y=ex得x=y/e</p>
-<p>由y=e^x得x=lny</p>
-<p>则体积为：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705182505781.png" alt="image-20210705182505781"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210711104328154.png" alt="image-20210711104328154"></p>
+<p>答案：C</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008103817426.png" alt="image-20211008103817426"></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>还有别的稀奇古怪的数量关系则用暴力法求解</p>
 <hr>
-<h5 id="曲面体积分和立体分割"><a href="#曲面体积分和立体分割" class="headerlink" title="曲面体积分和立体分割"></a>曲面体积分和立体分割</h5><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706153801574.png" alt="image-20210706153801574"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706154421591.png" alt="image-20210706154421591"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706155034325.png" alt="image-20210706155034325"></p>
-<p>这里我自己的解法更容易理解，把旋转体分成两部分</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210708121701240.png" alt="image-20210708121701240"></p>
-<p>然后利用底d高积分</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210708122117803.png" alt="image-20210708122117803"></p>
-<p>Ps：</p>
-<p>arctan根号3=60°</p>
-<p>三角函数更多可参考</p>
-<p>画出区域后乱积都</p>
+<h1 id="强连通图"><a href="#强连通图" class="headerlink" title="强连通图"></a>强连通图</h1><p>即连通的有向图</p>
+<p><font color=red>前提是有向图</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810213151158.png" alt="image-20210810213151158"></p>
+<h2 id="顶点与边"><a href="#顶点与边" class="headerlink" title="顶点与边"></a>顶点与边</h2><p>强连通图至少要n条边</p>
+<h1 id="重连通（chong）"><a href="#重连通（chong）" class="headerlink" title="重连通（chong）"></a>重连通（chong）</h1><p>在无向图中，<strong>任意</strong>两个顶点之间含有不止一条通路</p>
+<h1 id="完全图"><a href="#完全图" class="headerlink" title="完全图"></a>完全图</h1><p>任意两个顶点之间都存在边</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008104322145.png" alt="image-20211008104322145"></p>
+<h2 id="有向完全图"><a href="#有向完全图" class="headerlink" title="有向完全图"></a>有向完全图</h2><p>任意两个顶点之间都存在方向相反的两条弧</p>
+<h1 id="连通分量"><a href="#连通分量" class="headerlink" title="连通分量"></a>连通分量</h1><p>定义：无向图的极大连通子图</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810221214102.png" alt="image-20210810221214102"></p>
+<p>连通图的极大连通子图只有一个，那就是<strong>它自己</strong></p>
+<p>非连通图的极大联通子图<strong>有多个</strong>，极大的一块就是一个极大联通子图</p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812143225318.png" alt="image-20210812143225318"></p>
+<p>生成树属性为极小</p>
+<p>而连通分量属性为极大，故矛盾</p>
 <hr>
-<h5 id="函数表示底面积然后对高积分"><a href="#函数表示底面积然后对高积分" class="headerlink" title="函数表示底面积然后对高积分"></a>函数表示底面积然后对高积分</h5><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713193005592.png" alt="image-20210713193005592"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713193349110.png" alt="image-20210713193349110"></p>
+<h1 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810220814954.png" alt="image-20210810220814954"></p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810220429001.png" alt="image-20210810220429001"></p>
+<p>B：如果顶点集和边集合不相对应，那么就不构成子图</p>
+<p>而在正确的定义中：</p>
+<p>G’有个<strong>隐藏前提</strong>，它是图，也就是说V’ 和 E‘ 不能耍赖。。。666</p>
+<p>C：定义</p>
+<p>D：如果图不连通，则无法访问全部节点</p>
+<p><strong>遍历是访问图的全部节点</strong></p>
+<hr>
+<h1 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h1><p>一棵树为树，两棵树及以上则称为森林</p>
+<hr>
+<h1 id="邻接矩阵（Adjacency-Matrix）"><a href="#邻接矩阵（Adjacency-Matrix）" class="headerlink" title="邻接矩阵（Adjacency Matrix）"></a>邻接矩阵（Adjacency Matrix）</h1><p><font color=red>是二维数组</font></p>
+<p> “adj” 指的是邻接</p>
+<p>易错题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812150606193.png" alt="image-20210812150606193"></p>
+<p>答案：BD</p>
+<p>首先是知识点的讲解</p>
+<p>有向图的入度，顶点 $$V_i$$ 的入度为邻接矩阵第 i 列之和</p>
+<p>有向图的入出度，顶点 $$V_i$$ 的入度为邻接矩阵第 i 行之和</p>
+<p><font color=red>这里需要明确一点，临界矩阵的元素只有 0 和 1 表示是否连通，并不包含距离信息</font></p>
+<p>无向图的度，顶点 $$V_i$$ 的度为邻接矩阵第 i 列之和或邻接矩阵第 i 行之和</p>
+<p>其次补充一下A选项为什么不选：</p>
+<p>A选项虽然表示的是列，但其<strong>仅表示第 j 列，没有明确和题目所要求的 $$V_i$$ 对应</strong>，故不选</p>
+<hr>
+<h1 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h1><p><font color=red>是链表</font></p>
+<p><font color=blue>邻接矩阵和邻接表是不同的</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812160942746.png" alt="image-20210812160942746"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812161003775.png" alt="image-20210812161003775"></p>
+<p>误区：</p>
+<p>邻接表只用于有向图的存储，邻接矩阵适用于有向图和无向图<font color=red> （X）</font></p>
+<p>解析：</p>
+<p><strong>邻接表也可以表示无向图，只是冗余而已</strong></p>
+<p>邻接表中存在两种结点：</p>
+<p><font color=red>顶点表节点</font>和<font color=blue>边表节点</font></p>
+<h2 id="定点表结点"><a href="#定点表结点" class="headerlink" title="定点表结点"></a>定点表结点</h2><p>表头</p>
+<h2 id="边表结点"><a href="#边表结点" class="headerlink" title="边表结点"></a>边表结点</h2><p>边表上除表头的其他结点</p>
+<p><strong>不是指每行的表头，而是各个节点</strong></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812160355960.png" alt="image-20210812160355960"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812160418862.png" alt="image-20210812160418862"></p>
+<p>边表节点无法确认结点的奇偶</p>
+<p>对于无向图，点与点的关系都是成对出现，即一进一出，会有偶数个边表结点</p>
+<p>而一旦出现奇数个边表结点，则说明图为有向图，选D</p>
+<h3 id="边表结点与结点"><a href="#边表结点与结点" class="headerlink" title="边表结点与结点"></a>边表结点与结点</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812160909506.png" alt="image-20210812160909506"></p>
+<p>暴力法，选B</p>
+<p><font color=red>但是有个前提，你要懂得什么是边表节点</font></p>
+<p>满满</p>
+<p>不用去重除以2</p>
+<h1 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h1><p><font color=red>仅用于有向图</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812164645568.png" alt="image-20210812164645568"></p>
+<p>有两种节点：<strong>弧节点和顶点节点</strong></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812162452350.png" alt="image-20210812162452350"></p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>注意看上图画圈部分</p>
+<p><font color=red>尤其注意理解hlink和tlink</font></p>
+<p>h指向弧头相同的下一条弧</p>
+<p>t指向弧尾相同的下一条弧</p>
+<p>这两个域使得十字链表可以<strong>更容易地得到顶点的度</strong>，用不着遍历整个邻接表，只需要走一遍hlink或者tlink</p>
+<p><strong>十字链表的表达不唯一</strong></p>
+<h1 id="邻接多重表"><a href="#邻接多重表" class="headerlink" title="邻接多重表"></a>邻接多重表</h1><p><font color=red>仅用于无向图</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812164330135.png" alt="image-20210812164330135"></p>
+<p>分别有：顶点结点和边结点</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812163437756.png" alt="image-20210812163437756"></p>
+<p>看上图画圈部分，帮助理解ilink和jlink</p>
+<h2 id="邻接多重表与十字链表"><a href="#邻接多重表与十字链表" class="headerlink" title="邻接多重表与十字链表"></a>邻接多重表与十字链表</h2><p>其实他们很相像，唯一的区别就是</p>
+<p>十字链表是对有向图而言，对连贯弧前后顺序有一定要求</p>
+<p>而适用于无向图的邻接多重表则是不分先后，<strong>有连通关系就行</strong></p>
+<h2 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h2><p><font color=blue>不是简单地一行过去</font></p>
+<p>但是按指针深度搜索，可以得到某点相邻的边和顶点的信息</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="【易错】时间复杂度"><a href="#【易错】时间复杂度" class="headerlink" title="【易错】时间复杂度"></a>【易错】时间复杂度</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812161422716.png" alt="image-20210812161422716"></p>
+<p>因为边数的增长<strong>只会影响到两个边表</strong>，不是全部边表，故不选D</p>
+<p>而是选C</p>
+<h3 id="【易错】邻接矩阵与邻接表"><a href="#【易错】邻接矩阵与邻接表" class="headerlink" title="【易错】邻接矩阵与邻接表"></a>【易错】邻接矩阵与邻接表</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812161540386.png" alt="image-20210812161540386"></p>
+<p>答案：D</p>
+<p>主要看BC，这两个选项的说法都过于片面</p>
+<p>两种数据结构在各自有自己适合的应用场景</p>
+<p>举个例子，我需要查找与点A相连的点有哪些</p>
+<p>对于邻接矩阵，我至少需要遍历一行</p>
+<p>但是对于邻接表，我只需要走一个边表就行了</p>
+<p><strong>如果边表长度小的话，邻接表的优势就体现得淋漓尽致了</strong></p>
+<h1 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h1><h1 id="遍历序列"><a href="#遍历序列" class="headerlink" title="遍历序列"></a>遍历序列</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008165244764.png" alt="image-20211008165244764"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008165251728.png" alt="image-20211008165251728"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211014095628554.png" alt="image-20211014095628554"></p>
+<p>关于DFS序列和BFS序列：</p>
+<p>若用图去决出序列，那么会出现各种情况</p>
+<p>但是，用代码的思维去决出序列的话，只会有唯一一种序列</p>
+<p>DFS 是遍历数组故对于顶点3，next必定是顶点0</p>
+<p>则序列一定是：4,3,0,2,1</p>
+<p>BFS同理，一定是4,3,0,1,2</p>
+<h2 id="深度优先树"><a href="#深度优先树" class="headerlink" title="深度优先树"></a>深度优先树</h2><p>不在同一连通分量即可</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211014155125136.png" alt="image-20211014155125136"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211014155153253.png" alt="image-20211014155153253"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211014160240087.png" alt="image-20211014160240087"></p>
+<h2 id="广度优先树"><a href="#广度优先树" class="headerlink" title="广度优先树"></a>广度优先树</h2><p>树一层一层画</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211014155125136.png" alt="image-20211014155125136"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211014155200297.png" alt="image-20211014155200297"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211014155844840.png" alt="image-20211014155844840"></p>
+<p>每增个h，即是一个递归</p>
+<hr>
+<h1 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h1><h2 id="【逻辑误区】”至少”"><a href="#【逻辑误区】”至少”" class="headerlink" title="【逻辑误区】”至少”"></a>【逻辑误区】”至少”</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210810221546914.png" alt="image-20210810221546914"></p>
+<p>Ⅰ：</p>
+<p>1条边2个度，2条边4个度……</p>
+<p>Ⅱ：可以等于</p>
+<p>Ⅲ：<font color=red>我可以让全部顶点的度都大于1</font></p>
 
       
     </div>
@@ -486,7 +661,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/05/%E6%B8%90%E8%BF%91%E7%BA%BF/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/914%E5%BA%94%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -500,7 +675,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/05/%E6%B8%90%E8%BF%91%E7%BA%BF/" class="post-title-link" itemprop="url">渐近线</a>
+            <a href="/2021/07/11/914%E5%BA%94%E8%AF%95/" class="post-title-link" itemprop="url">914应试</a>
         </h2>
 
         <div class="post-meta">
@@ -510,14 +685,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-05 10:52:49" itemprop="dateCreated datePublished" datetime="2021-07-05T10:52:49+08:00">2021-07-05</time>
+              <time title="Created: 2021-07-11 10:01:00" itemprop="dateCreated datePublished" datetime="2021-07-11T10:01:00+08:00">2021-07-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-12 08:33:52" itemprop="dateModified" datetime="2021-12-12T08:33:52+08:00">2021-12-12</time>
+                <time title="Modified: 2021-11-23 10:29:14" itemprop="dateModified" datetime="2021-11-23T10:29:14+08:00">2021-11-23</time>
               </span>
 
           
@@ -531,20 +706,102 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="判定"><a href="#判定" class="headerlink" title="判定"></a>判定</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133910385.png" alt="image-20210918133910385"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705105324896.png" alt="image-20210705105324896"></p>
-<h1 id="求斜渐近线【-】"><a href="#求斜渐近线【-】" class="headerlink" title="求斜渐近线【++++++】"></a>求斜渐近线【++++++】</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705105339153.png" alt="image-20210705105339153"></p>
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705105312578.png" alt="image-20210705105312578"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705105402144.png" alt="image-20210705105402144"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210708201953059.png" alt="image-20210708201953059"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706100125599.png" alt="image-20210706100125599"></p>
+          <p>要带尺子！！！</p>
+<h1 id="真的是有傻逼题"><a href="#真的是有傻逼题" class="headerlink" title="真的是有傻逼题"></a>真的是有傻逼题</h1><p><font color=red>不要一昧相信自己的经验，根据具体情况分析</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210711100128939.png" alt="image-20210711100128939"></p>
+<h1 id="文字描述和代码描述"><a href="#文字描述和代码描述" class="headerlink" title="文字描述和代码描述"></a>文字描述和代码描述</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007095359987.png" alt="image-20211007095359987"></p>
+<p>答案：栈顶指针</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007095647571.png" alt="image-20211007095647571"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211007095714518.png" alt="image-20211007095714518"></p>
+<p>首先明确 “指针域” 即 “next”</p>
+<p>且Lhead 为栈顶，为链表的表头指针</p>
+<p>“把栈顶指针的值赋给新结点的指针域”</p>
+<p>转换化成代码就是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-&gt;next=Lhead;  <span class="comment">// 自信品“赋给”</span></span><br></pre></td></tr></table></figure>
+
+<p>上一步做完，其实就把结点和链表连接起来了</p>
+<p>剩下的最后一步就是把确定表头指针</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Lhead=node;</span><br></pre></td></tr></table></figure>
+
+<p>即“把新结点的存储位置赋给栈顶指针”</p>
+<h1 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h1><p><font color=red>适用于一脸懵的n</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210711105236884.png" alt="image-20210711105236884"></p>
+<p>n=2,n=3,n=4 枚举带入选项</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812142935064.png" alt="image-20210812142935064"></p>
+<p><font color=blue>这谁知道呢，反正暴力试就van了</font></p>
 <hr>
-<h2 id="渐近线【-】"><a href="#渐近线【-】" class="headerlink" title="渐近线【++++++】"></a>渐近线【++++++】</h2><p><font color=red>还涉及到了局部代换禁止</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133241463.png" alt="image-20210918133241463"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133253104.png" alt="image-20210918133253104"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133307940.png" alt="image-20210918133307940"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133910385.png" alt="image-20210918133910385"></p>
-<p><font color=red>局部代换禁止</font></p>
-<p>错误示范</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918135630515.png" alt="image-20210918135630515"></p>
+<h1 id="暴力法yyds"><a href="#暴力法yyds" class="headerlink" title="暴力法yyds"></a>暴力法yyds</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008101717542.png" alt="image-20211008101717542"></p>
+<p>答案：4</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008101907258.png" alt="image-20211008101907258"></p>
+<h1 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h1><p>别重复写太多无关的东西</p>
+<h1 id="不正确"><a href="#不正确" class="headerlink" title="不正确"></a>不正确</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210812143225318.png" alt="image-20210812143225318"></p>
+<p><font color=red>看到不正确直接上票</font></p>
+<h2 id="审题"><a href="#审题" class="headerlink" title="审题"></a>审题</h2><p>需要额外小心字眼</p>
+<p>什么 “结点” “叶结点”</p>
+<p>“正确” “不正确”</p>
+<p>等等</p>
+<p>遇到就扣</p>
+<h1 id="书写规范"><a href="#书写规范" class="headerlink" title="书写规范"></a>书写规范</h1><h2 id="三维数组"><a href="#三维数组" class="headerlink" title="三维数组"></a>三维数组</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210711100530715.png" alt="image-20210711100530715"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210711100545396.png" alt="image-20210711100545396"></p>
+<h2 id="数组的储存位置"><a href="#数组的储存位置" class="headerlink" title="数组的储存位置"></a>数组的储存位置</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211003191207938.png" alt="image-20211003191207938"></p>
+<p>答案：LOC(0,0)+(i*n+j)*d</p>
+<h2 id="平衡二叉树的调整"><a href="#平衡二叉树的调整" class="headerlink" title="平衡二叉树的调整"></a>平衡二叉树的调整</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211004002912755.png" alt="image-20211004002912755"></p>
+<h2 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211006220511971.png" alt="image-20211006220511971"></p>
+<p>答案：<font color=red>p-&gt;llink</font></p>
+<p>没有简单题。。。都是套路啊</p>
+<h2 id="最短路径的表达"><a href="#最短路径的表达" class="headerlink" title="最短路径的表达"></a>最短路径的表达</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211012202454176.png" alt="image-20211012202454176"></p>
+<h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *p;				<span class="comment">// 可以看成是 int* a</span></span><br><span class="line">    p=(<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">4</span>); <span class="comment">// 作类型时星号放后面</span></span><br><span class="line">    *p=<span class="number">2</span>;			   <span class="comment">// 访问指针*p</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*p);   <span class="comment">// printf里放数值  scanf里放地址p（p是指针，地址</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span>&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; QNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    QNode *front,*rear;</span><br><span class="line">&#125; LiQueue;		<span class="comment">// Liqueue 是实体</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(LiQueue *&amp;q,ElemType e)</span></span>&#123;&#125; <span class="comment">// 其实是没毛病的，可以看成LiQueue* &amp;q，对应LinkList &amp;L，LNode* &amp;L</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="prinf"><a href="#prinf" class="headerlink" title="prinf"></a>prinf</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005170928343.png" alt="image-20211005170928343"></p>
+<h2 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElemType;</span><br></pre></td></tr></table></figure>
+
+<p>typedef为C语言的关键字，作用是为一种数据类型定义一个新名字。</p>
+<p>这里的数据类型包括内部数据类型（int,char等）和自定义的数据类型（struct等）</p>
+<p>进阶</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">	ElemType data;</span><br><span class="line">	Struct Lnode *next;</span><br><span class="line">&#125; LNode, *LinkList;  <span class="comment">// 看成是LNode* LinkList，即LinkList是LNode类型的指针</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(LinkList &amp;L)</span></span>&#123;	<span class="comment">// LinkList是指针类型，故对L取地址符号 L是List实体</span></span><br><span class="line">    LNode *p;</span><br><span class="line">    L=(LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));  <span class="comment">// 按LNode的大小申请内存，malloc返回的是地址，转化成LNode的指针类型</span></span><br><span class="line">    p=(LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));	<span class="comment">// 这两语句是等效的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><p>代码选自王道</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211014105602209.png" alt="image-20211014105602209"></p>
+<p>1表示成功，0表示失败</p>
+<p>但是有例外</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sqeSearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> key)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(key==a[i])&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;查找成功\n&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为数组下标包含0，故返回-1表示查找不成功</p>
+<p>另外，914.。。自己就支持bool作返回值</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211014152420667.png" alt="image-20211014152420667"></p>
+<h2 id="函数调用传值"><a href="#函数调用传值" class="headerlink" title="函数调用传值"></a>函数调用传值</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BiTree* <span class="title">BSTSearch</span><span class="params">(BiTree &amp;T,<span class="keyword">int</span> key)</span></span>&#123;  <span class="comment">// 真有什么T的赋值操作也没关系，因为传过来的只是地址值，不会改变源指针</span></span><br><span class="line">	<span class="keyword">if</span>(T==<span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;data==key)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;查找成功\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> T;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;data&gt;key)<span class="keyword">return</span> BSTSearch(T-&gt;lChild,key);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> BSTSearch(T-&gt;rChild,key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><h2 id="邻接矩阵与图"><a href="#邻接矩阵与图" class="headerlink" title="邻接矩阵与图"></a>邻接矩阵与图</h2><p>adj—邻接矩阵（Adjacency Matrix）</p>
+<p>vertex 顶点</p>
+<p>arc 邻接关系，相当于边</p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>ptr（pointer 指针）</p>
+<h2 id="双向链表（Double-Linked-List）"><a href="#双向链表（Double-Linked-List）" class="headerlink" title="双向链表（Double Linked List）"></a>双向链表（Double Linked List）</h2><p>DLinkList</p>
+<p>DNode</p>
+<h2 id="bracket"><a href="#bracket" class="headerlink" title="bracket"></a>bracket</h2><p>各种括号</p>
+<h2 id="indices"><a href="#indices" class="headerlink" title="indices"></a>indices</h2><p>index 的复数</p>
+<h1 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h1><p>AVL 平衡二叉树</p>
+<p>BST 二叉排序树</p>
+<p>ASL 平均查找长度</p>
 
       
     </div>
@@ -564,7 +821,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/05/%E5%85%A8%E5%BE%AE%E5%88%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -578,7 +835,86 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/05/%E5%85%A8%E5%BE%AE%E5%88%86/" class="post-title-link" itemprop="url">全微分</a>
+            <a href="/2021/07/11/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" class="post-title-link" itemprop="url">顺序表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-11 09:58:21" itemprop="dateCreated datePublished" datetime="2021-07-11T09:58:21+08:00">2021-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-05 12:08:18" itemprop="dateModified" datetime="2021-12-05T12:08:18+08:00">2021-12-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="平均查找时间"><a href="#平均查找时间" class="headerlink" title="平均查找时间"></a>平均查找时间</h4><p><font color=blue>本题易错</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726141615662.png" alt="image-20210726141615662"></p>
+<p>分最短时间和最长时间</p>
+<p>分别对应最好情况和最坏情况</p>
+<p>最好情况：都是第一个就找到</p>
+<p>最坏情况：都是最后一个才找到</p>
+<p>易错点在于<font color=red>题目在诱导，让人以为有序数列相对能更早知道查找结果</font></p>
+<p>但题目问的是<font color=blue>成功查找</font>的平均时间，故不考虑有序数列的优势</p>
+<h4 id="平均查找长度"><a href="#平均查找长度" class="headerlink" title="平均查找长度"></a>平均查找长度</h4><p>例题</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726142632133.png" alt="image-20210726142632133"></p>
+<p>平均，即最好情况和最坏情况</p>
+<hr>
+<p><font color=red>包含概率，即考虑数学期望</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726142517834.png" alt="image-20210726142517834"></p>
+<p>$$\frac{1}{2}$$ x 1+ $$\frac{1}{3}$$ x 2 + $$\frac{1}{6}$$ x 3 = $$\frac{5}{3}$$</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/10/%E6%9B%B2%E7%BA%BF%E5%BC%A7%E9%95%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/10/%E6%9B%B2%E7%BA%BF%E5%BC%A7%E9%95%BF/" class="post-title-link" itemprop="url">曲线弧长</a>
         </h2>
 
         <div class="post-meta">
@@ -589,7 +925,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-07-05 10:43:32 / Modified: 10:43:48" itemprop="dateCreated datePublished" datetime="2021-07-05T10:43:32+08:00">2021-07-05</time>
+              <time title="Created: 2021-07-10 18:58:33 / Modified: 19:10:32" itemprop="dateCreated datePublished" datetime="2021-07-10T18:58:33+08:00">2021-07-10</time>
             </span>
 
           
@@ -603,8 +939,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705104345546.png" alt="image-20210705104345546"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705104337662.png" alt="image-20210705104337662"></p>
+          <p>所属定积分的应用</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710185903042.png" alt="image-20210710185903042"></p>
+<p>例题</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710191017134.png" alt="image-20210710191017134"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710191028539.png" alt="image-20210710191028539"></p>
 
       
     </div>
@@ -624,7 +963,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/10/%E5%A4%8D%E5%90%88%E5%87%BD%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -638,7 +977,72 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/04/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">二重积分</a>
+            <a href="/2021/07/10/%E5%A4%8D%E5%90%88%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">复合函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-07-10 17:37:19 / Modified: 17:39:26" itemprop="dateCreated datePublished" datetime="2021-07-10T17:37:19+08:00">2021-07-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="复合函数的导"><a href="#复合函数的导" class="headerlink" title="复合函数的导"></a>复合函数的导</h4><p>易错题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710173742807.png" alt="image-20210710173742807"></p>
+<p>错误解法</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710173840693.png" alt="image-20210710173840693"></p>
+<p><font color=red size=5>答案稀奇古怪时记得多个心眼</font></p>
+<p>正确解法</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710173758243.png" alt="image-20210710173758243"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/10/%E6%95%B0%E5%AD%A6%E7%AD%94%E9%A2%98%E8%A7%84%E8%8C%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/10/%E6%95%B0%E5%AD%A6%E7%AD%94%E9%A2%98%E8%A7%84%E8%8C%83/" class="post-title-link" itemprop="url">数学答题规范</a>
         </h2>
 
         <div class="post-meta">
@@ -648,14 +1052,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-04 17:16:42" itemprop="dateCreated datePublished" datetime="2021-07-04T17:16:42+08:00">2021-07-04</time>
+              <time title="Created: 2021-07-10 17:24:57" itemprop="dateCreated datePublished" datetime="2021-07-10T17:24:57+08:00">2021-07-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-10 11:57:22" itemprop="dateModified" datetime="2021-12-10T11:57:22+08:00">2021-12-10</time>
+                <time title="Modified: 2021-12-16 10:29:32" itemprop="dateModified" datetime="2021-12-16T10:29:32+08:00">2021-12-16</time>
               </span>
 
           
@@ -669,43 +1073,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="理解二重积分"><a href="#理解二重积分" class="headerlink" title="理解二重积分"></a>理解二重积分</h1><p>一重积分积出面，二重积分积出体</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922211003119.png" alt="image-20210922211003119"></p>
-<h1 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h1><p><font color=red>“原式解定积分”</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706163317329.png" alt="image-20210706163317329"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706163630234.png" alt="image-20210706163630234"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706163310523.png" alt="image-20210706163310523"></p>
-<p>Ps：</p>
-<p>换元后，这里不需要对dx和dy做下放处理</p>
-<p>需要做的是把dx和dy换成dθ和dr并重新确定积分限</p>
-<p>一般是后积θ，因为积分限角度是常数</p>
-<p>积分限参考上面画的函数图像的范围</p>
-<p>积dr时，θ相当于常数可以先移到外面</p>
-<p>设计到sec的奇数次积分可参考</p>
-<h1 id="二重积分改变积分顺序"><a href="#二重积分改变积分顺序" class="headerlink" title="二重积分改变积分顺序"></a>二重积分改变积分顺序</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704183533426.png" alt="image-20210704183533426"></p>
-<p>用积分限的上下确定积分区域</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704185959377.png"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704183015340.png" alt="image-20210704183015340"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704190313855.png" alt="image-20210704190313855"></p>
-<p>Ps：</p>
-<p><strong>因为sinx/x对于dy来说相当于常数，所以可以随意移出去</strong></p>
-<p>然后关于xsinx的积分，则使用x乘sin型分部积分</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704182956051.png" alt="image-20210704182956051"></p>
-<p>在平面直角坐标系中画出积分限的图像</p>
-<p>两块区域合成一片区域，然后只对那新的一块区域进行积分即可</p>
+          <h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710172509452.png" alt="image-20210710172509452"></p>
+<p>这种答案不要把他合并起来</p>
 <hr>
-<h1 id="奇偶性求二重积分"><a href="#奇偶性求二重积分" class="headerlink" title="奇偶性求二重积分"></a>奇偶性求二重积分</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210922211403467.png" alt="image-20210922211403467"></p>
-<h1 id="明确一些概念"><a href="#明确一些概念" class="headerlink" title="明确一些概念"></a>明确一些概念</h1><h2 id="二重积分和二次积分"><a href="#二重积分和二次积分" class="headerlink" title="二重积分和二次积分"></a>二重积分和二次积分</h2><p>严格意义上来说上面这些是二次积分，二重积分是这样的</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704191305150.png" alt="image-20210704191305150"></p>
-<h2 id="X型和Y型"><a href="#X型和Y型" class="headerlink" title="X型和Y型"></a>X型和Y型</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704191456461.png" alt="image-20210704191456461"></p>
-<p>X型即dy，积分限用x表示</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713165919731.png" alt="image-20210713165919731"></p>
+<p>不用硬提2（结果本来就是要去括号的）</p>
+<p>这题不把那括号拆开来估计是为了分好部分</p>
+<p>还有就是eln一般是得化掉（<font color=red>e的指数上有ln</font>）</p>
 <hr>
-<h1 id="二重积分法"><a href="#二重积分法" class="headerlink" title="二重积分法"></a>二重积分法</h1><p>先积的是x，则提出无关的y，就容易了</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706155710893.png" alt="image-20210706155710893"></p>
-<h1 id="二重积分比较大小"><a href="#二重积分比较大小" class="headerlink" title="二重积分比较大小"></a>二重积分比较大小</h1><p>当积分限一样时，比较被积函数的大小即可</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707171633757.png" alt="image-20210707171633757"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210919093335656.png" alt="image-20210919093335656"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210919092542955.png" alt="image-20210919092542955"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913104703226.png" alt="image-20210913104703226"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913105004393.png" alt="image-20210913105004393"></p>
+<h1 id="大题"><a href="#大题" class="headerlink" title="大题"></a>大题</h1><h2 id="可分离变量的微分方程"><a href="#可分离变量的微分方程" class="headerlink" title="可分离变量的微分方程"></a>可分离变量的微分方程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911103415792.png" alt="image-20210911103415792"></p>
 
       
     </div>
@@ -725,7 +1103,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E6%95%B0%E5%AD%A6%E5%BA%94%E8%AF%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/10/%E5%AF%B9%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -739,7 +1117,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/04/%E6%95%B0%E5%AD%A6%E5%BA%94%E8%AF%95/" class="post-title-link" itemprop="url">数学应试</a>
+            <a href="/2021/07/10/%E5%AF%B9%E6%95%B0/" class="post-title-link" itemprop="url">对数</a>
         </h2>
 
         <div class="post-meta">
@@ -749,14 +1127,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-04 13:33:41" itemprop="dateCreated datePublished" datetime="2021-07-04T13:33:41+08:00">2021-07-04</time>
+              <time title="Created: 2021-07-10 17:09:04" itemprop="dateCreated datePublished" datetime="2021-07-10T17:09:04+08:00">2021-07-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-12 14:28:28" itemprop="dateModified" datetime="2021-12-12T14:28:28+08:00">2021-12-12</time>
+                <time title="Modified: 2021-09-11 16:48:14" itemprop="dateModified" datetime="2021-09-11T16:48:14+08:00">2021-09-11</time>
               </span>
 
           
@@ -770,435 +1148,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210804232626728.png" alt="image-20210804232626728"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210804232640037.png" alt="image-20210804232640037"></p>
-<h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="考研数学怎么出题"><a href="#考研数学怎么出题" class="headerlink" title="考研数学怎么出题"></a>考研数学怎么出题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707174505197.png" alt="image-20210707174505197"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707175835450.png" alt="image-20210707175835450"></p>
-<p>上式中的分母(x-a)^2不可以直接当作(x-a)来带进定义式</p>
-<p>因为这是x逼近与a，(x-a)的值不能直接当0处理</p>
-<p>正确打开上式的方式的是<strong>洛必达</strong></p>
-<p>很容易忽略的一点，已知条件为<strong>相切，除了告知导数值相等外，该点的函数值也是相等的</strong></p>
-<p>但是等值代换确是可以</p>
-<p><font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font></p>
-<p>可以得出f(x)=g(x)但是0/0的极限值为0是得不出来的</p>
-<h2 id="题意构造法"><a href="#题意构造法" class="headerlink" title="题意构造法"></a>题意构造法</h2><p><font color=blue>根据题意去构造</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704133409946.png" alt="image-20210704133409946"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704133856494.png" alt="image-20210704133856494"></p>
-<h2 id="便利构造法"><a href="#便利构造法" class="headerlink" title="便利构造法"></a>便利构造法</h2><p><font color=blue>题目的限制条件少，可以选择简单的实例暴力排除</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816233102055.png" alt="image-20210816233102055"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210816233402686.png" alt="image-20210816233402686"></p>
-<h2 id="提高暴力法效率"><a href="#提高暴力法效率" class="headerlink" title="提高暴力法效率"></a>提高暴力法效率</h2><p> 一个例子试四次，把ABCD选项都试一遍</p>
-<p>效率可能会更高</p>
-<h2 id="N问题"><a href="#N问题" class="headerlink" title="N问题"></a>N问题</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102424227.png" alt="image-20210912102424227"></p>
-<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
-<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102432946.png" alt="image-20210912102432946"></p>
-<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
-<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
-<h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1><h2 id="填空题也可以暴力法"><a href="#填空题也可以暴力法" class="headerlink" title="填空题也可以暴力法"></a>填空题也可以暴力法</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824123355236.png" alt="image-20210824123355236"></p>
-<p>暴力法：</p>
-<p>假设出复合符合题意的AB</p>
-<p>乘积等于和，比较容易想到的是2*2=2+2</p>
-<p>则有：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824123552288.png" alt="image-20210824123552288"></p>
-<p>然后一个例子一般是不能确认答案的</p>
-<p>一般再来一个，AB搞成3阶的</p>
-<p>若一致无矛盾，则OK了</p>
-<p>正确解析：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824123348602.png" alt="image-20210824123348602"></p>
-<h2 id="暴力中的暴力"><a href="#暴力中的暴力" class="headerlink" title="暴力中的暴力"></a>暴力中的暴力</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912154824033.png" alt="image-20210912154824033"></p>
-<p><font color=red>“x” 趋于0才可以代换</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915170816342.png" alt="image-20210915170816342"></p>
-<p>答案：1</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915184622874.png" alt="image-20210915184622874"></p>
-<p><font color=red>两次暴力，一般答案就不带参数了，放心写</font></p>
-<h2 id="特殊值法的坑"><a href="#特殊值法的坑" class="headerlink" title="特殊值法的坑"></a>特殊值法的坑</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913092334055.png" alt="image-20210913092334055"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913092406321.png" alt="image-20210913092406321"></p>
-<p>特殊值法确实使得即算方便了</p>
-<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
-<p><font color=red>答案带参数</font></p>
-<p>再回到这道题（尽力观察吧，看参数是否会影响洛的结果）</p>
-<p>这道题其实不难看出来</p>
-<p>利用$$e^{- \infty }$$的特殊性</p>
-<hr>
-<h2 id="出题人不一定是坏人"><a href="#出题人不一定是坏人" class="headerlink" title="出题人不一定是坏人"></a>出题人不一定是坏人</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913161744051.png" alt="image-20210913161744051"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913161753855.png" alt="image-20210913161753855"></p>
-<p><font color=red>顺着出题人的意思走，就不会迷失于间断点的三个判定规则了</font></p>
-<p>虽然我个人不确定f(x) 的间断点只有两个</p>
-<p>但这现成的两个 <font color=blue>“没有定义的点”</font> 完全可以先顺着出题人的意思先用起来（有矛盾的地方再说）</p>
-<p>错误解法：</p>
-<p><font color=red>忽略了洛必达也是有条件的</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913162253174.png" alt="image-20210913162253174"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913162146786.png" alt="image-20210913162146786"></p>
-<h1 id="习惯"><a href="#习惯" class="headerlink" title="习惯"></a>习惯</h1><p>不急于求成，一步步稳扎稳打，草稿工整（以备验算）</p>
-<p><font color=red>如何有效验算呢</font></p>
-<p>答案稀奇古怪时记得多个心眼</p>
-<h2 id="鼠目寸光"><a href="#鼠目寸光" class="headerlink" title="鼠目寸光"></a>鼠目寸光</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102424227.png" alt="image-20210912102424227"></p>
-<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
-<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912102432946.png" alt="image-20210912102432946"></p>
-<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
-<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
-<p>牛牛牛</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211109192656441.png" alt="image-20211109192656441"></p>
-<p>1-cos 不用代换，而是用来洛</p>
-<hr>
-<h2 id="暗示可消"><a href="#暗示可消" class="headerlink" title="暗示可消"></a>暗示可消</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210920090246718.png" alt="image-20210920090246718"></p>
-<h2 id="这明明是错误的"><a href="#这明明是错误的" class="headerlink" title="这明明是错误的"></a>这明明是错误的</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210923192202477.png" alt="image-20210923192202477"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210923192426446.png" alt="image-20210923192426446"></p>
-<p>我错选了A，因为λ为1的时候看到都没问题</p>
-<p>就选了最前面的A（为了贪时间）</p>
-<p>明明知道肯定不选A的—–<font color=red>无论如何各种路实际走一下，碰出个不一样的答案</font></p>
-<h1 id="恒等式的坑"><a href="#恒等式的坑" class="headerlink" title="恒等式的坑"></a>恒等式的坑</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824121426700.png" alt="image-20210824121426700"></p>
-<p>解析：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210824121442617.png" alt="image-20210824121442617"></p>
-<p><font color=red>D的表述并不是说r(A)=1, r(A-E)=1</font></p>
-<p>我们常用恒等式，但这存在的坑一定要小心</p>
-<h1 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h1><h2 id="最终的eln"><a href="#最终的eln" class="headerlink" title="最终的eln"></a>最终的eln</h2><p><font color=red>最终结果一般要把eln给化掉</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912160003298.png" alt="image-20210912160003298"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912160017462.png" alt="image-20210912160017462"></p>
-<p>我的答案：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912160111597.png" alt="image-20210912160111597"></p>
-<h2 id="最后的正负号"><a href="#最后的正负号" class="headerlink" title="最后的正负号"></a>最后的正负号</h2><p>拿笔算</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911173122229.png" alt="image-20210911173122229"></p>
-<p>解析：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210911173411512.png" alt="image-20210911173411512"></p>
-<p><font color=red>出题人喜欢在符号上挖坑</font></p>
-<p>辛辛苦苦做出来了，但是符号没搞对</p>
-<p>最好的应对方法是:</p>
-<p><font color=blue size=5>不嫌麻烦，每一行都不省略</font></p>
-<h2 id="特殊值法的坑-1"><a href="#特殊值法的坑-1" class="headerlink" title="特殊值法的坑"></a>特殊值法的坑</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913092334055.png" alt="image-20210913092334055"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913092406321.png" alt="image-20210913092406321"></p>
-<p>特殊值法确实使得即算方便了</p>
-<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
-<p><font color=red>答案带参数</font></p>
-<p>再回到这道题</p>
-<p>利用$$e^{- \infty }$$的特殊性</p>
-<h1 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h1><h2 id="左右导数"><a href="#左右导数" class="headerlink" title="左右导数"></a>左右导数</h2><p>$$f’_{+}(2)$$</p>
-<p>$$f’_{-}(1)$$</p>
-<h2 id="由得"><a href="#由得" class="headerlink" title="由得"></a>由得</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210910173732467.png" alt="image-20210910173732467"></p>
-<h2 id="罗尔定理连写"><a href="#罗尔定理连写" class="headerlink" title="罗尔定理连写"></a>罗尔定理连写</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210910173827428.png" alt="image-20210910173827428"></p>
-<h2 id="计算过程"><a href="#计算过程" class="headerlink" title="计算过程"></a>计算过程</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211212083410490.png" alt="image-20211212083410490"></p>
-<h1 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h1><h2 id="复杂导数运算"><a href="#复杂导数运算" class="headerlink" title="复杂导数运算"></a>复杂导数运算</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917161714247.png" alt="image-20210917161714247"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917162025829.png" alt="image-20210917162025829"></p>
-<p><font color=red>两条路线，截然不同的难度</font></p>
-<h2 id="求极限–局部代换禁止【-】"><a href="#求极限–局部代换禁止【-】" class="headerlink" title="求极限–局部代换禁止【+】"></a>求极限–局部代换禁止【+】</h2><p><font color=red>还涉及到了局部代换禁止</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133241463.png" alt="image-20210918133241463"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133253104.png" alt="image-20210918133253104"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133307940.png" alt="image-20210918133307940"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918133910385.png" alt="image-20210918133910385"></p>
-<p><font color=red>局部代换禁止</font></p>
-<p>错误示范</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210918135630515.png" alt="image-20210918135630515"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211110094252565.png" alt="image-20211110094252565"></p>
-<p><font color=red>根号也洛它，因为没路走了</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211110094123935.png" alt="image-20211110094123935"></p>
-<h2 id="化简"><a href="#化简" class="headerlink" title="化简"></a>化简</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914101304444.png" alt="image-20210914101304444"></p>
-<h2 id="复杂根号的求导"><a href="#复杂根号的求导" class="headerlink" title="复杂根号的求导"></a>复杂根号的求导</h2><p>（已知参数方程求导数）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704135103082.png" alt="image-20210704135103082"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704135010581.png" alt="image-20210704135010581"></p>
-<p><font color=red>不要慌，大多时候都是可以抵消掉的</font></p>
-<p><font color=red>你应该开心才是</font></p>
-<h2 id="配凑幂"><a href="#配凑幂" class="headerlink" title="配凑幂"></a>配凑幂</h2><p><font color=red>解决幂问题的方法不止eln一种</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912110039065.png" alt="image-20210912110039065"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912110022191.png" alt="image-20210912110022191"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912110030545.png" alt="image-20210912110030545"></p>
-<h2 id="分式相减【-】"><a href="#分式相减【-】" class="headerlink" title="分式相减【+】"></a>分式相减【+】</h2><p><font color=red>分式相减，合一下试试</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912155007856.png" alt="image-20210912155007856"></p>
-<p>答案：2</p>
-<p>$$arctanx\backsim x$$</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912155407095.png" alt="image-20210912155407095"></p>
-<h2 id="分式的浪漫【-】"><a href="#分式的浪漫【-】" class="headerlink" title="分式的浪漫【+】"></a>分式的浪漫【+】</h2><p><font color=red>其实不仅限于eln，遇到分式都可以洛洛</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912161726673.png" alt="image-20210912161726673"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210912161915863.png" alt="image-20210912161915863"></p>
-<h2 id="指数函数"><a href="#指数函数" class="headerlink" title="指数函数"></a>指数函数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913154045916.png" alt="image-20210913154045916"></p>
-<h2 id="三角函数与三角函数"><a href="#三角函数与三角函数" class="headerlink" title="三角函数与三角函数"></a>三角函数与三角函数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210913105004393.png" alt="image-20210913105004393"></p>
-<h2 id="最值问题灵活处理"><a href="#最值问题灵活处理" class="headerlink" title="最值问题灵活处理"></a>最值问题灵活处理</h2><p><font color=red>利用不等式变形，转化了问题</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917170324709.png" alt="image-20210917170324709"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917170330272.png" alt="image-20210917170330272"></p>
-<p>我错误的解法是硬从f(x)出发</p>
-<p>然后走了很多弯路（<font color=red>其实做的时候就应该发觉了，这是不归路</font>）</p>
-<p><font color=blue>方向对了，少走很多弯路</font></p>
-<h2 id="绝对值和反常积分【-】"><a href="#绝对值和反常积分【-】" class="headerlink" title="绝对值和反常积分【+】"></a>绝对值和反常积分【+】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210924170033261.png" alt="image-20210924170033261"></p>
-<p><font color=red>遇到绝对值的第一反应就是去绝对值</font></p>
-<p><font color=red>反常积分通常与奇偶性结合考察</font></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E5%AF%BC%E6%95%B0%E5%92%8C%E5%BE%AE%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/04/%E5%AF%BC%E6%95%B0%E5%92%8C%E5%BE%AE%E5%88%86/" class="post-title-link" itemprop="url">导数和微分</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-04 13:16:12" itemprop="dateCreated datePublished" datetime="2021-07-04T13:16:12+08:00">2021-07-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-17 16:14:38" itemprop="dateModified" datetime="2021-09-17T16:14:38+08:00">2021-09-17</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="常用导数公式"><a href="#常用导数公式" class="headerlink" title="常用导数公式"></a>常用导数公式</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706175938655.png" alt="image-20210706175938655"></p>
-<h1 id="导数定义式"><a href="#导数定义式" class="headerlink" title="导数定义式"></a>导数定义式</h1><h2 id="导数定义式变形【-】"><a href="#导数定义式变形【-】" class="headerlink" title="导数定义式变形【+++++】"></a>导数定义式变形【+++++】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914201539038.png" alt="image-20210914201539038"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914201548218.png" alt="image-20210914201548218"></p>
-<p><font color=red>key抓着就代到定义式里去先，其他该配合的配合就好了</font></p>
-<p><font color=red>负的Δx是出题</font></p>
-<h1 id="对x求导和对a-x求导"><a href="#对x求导和对a-x求导" class="headerlink" title="对x求导和对a+x求导"></a>对x求导和对a+x求导</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210915111514931.png" alt="image-20210915111514931"></p>
-<p>$$f’()$$都是统一向<font color=red>自变量</font>求导</p>
-<p>而不是x+1</p>
-<h1 id="已知f-x-求f’-x-【-】"><a href="#已知f-x-求f’-x-【-】" class="headerlink" title="已知f(x)求f’(x)【+++++】"></a>已知f(x)求f’(x)【+++++】</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713171423821.png" alt="image-20210713171423821"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210713171434551.png" alt="image-20210713171434551"></p>
-<p>主要是在<font color=red>临界值的特殊处理</font></p>
-<p>导数存在的充要条件：<strong>左右导数都存在且相等</strong></p>
-<h2 id="已知f-x-求f’-x-【品】"><a href="#已知f-x-求f’-x-【品】" class="headerlink" title="已知f(x)求f’(x)【品】"></a>已知f(x)求f’(x)【品】</h2><p><font color=red>一点红型</font></p>
-<p><font color=red>分段函数连续性与导数的关系</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094107331.png" alt="image-20210914094107331"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094328582.png" alt="image-20210914094328582"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094353550.png" alt="image-20210914094353550"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094410790.png" alt="image-20210914094410790"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914094450641.png" alt="image-20210914094450641"></p>
-<p><font color=red>f(0)=C，不能得出f’(0)=0</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914095228755.png" alt="image-20210914095228755"></p>
-<p>而应该用定义式去求该点的导数</p>
-<p>然后需要求出式子中未知的b</p>
-<p>据题意“处处可导”，则在x=0处也可导</p>
-<p>又根据“可导必连续” 则可以向分段函数列等式求出b</p>
-<p><font color=blue>最后是注意定义域的书写</font></p>
-<p><font color=red>抽象f(x)的定义域并不是我们默认的(-∞,+∞)</font></p>
-<h2 id="导数定义式与连续性【品】"><a href="#导数定义式与连续性【品】" class="headerlink" title="导数定义式与连续性【品】"></a>导数定义式与连续性【品】</h2><p><font color=red>导数定义式与连续性对分段函数的应用场景</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914192448500.png" alt="image-20210914192448500"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210914192508457.png" alt="image-20210914192508457"></p>
-<p><font color=red>“只要考虑f(x)在x=0点的情况”</font></p>
-<p>$$f(x)$$可导（没说处处可导，故不能用连续性的性质），即应用<font color=blue>导数的定义式</font></p>
-<p>$$f’(x)$$连续，即 极限=$$f’(x_0)$$</p>
-<p>$$f(x)$$的归属：<font color=blue>有定义域的一方</font></p>
-<p>$$f’(x_0)$$的归属：<font color=blue>有定义域的一方</font></p>
-<h1 id="求单调区间"><a href="#求单调区间" class="headerlink" title="求单调区间"></a>求单调区间</h1><p>一阶导为0</p>
-<p>再根据函数大致图像确定单调区间，需画表格</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210917160411181.png" alt="image-20210917160411181"></p>
-<h1 id="求极值点"><a href="#求极值点" class="headerlink" title="求极值点"></a>求极值点</h1><p>一阶导为0的点为驻点</p>
-<p>驻点左右侧一阶导符号相反，该点则为极值点</p>
-<h1 id="什么是微分"><a href="#什么是微分" class="headerlink" title="什么是微分"></a>什么是微分</h1><p>是指函数在某一点处（趋近于无穷小）的变化量，是一种变化的量</p>
-<p>例如：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704131919185.png" alt="image-20210704131919185"></p>
-<h1 id="已知参数方程求导数"><a href="#已知参数方程求导数" class="headerlink" title="已知参数方程求导数"></a>已知参数方程求导数</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704140731623.png" alt="image-20210704140731623"></p>
-<p>技巧：dt/dx的倒数</p>
-<h1 id="拐点和驻点"><a href="#拐点和驻点" class="headerlink" title="拐点和驻点"></a>拐点和驻点</h1><p>驻点是<font color=blue>一阶导数等于零</font>的点</p>
-<p>拐点是指<font color=red>曲线斜率变化的单调性发生改变</font>（具体看下面解析）</p>
-<h2 id="拐点的性质"><a href="#拐点的性质" class="headerlink" title="拐点的性质"></a>拐点的性质</h2><p>拐点处二阶导为0</p>
-<h2 id="拐点的判定"><a href="#拐点的判定" class="headerlink" title="拐点的判定"></a>拐点的判定</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210909195119120.png" alt="image-20210909195119120"></p>
-<h2 id="拐点的理解【-】"><a href="#拐点的理解【-】" class="headerlink" title="拐点的理解【+++++】"></a>拐点的理解【+++++】</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210909195642982.png" alt="image-20210909195642982"></p>
-<p>左半部分，曲线斜率逐渐增大</p>
-<p>右半部分，曲线斜率逐渐减小</p>
-<p>而产生这一转变的那一个点就是拐点</p>
-<p>加深理解</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210909200539992.png" alt="image-20210909200539992"></p>
-<p><font color=red>曲线斜率变化的单调性发生改变</font></p>
-<p>据此，再反过来理解拐点的判定条件</p>
-<p>①三阶导不为0，才可能会发生这种转变</p>
-<p>②二阶导异号，即斜率变化的单调性相异</p>
-<h2 id="凹凸区间"><a href="#凹凸区间" class="headerlink" title="凹凸区间"></a>凹凸区间</h2><p>凹区间斜率逐渐增大（二阶导＞0）</p>
-<p>凸区间斜率逐渐减小（二阶导＜0）</p>
-<p>例题：</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706181858166.png" alt="image-20210706181858166"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210706181850242.png" alt="image-20210706181850242"></p>
-<h1 id="考研数学怎么考导数"><a href="#考研数学怎么考导数" class="headerlink" title="考研数学怎么考导数"></a>考研数学怎么考导数</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707174505197.png" alt="image-20210707174505197"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210707175835450.png" alt="image-20210707175835450"></p>
-<p>上式中的分母(x-a)^2不可以直接当作(x-a)来带进定义式</p>
-<p>因为这是x逼近与a，(x-a)的值不能直接当0处理</p>
-<p>正确打开上式的方式的是<strong>洛必达</strong></p>
-<p>很容易忽略的一点，已知条件为<strong>相切，除了告知导数值相等外，该点的函数值也是相等的</strong></p>
-<p>但是等值代换确是可以</p>
-<p><font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E5%8F%AF%E5%AF%BC%E3%80%81%E5%8F%AF%E5%BE%AE%E3%80%81%E5%8F%AF%E7%A7%AF%E3%80%81%E8%BF%9E%E7%BB%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/04/%E5%8F%AF%E5%AF%BC%E3%80%81%E5%8F%AF%E5%BE%AE%E3%80%81%E5%8F%AF%E7%A7%AF%E3%80%81%E8%BF%9E%E7%BB%AD/" class="post-title-link" itemprop="url">可导、可微、可积、连续</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-04 12:43:45" itemprop="dateCreated datePublished" datetime="2021-07-04T12:43:45+08:00">2021-07-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-06 10:42:30" itemprop="dateModified" datetime="2021-07-06T10:42:30+08:00">2021-07-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一元记文字，多元记图</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210705102538087.png" alt="image-20210705102538087"></p>
-<p>可导一定连续，连续不一定可导</p>
-<p>可微与可导是一样的</p>
-<p><strong>可积不一定连续，连续一定可积</strong></p>
-<p>不连续则一定不可导（同样适用于二阶导数）</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704131526632.png" alt="image-20210704131526632"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704131454235.png" alt="image-20210704131454235"></p>
-<h4 id="导数与偏导数"><a href="#导数与偏导数" class="headerlink" title="导数与偏导数"></a>导数与偏导数</h4><p>可导指的是偏导数存在,即沿x轴,y轴方向的导数存在</p>
-<p>Ps：</p>
-<p>多元函数才有偏导的概念</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/04/%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F/" class="post-title-link" itemprop="url">泰勒公式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-04 09:31:45" itemprop="dateCreated datePublished" datetime="2021-07-04T09:31:45+08:00">2021-07-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-09 10:40:22" itemprop="dateModified" datetime="2021-07-09T10:40:22+08:00">2021-07-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="泰勒公式"><a href="#泰勒公式" class="headerlink" title="泰勒公式"></a>泰勒公式</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210704093245996.png" alt="image-20210704093245996"></p>
-<p>x0取0时即麦克劳林公式</p>
-<p>而对sin来说</p>
-<p>sin0=0故跳着取奇数项</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210709104008555.png" alt="image-20210709104008555"></p>
+          <h4 id="对数与极限"><a href="#对数与极限" class="headerlink" title="对数与极限"></a>对数与极限</h4><p>（有无穷小代换的话那更ok）</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210630101418183.png"></p>
+<h4 id="等价无穷小代换易错题"><a href="#等价无穷小代换易错题" class="headerlink" title="等价无穷小代换易错题"></a>等价无穷小代换易错题</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710171337995.png" alt="image-20210710171337995"></p>
+<p>错误解法</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710171609403.png"></p>
+<p>正确解法</p>
+<p><font color=red size=5>eln后洛</font></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210710171811759.png" alt="image-20210710171811759"></p>
 
       
     </div>
@@ -1217,7 +1174,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/18/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/20/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/18/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/20/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1285,16 +1242,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">324</span>
+          <span class="site-state-item-count">333</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

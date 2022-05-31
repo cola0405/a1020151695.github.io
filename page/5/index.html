@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/05/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/manim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -191,7 +191,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/01/05/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">实训笔记</a>
+            <a href="/2022/01/11/manim/" class="post-title-link" itemprop="url">manim</a>
         </h2>
 
         <div class="post-meta">
@@ -201,14 +201,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-01-05 09:34:15" itemprop="dateCreated datePublished" datetime="2022-01-05T09:34:15+08:00">2022-01-05</time>
+              <time title="Created: 2022-01-11 16:54:43" itemprop="dateCreated datePublished" datetime="2022-01-11T16:54:43+08:00">2022-01-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-08 14:22:32" itemprop="dateModified" datetime="2022-03-08T14:22:32+08:00">2022-03-08</time>
+                <time title="Modified: 2022-01-12 14:08:04" itemprop="dateModified" datetime="2022-01-12T14:08:04+08:00">2022-01-12</time>
               </span>
 
           
@@ -222,147 +222,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><p>html里使用vue.js</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p>make the code easier and convenient to use</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Using computed method : &#123;&#123;getfullname&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">   <span class="attr">computed</span> :&#123;</span><br><span class="line">      <span class="attr">getfullname</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="built_in">this</span>.firstname +<span class="string">&quot; &quot;</span>+ <span class="built_in">this</span>.lastname;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>数据绑定</p>
-<p>输入框的值改变，下面p标签内的内容也改变</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;message&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Enter a message&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Message is: &#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> STORAGE_KEY = <span class="string">&quot;todos-vuejs-2.0&quot;</span>;</span><br><span class="line">      <span class="keyword">var</span> todoStorage = &#123;</span><br><span class="line">          <span class="attr">fetch</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="keyword">var</span> todos = <span class="built_in">JSON</span>.parse(<span class="built_in">localStorage</span>.getItem(STORAGE_KEY) || <span class="string">&quot;[]&quot;</span>);</span><br><span class="line">              todos.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">todo, index</span>) </span>&#123;</span><br><span class="line">                  todo.id = index;</span><br><span class="line">              &#125;);</span><br><span class="line">              todoStorage.uid = todos.length;</span><br><span class="line">              <span class="keyword">return</span> todos;</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="attr">save</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;    <span class="comment">// 使得todos刷新后仍然存在</span></span><br><span class="line">              <span class="built_in">localStorage</span>.setItem(STORAGE_KEY, <span class="built_in">JSON</span>.stringify(todos));</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="lt-strong-gt-标签"><a href="#lt-strong-gt-标签" class="headerlink" title="&lt;strong&gt;标签"></a>&lt;strong&gt;标签</h2><p>&lt;strong&gt; 标签是一个<strong>短语标签</strong></p>
-<p>用来定义计算机程序的样本重要的文本。</p>
-<p> &lt;strong&gt; 标签和 &lt;em&gt; 标签一样，用于强调文本，但它强调的程度更强一些。</p>
-<h2 id="lt-section-gt-标签"><a href="#lt-section-gt-标签" class="headerlink" title="&lt;section&gt;标签"></a>&lt;section&gt;标签</h2><p>The <code>&lt;section&gt;</code> tag defines a section in a document.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>The section element<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>WWF History<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>WWF&#x27;s Symbol<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the same year of the establishment of WWF.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211231201711985.png" alt="image-20211231201711985"></p>
-<h2 id="叉叉"><a href="#叉叉" class="headerlink" title="叉叉"></a>叉叉</h2><p>并不是图片，而是有颜色的 X</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211231201910554.png" alt="image-20211231201910554"></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.todo-list</span> <span class="selector-tag">li</span> <span class="selector-class">.destroy</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: none;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">right</span>: <span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">40px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">	<span class="attribute">margin</span>: auto <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#cc9a9a</span>;</span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">11px</span>;</span><br><span class="line">	<span class="attribute">transition</span>: color <span class="number">0.2s</span> ease-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.todo-list</span> <span class="selector-tag">li</span> <span class="selector-class">.destroy</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#af5b5e</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.todo-list</span> <span class="selector-tag">li</span> <span class="selector-class">.destroy</span>:after &#123;</span><br><span class="line">	content: <span class="string">&#x27;×&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.todo-list</span> <span class="selector-tag">li</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.destroy</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">removeTodo: <span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">this</span>.todos.splice(<span class="built_in">this</span>.todos.indexOf(todo), <span class="number">1</span>);</span><br><span class="line">            &#125;,</span><br></pre></td></tr></table></figure>
-
-<p>todos是一个Array</p>
-<p>该方法表示从todo开始，移除1个元素</p>
-<h2 id="trim"><a href="#trim" class="headerlink" title="trim"></a>trim</h2><p>remove whitespace characters from the start and end of a string</p>
-<h2 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">, <span class="attr">watch</span>: &#123;      <span class="comment">// observe and react to data changes on a Vue instance</span></span><br><span class="line">             <span class="attr">todos</span>: &#123;</span><br><span class="line">                 <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;  <span class="comment">// 如果todos发生改变，即时存起来</span></span><br><span class="line">                     todoStorage.save(todos);</span><br><span class="line">                 &#125;,</span><br><span class="line">                 <span class="attr">deep</span>: <span class="literal">true</span></span><br><span class="line">             &#125;</span><br><span class="line">         &#125;,</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="mount"><a href="#mount" class="headerlink" title="mount"></a>mount</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.$mount(<span class="string">&quot;.todoapp&quot;</span>); </span><br><span class="line"><span class="comment">// This code creates a new instance of Vue and mounts it on the HTML element with the ID of app</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="array-push"><a href="#array-push" class="headerlink" title="array push"></a>array push</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.todos.push(&#123;</span><br><span class="line">                   <span class="attr">id</span>: todoStorage.uid++,</span><br><span class="line">                   title: value,</span><br><span class="line">                   <span class="attr">completed</span>: <span class="literal">false</span>    <span class="comment">// completed 字段</span></span><br><span class="line">               &#125;);</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="array-filter"><a href="#array-filter" class="headerlink" title="array filter"></a>array filter</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> filters = &#123;</span><br><span class="line">          <span class="attr">all</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> todos;</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="attr">active</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> todos.filter(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;	<span class="comment">// filter 是array的方法</span></span><br><span class="line">                  <span class="keyword">return</span> !todo.completed;				<span class="comment">// 表示返回还未完成的todo</span></span><br><span class="line">              &#125;);</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="attr">completed</span>: <span class="function"><span class="keyword">function</span> (<span class="params">todos</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> todos.filter(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</span><br><span class="line">                  <span class="keyword">return</span> todo.completed;</span><br><span class="line">              &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="vue跨域报错"><a href="#vue跨域报错" class="headerlink" title="vue跨域报错"></a>vue跨域报错</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue Proxy error: Could not proxy request</span><br></pre></td></tr></table></figure>
-
-<p>问题：</p>
-<p>后端服务器没有启动</p>
-<p>解决：</p>
-<p>先启动后端服务器</p>
-<h1 id="Vue框架"><a href="#Vue框架" class="headerlink" title="Vue框架"></a>Vue框架</h1><h2 id="vue登录"><a href="#vue登录" class="headerlink" title="vue登录"></a>vue登录</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handleLogin</span>(<span class="params"></span>)</span> &#123; <span class="comment">// 登录</span></span><br><span class="line">      <span class="built_in">this</span>.$refs.loginForm.validate(<span class="function"><span class="params">valid</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (valid) &#123;</span><br><span class="line">          <span class="built_in">this</span>.loading = <span class="literal">true</span></span><br><span class="line">          <span class="built_in">this</span>.$store</span><br><span class="line">            .dispatch(<span class="string">&#x27;user/login&#x27;</span>, <span class="built_in">this</span>.loginForm)</span><br><span class="line">            .then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">              <span class="built_in">this</span>.$store.dispatch(<span class="string">&#x27;user/getInfo&#x27;</span>, <span class="built_in">this</span>.$store.getters.token)</span><br><span class="line">              <span class="built_in">this</span>.$router.push(&#123;</span><br><span class="line">                <span class="comment">// path: this.redirect || &#x27;/dashboard&#x27;,</span></span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;/dashboard&#x27;</span>,</span><br><span class="line">                <span class="attr">query</span>: <span class="built_in">this</span>.otherQuery</span><br><span class="line">              &#125;)</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="string">&#x27;done&#x27;</span>)</span><br><span class="line">              <span class="built_in">this</span>.loading = <span class="literal">false</span></span><br><span class="line">            &#125;)</span><br><span class="line">            .catch(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">              <span class="built_in">this</span>.loading = <span class="literal">false</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">&#x27;error submit!!&#x27;</span>)</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><code>dispatch</code>后调用<code>api/user.js</code></p>
-<p><code>dispatch(&#39;user/login&#39;)</code>对应<code>function login(data)</code></p>
-<p><code>dispatch(&#39;user/getInfo&#39;)</code>对应<code>function getInfo(token)</code></p>
-<p><code>dispatch</code>中的<code>user/</code>指的是<code>user.js</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> request <span class="keyword">from</span> <span class="string">&#x27;@/utils/request&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> request(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;/api/user/login&#x27;</span>,</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">    data</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getInfo</span>(<span class="params">token</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> request(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;/api/user/info&#x27;</span>,</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">    <span class="attr">params</span>: &#123; token &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><code>store/modules/user.js</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; login, logout, getInfo &#125; <span class="keyword">from</span> <span class="string">&#x27;@/api/user&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  <span class="attr">token</span>: getToken(),</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  <span class="attr">roles</span>: [<span class="string">&#x27;teacher&#x27;</span>],</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  <span class="attr">SET_NAME</span>: <span class="function">(<span class="params">state, name</span>) =&gt;</span> &#123;</span><br><span class="line">    state.name = name</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">SET_TOKEN</span>: <span class="function">(<span class="params">state, token</span>) =&gt;</span> &#123;</span><br><span class="line">    state.token = token</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">SET_ROLES</span>: <span class="function">(<span class="params">state, roles</span>) =&gt;</span> &#123;</span><br><span class="line">    state.roles = roles</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">  <span class="comment">// user login</span></span><br><span class="line">  <span class="function"><span class="title">login</span>(<span class="params">&#123; commit &#125;, userInfo</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; username, password &#125; = userInfo</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      login(&#123; <span class="attr">username</span>: username.trim(), <span class="attr">password</span>: password &#125;).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; data &#125; = response</span><br><span class="line">        commit(<span class="string">&#x27;SET_TOKEN&#x27;</span>, data.token)</span><br><span class="line">        setToken(data.token)</span><br><span class="line">        resolve()</span><br><span class="line">      &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        reject(error)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// get user info</span></span><br><span class="line">  <span class="function"><span class="title">getInfo</span>(<span class="params">&#123; commit, state &#125;</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      getInfo(state.token).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; data &#125; = response</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!data) &#123;</span><br><span class="line">          reject(<span class="string">&#x27;Verification failed, please Login again.&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">const</span> &#123; roles,name &#125; = data</span><br><span class="line"></span><br><span class="line">        <span class="comment">// roles must be a non-empty array</span></span><br><span class="line">        <span class="keyword">if</span> (!roles || roles.length &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">          reject(<span class="string">&#x27;getInfo: roles must be a non-null array!&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        commit(<span class="string">&#x27;SET_ROLES&#x27;</span>, roles)</span><br><span class="line">        commit(<span class="string">&#x27;SET_NAME&#x27;</span>, name)</span><br><span class="line">        resolve(data)</span><br><span class="line">      &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        reject(error)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="vue403"><a href="#vue403" class="headerlink" title="vue403"></a>vue403</h2><p>Spring Boot Security的拦截</p>
-<h2 id="vue401"><a href="#vue401" class="headerlink" title="vue401"></a>vue401</h2><p>还是Spring Boot Security的拦截</p>
-<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="ECMAScript和JavaScript"><a href="#ECMAScript和JavaScript" class="headerlink" title="ECMAScript和JavaScript"></a>ECMAScript和JavaScript</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220101094709730.png" alt="image-20220101094709730"></p>
-<h1 id="响应式网页设计"><a href="#响应式网页设计" class="headerlink" title="响应式网页设计"></a>响应式网页设计</h1><p>Responsive web design</p>
-<blockquote>
-<p><strong>Responsive web design</strong> (<strong>RWD</strong>) or <strong>responsive design</strong> is an approach to <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Web_design">web design</a> that aims to make web pages render well on a variety of devices and window or screen sizes from minimum to maximum display size to ensure usability and satisfaction.</p>
-</blockquote>
-<p>例如：弹性布局</p>
-<p>百分号%，而不是固定长度px</p>
-<h1 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h1><p>同步编程简单来说就是，发出一个任务，然后等待执行。</p>
-<p>而异步编程就是，发出一个任务，不等待结果，就继续发出下一个任务。</p>
-<h1 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 赋值</span></span><br><span class="line"><span class="keyword">var</span> func1 = <span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>) </span>&#123;  &#125;</span><br><span class="line"><span class="comment">// 函数作为参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    fn()</span><br><span class="line">&#125;   </span><br><span class="line"><span class="comment">// 函数作为返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="JPA和Hibernate是什么关系"><a href="#JPA和Hibernate是什么关系" class="headerlink" title="JPA和Hibernate是什么关系"></a>JPA和Hibernate是什么关系</h2><p>JPA是标准接口</p>
-<p>Hibernate是具体实现</p>
-<h2 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a>Hibernate</h2><h2 id="application-yml和applicaiton-properties"><a href="#application-yml和applicaiton-properties" class="headerlink" title="application.yml和applicaiton.properties"></a>application.yml和applicaiton.properties</h2><p>另外新建就行</p>
-<h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>文件上传<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">action</span>=<span class="string">&quot;/file/upload&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&quot;file&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;file/upload&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">upload</span><span class="params">(<span class="meta">@RequestParam(&quot;file&quot;)</span> MultipartFile multipartFile)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    fileService.uploadFile(multipartFile);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;成功&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>执行sql文件构建数据库的时候</p>
-<p>报错</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error Code: 1273. Unknown collation: &#x27;utf8mb4_0900_ai_ci&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>解决</p>
-<p>把<code>utf8mb4_0900_ai_ci</code>替换成<code>utf8mb4_general_ci</code></p>
-<h2 id="mybatisplus分页报错"><a href="#mybatisplus分页报错" class="headerlink" title="mybatisplus分页报错"></a>mybatisplus分页报错</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MySQL server version for the right syntax to use near &#x27;LIMIT 1’</span><br></pre></td></tr></table></figure>
-
-<p>原因：</p>
-<p><code>sql</code>语句加了分号<code>;</code></p>
-<p>解决：</p>
-<p>去掉多余的分号</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getSelectStatus&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;java.lang.Integer&quot;</span>&gt;</span></span><br><span class="line">      select COUNT(*) from course_student_relation where course_id = #&#123;courseId&#125; and student_id = #&#123;studentId&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="role-relation"><a href="#role-relation" class="headerlink" title="role_relation"></a>role_relation</h2><p>一用户多重角色时派上用场</p>
-
+          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220111165502148.png" alt="image-20220111165502148"></p>
+<p><a target="_blank" rel="noopener" href="https://3b1b.github.io/manim/getting_started/example_scenes.html">视频网站</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/manim-demo">demo</a></p>
+<h2 id="鼠标怎么隐藏"><a href="#鼠标怎么隐藏" class="headerlink" title="鼠标怎么隐藏"></a>鼠标怎么隐藏</h2>
       
     </div>
 
@@ -381,7 +244,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/04/hnsc%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/brew/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -395,480 +258,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/01/04/hnsc%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">hnsc笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-04 15:38:22" itemprop="dateCreated datePublished" datetime="2022-01-04T15:38:22+08:00">2022-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-09 20:50:27" itemprop="dateModified" datetime="2022-02-09T20:50:27+08:00">2022-02-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="IntelliJ"><a href="#IntelliJ" class="headerlink" title="IntelliJ"></a>IntelliJ</h1><h2 id="intellij-快捷键"><a href="#intellij-快捷键" class="headerlink" title="intellij 快捷键"></a>intellij 快捷键</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> + delete  // 删除当前行</span><br><span class="line"><span class="built_in">command</span> + ,  // 设置</span><br><span class="line"><span class="built_in">command</span> + up + a // Find Action</span><br><span class="line">run dashboard // 一键同时跑多个应用</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="intellij-插件"><a href="#intellij-插件" class="headerlink" title="intellij 插件"></a>intellij 插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Code Glance  // 代码预览</span><br><span class="line">Free Mybatis plugin  // mapper生成，跳转</span><br><span class="line">Rainbow Brackets // 彩色括号</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="JDK16"><a href="#JDK16" class="headerlink" title="JDK16"></a>JDK16</h2><p>删啦！！！！嘛问题都没有了</p>
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><p>版本信息在pom中都有</p>
-<h2 id="Spring-Boot-版本"><a href="#Spring-Boot-版本" class="headerlink" title="Spring Boot 版本"></a>Spring Boot 版本</h2><p>去这个网站<a target="_blank" rel="noopener" href="https://mvnrepository.com/search?q=spring-boot-starter%EF%BC%8C%E6%89%BE%E5%88%B0%E8%87%AA%E5%B7%B1%E6%83%B3%E8%A6%81%E7%9A%84spring-boot-starter%E7%89%88%E6%9C%AC%EF%BC%8C%E5%A4%8D%E5%88%B6%E4%B8%8B%E6%9D%A5%EF%BC%8C%E6%9B%BF%E6%8D%A2%E5%88%B0%E7%88%B6%E7%89%88%E6%9C%AC%E4%B8%8B%E3%80%82">https://mvnrepository.com/search?q=spring-boot-starter，找到自己想要的spring-boot-starter版本，复制下来，替换到父版本下。</a></p>
-<h2 id="maven-远程仓库"><a href="#maven-远程仓库" class="headerlink" title="maven 远程仓库"></a>maven 远程仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://start.aliyun.com</span><br></pre></td></tr></table></figure>
-
-<h2 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-javaagent:/Users/cola/software/ja-netfilter/ja-netfilter.jar</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="鉴权"><a href="#鉴权" class="headerlink" title="鉴权"></a>鉴权</h2><p>sa-token</p>
-<p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/sa-token-demo">demo</a></p>
-<p><a target="_blank" rel="noopener" href="https://sa-token.dev33.cn/doc/index.html#/use/jur-auth">官方文档</a></p>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>Setting - Editor - Live Templetes</p>
-<p>建一个comment组（右边的 + ，Templates group）</p>
-<p>然后在组里加head和ctr</p>
-<p>（之后，输入head，然后tab，注释就出来了）</p>
-<p>head :</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Cola</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> $date$</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@email</span> 1020151695@qq.com</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
-<p>ctr :</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> 查看面试邀请列表</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> cola</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@url</span> /interview/inviteList</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@method</span> GET</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
-<p>然后这里的 $date$</p>
-<p>还需要”Edit variables”</p>
-<p>然后 “define” 里选择Java</p>
-<p>（表示应用该快捷注释在Java文件中）</p>
-<h2 id="spring-boot-web"><a href="#spring-boot-web" class="headerlink" title="spring boot web"></a>spring boot web</h2><p>莫名其妙响应不了请求</p>
-<p>莫名其妙启动不了</p>
-<p>问题多半出在pom里</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>有了这个就不需要原始的starter了</p>
-<p>也不需要额外的spring-web（不然web应用跑都跑不动）</p>
-<h2 id="Spring-boot定时任务"><a href="#Spring-boot定时任务" class="headerlink" title="Spring boot定时任务"></a>Spring boot定时任务</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/spring-boot-schedule-demo">demo</a></p>
-<h2 id="log-导致应用启动失败"><a href="#log-导致应用启动失败" class="headerlink" title="log 导致应用启动失败"></a>log 导致应用启动失败</h2><p>（找找错误提示）</p>
-<h2 id="swagger"><a href="#swagger" class="headerlink" title="swagger"></a>swagger</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangcongyi420/article/details/119151683">https://blog.csdn.net/zhangcongyi420/article/details/119151683</a></p>
-<h2 id="knife4j"><a href="#knife4j" class="headerlink" title="knife4j"></a>knife4j</h2><h2 id="封装自己的Request对象"><a href="#封装自己的Request对象" class="headerlink" title="封装自己的Request对象"></a>封装自己的Request对象</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation(&quot;查看面试邀请列表&quot;)</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/inviteList&quot;)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> RQL <span class="title">getInterviewInviteList</span><span class="params">(GetInterviewInviteListRequest request, <span class="meta">@NotBlank(message = &quot;token未找到&quot;)</span> <span class="meta">@RequestHeader(&quot;token&quot;)</span> String token)</span> </span>&#123;</span><br><span class="line">    List&lt;InterviewItemResp&gt; respList=interviewService.getInterviewInviteList(request.getPositionId(),request.getPage(),request.getSize(),token);</span><br><span class="line">    <span class="keyword">return</span> RQL.codeEnum(CodeEnum.SUCCESS).putData(respList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以设置默认值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GetInterviewInviteListRequest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer page = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer size = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Long positionId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><p>PageHelper</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.pagehelper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pagehelper-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.13<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>只有紧跟在<code>PageHelper.startPage</code>方法后的<strong>第一个</strong>Mybatis的<strong>查询（Select）</strong>方法会被分页。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PageHelper.startPage(page,size);</span><br><span class="line">List&lt;CompInterview&gt; compInterviewList = compInterviewMapper.selectAllComInterviewByPositionId(positionId);</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Select(&quot;select * from comp_interview where position_id=#&#123;positionId&#125;&quot;)</span></span><br><span class="line">   <span class="function">List&lt;CompInterview&gt; <span class="title">selectAllComInterviewByPositionId</span><span class="params">(<span class="meta">@Param(&quot;positionId&quot;)</span> Long positionId)</span></span>;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="token"><a href="#token" class="headerlink" title="token"></a>token</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&quot;ret&quot;</span>:40001,<span class="string">&quot;message&quot;</span>:<span class="string">&quot;header缺失:token&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>解决：</p>
-<p>从用户登录成功那的“返回示例”那拿的（没过期）</p>
-<p>Postman 在headers中添加token</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XLK5CVhOlFKlgjGwvXBe21HfAmQL8qftEbHSBVvn3axD1jJaiMbdOXwlGaU1FqIBNdDUa44qWWLfwERogBEKllxmjcVMAY6kI6MvXioTZ8Rc6UySDtpb8X0PKzJ8JnBb</span><br></pre></td></tr></table></figure>
-
-<p>结果：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;ret&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;message&quot;</span>: <span class="string">&quot;成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="后端拿token有什么用"><a href="#后端拿token有什么用" class="headerlink" title="后端拿token有什么用"></a>后端拿token有什么用</h2><p>sa-token 解析token</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (SaTempUtil.parseToken(token, Long.class) != <span class="keyword">null</span>) &#123;</span><br><span class="line">    uid = SaTempUtil.parseToken(token, Long.class);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (StpUtil.getLoginId() != <span class="keyword">null</span>) &#123;</span><br><span class="line">    uid = Long.parseLong(StpUtil.getLoginId().toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="post请求传参"><a href="#post请求传参" class="headerlink" title="post请求传参"></a>post请求传参</h2><p>post请求一般不用form-data（显式）</p>
-<p>而是通过json形式</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220106113743600.png"></p>
-<p>然后后端</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterviewReinviteRequest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotNull(message = &quot;面试id不能为空&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Long interviewId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> RQL <span class="title">interviewReInvite</span><span class="params">(<span class="meta">@Valid</span> <span class="meta">@RequestBody</span> InterviewReinviteRequest interviewReinviteRequest)</span></span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>拿post里的数据需要封装request类</p>
-<h2 id="参数命名"><a href="#参数命名" class="headerlink" title="参数命名"></a>参数命名</h2><p>表示消息的未读状态</p>
-<p>我用的是</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Integer messageStatus;</span><br></pre></td></tr></table></figure>
-
-<p>原因是考虑到以后可能会有 “已读未回” 消息的情况</p>
-<p>为了可扩展性吧</p>
-<p>牺牲了可读性</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean unRead;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="Service-加在哪"><a href="#Service-加在哪" class="headerlink" title="@Service 加在哪"></a>@Service 加在哪</h2><p>Impl</p>
-<h2 id="total"><a href="#total" class="headerlink" title="total"></a>total</h2><p>是本应返回的当前用户的全部信息的总数</p>
-<p>而不是传到前端的信息数</p>
-<h2 id="ArrayList-sort"><a href="#ArrayList-sort" class="headerlink" title="ArrayList.sort()"></a>ArrayList.sort()</h2><p>最终还是在sql语句中进行逆序</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">... <span class="keyword">order</span> <span class="keyword">by</span> <span class="type">time</span> <span class="type">dec</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h2><p>无时区，更复合心智。</p>
-<h2 id="yyyy-MM-dd"><a href="#yyyy-MM-dd" class="headerlink" title="yyyy-MM-dd"></a>yyyy-MM-dd</h2><p>因为YYYY是week-based-year，表示：当天所在的周属于的年份，一周从周日开始，周六结束，只要本周跨年，那么这周就算入下一年。</p>
-<p>正确的应该是：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yyyy-MM-dd</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="LocalDateTime-做request里的参数"><a href="#LocalDateTime-做request里的参数" class="headerlink" title="LocalDateTime 做request里的参数"></a>LocalDateTime 做request里的参数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;,timezone = &quot;GMT+8&quot;)</span></span><br><span class="line"><span class="keyword">private</span> LocalDateTime interviewTime;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="应用启动接口"><a href="#应用启动接口" class="headerlink" title="应用启动接口"></a>应用启动接口</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220114110941196.png" alt="image-20220114110941196"></p>
-<h2 id="pojo是什么"><a href="#pojo是什么" class="headerlink" title="pojo是什么"></a>pojo是什么</h2><p>Plain Ordinary Java Object</p>
-<p>可以把POJO作为支持业务逻辑的协助类</p>
-<h2 id="不用指定parametertype"><a href="#不用指定parametertype" class="headerlink" title="不用指定parametertype"></a>不用指定parametertype</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">&quot;addMessage&quot;</span>&gt;</span></span><br><span class="line">    insert into user_message values(null,#&#123;userMessage.receiverId&#125;,#&#123;userMessage.senderId&#125;,#&#123;userMessage.title&#125;,#&#123;userMessage.content&#125;,#&#123;userMessage.isValid&#125;,now(),#&#123;userMessage.readed&#125;,null)</span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="请求命名"><a href="#请求命名" class="headerlink" title="请求命名"></a>请求命名</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:9989/company/get/interviewing/list</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="接口里default-关键字"><a href="#接口里default-关键字" class="headerlink" title="接口里default 关键字"></a>接口里default 关键字</h2><p>接口里的</p>
-<h2 id="怎么抛异常"><a href="#怎么抛异常" class="headerlink" title="怎么抛异常"></a>怎么抛异常</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">throws</span> new <span class="title">Exception</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="enum无法继承类"><a href="#enum无法继承类" class="headerlink" title="enum无法继承类"></a>enum无法继承类</h2><p>但还是可以实现接口</p>
-<p>然后接口中用defaut 方法</p>
-<p>就可以相当于继承类了</p>
-<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xxx(Object... strs)&#123;</span><br><span class="line">  <span class="keyword">for</span>(String str : strs)&#123;</span><br><span class="line">  	System.out.println(str);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="controller层"><a href="#controller层" class="headerlink" title="controller层"></a>controller层</h2><p>request放在controller层</p>
-<p>放controller包</p>
-<h2 id="util不够多"><a href="#util不够多" class="headerlink" title="util不够多"></a>util不够多</h2><h2 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h2><p>Json web token</p>
-<h2 id="添加cookie"><a href="#添加cookie" class="headerlink" title="添加cookie"></a>添加cookie</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;/setCookies&quot;,method = RequestMethod.GET)</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span>  String <span class="title">setCookies</span><span class="params">(HttpServletResponse response)</span></span>&#123;</span><br><span class="line">      <span class="comment">//HttpServerletRequest 装请求信息类</span></span><br><span class="line">      <span class="comment">//HttpServerletRespionse 装相应信息的类</span></span><br><span class="line">      Cookie cookie=<span class="keyword">new</span> Cookie(<span class="string">&quot;sessionId&quot;</span>,<span class="string">&quot;CookieTestInfo&quot;</span>);</span><br><span class="line">      response.addCookie(cookie);</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;添加cookies信息成功&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="git修改comment"><a href="#git修改comment" class="headerlink" title="git修改comment"></a>git修改comment</h2><p>修改最后一次的提交</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --force</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="push代码前"><a href="#push代码前" class="headerlink" title="push代码前"></a>push代码前</h2><p>沿着流程走一遍，看哪里还存在注释等的问题</p>
-<h2 id="git-取消commit"><a href="#git-取消commit" class="headerlink" title="git 取消commit"></a>git 取消commit</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br><span class="line"></span><br><span class="line"><span class="comment"># --hard 表示commit和修改的代码都回退到上一个版本</span></span><br><span class="line"><span class="comment"># --soft 只是撤销commit</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="我拉下来跑一遍"><a href="#我拉下来跑一遍" class="headerlink" title="我拉下来跑一遍"></a>我拉下来跑一遍</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220112164200687.png" alt="image-20220112164200687"></p>
-<h2 id="每次写代码之前我都会pull"><a href="#每次写代码之前我都会pull" class="headerlink" title="每次写代码之前我都会pull"></a>每次写代码之前我都会pull</h2><h2 id="push-到指定分支"><a href="#push-到指定分支" class="headerlink" title="push 到指定分支"></a>push 到指定分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin dev:<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="gitignore不生效"><a href="#gitignore不生效" class="headerlink" title="gitignore不生效"></a>gitignore不生效</h2><h2 id="stable版本的分支"><a href="#stable版本的分支" class="headerlink" title="stable版本的分支"></a>stable版本的分支</h2><p>版本管理</p>
-<h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><h2 id="站内消息的内容怎么存"><a href="#站内消息的内容怎么存" class="headerlink" title="站内消息的内容怎么存"></a>站内消息的内容怎么存</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220110100928854.png" alt="image-20220110100928854"></p>
-<p>content 存json</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;username&quot;</span>: <span class="string">&quot;cola&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;companyName&quot;</span>: <span class="string">&quot;n公司&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;positionName&quot;</span>: <span class="string">&quot;JAVA高级开发工程师&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;interviewTime&quot;</span>: <span class="string">&quot;2022-01-22 15:00:00&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;addr&quot;</span>: <span class="string">&quot;郑州市龙子湖金水区&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;contact&quot;</span>: <span class="string">&quot;HRBP先生&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;phone&quot;</span>:<span class="string">&quot;13012341234&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;companyInfoPage&quot;</span>:<span class="string">&quot;https://www.baidu.com/&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>再加一个字段template，表示不同类型的消息</p>
-<p>传html代码真不现实。。</p>
-<h2 id="该接口面向的用户是谁"><a href="#该接口面向的用户是谁" class="headerlink" title="该接口面向的用户是谁"></a>该接口面向的用户是谁</h2><p>是单单普通用户</p>
-<p>还是这个系统的全部用户，包括企业用户、教培机构、管理员</p>
-<h2 id="多人用一个账户正常吗"><a href="#多人用一个账户正常吗" class="headerlink" title="多人用一个账户正常吗"></a>多人用一个账户正常吗</h2><p>按正常逻辑，这怎么可以呢。。。</p>
-<p>但在hnsc里是正常的，公司里，一个账号多个人用</p>
-<h2 id="多端"><a href="#多端" class="headerlink" title="多端"></a>多端</h2><p>保证信息显示准确</p>
-<p>切换页面时就要重新获取一次用户信息</p>
-<h2 id="分开的请求"><a href="#分开的请求" class="headerlink" title="分开的请求"></a>分开的请求</h2><p>一个功能分成两个接口的弊端</p>
-<p>A请求成功了，B请求没成功，那gg了</p>
-<p>尽量不分开来，一个接口完成一个功能</p>
-<h2 id="不信任前端"><a href="#不信任前端" class="headerlink" title="不信任前端"></a>不信任前端</h2><p>重要数据，我们必须从数据库拿</p>
-<p>而不是让前端传回来用</p>
-<p>前端主要要传的就只有要求和凭证</p>
-<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>长期项目的话，兼容性应该放在更前一点</p>
-<p>涉及到政府的话，他们的机器各种各样的机型</p>
-<p>IE。。。</p>
-<p>2.5.x vue 老，是可以兼容到IE10，但是更老的就不行了</p>
-<h2 id="封装发送消息的工具类"><a href="#封装发送消息的工具类" class="headerlink" title="封装发送消息的工具类"></a>封装发送消息的工具类</h2><p>尽可能把收集数据的过程也集成到工具类里来</p>
-<p>让使用者用起来简单</p>
-<h2 id="UI图"><a href="#UI图" class="headerlink" title="UI图"></a>UI图</h2><p>别自己想！！！</p>
-<p>都看看UI图</p>
-<p>这些UI图在制作之初，都是经过思考的</p>
-<p>而且是产品经理的意思，相当于官方文档</p>
-<p>（可能有错误，但是）</p>
-<h2 id="所以这就是Java继承特性的有用之处吗！！！"><a href="#所以这就是Java继承特性的有用之处吗！！！" class="headerlink" title="所以这就是Java继承特性的有用之处吗！！！"></a>所以这就是Java继承特性的有用之处吗！！！</h2><p>邀请和重新邀请</p>
-<p>不同功能，但是字段特别相似</p>
-<h2 id="对于不同种类的消息"><a href="#对于不同种类的消息" class="headerlink" title="对于不同种类的消息"></a>对于不同种类的消息</h2><p>jsonstring存数据</p>
-<p>那么，一张表就够了</p>
-<h2 id="空间换性能"><a href="#空间换性能" class="headerlink" title="空间换性能"></a>空间换性能</h2><p>多存个字段就多存个字段</p>
-<p>查询更麻烦</p>
-<h2 id="为什么不能信任前端"><a href="#为什么不能信任前端" class="headerlink" title="为什么不能信任前端"></a>为什么不能信任前端</h2><p>账号被盗，hacker拿了token乱来</p>
-<p>那完了</p>
-<h1 id="代码习惯"><a href="#代码习惯" class="headerlink" title="代码习惯"></a>代码习惯</h1><h2 id="取数据都放在前边"><a href="#取数据都放在前边" class="headerlink" title="取数据都放在前边"></a>取数据都放在前边</h2><h2 id="插入数据失败要抛异常"><a href="#插入数据失败要抛异常" class="headerlink" title="插入数据失败要抛异常"></a>插入数据失败要抛异常</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CodeEnum.failed_send_user_message.assertNotEquals(messagesMapper.addMessage(userMessage),<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="操作redis失败要抛异常"><a href="#操作redis失败要抛异常" class="headerlink" title="操作redis失败要抛异常"></a>操作redis失败要抛异常</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    updateMessageCountInRedis(receiverId);</span><br><span class="line">&#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">    CodeEnum.failed_get_messageCount_from_redis.assertIsFalse(<span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="找bug"><a href="#找bug" class="headerlink" title="找bug"></a>找bug</h2><p>多动脑，多实践调试</p>
-<p>而不是问为什么</p>
-<p>问题列一个清单</p>
-<p>一个一个解决</p>
-<p>而不是单纯提出问题问为什么</p>
-<h2 id="entity"><a href="#entity" class="headerlink" title="entity"></a>entity</h2><p>别着急写entity</p>
-<p>具体看接口需要什么</p>
-<h2 id="已经被userId搞了一个多钟了"><a href="#已经被userId搞了一个多钟了" class="headerlink" title="已经被userId搞了一个多钟了"></a>已经被userId搞了一个多钟了</h2><p>哈哈哈</p>
-<p>我一定命名清楚！！！</p>
-<h1 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h1><h2 id="mysql-null字段占的字节多吗"><a href="#mysql-null字段占的字节多吗" class="headerlink" title="mysql null字段占的字节多吗"></a>mysql null字段占的字节多吗</h2><p>没关系~~~</p>
-<p>mysql数据口内部通过算法能解决</p>
-<h2 id="mysql-多条件嵌套"><a href="#mysql-多条件嵌套" class="headerlink" title="mysql 多条件嵌套"></a>mysql 多条件嵌套</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span> (status <span class="operator">!=</span> <span class="number">-1</span> <span class="keyword">or</span> status <span class="operator">!=</span> <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="多种情况的update"><a href="#多种情况的update" class="headerlink" title="多种情况的update"></a>多种情况的update</h2><p>mybatis 支持if</p>
-<h2 id="sql日期的比较"><a href="#sql日期的比较" class="headerlink" title="sql日期的比较"></a>sql日期的比较</h2><p>直接比</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">time</span> <span class="operator">&lt;</span> now()</span><br></pre></td></tr></table></figure>
-
-<p>如果在xml中，则需要用转移或者CDATA（xml中规定的，而不是mybatis）</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;![CDATA[ select s.* from xxx s where s.status&lt;5 ]]&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="mybatis-生成"><a href="#mybatis-生成" class="headerlink" title="mybatis 生成"></a>mybatis 生成</h2><p>free mybatis plugin 不能用了</p>
-<h2 id="Mybatis-变量别名"><a href="#Mybatis-变量别名" class="headerlink" title="Mybatis 变量别名"></a>Mybatis 变量别名</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">&quot;messageOverview&quot;</span> <span class="attr">type</span>=<span class="string">&quot;com.hnsc.cloud.controller.response.MessageOverviewResp&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;id&quot;</span> <span class="attr">property</span>=<span class="string">&quot;messageId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;title&quot;</span> <span class="attr">property</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;create_time&quot;</span> <span class="attr">property</span>=<span class="string">&quot;createTime&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;readed&quot;</span> <span class="attr">property</span>=<span class="string">&quot;readed&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getMessagesOverview&quot;</span> <span class="attr">resultMap</span>=<span class="string">&quot;messageOverview&quot;</span>&gt;</span></span><br><span class="line">       select * from user_message where user_id = #&#123;userId&#125; order by create_time desc</span><br><span class="line">   <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>别用result啦！！！</p>
-<p>直接sql 的 as 就可以取别名</p>
-<h2 id="复杂SQL语句"><a href="#复杂SQL语句" class="headerlink" title="复杂SQL语句"></a>复杂SQL语句</h2><p>尽量不在一个查询之后，再进行迭代查询</p>
-<p>绝大部分情况都是可以合成一个sql的</p>
-<p>用好join</p>
-<h2 id="left-join"><a href="#left-join" class="headerlink" title="left join"></a>left join</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211231101503642.png" alt="image-20211231101503642"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211231101531918.png" alt="image-20211231101531918"></p>
-<h2 id="mysql-用户密码"><a href="#mysql-用户密码" class="headerlink" title="mysql 用户密码"></a>mysql 用户密码</h2><p>加密后的</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220113155804627.png" alt="image-20220113155804627"></p>
-<h2 id="mybatis-resultType是String"><a href="#mybatis-resultType是String" class="headerlink" title="mybatis resultType是String"></a>mybatis resultType是String</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resultType=&quot;java.lang.String&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="Long-和long，Integer-和-int"><a href="#Long-和long，Integer-和-int" class="headerlink" title="Long 和long，Integer 和 int"></a>Long 和long，Integer 和 int</h2><p>这是包装类和数据类型的区别</p>
-<p>包装类除了数据类型之外还封装了一些其他方法</p>
-<p>比如说与字符串的转换</p>
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><h2 id="删除mapper，但是xml里的语句还在。。。"><a href="#删除mapper，但是xml里的语句还在。。。" class="headerlink" title="删除mapper，但是xml里的语句还在。。。"></a>删除mapper，但是xml里的语句还在。。。</h2><p>先从mapper跳到xml删了sql语句</p>
-<p>再删mapper里的方法</p>
-<h2 id="mybatis-返回主键"><a href="#mybatis-返回主键" class="headerlink" title="mybatis 返回主键"></a>mybatis 返回主键</h2><p>insert会自动填充</p>
-<p>要不就用注释</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;, keyColumn=&quot;id&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">insertInterview</span><span class="params">(<span class="meta">@Param(&quot;compInterview&quot;)</span> CompInterview compInterview)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>再不行就xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">&quot;insertInterview&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;com.hnsc.cloud.entity.CompInterview&quot;</span> <span class="attr">useGeneratedKeys</span>=<span class="string">&quot;true&quot;</span> <span class="attr">keyProperty</span>=<span class="string">&quot;id&quot;</span> <span class="attr">keyColumn</span>=<span class="string">&quot;id&quot;</span>&gt;</span></span><br><span class="line"> ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="mybatis-boolean映射"><a href="#mybatis-boolean映射" class="headerlink" title="mybatis boolean映射"></a>mybatis boolean映射</h2><p>数据库的0和1可以映射成false和true</p>
-<h2 id="异常回滚"><a href="#异常回滚" class="headerlink" title="异常回滚"></a>异常回滚</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Transactional(rollbackFor = Exception.class)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="update-left-join"><a href="#update-left-join" class="headerlink" title="update left join"></a>update left join</h2><p>是无效的</p>
-<h2 id="mybatis-collection"><a href="#mybatis-collection" class="headerlink" title="mybatis collection"></a>mybatis collection</h2><p>可以嵌套把多个项给映射到一个list对象上！</p>
-<p>而不是简单的同类型赋值</p>
-<h2 id="mysql-连续两次join"><a href="#mysql-连续两次join" class="headerlink" title="mysql 连续两次join"></a>mysql 连续两次join</h2><p>不可以的</p>
-<h2 id="mybbatis-摆脱resultmap"><a href="#mybbatis-摆脱resultmap" class="headerlink" title="mybbatis 摆脱resultmap"></a>mybbatis 摆脱resultmap</h2><p>直接 sql 的 as 就可以取别名</p>
-<h2 id="sql-join时where后面的选择哪张表的参数很重要"><a href="#sql-join时where后面的选择哪张表的参数很重要" class="headerlink" title="sql join时where后面的选择哪张表的参数很重要"></a>sql join时where后面的选择哪张表的参数很重要</h2><p>选取的不对，会有重复项</p>
-<h2 id="新建数据库chartset"><a href="#新建数据库chartset" class="headerlink" title="新建数据库chartset"></a>新建数据库chartset</h2><p>chartset: utf8</p>
-<p>collation: utf8_bin</p>
-<h2 id="mybatis-date处理"><a href="#mybatis-date处理" class="headerlink" title="mybatis date处理"></a>mybatis date处理</h2><p>含有的空格会转换成T</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220112144106935.png" alt="image-20220112144106935"></p>
-<p>解决：</p>
-<p>实体类 - 变量处添加注解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;, timezone = &quot;GMT+8&quot;)</span></span><br><span class="line"><span class="keyword">private</span> LocalDateTime interviewTime;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="sql-查到一条就返回"><a href="#sql-查到一条就返回" class="headerlink" title="sql 查到一条就返回"></a>sql 查到一条就返回</h2><h2 id="mapper-和表对应好！！"><a href="#mapper-和表对应好！！" class="headerlink" title="mapper 和表对应好！！"></a>mapper 和表对应好！！</h2><p>从service开始迁移</p>
-<h2 id="唯一表示，索引"><a href="#唯一表示，索引" class="headerlink" title="唯一表示，索引"></a>唯一表示，索引</h2><p>快</p>
-<h2 id="两次排序"><a href="#两次排序" class="headerlink" title="两次排序"></a>两次排序</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order status,time</span><br></pre></td></tr></table></figure>
-
-<p>先按status 升序，再按照time升序</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order status desc,time</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="mybatis-plus"><a href="#mybatis-plus" class="headerlink" title="mybatis plus"></a>mybatis plus</h1><h2 id="xml模板"><a href="#xml模板" class="headerlink" title="xml模板"></a>xml模板</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span> <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.sm.dao.UserMapper&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="entity名与表名"><a href="#entity名与表名" class="headerlink" title="entity名与表名"></a>entity名与表名</h2><p>可以用<code>@TableName</code>注解描述映射关系</p>
-<h1 id="satoken"><a href="#satoken" class="headerlink" title="satoken"></a>satoken</h1><h2 id="自带token"><a href="#自带token" class="headerlink" title="自带token"></a>自带token</h2><p>同一浏览器、postman的话</p>
-<p>satoken会自动在cookie中添加token</p>
-<h2 id="satoken允许多端登录"><a href="#satoken允许多端登录" class="headerlink" title="satoken允许多端登录"></a>satoken允许多端登录</h2><p>不会出现token的冲突</p>
-<h2 id="headers"><a href="#headers" class="headerlink" title="headers"></a>headers</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">satoken + 返回的token</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="构建的那个"><a href="#构建的那个" class="headerlink" title="构建的那个"></a>构建的那个</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220112172453451.png" alt="image-20220112172453451"></p>
-<h2 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220113093036576.png" alt="image-20220113093036576"></p>
-<p>一个请求减1</p>
-<p>别忘了大于0，因为消息数量应该恒为正数</p>
-<h2 id="count-始终不对"><a href="#count-始终不对" class="headerlink" title="count 始终不对"></a>count 始终不对</h2><p>原因是前端可能也正在测试</p>
-<p>把数据给改了！</p>
-<p>我还没刷新数据库</p>
-<h2 id="postman没登录也能成功请求"><a href="#postman没登录也能成功请求" class="headerlink" title="postman没登录也能成功请求"></a>postman没登录也能成功请求</h2><p>那是因为该web应用在redis里存了session</p>
-<p>postman也支持保存session</p>
-<h2 id="线上环境500了"><a href="#线上环境500了" class="headerlink" title="线上环境500了"></a>线上环境500了</h2><p>连上去看日志</p>
-<h2 id="测试环境的数据库不一样"><a href="#测试环境的数据库不一样" class="headerlink" title="测试环境的数据库不一样"></a>测试环境的数据库不一样</h2><p>测试有自己</p>
-<h2 id="冒烟测试前后端都要跑？"><a href="#冒烟测试前后端都要跑？" class="headerlink" title="冒烟测试前后端都要跑？"></a>冒烟测试前后端都要跑？</h2><p>有人跑了冒烟测试用例就行</p>
-<p>冒烟测试是UI操作的</p>
-<h2 id="多动动脑子"><a href="#多动动脑子" class="headerlink" title="多动动脑子"></a>多动动脑子</h2><p>别总是问为什么</p>
-<p>多推敲，论证，逻辑推理，实验</p>
-<h2 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h2><p><strong>IP packet data payload.</strong> An IP packet consists of an <a target="_blank" rel="noopener" href="https://www.techtarget.com/searchnetworking/definition/Ethernet">Ethernet</a>, IP and TCP header. This information helps the packet adhere to the communication protocol standard and reach its destination on the network. </p>
-<p>The payload portion of the packet contains the data that a user or device wants to send</p>
-<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    url = ossUtil.upload(ossPath, file,<span class="number">1000</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    CodeEnum.error_upload_institution.newException();</span><br><span class="line">    log.error(<span class="string">&quot;上传表格失败。&quot;</span>, e);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">file.delete();  <span class="comment">// 删除</span></span><br></pre></td></tr></table></figure>
-
-<p>上传到oss，返回url</p>
-<h1 id="Nacos"><a href="#Nacos" class="headerlink" title="Nacos"></a>Nacos</h1><p>(Naming Configuration Service)</p>
-<p>注册中心+配置中心</p>
-<p>Nacos=Eureka+Config+Bus</p>
-<h2 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211230105332635.png" alt="image-20211230105332635"></p>
-<p>Nacos 可以把哪个provider告诉给客户端知道</p>
-<h1 id="开会"><a href="#开会" class="headerlink" title="开会"></a>开会</h1><h2 id="接口设计"><a href="#接口设计" class="headerlink" title="接口设计"></a>接口设计</h2><p>讨论接口设计</p>
-<p>首先，观点要表数清楚</p>
-<p>确保大家明白你是什么意思</p>
-<p>其次，参考别人的网站是怎么做的</p>
-<p>他们已经是考虑详尽的</p>
-<p>意见极其不和时，参考别人的网站就像</p>
-<p>无意义的争辩很浪费时间</p>
-<p>谁都无法说服对方</p>
-<p>直接摆例子是最有效的</p>
-<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><p>宏滨提出来说要把两张表合成一张</p>
-<p>小黑不太同意</p>
-<p>已知合成一张表确实是优化</p>
-<p>此时有效的沟通就是</p>
-<p>小黑就尽力举出合成一张表可能会出现的问题</p>
-<p>如果都能解决，那就合并！没啥好说的</p>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="redis-删除对象"><a href="#redis-删除对象" class="headerlink" title="redis 删除对象"></a>redis 删除对象</h2><p>因为调试的原因，redis里存了错误的数据</p>
-<p>需要像连接数据库一样连接到redis进行操作</p>
-<h2 id="redis-删除单个key"><a href="#redis-删除单个key" class="headerlink" title="redis 删除单个key"></a>redis 删除单个key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del key</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="redis-远程连接"><a href="#redis-远程连接" class="headerlink" title="redis 远程连接"></a>redis 远程连接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h host -p port -a password</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="redis-查看所有keys"><a href="#redis-查看所有keys" class="headerlink" title="redis 查看所有keys"></a>redis 查看所有keys</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keys *</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get key</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="redis-是可以存数字的"><a href="#redis-是可以存数字的" class="headerlink" title="redis 是可以存数字的"></a>redis 是可以存数字的</h2><p>！！</p>
-<h2 id="放redis-的条件"><a href="#放redis-的条件" class="headerlink" title="放redis 的条件"></a>放redis 的条件</h2><p>查询量大</p>
-<p>长久不变</p>
-<h1 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h1><p>8.134.82.101</p>
-<p>root Hnsc123456</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/SpringCloud-HelloWorld/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/29/SpringCloud-HelloWorld/" class="post-title-link" itemprop="url">SpringCloud-HelloWorld</a>
+            <a href="/2022/01/11/brew/" class="post-title-link" itemprop="url">brew</a>
         </h2>
 
         <div class="post-meta">
@@ -879,7 +269,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-12-29 14:47:14 / Modified: 14:48:38" itemprop="dateCreated datePublished" datetime="2021-12-29T14:47:14+08:00">2021-12-29</time>
+              <time title="Created: 2022-01-11 14:25:25 / Modified: 15:27:43" itemprop="dateCreated datePublished" datetime="2022-01-11T14:25:25+08:00">2022-01-11</time>
             </span>
 
           
@@ -893,9 +283,76 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229144749944.png" alt="image-20211229144749944"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229144820871.png" alt="image-20211229144820871"></p>
-<p>then the server will know to get which yml</p>
+          <h1 id="Brew"><a href="#Brew" class="headerlink" title="Brew"></a>Brew</h1><h2 id="ustc"><a href="#ustc" class="headerlink" title="ustc"></a>ustc</h2><p>中科大的源</p>
+<h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>Homebrew is a free and open-source software package management system </p>
+<p>that simplifies the installation of software on Apple’s operating system, macOS, as well as Linux. </p>
+<p>The name is intended to suggest the idea of building software on the Mac depending on the user’s taste.</p>
+<h1 id="源"><a href="#源" class="headerlink" title="源"></a>源</h1><p>查看brew.git的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote -v</span><br></pre></td></tr></table></figure>
+
+<p>查看homebrew-core.git的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo homebrew/core)</span>&quot;</span> &amp;&amp; git remote -v</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="中科大（ffmpeg装不了）"><a href="#中科大（ffmpeg装不了）" class="headerlink" title="中科大（ffmpeg装不了）"></a>中科大（ffmpeg装不了）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.ustc.edu.cn/brew.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git</span><br></pre></td></tr></table></figure>
+
+
+
+<p>bootle domain</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+
+
+<p>刷新源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="阿里"><a href="#阿里" class="headerlink" title="阿里"></a>阿里</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git</span><br></pre></td></tr></table></figure>
+
+
+
+<p>bootle domain</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+
+
+<p>刷新源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="官方"><a href="#官方" class="headerlink" title="官方"></a>官方</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote set-url origin https://github.com/Homebrew/brew.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span> &amp;&amp; git remote set-url origin https://github.com/Homebrew/homebrew-core.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask&quot;</span> &amp;&amp; git remote set-url origin https://github.com/Homebrew/homebrew-cask</span><br></pre></td></tr></table></figure>
+
+
+
+<p>bootle domain，把别的源注释掉就行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.zshrc</span><br><span class="line"><span class="comment"># export HOMEBREW_BOTTLE_DOMAIN=xxxxxxxxx</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+
+
+<p>刷新源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -915,7 +372,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/SpringCloud-Tutorial/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/ffmpeg/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -929,7 +386,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/12/29/SpringCloud-Tutorial/" class="post-title-link" itemprop="url">SpringCloud-Tutorial</a>
+            <a href="/2022/01/11/ffmpeg/" class="post-title-link" itemprop="url">ffmpeg</a>
         </h2>
 
         <div class="post-meta">
@@ -939,14 +396,71 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-12-29 13:40:11" itemprop="dateCreated datePublished" datetime="2021-12-29T13:40:11+08:00">2021-12-29</time>
+              <time title="Created: 2022-01-11 13:58:15" itemprop="dateCreated datePublished" datetime="2022-01-11T13:58:15+08:00">2022-01-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/mac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/11/mac/" class="post-title-link" itemprop="url">mac</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-11 13:38:08" itemprop="dateCreated datePublished" datetime="2022-01-11T13:38:08+08:00">2022-01-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-30 08:50:16" itemprop="dateModified" datetime="2021-12-30T08:50:16+08:00">2021-12-30</time>
+                <time title="Modified: 2022-01-31 08:17:40" itemprop="dateModified" datetime="2022-01-31T08:17:40+08:00">2022-01-31</time>
               </span>
 
           
@@ -960,47 +474,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Dynamic-scale-up-and-down"><a href="#Dynamic-scale-up-and-down" class="headerlink" title="Dynamic scale up and down"></a>Dynamic scale up and down</h1><p>Feign for rest client</p>
-<h1 id="Fault-tolerance"><a href="#Fault-tolerance" class="headerlink" title="Fault tolerance"></a>Fault tolerance</h1><h2 id="hystrix"><a href="#hystrix" class="headerlink" title="hystrix"></a>hystrix</h2><p>service shut down, then give some default response</p>
-<h1 id="Gateway"><a href="#Gateway" class="headerlink" title="Gateway"></a>Gateway</h1><h2 id="Netflix-API-gateway"><a href="#Netflix-API-gateway" class="headerlink" title="Netflix API gateway"></a>Netflix API gateway</h2><p>rating limiting </p>
-<h2 id="tracing"><a href="#tracing" class="headerlink" title="tracing"></a>tracing</h2><p>Zipkin Distributed Tracing</p>
-<p>(when the request go)</p>
-<h1 id="Scalable"><a href="#Scalable" class="headerlink" title="Scalable"></a>Scalable</h1><p>可升级的</p>
-<h1 id="Cloud-native-application"><a href="#Cloud-native-application" class="headerlink" title="Cloud native application"></a>Cloud native application</h1><p>Spring Cloud build default cloud native app</p>
-<h1 id="Spring-Cloud-and-Spring-Boot"><a href="#Spring-Cloud-and-Spring-Boot" class="headerlink" title="Spring Cloud and Spring Boot"></a>Spring Cloud and Spring Boot</h1><p>where you can run jar</p>
-<p>and you can run spring cloud app</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229135259084.png" alt="image-20211229135259084"></p>
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Config-Server"><a href="#Config-Server" class="headerlink" title="Config Server"></a>Config Server</h3><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229135928243.png" alt="image-20211229135928243"></p>
-<p>Config server can store the config</p>
-<p>refresh the config as the schedule </p>
-<p>you don’t need to shut down the service and redeploy</p>
-<p>or the config notify the micro to refresh</p>
-<h2 id="Service-Discovery"><a href="#Service-Discovery" class="headerlink" title="Service Discovery"></a>Service Discovery</h2><p>micro service know where they live</p>
-<p>know the current URL, status</p>
-<p>Netflix Eureka</p>
-<p>zookeeper</p>
-<p>consul</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229145753209.png" alt="image-20211229145753209"></p>
-<h2 id="Circuit-Breakers"><a href="#Circuit-Breakers" class="headerlink" title="Circuit Breakers"></a>Circuit Breakers</h2><p>fault tolorance</p>
-<h2 id="Routing-and-Message"><a href="#Routing-and-Message" class="headerlink" title="Routing and Message"></a>Routing and Message</h2><p>request between micro service</p>
-<h2 id="API-Gateway"><a href="#API-Gateway" class="headerlink" title="API Gateway"></a>API Gateway</h2><p>client to the micro service</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229140541204.png" alt="image-20211229140541204"></p>
-<p>确实，不仅仅是微服务之间需要discovery</p>
-<p>client和server之间则是API Gateway 在帮忙</p>
-<h2 id="Tracing"><a href="#Tracing" class="headerlink" title="Tracing"></a>Tracing</h2><p>debugging</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229150941801.png" alt="image-20211229150941801"></p>
-<h2 id="CI-pipelines-and-testing"><a href="#CI-pipelines-and-testing" class="headerlink" title="CI pipelines and testing"></a>CI pipelines and testing</h2><p>??</p>
-<p>test between the micro services</p>
-<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><h2 id="Spring-cloud-CLI"><a href="#Spring-cloud-CLI" class="headerlink" title="Spring cloud CLI"></a>Spring cloud CLI</h2><h1 id="Spring-boot-CLI"><a href="#Spring-boot-CLI" class="headerlink" title="Spring boot CLI"></a>Spring boot CLI</h1><p><a target="_blank" rel="noopener" href="https://repo.spring.io/ui/native/release/org/springframework/boot/spring-boot-cli">仓库</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring install org.springframework.cloud:spring-cloud-cli:1.4.0.RELEASE</span><br></pre></td></tr></table></figure>
+          <h2 id="mac-cpu-占用率大于100"><a href="#mac-cpu-占用率大于100" class="headerlink" title="mac cpu 占用率大于100"></a>mac cpu 占用率大于100</h2><p>支持多线程的程序，在1s内，在CPU0占用了0.7s，在CPU1占用了0.8</p>
+<p>则CPU占用率为150%</p>
+<h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><p>The Z shell (also known as zsh ) is a Unix shell</p>
+<p>that <strong>is built on top of bash</strong> (the default shell for macOS) with additional features.</p>
+<p>It’s recommended to use zsh over bash . </p>
+<p>It’s also highly recommended to install a framework with zsh as it makes dealing with configuration, plugins and themes a lot nicer.</p>
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>假设我的代理http端口是：1087，socket是：869</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export https_proxy=http://127.0.0.1:1087 http_proxy=http://127.0.0.1:1087 all_proxy=socks5://127.0.0.1:869</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211229233854233.png" alt="image-20211229233854233"></p>
-<p>spring-boot-starter-parent的父依赖是spring-boot-dependences，里面管理了所有需要的默认的依赖版本。</p>
-<p>Spring Cloud CLI 2.1.x will work with Spring Boot CLI 2.1.x<br>Spring Cloud CLI 2.0.x will work with Spring Boot CLI 2.0.x<br>Spring Cloud CLI 1.4.x will work with Spring Boot CLI 1.5.x</p>
+<h2 id="su"><a href="#su" class="headerlink" title="su"></a>su</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+
+<p>设置了root密码之后，就可以正常使用 su 了</p>
+<h2 id="修改电脑名称"><a href="#修改电脑名称" class="headerlink" title="修改电脑名称"></a>修改电脑名称</h2><p>设置 - 共享 - 修改电脑名称</p>
 
       
     </div>
@@ -1020,7 +512,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/Springboot-Helloworld/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/first-order-model-demo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -1034,7 +526,173 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/12/29/Springboot-Helloworld/" class="post-title-link" itemprop="url">SpringBoot Helloworld</a>
+            <a href="/2022/01/11/first-order-model-demo/" class="post-title-link" itemprop="url">first-order-model-demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-11 12:38:11 / Modified: 15:11:02" itemprop="dateCreated datePublished" datetime="2022-01-11T12:38:11+08:00">2022-01-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="构建环境"><a href="#构建环境" class="headerlink" title="构建环境"></a>构建环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="视频转换的准备"><a href="#视频转换的准备" class="headerlink" title="视频转换的准备"></a>视频转换的准备</h2><p>借助 face-alignment 获取crop视频的参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/1adrianb/face-alignment</span><br><span class="line"><span class="built_in">cd</span> face-alignment</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line">python setup.py install</span><br><span class="line"></span><br><span class="line">python crop-video.py --inp super-idol.mp4 --cpu</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i super-idol.mp4 -ss 0.0 -t 14.366666666666667 -filter:v <span class="string">&quot;crop=643:643:7:134, scale=256:256&quot;</span> crop.mp4</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="numpy版本不适配的问题"><a href="#numpy版本不适配的问题" class="headerlink" title="numpy版本不适配的问题"></a>numpy版本不适配的问题</h3><p>可以单独把 crop-video.py copy使用</p>
+<p>它并不依赖于first-order-model</p>
+<h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/taichi-256.yaml --driving_video ./crop.mp4 --source_image captain.jpg --checkpoint ./taichi-cpk.pth.tar --relative --adapt_scale --cpu</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/dataset_name.yaml --driving_video path/to/driving --source_image path/to/<span class="built_in">source</span> --checkpoint path/to/checkpoint --relative --adapt_scale</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled-1"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled-1" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="这种python-项目都创建新虚拟环境吧"><a href="#这种python-项目都创建新虚拟环境吧" class="headerlink" title="这种python 项目都创建新虚拟环境吧"></a>这种python 项目都创建新虚拟环境吧</h2><p>别去影响自己原来的库</p>
+<h2 id="Anaconda可以不可创建任意版本的python解释器"><a href="#Anaconda可以不可创建任意版本的python解释器" class="headerlink" title="Anaconda可以不可创建任意版本的python解释器"></a>Anaconda可以不可创建任意版本的python解释器</h2><p>没有任意版本，但确实还有其他版本，比如说3.7等等</p>
+<p>然后再Pycharm里选conda的环境</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220111125244953.png" alt="image-20220111125244953"></p>
+<h2 id="进入虚拟的python环境"><a href="#进入虚拟的python环境" class="headerlink" title="进入虚拟的python环境"></a>进入虚拟的python环境</h2><p>在Pycharm中打开命令行即可以进入到虚拟环境中</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220111133302445.png" alt="image-20220111133302445"></p>
+<h2 id="checkpoint-是什么"><a href="#checkpoint-是什么" class="headerlink" title="checkpoint 是什么"></a>checkpoint 是什么</h2><p>二进制文件，储存了模型中的各个变量</p>
+<p>没有什么数据结构</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/10/hibernate-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/10/hibernate-demo/" class="post-title-link" itemprop="url">hibernate-demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-10 19:56:52 / Modified: 22:48:07" itemprop="dateCreated datePublished" datetime="2022-01-10T19:56:52+08:00">2022-01-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/hibernate-demo">demo</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/10/Redis-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/10/Redis-demo/" class="post-title-link" itemprop="url">Redis-demo</a>
         </h2>
 
         <div class="post-meta">
@@ -1044,14 +702,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-12-29 08:35:54" itemprop="dateCreated datePublished" datetime="2021-12-29T08:35:54+08:00">2021-12-29</time>
+              <time title="Created: 2022-01-10 16:44:31" itemprop="dateCreated datePublished" datetime="2022-01-10T16:44:31+08:00">2022-01-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-30 09:46:28" itemprop="dateModified" datetime="2021-12-30T09:46:28+08:00">2021-12-30</time>
+                <time title="Modified: 2022-04-09 17:37:24" itemprop="dateModified" datetime="2022-04-09T17:37:24+08:00">2022-04-09</time>
               </span>
 
           
@@ -1065,39 +723,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="建立项目"><a href="#建立项目" class="headerlink" title="建立项目"></a>建立项目</h1><p>JDK不一致会有问题（404），但是idea并不报错</p>
-<p><a target="_blank" rel="noopener" href="https://start.aliyun.com/">https://start.aliyun.com/</a></p>
-<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>Web-SpringBoot web</p>
-<h1 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h1><p>建立包，然后</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span>  	<span class="comment">// http://localhost:8080/hello</span></span><br><span class="line">    <span class="meta">@ResponseBody</span>  				<span class="comment">// 不进行页面跳转，而是返回字符串</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>连接redis</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查询所有值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keys *</span><br></pre></td></tr></table></figure>
+
+
+
+<p>获取值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get key</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-<h1 id="Dao"><a href="#Dao" class="headerlink" title="Dao"></a>Dao</h1><h2 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Entity(name = &quot;tb_user&quot;)</span>       <span class="comment">// 实体类，值为表名</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span>  <span class="comment">//主键自增</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="keyword">private</span> String role;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-<h2 id="数据库访问接口"><a href="#数据库访问接口" class="headerlink" title="数据库访问接口"></a>数据库访问接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">User</span>,<span class="title">Long</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Query(value = &quot;select COUNT(*) from tb_user where role = &#x27;USER&#x27;&quot;,nativeQuery = true)</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">getUserNum</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="数据库接口参数"><a href="#数据库接口参数" class="headerlink" title="数据库接口参数"></a>数据库接口参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/db_authority?serverTimezone=GMT%2B8</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=123456</span><br><span class="line">spring.jpa.hibernate.naming.physical-strategy= org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl</span><br></pre></td></tr></table></figure>
-
-
-
-<p>解释：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span><br></pre></td></tr></table></figure>
-
-<p>依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="dao调用"><a href="#dao调用" class="headerlink" title="dao调用"></a>dao调用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line">UserRepository userRepository;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/getUserNum&quot;)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getUserNum</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> userRepository.getUserNum();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1120,7 +763,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/14/%E6%94%BF%E6%B2%BB%E5%A4%A7%E9%A2%98%E8%83%8C%E8%AF%B5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -1134,7 +777,137 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/12/14/%E6%94%BF%E6%B2%BB%E5%A4%A7%E9%A2%98%E8%83%8C%E8%AF%B5/" class="post-title-link" itemprop="url">政治大题背诵</a>
+            <a href="/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">微信公众号开发</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-09 23:21:14 / Modified: 23:29:18" itemprop="dateCreated datePublished" datetime="2022-01-09T23:21:14+08:00">2022-01-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="扫码关注公众号获取验证码"><a href="#扫码关注公众号获取验证码" class="headerlink" title="扫码关注公众号获取验证码"></a>扫码关注公众号获取验证码</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109232843586.png" alt="image-20220109232843586"></p>
+<p>主要流程：</p>
+<p>用户点击“关注公众号领取”，发送请求到公众号的个人服务器</p>
+<p>个人服务器向微信的接口请求生成导向公众号的“二维码”，并返回到前端</p>
+<p>用户微信扫码后，被导航到公众号那</p>
+<p>同时，微信的服务器会向开发者推送消息</p>
+<p>目标地址为这里的URL</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109232626285.png" alt="image-20220109232626285"></p>
+<p>后端拿一个RequestMapping接收就行</p>
+<p>然后，产生一个验证码</p>
+<p>再调用微信的“发送消息给用户”的接口，把时效验证码推送给用户即可</p>
+<p>（服务器本身也做好准备，把该验证码存在当前Session里，供验证用户输入使用）</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/pycharm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/09/pycharm/" class="post-title-link" itemprop="url">pycharm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-09 14:10:54 / Modified: 14:55:14" itemprop="dateCreated datePublished" datetime="2022-01-09T14:10:54+08:00">2022-01-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="添加conda的环境"><a href="#添加conda的环境" class="headerlink" title="添加conda的环境"></a>添加conda的环境</h2><p>Setting - Project - Python Interpreter - Add - System Interpreter</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109145510823.png" alt="image-20220109145510823"> </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/Jupyter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/09/Jupyter/" class="post-title-link" itemprop="url">Jupyter</a>
         </h2>
 
         <div class="post-meta">
@@ -1144,14 +917,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-12-14 09:06:14" itemprop="dateCreated datePublished" datetime="2021-12-14T09:06:14+08:00">2021-12-14</time>
+              <time title="Created: 2022-01-09 14:09:25" itemprop="dateCreated datePublished" datetime="2022-01-09T14:09:25+08:00">2022-01-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-24 15:02:40" itemprop="dateModified" datetime="2021-12-24T15:02:40+08:00">2021-12-24</time>
+                <time title="Modified: 2022-05-25 15:06:47" itemprop="dateModified" datetime="2022-05-25T15:06:47+08:00">2022-05-25</time>
               </span>
 
           
@@ -1165,452 +938,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="人民群众"><a href="#人民群众" class="headerlink" title="人民群众"></a>人民群众</h1><p>在社会历史的发展过程中，人民群众起着决定性的作用</p>
-<p>人民群众是社会实践的主体，在创造历史的过程中起着决定性的作用</p>
-<p>人民群众是具有变革旧的生产关系的愿望的社会力量</p>
-<p>人民群众是具有变革旧的社会制度和思想观念的社会力量</p>
-<p><strong>人民群众是顺应社会发展的社会力量</strong></p>
-<p><strong>唯物史观要求我们</strong>坚持全心全意为人民服务的<strong>马克思主义的群众的观点</strong></p>
-<p>坚持贯彻党的群众路线，一切为了群众，一切依赖群众，从群众中来，到群众中去</p>
-<p>人民群众是社会历史实践的主体，在创造历史的过程中起着决定性的作用</p>
-<p>人民群众是顺应社会历史发展的社会力量</p>
-<p>人民群众是具有变革旧的生产关系愿望的社会力量</p>
-<p>人民群众是具有变革旧的社会制度和思想观念愿望的社会力量</p>
-<p>唯物史观认为，我们应该坚持<strong>全心全意为人民服务</strong>的马克思主义群众观点</p>
-<p>坚持贯彻党的群众路线，一切为了群众，一切依赖群众，从群众中来，到群众中去</p>
-<h1 id="社会主义核心价值观"><a href="#社会主义核心价值观" class="headerlink" title="社会主义核心价值观"></a>社会主义核心价值观</h1><p>社会主义核心价值观是当代中国精神的集中体现</p>
-<p>国家勋章和xxx是在全社会弘扬社会主义核心价值观的重要形式</p>
-<p>彰显了国家坚持和发展<strong>中国特色社会主义核心价值观遵循的力度</strong></p>
-<p>有助于鼓励更多的人向受彰者学习，有利于<strong>让社会主义核心价值观影响更多的人</strong></p>
-<p>有助于发挥社会主义核心价值观的<strong>凝聚力和向心力</strong></p>
-<p>进一步<strong>增进社会的团结和谐</strong></p>
-<p>社会主义核心价值观是当代中国精神的集中体现</p>
-<p>xxx是在全社会弘扬社会主义核心价值观的重要形式</p>
-<p><strong>彰显了国家坚持和发展中国特色社会主义核心价值观遵循的力度</strong></p>
-<p>有助于鼓励人们向受彰者学习</p>
-<p><strong>有助于进一步加强社会主义核心价值观的影响力</strong></p>
-<p>有助于发挥社会主义核心价值观的凝聚力和向心力</p>
-<p>有助于维护社会的团结和谐</p>
-<h1 id="新阶段"><a href="#新阶段" class="headerlink" title="新阶段"></a>新阶段</h1><p>党的十八大以来，党中央把握发展的新阶段变化</p>
-<p>把逐步实现全体人民共同富裕摆在了更加重要的位置上</p>
-<p><strong>推动区域协调发展，采取有力的措施保障和改善民生</strong></p>
-<p><strong>打赢脱贫攻坚战全面建成小康社会</strong></p>
-<p><strong>为促进共同富裕创造了良好的条件</strong></p>
-<p>现在已经到了扎实推进共同富裕的历史新阶段</p>
-<p>我们正在向第二个百年奋斗目标<strong>迈进</strong></p>
-<p>适应我国社会主要矛盾的变化</p>
-<p>更好地满足人民日益增长的美好生活需要</p>
-<p><strong>必须促进</strong>全体人民共同富裕作<strong>为人民谋幸福</strong>的着力点</p>
-<p><strong>不断夯(hang)实党的长期执政基础</strong></p>
-<p>高质量发展需要高质量劳动者</p>
-<p>只有促进共同富裕，提高城乡居民收入，<strong>提高人力资本</strong></p>
-<p>才能<strong>提高全要素劳动生产率</strong></p>
-<p><strong>夯实高质量发展的动力基础</strong></p>
-<p>当前全球收入不平等的<strong>问题突出</strong></p>
-<p>一些国家<strong>贫富分化严重，中产阶级塌陷，社会撕裂， 社会极化，民粹主义泛滥</strong></p>
-<p>教训十分深刻，<strong>我国必须坚决防止两极分化</strong></p>
-<p>促进共同富裕，<strong>实现社会和谐安定</strong></p>
-<p>共同富裕是社会主义的本质要求，是<strong>中国式现代化的重要特征</strong></p>
-<p>自党的十八大以来，我国取得了许多历史性的成就</p>
-<p>也来到了新的一个发展阶段</p>
-<p>党也把共同富裕放在来越来越重要的位置上</p>
-<p>现在已经到了扎实推进共同富裕的阶段</p>
-<p> 在新发展阶段，需要我们具备辩证发展的眼光，知道量变质变的规律，知道量变质变是相互渗透的</p>
-<p>唯物辩证法认为，事物是永恒发展的</p>
-<p>中国特色社会主义也在不断发展</p>
-<p>从改革开放以来，特别是党的十八大以来，我国取得了许多历史性的成就</p>
-<p>为实现第二个百年奋斗目标奠定了坚实的基础</p>
-<p>事物的发展是不断进行量变的积累，然后产生质变的过程</p>
-<p>我国的长期目标是建设社会主义现代化强国，实现中华民族伟大复兴</p>
-<p>要实现这个长期目标，需要不断进行量变的积累，跨越多个不同的阶段</p>
-<p>而新发展阶段就是其中的一个阶段</p>
-<p>在事物发展的过程中，量变质变是相互渗透的</p>
-<p>在不断积累量变的过程中，会产生阶段性的质变</p>
-<p>我国的基本国情没有发生改变</p>
-<p>仍然处于社会主义初级阶段</p>
-<p>新发展阶段是社会主义初级阶段中的其中一个阶段</p>
-<p>但它是一个新的起点，取得了一定的阶段性成就</p>
-<h1 id="真理与谬误"><a href="#真理与谬误" class="headerlink" title="真理与谬误"></a>真理与谬误</h1><p>真理和谬误是<strong>对立统一的关系</strong></p>
-<p>真理与谬误是两种不同的认识</p>
-<p>真理是对<strong>客观事物及规律</strong>的正确反映</p>
-<p>谬误是对客观事物及规律的歪曲反映</p>
-<p>真理和谬误是统一的</p>
-<p>他们相互依存，相互转化</p>
-<p>真理和谬误是相比较而存在的</p>
-<p>所以我们<strong>既要坚持真理的一元性与谬误作斗争</strong></p>
-<p>同时也要<strong>促进谬误在一定条件下向真理的转化</strong></p>
-<h1 id="度"><a href="#度" class="headerlink" title="度"></a>度</h1><p>做事情要把握尺度</p>
-<p>度是量和质的统一</p>
-<p>如果超过了度，事物将会发生变化，转化成它物</p>
-<p>在工作中，如果我们超过了底线，其性质就会发生改变</p>
-<p>就有可能犯下大错误</p>
-<p>因此必须在底线范围内进行实践</p>
-<p>积极发挥主观能动性。</p>
-<p>只有充分发挥主观能动性才能更好地认识规律、利用规律</p>
-<p>把握工作的主动权</p>
-<h1 id="实践和认识"><a href="#实践和认识" class="headerlink" title="实践和认识"></a>实践和认识</h1><p>实践和认识是辩证统一的</p>
-<p>实践是认识的来源、基础和前提</p>
-<p>实践决定认识，是认识发展的动力</p>
-<p>也是检验认识是否具有真理性的唯一标准</p>
-<p>同时认识指导实践又具有能动的反作用</p>
-<p>认识指导实践，为实践服务，认识价值的实现需要在实践中完成</p>
-<p>所以我们要坚持一切从实际出发，实事求是，坚持改造主观世界和客观世界相统一</p>
-<p>认识就是在实践的基础上，从感性认识到理性认识</p>
-<p>再从理性认识到实践的两次辩证飞跃的过程</p>
-<p>认识是反复性和无限性的统一</p>
-<h1 id="对立统一"><a href="#对立统一" class="headerlink" title="对立统一"></a>对立统一</h1><p>对立统一规律是指矛盾双方既存在相互分离、相互排斥的对立性</p>
-<p>也存在相互依存，在一定条件下相互转化的统一性</p>
-<p>二者作为<strong>矛盾的根本属性</strong>，不可分割共同促进事物的发展</p>
-<p>xxx<strong>的事例揭示出深刻的对立统一规律</strong></p>
-<p>xxx<strong>正是深刻把握了xxx的矛盾统一性</strong></p>
-<p>利用科技知识将xxx转化为xxx</p>
-<p>把对xxx危害转化成为了xxx益处</p>
-<p>因此，“小发明”就可以解决人类在环境资源方面的大问题</p>
-<h1 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h1><p>唯物辩证法认为规律是事物所固有的、本质的、必然的联系</p>
-<p>具有不以人的主观意志为转移的客观性</p>
-<p>人类不能随意创造、修改和消灭规律</p>
-<p>但人们可以充分发挥主观能动性去认识和利用规律</p>
-<h1 id="联系"><a href="#联系" class="headerlink" title="联系"></a>联系</h1><p>联系的观点是唯物辩证法的总观点和总特征之一</p>
-<p>世上所有事物都不是孤立存在的</p>
-<p>所有事物必然存在于相互联系中</p>
-<p>对立统一规律是唯物辩证法的本质和核心</p>
-<p>它揭示了事物之间联系的根本内容和发展动力</p>
-<p>自然界的生物之间存在着既相互对立的又相互依赖的对立统一关系</p>
-<p>矛盾的同一性和斗争性相互联接、相辅相成，构成是事物发展的矛盾运动，共同促进事物的发展</p>
-<p>xxx体现了生物之间相互依赖、相互斗争的关系</p>
-<h1 id="肖1"><a href="#肖1" class="headerlink" title="肖1"></a>肖1</h1><h2 id="人与自然"><a href="#人与自然" class="headerlink" title="人与自然"></a>人与自然</h2><p>自然界是人类社会形成的自然基础</p>
-<p>人类社会的存在和发展又反过来影响并不断改变着自然界</p>
-<p>实践是使物质世界分化为自然界与人类社会的历史前提</p>
-<p>又是使自然界和人类社会统一起来的现实基础</p>
-<p>人类在实践活动中按照自己的意愿改造世界的同时必须遵循自然规律</p>
-<p>否则将会导致人与自然关系的失衡</p>
-<p>正确的实践观点是理解人与自然关系、实现人与自然和谐统一的关键</p>
-<p>人与自然是生命共同体，人类必须尊重自然、顺应自然、保护自然</p>
-<p>推动实现碳达峰、碳中和目标就是要合理地调节人与自然之间的物质变换</p>
-<h2 id="自然环境"><a href="#自然环境" class="headerlink" title="自然环境"></a>自然环境</h2><p>自然地理环境是指与人类社会所处的地理位置相联系的自然条件的总和</p>
-<p>是人类社会生存和发展永恒的、必要的条件</p>
-<p>是人们生存和发展的自然基础</p>
-<p>自然地理环境提供了社会生活和生产资料的来源</p>
-<p>离开一定的自然条件，人们就不可能进行生活和生产</p>
-<p>自然的地理环境的优劣对社会发展起促进或延缓的作用</p>
-<p>自然生态平衡对社会生活起着重要作用</p>
-<p>合理地利用自然资源，保护生态平衡是社会得以正常发展的必要条件</p>
-<h2 id="联系-1"><a href="#联系-1" class="headerlink" title="联系"></a>联系</h2><p>世界是物质同一性和多样性的统一</p>
-<p>物质世界包含着不同的物质现象和物质形态</p>
-<p>不同物质层次和物质结构</p>
-<p>不同物质过程和物质活动</p>
-<p>包含着自然界和人类社会</p>
-<p>联系具有客观性</p>
-<p>事物的联系是事物本身所固有的不是主观臆想的</p>
-<p>不以人的主观意志为转移</p>
-<p>联系具有普遍性</p>
-<p>任何事物都不能孤立存在，都同其他事物处于一定的相互联系中</p>
-<p>整个世界是一个相互联系的统一整体</p>
-<p>联系具有多样性</p>
-<p>世界上的事物是多样的，事物之间的联系也是多样的</p>
-<p>他们之间相互影响、相互制约、相互作用</p>
-<p><strong>要做到人与自然和谐共处，就必须要保护好生物多样性</strong></p>
-<h2 id="共同富裕"><a href="#共同富裕" class="headerlink" title="共同富裕"></a>共同富裕</h2><p>第一，打赢脱贫攻坚战，全面建成小康社会，为促进共同富裕创造了良好条件</p>
-<p>脱贫攻坚、全面小康、共同富裕三者是<strong>梯次推进</strong>、循序渐进的</p>
-<p>脱贫攻坚是全面小康的重要内容和底线任务</p>
-<p>全面小康是实现共同富裕的重要基础</p>
-<p>共同富裕是脱贫攻坚和全面小康的目的所在</p>
-<p>第二，共同富裕是<strong>社会主义现代化的一个重要目标</strong>和中国式现代化的重要特征</p>
-<p>现在，我们正在向<strong>全面建设社会主义现代化强国</strong>的第二个百年奋斗目标迈进</p>
-<p>为了更好适应我国社会主要矛盾的变化，更好地满足人民日益增长的美好生活需要</p>
-<p><strong>必须把共同富裕作为为人民谋幸福的着力点</strong></p>
-<p><strong>不断夯实党长期执政基础</strong></p>
-<p>第三，共同富裕是高质量发展的需要</p>
-<p>高质量发展需要高素质的劳动者</p>
-<p>只有促进共同富裕，提高城乡居民收入，<strong>提高人力资本</strong>，才能提高全要素生产率</p>
-<p>夯实高质量发展的动力基础</p>
-<p>第四，实现共同富裕不仅是经济问题，更是关系党执政的政治问题</p>
-<p>我国发展不平衡不充分的问题仍然突出，<strong>城乡区域发展和收入分配差距较大</strong></p>
-<p>必须坚决防止两极分化，促进共同富裕，实现社会和谐安定</p>
-<p>第五，共同富裕是社会主义的本质要求，是<strong>中国共产党矢志不渝的奋斗目标</strong></p>
-<p><strong>是为人民谋幸福的初心</strong>，也是人民群众的<strong>共同期盼</strong></p>
-<h2 id="共同富裕的分配问题"><a href="#共同富裕的分配问题" class="headerlink" title="共同富裕的分配问题"></a>共同富裕的分配问题</h2><p>推动共同富裕，需要正确处理效率与公平的关系，构建初次分配、再分配、三次分配协调配套的基础性制度安排</p>
-<p>加大税收、社保、转移支付等调节力度并提高精准性</p>
-<p>扩大中等收入群体比重，增加低收入人群体收入</p>
-<p>合理调节高收入，取缔非法收入</p>
-<p>形成中间大、两头小的分配结构</p>
-<p>是收入分配调节既能够分好蛋糕</p>
-<p>又有利于进一步做大蛋糕</p>
-<p>促进社会公平正义</p>
-<p>促进人的全面发展</p>
-<p>使全体人民朝着共同富裕目标扎实推进</p>
-<h2 id="高质量新发展理念"><a href="#高质量新发展理念" class="headerlink" title="高质量新发展理念"></a>高质量新发展理念</h2><p>要在高质量发展中促进共同富裕，这指明了共同富裕的实现途径和努力方向</p>
-<p>第一，推动共同富裕，解决发展问题是第一位的。</p>
-<p>发展是实现人民幸福的关键</p>
-<p>我国仍然是世界上最大的发展中国家</p>
-<p>我们仍然要用发展的办法解决前进中的问题</p>
-<p>第二，新时代的发展必须完整、准确、全面贯彻新发展理念，实现高质量发展。</p>
-<p>没有高质量发展，实现共同富裕无从谈起。</p>
-<p>高质量发展，就是能够很好满足人民日益增长的美好生活需要的发展</p>
-<p>就是创新成为第一动力、协调成为内生特点、绿色成为普遍形态、开放称为必由之路、共享成为根本目的的发展。</p>
-<p>推动高质量发展的过程就是增强发展的平衡性、协调性、包容性</p>
-<p>持续缩小成效、区域发展差距</p>
-<p>解决发展不平衡不充分这一主要矛盾</p>
-<p>从源头上打好共同富裕基础的过程</p>
-<h2 id="党的建设"><a href="#党的建设" class="headerlink" title="党的建设"></a>党的建设</h2><p>第一，我们党历来高度重视总结历史经验。</p>
-<p>当历史上的第一个、第二个历史决议</p>
-<p>实事求是是总结党的重大历史事件和重要经验教训</p>
-<p>在重大历史关头统一了全党思想和行动，对推动党和人民事业发挥了重要引领作用</p>
-<p>第二，现在，距离第二个历史决议指定已经过去了40年。</p>
-<p>40年来，党和国家事业大大向前发展了，党的理论和实践也大大向前发展了。</p>
-<p>全面总结党的百年奋斗重大成就和历史经验，是开启全面建设社会主义现代化国家新征程、在新时代坚持和发展中国特色社会主义的需要</p>
-<p>是增强“四个意识”，坚定“四个自信”，做到“两个维护”确保全党步调一致向前进的需要</p>
-<p>是推进党的自我革命，提高全党斗争本领和应对风险挑战能力、永葆党的生机活力、团结带领全国各族人民为实现中华民族伟大复兴的中国梦而继续奋斗的需要</p>
-<h2 id="坚持党的领导"><a href="#坚持党的领导" class="headerlink" title="坚持党的领导"></a>坚持党的领导</h2><p>坚强的领导核心和科学的理论指导，是关乎党和国家前途命运</p>
-<p>党和人民事业成败的根本性问题</p>
-<p>第一，一个国家、一个政党，领导核心至关重要。</p>
-<p>确立习近平同志党中央的核心、全党的核心地位，是时代呼唤、历史选择、民心所向。坚定用户和维护习近平总书记的核心地位，全党就有定盘星，全国人民就有主心骨，中华“复兴”号巨轮就有掌舵者</p>
-<p>第二， 确立习近平新时代中国特色社会主义思想的指导地位，我们党就能在中华民族伟大复兴战略全局和世界百年未有之大变局深度演进互动的复杂条件下，坚持正确前进方向，就能始终把握发展规律</p>
-<p>运用科学世界观和方法论谋划事业发展</p>
-<p>应对风险挑战</p>
-<p>带领全国各族人民不断开辟中华民族伟大复兴的光明前景</p>
+          <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/08/%E8%AE%B0%E5%BF%86/">
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220109141029319.png" alt="image-20220109141029319"></p>
+<h2 id="为什么使用Jupyter"><a href="#为什么使用Jupyter" class="headerlink" title="为什么使用Jupyter"></a>为什么使用Jupyter</h2><p>可局部运行代码</p>
+<p>保存的文件名为 .ipynb</p>
+<h2 id="修改行间距"><a href="#修改行间距" class="headerlink" title="修改行间距"></a>修改行间距</h2><p><code>\Anaconda3\Lib\site-packages\notebook\static\style\style.min.css</code></p>
+<p>代码间距：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220525102148832.png" alt="image-20220525102148832"></p>
+<p>输出结果间距：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220525102114991.png" alt="image-20220525102114991"></p>
+<p>单元格间距：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220525150538226.png" alt="image-20220525150538226"></p>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/08/%E8%AE%B0%E5%BF%86/" class="post-title-link" itemprop="url">记忆</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-08 09:56:59 / Modified: 10:13:36" itemprop="dateCreated datePublished" datetime="2021-12-08T09:56:59+08:00">2021-12-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211208095748283.png" alt="image-20211208095748283"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/06/914%E7%9F%A9%E9%98%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/06/914%E7%9F%A9%E9%98%B5/" class="post-title-link" itemprop="url">914矩阵</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-06 09:52:59 / Modified: 10:12:56" itemprop="dateCreated datePublished" datetime="2021-12-06T09:52:59+08:00">2021-12-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211206095307821.png" alt="image-20211206095307821"></p>
-<h1 id="普通转置"><a href="#普通转置" class="headerlink" title="普通转置"></a>普通转置</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211206095829503.png" alt="image-20211206095829503"></p>
-<p>t个元素的m*n矩阵</p>
-<p>普通转置算法的时间复杂度O(n*t)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/05/914%E6%9C%80%E5%90%8E%E5%86%B2%E5%88%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/05/914%E6%9C%80%E5%90%8E%E5%86%B2%E5%88%BA/" class="post-title-link" itemprop="url">914最后冲刺</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-05 11:34:26 / Modified: 11:37:22" itemprop="dateCreated datePublished" datetime="2021-12-05T11:34:26+08:00">2021-12-05</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="12-5"><a href="#12-5" class="headerlink" title="12/5"></a>12/5</h1><p>期望 </p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211205113441478.png" alt="image-20211205113441478"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210726142517834.png" alt="image-20210726142517834"></p>
-<p>$$\frac{1}{2}$$ x 1+ $$\frac{1}{3}$$ x 2 + $$\frac{1}{6}$$ x 3 = $$\frac{5}{3}$$</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/01/16%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/01/16%E5%B9%B4%E6%94%BF%E6%B2%BB%E7%9C%9F%E9%A2%98/" class="post-title-link" itemprop="url">16年政治真题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-01 08:31:07 / Modified: 08:31:08" itemprop="dateCreated datePublished" datetime="2021-12-01T08:31:07+08:00">2021-12-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
       
     </div>
 
@@ -1628,7 +970,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1696,16 +1038,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">324</span>
+          <span class="site-state-item-count">333</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/16/%E7%BD%91%E7%BB%9C/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -191,209 +191,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/04/16/%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">网络</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-16 21:18:36 / Modified: 21:19:14" itemprop="dateCreated datePublished" datetime="2022-04-16T21:18:36+08:00">2022-04-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="花生壳"><a href="#花生壳" class="headerlink" title="花生壳"></a>花生壳</h1><p>域名解析错误</p>
-<p>把DNS修改为<code>223.5.5.5</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/09/spring-cloud-demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/09/spring-cloud-demo/" class="post-title-link" itemprop="url">spring-cloud-demo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-09 20:53:38 / Modified: 22:50:30" itemprop="dateCreated datePublished" datetime="2022-04-09T20:53:38+08:00">2022-04-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/spring-cloud-demo">demo</a></p>
-<h1 id="注意版本"><a href="#注意版本" class="headerlink" title="注意版本"></a>注意版本</h1><p>再pom中招Spring Boot 和 cloud的版本信息</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220409205417331.png" alt="image-20220409205417331"></p>
-<p>借鉴他人代码的时候留意他们Spring Boot 的版本</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableEurekaClient</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConsumerApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ConsumerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>@EnableEurekaClient都是能够让注册中心能够发现，扫描到该服务</p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">restTemplate.getForObject(<span class="string">&quot;http://producer/&quot;</span>, String.class);</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220409224502792.png" alt="image-20220409224502792"></p>
-<p>负载均衡会随机分配给名为producer</p>
-<p>application.name也不用担心重复</p>
-<p>因为eureka遇到重复的application.name会把他们归在一起</p>
-<p><code>application.properties</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=producer</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/09/https/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/09/https/" class="post-title-link" itemprop="url">https</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-09 17:37:57 / Modified: 17:40:35" itemprop="dateCreated datePublished" datetime="2022-04-09T17:37:57+08:00">2022-04-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
-<li>部署需要下载证书到项目，然后完成相关配置（具体自己查）</li>
-<li>支持https+ip地址</li>
-<li>如果要https+域名的话，域名需要备案</li>
-<li>而阿里云的服务器时长不满三个月的话无法进行备案</li>
-</ul>
-<h1 id="终极解决方案"><a href="#终极解决方案" class="headerlink" title="终极解决方案"></a>终极解决方案</h1><p>花生壳支持https！</p>
-<p>完美解决小程序必须https的问题</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/Coding-Style/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/02/Coding-Style/" class="post-title-link" itemprop="url">Coding-Style</a>
+            <a href="/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">计算机游记</a>
         </h2>
 
         <div class="post-meta">
@@ -403,14 +201,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-04-02 10:25:29" itemprop="dateCreated datePublished" datetime="2022-04-02T10:25:29+08:00">2022-04-02</time>
+              <time title="Created: 2022-05-20 17:10:00" itemprop="dateCreated datePublished" datetime="2022-05-20T17:10:00+08:00">2022-05-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-03 19:30:17" itemprop="dateModified" datetime="2022-04-03T19:30:17+08:00">2022-04-03</time>
+                <time title="Modified: 2022-05-23 15:18:33" itemprop="dateModified" datetime="2022-05-23T15:18:33+08:00">2022-05-23</time>
               </span>
 
           
@@ -424,122 +222,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><p><a target="_blank" rel="noopener" href="https://peps.python.org/pep-0008/#blank-lines">文档</a></p>
-<h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><p>Use blank lines in functions, sparingly, to indicate logical sections.</p>
-<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="whitespace"><a href="#whitespace" class="headerlink" title="whitespace"></a>whitespace</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">spam(ham[<span class="number">1</span>], &#123;eggs: <span class="number">2</span>&#125;)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">spam( ham[ <span class="number">1</span> ], &#123; eggs: <span class="number">2</span> &#125; )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">foo = (<span class="number">0</span>,)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">bar = (<span class="number">0</span>, )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span>: <span class="built_in">print</span>(x, y); x, y = y, x</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span> : <span class="built_in">print</span>(x , y) ; x , y = y , x</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">ham[<span class="number">1</span>:<span class="number">9</span>], ham[<span class="number">1</span>:<span class="number">9</span>:<span class="number">3</span>], ham[:<span class="number">9</span>:<span class="number">3</span>], ham[<span class="number">1</span>::<span class="number">3</span>], ham[<span class="number">1</span>:<span class="number">9</span>:]</span><br><span class="line">ham[lower:upper], ham[lower:upper:], ham[lower::step]</span><br><span class="line">ham[lower+offset : upper+offset]</span><br><span class="line">ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]</span><br><span class="line">ham[lower + offset : upper + offset]</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">ham[lower + offset:upper + offset]</span><br><span class="line">ham[<span class="number">1</span>: <span class="number">9</span>], ham[<span class="number">1</span> :<span class="number">9</span>], ham[<span class="number">1</span>:<span class="number">9</span> :<span class="number">3</span>]</span><br><span class="line">ham[lower : : upper]</span><br><span class="line">ham[ : upper]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">i = i + <span class="number">1</span></span><br><span class="line">submitted += <span class="number">1</span></span><br><span class="line">x = x*<span class="number">2</span> - <span class="number">1</span></span><br><span class="line">hypot2 = x*x + y*y</span><br><span class="line">c = (a+b) * (a-b)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">i=i+<span class="number">1</span></span><br><span class="line">submitted +=<span class="number">1</span></span><br><span class="line">x = x * <span class="number">2</span> - <span class="number">1</span></span><br><span class="line">hypot2 = x * x + y * y</span><br><span class="line">c = (a + b) * (a - b)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Correct:</span><br><span class="line">def complex(real, imag=0.0):</span><br><span class="line">    return magic(r=real, i=imag)</span><br><span class="line"># Wrong:</span><br><span class="line">def complex(real, imag = 0.0):</span><br><span class="line">    return magic(r = real, i = imag)</span><br></pre></td></tr></table></figure>
-
-<h3 id="function-name"><a href="#function-name" class="headerlink" title="function name"></a>function name</h3><p>lowercase with words separated by underscores as necessary to improve readability.</p>
-<h3 id="function-return"><a href="#function-return" class="headerlink" title="function return"></a>function return</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">FILES = [</span><br><span class="line">    <span class="string">&#x27;setup.cfg&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;tox.ini&#x27;</span>,</span><br><span class="line">    ]</span><br><span class="line">initialize(FILES,</span><br><span class="line">           error=<span class="literal">True</span>,</span><br><span class="line">           )</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">FILES = [<span class="string">&#x27;setup.cfg&#x27;</span>, <span class="string">&#x27;tox.ini&#x27;</span>,]</span><br><span class="line">initialize(FILES, error=<span class="literal">True</span>,)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = x + <span class="number">1</span>                 <span class="comment"># Increment x</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="naming"><a href="#naming" class="headerlink" title="naming"></a>naming</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">b (single lowercase letter)</span><br><span class="line">B (single uppercase letter)</span><br><span class="line"></span><br><span class="line">lowercase</span><br><span class="line">lower_case_with_underscores</span><br><span class="line"></span><br><span class="line">UPPERCASE</span><br><span class="line">UPPER_CASE_WITH_UNDERSCORES</span><br><span class="line"></span><br><span class="line">CapitalizedWords</span><br><span class="line">mixedCase</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="avoid"><a href="#avoid" class="headerlink" title="avoid"></a>avoid</h3><p>Never use the characters ‘l’ (lowercase letter el),</p>
-<p> ‘O’ (uppercase letter oh)</p>
-<p>or ‘I’ (uppercase letter eye) as single character variable names</p>
-<p>In some fonts, these characters are indistinguishable from the numerals one and zero</p>
-<p>When tempted to use ‘l’, use ‘L’ instead</p>
-<h2 id="module-name"><a href="#module-name" class="headerlink" title="module name"></a>module name</h2><p>Python packages should also have short all-lowercase names</p>
-<p>although the use of underscores is discouraged.</p>
-<h3 id="class-name"><a href="#class-name" class="headerlink" title="class name"></a>class name</h3><p>CapWords</p>
-<h2 id="operation"><a href="#operation" class="headerlink" title="operation"></a>operation</h2><p><code>&#39;&#39;.join()</code> form should be used instead</p>
-<h3 id="file-operation"><a href="#file-operation" class="headerlink" title="file operation"></a>file operation</h3><p>use a <code>with</code> statement to ensure it is cleaned up promptly and reliably after use</p>
-<h2 id="underscores"><a href="#underscores" class="headerlink" title="underscores"></a>underscores</h2><p>double leading underscores should be used only to avoid name conflicts </p>
-<p>with attributes in classes designed to be subclassed</p>
-<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><h3 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> foo.startswith(<span class="string">&#x27;bar&#x27;</span>):</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> foo[:<span class="number">3</span>] == <span class="string">&#x27;bar&#x27;</span>:</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="empty"><a href="#empty" class="headerlink" title="empty"></a>empty</h3><p>(strings, lists, tuples), use the fact that empty sequences are false</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> seq:</span><br><span class="line"><span class="keyword">if</span> seq:</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(seq):</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">len</span>(seq):</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> greeting:</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> greeting == <span class="literal">True</span>:</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="comment-1"><a href="#comment-1" class="headerlink" title="comment"></a>comment</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> TRUE;            <span class="comment">/* special case */</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> isPrime(a);      <span class="comment">/* works only for odd a */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Very short comments can appear on the same line as the code they describe</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (foo &gt; <span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Do a double-flip.</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;          <span class="comment">// Explain why here.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//if (bar &gt; 1) &#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    // Do a triple-flip.</span></span><br><span class="line"><span class="comment">//    ...</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="comment">//else &#123;</span></span><br><span class="line"><span class="comment">//    return false;</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>It shouldn’t be used on consecutive multiple lines for text comments</p>
-<p>however, it can be used in consecutive multiple lines for commenting out sections of code</p>
-<h2 id="variable"><a href="#variable" class="headerlink" title="variable"></a>variable</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> level;</span><br><span class="line"><span class="keyword">int</span> size;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>A keyword followed by a parenthesis(括号) should be separated by a space</p>
-<h2 id="try"><a href="#try" class="headerlink" title="try"></a>try</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">catch</span> (ExceptionClass e) &#123;</span><br><span class="line">     statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="package"><a href="#package" class="headerlink" title="package"></a>package</h2><p>should be one of the top-level domain names</p>
-<p>currently com, edu, gov, mil, net, org, or one of the English two-letter codes </p>
-<p>identifying countries as specified in ISO Standard 3166, 1981</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.sun.eng</span><br><span class="line">com.apple.quicktime.v2</span><br><span class="line">edu.cmu.cs.bovik.cheese</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>Always use uppercase for the reserved keywords like <code>SELECT</code> and <code>WHERE</code></p>
-<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> file_hash</span><br><span class="line">  <span class="keyword">FROM</span> file_system</span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Updating the file record after writing to the file */</span></span><br><span class="line">UPDATE file_system</span><br><span class="line">   <span class="keyword">SET</span> file_modified_date <span class="operator">=</span> <span class="string">&#x27;1980-02-22 13:19:01.00000&#x27;</span>,</span><br><span class="line">       file_size <span class="operator">=</span> <span class="number">209732</span></span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name <span class="keyword">AS</span> fn</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s1</span><br><span class="line">  <span class="keyword">JOIN</span> students <span class="keyword">AS</span> s2</span><br><span class="line">    <span class="keyword">ON</span> s2.mentor_id <span class="operator">=</span> s1.staff_num;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(s.monitor_tally) <span class="keyword">AS</span> monitor_total</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> albums (title, release_date, recording_date)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">&#x27;Charcoal Lane&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;The New Danger&#x27;</span>, <span class="string">&#x27;2008-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
+          <h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p>Software as a Service</p>
+<p>连上网直接用服务</p>
+<p>应用的部署不用用户操心</p>
+<h2 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h2><p>客户端告诉代理服务器，帮我访问这个地址，然后把返回结果再传一份给我</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520172550105.png" alt="image-20220520172550105"></p>
+<p>客户端并不知道实际服务的Web服务器</p>
+<p>只是访问代理的那个服务器</p>
+<p>不关系代理服务到底是怎么和Web服务器交互的</p>
+<p>客户端等一个结果就行</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520172625580.png" alt="image-20220520172625580"></p>
+<h1 id="桌面开发"><a href="#桌面开发" class="headerlink" title="桌面开发"></a>桌面开发</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220523151811522.png" alt="image-20220523151811522"></p>
 
       
     </div>
@@ -559,7 +252,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/01/%E5%AF%86%E7%A0%81%E5%AD%A6/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/17/China/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -573,7 +266,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/04/01/%E5%AF%86%E7%A0%81%E5%AD%A6/" class="post-title-link" itemprop="url">密码学</a>
+            <a href="/2022/05/17/China/" class="post-title-link" itemprop="url">China</a>
         </h2>
 
         <div class="post-meta">
@@ -584,7 +277,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-04-01 15:44:20 / Modified: 17:00:20" itemprop="dateCreated datePublished" datetime="2022-04-01T15:44:20+08:00">2022-04-01</time>
+              <time title="Created: 2022-05-17 13:58:59 / Modified: 16:38:31" itemprop="dateCreated datePublished" datetime="2022-05-17T13:58:59+08:00">2022-05-17</time>
             </span>
 
           
@@ -598,28 +291,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h1><h2 id="为什么要加密"><a href="#为什么要加密" class="headerlink" title="为什么要加密"></a>为什么要加密</h2><p>（1）网络嗅探</p>
-<p>网络嗅探工具可以监听处于同一个物理网络内发送到自己网络接口的数据帧</p>
-<p>因此可以监听到一个由集线器构成的广播型局域网内的所有数据</p>
-<p>无法监听到不是发送到自己网络端口的数据帧</p>
-<p>但是！</p>
-<p>arp欺骗和ip欺骗</p>
-<p>如果明文，那完了</p>
-<p>（2）数据经过第三方</p>
-<p>宽带运营商</p>
-<h2 id="破解密文"><a href="#破解密文" class="headerlink" title="破解密文"></a>破解密文</h2><p>解密出来的midnight也不一定是原明文</p>
-<h2 id="密钥的保护"><a href="#密钥的保护" class="headerlink" title="密钥的保护"></a>密钥的保护</h2><h2 id="密钥配送"><a href="#密钥配送" class="headerlink" title="密钥配送"></a>密钥配送</h2><h3 id="直接告知密钥"><a href="#直接告知密钥" class="headerlink" title="直接告知密钥"></a>直接告知密钥</h3><h3 id="密钥分配中心"><a href="#密钥分配中心" class="headerlink" title="密钥分配中心"></a>密钥分配中心</h3><p>登录</p>
-<h3 id="公钥私钥"><a href="#公钥私钥" class="headerlink" title="公钥私钥"></a>公钥私钥</h3><p>接收者把公钥明文发给发送者</p>
-<p>发送者把明文进行加密，发给接收者</p>
-<p>接收者用私钥解密（只有私钥能解密）</p>
-<h2 id="伪随机数"><a href="#伪随机数" class="headerlink" title="伪随机数"></a>伪随机数</h2><p>简单的取余数</p>
-<h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>加密解密用同一密钥</p>
-<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>加密用公钥，解密用私钥</p>
-<h1 id="Https"><a href="#Https" class="headerlink" title="Https"></a>Https</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401164800074.png" alt="image-20220401164800074"></p>
-<h3 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h3><p>Secure Socket Layer</p>
-<h3 id="TSL"><a href="#TSL" class="headerlink" title="TSL"></a>TSL</h3><p>Transport Layer Security</p>
-<h1 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h1><p>CA（Certification Authority）</p>
-<p>证书（即公钥证书）确实属于此人</p>
+          <h1 id="Visa"><a href="#Visa" class="headerlink" title="Visa"></a>Visa</h1><p>Common (<strong>L-Type</strong>) 1到6个月</p>
+<p><strong>F or Z visa</strong> and you’ll need a letter of invitation from the company you’ll be working with in China</p>
+<p><strong>X visa</strong> and will need a letter from the college where you’ll be studying.</p>
+<p>If you need to extend your visa while in China</p>
+<p>this can be done by visiting the local <strong>Public Security Bureau</strong></p>
+<h2 id="香港签证"><a href="#香港签证" class="headerlink" title="香港签证"></a>香港签证</h2><p>Citizens of most Western countries do not need a visa for short visits to Hong Kong as long as employment isn’t sought.</p>
+<h1 id="海关"><a href="#海关" class="headerlink" title="海关"></a>海关</h1><p>You’re not allowed to bring more than ¥6000 in Chinese money, 400 cigarettes or two liters of alcohol.</p>
+<h1 id="机票"><a href="#机票" class="headerlink" title="机票"></a>机票</h1><p>Direct flights from the West Coast to China take about 13 hours</p>
+<p>will cost between US$700 and US$1,500 round-trip</p>
+<p>Hong Kong is China’s best-served international gateway and some</p>
+<p>of the cheapest China flights you’ll find from North America,</p>
+<p>Europe and Australasia head here</p>
+<h1 id="水路"><a href="#水路" class="headerlink" title="水路"></a>水路</h1><p>Not many people arrive in China by ship, but it is still a possibility</p>
+<p>and Shanghai is served by ferries from <strong>Japan</strong> (see p. 292)</p>
+<h1 id="exchange"><a href="#exchange" class="headerlink" title="exchange"></a>exchange</h1><p>The <strong>Bank of China</strong> (not the Agricultural Bank of China, ConstructionBank of China</p>
+<p>Industrial Bank of China or any of the other similarly named institutions) is the only bank licensed to exchange foreign currency</p>
+<p>or travelers’ checks. Their opening hours may vary but are generally <strong>Mon</strong></p>
+<p><strong>day to Friday from 9 am-noon and 2-5 pm</strong>.</p>
+<h1 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h1><p>菜系 - style</p>
+<p>干 - sundried</p>
+<p>long known in the West as <strong>Canton</strong></p>
 
       
     </div>
@@ -639,7 +331,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/01/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/10/%E7%BD%91%E7%AB%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -653,7 +345,132 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/04/01/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">Untitled</a>
+            <a href="/2022/05/10/%E7%BD%91%E7%AB%99/" class="post-title-link" itemprop="url">网站</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-05-10 13:26:09 / Modified: 13:27:09" itemprop="dateCreated datePublished" datetime="2022-05-10T13:26:09+08:00">2022-05-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="电子书"><a href="#电子书" class="headerlink" title="电子书"></a>电子书</h1><p><a target="_blank" rel="noopener" href="https://pdfroom.com/">https://pdfroom.com/</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/06/adb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/06/adb/" class="post-title-link" itemprop="url">adb</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-05-06 10:35:13 / Modified: 16:35:40" itemprop="dateCreated datePublished" datetime="2022-05-06T10:35:13+08:00">2022-05-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>到电脑</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull /run/Publisher.jar D:\project\folder\智慧灯杆\网关</span><br></pre></td></tr></table></figure>
+
+
+
+<p>电脑到设备</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb push test.txt /sdcard/test</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/05/procreate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/05/procreate/" class="post-title-link" itemprop="url">procreate</a>
         </h2>
 
         <div class="post-meta">
@@ -663,14 +480,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-04-01 15:11:32" itemprop="dateCreated datePublished" datetime="2022-04-01T15:11:32+08:00">2022-04-01</time>
+              <time title="Created: 2022-05-05 22:00:13" itemprop="dateCreated datePublished" datetime="2022-05-05T22:00:13+08:00">2022-05-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-18 14:02:36" itemprop="dateModified" datetime="2022-04-18T14:02:36+08:00">2022-04-18</time>
+                <time title="Modified: 2022-05-06 23:58:46" itemprop="dateModified" datetime="2022-05-06T23:58:46+08:00">2022-05-06</time>
               </span>
 
           
@@ -684,283 +501,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>title: 数据库<br>date: 2022-04-01 15:11:32<br>tags:<br>categories:</p>
-<h1 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表*"></a>分库分表*</h1><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>（1）单库太大：数据库里面的表太多，所在服务器磁盘空间装不下，IO次数多CPU忙不过来</p>
-<p>（2）单表太大：一张表的字段太多，数据太多。查询起来困难</p>
-<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><h3 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h3><p>第一种：磁盘读IO瓶颈，热点数据太多，数据库缓存放不下</p>
-<p>每次查询时会产生大量的IO，降低查询速度 -&gt; 分库和垂直分表</p>
-<p>第二种：网络IO瓶颈，请求的数据太多，网络带宽不够 -&gt; 分库</p>
-<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>第一种：SQL问题，如SQL中包含join，group by，order by</p>
-<p>非索引字段条件查询等，增加CPU运算的操作 -&gt; SQL优化</p>
-<p>建立合适的索引，在业务Service层进行业务计算</p>
-<p>第二种：单表数据量太大，查询时扫描的行太多，SQL效率低，CPU率先出现瓶颈 -&gt; 水平分表</p>
-<h2 id="水平分库"><a href="#水平分库" class="headerlink" title="水平分库"></a>水平分库</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401152251941.png" alt="image-20220401152251941"></p>
-<h2 id="水平分表"><a href="#水平分表" class="headerlink" title="水平分表"></a>水平分表</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401152339440.png" alt="image-20220401152339440"></p>
-<h2 id="垂直分库"><a href="#垂直分库" class="headerlink" title="垂直分库"></a>垂直分库</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401152758810.png" alt="image-20220401152758810"></p>
-<h2 id="垂直分表"><a href="#垂直分表" class="headerlink" title="垂直分表"></a>垂直分表</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401152804249.png" alt="image-20220401152804249"></p>
-<h2 id="分表工具"><a href="#分表工具" class="headerlink" title="分表工具"></a>分表工具</h2><p>Sharding-Sphere：jar，前身是sharding-jdbc</p>
-<p>TDDL：jar，Taobao Distribute Data Layer</p>
-<p>Mycat：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/tdmq?from=10680">中间件</a></p>
-<h1 id="性能"><a href="#性能" class="headerlink" title="性能*"></a>性能*</h1><h2 id="字段的限制条件"><a href="#字段的限制条件" class="headerlink" title="字段的限制条件"></a>字段的限制条件</h2><h3 id="（1）尽可能小"><a href="#（1）尽可能小" class="headerlink" title="（1）尽可能小"></a>（1）尽可能小</h3><h3 id="（2）尽可能not-null"><a href="#（2）尽可能not-null" class="headerlink" title="（2）尽可能not null"></a>（2）尽可能not null</h3><h3 id="（3）不使用NULL"><a href="#（3）不使用NULL" class="headerlink" title="（3）不使用NULL"></a>（3）不使用NULL</h3><p>NULL其实是占用空间的</p>
-<p>打个比方来说，你有一个杯子，空值代表杯子是真空的</p>
-<p>NULL代表杯子中装满了空气</p>
-<p>虽然杯子看起来都是空的，但是区别是很大的</p>
-<h3 id="（4）不使用NOT-IN和-操作"><a href="#（4）不使用NOT-IN和-操作" class="headerlink" title="（4）不使用NOT IN和 != 操作"></a>（4）不使用NOT IN和 != 操作</h3><p>NOT IN和 != 操作都不会使用索引将进行全表扫描</p>
-<p>NOT IN可以NOT EXISTS代替</p>
-<p>id != 3则可使用id&gt;3 or id &lt; 3</p>
-<h3 id="（5）尽可能unique"><a href="#（5）尽可能unique" class="headerlink" title="（5）尽可能unique"></a>（5）尽可能unique</h3><p>找到之后就不用往后找了</p>
-<h2 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h2><p>交给mysql还是服务器</p>
-<h4 id="如果遇到真的暂时为空的字段怎么办？"><a href="#如果遇到真的暂时为空的字段怎么办？" class="headerlink" title="如果遇到真的暂时为空的字段怎么办？"></a>如果遇到真的暂时为空的字段怎么办？</h4><p>Even when you do need to store a “no value”</p>
-<p>fact in a table, you might not need to use NULL</p>
-<p> Perhaps you can use zero, a special value</p>
-<p>or an empty string instead</p>
-<h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2><p>排序，等一些操作需要在内存中</p>
-<h2 id="外键"><a href="#外键" class="headerlink" title="外键*"></a>外键*</h2><p>但是如果我们要删除 <code>authors</code> 表中的数据</p>
-<p>就需要查询所有引用 <code>authors</code> 数据的表</p>
-<p>如果有 10 个表都有指向 <code>authors</code> 表的外键</p>
-<p>我们就需要在 10 个表中查询是否存在对应的记录，这个过程相对比较麻烦</p>
-<p>不否认外键可以确保数据一致性</p>
-<p>但确保数据一致性不只有一种方案</p>
-<p>而且互联网的业务多变，表结构发生变动</p>
-<p>只有表引擎为<strong>InnoDB</strong>才支持外键以及事务</p>
-<p>MYSQL 5.5 之前默认引擎MyISAM不支持外键以及事务</p>
-<p>所以演示外键的使用只有引擎为InnoDB才有意义</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415161326486.png" alt="image-20220415161326486"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415161353120.png" alt="image-20220415161353120"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415161506155.png" alt="image-20220415161506155"></p>
-<p>死锁例子：</p>
-<p>操作前边有模拟的序号 - 执行顺序</p>
-<p>insert当前表</p>
-<p>update父表</p>
-<p>mysql的机制是先上锁，check兼容性，再看是否继续执行</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415163609472.png" alt="image-20220415163609472"></p>
-<p>Ps：</p>
-<p>这个例子中，有外键，Traction A会给父的那行上S锁（共享Share，查询ing）</p>
-<p>检查父表后，update父表时，会给当前行上X锁（排他）</p>
-<p>TA的X锁与TB的S锁不兼容，所以TA的update操作会等待TB释放S锁</p>
-<p>（换人的逻辑说的就是，人家在查询着当前的数据，你不能去做修改）</p>
-<p>又，释放锁是在事务commit后</p>
-<p>所以，即使TB的insert执行完毕，S锁仍然没有释放，TA还是不能继续</p>
-<p>然，TB到了update又得等TA的S锁释放</p>
-<p>也就形成了死锁</p>
-<h2 id="alter-table"><a href="#alter-table" class="headerlink" title="alter table"></a>alter table</h2><p>动态修改表结构可以借助一些工具</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415101330590.png" alt="image-20220415101330590"></p>
-<h2 id="too-many-column"><a href="#too-many-column" class="headerlink" title="too many column"></a>too many column</h2><p>We discovered that this can become</p>
-<p>expensive when we investigated an issue with high CPU consumption </p>
-<p>for a customer with extremely wide tables (hundreds of columns)</p>
-<h2 id="too-many-join"><a href="#too-many-join" class="headerlink" title="too many join"></a>too many join</h2><p>MySQL has a limitation of 61 tables per join</p>
-<h2 id="使用冗余字段"><a href="#使用冗余字段" class="headerlink" title="使用冗余字段"></a>使用冗余字段</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415105336774.png" alt="image-20220415105336774"></p>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>不做索引时则是全表扫描</p>
-<p>修改数据时，第个索引都要进行更新，降低写速度</p>
-<p>所以说：</p>
-<p>对一些经常处理的业务表（增删改）应在查询允许的情况下尽量减少索引</p>
-<h3 id="短索引"><a href="#短索引" class="headerlink" title="短索引"></a>短索引</h3><p>对字符串列进行索引，如果可能应该指定一个前缀长度</p>
-<p>例如，如果有一个CHAR(255)的 列</p>
-<p>如果在前10 个或20 个字符内</p>
-<h1 id="Engine"><a href="#Engine" class="headerlink" title="Engine"></a>Engine</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220406135839724.png" alt="image-20220406135839724"></p>
-<h2 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220406124629171.png" alt="image-20220406124629171"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220406135632600.png" alt="image-20220406135632600"></p>
-<h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220406124855917.png" alt="image-20220406124855917"></p>
-<h3 id="存储大小"><a href="#存储大小" class="headerlink" title="存储大小"></a>存储大小</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220406133641797.png" alt="image-20220406133641797"></p>
-<h3 id="Lock"><a href="#Lock" class="headerlink" title="Lock"></a>Lock</h3><p>MyISAM locks entire tables</p>
-<p>you caninsert new rows into the table</p>
-<p>while select queries are running</p>
-<h2 id="other-engine"><a href="#other-engine" class="headerlink" title="other engine"></a>other engine</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220406134746931.png" alt="image-20220406134746931"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220406135122734.png" alt="image-20220406135122734"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220406135424730.png" alt="image-20220406135424730"></p>
-<h1 id="数据库对比"><a href="#数据库对比" class="headerlink" title="数据库对比"></a>数据库对比</h1><p>如何选择合适的数据库：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418114014757.png" alt="image-20220418114014757"></p>
-<h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220410152653652.png" alt="image-20220410152653652"></p>
-<p>MongoDB 是文档型的数据库，是一种 nosql，它使用类 Json 格式保存数据</p>
-<p>MongoDB使用B树，所有节点都有Data域</p>
-<p>只要找到指定索引就可以进行访问，无疑单次查询平均快于Mysql</p>
-<p>Mysql作为一个关系型数据库，数据的关联性是非常强的</p>
-<p>区间访问是常见的一种情况，B+树由于数据全部存储在叶子节点</p>
-<p>并且通过指针串在一起，这样就很容易的进行区间遍历甚至全部遍历</p>
-<h1 id="索引-1"><a href="#索引-1" class="headerlink" title="索引*"></a>索引*</h1><p>InnoDB表中数据是按照主键顺序存放的（主键做key）</p>
-<h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220410153234253.png" alt="image-20220410153234253"></p>
-<p>如果要找3</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220410151110672.png" alt="image-20220410151110672"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220410151117163.png" alt="image-20220410151117163"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220410151122847.png" alt="image-20220410151122847"></p>
-<h2 id="B-树和InnoDB"><a href="#B-树和InnoDB" class="headerlink" title="B+树和InnoDB*"></a>B+树和InnoDB*</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220410155705121.png" alt="image-20220410155705121"></p>
-<h2 id="B-树-1"><a href="#B-树-1" class="headerlink" title="B-树"></a>B-树</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220410151207231.png" alt="image-20220410151207231"></p>
-<h2 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h2><p>官方推荐是用自增主键</p>
-<p>若主键过大会直接影响索引存储的数据量</p>
-<p>所以非常不建议使用过大的数据作为主键索引</p>
-<p>Primary keys should be as small as necessary. </p>
-<p>The smaller your key, the smaller the index, the less pages in the cache you will use.</p>
-<h2 id="唯一索引和普通索引"><a href="#唯一索引和普通索引" class="headerlink" title="唯一索引和普通索引*"></a>唯一索引和普通索引*</h2><p>对于普通索引来说当找到card = 5这条记录后，还会继续查找</p>
-<p>直到碰到第一个不满足card = 5的记录为止</p>
-<p>对于唯一索引就非常简单的了，唯一索引的特性就是数据唯一性</p>
-<p>所以查到card = 5这条记录后就不在查找下一条记录了</p>
-<h2 id="添加索引"><a href="#添加索引" class="headerlink" title="添加索引*"></a>添加索引*</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> x_test <span class="keyword">add</span> index(x_name(<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
-
-<p>数据量大的话，添加索引需要一定时间（几秒或者十几秒）</p>
-<p>对于添加了索引的数据</p>
-<p>查询效率甚至可以从2s到0.1s</p>
-<p>数十倍的差距。。。</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220414124624144.png" alt="image-20220414124624144"></p>
-<p>数据库的部分数据：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220414124709706.png" alt="image-20220414124709706"></p>
-<h2 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引*"></a>复合索引*</h2><p>如果一个表中的数据在查询时有多个字段总是同时出现</p>
-<p>则这些字段就可以作为复合索引</p>
-<p>如果我们创建了(area, age,salary)的复合索引</p>
-<p>那么其实相当于创建了(area,age,salary)、(area,age)、(area)三个索引</p>
-<p>这被称为最佳左前缀特性</p>
-<p>因此我们在创建复合索引时</p>
-<p>应该将<strong>最常用作限制条件的列放在最左边</strong>，依次递减</p>
-<h3 id="三星原则"><a href="#三星原则" class="headerlink" title="三星原则"></a>三星原则</h3><p>一星：索引将相关的列放到一起</p>
-<p>即在一系必要的列上建立索引</p>
-<p>没有为在where条件里面的列都建立索引 </p>
-<p>二星：索引中的数据列顺序和查找中排列顺序一致</p>
-<p>通常将选择性最高的列放到索引的最前列</p>
-<p>三星：索引中的列包含了查询中需要的全部列（where）</p>
-<p>索引包含查询所需要的数据列，不再进行全表查表，回表聚集索引（聚簇索引、覆盖索引）</p>
-<h3 id="索引顺序"><a href="#索引顺序" class="headerlink" title="索引顺序"></a>索引顺序</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415160021591.png" alt="image-20220415160021591"></p>
-<h2 id="NULL"><a href="#NULL" class="headerlink" title="NULL"></a>NULL</h2><p>列中包含有NULL值都将不会被包含在索引中</p>
-<p>复合索引中只要有一列含有NULL值</p>
-<p>那么这一列对于此复合索引就是无效的</p>
-<p>所以我们在数据库设计时不要让字段的默认值为NULL</p>
-<h2 id="只有一个索引生效"><a href="#只有一个索引生效" class="headerlink" title="只有一个索引生效"></a>只有一个索引生效</h2><p>mysql查询只使用一个索引</p>
-<p>如果where子句中已经使用了索引的话，那么order by中的列是不会使用索引的</p>
-<h2 id="使用指定索引"><a href="#使用指定索引" class="headerlink" title="使用指定索引"></a>使用指定索引</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tdb.x_test USE INDEX(x_name) <span class="keyword">WHERE</span> x_name<span class="operator">=</span><span class="string">&#x27;1830759&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tdb.x_test USE INDEX(<span class="keyword">PRIMARY</span>) <span class="keyword">WHERE</span> x_name<span class="operator">=</span><span class="string">&#x27;1830759&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418130712911.png" alt="image-20220418130712911"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418130625155.png" alt="image-20220418130625155"></p>
-<h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415162150398.png" alt="image-20220415162150398"></p>
-<p>mysql的机制是先上锁，check兼容性，再看是否继续执行</p>
-<p>释放锁是在事务commit后</p>
-<h2 id="锁表"><a href="#锁表" class="headerlink" title="锁表"></a>锁表</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418113501394.png" alt="image-20220418113501394"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418113617742.png" alt="image-20220418113617742"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418113644294.png" alt="image-20220418113644294"></p>
-<h2 id="行锁"><a href="#行锁" class="headerlink" title="行锁"></a>行锁</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418113711528.png" alt="image-20220418113711528"></p>
-<h1 id="InnoDB-1"><a href="#InnoDB-1" class="headerlink" title="InnoDB*"></a>InnoDB*</h1><h2 id="最多储存多少数据"><a href="#最多储存多少数据" class="headerlink" title="最多储存多少数据"></a>最多储存多少数据</h2><p>要了解一些基础概念：</p>
-<ul>
-<li>MySQL中我们的InnoDB页的大小默认是16k（当然也可以通过参数设置）</li>
-<li>假设主键ID为bigint类型，长度为8字节</li>
-<li>指针大小在InnoDB源码中设置为6字节</li>
-<li>一个非页节点就是6+8=14字节</li>
-<li>InnoDB存储引擎有自己的最小储存单元——页（Page），一个页的大小是16K</li>
-<li>假设一行数据的大小是1k，那么一个页可以存放16行这样的数据</li>
-<li>一个页中能存放多少这样的单元，其实就代表有多少指针</li>
-<li>B+树根节点可能是一个叶子节点， 也可能是一个包含两个或两个以上孩子节点的节点</li>
-<li>以在InnoDB中，B+树高度一般为1-3层，它能满足千万级的数据存储</li>
-</ul>
-<p>对于高度为二的B+树</p>
-<p>16384/14=1170</p>
-<p>则第一层有1170个非叶节点</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220410155705121.png" alt="image-20220410155705121"></p>
-<p>然后最多储存的记录则为：1170*16=18720条</p>
-<p>高度为2的B+树最多可以存储18720条数据</p>
-<p>对于高度为3的B+树：</p>
-<p>1170<em>1170</em>16=21902400条（千万级别）</p>
-<h1 id="字段"><a href="#字段" class="headerlink" title="字段*"></a>字段*</h1><h2 id="varchar"><a href="#varchar" class="headerlink" title="varchar"></a>varchar</h2><p>节省空间</p>
-<p>用尽可能少的空间存储字符串</p>
-<p>varchar(11) 表示可以储存11长度的字符串</p>
-<p>注意，是最大储存11，并不是说固定占用11字节长度</p>
-<p>而是用多少占用多少，也就是所谓的var 可变</p>
-<p>额外1-2字节来记录长度</p>
-<p>使用场景：</p>
-<p>长短差距大 ——可以有效提高空间使用率</p>
-<h2 id="char"><a href="#char" class="headerlink" title="char"></a>char</h2><p>固定长度可以与varchar对照</p>
-<p>md5的密码</p>
-<h2 id="blob和text"><a href="#blob和text" class="headerlink" title="blob和text"></a>blob和text</h2><p>一般用来存量大的数据</p>
-<p>能不用就不用</p>
-<p>他们之间唯一的区别就是text含有字符集</p>
-<p>而不是单纯的二进制数据</p>
-<h2 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h2><p>单位：bits</p>
-<p>TINYINT - 8 - （-128， 127）</p>
-<p>SMALLINT - 16 - 【-2^15 (-32,768) 到 2^15 - 1 (32,767) 】</p>
-<p>MEDIUMINT - 24 - （-8388608，8388607）</p>
-<p>INT - 32 - 【-2^31 (-2,147,483,648) 到 2^31 - 1 (2,147,483,647) 】</p>
-<p>BIGINT - 64 - 【-2^63 (-9223372036854775808) 到 2^63-1 (9223372036854775807) 】</p>
-<h2 id="enum"><a href="#enum" class="headerlink" title="enum"></a>enum</h2><p>底层是数字作索引</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415095506915.png" alt="image-20220415095506915"></p>
-<p>优点：</p>
-<p>查询起来会比查询原有字符串速度更快</p>
-<p>（存数字的话，就没有必要用enum）</p>
-<p>缺点：</p>
-<p>每增加一种枚举，得修改表的结构</p>
-<p>这耗费资源吗？</p>
-<blockquote>
-<p>《HighPFMysql》</p>
-<p>ALTER TABLE performance can become a problem with very large tables</p>
-</blockquote>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220415101031379.png" alt="image-20220415101031379"></p>
-<h1 id="运算-1"><a href="#运算-1" class="headerlink" title="运算"></a>运算</h1><h2 id="SUM"><a href="#SUM" class="headerlink" title="SUM"></a>SUM</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 返回分数为<span class="number">90</span>的行数</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(score<span class="operator">=</span><span class="number">90</span>) <span class="keyword">from</span> sum;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT"></a>COUNT</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418134031267.png" alt="image-20220418134031267"></p>
-<p>计算行</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">COUNT</span>(<span class="operator">*</span>)</span><br><span class="line"></span><br><span class="line"># 结果：<span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>计算not-null的行</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">COUNT</span>(column_name)</span><br><span class="line"></span><br><span class="line"># 结果：<span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h1 id="Trigger"><a href="#Trigger" class="headerlink" title="Trigger"></a>Trigger</h1><p>you can’t have two triggers that fire AFTER INSERT</p>
-<p>MySQL supports only row-level triggers</p>
-<p>场景：删除某老师，顺便把老师报的课给删了</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> `teacher_AFTER_DELETE` AFTER <span class="keyword">DELETE</span> <span class="keyword">ON</span> `teacher` <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="type">ROW</span> <span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> course <span class="keyword">WHERE</span> teacher_id <span class="operator">=</span> old.id;</span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
-
-<p>可以从 <code>old</code> 中获取目标参数</p>
-<h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><p>Queries are always handled in parallel between multiple sessions </p>
-<p>常见需要考虑的问题：</p>
-<p>类似请求几乎同时执行（还是复合包含insert 和 update）</p>
-<p>​    </p>
-<h1 id="机制"><a href="#机制" class="headerlink" title="机制"></a>机制</h1><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418113845482.png" alt="image-20220418113845482"></p>
-<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>Ps：查询结果是有作缓存的</p>
-<p>也就是说，知道了这个，尽可能减少web应用的sql语句是有用的！</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418112137265.png" alt="image-20220418112137265"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418112253096.png" alt="image-20220418112253096"></p>
-<h2 id="SELECT-and-UPDATE-on-the-Same-Table"><a href="#SELECT-and-UPDATE-on-the-Same-Table" class="headerlink" title="SELECT and UPDATE on the Same Table"></a>SELECT and UPDATE on the Same Table</h2><p>MySQL doesn’t let you SELECT from a table </p>
-<p>while simultaneously running an UPDATE on it. </p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418125955878.png" alt="image-20220418125955878"></p>
-<h1 id="查询策略"><a href="#查询策略" class="headerlink" title="查询策略"></a>查询策略</h1><p> MySQL can run well over 100,000 simple queries per second </p>
-<p>so running multiple queries isn’t necessarily such a bad thing.</p>
-<h2 id="分批查询"><a href="#分批查询" class="headerlink" title="分批查询"></a>分批查询</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418125042988.png" alt="image-20220418125042988"></p>
-<h2 id="分解join"><a href="#分解join" class="headerlink" title="分解join"></a>分解join</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418125244255.png" alt="image-20220418125244255"></p>
-<p>解释：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418125458332.png" alt="image-20220418125458332"></p>
-<h2 id="用limit优化min"><a href="#用limit优化min" class="headerlink" title="用limit优化min"></a>用limit优化min</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418130148630.png" alt="image-20220418130148630"></p>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试*"></a>测试*</h1><h2 id="插入若干数据"><a href="#插入若干数据" class="headerlink" title="插入若干数据*"></a>插入若干数据*</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `x_test` (</span><br><span class="line">  `id` <span class="type">int</span>(<span class="number">11</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  `x_name` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `x_time` <span class="type">int</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB AUTO_INCREMENT<span class="operator">=</span><span class="number">4145025</span> <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4</span><br><span class="line"></span><br><span class="line"># 首先在数据库插入一条初始数据，然后不断执行，数据会呈指数型增加</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> x_test(x_name,x_time) <span class="keyword">SELECT</span> CONCAT(rand()<span class="operator">*</span><span class="number">312123</span>,x_name),x_time <span class="keyword">FROM</span> x_test;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXPLAIN <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tdb.x_test <span class="keyword">where</span> x_name<span class="operator">=</span><span class="string">&#x27;2985141.02606898452988963.223324151212&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418134957138.png" alt="image-20220418134957138"></p>
-<p>表示扫描了1128行</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXPLAIN <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tdb.x_test USE INDEX(<span class="keyword">PRIMARY</span>) <span class="keyword">where</span> x_name<span class="operator">=</span><span class="string">&#x27;2985141.02606898452988963.223324151212&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418135204746.png" alt="image-20220418135204746"></p>
-<p>由于使用的索引不同，导致其扫描的行数天差地别</p>
-<p>（默认时，where那的字段是什么，就优先用那个做索引，如果有索引的话）</p>
-<h2 id="Benchmark"><a href="#Benchmark" class="headerlink" title="Benchmark"></a>Benchmark</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BENCHMARK(count,expr)</span><br></pre></td></tr></table></figure>
-
-<p>BENCHMARK会重复计算expr表达式count次</p>
-<p>通过这种方式就可以评估出mysql执行这个expr表达式的效率</p>
-<p>这个函数的返回值始终是0</p>
-<p>但可以根据客户端提示的执行时间来得到BENCHMARK总共执行的所消耗的时间</p>
-<p>例子：</p>
-<p>如果我想比较 </p>
-<p>2011-01-01&gt;’date(“Y-m-d”,time()) 和 to_days(2011-04-07) - to_days(now()) &lt;1 </p>
-<p>两个表达式中哪个表达式执行速度更快怎么办？</p>
-<p>执行次数少，看不出差距则可以</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> benchmark(<span class="number">1000000</span>, <span class="number">2011</span><span class="number">-01</span><span class="number">-01</span><span class="operator">&gt;</span><span class="string">&#x27;date(&quot;Y-m-d&quot;,time())&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> benchmark(<span class="number">1000000</span>, to_days(<span class="number">2011</span><span class="number">-04</span><span class="number">-07</span>) <span class="operator">-</span> to_days(now()) <span class="operator">&lt;</span><span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-<p>如下图</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418115214952.png" alt="image-20220418115214952"></p>
+          <h1 id="笔刷"><a href="#笔刷" class="headerlink" title="笔刷"></a>笔刷</h1><p>gloaming+evolve</p>
+<p>用gloaming画高光</p>
+<p>gloaming作橡皮擦！做出梦幻的感觉</p>
+<p>海浪不一定要水平</p>
+<h1 id="调色板"><a href="#调色板" class="headerlink" title="调色板"></a>调色板</h1><p>可以利用图片导入</p>
+<h1 id="绘画"><a href="#绘画" class="headerlink" title="绘画"></a>绘画</h1><h2 id="光影"><a href="#光影" class="headerlink" title="光影"></a>光影</h2><h3 id="正方体光影"><a href="#正方体光影" class="headerlink" title="正方体光影"></a>正方体光影</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506080948226.png" alt="image-20220506080948226"></p>
+<p>三阶颜色</p>
+<p>下一阶最亮的颜色约等于上一阶最暗的颜色就好</p>
+<h3 id="眼睛光影"><a href="#眼睛光影" class="headerlink" title="眼睛光影"></a>眼睛光影</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506081652732.png" alt="image-20220506081652732"></p>
+<h2 id="虚实"><a href="#虚实" class="headerlink" title="虚实"></a>虚实</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506081245538.png" alt="image-20220506081245538"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506081505004.png" alt="image-20220506081505004"></p>
+<p>球体底下有点暗面反光</p>
+<h2 id="手"><a href="#手" class="headerlink" title="手"></a>手</h2><p>关节处拿橡皮去擦</p>
+<p>有棱有角</p>
+<p>好看噢~</p>
+<h2 id="线稿"><a href="#线稿" class="headerlink" title="线稿"></a>线稿</h2><p>黑色线稿出来之后</p>
+<p>细画</p>
+<p>有需要的话，还可以用别的颜色重新画那部分的线稿</p>
+<h1 id="图层"><a href="#图层" class="headerlink" title="图层"></a>图层</h1><h2 id="上色"><a href="#上色" class="headerlink" title="上色"></a>上色</h2><p>一个物体一个图层</p>
+<p>上色</p>
+<h2 id="图层组"><a href="#图层组" class="headerlink" title="图层组"></a>图层组</h2><p>看起来就不会那么多图层了</p>
+<h2 id="剪辑蒙版"><a href="#剪辑蒙版" class="headerlink" title="剪辑蒙版"></a>剪辑蒙版</h2><p>剪辑到下一层，颜色不会出去</p>
 
       
     </div>
@@ -980,7 +542,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/01/spring-boot-%E6%8A%80%E6%9C%AF%E6%A0%88/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/01/%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -994,142 +556,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/04/01/spring-boot-%E6%8A%80%E6%9C%AF%E6%A0%88/" class="post-title-link" itemprop="url">spring-boot-技术栈</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-01 15:10:39 / Modified: 16:02:24" itemprop="dateCreated datePublished" datetime="2022-04-01T15:10:39+08:00">2022-04-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/01/%E9%9A%90%E7%A7%81%E8%84%B1%E6%95%8F%E8%AF%BE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/01/%E9%9A%90%E7%A7%81%E8%84%B1%E6%95%8F%E8%AF%BE%E9%A2%98/" class="post-title-link" itemprop="url">隐私脱敏课题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-01 14:21:17 / Modified: 14:38:37" itemprop="dateCreated datePublished" datetime="2022-04-01T14:21:17+08:00">2022-04-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="数据脱敏"><a href="#数据脱敏" class="headerlink" title="数据脱敏"></a>数据脱敏</h1><p>先来看看什么是数据脱敏？</p>
-<p>数据脱敏也叫数据的去隐私化</p>
-<p>在我们给定脱敏规则和策略的情况下</p>
-<p>对敏感数据比如 <code>手机号</code>、<code>银行卡号</code> 等信息，进行转换或者修改的一种技术手段</p>
-<p>防止敏感数据直接在不可靠的环境下使用</p>
-<p>像政府、医疗行业、金融机构、移动运营商是比较早开始应用数据脱敏的</p>
-<p>因为他们所掌握的都是用户最核心的私密数据，如果泄露后果是不可估量的</p>
-<p>数据脱敏的应用在生活中是比较常见的，比如我们在淘宝买东西订单详情中</p>
-<p>商家账户信息会被用 <code>*</code> 遮挡，保障了商户隐私不泄露，这就是一种数据脱敏方式</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401143615596.png" alt="image-20220401143615596"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401143701899.png" alt="image-20220401143701899"></p>
-<h2 id="敏感信息识别"><a href="#敏感信息识别" class="headerlink" title="敏感信息识别"></a>敏感信息识别</h2><p>现在有两种方式来识别敏感数据。第一种是通过人工指定</p>
-<p>比如通过正则来指定敏感数据的格式</p>
-<p>Oracle公司开发的Oracle Data Masking Pack中就使用了这一种方法来指定</p>
-<p>第二种方式就是自动识别了，在文献[2]中</p>
-<p>作者给出了基于数据特征学习以及自然语言处理等技术进行敏感数据识别的自动识别方案(没有具体的实现,只提出了模型)</p>
-<p>具体的实现在gayhub上找了一个java实现的工程，</p>
-<p>chlorine-finder，看了下源码具体原理是通过提前预置的规则来识别一些常见的敏感数据</p>
-<p>比如信用卡号，SSN， 手机号，电子邮箱，IP地址，住址等</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/29/kkeeper/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/29/kkeeper/" class="post-title-link" itemprop="url">kkeeper</a>
+            <a href="/2022/05/01/%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD/" class="post-title-link" itemprop="url">西班牙语</a>
         </h2>
 
         <div class="post-meta">
@@ -1139,14 +566,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-03-29 14:11:15" itemprop="dateCreated datePublished" datetime="2022-03-29T14:11:15+08:00">2022-03-29</time>
+              <time title="Created: 2022-05-01 09:24:17" itemprop="dateCreated datePublished" datetime="2022-05-01T09:24:17+08:00">2022-05-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-31 10:23:27" itemprop="dateModified" datetime="2022-03-31T10:23:27+08:00">2022-03-31</time>
+                <time title="Modified: 2022-05-08 10:18:52" itemprop="dateModified" datetime="2022-05-08T10:18:52+08:00">2022-05-08</time>
               </span>
 
           
@@ -1160,96 +587,83 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="sqlite"><a href="#sqlite" class="headerlink" title="sqlite"></a>sqlite</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> password(</span><br><span class="line">	id <span class="type">INTEGER</span> <span class="keyword">PRIMARY</span> KEY AUTOINCREMENT,</span><br><span class="line">    username <span class="type">varchar</span>(<span class="number">100</span>),</span><br><span class="line">	password <span class="type">varchar</span>(<span class="number">100</span>),</span><br><span class="line">	ip <span class="type">varchar</span>(<span class="number">50</span>),</span><br><span class="line">    domain <span class="type">varchar</span>(<span class="number">100</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+          <p>o la - 你好</p>
+<p>a di o s - 拜拜</p>
+<p>a ne ma na - 姐姐</p>
+<p>ko la - 屁股</p>
+<p>hermana - 姐姐</p>
+<p>e re ma na</p>
 
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> password <span class="keyword">values</span>(<span class="keyword">null</span>,<span class="string">&#x27;admin&#x27;</span>,<span class="string">&#x27;admin&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;baidu.com&#x27;</span>);</span><br></pre></td></tr></table></figure>
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Junit/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/29/Junit/" class="post-title-link" itemprop="url">Junit</a>
+        </h2>
 
-<h2 id="自增"><a href="#自增" class="headerlink" title="自增"></a>自增</h2><p>关键字 AUTOINCREMENT 的使用，必须满足以下两点:</p>
-<p>1、只能用于整型（INTEGER）字段，INT类型是不可以；</p>
-<p>2、只能用于PRIMARY KEY字段；</p>
-<h1 id="QT"><a href="#QT" class="headerlink" title="QT"></a>QT</h1><h2 id="启动报错"><a href="#启动报错" class="headerlink" title="启动报错"></a>启动报错</h2><p>卸了重装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall pyqt5</span><br></pre></td></tr></table></figure>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
 
+              <time title="Created: 2022-04-29 17:38:22 / Modified: 17:43:17" itemprop="dateCreated datePublished" datetime="2022-04-29T17:38:22+08:00">2022-04-29</time>
+            </span>
 
+          
 
+        </div>
+      </header>
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-
-
-<h2 id="enter响应"><a href="#enter响应" class="headerlink" title="enter响应"></a>enter响应</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">login = QtWidgets.QPushButton(<span class="string">&quot;login&quot;</span>)</span><br><span class="line">login.setShortcut(<span class="string">&#x27;Return&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220329182211173.png" alt="image-20220329182211173"></p>
-<p><a target="_blank" rel="noopener" href="https://www.pythonguis.com/tutorials/pyqt-layouts/">参考文档</a></p>
-<h3 id="QVBoxLayout"><a href="#QVBoxLayout" class="headerlink" title="QVBoxLayout"></a>QVBoxLayout</h3><p> vertical</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220330101842957.png" alt="image-20220330101842957"></p>
-<p>!!!</p>
-<p>默认</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220330105621161.png" alt="image-20220330105621161"></p>
-<p>其实是两个组件已经把窗口填满了！</p>
-<h3 id="QHBoxLayout"><a href="#QHBoxLayout" class="headerlink" title="QHBoxLayout"></a>QHBoxLayout</h3><p>horizonal</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220330101854165.png" alt="image-20220330101854165"></p>
-<h3 id="QGridLayout"><a href="#QGridLayout" class="headerlink" title="QGridLayout"></a>QGridLayout</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220330101939056.png" alt="image-20220330101939056"></p>
-<h3 id="QStackedLayout"><a href="#QStackedLayout" class="headerlink" title="QStackedLayout"></a>QStackedLayout</h3><p>你可以显示你想要的那一层的layout</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220330105321139.png" alt="image-20220330105321139"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QStackedLayout  <span class="comment"># add this import</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainWindow</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line"></span><br><span class="line">        self.setWindowTitle(<span class="string">&quot;My App&quot;</span>)</span><br><span class="line"></span><br><span class="line">        layout = QStackedLayout()</span><br><span class="line"></span><br><span class="line">        layout.addWidget(Color(<span class="string">&quot;red&quot;</span>))</span><br><span class="line">        layout.addWidget(Color(<span class="string">&quot;green&quot;</span>))</span><br><span class="line">        layout.addWidget(Color(<span class="string">&quot;blue&quot;</span>))</span><br><span class="line">        layout.addWidget(Color(<span class="string">&quot;yellow&quot;</span>))</span><br><span class="line"></span><br><span class="line">        layout.setCurrentIndex(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">        widget = QWidget()</span><br><span class="line">        widget.setLayout(layout)</span><br><span class="line">        self.setCentralWidget(widget)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="批量添加组件"><a href="#批量添加组件" class="headerlink" title="批量添加组件"></a>批量添加组件</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220330102224983.png" alt="image-20220330102224983"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> (</span><br><span class="line">    QApplication,</span><br><span class="line">    QCheckBox,</span><br><span class="line">    QComboBox,</span><br><span class="line">    QDateEdit,</span><br><span class="line">    QDateTimeEdit,</span><br><span class="line">    QDial,</span><br><span class="line">    QDoubleSpinBox,</span><br><span class="line">    QFontComboBox,</span><br><span class="line">    QLabel,</span><br><span class="line">    QLCDNumber,</span><br><span class="line">    QLineEdit,</span><br><span class="line">    QMainWindow,</span><br><span class="line">    QProgressBar,</span><br><span class="line">    QPushButton,</span><br><span class="line">    QRadioButton,</span><br><span class="line">    QSlider,</span><br><span class="line">    QSpinBox,</span><br><span class="line">    QTimeEdit,</span><br><span class="line">    QVBoxLayout,</span><br><span class="line">    QWidget,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Subclass QMainWindow to customize your application&#x27;s main window</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainWindow</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line"></span><br><span class="line">        self.setWindowTitle(<span class="string">&quot;Widgets App&quot;</span>)</span><br><span class="line"></span><br><span class="line">        layout = QVBoxLayout()</span><br><span class="line">        widgets = [</span><br><span class="line">            QCheckBox,</span><br><span class="line">            QComboBox,</span><br><span class="line">            QDateEdit,</span><br><span class="line">            QDateTimeEdit,</span><br><span class="line">            QDial,</span><br><span class="line">            QDoubleSpinBox,</span><br><span class="line">            QFontComboBox,</span><br><span class="line">            QLCDNumber,</span><br><span class="line">            QLabel,</span><br><span class="line">            QLineEdit,</span><br><span class="line">            QProgressBar,</span><br><span class="line">            QPushButton,</span><br><span class="line">            QRadioButton,</span><br><span class="line">            QSlider,</span><br><span class="line">            QSpinBox,</span><br><span class="line">            QTimeEdit,</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> widgets:</span><br><span class="line">            layout.addWidget(w())</span><br><span class="line"></span><br><span class="line">        widget = QWidget()</span><br><span class="line">        widget.setLayout(layout)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Set the central widget of the Window. Widget will expand</span></span><br><span class="line">        <span class="comment"># to take up all the space in the window by default.</span></span><br><span class="line">        self.setCentralWidget(widget)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line">window = MainWindow()</span><br><span class="line">window.show()</span><br><span class="line"></span><br><span class="line">app.<span class="built_in">exec</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="layout-嵌套"><a href="#layout-嵌套" class="headerlink" title="layout 嵌套"></a>layout 嵌套</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout1.addLayout( layout3 )</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout.addWidget(self.login, alignment=Qt.AlignHCenter)</span><br></pre></td></tr></table></figure>
-
-<p>表示水平方向居中</p>
-<h3 id="间距"><a href="#间距" class="headerlink" title="间距"></a>间距</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout.setSpacing(<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="align"><a href="#align" class="headerlink" title="align"></a>align</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Qt.AlignLeft | Qt.AlignTop</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="组件大小"><a href="#组件大小" class="headerlink" title="组件大小"></a>组件大小</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">password.setFixedSize(<span class="number">120</span>,<span class="number">30</span>)</span><br></pre></td></tr></table></figure>
-
-<p>resize不好使</p>
-<h3 id="label"><a href="#label" class="headerlink" title="label"></a>label</h3><h4 id="文字大小"><a href="#文字大小" class="headerlink" title="文字大小"></a>文字大小</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">label.setStyleSheet(&#x27;font: 30px&#x27;)</span><br></pre></td></tr></table></figure>
+      
+          <h1 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h1><p>代码迭代，一键测试</p>
+<h1 id="Test时启动Spring-Boot-应用"><a href="#Test时启动Spring-Boot-应用" class="headerlink" title="Test时启动Spring Boot 应用"></a>Test时启动Spring Boot 应用</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220429174147972.png" alt="image-20220429174147972"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest(classes = LpcsApplication.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountManageTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    AccountManageController accountManageController;</span><br><span class="line"></span><br><span class="line">    MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mockMvc = MockMvcBuilders.standaloneSetup(accountManageController).build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addSubAccount</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        setup();</span><br><span class="line">        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(<span class="string">&quot;/account/manage/add/sub/account&quot;</span>))</span><br><span class="line">                .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">                .andDo(MockMvcResultHandlers.print())</span><br><span class="line">                .andReturn();</span><br><span class="line">        System.out.println(mvcResult.getResponse().getContentAsString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><h4 id="button-in-table"><a href="#button-in-table" class="headerlink" title="button in table"></a>button in table</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">button = QtWidgets.QPushButton(<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">tableWidget.setCellWidget(i, j, button)</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-<h2 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setGeometry (<span class="number">0</span>, <span class="number">0</span>, <span class="number">30</span>, <span class="number">35</span>)</span><br></pre></td></tr></table></figure>
-
-<p>从屏幕上（0，0）位置开始（即为最左上角的点），显示一个30*35的界面（宽30，高35）</p>
-<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="异常捕获"><a href="#异常捕获" class="headerlink" title="异常捕获"></a>异常捕获</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	self.tableWidget.setItem(i, j, QTableWidgetItem(<span class="built_in">str</span>(res[i][j])))</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> error:</span><br><span class="line">	<span class="built_in">print</span>(error)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -1270,7 +684,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/28/QT/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -1284,7 +698,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/28/QT/" class="post-title-link" itemprop="url">QT</a>
+            <a href="/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Linux实际使用</a>
         </h2>
 
         <div class="post-meta">
@@ -1295,7 +709,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-03-28 23:33:11 / Modified: 23:34:34" itemprop="dateCreated datePublished" datetime="2022-03-28T23:33:11+08:00">2022-03-28</time>
+              <time title="Created: 2022-04-29 10:23:47 / Modified: 14:13:00" itemprop="dateCreated datePublished" datetime="2022-04-29T10:23:47+08:00">2022-04-29</time>
             </span>
 
           
@@ -1309,11 +723,159 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h1><h2 id="This-application-failed-to-start-because-no-Qt-platform-plugin-could-be-initialized"><a href="#This-application-failed-to-start-because-no-Qt-platform-plugin-could-be-initialized" class="headerlink" title="This application failed to start because no Qt platform plugin could be initialized"></a>This application failed to start because no Qt platform plugin could be initialized</h2><p>Copy the following files:</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qminimal.dll</span><br><span class="line">\Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qoffscreen.dll</span><br><span class="line">\Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qwindows.dll</span><br></pre></td></tr></table></figure>
+          <h1 id="时区错误"><a href="#时区错误" class="headerlink" title="时区错误"></a>时区错误</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
 
-<p>to:</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\Anaconda3\Library\plugins\platforms\</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/28/docker-mysql-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/28/docker-mysql-1/" class="post-title-link" itemprop="url">docker-mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-28 14:36:02" itemprop="dateCreated datePublished" datetime="2022-04-28T14:36:02+08:00">2022-04-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/28/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/28/nginx/" class="post-title-link" itemprop="url">nginx</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-28 13:37:19" itemprop="dateCreated datePublished" datetime="2022-04-28T13:37:19+08:00">2022-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-05-05 13:51:58" itemprop="dateModified" datetime="2022-05-05T13:51:58+08:00">2022-05-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>nginx.conf 位置：<code>/etc/nginx/</code></p>
+<p>日志位置：<code>/var/log/nginx/</code></p>
+<p>简单部署就安装了简易版的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx-light</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">       listen 8080;</span><br><span class="line">       location / &#123;</span><br><span class="line">         root   /var/www/html/dist/;</span><br><span class="line">         try_files $uri $uri/ /index.html;</span><br><span class="line">        &#125;</span><br><span class="line">        location /api &#123;</span><br><span class="line">          proxy_pass http://40.72.185.138:8082/;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>root 为dis解压后的目录</p>
+<p>proxy_pass 是后端api的地址</p>
+<p>第二个location的意思是</p>
+<p>把/api的请求</p>
+<p>转到40.72.185.138:8082/</p>
+<p>Ps：8082后加不加斜杠，取决于vue里面怎么拼接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!qa # 不保存退出vi</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -s reload</span><br></pre></td></tr></table></figure>
+
+
+
+<p>卸载nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove nginx nginx-common</span><br><span class="line">sudo apt-get purge nginx nginx-common</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get remove nginx-full nginx-common</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -1332,7 +894,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1400,16 +962,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">324</span>
+          <span class="site-state-item-count">333</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
