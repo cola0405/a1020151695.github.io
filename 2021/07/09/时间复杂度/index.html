@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="藏经阁">
 <meta property="og:description" content="时间复杂度分析过程循环嵌套的时间复杂度  答：时间复杂度为$$O(log_2n)$$ 要计算k&#x3D;k+1的执行次数 对于for循环：因为$$n&#x3D;2^t$$故有$$T_0(n)&#x3D;O(log_2n)$$ 对于while循环：仅有n&gt;&#x3D;1的判断故有$$T_1(n)&#x3D;O(1)$$ 综上：$$T(n) &#x3D; T_0(n)*T_1(n) &#x3D; O(log_2n)*O(1) &#x3D; O(log_2n)$$  练习理">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210716222020880.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210725203332174.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210725203432101.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210725204102430.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716222020880.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725203332174.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725203432101.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725204102430.png">
 <meta property="article:published_time" content="2021-07-09T08:09:56.000Z">
-<meta property="article:modified_time" content="2021-10-06T08:34:44.000Z">
+<meta property="article:modified_time" content="2022-06-21T10:28:25.031Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210716222020880.png">
+<meta name="twitter:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716222020880.png">
 
 <link rel="canonical" href="http://example.com/2021/07/09/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
 
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-06 16:34:44" itemprop="dateModified" datetime="2021-10-06T16:34:44+08:00">2021-10-06</time>
+                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
               </span>
 
           
@@ -230,21 +230,21 @@
 
       
         <h1 id="时间复杂度分析过程"><a href="#时间复杂度分析过程" class="headerlink" title="时间复杂度分析过程"></a>时间复杂度分析过程</h1><p>循环嵌套的时间复杂度</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210716222020880.png" alt="image-20210716222020880"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716222020880.png" alt="image-20210716222020880"></p>
 <p>答：时间复杂度为$$O(log_2n)$$</p>
 <p>要计算k=k+1的执行次数</p>
 <p>对于for循环：因为$$n=2^t$$故有$$T_0(n)=O(log_2n)$$</p>
 <p>对于while循环：仅有n&gt;=1的判断故有$$T_1(n)=O(1)$$</p>
 <p>综上：$$T(n) = T_0(n)*T_1(n) = O(log_2n)*O(1) = O(log_2n)$$</p>
 <hr>
-<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><h2 id="理解时间复杂"><a href="#理解时间复杂" class="headerlink" title="理解时间复杂"></a>理解时间复杂</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725203332174.png" alt="image-20210725203332174"></p>
-<h2 id="最坏情况的理解"><a href="#最坏情况的理解" class="headerlink" title="最坏情况的理解"></a>最坏情况的理解</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725203432101.png" alt="image-20210725203432101"></p>
+<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><h2 id="理解时间复杂"><a href="#理解时间复杂" class="headerlink" title="理解时间复杂"></a>理解时间复杂</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725203332174.png" alt="image-20210725203332174"></p>
+<h2 id="最坏情况的理解"><a href="#最坏情况的理解" class="headerlink" title="最坏情况的理解"></a>最坏情况的理解</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725203432101.png" alt="image-20210725203432101"></p>
 <p><font color=blue>是客观的最坏情况，而不是最笨的方法</font></p>
 <p>首先明确合并的方法：</p>
 <p><font color=green>另外新建一个链表</font></p>
 <p><font color=green>每次看两个列表的头元素，根据大小关系把他们接到新的链表中</font></p>
 <p><font color=red>最坏的情况下我也可以一套带走，则数量级就是n，然后取max(m, n)</font></p>
-<h2 id="抽象的O-n-1-2"><a href="#抽象的O-n-1-2" class="headerlink" title="抽象的O(n^1/2^)"></a>抽象的O(n^1/2^)</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210725204102430.png" alt="image-20210725204102430"></p>
+<h2 id="抽象的O-n-1-2"><a href="#抽象的O-n-1-2" class="headerlink" title="抽象的O(n^1/2^)"></a>抽象的O(n^1/2^)</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725204102430.png" alt="image-20210725204102430"></p>
 <p>分析：</p>
 <p>a<del>1</del>=0</p>
 <p>d=1</p>
@@ -356,7 +356,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">333</span>
+          <span class="site-state-item-count">306</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

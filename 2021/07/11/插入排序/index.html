@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="藏经阁">
 <meta property="og:description" content="核心思想直接插入排序核心思想新建子序列，不断挪位置, 然后最后把目标元素插入正确位置 Ps : 这和冒泡排序有所不同,冒泡排序是一路对换位置, 换上去 而直接插入排序是先挪好位置然后把目标元素插入 (当前代码的排序规则是从小到大) 12345678910111213void straightInsertSort(ElemType array[],int n)&amp;#123;    int i,targ">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927171701536.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927171732955.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210724102118554.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210724101606130.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927171701536.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927171732955.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724102118554.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724101606130.png">
 <meta property="article:published_time" content="2021-07-11T13:35:12.000Z">
-<meta property="article:modified_time" content="2021-09-27T09:17:56.000Z">
+<meta property="article:modified_time" content="2022-06-21T10:28:24.996Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210927171701536.png">
+<meta name="twitter:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927171701536.png">
 
 <link rel="canonical" href="http://example.com/2021/07/11/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
 
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-27 17:17:56" itemprop="dateModified" datetime="2021-09-27T17:17:56+08:00">2021-09-27</time>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
               </span>
 
           
@@ -236,7 +236,7 @@
 <p>(当前代码的排序规则是从小到大)</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">straightInsertSort</span><span class="params">(ElemType <span class="built_in">array</span>[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,target,temp;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">array</span>[i]&lt;<span class="built_in">array</span>[i<span class="number">-1</span>])&#123;</span><br><span class="line">            temp=<span class="built_in">array</span>[i];</span><br><span class="line">            <span class="built_in">array</span>[i]=<span class="built_in">array</span>[i<span class="number">-1</span>];        </span><br><span class="line">            <span class="keyword">for</span>(target=i<span class="number">-1</span>;temp&lt;<span class="built_in">array</span>[target<span class="number">-1</span>];target--)&#123;       </span><br><span class="line">                <span class="built_in">array</span>[target]=<span class="built_in">array</span>[target<span class="number">-1</span>];      <span class="comment">// 不断往后挪出空位，直到找到正确位置</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">array</span>[target]=temp;        <span class="comment">// 找到目标位置后，则放入</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927171701536.png" alt="image-20210927171701536"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927171701536.png" alt="image-20210927171701536"></p>
 <p>对应已经排好序的数列，插入排序的<strong>时间复杂度是O(n)</strong></p>
 <p><font color=red>只比较一次即插入</font></p>
 <h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4><p>相对比上面的边比较边移动，这里是利用二分法先找到合适位置，然后再统一移动</p>
@@ -245,7 +245,7 @@
 <p>故折半插入排序的<strong>时间复杂度仍为O(n^2^)</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">midInsertSort</span><span class="params">(ElemType <span class="built_in">array</span>[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,target,temp,low,mid,high;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        temp=<span class="built_in">array</span>[i];</span><br><span class="line">        low=<span class="number">0</span>;</span><br><span class="line">        high=i<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(low&lt;high)&#123;        <span class="comment">//i之前的数列已排序，可二分思想</span></span><br><span class="line">            mid=(low+high)/<span class="number">2</span>;       <span class="comment">// 二分法快速找座位（直接插入排序是一个个比较大小地来找）</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">array</span>[mid]&gt;temp)&#123;</span><br><span class="line">                high=mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                low=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(target=i;target&gt;high;target--)&#123;</span><br><span class="line">            <span class="built_in">array</span>[target]=<span class="built_in">array</span>[target<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">array</span>[target]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210927171732955.png" alt="image-20210927171732955"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927171732955.png" alt="image-20210927171732955"></p>
 <p><font color=red>while的条件不可改</font></p>
 <p>直接看代码的话，这里的逻辑会把人绕晕</p>
 <p>需要明确一下方向</p>
@@ -263,7 +263,7 @@
 <p>然后把目标元素插入到mid+1处</p>
 <p><font color=green>老铁没毛病</font></p>
 <hr>
-<h4 id="希尔排序（该方法比较抽象，注意看解析）"><a href="#希尔排序（该方法比较抽象，注意看解析）" class="headerlink" title="希尔排序（该方法比较抽象，注意看解析）"></a>希尔排序（该方法比较抽象，注意看解析）</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724102118554.png" alt="image-20210724102118554"></p>
+<h4 id="希尔排序（该方法比较抽象，注意看解析）"><a href="#希尔排序（该方法比较抽象，注意看解析）" class="headerlink" title="希尔排序（该方法比较抽象，注意看解析）"></a>希尔排序（该方法比较抽象，注意看解析）</h4><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724102118554.png" alt="image-20210724102118554"></p>
 <p>这是一个分组插入排序的算法</p>
 <p>分组规则：根据步长将不相邻的n个元素构成一个分组</p>
 <p>然后对各个分组进行插入排序，<font color=red>即相对于上面直接插入排序，这里交换位置的规则是</font></p>
@@ -282,7 +282,7 @@
 <p>所以这里采用希尔分组先对数列进行一个大概的排序（<font color=green>可以理解为预处理</font>）</p>
 <p><font color=red>“大概的排序”，即上面说的有步长间隔的插入排序</font></p>
 <p>使其<strong>基本有序</strong>后，再进行直接插入排序，则可以提高直接插入排序的效率</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210724101606130.png" alt="image-20210724101606130"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724101606130.png" alt="image-20210724101606130"></p>
 <p>希尔排序的时间复杂度较为复杂</p>
 <p>大概知道就好，一般为O(n^1.3^)</p>
 <p>最坏为O(n^2^)</p>
@@ -382,7 +382,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">333</span>
+          <span class="site-state-item-count">306</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

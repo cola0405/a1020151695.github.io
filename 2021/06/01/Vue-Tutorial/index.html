@@ -28,10 +28,10 @@
 <meta property="og:description" content="官方介绍 Vue目录结构1234567891011121314151617181920212223242526272829├── build                      &#x2F;&#x2F; 构建相关  ├── config                     &#x2F;&#x2F; 配置相关├── src                        &#x2F;&#x2F; 源代码│   ├── api">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2017/01/B6E593E3-F284-4C58-A610-94C6ACDAD485.jpg">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20220103200927673.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20220103203722855.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220103200927673.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220103203722855.png">
 <meta property="article:published_time" content="2021-06-01T02:56:08.000Z">
-<meta property="article:modified_time" content="2022-01-03T13:15:19.000Z">
+<meta property="article:modified_time" content="2022-06-21T10:28:24.943Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -214,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-03 21:15:19" itemprop="dateModified" datetime="2022-01-03T21:15:19+08:00">2022-01-03</time>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
               </span>
 
           
@@ -349,7 +349,7 @@
 <h1 id="WebStorm与Vue"><a href="#WebStorm与Vue" class="headerlink" title="WebStorm与Vue"></a>WebStorm与Vue</h1><p>虽然最新版的前端开发利器WebStorm支持了Vue，但是大部分人的WebStorm依然是默认不支持Vue的老版本（比如之前的我），所以需要手动添加WebStorm对Vue的支持。要想让WebStorm支持Vue主要分两步，第一步是安装Vue.js插件，使得WebStorm能够对Vue语法进行提示；第二步是配置Vue模板，即快速创建Vue文件</p>
 <h1 id="Vuex-Store"><a href="#Vuex-Store" class="headerlink" title="Vuex-Store"></a>Vuex-Store</h1><p>vuex的store 统一管理多个模块的数据，如：token，用户信息</p>
 <p>如果没有必要，页面本身存储数据就行，不用存在Store里</p>
-<h1 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220103200927673.png" alt="image-20220103200927673"></p>
+<h1 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220103200927673.png" alt="image-20220103200927673"></p>
 <h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">LoginByUsername</span>(<span class="params">&#123; commit &#125;, userInfo</span>)</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> username = userInfo.username.trim()</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    loginByUsername(username, userInfo.password).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> data = response.data</span><br><span class="line">      Cookies.set(<span class="string">&#x27;Token&#x27;</span>, response.data.token) <span class="comment">//登录成功后将token存储在cookie之中</span></span><br><span class="line">      commit(<span class="string">&#x27;SET_TOKEN&#x27;</span>, data.token)</span><br><span class="line">      resolve()</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">      reject(error)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>cookie 储存服务器返回的token</p>
@@ -367,7 +367,7 @@
 <h1 id="权限验证"><a href="#权限验证" class="headerlink" title="权限验证"></a>权限验证</h1><p>前端验证还是后端验证？</p>
 <p>若后端验证，则每增加一个页面，后端就要动一下</p>
 <p>若前端验证，则只在前端动就行</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20220103203722855.png" alt="image-20220103203722855"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220103203722855.png" alt="image-20220103203722855"></p>
 <h1 id="next"><a href="#next" class="headerlink" title="next()"></a>next()</h1><p>放行，中断当前导航，执行新的导航</p>
 
     </div>
@@ -465,7 +465,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">333</span>
+          <span class="site-state-item-count">306</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

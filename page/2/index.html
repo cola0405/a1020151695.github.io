@@ -177,6 +177,308 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Junit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/29/Junit/" class="post-title-link" itemprop="url">Junit</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-29 17:38:22" itemprop="dateCreated datePublished" datetime="2022-04-29T17:38:22+08:00">2022-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h1><p>代码迭代，一键测试</p>
+<h1 id="Test时启动Spring-Boot-应用"><a href="#Test时启动Spring-Boot-应用" class="headerlink" title="Test时启动Spring Boot 应用"></a>Test时启动Spring Boot 应用</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220429174147972.png" alt="image-20220429174147972"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest(classes = LpcsApplication.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountManageTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    AccountManageController accountManageController;</span><br><span class="line"></span><br><span class="line">    MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mockMvc = MockMvcBuilders.standaloneSetup(accountManageController).build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addSubAccount</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        setup();</span><br><span class="line">        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(<span class="string">&quot;/account/manage/add/sub/account&quot;</span>))</span><br><span class="line">                .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">                .andDo(MockMvcResultHandlers.print())</span><br><span class="line">                .andReturn();</span><br><span class="line">        System.out.println(mvcResult.getResponse().getContentAsString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Linux实际使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-29 10:23:47" itemprop="dateCreated datePublished" datetime="2022-04-29T10:23:47+08:00">2022-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="时区错误"><a href="#时区错误" class="headerlink" title="时区错误"></a>时区错误</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/28/docker-mysql-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/28/docker-mysql-1/" class="post-title-link" itemprop="url">docker-mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-28 14:36:02" itemprop="dateCreated datePublished" datetime="2022-04-28T14:36:02+08:00">2022-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/28/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/28/nginx/" class="post-title-link" itemprop="url">nginx</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-28 13:37:19" itemprop="dateCreated datePublished" datetime="2022-04-28T13:37:19+08:00">2022-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>nginx.conf 位置：<code>/etc/nginx/</code></p>
+<p>日志位置：<code>/var/log/nginx/</code></p>
+<p>简单部署就安装了简易版的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx-light</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">       listen 8080;</span><br><span class="line">       location / &#123;</span><br><span class="line">         root   /var/www/html/dist/;</span><br><span class="line">         try_files $uri $uri/ /index.html;</span><br><span class="line">        &#125;</span><br><span class="line">        location /api &#123;</span><br><span class="line">          proxy_pass http://40.72.185.138:8082/;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>root 为dis解压后的目录</p>
+<p>proxy_pass 是后端api的地址</p>
+<p>第二个location的意思是</p>
+<p>把/api的请求</p>
+<p>转到40.72.185.138:8082/</p>
+<p>Ps：8082后加不加斜杠，取决于vue里面怎么拼接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!qa # 不保存退出vi</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -s reload</span><br></pre></td></tr></table></figure>
+
+
+
+<p>卸载nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove nginx nginx-common</span><br><span class="line">sudo apt-get purge nginx nginx-common</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get remove nginx-full nginx-common</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/23/%E5%BE%B7%E8%AF%AD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -200,10 +502,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-04-23 09:03:11 / Modified: 09:03:31" itemprop="dateCreated datePublished" datetime="2022-04-23T09:03:11+08:00">2022-04-23</time>
+              <time title="Created: 2022-04-23 09:03:11" itemprop="dateCreated datePublished" datetime="2022-04-23T09:03:11+08:00">2022-04-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
 
           
 
@@ -267,7 +575,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-05 23:06:14" itemprop="dateModified" datetime="2022-05-05T23:06:14+08:00">2022-05-05</time>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
               </span>
 
           
@@ -297,6 +605,7 @@
 <p>你加s就不合适了</p>
 <h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20220505230553515.png" alt="image-20220505230553515"></p>
 <p>static final常量是好的，HotSpot VM里的JIT编译器会利用这个信息来做优化；</p>
+<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220615173113696.png" alt="image-20220615173113696"></p>
 <h1 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h1><h2 id="路径参数"><a href="#路径参数" class="headerlink" title="路径参数"></a>路径参数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;/&#123;id&#125;&quot;, method = RequestMethod.GET)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> CommonResult&lt;OmsOrderSetting&gt; <span class="title">getItem</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span> </span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -362,11 +671,28 @@
 <p>advertise their existence, and shutdown as well.</p>
 <p>It supports multiple copies of the same service registering themselves</p>
 <h2 id="Circuit-Breaker"><a href="#Circuit-Breaker" class="headerlink" title="Circuit Breaker"></a>Circuit Breaker</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220425222632714.png" alt="image-20220425222632714"></p>
+<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="多模块"><a href="#多模块" class="headerlink" title="多模块"></a>多模块</h2><p>父模块</p>
+<p>pom.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--模块的信息--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>multi-module-demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定子模块 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">module</span>&gt;</span>sub-module1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定项目内的子模块为依赖--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sub-module1<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>子模块</p>
+<p>pom.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--指定父模块关系--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>multi-module-demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--该子模块名--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sub-module1<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 <h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><p>AMQP，即Advanced Message Queuing Protocol</p>
 <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="错误码"><a href="#错误码" class="headerlink" title="错误码"></a>错误码</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212419007.png" alt="image-20220427212419007"></p>
 <h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212557721.png" alt="image-20220427212557721"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212605295.png" alt="image-20220427212605295"></p>
 <h2 id="NPE"><a href="#NPE" class="headerlink" title="NPE"></a>NPE</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212843146.png" alt="image-20220427212843146"></p>
+<h2 id="直接插，再异常处理"><a href="#直接插，再异常处理" class="headerlink" title="直接插，再异常处理"></a>直接插，再异常处理</h2><p>异常处理再去更新</p>
 <h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><h2 id="Transational"><a href="#Transational" class="headerlink" title="@Transational"></a>@Transational</h2><p>“@Transactional”注解有两个出处，一是来自JAVA官方，包名为“javax.transaction”</p>
 <p>一是来自Spring Framework，包名为“org.springframework.transaction.annotation”</p>
 <p>在Spring框架中，大部分的情况下，它们都可以交换使用,效果是等价的</p>
@@ -423,7 +749,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-20 17:25:15" itemprop="dateModified" datetime="2022-05-20T17:25:15+08:00">2022-05-20</time>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
               </span>
 
           
@@ -509,6 +835,8 @@
 <p>controller层做前后置操作的话，@Transational放在哪</p>
 <p>只能放到controller了</p>
 <p>放各个service的话，已经进行的service数据库操作无法回滚</p>
+<h2 id="异常捕获"><a href="#异常捕获" class="headerlink" title="异常捕获"></a>异常捕获</h2><p>切面那里验证用户是否登录</p>
+<p>一处捕获异常就行，可以全部相关接口获益</p>
 <h1 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h1><h2 id="Transational别乱用"><a href="#Transational别乱用" class="headerlink" title="@Transational别乱用"></a>@Transational别乱用</h2><p>影响性能</p>
 <h2 id="尽量减少HTTP请求"><a href="#尽量减少HTTP请求" class="headerlink" title="尽量减少HTTP请求"></a>尽量减少HTTP请求</h2><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="批量插入"><a href="#批量插入" class="headerlink" title="批量插入"></a>批量插入</h2><p>mybatis</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">## id</span><br><span class="line"></span><br><span class="line">重要字段id搞长 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 备份</span><br><span class="line"></span><br><span class="line">别的工程师改过数据库结构</span><br><span class="line"></span><br><span class="line">数据库没有及时备份</span><br><span class="line"></span><br><span class="line"><span class="keyword">sql</span>语句是旧的</span><br><span class="line"></span><br><span class="line">结构都不一样:)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## create_time和update_time</span><br><span class="line"></span><br><span class="line">默认值为<span class="built_in">CURRENT_TIMESTAMP</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">设置updatetime列属性<span class="keyword">ON</span> UPDATE <span class="built_in">CURRENT_TIMESTAMP</span></span><br><span class="line"></span><br><span class="line"><span class="operator">!</span>[image<span class="number">-20220428162452997</span>](https:<span class="operator">/</span><span class="operator">/</span>picgo<span class="operator">-</span>freejim.oss<span class="operator">-</span>cn<span class="operator">-</span>beijing.aliyuncs.com<span class="operator">/</span>image<span class="number">-20220428162452997.</span>png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ps：</span><br><span class="line"></span><br><span class="line">得把<span class="number">0</span>填上，不然会出错</span><br><span class="line"></span><br><span class="line"><span class="operator">!</span>[image<span class="number">-20220428162356399</span>](https:<span class="operator">/</span><span class="operator">/</span>picgo<span class="operator">-</span>freejim.oss<span class="operator">-</span>cn<span class="operator">-</span>beijing.aliyuncs.com<span class="operator">/</span>image<span class="number">-20220428162356399.</span>png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## <span class="keyword">sql</span>语句<span class="operator">-</span>查询字段</span><br><span class="line"></span><br><span class="line">写清楚，别<span class="operator">*</span></span><br><span class="line"></span><br><span class="line">视图不是用来<span class="operator">*</span>的</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 为什么使用<span class="type">Integer</span></span><br><span class="line"></span><br><span class="line">attempted <span class="keyword">to</span> <span class="keyword">return</span> <span class="keyword">null</span> <span class="keyword">from</span> a <span class="keyword">method</span> <span class="keyword">with</span> a primitive <span class="keyword">return</span> type (<span class="type">int</span>)</span><br><span class="line"></span><br><span class="line">用<span class="type">Integer</span>就不会报这个错误</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 批量插入</span><br><span class="line"></span><br><span class="line">```<span class="keyword">sql</span></span><br><span class="line">    <span class="operator">&lt;</span><span class="keyword">insert</span> id<span class="operator">=</span>&quot;batchInsert&quot;<span class="operator">&gt;</span></span><br><span class="line">        <span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_permission_relation(user_id,permission_id) <span class="keyword">VALUES</span></span><br><span class="line">        <span class="operator">&lt;</span>foreach collection<span class="operator">=</span>&quot;batch&quot; item<span class="operator">=</span>&quot;item&quot; index<span class="operator">=</span>&quot;index&quot; separator<span class="operator">=</span>&quot;,&quot;<span class="operator">&gt;</span></span><br><span class="line">            (#&#123;item.userId&#125;,#&#123;item.permissionId&#125;)</span><br><span class="line">        <span class="operator">&lt;</span><span class="operator">/</span>foreach<span class="operator">&gt;</span></span><br><span class="line">    <span class="operator">&lt;</span><span class="operator">/</span><span class="keyword">insert</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
@@ -517,7 +845,12 @@
 
 
 
-<h1 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h1><h2 id="不传递非空字段"><a href="#不传递非空字段" class="headerlink" title="不传递非空字段"></a>不传递非空字段</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonInclude(JsonInclude.Include.NON_NULL)</span></span><br></pre></td></tr></table></figure>
+<h2 id="时间带T"><a href="#时间带T" class="headerlink" title="时间带T"></a>时间带T</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFormat(timezone = &quot;GMT+8&quot;,pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="选取null的字段"><a href="#选取null的字段" class="headerlink" title="选取null的字段"></a>选取null的字段</h2><p>一定要用is，而不能用=</p>
+<h2 id="批量操作时，一般需要回滚的"><a href="#批量操作时，一般需要回滚的" class="headerlink" title="批量操作时，一般需要回滚的"></a>批量操作时，一般需要回滚的</h2><h1 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h1><h2 id="不传递非空字段"><a href="#不传递非空字段" class="headerlink" title="不传递非空字段"></a>不传递非空字段</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonInclude(JsonInclude.Include.NON_NULL)</span></span><br></pre></td></tr></table></figure>
 
 <p>加在实体类上面，或者具体成员变量上都行</p>
 <p>配合数据库的view视图，就不用另外新建实体类了</p>
@@ -620,10 +953,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-04-19 10:34:18 / Modified: 10:34:35" itemprop="dateCreated datePublished" datetime="2022-04-19T10:34:18+08:00">2022-04-19</time>
+              <time title="Created: 2022-04-19 10:34:18" itemprop="dateCreated datePublished" datetime="2022-04-19T10:34:18+08:00">2022-04-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
 
           
 
@@ -686,7 +1025,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-16 17:44:45" itemprop="dateModified" datetime="2022-05-16T17:44:45+08:00">2022-05-16</time>
+                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
               </span>
 
           
@@ -831,7 +1170,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-10 10:04:16" itemprop="dateModified" datetime="2022-05-10T10:04:16+08:00">2022-05-10</time>
+                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
               </span>
 
           
@@ -864,421 +1203,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/09/spring-cloud-demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/09/spring-cloud-demo/" class="post-title-link" itemprop="url">spring-cloud-demo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-09 20:53:38 / Modified: 22:50:30" itemprop="dateCreated datePublished" datetime="2022-04-09T20:53:38+08:00">2022-04-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/spring-cloud-demo">demo</a></p>
-<h1 id="注意版本"><a href="#注意版本" class="headerlink" title="注意版本"></a>注意版本</h1><p>再pom中招Spring Boot 和 cloud的版本信息</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220409205417331.png" alt="image-20220409205417331"></p>
-<p>借鉴他人代码的时候留意他们Spring Boot 的版本</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableEurekaClient</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConsumerApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ConsumerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>@EnableEurekaClient都是能够让注册中心能够发现，扫描到该服务</p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">restTemplate.getForObject(<span class="string">&quot;http://producer/&quot;</span>, String.class);</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220409224502792.png" alt="image-20220409224502792"></p>
-<p>负载均衡会随机分配给名为producer</p>
-<p>application.name也不用担心重复</p>
-<p>因为eureka遇到重复的application.name会把他们归在一起</p>
-<p><code>application.properties</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=producer</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/09/https/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/09/https/" class="post-title-link" itemprop="url">https</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-09 17:37:57 / Modified: 17:40:35" itemprop="dateCreated datePublished" datetime="2022-04-09T17:37:57+08:00">2022-04-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
-<li>部署需要下载证书到项目，然后完成相关配置（具体自己查）</li>
-<li>支持https+ip地址</li>
-<li>如果要https+域名的话，域名需要备案</li>
-<li>而阿里云的服务器时长不满三个月的话无法进行备案</li>
-</ul>
-<h1 id="终极解决方案"><a href="#终极解决方案" class="headerlink" title="终极解决方案"></a>终极解决方案</h1><p>花生壳支持https！</p>
-<p>完美解决小程序必须https的问题</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/Coding-Style/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/02/Coding-Style/" class="post-title-link" itemprop="url">Coding-Style</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-02 10:25:29" itemprop="dateCreated datePublished" datetime="2022-04-02T10:25:29+08:00">2022-04-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-28 21:51:59" itemprop="dateModified" datetime="2022-04-28T21:51:59+08:00">2022-04-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><p><a target="_blank" rel="noopener" href="https://peps.python.org/pep-0008/#blank-lines">文档</a></p>
-<h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><p>Use blank lines in functions, sparingly, to indicate logical sections.</p>
-<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="whitespace"><a href="#whitespace" class="headerlink" title="whitespace"></a>whitespace</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">spam(ham[<span class="number">1</span>], &#123;eggs: <span class="number">2</span>&#125;)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">spam( ham[ <span class="number">1</span> ], &#123; eggs: <span class="number">2</span> &#125; )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">foo = (<span class="number">0</span>,)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">bar = (<span class="number">0</span>, )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span>: <span class="built_in">print</span>(x, y); x, y = y, x</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span> : <span class="built_in">print</span>(x , y) ; x , y = y , x</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">ham[<span class="number">1</span>:<span class="number">9</span>], ham[<span class="number">1</span>:<span class="number">9</span>:<span class="number">3</span>], ham[:<span class="number">9</span>:<span class="number">3</span>], ham[<span class="number">1</span>::<span class="number">3</span>], ham[<span class="number">1</span>:<span class="number">9</span>:]</span><br><span class="line">ham[lower:upper], ham[lower:upper:], ham[lower::step]</span><br><span class="line">ham[lower+offset : upper+offset]</span><br><span class="line">ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]</span><br><span class="line">ham[lower + offset : upper + offset]</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">ham[lower + offset:upper + offset]</span><br><span class="line">ham[<span class="number">1</span>: <span class="number">9</span>], ham[<span class="number">1</span> :<span class="number">9</span>], ham[<span class="number">1</span>:<span class="number">9</span> :<span class="number">3</span>]</span><br><span class="line">ham[lower : : upper]</span><br><span class="line">ham[ : upper]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">i = i + <span class="number">1</span></span><br><span class="line">submitted += <span class="number">1</span></span><br><span class="line">x = x*<span class="number">2</span> - <span class="number">1</span></span><br><span class="line">hypot2 = x*x + y*y</span><br><span class="line">c = (a+b) * (a-b)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">i=i+<span class="number">1</span></span><br><span class="line">submitted +=<span class="number">1</span></span><br><span class="line">x = x * <span class="number">2</span> - <span class="number">1</span></span><br><span class="line">hypot2 = x * x + y * y</span><br><span class="line">c = (a + b) * (a - b)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Correct:</span><br><span class="line">def complex(real, imag=0.0):</span><br><span class="line">    return magic(r=real, i=imag)</span><br><span class="line"># Wrong:</span><br><span class="line">def complex(real, imag = 0.0):</span><br><span class="line">    return magic(r = real, i = imag)</span><br></pre></td></tr></table></figure>
-
-<h3 id="function-name"><a href="#function-name" class="headerlink" title="function name"></a>function name</h3><p>lowercase with words separated by underscores as necessary to improve readability.</p>
-<h3 id="function-return"><a href="#function-return" class="headerlink" title="function return"></a>function return</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">FILES = [</span><br><span class="line">    <span class="string">&#x27;setup.cfg&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;tox.ini&#x27;</span>,</span><br><span class="line">    ]</span><br><span class="line">initialize(FILES,</span><br><span class="line">           error=<span class="literal">True</span>,</span><br><span class="line">           )</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">FILES = [<span class="string">&#x27;setup.cfg&#x27;</span>, <span class="string">&#x27;tox.ini&#x27;</span>,]</span><br><span class="line">initialize(FILES, error=<span class="literal">True</span>,)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = x + <span class="number">1</span>                 <span class="comment"># Increment x</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="naming"><a href="#naming" class="headerlink" title="naming"></a>naming</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">b (single lowercase letter)</span><br><span class="line">B (single uppercase letter)</span><br><span class="line"></span><br><span class="line">lowercase</span><br><span class="line">lower_case_with_underscores</span><br><span class="line"></span><br><span class="line">UPPERCASE</span><br><span class="line">UPPER_CASE_WITH_UNDERSCORES</span><br><span class="line"></span><br><span class="line">CapitalizedWords</span><br><span class="line">mixedCase</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="avoid"><a href="#avoid" class="headerlink" title="avoid"></a>avoid</h3><p>Never use the characters ‘l’ (lowercase letter el),</p>
-<p> ‘O’ (uppercase letter oh)</p>
-<p>or ‘I’ (uppercase letter eye) as single character variable names</p>
-<p>In some fonts, these characters are indistinguishable from the numerals one and zero</p>
-<p>When tempted to use ‘l’, use ‘L’ instead</p>
-<h2 id="module-name"><a href="#module-name" class="headerlink" title="module name"></a>module name</h2><p>Python packages should also have short all-lowercase names</p>
-<p>although the use of underscores is discouraged.</p>
-<h3 id="class-name"><a href="#class-name" class="headerlink" title="class name"></a>class name</h3><p>CapWords</p>
-<h2 id="operation"><a href="#operation" class="headerlink" title="operation"></a>operation</h2><p><code>&#39;&#39;.join()</code> form should be used instead</p>
-<h3 id="file-operation"><a href="#file-operation" class="headerlink" title="file operation"></a>file operation</h3><p>use a <code>with</code> statement to ensure it is cleaned up promptly and reliably after use</p>
-<h2 id="underscores"><a href="#underscores" class="headerlink" title="underscores"></a>underscores</h2><p>double leading underscores should be used only to avoid name conflicts </p>
-<p>with attributes in classes designed to be subclassed</p>
-<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><h3 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> foo.startswith(<span class="string">&#x27;bar&#x27;</span>):</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> foo[:<span class="number">3</span>] == <span class="string">&#x27;bar&#x27;</span>:</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="empty"><a href="#empty" class="headerlink" title="empty"></a>empty</h3><p>(strings, lists, tuples), use the fact that empty sequences are false</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> seq:</span><br><span class="line"><span class="keyword">if</span> seq:</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(seq):</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">len</span>(seq):</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> greeting:</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> greeting == <span class="literal">True</span>:</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428210603194.png" alt="image-20220428210603194"></p>
-<h2 id="comment-1"><a href="#comment-1" class="headerlink" title="comment"></a>comment</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> TRUE;            <span class="comment">/* special case */</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> isPrime(a);      <span class="comment">/* works only for odd a */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Very short comments can appear on the same line as the code they describe</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (foo &gt; <span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Do a double-flip.</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;          <span class="comment">// Explain why here.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//if (bar &gt; 1) &#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    // Do a triple-flip.</span></span><br><span class="line"><span class="comment">//    ...</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="comment">//else &#123;</span></span><br><span class="line"><span class="comment">//    return false;</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>It shouldn’t be used on consecutive multiple lines for text comments</p>
-<p>however, it can be used in consecutive multiple lines for commenting out sections of code</p>
-<h2 id="variable"><a href="#variable" class="headerlink" title="variable"></a>variable</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> level;</span><br><span class="line"><span class="keyword">int</span> size;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>A keyword followed by a parenthesis(括号) should be separated by a space</p>
-<h2 id="try"><a href="#try" class="headerlink" title="try"></a>try</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">catch</span> (ExceptionClass e) &#123;</span><br><span class="line">     statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="package"><a href="#package" class="headerlink" title="package"></a>package</h2><p>should be one of the top-level domain names</p>
-<p>currently com, edu, gov, mil, net, org, or one of the English two-letter codes </p>
-<p>identifying countries as specified in ISO Standard 3166, 1981</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.sun.eng</span><br><span class="line">com.apple.quicktime.v2</span><br><span class="line">edu.cmu.cs.bovik.cheese</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><p>我觉得可读性是&gt;简洁性的</p>
-<p>当然，也不能太啰嗦</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428213114022.png" alt="image-20220428213114022"></p>
-<h2 id="函数大小"><a href="#函数大小" class="headerlink" title="函数大小"></a>函数大小</h2><p>一般不超过50行</p>
-<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428214753281.png" alt="image-20220428214753281"></p>
-<h2 id="多层级关系"><a href="#多层级关系" class="headerlink" title="多层级关系"></a>多层级关系</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428215046699.png" alt="image-20220428215046699"></p>
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>Always use uppercase for the reserved keywords like <code>SELECT</code> and <code>WHERE</code></p>
-<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> file_hash</span><br><span class="line">  <span class="keyword">FROM</span> file_system</span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Updating the file record after writing to the file */</span></span><br><span class="line">UPDATE file_system</span><br><span class="line">   <span class="keyword">SET</span> file_modified_date <span class="operator">=</span> <span class="string">&#x27;1980-02-22 13:19:01.00000&#x27;</span>,</span><br><span class="line">       file_size <span class="operator">=</span> <span class="number">209732</span></span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name <span class="keyword">AS</span> fn</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s1</span><br><span class="line">  <span class="keyword">JOIN</span> students <span class="keyword">AS</span> s2</span><br><span class="line">    <span class="keyword">ON</span> s2.mentor_id <span class="operator">=</span> s1.staff_num;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(s.monitor_tally) <span class="keyword">AS</span> monitor_total</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> albums (title, release_date, recording_date)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">&#x27;Charcoal Lane&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;The New Danger&#x27;</span>, <span class="string">&#x27;2008-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/01/%E5%AF%86%E7%A0%81%E5%AD%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/01/%E5%AF%86%E7%A0%81%E5%AD%A6/" class="post-title-link" itemprop="url">密码学</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-01 15:44:20 / Modified: 17:00:20" itemprop="dateCreated datePublished" datetime="2022-04-01T15:44:20+08:00">2022-04-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h1><h2 id="为什么要加密"><a href="#为什么要加密" class="headerlink" title="为什么要加密"></a>为什么要加密</h2><p>（1）网络嗅探</p>
-<p>网络嗅探工具可以监听处于同一个物理网络内发送到自己网络接口的数据帧</p>
-<p>因此可以监听到一个由集线器构成的广播型局域网内的所有数据</p>
-<p>无法监听到不是发送到自己网络端口的数据帧</p>
-<p>但是！</p>
-<p>arp欺骗和ip欺骗</p>
-<p>如果明文，那完了</p>
-<p>（2）数据经过第三方</p>
-<p>宽带运营商</p>
-<h2 id="破解密文"><a href="#破解密文" class="headerlink" title="破解密文"></a>破解密文</h2><p>解密出来的midnight也不一定是原明文</p>
-<h2 id="密钥的保护"><a href="#密钥的保护" class="headerlink" title="密钥的保护"></a>密钥的保护</h2><h2 id="密钥配送"><a href="#密钥配送" class="headerlink" title="密钥配送"></a>密钥配送</h2><h3 id="直接告知密钥"><a href="#直接告知密钥" class="headerlink" title="直接告知密钥"></a>直接告知密钥</h3><h3 id="密钥分配中心"><a href="#密钥分配中心" class="headerlink" title="密钥分配中心"></a>密钥分配中心</h3><p>登录</p>
-<h3 id="公钥私钥"><a href="#公钥私钥" class="headerlink" title="公钥私钥"></a>公钥私钥</h3><p>接收者把公钥明文发给发送者</p>
-<p>发送者把明文进行加密，发给接收者</p>
-<p>接收者用私钥解密（只有私钥能解密）</p>
-<h2 id="伪随机数"><a href="#伪随机数" class="headerlink" title="伪随机数"></a>伪随机数</h2><p>简单的取余数</p>
-<h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>加密解密用同一密钥</p>
-<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>加密用公钥，解密用私钥</p>
-<h1 id="Https"><a href="#Https" class="headerlink" title="Https"></a>Https</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401164800074.png" alt="image-20220401164800074"></p>
-<h3 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h3><p>Secure Socket Layer</p>
-<h3 id="TSL"><a href="#TSL" class="headerlink" title="TSL"></a>TSL</h3><p>Transport Layer Security</p>
-<h1 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h1><p>CA（Certification Authority）</p>
-<p>证书（即公钥证书）确实属于此人</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1346,7 +1274,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">333</span>
+          <span class="site-state-item-count">306</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

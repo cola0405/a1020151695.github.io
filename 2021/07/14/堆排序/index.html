@@ -27,25 +27,25 @@
 <meta property="og:site_name" content="藏经阁">
 <meta property="og:description" content="堆排序   大根堆即根元素(父节点)为最大值 小根堆反之 初始化堆一开始只是无序序列，需要预处理成堆  调整堆是用DFS的处理 序号统一一下：123456 例子  答案：｛84,79,56,38,40,46｝ n&#x2F;2往前  调整过程（代码）核心  建立初始堆的时候并没有交换  具体方法 看懂了代码你也就知道怎么进行dfs了 1234567891011121314151617181920212223">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005225454026.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005225532568.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210711105626574.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005232504652.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211008234927677.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211008235844617.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211008235849611.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211008235853132.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005231309449.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005231340996.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005231353854.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20210711113721928.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211009151258429.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005225454026.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005225532568.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711105626574.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005232504652.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008234927677.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008235844617.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008235849611.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008235853132.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005231309449.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005231340996.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005231353854.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711113721928.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211009151258429.png">
 <meta property="article:published_time" content="2021-07-14T09:51:45.000Z">
-<meta property="article:modified_time" content="2021-12-23T06:27:38.000Z">
+<meta property="article:modified_time" content="2022-06-21T10:28:24.985Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/simple_one1/pic/raw/master/image-20211005225454026.png">
+<meta name="twitter:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005225454026.png">
 
 <link rel="canonical" href="http://example.com/2021/07/14/%E5%A0%86%E6%8E%92%E5%BA%8F/">
 
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-23 14:27:38" itemprop="dateModified" datetime="2021-12-23T14:27:38+08:00">2021-12-23</time>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
               </span>
 
           
@@ -238,24 +238,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005225454026.png" alt="image-20211005225454026"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005225532568.png" alt="image-20211005225532568"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210711105626574.png" alt="image-20210711105626574"></p>
+        <h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005225454026.png" alt="image-20211005225454026"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005225532568.png" alt="image-20211005225532568"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711105626574.png" alt="image-20210711105626574"></p>
 <p>大根堆即根元素(父节点)为最大值</p>
 <p>小根堆反之</p>
 <h1 id="初始化堆"><a href="#初始化堆" class="headerlink" title="初始化堆"></a>初始化堆</h1><p><font color=red>一开始只是无序序列，需要预处理成堆</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005232504652.png" alt="image-20211005232504652"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005232504652.png" alt="image-20211005232504652"></p>
 <p>调整堆是用DFS的处理</p>
 <p>序号统一一下：123456</p>
 <p>例子</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008234927677.png" alt="image-20211008234927677"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008234927677.png" alt="image-20211008234927677"></p>
 <p>答案：｛84,79,56,38,40,46｝</p>
 <p>n/2往前</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008235844617.png" alt="image-20211008235844617"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008235849611.png" alt="image-20211008235849611"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211008235853132.png" alt="image-20211008235853132"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008235844617.png" alt="image-20211008235844617"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008235849611.png" alt="image-20211008235849611"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008235853132.png" alt="image-20211008235853132"></p>
 <h1 id="调整过程（代码）"><a href="#调整过程（代码）" class="headerlink" title="调整过程（代码）"></a>调整过程（代码）</h1><p>核心</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005231309449.png" alt="image-20211005231309449"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005231309449.png" alt="image-20211005231309449"></p>
 <p><font color=red>建立初始堆的时候并没有交换</font></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005231340996.png" alt="image-20211005231340996"><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211005231353854.png" alt="image-20211005231353854"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005231340996.png" alt="image-20211005231340996"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005231353854.png" alt="image-20211005231353854"></p>
 <p>具体方法</p>
 <p>看懂了代码你也就知道怎么进行dfs了</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buildMaxHeap</span><span class="params">(ElemType A[],<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(root=len/<span class="number">2</span>;root&gt;<span class="number">0</span>;root--)&#123;</span><br><span class="line">        HeadAdjust(A,root,len);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeadAdjust</span><span class="params">(ElemType A[],<span class="keyword">int</span> root,<span class="keyword">int</span> len)</span></span>&#123;  <span class="comment">// 不用递归</span></span><br><span class="line">	<span class="keyword">int</span> temp = A[root]; </span><br><span class="line">    <span class="keyword">for</span>(i=root*<span class="number">2</span>;i&lt;=len;i*=<span class="number">2</span>)&#123;  <span class="comment">// *2 即移动到该当前节点的左儿子</span></span><br><span class="line">        <span class="keyword">if</span>(i&lt;len&amp;&amp;A[i]&lt;A[i+<span class="number">1</span>])&#123;  <span class="comment">// 比较左儿子和右儿子谁的值更大</span></span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(temp&gt;=A[i])&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            A[root]=A[i];  <span class="comment">// Ps：不是互换位置，遇到更大的就抢过来</span></span><br><span class="line">            root=i;  	   <span class="comment">// 然后root=i dfs 前往下一层</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    A[root]=temp;   <span class="comment">// Ps： 没有互换位置，这里最后把之前暂存的根放到空开的位置</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(ElemType A[],<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	buildMaxHeap(A,len);</span><br><span class="line">	<span class="keyword">for</span>(i=len;i&gt;<span class="number">1</span>;i--)&#123;</span><br><span class="line">		swap(A[i],A[<span class="number">1</span>]);</span><br><span class="line">		HeadAdjust(A,<span class="number">1</span>,i<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -263,13 +263,13 @@
 
 
 <p>图8.5的步骤有一些小错误下面是说明</p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20210711113721928.png" alt="image-20210711113721928"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711113721928.png" alt="image-20210711113721928"></p>
 <p>根据所提供的算法，这里的87和53并没有实际交换位置</p>
 <p>而是将78和OriginRoot（即记录了原root值53）进行比较</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(A[OriginRoot]&gt;=A[i])&#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    A[root]=A[i];  </span><br><span class="line">    root=i;  <span class="comment">// 算法实际只是对root下标进行了更新迭代</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><font color=red>作者应该是为了方便读者理解才这么画的图</font></p>
-<h1 id="堆排序性能分析"><a href="#堆排序性能分析" class="headerlink" title="堆排序性能分析"></a>堆排序性能分析</h1><p><img src="https://gitee.com/simple_one1/pic/raw/master/image-20211009151258429.png" alt="image-20211009151258429"></p>
+<h1 id="堆排序性能分析"><a href="#堆排序性能分析" class="headerlink" title="堆排序性能分析"></a>堆排序性能分析</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211009151258429.png" alt="image-20211009151258429"></p>
 
     </div>
 
@@ -366,7 +366,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">333</span>
+          <span class="site-state-item-count">306</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
