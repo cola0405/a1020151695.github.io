@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/14/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/13/%E6%95%B0%E5%AD%A6-%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E6%9E%81%E5%80%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -191,374 +191,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/14/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="post-title-link" itemprop="url">最小生成树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-14 17:48:38" itemprop="dateCreated datePublished" datetime="2021-07-14T17:48:38+08:00">2021-07-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>内容归属：<a target="_blank" rel="noopener" href="http://freejim.icu/2021/07/11/%E5%9B%BE/">图</a></p>
-<h1 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h1><p>n-1条边的<font color=red>连通图</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714180010738.png" alt="image-20210714180010738"></p>
-<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><p>权值和最小的生成树</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714180054823.png" alt="image-20210714180054823"></p>
-<h1 id="最小生成树的性质"><a href="#最小生成树的性质" class="headerlink" title="最小生成树的性质"></a>最小生成树的性质</h1><h2 id="唯一性问题"><a href="#唯一性问题" class="headerlink" title="唯一性问题"></a>唯一性问题</h2><p>与算法无关</p>
-<p>相关因素只有：“<font color=blue>是否存在权值相等的边</font>”</p>
-<p>当图G各边的<font color=red>权值都不相等时</font>，最小生成树是唯一的</p>
-<h2 id="代价唯一性"><a href="#代价唯一性" class="headerlink" title="代价唯一性"></a>代价唯一性</h2><p>虽然最小生成树可能不唯一，但是其代价总是唯一的</p>
-<h1 id="最小生成树算法"><a href="#最小生成树算法" class="headerlink" title="最小生成树算法"></a>最小生成树算法</h1><h2 id="Kruskal算法【贪心】"><a href="#Kruskal算法【贪心】" class="headerlink" title="Kruskal算法【贪心】"></a>Kruskal算法【贪心】</h2><p>适用于边稀疏点多的图</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714180815181.png" alt="image-20210714180815181"></p>
-<p><font color=red>还需找一条边使得连通</font></p>
-<h3 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h3><p>最小生成树唯一</p>
-<h3 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h3><p>各边权值排序，看权值最小的边加入后是否构成回路</p>
-<p>若不构成回路则添加</p>
-<p>若构成了回路则不添加</p>
-<p>看权值倒二的边，以此类推，直到n-1 条边</p>
-<h2 id="Prim算法（普里姆算法）【贪心】"><a href="#Prim算法（普里姆算法）【贪心】" class="headerlink" title="Prim算法（普里姆算法）【贪心】"></a>Prim算法（普里姆算法）【贪心】</h2><p>适用于边密集而点稀疏的图</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714180757414.png" alt="image-20210714180757414"></p>
-<h3 id="算法特点-1"><a href="#算法特点-1" class="headerlink" title="算法特点"></a>算法特点</h3><h3 id="算法解析-1"><a href="#算法解析-1" class="headerlink" title="算法解析"></a>算法解析</h3><p><font color=red>选一个起点v0</font>，然后选择v0关联的权值最小的边</p>
-<p>新增了v1点</p>
-<p>选择v0和v1这个新整体关联的权值最小的边</p>
-<p>新增v2点，以此类推</p>
-<p>直到n-1条边</p>
-<p>例题：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714181306531.png" alt="image-20210714181306531"></p>
-<p><strong>有起点a，暗示使用Prim算法</strong></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714181322866.png" alt="image-20210714181322866"></p>
-<h1 id="最小生成树的代价"><a href="#最小生成树的代价" class="headerlink" title="最小生成树的代价"></a>最小生成树的代价</h1><p>边的权值之和</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/14/%E9%98%9F%E5%88%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/14/%E9%98%9F%E5%88%97/" class="post-title-link" itemprop="url">队列</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-14 17:13:44" itemprop="dateCreated datePublished" datetime="2021-07-14T17:13:44+08:00">2021-07-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="队列的数据结构"><a href="#队列的数据结构" class="headerlink" title="队列的数据结构"></a>队列的数据结构</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714171716754.png" alt="image-20210714171716754"></p>
-<h1 id="假溢出"><a href="#假溢出" class="headerlink" title="假溢出"></a>假溢出</h1><p>上图c明明还有空闲空间，但是队列无法新增元素</p>
-<p>（rear指不过去）</p>
-<p>故称“假溢出”</p>
-<h1 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h1><p>循环队列是为了解决顺序队列的 “假溢出” 问题提出的</p>
-<p>而顺序栈只在一端进行插入和删除操作，引进循环顺序栈并无实际意义</p>
-<h1 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714172332232.png" alt="image-20210714172332232"></p>
-<p>判断队列满</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211125152502975.png" alt="image-20211125152502975"></p>
-<p>队列空</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211125152544740.png" alt="image-20211125152544740"></p>
-<h1 id="链式队列"><a href="#链式队列" class="headerlink" title="链式队列"></a>链式队列</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211013194434226.png" alt="image-20211013194434226"></p>
-<p>头结点front</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211013194639742.png" alt="image-20211013194639742"></p>
-<p>出队</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211125214922547.png" alt="image-20211125214922547"></p>
-<p>（头结点不带数据）</p>
-<p>出入队列代码</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211013194726427.png" alt="image-20211013194726427"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/14/%E6%A0%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/14/%E6%A0%88/" class="post-title-link" itemprop="url">栈</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-14 17:13:35" itemprop="dateCreated datePublished" datetime="2021-07-14T17:13:35+08:00">2021-07-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="基本描述"><a href="#基本描述" class="headerlink" title="基本描述"></a>基本描述</h1><p>栈顶：top</p>
-<p>栈底：bottom（base）</p>
-<p>栈：S</p>
-<h1 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003152945549.png" alt="image-20211003152945549"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003152953724.png" alt="image-20211003152953724"></p>
-<p>在严蔚敏的教材里，栈顶指针和栈底指针都有</p>
-<p>而在王道中</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003153101541.png" alt="image-20211003153101541"></p>
-<p>引起注意哈</p>
-<h2 id="栈空判定"><a href="#栈空判定" class="headerlink" title="栈空判定"></a>栈空判定</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003152529968.png" alt="image-20211003152529968"></p>
-<p>上述文本意思是说</p>
-<p>考试时</p>
-<p>判定空栈的条件是 <font color=red>top=base</font></p>
-<h1 id="链栈"><a href="#链栈" class="headerlink" title="链栈"></a>链栈</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211206094125929.png" alt="image-20211206094125929"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Pop_LinkedStack</span><span class="params">(LinkedStack top,elemtype *x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkedStackNode *node;</span><br><span class="line">	<span class="keyword">if</span>(top-&gt;next == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		node = top-&gt;next;</span><br><span class="line">		*x = node-&gt;data;</span><br><span class="line">		top-&gt;next = node-&gt;next;</span><br><span class="line">		<span class="built_in">free</span>(node);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Push_LinkedStack</span><span class="params">(LinkedStack top,elemtype x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkedStackNode * node = (LinkedStackNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkedStackNode));</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">if</span>(node == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		node-&gt;data = x;</span><br><span class="line">		node-&gt;next = top-&gt;next;</span><br><span class="line">		top-&gt;next = node;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211204153253779.png" alt="image-20211204153253779"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211204153301290.png" alt="image-20211204153301290"> </p>
-<p>逆序</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(SqStack &amp;S)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(i=S.top;i&gt;=S.top/<span class="number">2</span>;i--)&#123;</span><br><span class="line">		temp=S.data[i];</span><br><span class="line">		S.data[i]=S.data[S.top-i];</span><br><span class="line">		S.data[S.top-i]=temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>返回栈底元素</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElemType <span class="title">getBase</span><span class="params">(SqStack S)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(S.top==<span class="number">-1</span>)<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> S.data[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h1 id="共享栈"><a href="#共享栈" class="headerlink" title="共享栈"></a>共享栈</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211206101308158.png" alt="image-20211206101308158"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitDupStack</span><span class="params">(DupStack &amp;S)</span></span>&#123;</span><br><span class="line">	S=(DupStack)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(DupStack));</span><br><span class="line">	S-&gt;lefttop=<span class="number">-1</span>;</span><br><span class="line">	S-&gt;righttop=MAXNUM;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pushDupStack</span><span class="params">(DupStack &amp;S,<span class="keyword">char</span> status,ElemType x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(s.lefttop+<span class="number">1</span>==S.righttop)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">if</span>(status==<span class="string">&#x27;L&#x27;</span>)S.data[++S.lefttop]=x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (status==<span class="string">&#x27;R&#x27;</span>)S.data[--S.righttop]=x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElemType <span class="title">popDupStack</span><span class="params">(DupStack &amp;S,<span class="keyword">char</span> status)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(status==<span class="string">&#x27;L&#x27;</span>)<span class="keyword">return</span> S.data[S.lefttop--];</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (status==<span class="string">&#x27;R&#x27;</span>)<span class="keyword">return</span> S.data[S.righttop--];</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/13/%E5%8D%95%E8%B0%83%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/13/%E5%8D%95%E8%B0%83%E6%80%A7/" class="post-title-link" itemprop="url">单调性</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-13 17:52:59" itemprop="dateCreated datePublished" datetime="2021-07-13T17:52:59+08:00">2021-07-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="单调函数遇上单调函数"><a href="#单调函数遇上单调函数" class="headerlink" title="单调函数遇上单调函数"></a>单调函数遇上单调函数</h4><p>加减的单调性易懂</p>
-<p>而乘除的单调性是不确定的</p>
-<p>例子：</p>
-<p>y=x 和 y=-x，一个是增函数，一个是减函数</p>
-<p>它们的乘积为 y=x^2</p>
-<p>这个函数在（-∞,0] 是减函数</p>
-<p>在[0，+∞）是增函数</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/13/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E6%9E%81%E5%80%BC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/13/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E6%9E%81%E5%80%BC/" class="post-title-link" itemprop="url">一元函数极值</a>
+            <a href="/2021/07/13/%E6%95%B0%E5%AD%A6-%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E6%9E%81%E5%80%BC/" class="post-title-link" itemprop="url">数学-一元函数极值</a>
         </h2>
 
         <div class="post-meta">
@@ -575,7 +208,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
               </span>
 
           
@@ -621,7 +254,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/13/%E6%9E%81%E5%80%BC/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/13/%E6%95%B0%E5%AD%A6-%E6%9E%81%E5%80%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -635,7 +268,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/13/%E6%9E%81%E5%80%BC/" class="post-title-link" itemprop="url">极值</a>
+            <a href="/2021/07/13/%E6%95%B0%E5%AD%A6-%E6%9E%81%E5%80%BC/" class="post-title-link" itemprop="url">数学-极值</a>
         </h2>
 
         <div class="post-meta">
@@ -652,7 +285,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
               </span>
 
           
@@ -685,7 +318,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E6%95%B0%E5%AD%A6-%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -699,7 +332,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/12/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">三角函数</a>
+            <a href="/2021/07/12/%E6%95%B0%E5%AD%A6-%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">数学-三角函数</a>
         </h2>
 
         <div class="post-meta">
@@ -716,7 +349,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
               </span>
 
           
@@ -750,7 +383,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E6%95%B0%E5%AD%A6-%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -764,7 +397,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/12/%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0/" class="post-title-link" itemprop="url">定积分与导数</a>
+            <a href="/2021/07/12/%E6%95%B0%E5%AD%A6-%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0/" class="post-title-link" itemprop="url">数学-定积分与导数</a>
         </h2>
 
         <div class="post-meta">
@@ -781,7 +414,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
               </span>
 
           
@@ -828,7 +461,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E5%AE%9A%E7%A7%AF%E5%88%86%E7%89%B9%E6%AE%8A%E6%80%A7%E8%B4%A8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E6%95%B0%E5%AD%A6-%E5%AE%9A%E7%A7%AF%E5%88%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -842,7 +475,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/12/%E5%AE%9A%E7%A7%AF%E5%88%86%E7%89%B9%E6%AE%8A%E6%80%A7%E8%B4%A8/" class="post-title-link" itemprop="url">定积分特殊性质</a>
+            <a href="/2021/07/12/%E6%95%B0%E5%AD%A6-%E5%AE%9A%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">数学-定积分</a>
         </h2>
 
         <div class="post-meta">
@@ -859,7 +492,84 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:27:35" itemprop="dateModified" datetime="2022-06-27T15:27:35+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="积分法"><a href="#积分法" class="headerlink" title="积分法"></a>积分法</h1><p>链接</p>
+<h1 id="定积分与极限"><a href="#定积分与极限" class="headerlink" title="定积分与极限"></a>定积分与极限</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912152916696.png" alt="image-20210912152916696"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912153008015.png" alt="image-20210912153008015"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912153002137.png" alt="image-20210912153002137"></p>
+<h2 id="曲线弧长"><a href="#曲线弧长" class="headerlink" title="曲线弧长"></a>曲线弧长</h2><p>链接</p>
+<h1 id="定积分的特殊性质"><a href="#定积分的特殊性质" class="headerlink" title="定积分的特殊性质"></a>定积分的特殊性质</h1><h2 id="对称区间"><a href="#对称区间" class="headerlink" title="对称区间"></a>对称区间</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0226.PNG" alt="IMG_0226"></p>
+<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0230.PNG" alt="IMG_0230"></p>
+<p>其中还要熟悉三角函数常见的积分，变形</p>
+<p>如：二次sec的积分、sin扔到后面变cos</p>
+<h2 id="周期函数"><a href="#周期函数" class="headerlink" title="周期函数"></a>周期函数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210623181735432.png" alt="image-20210623181735432"></p>
+<h1 id="伽马函数"><a href="#伽马函数" class="headerlink" title="伽马函数"></a>伽马函数</h1><h2 id="常用表格"><a href="#常用表格" class="headerlink" title="常用表格"></a>常用表格</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921125655160.png" alt="image-20210921125655160"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921125706461.png" alt="image-20210921125706461"></p>
+<h2 id="核心公式"><a href="#核心公式" class="headerlink" title="核心公式"></a>核心公式</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921125750832.png" alt="image-20210921125750832"></p>
+<h2 id="基本数值"><a href="#基本数值" class="headerlink" title="基本数值"></a>基本数值</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921125928358.png" alt="image-20210921125928358"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E6%95%B0%E5%AD%A6-%E5%AE%9A%E7%A7%AF%E5%88%86%E7%89%B9%E6%AE%8A%E6%80%A7%E8%B4%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/12/%E6%95%B0%E5%AD%A6-%E5%AE%9A%E7%A7%AF%E5%88%86%E7%89%B9%E6%AE%8A%E6%80%A7%E8%B4%A8/" class="post-title-link" itemprop="url">数学-定积分特殊性质</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-12 12:04:42" itemprop="dateCreated datePublished" datetime="2021-07-12T12:04:42+08:00">2021-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:27:18" itemprop="dateModified" datetime="2022-06-27T15:27:18+08:00">2022-06-27</time>
               </span>
 
           
@@ -897,7 +607,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E6%95%A3%E5%88%97%E8%A1%A8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E7%AE%97%E6%B3%95-%E6%95%A3%E5%88%97%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -911,7 +621,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/12/%E6%95%A3%E5%88%97%E8%A1%A8/" class="post-title-link" itemprop="url">散列表</a>
+            <a href="/2021/07/12/%E7%AE%97%E6%B3%95-%E6%95%A3%E5%88%97%E8%A1%A8/" class="post-title-link" itemprop="url">算法-散列表</a>
         </h2>
 
         <div class="post-meta">
@@ -928,7 +638,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:34:34" itemprop="dateModified" datetime="2022-06-27T15:34:34+08:00">2022-06-27</time>
               </span>
 
           
@@ -1000,10 +710,281 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/%E7%AE%97%E6%B3%95-%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/11/%E7%AE%97%E6%B3%95-%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">算法-交换排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-11 21:43:14" itemprop="dateCreated datePublished" datetime="2021-07-11T21:43:14+08:00">2021-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:34:34" itemprop="dateModified" datetime="2022-06-27T15:34:34+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h1><p>遍历一遍同时对调位置（冒泡排序）</p>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p><font color=red>子序列一路换上去(即冒泡)</font></p>
+<p>两两比较，两两决定相对位置</p>
+<p>最终结果是最小的到首位（或最大的到末尾）</p>
+<p>一趟确定的位置，之后不再参与</p>
+<p><font color=blue>直接插入排序是先挪好位置然后把目标元素插入</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711220546498.png" alt="image-20210711220546498"></p>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>基于分治法（递归）</p>
+<p>核心思想：</p>
+<p>每次取首位为基准，不断把空位补上</p>
+<p>直到 （i=j）时放入基准，完成一次划分</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211009144034048.png" alt="image-20211009144034048"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211001152834111.png" alt="image-20211001152834111"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211001152841698.png" alt="image-20211001152841698"></p>
+<p>实现</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724110021549.png" alt="image-20210724110021549"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724110029041.png" alt="image-20210724110029041"></p>
+<h1 id="快速排序的性能分析"><a href="#快速排序的性能分析" class="headerlink" title="快速排序的性能分析"></a>快速排序的性能分析</h1><p>空间复杂度不是指除了原数组空间，还申请了哪些空间</p>
+<p>而是指递归调用，栈的深度</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211009150019434.png" alt="image-20211009150019434"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/%E7%AE%97%E6%B3%95-%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/11/%E7%AE%97%E6%B3%95-%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">算法-插入排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-11 21:35:12" itemprop="dateCreated datePublished" datetime="2021-07-11T21:35:12+08:00">2021-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:34:34" itemprop="dateModified" datetime="2022-06-27T15:34:34+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h4><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4><h5 id="核心思想-1"><a href="#核心思想-1" class="headerlink" title="核心思想"></a>核心思想</h5><p><font color=red>新建子序列，不断挪位置, 然后最后把目标元素插入正确位置</font></p>
+<p>Ps :</p>
+<p>这和冒泡排序有所不同,冒泡排序是一路对换位置, 换上去</p>
+<p><font color=red>而直接插入排序是先挪好位置然后把目标元素插入</font></p>
+<p>(当前代码的排序规则是从小到大)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">straightInsertSort</span><span class="params">(ElemType <span class="built_in">array</span>[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,target,temp;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">array</span>[i]&lt;<span class="built_in">array</span>[i<span class="number">-1</span>])&#123;</span><br><span class="line">            temp=<span class="built_in">array</span>[i];</span><br><span class="line">            <span class="built_in">array</span>[i]=<span class="built_in">array</span>[i<span class="number">-1</span>];        </span><br><span class="line">            <span class="keyword">for</span>(target=i<span class="number">-1</span>;temp&lt;<span class="built_in">array</span>[target<span class="number">-1</span>];target--)&#123;       </span><br><span class="line">                <span class="built_in">array</span>[target]=<span class="built_in">array</span>[target<span class="number">-1</span>];      <span class="comment">// 不断往后挪出空位，直到找到正确位置</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">array</span>[target]=temp;        <span class="comment">// 找到目标位置后，则放入</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927171701536.png" alt="image-20210927171701536"></p>
+<p>对应已经排好序的数列，插入排序的<strong>时间复杂度是O(n)</strong></p>
+<p><font color=red>只比较一次即插入</font></p>
+<h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4><p>相对比上面的边比较边移动，这里是利用二分法先找到合适位置，然后再统一移动</p>
+<p>这样做的话，不需要每一个都进行比较O(x^2^)而是O(nlog<del>2</del>n)</p>
+<p>但是这仅仅是比较次数减少，其移动的次数没有减少</p>
+<p>故折半插入排序的<strong>时间复杂度仍为O(n^2^)</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">midInsertSort</span><span class="params">(ElemType <span class="built_in">array</span>[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,target,temp,low,mid,high;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        temp=<span class="built_in">array</span>[i];</span><br><span class="line">        low=<span class="number">0</span>;</span><br><span class="line">        high=i<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(low&lt;high)&#123;        <span class="comment">//i之前的数列已排序，可二分思想</span></span><br><span class="line">            mid=(low+high)/<span class="number">2</span>;       <span class="comment">// 二分法快速找座位（直接插入排序是一个个比较大小地来找）</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">array</span>[mid]&gt;temp)&#123;</span><br><span class="line">                high=mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                low=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(target=i;target&gt;high;target--)&#123;</span><br><span class="line">            <span class="built_in">array</span>[target]=<span class="built_in">array</span>[target<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">array</span>[target]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927171732955.png" alt="image-20210927171732955"></p>
+<p><font color=red>while的条件不可改</font></p>
+<p>直接看代码的话，这里的逻辑会把人绕晕</p>
+<p>需要明确一下方向</p>
+<p>先看while循环内部</p>
+<p>①当要插入的元素的值小于mid的值（<font color=red>这里的while没有主动跳出语句，故最后都会收敛于low=high</font>）</p>
+<p>则应该插入到mid的左边，即mid-1处</p>
+<p><font color=red>转换一下思维，相当于把mid右挪，然后把目标元素插入到空出的位置</font></p>
+<p>然后看第二个for循环（<font color=green>用于挪元素</font>）</p>
+<p><font color=blue>结合while内的high=mid-1和 j &gt;=high+1，表示即把原mid给右挪了</font>（这里的+1花点时间理解一下就懂了）</p>
+<p>最后插入目标元素到空出的位置即可</p>
+<p><font color=red>间接实现了插入到mid左边</font></p>
+<p>②当要插入的元素的值大于mid的值</p>
+<p>则插入到mid+1处</p>
+<p><font color=blue>结合while内的high不变和 j &gt;=high+1，表示即把原mid+1给右挪了</font>（和上面区分开来）</p>
+<p>然后把目标元素插入到mid+1处</p>
+<p><font color=green>老铁没毛病</font></p>
+<hr>
+<h4 id="希尔排序（该方法比较抽象，注意看解析）"><a href="#希尔排序（该方法比较抽象，注意看解析）" class="headerlink" title="希尔排序（该方法比较抽象，注意看解析）"></a>希尔排序（该方法比较抽象，注意看解析）</h4><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724102118554.png" alt="image-20210724102118554"></p>
+<p>这是一个分组插入排序的算法</p>
+<p>分组规则：根据步长将不相邻的n个元素构成一个分组</p>
+<p>然后对各个分组进行插入排序，<font color=red>即相对于上面直接插入排序，这里交换位置的规则是</font></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[j+dk] = A[j]; <span class="comment">/*间隔dk进行交换*/</span></span><br></pre></td></tr></table></figure>
+
+<p>而直接插入排序的交换规则是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[j+<span class="number">1</span>] A[j];</span><br></pre></td></tr></table></figure>
+
+<p>步长的变换规律：o(log<del>2</del>n)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dk=dk/<span class="number">2</span>  </span><br></pre></td></tr></table></figure>
+
+<p>直到步长为1时</p>
+<p>即为直接插入排序</p>
+<h5 id="不直接进行插入排序的原因"><a href="#不直接进行插入排序的原因" class="headerlink" title="不直接进行插入排序的原因"></a>不直接进行插入排序的原因</h5><p>直接插入排序对于已经排好序的数列时间复杂度是O(n)</p>
+<p>最坏是O(n^2^)</p>
+<p>所以这里采用希尔分组先对数列进行一个大概的排序（<font color=green>可以理解为预处理</font>）</p>
+<p><font color=red>“大概的排序”，即上面说的有步长间隔的插入排序</font></p>
+<p>使其<strong>基本有序</strong>后，再进行直接插入排序，则可以提高直接插入排序的效率</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724101606130.png" alt="image-20210724101606130"></p>
+<p>希尔排序的时间复杂度较为复杂</p>
+<p>大概知道就好，一般为O(n^1.3^)</p>
+<p>最坏为O(n^2^)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/%E7%AE%97%E6%B3%95-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/11/%E7%AE%97%E6%B3%95-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">算法-选择排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-11 21:31:24" itemprop="dateCreated datePublished" datetime="2021-07-11T21:31:24+08:00">2021-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:34:34" itemprop="dateModified" datetime="2022-06-27T15:34:34+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h1><p>相比交换排序多了选最值的环节（简单选择排序、堆排序）</p>
+<h1 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h1><p><font color=red>选到最值后swap</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711213238436.png" alt="image-20210711213238436"></p>
+<h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><p>链接</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1071,16 +1052,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">301</span>
+          <span class="site-state-item-count">296</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

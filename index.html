@@ -177,6 +177,145 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/SQL%E6%B3%A8%E5%85%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/27/SQL%E6%B3%A8%E5%85%A5/" class="post-title-link" itemprop="url">SQL注入</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-06-27 14:31:24 / Modified: 14:31:47" itemprop="dateCreated datePublished" datetime="2022-06-27T14:31:24+08:00">2022-06-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ichunqiu/p/9604564.html">启蒙</a></p>
+<h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><h3 id="绕过密码登录"><a href="#绕过密码登录" class="headerlink" title="绕过密码登录"></a>绕过密码登录</h3><p>（也叫条件注入）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418151828925.png" alt="image-20220418151828925"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418150656284.png" alt="image-20220418150656284"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418150718927.png" alt="image-20220418150718927"></p>
+<p>只要username正确，那么直接绕过密码了:)</p>
+<p>原因是sql语句被恶意篡改成了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM user WHERE id = 4 OR TRUE AND password = $&#123;password&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>如果它不过滤查询字符串，它将给出如下错误：</p>
+<p>第5行的Article.php中的5MySQL语法错误</p>
+<p>则该网站易受攻击</p>
+<p>简单检查密码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@NotBlank(message = &quot;密码不能为空&quot;)</span></span><br><span class="line"><span class="meta">@Pattern(regexp = &quot;^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]&#123;8,32&#125;$&quot;,message = &quot;密码不符合格式要求&quot;)</span></span><br><span class="line"><span class="keyword">private</span> String password;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="查看数据库某表的列数"><a href="#查看数据库某表的列数" class="headerlink" title="查看数据库某表的列数"></a>查看数据库某表的列数</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418151803683.png" alt="image-20220418151803683"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418151653801.png" alt="image-20220418151653801"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418153235568.png" alt="image-20220418153235568"></p>
+<p>（原语法：order by + 列名，以某列的值作排序的依据）</p>
+<p>（如果是数字的话，则相当于用各列的下标来表示各列）</p>
+<p>不断增大order by后的数字</p>
+<p>不报错，就说明该列存在</p>
+<p>报错了，就说明当前表的列数是它减一:)</p>
+<p>Ps：</p>
+<h3 id="查看数据库中所有得表名"><a href="#查看数据库中所有得表名" class="headerlink" title="查看数据库中所有得表名"></a>查看数据库中所有得表名</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418155712707.png" alt="image-20220418155712707"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418155741695.png" alt="image-20220418155741695"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418160326964.png" alt="image-20220418160326964"></p>
+<p>原本要返回的本来是当前班级的学生列表的</p>
+<p>每个学生的信息包括：ID和姓名</p>
+<p>这sql注入直接利用UNION把数据库里所有的表名当成学生数据返回了</p>
+<p>注入部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 UNION SELECT 1,table_name,3,4 FROM information_schema.tables--</span><br></pre></td></tr></table></figure>
+
+<p>字段解释：</p>
+<p>1 —— 班级id</p>
+<p>UNION —— 把两个select的结果连接起来</p>
+<p>（理所当然的要求前后两个select的列数要一致）</p>
+<p>（这也是为什么要获取列数的原因）</p>
+<p>1,table_name,3,4 —— 是第二个select语句的各列</p>
+<p>information_schema.tables —— 是所有数据库都有的一张表，包含了所有表的表名</p>
+<p>（新建的表一般在末尾，前面的都是mysql自带的一些表）</p>
+<h3 id="获取所有列名"><a href="#获取所有列名" class="headerlink" title="获取所有列名:)"></a>获取所有列名:)</h3><p>切入口和上面一致</p>
+<p>注入的sql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">1</span>,column_name,<span class="number">3</span>,<span class="number">4</span> <span class="keyword">FROM</span> information_schema.columns<span class="comment">--</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418160853376.png" alt="image-20220418160853376"></p>
+<p>:) :) :)</p>
+<h3 id="获取密码"><a href="#获取密码" class="headerlink" title="获取密码"></a>获取密码</h3><p>首先是查看user表的列名</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418161435037.png" alt="image-20220418161435037"></p>
+<p>注入的sql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">1</span>,column_name,<span class="number">3</span>,<span class="number">4</span> <span class="keyword">FROM</span> information_schema.columns <span class="keyword">WHERE</span> table_name<span class="operator">=</span><span class="string">&#x27;user&#x27;</span><span class="comment">--</span></span><br></pre></td></tr></table></figure>
+
+<p>获取密码</p>
+<p>用户名：密码</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418161713453.png" alt="image-20220418161713453"></p>
+<p>注入的sql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">1</span>,concat(id,<span class="number">0x3a</span>,password),<span class="number">3</span>,<span class="number">4</span> <span class="keyword">FROM</span> <span class="keyword">user</span><span class="comment">--</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="时间盲注"><a href="#时间盲注" class="headerlink" title="时间盲注"></a>时间盲注</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418164445613.png" alt="image-20220418164445613"></p>
+<h2 id="攻击的特殊手段"><a href="#攻击的特殊手段" class="headerlink" title="攻击的特殊手段"></a>攻击的特殊手段</h2><p>–可以把后面的语句给注释掉</p>
+<p>null不会导致任何类型转换错误</p>
+<p>OR TRUE</p>
+<p>UNION 可以理所当然得把查询语句嵌进来（得先用ORDER BY把列数试出来）</p>
+<h3 id="堆叠注入局限"><a href="#堆叠注入局限" class="headerlink" title="堆叠注入局限"></a>堆叠注入局限</h3><p>就是输入类似<code>1;update user set password = &#39;12345&#39; where id =1</code>这种方式</p>
+<p>让执行完查询语句后在执行更新语句，以达到我们的目的</p>
+<p>但是很遗憾，这种方式有很大的局限性</p>
+<p>主要就是我们常用的ORM框架并不支持同时执行多条sql语句，因此很难实现注入</p>
+<p>据了解，这种方式在php语言中可以成功实践。</p>
+<h2 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h2><p>Integer类型反而不容易被注入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">checkRow</span><span class="params">(Integer id)</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/24/%E6%B8%B8%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -508,7 +647,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/python%E6%B8%B8%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/%E6%B1%87%E7%BC%96-python%E6%B8%B8%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -522,7 +661,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/06/06/python%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">python游记</a>
+            <a href="/2022/06/06/%E6%B1%87%E7%BC%96-python%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">汇编-python游记</a>
         </h2>
 
         <div class="post-meta">
@@ -539,7 +678,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:46:17" itemprop="dateModified" datetime="2022-06-27T15:46:17+08:00">2022-06-27</time>
               </span>
 
           
@@ -574,7 +713,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/31/block-chain/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/31/%E8%AE%A1%E7%AE%97%E6%9C%BA-block-chain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -588,7 +727,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/05/31/block-chain/" class="post-title-link" itemprop="url">block-chain</a>
+            <a href="/2022/05/31/%E8%AE%A1%E7%AE%97%E6%9C%BA-block-chain/" class="post-title-link" itemprop="url">计算机-block-chain</a>
         </h2>
 
         <div class="post-meta">
@@ -605,7 +744,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
               </span>
 
           
@@ -654,7 +793,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -668,7 +807,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">计算机游记</a>
+            <a href="/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">计算机-计算机游记</a>
         </h2>
 
         <div class="post-meta">
@@ -685,7 +824,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
               </span>
 
           
@@ -814,7 +953,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/10/%E7%BD%91%E7%AB%99/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/06/%E5%B7%A5%E5%85%B7-adb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -828,72 +967,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/05/10/%E7%BD%91%E7%AB%99/" class="post-title-link" itemprop="url">网站</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-05-10 13:26:09" itemprop="dateCreated datePublished" datetime="2022-05-10T13:26:09+08:00">2022-05-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="电子书"><a href="#电子书" class="headerlink" title="电子书"></a>电子书</h1><p><a target="_blank" rel="noopener" href="https://pdfroom.com/">https://pdfroom.com/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/06/adb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/06/adb/" class="post-title-link" itemprop="url">adb</a>
+            <a href="/2022/05/06/%E5%B7%A5%E5%85%B7-adb/" class="post-title-link" itemprop="url">工具-adb</a>
         </h2>
 
         <div class="post-meta">
@@ -910,7 +984,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
               </span>
 
           
@@ -950,7 +1024,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1018,16 +1092,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">301</span>
+          <span class="site-state-item-count">296</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

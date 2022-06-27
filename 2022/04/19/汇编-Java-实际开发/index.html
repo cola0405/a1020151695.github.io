@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="金额计算金额计算不能用浮点数！！！ 看一个例子 1System.out.println(0.03-0.02);  输出: 0.009999999999999998 解决：BigDecimal 123BigDecimal a &#x3D; new BigDecimal(&quot;0.03&quot;);BigDecimal b &#x3D; new BigDecimal(&quot;0.02&quot;);Syste">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编-Java-实际开发">
+<meta property="og:url" content="http://example.com/2022/04/19/%E6%B1%87%E7%BC%96-Java-%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="金额计算金额计算不能用浮点数！！！ 看一个例子 1System.out.println(0.03-0.02);  输出: 0.009999999999999998 解决：BigDecimal 123BigDecimal a &#x3D; new BigDecimal(&quot;0.03&quot;);BigDecimal b &#x3D; new BigDecimal(&quot;0.02&quot;);Syste">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520100957468.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520101010033.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220424153719619.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220424154027347.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520164606383.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520164823926.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520165450802.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220509121750235.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506181541967.png">
+<meta property="article:published_time" content="2022-04-19T03:14:39.000Z">
+<meta property="article:modified_time" content="2022-06-27T07:46:17.473Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520100957468.png">
+
+<link rel="canonical" href="http://example.com/2022/04/19/%E6%B1%87%E7%BC%96-Java-%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>汇编-Java-实际开发 | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/19/%E6%B1%87%E7%BC%96-Java-%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          汇编-Java-实际开发
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-19 11:14:39" itemprop="dateCreated datePublished" datetime="2022-04-19T11:14:39+08:00">2022-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:46:17" itemprop="dateModified" datetime="2022-06-27T15:46:17+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="金额计算"><a href="#金额计算" class="headerlink" title="金额计算"></a>金额计算</h1><p>金额计算不能用浮点数！！！</p>
+<p>看一个例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="number">0.03</span>-<span class="number">0.02</span>);</span><br></pre></td></tr></table></figure>
+
+<p>输出: 0.009999999999999998</p>
+<p>解决：BigDecimal</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BigDecimal a = <span class="keyword">new</span> BigDecimal(<span class="string">&quot;0.03&quot;</span>);</span><br><span class="line">BigDecimal b = <span class="keyword">new</span> BigDecimal(<span class="string">&quot;0.02&quot;</span>);</span><br><span class="line">System.out.println(a.subtract(b));</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h2 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h2><p>detail</p>
+<p>brief</p>
+<p>encoder</p>
+<p>common</p>
+<p>verify</p>
+<p>quantity</p>
+<p>nickname</p>
+<p>acquired</p>
+<p>invaliadate</p>
+<p>group</p>
+<p>member - 会员</p>
+<h2 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h2><p>oms - Order Management System 订单管理系统</p>
+<p>ums - User Management System 用户管理系统</p>
+<p>mbg - Mybatis Generator</p>
+<p>dto - Data Transfer Object 数据传输对象</p>
+<p>tel - 联系方式</p>
+<p>intro - 介绍</p>
+<p>prod - 产品</p>
+<p>no - 编号</p>
+<h2 id="传参类型"><a href="#传参类型" class="headerlink" title="传参类型"></a>传参类型</h2><p>Integer一定程度上可以避免SQL注入</p>
+<h2 id="路径命名"><a href="#路径命名" class="headerlink" title="路径命名"></a>路径命名</h2><p>允许<code>/delete/sub-account</code></p>
+<h2 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h2><p><code>module_task</code> 和 <code>task_module</code>的主要区别在于：</p>
+<p>一个是有利于国人阅读，一个是外国人的英语习惯</p>
+<h2 id="boolean默认值"><a href="#boolean默认值" class="headerlink" title="boolean默认值"></a>boolean默认值</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520100957468.png" alt="image-20220520100957468"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520101010033.png" alt="image-20220520101010033"></p>
+<h1 id="编码风格"><a href="#编码风格" class="headerlink" title="编码风格"></a>编码风格</h1><p>如果项目还是“中文”项目</p>
+<p>那还是需要多加一些注释的</p>
+<p>不能照搬国外程序员的编程思路</p>
+<h2 id="直接返回"><a href="#直接返回" class="headerlink" title="直接返回"></a>直接返回</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Department&gt; <span class="title">getDepartmentList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Integer parentId = Integer.valueOf((String)StpUtil.getLoginId());</span><br><span class="line">    Integer companyId = userDao.getCompanyId(parentId);</span><br><span class="line">    <span class="keyword">return</span> departmentDao.getDepartmentList(companyId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数名说清楚了，如果不需要额外的检查，直接返回就行</p>
+<h2 id="代码不要太长"><a href="#代码不要太长" class="headerlink" title="代码不要太长"></a>代码不要太长</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220424153719619.png" alt="image-20220424153719619"></p>
+<p>像阅读理解一样，离谱</p>
+<h2 id="是否使用枚举类"><a href="#是否使用枚举类" class="headerlink" title="是否使用枚举类"></a>是否使用枚举类</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220424154027347.png" alt="image-20220424154027347"></p>
+<p>别了。。</p>
+<p>直接定义常量吧 </p>
+<h2 id="注释完备"><a href="#注释完备" class="headerlink" title="注释完备"></a>注释完备</h2><p>反作用于恢复数据库！！！</p>
+<p>命名一致也是！！太有用了</p>
+<h2 id="方法命名"><a href="#方法命名" class="headerlink" title="方法命名"></a>方法命名</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果说这个serivce不复杂的话，确实省略宾语才是上上解</span></span><br><span class="line">groupRepository.findByGroupName(groupName);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">listPermission()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">saveOrUpdate()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520164606383.png" alt="image-20220520164606383"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520164823926.png" alt="image-20220520164823926"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520165450802.png" alt="image-20220520165450802"></p>
+<h1 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h1><h2 id="controller需不需要业务逻辑"><a href="#controller需不需要业务逻辑" class="headerlink" title="controller需不需要业务逻辑"></a>controller需不需要业务逻辑</h2><p>好处：</p>
+<p>流程清晰，方便代码阅读，方便再次开发</p>
+<p>各步骤划分清晰</p>
+<p>todo放在controller也容易看</p>
+<p>缺点：</p>
+<p>流程改变的话，还得改动controller的代码</p>
+<p>从另外一个方面来讲</p>
+<p>service设计来就是定接口的</p>
+<p>那么我在controller里定流程也是合理的！</p>
+<p>这里还涉及到另外一个问题</p>
+<p>controller层做前后置操作的话，@Transational放在哪</p>
+<p>只能放到controller了</p>
+<p>放各个service的话，已经进行的service数据库操作无法回滚</p>
+<h2 id="异常捕获"><a href="#异常捕获" class="headerlink" title="异常捕获"></a>异常捕获</h2><p>切面那里验证用户是否登录</p>
+<p>一处捕获异常就行，可以全部相关接口获益</p>
+<h1 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h1><h2 id="Transational别乱用"><a href="#Transational别乱用" class="headerlink" title="@Transational别乱用"></a>@Transational别乱用</h2><p>影响性能</p>
+<h2 id="尽量减少HTTP请求"><a href="#尽量减少HTTP请求" class="headerlink" title="尽量减少HTTP请求"></a>尽量减少HTTP请求</h2><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="批量插入"><a href="#批量插入" class="headerlink" title="批量插入"></a>批量插入</h2><p>mybatis</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">## id</span><br><span class="line"></span><br><span class="line">重要字段id搞长 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 备份</span><br><span class="line"></span><br><span class="line">别的工程师改过数据库结构</span><br><span class="line"></span><br><span class="line">数据库没有及时备份</span><br><span class="line"></span><br><span class="line"><span class="keyword">sql</span>语句是旧的</span><br><span class="line"></span><br><span class="line">结构都不一样:)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## create_time和update_time</span><br><span class="line"></span><br><span class="line">默认值为<span class="built_in">CURRENT_TIMESTAMP</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">设置updatetime列属性<span class="keyword">ON</span> UPDATE <span class="built_in">CURRENT_TIMESTAMP</span></span><br><span class="line"></span><br><span class="line"><span class="operator">!</span>[image<span class="number">-20220428162452997</span>](https:<span class="operator">/</span><span class="operator">/</span>picgo<span class="operator">-</span>freejim.oss<span class="operator">-</span>cn<span class="operator">-</span>beijing.aliyuncs.com<span class="operator">/</span>image<span class="number">-20220428162452997.</span>png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ps：</span><br><span class="line"></span><br><span class="line">得把<span class="number">0</span>填上，不然会出错</span><br><span class="line"></span><br><span class="line"><span class="operator">!</span>[image<span class="number">-20220428162356399</span>](https:<span class="operator">/</span><span class="operator">/</span>picgo<span class="operator">-</span>freejim.oss<span class="operator">-</span>cn<span class="operator">-</span>beijing.aliyuncs.com<span class="operator">/</span>image<span class="number">-20220428162356399.</span>png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## <span class="keyword">sql</span>语句<span class="operator">-</span>查询字段</span><br><span class="line"></span><br><span class="line">写清楚，别<span class="operator">*</span></span><br><span class="line"></span><br><span class="line">视图不是用来<span class="operator">*</span>的</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 为什么使用<span class="type">Integer</span></span><br><span class="line"></span><br><span class="line">attempted <span class="keyword">to</span> <span class="keyword">return</span> <span class="keyword">null</span> <span class="keyword">from</span> a <span class="keyword">method</span> <span class="keyword">with</span> a primitive <span class="keyword">return</span> type (<span class="type">int</span>)</span><br><span class="line"></span><br><span class="line">用<span class="type">Integer</span>就不会报这个错误</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 批量插入</span><br><span class="line"></span><br><span class="line">```<span class="keyword">sql</span></span><br><span class="line">    <span class="operator">&lt;</span><span class="keyword">insert</span> id<span class="operator">=</span>&quot;batchInsert&quot;<span class="operator">&gt;</span></span><br><span class="line">        <span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_permission_relation(user_id,permission_id) <span class="keyword">VALUES</span></span><br><span class="line">        <span class="operator">&lt;</span>foreach collection<span class="operator">=</span>&quot;batch&quot; item<span class="operator">=</span>&quot;item&quot; index<span class="operator">=</span>&quot;index&quot; separator<span class="operator">=</span>&quot;,&quot;<span class="operator">&gt;</span></span><br><span class="line">            (#&#123;item.userId&#125;,#&#123;item.permissionId&#125;)</span><br><span class="line">        <span class="operator">&lt;</span><span class="operator">/</span>foreach<span class="operator">&gt;</span></span><br><span class="line">    <span class="operator">&lt;</span><span class="operator">/</span><span class="keyword">insert</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="时间带T"><a href="#时间带T" class="headerlink" title="时间带T"></a>时间带T</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFormat(timezone = &quot;GMT+8&quot;,pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="选取null的字段"><a href="#选取null的字段" class="headerlink" title="选取null的字段"></a>选取null的字段</h2><p>一定要用is，而不能用=</p>
+<h2 id="批量操作时，一般需要回滚的"><a href="#批量操作时，一般需要回滚的" class="headerlink" title="批量操作时，一般需要回滚的"></a>批量操作时，一般需要回滚的</h2><h1 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h1><h2 id="不传递非空字段"><a href="#不传递非空字段" class="headerlink" title="不传递非空字段"></a>不传递非空字段</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonInclude(JsonInclude.Include.NON_NULL)</span></span><br></pre></td></tr></table></figure>
+
+<p>加在实体类上面，或者具体成员变量上都行</p>
+<p>配合数据库的view视图，就不用另外新建实体类了</p>
+<h2 id="从request中获取json数据"><a href="#从request中获取json数据" class="headerlink" title="从request中获取json数据"></a>从request中获取json数据</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getJsonFromRequest</span><span class="params">(HttpServletRequest req)</span></span>&#123;</span><br><span class="line">    BufferedReader streamReader;</span><br><span class="line">    StringBuilder stringBuilder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        streamReader = <span class="keyword">new</span> BufferedReader( <span class="keyword">new</span> InputStreamReader(req.getInputStream(), <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">        String str;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            str = streamReader.readLine();</span><br><span class="line">            <span class="keyword">if</span> (str==<span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            stringBuilder.append(str);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> stringBuilder.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>报错：在进入AOP前，spring框架在使用 对象类型转换器(converter)时</p>
+<p>已经使用过一次body了（获取body是以流的形式，且由此可知，这个类型转换是优先于AOP切面的）</p>
+<p>所以在AOP切面处理时，想获取body体数据，发生”stream closed”异常</p>
+<p>解决：</p>
+<p>从joinPoint中获取</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(JSON.toJSONString(joinPoint.getArgs()[<span class="number">0</span>]));</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>这里有另外一个问题，没有json数据的该怎么处理</p>
+<p>或者上传的接口该怎么处理</p>
+<h2 id="Requestbody-为空"><a href="#Requestbody-为空" class="headerlink" title="Requestbody 为空"></a>Requestbody 为空</h2><p>像page size这样有默认值的参数</p>
+<p>如果前端不穿json过来</p>
+<p>甚至Requestbody对应的对象都不会被实例化</p>
+<p>也就是如果想用getter</p>
+<p>都是报空指针的异常</p>
+<p>解决：</p>
+<p>if 判断 request 是否为空</p>
+<h2 id="仅传需要更新的数据？"><a href="#仅传需要更新的数据？" class="headerlink" title="仅传需要更新的数据？"></a>仅传需要更新的数据？</h2><h2 id="decimal"><a href="#decimal" class="headerlink" title="decimal"></a>decimal</h2><p>对应java是 <code>BigDecimal</code></p>
+<p>构造<code>BigDecimal</code> 最好使用字符串</p>
+<p>直接使用浮点数的话会有误差（莫名其妙多很多数位）</p>
+<p>还有，千万注意！</p>
+<p>小数位不要设置为0</p>
+<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><p><a target="_blank" rel="noopener" href="https://github.com/EZLippi/practical-programming-books/blob/master/src/logging.md">经验帖</a></p>
+<h2 id="没有返回值"><a href="#没有返回值" class="headerlink" title="没有返回值"></a>没有返回值</h2><p>第一种情况：</p>
+<p>没有return</p>
+<p>解决：</p>
+<p>在doAround里增加return</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = joinPoint.proceed();</span><br><span class="line"><span class="keyword">return</span> result;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="记录异常的日志时，前端没有收到返回值"><a href="#记录异常的日志时，前端没有收到返回值" class="headerlink" title="记录异常的日志时，前端没有收到返回值"></a>记录异常的日志时，前端没有收到返回值</h2><p>第二种情况：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220509121750235.png" alt="image-20220509121750235"></p>
+<p>执行业务逻辑时抛出了异常</p>
+<p>没有把返回结果赋值给result</p>
+<p>导致前端收到的result是空的null</p>
+<p>解决：</p>
+<p>在catch里额外写逻辑</p>
+<h2 id="做切面日志时的异常捕获"><a href="#做切面日志时的异常捕获" class="headerlink" title="做切面日志时的异常捕获"></a>做切面日志时的异常捕获</h2><p>使用try-catch的话</p>
+<p>在方法后加 <code>throw Throwable</code> 的话，会把异常捕获交给ExceptionController来完成</p>
+<p>但是这样一来就没办法做日志储存了</p>
+<h2 id="返回结果类不一样时，异常处理该怎么设计"><a href="#返回结果类不一样时，异常处理该怎么设计" class="headerlink" title="返回结果类不一样时，异常处理该怎么设计"></a>返回结果类不一样时，异常处理该怎么设计</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    buildWebLogByRequest(webLog);</span><br><span class="line">&#125;<span class="keyword">catch</span> (Throwable t)&#123;</span><br><span class="line">    BusinessException e = (BusinessException) t;</span><br><span class="line">    System.out.println(method.getReturnType().getName());</span><br><span class="line">    <span class="keyword">if</span>(method.getReturnType() == R.class)&#123;</span><br><span class="line">        result = R.codeEnum(CodeEnum.FAILED).setCode(e.getCode()).setMessage(e.getMessage());</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        result = RQ.codeEnum(CodeEnum.FAILED).setCode(e.getCode()).setMessage(e.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="json请求参数与文件的区分"><a href="#json请求参数与文件的区分" class="headerlink" title="json请求参数与文件的区分"></a>json请求参数与文件的区分</h2><p>json和文件上传都是在inputstream中获取数据</p>
+<p>解决：</p>
+<p>利用请求头中的Content-Type来做区别</p>
+<p>实在不行，让开发者在日志注解上表参数类型</p>
+<p>然后还需另外在传参时做try-catch</p>
+<p>防止系统异常，而返回“参数错误”</p>
+<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p>命令行获取ip</p>
+<h1 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h1><h2 id="省份的数据库设计"><a href="#省份的数据库设计" class="headerlink" title="省份的数据库设计"></a>省份的数据库设计</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506181541967.png" alt="image-20220506181541967"></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="插入和修改哪个快"><a href="#插入和修改哪个快" class="headerlink" title="插入和修改哪个快"></a>插入和修改哪个快</h2><h2 id="只查一个数据有必要联表吗"><a href="#只查一个数据有必要联表吗" class="headerlink" title="只查一个数据有必要联表吗"></a>只查一个数据有必要联表吗</h2><h2 id="往同部门调，默许还是提示"><a href="#往同部门调，默许还是提示" class="headerlink" title="往同部门调，默许还是提示"></a>往同部门调，默许还是提示</h2><h2 id="日志时间和实际图片上传的时间不一致"><a href="#日志时间和实际图片上传的时间不一致" class="headerlink" title="日志时间和实际图片上传的时间不一致"></a>日志时间和实际图片上传的时间不一致</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/19/Java-AOP/" rel="prev" title="Java-AOP">
+      <i class="fa fa-chevron-left"></i> Java-AOP
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/04/22/%E6%B1%87%E7%BC%96-Java%E6%B8%B8%E8%AE%B0/" rel="next" title="汇编-Java游记">
+      汇编-Java游记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%91%E9%A2%9D%E8%AE%A1%E7%AE%97"><span class="nav-number">1.</span> <span class="nav-text">金额计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D"><span class="nav-number">2.1.</span> <span class="nav-text">变量名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%A9%E5%86%99"><span class="nav-number">2.2.</span> <span class="nav-text">缩写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E5%8F%82%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">传参类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E5%BE%84%E5%91%BD%E5%90%8D"><span class="nav-number">2.4.</span> <span class="nav-text">路径命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D"><span class="nav-number">2.5.</span> <span class="nav-text">变量命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#boolean%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">2.6.</span> <span class="nav-text">boolean默认值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC"><span class="nav-number">3.</span> <span class="nav-text">编码风格</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E8%BF%94%E5%9B%9E"><span class="nav-number">3.1.</span> <span class="nav-text">直接返回</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E4%B8%8D%E8%A6%81%E5%A4%AA%E9%95%BF"><span class="nav-number">3.2.</span> <span class="nav-text">代码不要太长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%AF%E5%90%A6%E4%BD%BF%E7%94%A8%E6%9E%9A%E4%B8%BE%E7%B1%BB"><span class="nav-number">3.3.</span> <span class="nav-text">是否使用枚举类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E5%AE%8C%E5%A4%87"><span class="nav-number">3.4.</span> <span class="nav-text">注释完备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%91%BD%E5%90%8D"><span class="nav-number">3.5.</span> <span class="nav-text">方法命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">3.6.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">架构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#controller%E9%9C%80%E4%B8%8D%E9%9C%80%E8%A6%81%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91"><span class="nav-number">4.1.</span> <span class="nav-text">controller需不需要业务逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7"><span class="nav-number">4.2.</span> <span class="nav-text">异常捕获</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%83%BD"><span class="nav-number">5.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Transational%E5%88%AB%E4%B9%B1%E7%94%A8"><span class="nav-number">5.1.</span> <span class="nav-text">@Transational别乱用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%BD%E9%87%8F%E5%87%8F%E5%B0%91HTTP%E8%AF%B7%E6%B1%82"><span class="nav-number">5.2.</span> <span class="nav-text">尽量减少HTTP请求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">6.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5"><span class="nav-number">6.1.</span> <span class="nav-text">批量插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%B8%A6T"><span class="nav-number">6.2.</span> <span class="nav-text">时间带T</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E5%8F%96null%E7%9A%84%E5%AD%97%E6%AE%B5"><span class="nav-number">6.3.</span> <span class="nav-text">选取null的字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C%E6%97%B6%EF%BC%8C%E4%B8%80%E8%88%AC%E9%9C%80%E8%A6%81%E5%9B%9E%E6%BB%9A%E7%9A%84"><span class="nav-number">6.4.</span> <span class="nav-text">批量操作时，一般需要回滚的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%A0%E5%8F%82"><span class="nav-number">7.</span> <span class="nav-text">传参</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E4%BC%A0%E9%80%92%E9%9D%9E%E7%A9%BA%E5%AD%97%E6%AE%B5"><span class="nav-number">7.1.</span> <span class="nav-text">不传递非空字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8Erequest%E4%B8%AD%E8%8E%B7%E5%8F%96json%E6%95%B0%E6%8D%AE"><span class="nav-number">7.2.</span> <span class="nav-text">从request中获取json数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requestbody-%E4%B8%BA%E7%A9%BA"><span class="nav-number">7.3.</span> <span class="nav-text">Requestbody 为空</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%85%E4%BC%A0%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%9F"><span class="nav-number">7.4.</span> <span class="nav-text">仅传需要更新的数据？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#decimal"><span class="nav-number">7.5.</span> <span class="nav-text">decimal</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A5%E5%BF%97"><span class="nav-number">8.</span> <span class="nav-text">日志</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">8.1.</span> <span class="nav-text">没有返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E5%BC%82%E5%B8%B8%E7%9A%84%E6%97%A5%E5%BF%97%E6%97%B6%EF%BC%8C%E5%89%8D%E7%AB%AF%E6%B2%A1%E6%9C%89%E6%94%B6%E5%88%B0%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">8.2.</span> <span class="nav-text">记录异常的日志时，前端没有收到返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E5%88%87%E9%9D%A2%E6%97%A5%E5%BF%97%E6%97%B6%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7"><span class="nav-number">8.3.</span> <span class="nav-text">做切面日志时的异常捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%B1%BB%E4%B8%8D%E4%B8%80%E6%A0%B7%E6%97%B6%EF%BC%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E8%AF%A5%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1"><span class="nav-number">8.4.</span> <span class="nav-text">返回结果类不一样时，异常处理该怎么设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#json%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E4%B8%8E%E6%96%87%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%86"><span class="nav-number">8.5.</span> <span class="nav-text">json请求参数与文件的区分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF"><span class="nav-number">10.</span> <span class="nav-text">问题场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%81%E4%BB%BD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">10.1.</span> <span class="nav-text">省份的数据库设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">11.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%92%8C%E4%BF%AE%E6%94%B9%E5%93%AA%E4%B8%AA%E5%BF%AB"><span class="nav-number">11.1.</span> <span class="nav-text">插入和修改哪个快</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AA%E6%9F%A5%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E6%9C%89%E5%BF%85%E8%A6%81%E8%81%94%E8%A1%A8%E5%90%97"><span class="nav-number">11.2.</span> <span class="nav-text">只查一个数据有必要联表吗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%80%E5%90%8C%E9%83%A8%E9%97%A8%E8%B0%83%EF%BC%8C%E9%BB%98%E8%AE%B8%E8%BF%98%E6%98%AF%E6%8F%90%E7%A4%BA"><span class="nav-number">11.3.</span> <span class="nav-text">往同部门调，默许还是提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A5%E5%BF%97%E6%97%B6%E9%97%B4%E5%92%8C%E5%AE%9E%E9%99%85%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%97%B6%E9%97%B4%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="nav-number">11.4.</span> <span class="nav-text">日志时间和实际图片上传的时间不一致</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">296</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

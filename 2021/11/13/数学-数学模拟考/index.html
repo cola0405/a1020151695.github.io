@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="11&#x2F;12不要太在意一气呵成 就挑软柿子捏 也别老是墙头草 不管想不想的出来，规定花一定时间 想出来了好，想不出来了再跳 还有一个要注意的是对待有思路但是花时间的题目 在可以接受的范围内，多花几分钟没问题 如果到多花十分钟的程度的话，那没必要了 直接先做简单的 采取这种策略的原因是我发现到后面时间不足的时候 我基本都是有思路的，而且不用花很多时间 但是因为前边已经花掉很多时间去暴力处理了 所以这里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数学-数学模拟考">
+<meta property="og:url" content="http://example.com/2021/11/13/%E6%95%B0%E5%AD%A6-%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%80%83/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="11&#x2F;12不要太在意一气呵成 就挑软柿子捏 也别老是墙头草 不管想不想的出来，规定花一定时间 想出来了好，想不出来了再跳 还有一个要注意的是对待有思路但是花时间的题目 在可以接受的范围内，多花几分钟没问题 如果到多花十分钟的程度的话，那没必要了 直接先做简单的 采取这种策略的原因是我发现到后面时间不足的时候 我基本都是有思路的，而且不用花很多时间 但是因为前边已经花掉很多时间去暴力处理了 所以这里">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115180800792.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115180755792.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115180750043.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115181435092.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115181221083.png">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/72267a3ffe7c0a100c0189bfd6e617b.jpg">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211203094516336.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205155694.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205837030.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205213784.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205053092.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205717126.png">
+<meta property="article:published_time" content="2021-11-13T03:12:01.000Z">
+<meta property="article:modified_time" content="2022-06-27T07:24:44.769Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115180800792.png">
+
+<link rel="canonical" href="http://example.com/2021/11/13/%E6%95%B0%E5%AD%A6-%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%80%83/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>数学-数学模拟考 | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E6%95%B0%E5%AD%A6-%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数学-数学模拟考
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-13 11:12:01" itemprop="dateCreated datePublished" datetime="2021-11-13T11:12:01+08:00">2021-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="11-12"><a href="#11-12" class="headerlink" title="11/12"></a>11/12</h1><p><font color=red>不要太在意一气呵成</font></p>
+<p>就挑软柿子捏</p>
+<p>也别老是墙头草</p>
+<p>不管想不想的出来，规定花一定时间</p>
+<p>想出来了好，想不出来了再跳</p>
+<p>还有一个要注意的是对待有思路但是花时间的题目</p>
+<p>在可以接受的范围内，多花几分钟没问题</p>
+<p>如果到多花十分钟的程度的话，那没必要了</p>
+<p>直接先做简单的</p>
+<p>采取这种策略的原因是我发现到后面时间不足的时候</p>
+<p>我基本都是有思路的，而且不用花很多时间</p>
+<p>但是因为前边已经花掉很多时间去暴力处理了</p>
+<p>所以这里无力回天</p>
+<p>导致时间利用效率变低</p>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><p>花了1小时</p>
+<p>最花时间的地方：一个是在高阶导数硬导，另一个是暴力枚举</p>
+<p>如果这两个时间把握好的话，选择题50分钟应该可以搞定选择题</p>
+<p>选择题有些题目得四个选项都看</p>
+<p>耗费时间，但是。。一旦选错就丢四分</p>
+<p>相当于一个大题痛失的分值了</p>
+<p><font color=red>何不采取相同的策略</font></p>
+<p>挑简单的做，目测需要花费大量时间的搁后边</p>
+<p>同时不要顾虑沉没成本，该放弃就放弃</p>
+<p>壮士断腕</p>
+<h3 id="填空"><a href="#填空" class="headerlink" title="填空"></a>填空</h3><p>花了43 mins</p>
+<p>原因是不想选择题那样各个选项都看</p>
+<p>提示少了，应试技巧少了</p>
+<p>但是花的时间也少了</p>
+<p>对基础好的考生来说是好的</p>
+<h2 id="大题"><a href="#大题" class="headerlink" title="大题"></a>大题</h2><p>这次考试只剩下77分钟写大题</p>
+<p>大题总分94分</p>
+<p>可以说是比例有些失衡</p>
+<p>大题的时间应该在100分钟左右</p>
+<p>（不然很多你能做的题也只能丢）</p>
+<p>大题总共8题</p>
+<p>高数6题，线性代数2题</p>
+<p>正确的应对策略应该还是先写简单的！</p>
+<p>高数简单的写完了应该转向线性代数简单的</p>
+<p>（第一小题）</p>
+<p>然后再花时间在高数难度大的大题里抢分</p>
+<p>然后是线性代数（因为我本身对高数更熟悉，更好抢分）</p>
+<h2 id="错误的抢分"><a href="#错误的抢分" class="headerlink" title="错误的抢分"></a>错误的抢分</h2><p>噼里啪啦写一堆，才两分</p>
+<h2 id="函数定义域的讨论"><a href="#函数定义域的讨论" class="headerlink" title="函数定义域的讨论"></a>函数定义域的讨论</h2><p>基本每次都涉及得到</p>
+<h2 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h2><p>写每个答案之前都回想一下需不需要乘以倍数或者正负号</p>
+<h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><p>一挤就容易出错</p>
+<p>一步一步都写出来。。md算我求你了</p>
+<p>别想东想西的</p>
+<p>眼睛盯着草稿，一个数字一个字母地写出来</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115180800792.png" alt="image-20211115180800792"></p>
+<h2 id="快"><a href="#快" class="headerlink" title="快"></a>快</h2><p>我现在的基础没必要快</p>
+<p>踏踏实实把一字一句写好就能拿可观的分数</p>
+<p>最怕的是噼里啪啦写一堆，花的时间还多，最后没分</p>
+<p>（一快必犯错）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115180755792.png" alt="image-20211115180755792"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115180750043.png" alt="image-20211115180750043"></p>
+<p>答题卡上写大题的时候也不要快。。。</p>
+<p>求你了，一点一点来好嘛</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115181435092.png" alt="image-20211115181435092"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211115181221083.png" alt="image-20211115181221083"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>选择填空加起来56分</p>
+<p>还有94分在后面</p>
+<p>线性代数部分太陌生了</p>
+<p>不行的</p>
+<h1 id="12-3"><a href="#12-3" class="headerlink" title="12/3"></a>12/3</h1><p>实际运用到的应试技巧：</p>
+<p>先看简单的选项</p>
+<p>先行跳过难题</p>
+<p>果断点，就像sougen一样</p>
+<p>然后是草稿</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/72267a3ffe7c0a100c0189bfd6e617b.jpg" alt="72267a3ffe7c0a100c0189bfd6e617b"></p>
+<p>一开始草稿还工整，紧凑</p>
+<p>但是后来就拉了</p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><h3 id="x-0处不可导"><a href="#x-0处不可导" class="headerlink" title="x=0处不可导"></a>x=0处不可导</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211203094516336.png" alt="image-20211203094516336"></p>
+<p>答案：D</p>
+<p>很聪明，这次知道怎么处理绝对值了</p>
+<p>但是判断是否可导还差点功夫</p>
+<p>只知道导，而忽略了定义式</p>
+<h3 id="考研数学没有蠢题"><a href="#考研数学没有蠢题" class="headerlink" title="考研数学没有蠢题"></a>考研数学没有蠢题</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205155694.png" alt="image-20210922205155694"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205837030.png" alt="image-20210922205837030"></p>
+<p>当时我就奇怪，为什么一样的积分限要分开写</p>
+<p>mdddddd</p>
+<p>一个符号一个符号去比对！！！</p>
+<p>下次遇到这种情况</p>
+<p>比起一个劲的计算去撞</p>
+<p>观察省功夫得多</p>
+<p>然后是求积分的技巧</p>
+<p>构造出新的函数，然后一元去积那块区域</p>
+<h3 id="证不熟悉规律"><a href="#证不熟悉规律" class="headerlink" title="证不熟悉规律"></a>证不熟悉规律</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205213784.png" alt="image-20210922205213784"></p>
+<p>很可能是A</p>
+<p>利用BCD错误的选项来消耗我们的时间</p>
+<p>最好的应对就是拼命找BCD的反例</p>
+<p>而不是找符合规律的例子</p>
+<p>B:</p>
+<p>A=$\begin{pmatrix}1&amp;0 \0&amp;0\end{pmatrix}$</p>
+<p>B=$\begin{pmatrix}1&amp;1 \1&amp;1\end{pmatrix}$</p>
+<p>BA=$\begin{pmatrix}1&amp;0\1&amp;0\end{pmatrix}$</p>
+<p>$\begin{pmatrix} 1&amp;0&amp;1&amp;0\0&amp;0&amp;1&amp;0\end{pmatrix}$</p>
+<p>r=2&gt;$r(A)$</p>
+<p>D：</p>
+<p>$ \begin{pmatrix}0&amp;1&amp;1&amp;0\0&amp;0&amp;0&amp;0\ \end{pmatrix} $</p>
+<p>r=1</p>
+<p>对AB转置后</p>
+<p>$ \begin{pmatrix}0&amp;0&amp;1&amp;0\1&amp;0&amp;0&amp;0\ \end{pmatrix} $</p>
+<p>r=2</p>
+<h3 id="比较大小"><a href="#比较大小" class="headerlink" title="比较大小"></a>比较大小</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205053092.png" alt="image-20210922205053092"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205717126.png" alt="image-20210922205717126"></p>
+<p>对称区间，立刻反应到奇偶性</p>
+<p>这尼玛和做脑经急转弯一样</p>
+<p>还挺有意思</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/13/%E5%8E%86%E5%8F%B2-%E6%AC%A7%E6%B4%B2/" rel="prev" title="历史-欧洲">
+      <i class="fa fa-chevron-left"></i> 历史-欧洲
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/13/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E5%85%83%E5%AE%87%E5%AE%99/" rel="next" title="计算机-元宇宙">
+      计算机-元宇宙 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#11-12"><span class="nav-number">1.</span> <span class="nav-text">11&#x2F;12</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9"><span class="nav-number">1.1.</span> <span class="nav-text">选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4"><span class="nav-number">1.1.1.</span> <span class="nav-text">时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E7%A9%BA"><span class="nav-number">1.1.2.</span> <span class="nav-text">填空</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">大题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E7%9A%84%E6%8A%A2%E5%88%86"><span class="nav-number">1.3.</span> <span class="nav-text">错误的抢分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E5%9F%9F%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="nav-number">1.4.</span> <span class="nav-text">函数定义域的讨论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E7%AD%94%E6%A1%88"><span class="nav-number">1.5.</span> <span class="nav-text">最终答案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8D%89%E7%A8%BF"><span class="nav-number">1.6.</span> <span class="nav-text">草稿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB"><span class="nav-number">1.7.</span> <span class="nav-text">快</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.8.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-3"><span class="nav-number">2.</span> <span class="nav-text">12&#x2F;3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="nav-number">2.1.</span> <span class="nav-text">题目分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#x-0%E5%A4%84%E4%B8%8D%E5%8F%AF%E5%AF%BC"><span class="nav-number">2.1.1.</span> <span class="nav-text">x&#x3D;0处不可导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E6%B2%A1%E6%9C%89%E8%A0%A2%E9%A2%98"><span class="nav-number">2.1.2.</span> <span class="nav-text">考研数学没有蠢题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E4%B8%8D%E7%86%9F%E6%82%89%E8%A7%84%E5%BE%8B"><span class="nav-number">2.1.3.</span> <span class="nav-text">证不熟悉规律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F"><span class="nav-number">2.1.4.</span> <span class="nav-text">比较大小</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">296</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
