@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
   <meta name="description" content="Hello World">
@@ -173,6 +173,401 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/28/%E6%91%84%E5%83%8F%E5%A4%B4%E8%B0%83%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/28/%E6%91%84%E5%83%8F%E5%A4%B4%E8%B0%83%E8%AF%95/" class="post-title-link" itemprop="url">摄像头调试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-03-28 12:58:28" itemprop="dateCreated datePublished" datetime="2022-03-28T12:58:28+08:00">2022-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.108</span><br><span class="line"></span><br><span class="line">admin</span><br><span class="line">admin123</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><p>改到同一网段</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220128155246789.png" alt="image-20220128155246789"></p>
+<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="bean加载"><a href="#bean加载" class="headerlink" title="bean加载"></a>bean加载</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RestTemplate <span class="title">getRestTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DemoApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        restTemplate.getErrorHandler();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Python-环境变量配置"><a href="#Python-环境变量配置" class="headerlink" title="Python 环境变量配置"></a>Python 环境变量配置</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220129140058272.png" alt="image-20220129140058272"></p>
+<p>移动到windows app之前</p>
+<h2 id="RestTemplate请求"><a href="#RestTemplate请求" class="headerlink" title="RestTemplate请求"></a>RestTemplate请求</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.httpcomponents<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>httpclient<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.5.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RestTemplate <span class="title">getRestTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DemoApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String content = <span class="keyword">this</span>.restTemplate.getForObject(url, String.class);</span><br><span class="line">        System.out.println(content);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="RestTemplate-的不足"><a href="#RestTemplate-的不足" class="headerlink" title="RestTemplate 的不足"></a>RestTemplate 的不足</h2><p>遇到401没有返回的，直接抛出错误</p>
+<h2 id="使用Httpclient"><a href="#使用Httpclient" class="headerlink" title="使用Httpclient"></a>使用Httpclient</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String url = <span class="string">&quot;http://192.168.1.108/cgi-bin/configManager.cgi?action=getConfig&amp;name=VideoColor&quot;</span>;</span><br><span class="line">CloseableHttpClient client = HttpClients.createDefault();</span><br><span class="line">HttpGet httpGet = <span class="keyword">new</span> HttpGet(url);</span><br><span class="line">CloseableHttpResponse response = client.execute(httpGet);</span><br><span class="line">System.out.println(response);</span><br><span class="line">client.close();</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Digest返回值"><a href="#Digest返回值" class="headerlink" title="Digest返回值"></a>Digest返回值</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HttpResponseProxy&#123;HTTP/1.1 401 Unauthorized [WWW-Authenticate: Digest realm=&quot;Login to 12da33f08e1f5390345c18b8a00d2306&quot;, qop=&quot;auth&quot;, nonce=&quot;2008728054&quot;, opaque=&quot;3c84793e821a0123f6a75883c540f4f9e0af5590&quot;, Connection: close, Set-Cookie:secure; HttpOnly, CONTENT-LENGTH: 0] [Content-Length: 0,Chunked: false]&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtsp:<span class="comment">//admin:admin123@192.168.1.108:554/cam/realmonitor?channel=1&amp;subtype=0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="PostConstruct"><a href="#PostConstruct" class="headerlink" title="@PostConstruct"></a>@PostConstruct</h2><p>首先介绍一下它的用途: 被注解的方法，在对象加载完依赖注入后执行。</p>
+<h2 id="Async"><a href="#Async" class="headerlink" title="@Async"></a>@Async</h2><p>异步while循环监听</p>
+<h2 id="静态资源访问"><a href="#静态资源访问" class="headerlink" title="静态资源访问"></a>静态资源访问</h2><p>第一步：配置WebMvcConfigurationSupport</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/spring-boot-static-resource">可参考</a></p>
+<p>第二步：路径</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/js/video/flv.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220208153430162.png" alt="image-20220208153430162"></p>
+<h2 id="input获取value"><a href="#input获取value" class="headerlink" title="input获取value"></a>input获取value</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> videoPath = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;video_path&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> path = videoPath.value;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="websocket-endpoint"><a href="#websocket-endpoint" class="headerlink" title="websocket endpoint"></a>websocket endpoint</h2><h2 id="从配置文件获取值"><a href="#从配置文件获取值" class="headerlink" title="从配置文件获取值"></a>从配置文件获取值</h2><p><code>@Value($&#123;camera.url&#125;)</code></p>
+<p>application.properties</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">camera.url = http://192.168.0.108</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="jar包访问外部静态资源"><a href="#jar包访问外部静态资源" class="headerlink" title="jar包访问外部静态资源"></a>jar包访问外部静态资源</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dh.live.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Cola</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> 静态资源访问</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2022/1/23</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@email</span> 1020151695@qq.com</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebResoucesConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurationSupport</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String[] CLASSPATH_RESOURCE_LOCATIONS = &#123;</span><br><span class="line">                    <span class="string">&quot;classpath:/META-INF/resources/&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;classpath:/resources/&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;classpath:/static/&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;classpath:/templates/&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;classpath:/public/&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;classpath:/custom/&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;file:/root/camera/video/&quot;</span></span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/**&quot;</span>)</span><br><span class="line">                .addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS)</span><br><span class="line">                .setCachePeriod(<span class="number">3000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Linux下文件排序不同"><a href="#Linux下文件排序不同" class="headerlink" title="Linux下文件排序不同"></a>Linux下文件排序不同</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 递增</span></span><br><span class="line">File[] getFilesList()&#123;</span><br><span class="line">       File file = <span class="keyword">new</span> File(videoDir);</span><br><span class="line">       File[] filesNames = file.listFiles();</span><br><span class="line">       Arrays.sort(filesNames, <span class="keyword">new</span> Comparator&lt;File&gt;() &#123;</span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(File f1, File f2)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">long</span> diff = f1.lastModified() - f2.lastModified();</span><br><span class="line">               <span class="keyword">if</span> (diff &gt; <span class="number">0</span>)</span><br><span class="line">                   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">               <span class="keyword">else</span> <span class="keyword">if</span> (diff == <span class="number">0</span>)</span><br><span class="line">                   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">                   <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//如果 if 中修改为 返回-1 同时此处修改为返回 1  排序就会是递减</span></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br><span class="line">       <span class="keyword">return</span> filesNames;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="流媒体"><a href="#流媒体" class="headerlink" title="流媒体"></a>流媒体</h1><h2 id="Digest认证"><a href="#Digest认证" class="headerlink" title="Digest认证"></a>Digest认证</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220128165158781.png" alt="image-20220128165158781"></p>
+<p>别的参数postman会自动获取</p>
+<p>测试接口：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.1.108/cgi-bin/configManager.cgi?action=getConfig&amp;name=VideoColor</span><br></pre></td></tr></table></figure>
+
+
+
+<p>公开流</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtsp://192.168.1.108:554/cam/realmonitor?channel=1&amp;subtype=0</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="Digest-认证的Java实现"><a href="#Digest-认证的Java实现" class="headerlink" title="Digest 认证的Java实现"></a>Digest 认证的Java实现</h2><p>postman可以直接做</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220209163912533.png" alt="image-20220209163912533"></p>
+<p>有用户名和密码就行</p>
+<p>Java也可以直接做</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DigestAuthUtils</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 加密字段</span></span><br><span class="line">    String realm;</span><br><span class="line">    String qop;</span><br><span class="line">    String nonce;</span><br><span class="line">    String opaque;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HttpResponse <span class="title">get</span><span class="params">(String url, String username, String password)</span> <span class="keyword">throws</span> IOException, AuthenticationException </span>&#123;</span><br><span class="line">        <span class="comment">// 获取digest</span></span><br><span class="line">        CloseableHttpClient client = HttpClients.createDefault();</span><br><span class="line">        HttpGet httpGet = <span class="keyword">new</span> HttpGet(url);</span><br><span class="line">        HttpResponse response = client.execute(httpGet);</span><br><span class="line">        getDigestInfoFromResponse(response);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 利用digest信息二次发送请求</span></span><br><span class="line">        UsernamePasswordCredentials creds</span><br><span class="line">                = <span class="keyword">new</span> UsernamePasswordCredentials(username, password);</span><br><span class="line">        DigestScheme digestScheme = buildDigestAuth();</span><br><span class="line">        httpGet = <span class="keyword">new</span> HttpGet(url);</span><br><span class="line">        httpGet.addHeader(digestScheme.authenticate(creds, httpGet, <span class="keyword">null</span>));</span><br><span class="line">        response = client.execute(httpGet);</span><br><span class="line">        <span class="keyword">return</span> response;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getDigestInfoFromResponse</span><span class="params">(HttpResponse response)</span> </span>&#123;</span><br><span class="line">        HeaderElement[] elements = response.getAllHeaders()[<span class="number">0</span>].getElements();</span><br><span class="line">        realm = getValueFromHeader(elements[<span class="number">0</span>].toString());</span><br><span class="line">        qop = getValueFromHeader(elements[<span class="number">1</span>].toString());</span><br><span class="line">        nonce = getValueFromHeader(elements[<span class="number">2</span>].toString());</span><br><span class="line">        opaque = getValueFromHeader(elements[<span class="number">3</span>].toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">getValueFromHeader</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> begin_index = str.indexOf(<span class="string">&quot;=&quot;</span>) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> str.substring(begin_index, str.length());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DigestScheme <span class="title">buildDigestAuth</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        DigestScheme digestScheme = <span class="keyword">new</span> DigestScheme();</span><br><span class="line">        digestScheme.overrideParamter(<span class="string">&quot;realm&quot;</span>, realm);</span><br><span class="line">        digestScheme.overrideParamter(<span class="string">&quot;qop&quot;</span>, qop);</span><br><span class="line">        digestScheme.overrideParamter(<span class="string">&quot;nonce&quot;</span>, nonce);</span><br><span class="line">        digestScheme.overrideParamter(<span class="string">&quot;opaque&quot;</span>, opaque);</span><br><span class="line">        <span class="keyword">return</span> digestScheme;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showContent</span><span class="params">(HttpResponse response)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(response.getEntity().getContent()));</span><br><span class="line">        StringBuffer sb = <span class="keyword">new</span> StringBuffer(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        String line = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        String NL = System.getProperty(<span class="string">&quot;line.separator&quot;</span>);</span><br><span class="line">        <span class="keyword">while</span> ((line = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            sb.append(line + NL);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sb.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="rtsp账号密码验证"><a href="#rtsp账号密码验证" class="headerlink" title="rtsp账号密码验证"></a>rtsp账号密码验证</h2><p><code>url</code> 中体现就行</p>
+<h2 id="TCP一样失真"><a href="#TCP一样失真" class="headerlink" title="TCP一样失真"></a>TCP一样失真</h2><h2 id="buffer大小设置"><a href="#buffer大小设置" class="headerlink" title="buffer大小设置"></a>buffer大小设置</h2><p>太大，IO流的操作会引起卡顿，延迟会拉得很严重</p>
+<p>太小，一帧存不下就会失真，但可以减小延迟</p>
+<h2 id="flush"><a href="#flush" class="headerlink" title="flush"></a>flush</h2><p>方法是用来刷新缓冲区的，即将缓冲区中的数据立刻写入文件，同时清空缓冲区，不需要是被动的等待输出缓冲区写入。</p>
+<p>一般情况下，文件关闭后会自动刷新缓冲区，但有时你需要在关闭前刷新它，这时就可以使用 flush() 方法。</p>
+<h2 id="flush-配置"><a href="#flush-配置" class="headerlink" title="flush 配置"></a>flush 配置</h2><p>不配置的话会报错</p>
+<h2 id="解决间隔的卡顿问题"><a href="#解决间隔的卡顿问题" class="headerlink" title="解决间隔的卡顿问题"></a>解决间隔的卡顿问题</h2><p>减小buffer</p>
+<p>卡一下，但是视频都是有推过来的</p>
+<p>可以拉进度条到前边</p>
+<h2 id="移动失真问题"><a href="#移动失真问题" class="headerlink" title="移动失真问题"></a>移动失真问题</h2><h2 id="grabber和recorder-的参数设置"><a href="#grabber和recorder-的参数设置" class="headerlink" title="grabber和recorder 的参数设置"></a>grabber和recorder 的参数设置</h2><p>grabber</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">grabber = FFmpegFrameGrabber.createDefault(rtsp);</span><br><span class="line">         grabber.setOption(<span class="string">&quot;rtsp_transport&quot;</span>, <span class="string">&quot;udp&quot;</span>);</span><br><span class="line">         grabber.setFrameRate(<span class="number">25</span>);</span><br><span class="line">         grabber.setVideoBitrate(<span class="number">2500000</span>);</span><br><span class="line">         <span class="comment">//grabber.setOption(&quot;buffer_size&quot;, &quot;1024000&quot;);</span></span><br><span class="line">         grabber.setOption(<span class="string">&quot;buffer_size&quot;</span>, <span class="string">&quot;300000&quot;</span>);</span><br><span class="line">         grabber.setPixelFormat(avutil.AV_PIX_FMT_YUV420P);</span><br><span class="line">         grabber.start();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>recorder</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">recorder = <span class="keyword">new</span> FFmpegFrameRecorder(outputStream, grabber.getImageWidth(), grabber.getImageHeight(), grabber.getAudioChannels());</span><br><span class="line">         recorder.setVideoCodec(avcodec.AV_CODEC_ID_H264);</span><br><span class="line">         recorder.setFormat(<span class="string">&quot;flv&quot;</span>);</span><br><span class="line">         recorder.setInterleaved(<span class="keyword">false</span>);</span><br><span class="line">         recorder.setVideoOption(<span class="string">&quot;tune&quot;</span>, <span class="string">&quot;zerolatency&quot;</span>);</span><br><span class="line">         recorder.setVideoOption(<span class="string">&quot;preset&quot;</span>, <span class="string">&quot;ultrafast&quot;</span>);</span><br><span class="line">         recorder.setVideoOption(<span class="string">&quot;crf&quot;</span>, <span class="string">&quot;26&quot;</span>);</span><br><span class="line">         recorder.setVideoOption(<span class="string">&quot;threads&quot;</span>, <span class="string">&quot;1&quot;</span>);</span><br><span class="line">         <span class="comment">//帧率25</span></span><br><span class="line">         recorder.setFrameRate(grabber.getFrameRate());</span><br><span class="line"><span class="comment">// 设置gop,与帧率相同，相当于间隔1秒chan&#x27;s一个关键帧</span></span><br><span class="line">         recorder.setGopSize(<span class="number">25</span>);</span><br><span class="line"><span class="comment">// 码率500kb/s</span></span><br><span class="line">         recorder.setVideoBitrate(grabber.getVideoBitrate());</span><br><span class="line">         recorder.setVideoCodecName(<span class="string">&quot;libx264&quot;</span>);</span><br><span class="line">         recorder.setPixelFormat(avutil.AV_PIX_FMT_YUV420P);</span><br><span class="line">         recorder.setAudioCodecName(<span class="string">&quot;aac&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="比特率"><a href="#比特率" class="headerlink" title="比特率"></a>比特率</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 500 kb/s</span><br><span class="line">500*1000</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="websocket设置"><a href="#websocket设置" class="headerlink" title="websocket设置"></a>websocket设置</h2><h2 id="线程操作"><a href="#线程操作" class="headerlink" title="线程操作"></a>线程操作</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">             ...</span><br><span class="line">         &#125;).start();</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h2><p><code>@Async</code></p>
+<h2 id="流媒体后端传输视频"><a href="#流媒体后端传输视频" class="headerlink" title="流媒体后端传输视频"></a>流媒体后端传输视频</h2><p>往outputStream里放东西</p>
+<p>JavaCV的recorder可以完成</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (isStart &amp;&amp; (frame = grabber.grabFrame()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">// grab的速度是够快的</span></span><br><span class="line">                <span class="comment">// record传到outputStream</span></span><br><span class="line">                recorder.record(frame);</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="流媒体前端"><a href="#流媒体前端" class="headerlink" title="流媒体前端"></a>流媒体前端</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/flv.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> videoElement = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;videoElement&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> videoPath = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;video_path&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">resetUrl</span>(<span class="params">url</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (flvjs.isSupported()) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> flvPlayer = flvjs.createPlayer(&#123;</span></span><br><span class="line"><span class="javascript">                <span class="attr">type</span>: <span class="string">&#x27;flv&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                <span class="attr">isLive</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                <span class="attr">url</span>: url,</span></span><br><span class="line"><span class="javascript">            &#125;);</span></span><br><span class="line"><span class="javascript">            flvPlayer.attachMediaElement(videoElement);</span></span><br><span class="line"><span class="javascript">            flvPlayer.load();</span></span><br><span class="line"><span class="javascript">            flvPlayer.play()</span></span><br><span class="line"><span class="javascript">            flv_start();</span></span><br><span class="line"><span class="javascript">        &#125;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">flv_start</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        videoElement.play();</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">changePath</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> path = videoPath.value</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(path)</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (path === <span class="literal">null</span> || path === <span class="string">&quot;&quot;</span>) &#123;</span></span><br><span class="line"><span class="javascript">            alert(<span class="string">&quot;请输入地址&quot;</span>)</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span></span></span><br><span class="line"><span class="javascript">        &#125;</span></span><br><span class="line"><span class="javascript">        $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">            <span class="attr">type</span>: <span class="string">&quot;POST&quot;</span>,</span></span><br><span class="line"><span class="javascript">            <span class="attr">url</span>: <span class="string">&quot;/putVideo&quot;</span>,</span></span><br><span class="line"><span class="javascript">            <span class="attr">data</span>: &#123;<span class="attr">path</span>: path&#125;,</span></span><br><span class="line"><span class="javascript">            <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span> (result.code === <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="javascript">                    resetUrl(<span class="string">&quot;/getVideo?id=&quot;</span> + result.data)</span></span><br><span class="line"><span class="javascript">                &#125;</span></span><br><span class="line"><span class="javascript">            &#125;,</span></span><br><span class="line"><span class="javascript">            <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                alert(<span class="string">&quot;请求出错&quot;</span>)</span></span><br><span class="line"><span class="javascript">            &#125;</span></span><br><span class="line"><span class="javascript">        &#125;)</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="解码"><a href="#解码" class="headerlink" title="解码"></a>解码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input #0, rtsp, from &#x27;rtsp://admin:admin123..&#x27;</span><br><span class="line">Stream #0:0: Video: h264 (High), yuvj420p(pc, bt470bg/bt470bg/bt709, progressive), 704x576, 25 fps, 25 tbr, 90k tbn, 50 tbc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Output</span><br><span class="line">Stream #0:0: Video: mpeg4</span><br></pre></td></tr></table></figure>
+
+<p>编码格式是h264</p>
+<p>视频容器是mp4</p>
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Has setFormat() been called?)</span><br></pre></td></tr></table></figure>
+
+<p>不能调用setFormat()</p>
+<h2 id="视频和直播视频流"><a href="#视频和直播视频流" class="headerlink" title="视频和直播视频流"></a>视频和直播视频流</h2><p>直播视频流卡，但是视频不卡</p>
+<h1 id="云台移动"><a href="#云台移动" class="headerlink" title="云台移动"></a>云台移动</h1><h2 id="up"><a href="#up" class="headerlink" title="up"></a>up</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.1.108/cgi-bin/ptz.cgi?action=moveRelatively&amp;channel=1&amp;arg1=0&amp;arg2=0.05&amp;arg3=0</span><br></pre></td></tr></table></figure>
+
+<p>相对变倍量，zoom</p>
+<p>没事不去动这个量</p>
+<h1 id="云台变焦"><a href="#云台变焦" class="headerlink" title="云台变焦"></a>云台变焦</h1><h1 id="云部署"><a href="#云部署" class="headerlink" title="云部署"></a>云部署</h1><h2 id="内网的机器"><a href="#内网的机器" class="headerlink" title="内网的机器"></a>内网的机器</h2><p>路由器配置ddns后</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220210101319145.png" alt="image-20220210101319145"></p>
+<h2 id="公网IP"><a href="#公网IP" class="headerlink" title="公网IP"></a>公网IP</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220209104916940.png" alt="image-20220209104916940"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220209104945261.png" alt="image-20220209104945261"></p>
+<h2 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220209105703676.png" alt="image-20220209105703676"></p>
+<p>有公网IP服务器，自行搭建内网穿透，一般可以考虑开源的如：ngrok、frp。</p>
+<p>无公网IP，一般是用现有提供的一些内网穿透服务，类似如：nat123全端口P2P穿透。等。</p>
+<h2 id="DDNS"><a href="#DDNS" class="headerlink" title="DDNS"></a>DDNS</h2><p>就是机器会自动获取它自己最新的IP</p>
+<p>然后更新到DNS服务器</p>
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>视频监控、监控存储、监控回放</p>
+<p>云台控制</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220209143014527.png" alt="image-20220209143014527"></p>
+<h1 id="JavaCV"><a href="#JavaCV" class="headerlink" title="JavaCV"></a>JavaCV</h1><h2 id="recorder-stop"><a href="#recorder-stop" class="headerlink" title="recorder.stop()"></a>recorder.stop()</h2><p>当我们在录制文件的时候，一定要保证stop()方法被调用，因为stop里面包含了写出文件头的操作，如果没有调用stop就会导致录制的文件损坏，无法被识别或无法播放。</p>
+<h2 id="pixel-format"><a href="#pixel-format" class="headerlink" title="pixel format"></a>pixel format</h2><p>该参数并不像ffmpeg那样表示像素格式，这里只表示原生和灰度图，其中pixelFormat=1表示原生，pixelFormat=0表示灰度图。</p>
+<h2 id="JavaCV太大"><a href="#JavaCV太大" class="headerlink" title="JavaCV太大"></a>JavaCV太大</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220218101018839.png" alt="image-20220218101018839"></p>
+<p>下面进行阉割</p>
+<p>pom</p>
+<p>Windows</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javacv<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javacpp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>opencv<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.2-1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">classifier</span>&gt;</span>windows-x86_64<span class="tag">&lt;/<span class="name">classifier</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>openblas<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.3.7-1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">classifier</span>&gt;</span>windows-x86_64<span class="tag">&lt;/<span class="name">classifier</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ffmpeg<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.2.1-1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">classifier</span>&gt;</span>windows-x86_64<span class="tag">&lt;/<span class="name">classifier</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Linux</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javacv<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javacpp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>opencv<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.2-1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">classifier</span>&gt;</span>linux-x86_64<span class="tag">&lt;/<span class="name">classifier</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>openblas<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.3.7-1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">classifier</span>&gt;</span>linux-x86_64<span class="tag">&lt;/<span class="name">classifier</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ffmpeg<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.2.1-1.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">classifier</span>&gt;</span>linux-x86_64<span class="tag">&lt;/<span class="name">classifier</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="监控存储"><a href="#监控存储" class="headerlink" title="监控存储"></a>监控存储</h1><p>现在的解决方案是：</p>
+<p>把流媒体切片保存在服务器</p>
+<p>然后根据请求的时段获取若干切片</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="NVR"><a href="#NVR" class="headerlink" title="NVR"></a>NVR</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220215134809280.png" alt="image-20220215134809280"></p>
+<h3 id="IP-SAN"><a href="#IP-SAN" class="headerlink" title="IP-SAN"></a>IP-SAN</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220215135118485.png" alt="image-20220215135118485"></p>
+<h2 id="HLS"><a href="#HLS" class="headerlink" title="HLS"></a>HLS</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220215180045023.png" alt="image-20220215180045023"></p>
+<p>至于为什么要用 TS 而不是 MP4</p>
+<p>这是因为两个 TS 片段可以无缝拼接，播放器能连续播放</p>
+<p>而 MP4 文件由于编码方式的原因，两段 MP4 不能无缝拼接</p>
+<p>播放器连续播放两个 MP4 文件会出现破音和画面间断，影响用户体验。</p>
+<h2 id="ffmpeg怎么读"><a href="#ffmpeg怎么读" class="headerlink" title="ffmpeg怎么读"></a>ffmpeg怎么读</h2><p>[‘efef’empeɡ]</p>
+<h2 id="ffmpeg-rtsp保存为ts"><a href="#ffmpeg-rtsp保存为ts" class="headerlink" title="ffmpeg rtsp保存为ts"></a>ffmpeg rtsp保存为ts</h2><p>Windows</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg  -rtsp_transport udp -i rtsp://admin:admin123@192.168.1.108:554 -vcodec copy -f segment -segment_time 10  -segment_atclocktime 1 -strftime 1 &quot;G:\Project\智慧灯杆\摄像头\dahua\live\target\classes\static\video%Y-%m-%d_%H-%M-%S.ts&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Linux</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg  -rtsp_transport udp -i rtsp://admin:admin123@192.168.1.108:554 -vcodec copy -f segment -segment_time 10  -segment_atclocktime 1 -strftime 1 &quot;/root/camera/video/video%Y-%m-%d_%H-%M-%S.ts&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="ffmpeg视频时长"><a href="#ffmpeg视频时长" class="headerlink" title="ffmpeg视频时长"></a>ffmpeg视频时长</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while (status &amp;&amp; (frame = grabber.grabFrame()) != null) &#123;</span><br><span class="line">          recorder.record(frame);</span><br><span class="line">          long nowTime = System.currentTimeMillis(); //此处为视频时长，根据需求设定自己的值</span><br><span class="line">         if (nowTime - beginTime &gt;= 60*1000) break;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>ffmpeg的视频时长也会出错！</p>
+<p>同时运行两个ffmpeg时，视频时长显示错误 ！</p>
+<p>说明，超帧率的帧数会导致视频时长显示错误</p>
+<h2 id="视频时间不对"><a href="#视频时间不对" class="headerlink" title="视频时间不对"></a>视频时间不对</h2><p>while写的话，1s内塞了不止25帧的话，时间就对不上了</p>
+<p>右上角看似是过了一秒</p>
+<h2 id="ffmpeg分片"><a href="#ffmpeg分片" class="headerlink" title="ffmpeg分片"></a>ffmpeg分片</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i test.avi -c:v libx264 -c:a aac  -f hls test.m3u8</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="m3u8"><a href="#m3u8" class="headerlink" title="m3u8"></a>m3u8</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// #开头的字符串要么是注释，要么就是标签</span><br><span class="line"></span><br><span class="line">// 表明该文件是一个 m3u8 文件。每个 M3U 文件必须将该标签放置在第一行。</span><br><span class="line">#EXTM3U</span><br><span class="line"></span><br><span class="line">// 表示 HLS 的协议版本号，该标签与流媒体的兼容性相关。</span><br><span class="line">#EXT-X-VERSION:3</span><br><span class="line"></span><br><span class="line">// 表示每个视频分段最大的时长</span><br><span class="line">#EXT-X-TARGETDURATION:8</span><br><span class="line"></span><br><span class="line">// 表示播放列表第一个 URL 片段文件的序列号。</span><br><span class="line">#EXT-X-MEDIA-SEQUENCE:13</span><br><span class="line"></span><br><span class="line">// 表示其后 URL 指定的媒体片段时长（单位为秒）。</span><br><span class="line">// 时间偏大的话，画面静止，直到下一视频段</span><br><span class="line">#EXTINF:8.341667,</span><br><span class="line">test13.ts</span><br><span class="line">#EXTINF:8.341667,</span><br><span class="line">test14.ts</span><br><span class="line">#EXTINF:8.341667,</span><br><span class="line">test15.ts</span><br><span class="line">#EXTINF:7.340667,</span><br><span class="line">test16.ts</span><br><span class="line">#EXTINF:5.372033,</span><br><span class="line">test17.ts</span><br><span class="line"></span><br><span class="line">// 表明 m3u8 文件的结束。</span><br><span class="line">#EXT-X-ENDLIST</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>存的视频文件有问题</p>
+<h2 id="m3u8前端"><a href="#m3u8前端" class="headerlink" title="m3u8前端"></a>m3u8前端</h2><p>需要的<code>js</code>文件记得引入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>videojs视频播放DEMO<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--videojs7.6.6--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;/video-js.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/video.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--&lt;script src=&quot;videojs-contrib-hls.js&quot;&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>视频播放<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span></span></span><br><span class="line"><span class="tag">        <span class="attr">id</span>=<span class="string">&quot;example_video_1&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;video-js vjs-default-skin&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">preload</span>=<span class="string">&quot;auto&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">poster</span>=<span class="string">&quot;http://vjs.zencdn.net/v/oceans.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;./test.m3u8&quot;</span> <span class="attr">type</span>=<span class="string">&quot;application/x-mpegURL&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> player = videojs(<span class="string">&quot;example_video_1&quot;</span>, &#123;</span></span><br><span class="line"><span class="javascript">        <span class="attr">muted</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">        <span class="attr">controls</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">        <span class="attr">height</span>: <span class="number">300</span>,</span></span><br><span class="line"><span class="javascript">        <span class="attr">width</span>: <span class="number">400</span>,</span></span><br><span class="line"><span class="javascript">    &#125;);</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="视频编码"><a href="#视频编码" class="headerlink" title="视频编码"></a>视频编码</h1><h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p><strong>“所有的视频都一定要编码吗？”</strong> </p>
+<p>答案是肯定的。相信查看其他人的博客的理由是一样的：</p>
+<p><strong>不经过压缩的视频太大！在网络传输时对带宽的要求和压力太大！</strong></p>
+<h2 id="封装格式"><a href="#封装格式" class="headerlink" title="封装格式"></a>封装格式</h2><p>如：MP4、FLV、AVI</p>
+<p>编码格式一样</p>
+<p>直接改后缀名就可以</p>
+<p>需要重新编码的情况是编码格式不一致</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220217104343024.png" alt="image-20220217104343024"></p>
+<h2 id="编码格式"><a href="#编码格式" class="headerlink" title="编码格式"></a>编码格式</h2><p>如：H.264</p>
+<h2 id="码率"><a href="#码率" class="headerlink" title="码率"></a>码率</h2><h2 id="视频压缩"><a href="#视频压缩" class="headerlink" title="视频压缩"></a>视频压缩</h2><p>帧内压缩：</p>
+<p>丢弃颜色细节</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220217104631215.png" alt="image-20220217104631215"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220217104730660.png" alt="image-20220217104730660"></p>
+<p>如果是画面复杂，则压缩之后会失真（信息量太大）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220217105010584.png" alt="image-20220217105010584"></p>
+<h2 id="GOP"><a href="#GOP" class="headerlink" title="GOP"></a>GOP</h2><p>Group Of Picture</p>
+<h2 id="CBR"><a href="#CBR" class="headerlink" title="CBR"></a>CBR</h2><p>固定码率</p>
+<h2 id="VBR"><a href="#VBR" class="headerlink" title="VBR"></a>VBR</h2><p>根据实际画面分配不同的码率</p>
+<h2 id="CRF"><a href="#CRF" class="headerlink" title="CRF"></a>CRF</h2><p>比VBR更优，但是最后生成出来的文件大小不可控</p>
+<h2 id="编码器"><a href="#编码器" class="headerlink" title="编码器"></a>编码器</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220217105454207.png" alt="image-20220217105454207"></p>
+<p>x264 CPU编码器相对好</p>
+<h2 id="MPEG-PS"><a href="#MPEG-PS" class="headerlink" title="MPEG-PS"></a>MPEG-PS</h2><p>传送流（TS：TransportStream）和节目流（PS：ProgramStream）</p>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="新分支"><a href="#新分支" class="headerlink" title="新分支"></a>新分支</h2><p>直接在当前基础上建一个新的分支，而不是完全空的</p>
+<h1 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h1><h2 id="句柄"><a href="#句柄" class="headerlink" title="句柄"></a>句柄</h2><p>句柄就是个数字，一般和当前系统下的整数的位数一样，比如32bit系统下就是4个字节。</p>
+<p>这个数字是一个对象的唯一标示，和对象一一对应。</p>
+<p>这个对象可以是一个块内存，一个资源，或者一个服务的context（如 socket，thread）等等。</p>
+<p>这样说有点抽象，举个例子。door handle 是指门把手，通过门把手可以去控制门，但 door handle 并非 door 本身，只是一个中间媒介。又比如 knife handle 是刀柄，通过刀柄可以使用刀。</p>
+<p>跟 door handle 类似，我们可以用 file handle 去操作 file, 但 file handle 并非 file 本身。这个 file handle 就被翻译成文件句柄，同理还有各种资源句柄。</p>
+<h1 id="Intellij"><a href="#Intellij" class="headerlink" title="Intellij"></a>Intellij</h1><h2 id="intellij-子模块（待补充）"><a href="#intellij-子模块（待补充）" class="headerlink" title="intellij 子模块（待补充）"></a>intellij 子模块（待补充）</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">module</span>&gt;</span>auth<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220208143559167.png" alt="image-20220208143559167"></p>
+<h2 id="intellij-导入其他子模块的工具类"><a href="#intellij-导入其他子模块的工具类" class="headerlink" title="intellij 导入其他子模块的工具类"></a>intellij 导入其他子模块的工具类</h2><p>不设置的话</p>
+<p>导不进的</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.dh<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>auth<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/1 * * * * . /root/camera/sh/startFFmpeg.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="定时清理录像和m3u8"><a href="#定时清理录像和m3u8" class="headerlink" title="定时清理录像和m3u8"></a>定时清理录像和m3u8</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> +7表示清理指定目录7天前的文件</span></span><br><span class="line">find /root/camera/video/ -mtime +7 -name &quot;*.*&quot; -exec rm -Rf &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="启动ffmpeg推流"><a href="#启动ffmpeg推流" class="headerlink" title="启动ffmpeg推流"></a>启动ffmpeg推流</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg_status=`pgrep ffmpeg`</span><br><span class="line">stop=&quot;&quot;</span><br><span class="line">if [ $ffmpeg_status == $stop ]</span><br><span class="line">then</span><br><span class="line">ffmpeg  -rtsp_transport udp -i rtsp://admin:admin123@192.168.1.108:554 -vcodec copy -f segment -segment_time 10  -segment_atclocktime 1 -strftime 1 &quot;/root/camera/video/video%Y-%m-%d_%H-%M-%S.ts&quot;</span><br><span class="line"></span><br><span class="line">else</span><br><span class="line">echo &quot;ffmpeg已启动&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -2674,111 +3069,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/13/vue-admin-demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/13/vue-admin-demo/" class="post-title-link" itemprop="url">vue-admin-demo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-13 20:38:08" itemprop="dateCreated datePublished" datetime="2022-02-13T20:38:08+08:00">2022-02-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>demo</p>
-<p><a target="_blank" rel="noopener" href="https://element.eleme.cn/#/en-US/component/container">文档</a></p>
-<p>Ps：</p>
-<p>用的框架是<code>Element</code></p>
-<p><code>vue-element-admin</code>只是使用<code>element</code>框架，做出来的一个成品</p>
-<p>所以，要查文档，应该到<code>element</code>的文档去查</p>
-<h2 id="Vue创建项目"><a href="#Vue创建项目" class="headerlink" title="Vue创建项目"></a>Vue创建项目</h2><p>不要用那个eslint</p>
-<p>别忘了router</p>
-<h2 id="Vue路由"><a href="#Vue路由" class="headerlink" title="Vue路由"></a>Vue路由</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  <span class="attr">routes</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;Layout&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: Layout,</span><br><span class="line">      <span class="comment">// 嵌套路由</span></span><br><span class="line">      <span class="attr">children</span>: [&#123;</span><br><span class="line">        <span class="comment">// 这里不设置值，是把main作为默认页面</span></span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>, </span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;Main&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: Main</span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;User&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: User</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Vue引入框架"><a href="#Vue引入框架" class="headerlink" title="Vue引入框架"></a>Vue引入框架</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install element</span><br></pre></td></tr></table></figure>
-
-<p>main.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加element-ui</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span>;</span><br><span class="line">Vue.use(ElementUI);</span><br></pre></td></tr></table></figure>
-
-<p>main中引入的，全局可以直接用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-container&gt;</span><br><span class="line">    &lt;el-header&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        I am Header</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    &lt;/el-header&gt;</span><br><span class="line"></span><br><span class="line">    &lt;el-container&gt;</span><br><span class="line">      &lt;el-aside&gt;</span><br><span class="line">        &lt;p&gt;aside&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;aside1&lt;/p&gt;</span><br><span class="line">      &lt;/el-aside&gt;</span><br><span class="line">      &lt;el-main&gt;</span><br><span class="line">        &lt;!-- 主界面的路由，在index.js --&gt;</span><br><span class="line">        &lt;router-view/&gt;</span><br><span class="line">      &lt;/el-main&gt;</span><br><span class="line">    &lt;/el-container&gt;</span><br><span class="line">  &lt;/el-container&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>index.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只是部分相关代码</span></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Layout&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: Layout,</span><br><span class="line">    <span class="attr">children</span>:[&#123;</span><br><span class="line">      <span class="attr">path</span>:<span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>:<span class="string">&#x27;Main&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>:Main</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;User&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: User</span><br><span class="line">      &#125;</span><br><span class="line">      ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="Vue-preset"><a href="#Vue-preset" class="headerlink" title="Vue preset"></a>Vue preset</h2><p>vue 创建项目时的预设文件</p>
-<p><code>.vuerc</code>没有前缀</p>
-<p>位置在<code>/User/用户名/.vuerc</code></p>
-<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220213203837247.png" alt="image-20220213203837247"></p>
-<h1 id="Vue颜色"><a href="#Vue颜色" class="headerlink" title="Vue颜色"></a>Vue颜色</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 背景，淡青色的那种</span><br><span class="line">background-color: aliceblue;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="颜色搭配"><a href="#颜色搭配" class="headerlink" title="颜色搭配"></a>颜色搭配</h2><h1 id="Vue事件"><a href="#Vue事件" class="headerlink" title="Vue事件"></a>Vue事件</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-menu-item v-on:click=&quot;toWeatherPage()&quot;&gt;&lt;/el-menu-item&gt;</span><br><span class="line">...</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  ...</span><br><span class="line">  methods:&#123;</span><br><span class="line">    toWeatherPage :function()&#123;</span><br><span class="line">      this.$router.push(&#123;path:&#x27;/weather&#x27;&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2850,7 +3140,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">306</span>
+          <span class="site-state-item-count">301</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

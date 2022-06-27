@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
   <meta name="description" content="Hello World">
@@ -173,85 +173,6 @@
 
           <div class="content index posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" class="post-title-link" itemprop="url">最短路径</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-08-05 12:30:39" itemprop="dateCreated datePublished" datetime="2021-08-05T12:30:39+08:00">2021-08-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h2><p>核心：</p>
-<p>建立两个集合，分别是<strong>已确认的最短路径</strong>和<strong>待确认的点</strong></p>
-<p>每一趟比较可以确认一个点</p>
-<p>每确认一个点，就可以更新一次距离表</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008154158216.png" alt="image-20211008154158216"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211125154309260.png" alt="image-20211125154309260"></p>
-<h2 id="Floyd"><a href="#Floyd" class="headerlink" title="Floyd"></a>Floyd</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012094249769.png" alt="image-20211012094249769"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210805124622681.png" alt="image-20210805124622681"></p>
-<p>建立邻接矩阵，表示各点之间的初始关系</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210805124655392.png" alt="image-20210805124655392"></p>
-<p>加入中间点1和2</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012155133034.png" alt="image-20211012155133034"></p>
-<p>加入中间点3和4</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012155058494.png" alt="image-20211012155058494"></p>
-<p>关于带路径的Floyd，可以参考21年914的真题–最后一道大题</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -4680,6 +4601,107 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/30/%E5%93%B2%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/30/%E5%93%B2%E5%AD%A6/" class="post-title-link" itemprop="url">哲学</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-30 21:53:46" itemprop="dateCreated datePublished" datetime="2021-07-30T21:53:46+08:00">2021-07-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="否定之否定规律"><a href="#否定之否定规律" class="headerlink" title="否定之否定规律"></a>否定之否定规律</h2><p>两次否定，三个阶段，回到自己，循环往复，前进上升</p>
+<p>种子，长成果实</p>
+<p>腐烂，有更多种子，更好地继续生长，循环往复</p>
+<p>马克思以此原理提出：公有制—私有制—最终仍将回到公有制</p>
+<h2 id="矛盾的同一性和斗争性"><a href="#矛盾的同一性和斗争性" class="headerlink" title="矛盾的同一性和斗争性"></a>矛盾的同一性和斗争性</h2><h3 id="同一性"><a href="#同一性" class="headerlink" title="同一性"></a>同一性</h3><p>矛盾的双方是相互依存、相对的</p>
+<p>比如说：光和暗，男和女</p>
+<p>没有暗，那光也就没了意义</p>
+<p><font color=red>这里的矛盾不是“冲突”的意思</font></p>
+<h3 id="斗争性"><a href="#斗争性" class="headerlink" title="斗争性"></a>斗争性</h3><p>矛盾双方存在一定程度的对抗</p>
+<p>对抗分为强对抗和弱对抗</p>
+<h3 id="理论应用"><a href="#理论应用" class="headerlink" title="理论应用"></a>理论应用</h3><p>人民民主专政</p>
+<p>政府和人民之间是一对矛盾</p>
+<p> 矛盾有强和弱</p>
+<p>弱对抗，即普通人民，我们选择民主</p>
+<p>强对抗，即扰乱秩序、反动等的人，我们采取专政</p>
+<hr>
+<h2 id="真理"><a href="#真理" class="headerlink" title="真理"></a>真理</h2><p>讨论“对不对”的问题</p>
+<p>有时题目只是讨论两种不同的观点</p>
+<p>并没有讨论对错</p>
+<hr>
+<h2 id="认识"><a href="#认识" class="headerlink" title="认识"></a>认识</h2><h3 id="认识的过程"><a href="#认识的过程" class="headerlink" title="认识的过程"></a>认识的过程</h3><p>从感性认识到理性认识</p>
+<h3 id="认知性认识"><a href="#认知性认识" class="headerlink" title="认知性认识"></a>认知性认识</h3><p>我来判断这是什么</p>
+<p>这是苹果</p>
+<hr>
+<h3 id="评价性认识"><a href="#评价性认识" class="headerlink" title="评价性认识"></a>评价性认识</h3><p>这个苹果好不好</p>
+<p><strong>价值评价是客观的</strong></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210730220547045.png" alt="image-20210730220547045"></p>
+<h3 id="观念和认识"><a href="#观念和认识" class="headerlink" title="观念和认识"></a>观念和认识</h3><p>人的观念和认识很相近</p>
+<p>所以说观念随认识的发展而发展是不正确的</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210730220658565.png" alt="image-20210730220658565"></p>
+<p><font color=red>看着没大毛病的可以选</font></p>
+<hr>
+<h2 id="客观存在"><a href="#客观存在" class="headerlink" title="客观存在"></a>客观存在</h2><p>物质世界客观存在的东西与人的认知水平是无关的</p>
+<p>客观存在是客观的</p>
+<hr>
+<hr>
+<h2 id="经济不是一个小概念"><a href="#经济不是一个小概念" class="headerlink" title="经济不是一个小概念"></a>经济不是一个小概念</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210730221252591.png" alt="image-20210730221252591"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
@@ -4751,7 +4773,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">306</span>
+          <span class="site-state-item-count">301</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
