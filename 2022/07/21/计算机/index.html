@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="机器语言hight-level language     对应的汇编  12345678910111213141516171819# 调整I&#x2F;O模式（把开关和LED关联起来）LD A,207OUT (2),ALD A,255OUT (2),ALD A,207OUT (3),ALD A,0OUT (3),A# 控制LED的核心代码IN A,(0) # 把地址()的值存放到寄存器A中OUT (1),A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机">
+<meta property="og:url" content="http://example.com/2022/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="机器语言hight-level language     对应的汇编  12345678910111213141516171819# 调整I&#x2F;O模式（把开关和LED关联起来）LD A,207OUT (2),ALD A,255OUT (2),ALD A,207OUT (3),ALD A,0OUT (3),A# 控制LED的核心代码IN A,(0) # 把地址()的值存放到寄存器A中OUT (1),A">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101509026.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101638238.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101750847.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721145224672.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721145259050.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721150525786.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721163221851.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721164647736.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812143629029.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812143656859.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729181317135.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729181109498.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729173854646.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729183005816.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725121004378.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170304484.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170245488.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725171116116.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220726093747072.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/08428c427a41872f2ed43bf2a9be69da.gif">
+<meta property="article:published_time" content="2022-07-21T06:51:41.000Z">
+<meta property="article:modified_time" content="2022-08-12T06:37:18.875Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101509026.png">
+
+<link rel="canonical" href="http://example.com/2022/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>计算机 | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-07-21 14:51:41" itemprop="dateCreated datePublished" datetime="2022-07-21T14:51:41+08:00">2022-07-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-12 14:37:18" itemprop="dateModified" datetime="2022-08-12T14:37:18+08:00">2022-08-12</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="机器语言"><a href="#机器语言" class="headerlink" title="机器语言"></a>机器语言</h2><p>hight-level language</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101509026.png" alt="image-20220725101509026"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101638238.png" alt="image-20220725101638238"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101750847.png" alt="image-20220725101750847"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721145224672.png" alt="image-20220721145224672"></p>
+<p>对应的汇编</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721145259050.png" alt="image-20220721145259050"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 调整I/O模式（把开关和LED关联起来）</span><br><span class="line">LD A,207</span><br><span class="line">OUT (2),A</span><br><span class="line">LD A,255</span><br><span class="line">OUT (2),A</span><br><span class="line"></span><br><span class="line">LD A,207</span><br><span class="line">OUT (3),A</span><br><span class="line">LD A,0</span><br><span class="line">OUT (3),A</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 控制LED的核心代码</span><br><span class="line"></span><br><span class="line">IN A,(0) # 把地址()的值存放到寄存器A中</span><br><span class="line">OUT (1),A # 把寄存器A的值写入到地址()中</span><br><span class="line"></span><br><span class="line"># (0)为输入</span><br><span class="line"># (1)为LED的开关</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>附录：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721150525786.png" alt="image-20220721150525786"></p>
+<h2 id="加法器"><a href="#加法器" class="headerlink" title="加法器"></a>加法器</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721163221851.png" alt="image-20220721163221851"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721164647736.png" alt="image-20220721164647736"></p>
+<p>（电池在底下，正负极一阶已接好，那个掰的额其实其实就是个开关，接通电路罢了，相当于发了电信号）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812143629029.png" alt="image-20220812143629029"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812143656859.png" alt="image-20220812143656859"></p>
+<h3 id="半加器（一位加法器）"><a href="#半加器（一位加法器）" class="headerlink" title="半加器（一位加法器）"></a>半加器（一位加法器）</h3><p>两个输入</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729181317135.png" alt="image-20220729181317135"></p>
+<h3 id="全加器"><a href="#全加器" class="headerlink" title="全加器"></a>全加器</h3><p>三个输入</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729181109498.png" alt="image-20220729181109498"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729173854646.png" alt="image-20220729173854646"></p>
+<h2 id="二位加法器"><a href="#二位加法器" class="headerlink" title="二位加法器"></a>二位加法器</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729183005816.png" alt="image-20220729183005816"></p>
+<h2 id="计算机结构"><a href="#计算机结构" class="headerlink" title="计算机结构"></a>计算机结构</h2><p>Computer orgnization</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725121004378.png" alt="image-20220725121004378"></p>
+<h3 id="CPU-Central-Processing-Unit"><a href="#CPU-Central-Processing-Unit" class="headerlink" title="CPU(Central Processing Unit)"></a>CPU(Central Processing Unit)</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170304484.png" alt="image-20220721170304484"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170245488.png" alt="image-20220721170245488"></p>
+<h3 id="内存-Random-Access-Memory"><a href="#内存-Random-Access-Memory" class="headerlink" title="内存(Random Access Memory)"></a>内存(Random Access Memory)</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725171116116.png"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220726093747072.png" alt="image-20220726093747072"></p>
+<h3 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/08428c427a41872f2ed43bf2a9be69da.gif" alt="08428c427a41872f2ed43bf2a9be69da"></p>
+<h3 id="显示器数据流动"><a href="#显示器数据流动" class="headerlink" title="显示器数据流动"></a>显示器数据流动</h3><p>1．从总线进入GPU（图形处理器）：将CPU送来的数据送到北桥，再送到GPU里面进行处理。<br>2．将芯片处理完的数据送到显存。<br>3．从显存读取出数据再送到随机读写存储数—模转换器进行数模转换的工作。（但是如果是DVI接口类型的显卡，则不需要经过数字信号转模拟信号。而直接输出数字信号。）<br>4．从DAC进入显示器：将转换完的模拟信号送到显示屏。</p>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="数据单位"><a href="#数据单位" class="headerlink" title="数据单位"></a>数据单位</h3><p>bit和Byte</p>
+<p>1Byte = 1B = 8bit</p>
+<p>1KB = 1024B</p>
+<p>1MB = 1024KB</p>
+<p>KB和Kb</p>
+<p>1KB=8Kb</p>
+<p>100Mb/s=12.5MB/s</p>
+<p>因为二进制是计算技术中广泛采用的一种数制。</p>
+<p>二进制数据是用0和1两个数码来表示的数。 </p>
+<p>而2的10次恰好等于1024 ，所以为了方便就用了1024进制。</p>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><p>电脑文件系统一般以一定大小的区块做为最小存储管理单位，比如4K字节</p>
+<p>所以如果一个文件就算只有1字节，也会占用4K空间</p>
+<p>占用空间会比文件实际大小要大</p>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><p>Java最初被设计为一种安全的受控环境。尽管如此，Java HotSpot还是包含了一个“后门”</p>
+<p>提供了一些可以直接操控内存和线程的低层次操作</p>
+<p>这个后门类——sun.misc.Unsafe——被JDK广泛用于自己的包中</p>
+<p>如java.nio和java.util.concurrent。但是丝毫不建议在生产环境中使用这个后门</p>
+<p>因为这个API十分不安全、不轻便、而且不稳定</p>
+<p>这个不安全的类提供了一个观察HotSpot JVM内部结构并且可以对其进行修改</p>
+<p>有时它可以被用来在不适用C++调试的情况下学习虚拟机内部结构，有时也可以被拿来做性能监控和开发工具</p>
+<p>（Python也有）</p>
+<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><p>内存地址——C++展示</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    cout &lt;&lt; &amp;a[<span class="number">3</span>] &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; &amp;a[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>危险</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    a[<span class="number">2</span>] = <span class="number">666</span>;</span><br><span class="line">    cout &lt;&lt; &amp;a[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">int</span> result=*(<span class="keyword">int</span> *)<span class="number">0x61feec</span>;</span><br><span class="line">    cout &lt;&lt; result;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="GUI原理"><a href="#GUI原理" class="headerlink" title="GUI原理"></a>GUI原理</h2><p>是不是一张一张图片</p>
+<p>那么准备好相应的数据是不是就ok了</p>
+<p>最简单的文本框解释</p>
+<h2 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h2><p>system bus——系统总线</p>
+<p>Arithmetic and logic unit——ALU</p>
+<p>Information technology —— IT</p>
+<p>software as a service——(SaaS) Office365 Online版</p>
+<p>看着好像是remote帮你跑了一个Office</p>
+<p>实际上。。。</p>
+<p>platform as a service——(PaaS)</p>
+<p>上传应用给好启动参数就行了，他们会部署到他们自己的云上的服务器</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/18/FL680/" rel="prev" title="FL680">
+      <i class="fa fa-chevron-left"></i> FL680
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/21/%E8%B5%84%E6%BA%90%E7%AB%99/" rel="next" title="资源站">
+      资源站 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">机器语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">加法器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8A%E5%8A%A0%E5%99%A8%EF%BC%88%E4%B8%80%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">半加器（一位加法器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%8A%A0%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">全加器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">二位加法器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">计算机结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU-Central-Processing-Unit"><span class="nav-number">4.1.</span> <span class="nav-text">CPU(Central Processing Unit)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98-Random-Access-Memory"><span class="nav-number">4.2.</span> <span class="nav-text">内存(Random Access Memory)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%81%E7%9B%98"><span class="nav-number">4.3.</span> <span class="nav-text">磁盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%99%A8%E6%95%B0%E6%8D%AE%E6%B5%81%E5%8A%A8"><span class="nav-number">4.4.</span> <span class="nav-text">显示器数据流动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE"><span class="nav-number">5.</span> <span class="nav-text">数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8D%95%E4%BD%8D"><span class="nav-number">5.1.</span> <span class="nav-text">数据单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="nav-number">5.2.</span> <span class="nav-text">数据存储</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80"><span class="nav-number">6.</span> <span class="nav-text">编程语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">7.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GUI%E5%8E%9F%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">GUI原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87"><span class="nav-number">9.</span> <span class="nav-text">词汇</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">300</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -177,6 +177,384 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/%E6%B1%87%E7%BC%96-python%E6%B8%B8%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/06/%E6%B1%87%E7%BC%96-python%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">汇编-python游记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-06-06 12:02:55" itemprop="dateCreated datePublished" datetime="2022-06-06T12:02:55+08:00">2022-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:46:17" itemprop="dateModified" datetime="2022-06-27T15:46:17+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="赋值List（非copy）"><a href="#赋值List（非copy）" class="headerlink" title="赋值List（非copy）"></a>赋值List（非copy）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">y = x[:]</span><br><span class="line">x[<span class="number">0</span>] = <span class="number">111</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/31/%E8%AE%A1%E7%AE%97%E6%9C%BA-block-chain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/31/%E8%AE%A1%E7%AE%97%E6%9C%BA-block-chain/" class="post-title-link" itemprop="url">计算机-block-chain</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-05-31 17:14:53" itemprop="dateCreated datePublished" datetime="2022-05-31T17:14:53+08:00">2022-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="POW"><a href="#POW" class="headerlink" title="POW"></a>POW</h1><p>Proof of work</p>
+<p>工作量证明</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220531171607351.png" alt="image-20220531171607351"></p>
+<p>首先，工作量就是那一串字符串—— Hash(previous hash + timestamp + nounce + root)</p>
+<p>枚举没意义的，只能不停地通过改变nonce去Hash</p>
+<p>（0的个数是difficulty，需要的0越多，mining越难）</p>
+<p>当你计算Hash出了一串前n位为0的字符串时，把你的构造参数告诉其他人</p>
+<p>然后其他人验证之后，发现这个串真的被你Hash出来了，承认了你</p>
+<p>（这里的其他人可以是区块链的用户，他们其实更喜欢你早点把矿挖出来，因为他们的钱就更快到账了）</p>
+<p>然后你就可以得到报酬了~</p>
+<h1 id="Smart-Contracts"><a href="#Smart-Contracts" class="headerlink" title="Smart Contracts"></a>Smart Contracts</h1><p>智能合约</p>
+<p>代码写在区块链上</p>
+<p>自动执行</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220531173233523.png" alt="image-20220531173233523"></p>
+<p>must pay back the loan before the transaction ends</p>
+<p>otherwise the smart contract reverses the transaction</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">计算机-计算机游记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-05-20 17:10:00" itemprop="dateCreated datePublished" datetime="2022-05-20T17:10:00+08:00">2022-05-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p>Software as a Service</p>
+<p>连上网直接用服务</p>
+<p>应用的部署不用用户操心</p>
+<h2 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h2><p>客户端告诉代理服务器，帮我访问这个地址，然后把返回结果再传一份给我</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520172550105.png" alt="image-20220520172550105"></p>
+<p>客户端并不知道实际服务的Web服务器</p>
+<p>只是访问代理的那个服务器</p>
+<p>不关系代理服务到底是怎么和Web服务器交互的</p>
+<p>客户端等一个结果就行</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520172625580.png" alt="image-20220520172625580"></p>
+<h1 id="桌面开发"><a href="#桌面开发" class="headerlink" title="桌面开发"></a>桌面开发</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220523151811522.png" alt="image-20220523151811522"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/17/China/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/17/China/" class="post-title-link" itemprop="url">China</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-05-17 13:58:59" itemprop="dateCreated datePublished" datetime="2022-05-17T13:58:59+08:00">2022-05-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Visa"><a href="#Visa" class="headerlink" title="Visa"></a>Visa</h1><p>Common (<strong>L-Type</strong>) 1到6个月</p>
+<p><strong>F or Z visa</strong> and you’ll need a letter of invitation from the company you’ll be working with in China</p>
+<p><strong>X visa</strong> and will need a letter from the college where you’ll be studying.</p>
+<p>If you need to extend your visa while in China</p>
+<p>this can be done by visiting the local <strong>Public Security Bureau</strong></p>
+<h2 id="香港签证"><a href="#香港签证" class="headerlink" title="香港签证"></a>香港签证</h2><p>Citizens of most Western countries do not need a visa for short visits to Hong Kong as long as employment isn’t sought.</p>
+<h1 id="海关"><a href="#海关" class="headerlink" title="海关"></a>海关</h1><p>You’re not allowed to bring more than ¥6000 in Chinese money, 400 cigarettes or two liters of alcohol.</p>
+<h1 id="机票"><a href="#机票" class="headerlink" title="机票"></a>机票</h1><p>Direct flights from the West Coast to China take about 13 hours</p>
+<p>will cost between US$700 and US$1,500 round-trip</p>
+<p>Hong Kong is China’s best-served international gateway and some</p>
+<p>of the cheapest China flights you’ll find from North America,</p>
+<p>Europe and Australasia head here</p>
+<h1 id="水路"><a href="#水路" class="headerlink" title="水路"></a>水路</h1><p>Not many people arrive in China by ship, but it is still a possibility</p>
+<p>and Shanghai is served by ferries from <strong>Japan</strong> (see p. 292)</p>
+<h1 id="exchange"><a href="#exchange" class="headerlink" title="exchange"></a>exchange</h1><p>The <strong>Bank of China</strong> (not the Agricultural Bank of China, ConstructionBank of China</p>
+<p>Industrial Bank of China or any of the other similarly named institutions) is the only bank licensed to exchange foreign currency</p>
+<p>or travelers’ checks. Their opening hours may vary but are generally <strong>Mon</strong></p>
+<p><strong>day to Friday from 9 am-noon and 2-5 pm</strong>.</p>
+<h1 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h1><p>菜系 - style</p>
+<p>干 - sundried</p>
+<p>long known in the West as <strong>Canton</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/06/%E5%B7%A5%E5%85%B7-adb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/06/%E5%B7%A5%E5%85%B7-adb/" class="post-title-link" itemprop="url">工具-adb</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-05-06 10:35:13" itemprop="dateCreated datePublished" datetime="2022-05-06T10:35:13+08:00">2022-05-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>到电脑</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull /run/Publisher.jar D:\project\folder\智慧灯杆\网关</span><br></pre></td></tr></table></figure>
+
+
+
+<p>电脑到设备</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb push test.txt /sdcard/test</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/05/%E5%B7%A5%E5%85%B7-procreate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -567,594 +945,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/23/%E8%AF%AD%E8%A8%80-%E5%BE%B7%E8%AF%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/23/%E8%AF%AD%E8%A8%80-%E5%BE%B7%E8%AF%AD/" class="post-title-link" itemprop="url">语言-德语</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-23 09:03:11" itemprop="dateCreated datePublished" datetime="2022-04-23T09:03:11+08:00">2022-04-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:38:27" itemprop="dateModified" datetime="2022-06-27T15:38:27+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hi"><a href="#hi" class="headerlink" title="hi"></a>hi</h1><p>would not talk</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/22/%E6%B1%87%E7%BC%96-Java%E6%B8%B8%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/22/%E6%B1%87%E7%BC%96-Java%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">汇编-Java游记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-22 22:40:17" itemprop="dateCreated datePublished" datetime="2022-04-22T22:40:17+08:00">2022-04-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:46:17" itemprop="dateModified" datetime="2022-06-27T15:46:17+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h1><p>ASCII =&gt; a:ski</p>
-<p>C Language</p>
-<p>Java =&gt; 家va:</p>
-<p>Circuit =&gt; /‘sɜːkɪt/</p>
-<p>A minus B</p>
-<p>negative B =&gt; 负B</p>
-<p>queue =&gt; /kjuː/</p>
-<p>formula =&gt; 公式</p>
-<p>module =&gt; /‘mɒdjuːl/ 不是抖！！！</p>
-<p>token =&gt; /‘təʊk(ə)n/ 偷</p>
-<p>UID =&gt; unique ID</p>
-<h1 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h1><h2 id="单复数问题"><a href="#单复数问题" class="headerlink" title="单复数问题"></a>单复数问题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214228557.png" alt="image-20220427214228557"></p>
-<p>有些确实可能是为0的</p>
-<p>你加s就不合适了</p>
-<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20220505230553515.png" alt="image-20220505230553515"></p>
-<p>static final常量是好的，HotSpot VM里的JIT编译器会利用这个信息来做优化；</p>
-<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220615173113696.png" alt="image-20220615173113696"></p>
-<h1 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h1><h2 id="路径参数"><a href="#路径参数" class="headerlink" title="路径参数"></a>路径参数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;/&#123;id&#125;&quot;, method = RequestMethod.GET)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> CommonResult&lt;OmsOrderSetting&gt; <span class="title">getItem</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span> </span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><h2 id="操作日志实现"><a href="#操作日志实现" class="headerlink" title="操作日志实现"></a>操作日志实现</h2><p>基于AOP</p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1655923">参考文档</a></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220422224710414.png" alt="image-20220422224710414"></p>
-<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213017958.png" alt="image-20220427213017958"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213045844.png" alt="image-20220427213045844"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213106407.png" alt="image-20220427213106407"></p>
-<h1 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h1><p>写了单元测试之后，你就不用一个个接口去测了:)</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213246557.png" alt="image-20220427213246557"></p>
-<p>例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.dev33.satoken.stp.StpUtil;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> com.lpcs.modules.user.controller.AccountManageController;</span><br><span class="line"><span class="keyword">import</span> com.lpcs.modules.user.entity.account.manage.AddSubAccountReq;</span><br><span class="line"><span class="keyword">import</span> org.junit.Before;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.HttpHeaders;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.MockMvc;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.request.MockMvcRequestBuilders;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.setup.MockMvcBuilders;</span><br><span class="line"><span class="keyword">import</span> org.springframework.transaction.annotation.Transactional;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lpcs.LpcsApplication;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest(classes = LpcsApplication.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountManageTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    AccountManageController accountManageController;</span><br><span class="line"></span><br><span class="line">    MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line">    String mainToken;</span><br><span class="line"></span><br><span class="line">    String adminToken;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mockMvc = MockMvcBuilders.standaloneSetup(accountManageController).build();</span><br><span class="line">        mainToken = buildMainToken();</span><br><span class="line">        adminToken = buildAdminToken();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">buildMainToken</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        StpUtil.login(<span class="number">6427</span>);</span><br><span class="line">        <span class="keyword">return</span> StpUtil.getTokenValue();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">buildAdminToken</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        StpUtil.login(<span class="number">6431</span>);</span><br><span class="line">        <span class="keyword">return</span> StpUtil.getTokenValue();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addSubAccount</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        setup();</span><br><span class="line">        String param = buildAddSubAccountParams();</span><br><span class="line">        HttpHeaders headers = buildAddSubAccountHeaders();</span><br><span class="line">        mockMvc.perform(</span><br><span class="line">                MockMvcRequestBuilders.</span><br><span class="line">                        get(<span class="string">&quot;/account/manage/add/sub/account&quot;</span>).</span><br><span class="line">                        content(param).</span><br><span class="line">                        headers(headers)).</span><br><span class="line">                        andExpect(MockMvcResultMatchers.status().isOk());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> HttpHeaders <span class="title">buildAddSubAccountHeaders</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        HttpHeaders headers = <span class="keyword">new</span> HttpHeaders();</span><br><span class="line">        headers.add(<span class="string">&quot;lpcs_token&quot;</span>, mainToken);</span><br><span class="line">        headers.add(<span class="string">&quot;Content-Type&quot;</span>,<span class="string">&quot;application/json;charset=UTF-8&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> headers;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">buildAddSubAccountParams</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        AddSubAccountReq req = <span class="keyword">new</span> AddSubAccountReq();</span><br><span class="line">        List&lt;Integer&gt; permissions = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        permissions.add(<span class="number">5</span>);</span><br><span class="line">        permissions.add(<span class="number">6</span>);</span><br><span class="line">        req.setPassword(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        req.setDepartmentId(<span class="number">2</span>);</span><br><span class="line">        req.setRealName(<span class="string">&quot;小红&quot;</span>);</span><br><span class="line">        req.setLabel(<span class="string">&quot;保安2&quot;</span>);</span><br><span class="line">        req.setPermissions(permissions);</span><br><span class="line">        String json = JSON.toJSONString(req);</span><br><span class="line">        System.out.println(json);</span><br><span class="line">        <span class="keyword">return</span> json;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="用户考虑"><a href="#用户考虑" class="headerlink" title="用户考虑"></a>用户考虑</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213354984.png" alt="image-20220427213354984"></p>
-<h1 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h1><h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213427122.png" alt="image-20220427213427122"></p>
-<p>所以，这就是为什么不准用特殊字符的原因！！！</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/czfan/p/15039504.html">参考</a></p>
-<h2 id="用户传过来的参数大小"><a href="#用户传过来的参数大小" class="headerlink" title="用户传过来的参数大小"></a>用户传过来的参数大小</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213912815.png" alt="image-20220427213912815"></p>
-<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="用作标记"><a href="#用作标记" class="headerlink" title="用作标记"></a>用作标记</h2><p>AOP</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    result = joinPoint.proceed();</span><br><span class="line">&#125; <span class="keyword">catch</span> (Throwable throwable) &#123;</span><br><span class="line">    <span class="comment">//有CacheException注解的方法需要抛出异常</span></span><br><span class="line">    <span class="keyword">if</span> (method.isAnnotationPresent(CacheException.class)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> throwable;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        LOGGER.error(throwable.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>CacheException.class</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.macro.mall.security.annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自定义注解，有该注解的缓存方法会抛出异常</span></span><br><span class="line"><span class="comment"> * Created by macro on 2020/3/17.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Target(ElementType.METHOD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> CacheException &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="字段"><a href="#字段" class="headerlink" title="字段"></a>字段</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214131128.png" alt="image-20220427214131128"></p>
-<h2 id="小数"><a href="#小数" class="headerlink" title="小数"></a>小数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214355342.png" alt="image-20220427214355342"></p>
-<h2 id="长文本"><a href="#长文本" class="headerlink" title="长文本"></a>长文本</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214435031.png" alt="image-20220427214435031"></p>
-<h2 id="适当冗余"><a href="#适当冗余" class="headerlink" title="适当冗余"></a>适当冗余</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214525049.png" alt="image-20220427214525049"></p>
-<h2 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214540021.png" alt="image-20220427214540021"></p>
-<h2 id="join"><a href="#join" class="headerlink" title="join"></a>join</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214631255.png" alt="image-20220427214631255"></p>
-<h2 id="对字符串的索引"><a href="#对字符串的索引" class="headerlink" title="对字符串的索引"></a>对字符串的索引</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214654119.png" alt="image-20220427214654119"></p>
-<h2 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT"></a>COUNT</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214906813.png" alt="image-20220427214906813"></p>
-<h2 id="SUM"><a href="#SUM" class="headerlink" title="SUM"></a>SUM</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214930276.png" alt="image-20220427214930276"></p>
-<h2 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215028118.png" alt="image-20220427215028118"></p>
-<h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215043543.png" alt="image-20220427215043543"></p>
-<h2 id="避免IN"><a href="#避免IN" class="headerlink" title="避免IN"></a>避免IN</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215122290.png" alt="image-20220427215122290"></p>
-<h2 id="不用"><a href="#不用" class="headerlink" title="不用*"></a>不用*</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215158696.png" alt="image-20220427215158696"></p>
-<h2 id="Transactional"><a href="#Transactional" class="headerlink" title="@Transactional"></a>@Transactional</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215329156.png" alt="image-20220427215329156"></p>
-<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="Service-Interface存在的意义"><a href="#Service-Interface存在的意义" class="headerlink" title="Service Interface存在的意义"></a>Service Interface存在的意义</h2><ol>
-<li><p>使控制层只依赖这个接口</p>
-</li>
-<li><p>当某天这个应用要跑在其它数据库上时，就而只需要增加一个serviceImpl类（不同的实现）</p>
-</li>
-</ol>
-<p>当然，当项目小，开发人员少或者且开发人员水平较高且接近的情况下</p>
-<p>可以选择不写interface，可以减少编码</p>
-<h1 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h1><h2 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h2><p>The Netflix engineering team built a tool for this called <strong>Eureka</strong>, and open sourced it.</p>
-<p>Eureka provides the means for microservices to power up</p>
-<p>advertise their existence, and shutdown as well.</p>
-<p>It supports multiple copies of the same service registering themselves</p>
-<h2 id="Circuit-Breaker"><a href="#Circuit-Breaker" class="headerlink" title="Circuit Breaker"></a>Circuit Breaker</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220425222632714.png" alt="image-20220425222632714"></p>
-<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="多模块"><a href="#多模块" class="headerlink" title="多模块"></a>多模块</h2><p>父模块</p>
-<p>pom.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--模块的信息--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>multi-module-demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定子模块 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">module</span>&gt;</span>sub-module1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定项目内的子模块为依赖--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sub-module1<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>子模块</p>
-<p>pom.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--指定父模块关系--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>multi-module-demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--该子模块名--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sub-module1<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><p>AMQP，即Advanced Message Queuing Protocol</p>
-<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="错误码"><a href="#错误码" class="headerlink" title="错误码"></a>错误码</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212419007.png" alt="image-20220427212419007"></p>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212557721.png" alt="image-20220427212557721"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212605295.png" alt="image-20220427212605295"></p>
-<h2 id="NPE"><a href="#NPE" class="headerlink" title="NPE"></a>NPE</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212843146.png" alt="image-20220427212843146"></p>
-<h2 id="直接插，再异常处理"><a href="#直接插，再异常处理" class="headerlink" title="直接插，再异常处理"></a>直接插，再异常处理</h2><p>异常处理再去更新</p>
-<h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><h2 id="Transational"><a href="#Transational" class="headerlink" title="@Transational"></a>@Transational</h2><p>“@Transactional”注解有两个出处，一是来自JAVA官方，包名为“javax.transaction”</p>
-<p>一是来自Spring Framework，包名为“org.springframework.transaction.annotation”</p>
-<p>在Spring框架中，大部分的情况下，它们都可以交换使用,效果是等价的</p>
-<p>只不过Spring Framework提供的“@Transactional”功能更强，粒度更细</p>
-<p>例如支持“TransactionManager”的配置、支持隔离性（isolation）、只读（isolation）、超时(timeout)等</p>
-<h1 id="情景"><a href="#情景" class="headerlink" title="情景"></a>情景</h1><h2 id="token存redis的好处"><a href="#token存redis的好处" class="headerlink" title="token存redis的好处"></a>token存redis的好处</h2><p>服务器重启，仍可用</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/19/%E6%B1%87%E7%BC%96-Java-%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/19/%E6%B1%87%E7%BC%96-Java-%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">汇编-Java-实际开发</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-19 11:14:39" itemprop="dateCreated datePublished" datetime="2022-04-19T11:14:39+08:00">2022-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:46:17" itemprop="dateModified" datetime="2022-06-27T15:46:17+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="金额计算"><a href="#金额计算" class="headerlink" title="金额计算"></a>金额计算</h1><p>金额计算不能用浮点数！！！</p>
-<p>看一个例子</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="number">0.03</span>-<span class="number">0.02</span>);</span><br></pre></td></tr></table></figure>
-
-<p>输出: 0.009999999999999998</p>
-<p>解决：BigDecimal</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BigDecimal a = <span class="keyword">new</span> BigDecimal(<span class="string">&quot;0.03&quot;</span>);</span><br><span class="line">BigDecimal b = <span class="keyword">new</span> BigDecimal(<span class="string">&quot;0.02&quot;</span>);</span><br><span class="line">System.out.println(a.subtract(b));</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h2 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h2><p>detail</p>
-<p>brief</p>
-<p>encoder</p>
-<p>common</p>
-<p>verify</p>
-<p>quantity</p>
-<p>nickname</p>
-<p>acquired</p>
-<p>invaliadate</p>
-<p>group</p>
-<p>member - 会员</p>
-<h2 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h2><p>oms - Order Management System 订单管理系统</p>
-<p>ums - User Management System 用户管理系统</p>
-<p>mbg - Mybatis Generator</p>
-<p>dto - Data Transfer Object 数据传输对象</p>
-<p>tel - 联系方式</p>
-<p>intro - 介绍</p>
-<p>prod - 产品</p>
-<p>no - 编号</p>
-<h2 id="传参类型"><a href="#传参类型" class="headerlink" title="传参类型"></a>传参类型</h2><p>Integer一定程度上可以避免SQL注入</p>
-<h2 id="路径命名"><a href="#路径命名" class="headerlink" title="路径命名"></a>路径命名</h2><p>允许<code>/delete/sub-account</code></p>
-<h2 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h2><p><code>module_task</code> 和 <code>task_module</code>的主要区别在于：</p>
-<p>一个是有利于国人阅读，一个是外国人的英语习惯</p>
-<h2 id="boolean默认值"><a href="#boolean默认值" class="headerlink" title="boolean默认值"></a>boolean默认值</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520100957468.png" alt="image-20220520100957468"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520101010033.png" alt="image-20220520101010033"></p>
-<h1 id="编码风格"><a href="#编码风格" class="headerlink" title="编码风格"></a>编码风格</h1><p>如果项目还是“中文”项目</p>
-<p>那还是需要多加一些注释的</p>
-<p>不能照搬国外程序员的编程思路</p>
-<h2 id="直接返回"><a href="#直接返回" class="headerlink" title="直接返回"></a>直接返回</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Department&gt; <span class="title">getDepartmentList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Integer parentId = Integer.valueOf((String)StpUtil.getLoginId());</span><br><span class="line">    Integer companyId = userDao.getCompanyId(parentId);</span><br><span class="line">    <span class="keyword">return</span> departmentDao.getDepartmentList(companyId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>函数名说清楚了，如果不需要额外的检查，直接返回就行</p>
-<h2 id="代码不要太长"><a href="#代码不要太长" class="headerlink" title="代码不要太长"></a>代码不要太长</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220424153719619.png" alt="image-20220424153719619"></p>
-<p>像阅读理解一样，离谱</p>
-<h2 id="是否使用枚举类"><a href="#是否使用枚举类" class="headerlink" title="是否使用枚举类"></a>是否使用枚举类</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220424154027347.png" alt="image-20220424154027347"></p>
-<p>别了。。</p>
-<p>直接定义常量吧 </p>
-<h2 id="注释完备"><a href="#注释完备" class="headerlink" title="注释完备"></a>注释完备</h2><p>反作用于恢复数据库！！！</p>
-<p>命名一致也是！！太有用了</p>
-<h2 id="方法命名"><a href="#方法命名" class="headerlink" title="方法命名"></a>方法命名</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果说这个serivce不复杂的话，确实省略宾语才是上上解</span></span><br><span class="line">groupRepository.findByGroupName(groupName);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">listPermission()</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">saveOrUpdate()</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520164606383.png" alt="image-20220520164606383"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520164823926.png" alt="image-20220520164823926"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520165450802.png" alt="image-20220520165450802"></p>
-<h1 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h1><h2 id="controller需不需要业务逻辑"><a href="#controller需不需要业务逻辑" class="headerlink" title="controller需不需要业务逻辑"></a>controller需不需要业务逻辑</h2><p>好处：</p>
-<p>流程清晰，方便代码阅读，方便再次开发</p>
-<p>各步骤划分清晰</p>
-<p>todo放在controller也容易看</p>
-<p>缺点：</p>
-<p>流程改变的话，还得改动controller的代码</p>
-<p>从另外一个方面来讲</p>
-<p>service设计来就是定接口的</p>
-<p>那么我在controller里定流程也是合理的！</p>
-<p>这里还涉及到另外一个问题</p>
-<p>controller层做前后置操作的话，@Transational放在哪</p>
-<p>只能放到controller了</p>
-<p>放各个service的话，已经进行的service数据库操作无法回滚</p>
-<h2 id="异常捕获"><a href="#异常捕获" class="headerlink" title="异常捕获"></a>异常捕获</h2><p>切面那里验证用户是否登录</p>
-<p>一处捕获异常就行，可以全部相关接口获益</p>
-<h1 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h1><h2 id="Transational别乱用"><a href="#Transational别乱用" class="headerlink" title="@Transational别乱用"></a>@Transational别乱用</h2><p>影响性能</p>
-<h2 id="尽量减少HTTP请求"><a href="#尽量减少HTTP请求" class="headerlink" title="尽量减少HTTP请求"></a>尽量减少HTTP请求</h2><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="批量插入"><a href="#批量插入" class="headerlink" title="批量插入"></a>批量插入</h2><p>mybatis</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">## id</span><br><span class="line"></span><br><span class="line">重要字段id搞长 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 备份</span><br><span class="line"></span><br><span class="line">别的工程师改过数据库结构</span><br><span class="line"></span><br><span class="line">数据库没有及时备份</span><br><span class="line"></span><br><span class="line"><span class="keyword">sql</span>语句是旧的</span><br><span class="line"></span><br><span class="line">结构都不一样:)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## create_time和update_time</span><br><span class="line"></span><br><span class="line">默认值为<span class="built_in">CURRENT_TIMESTAMP</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">设置updatetime列属性<span class="keyword">ON</span> UPDATE <span class="built_in">CURRENT_TIMESTAMP</span></span><br><span class="line"></span><br><span class="line"><span class="operator">!</span>[image<span class="number">-20220428162452997</span>](https:<span class="operator">/</span><span class="operator">/</span>picgo<span class="operator">-</span>freejim.oss<span class="operator">-</span>cn<span class="operator">-</span>beijing.aliyuncs.com<span class="operator">/</span>image<span class="number">-20220428162452997.</span>png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ps：</span><br><span class="line"></span><br><span class="line">得把<span class="number">0</span>填上，不然会出错</span><br><span class="line"></span><br><span class="line"><span class="operator">!</span>[image<span class="number">-20220428162356399</span>](https:<span class="operator">/</span><span class="operator">/</span>picgo<span class="operator">-</span>freejim.oss<span class="operator">-</span>cn<span class="operator">-</span>beijing.aliyuncs.com<span class="operator">/</span>image<span class="number">-20220428162356399.</span>png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## <span class="keyword">sql</span>语句<span class="operator">-</span>查询字段</span><br><span class="line"></span><br><span class="line">写清楚，别<span class="operator">*</span></span><br><span class="line"></span><br><span class="line">视图不是用来<span class="operator">*</span>的</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 为什么使用<span class="type">Integer</span></span><br><span class="line"></span><br><span class="line">attempted <span class="keyword">to</span> <span class="keyword">return</span> <span class="keyword">null</span> <span class="keyword">from</span> a <span class="keyword">method</span> <span class="keyword">with</span> a primitive <span class="keyword">return</span> type (<span class="type">int</span>)</span><br><span class="line"></span><br><span class="line">用<span class="type">Integer</span>就不会报这个错误</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 批量插入</span><br><span class="line"></span><br><span class="line">```<span class="keyword">sql</span></span><br><span class="line">    <span class="operator">&lt;</span><span class="keyword">insert</span> id<span class="operator">=</span>&quot;batchInsert&quot;<span class="operator">&gt;</span></span><br><span class="line">        <span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_permission_relation(user_id,permission_id) <span class="keyword">VALUES</span></span><br><span class="line">        <span class="operator">&lt;</span>foreach collection<span class="operator">=</span>&quot;batch&quot; item<span class="operator">=</span>&quot;item&quot; index<span class="operator">=</span>&quot;index&quot; separator<span class="operator">=</span>&quot;,&quot;<span class="operator">&gt;</span></span><br><span class="line">            (#&#123;item.userId&#125;,#&#123;item.permissionId&#125;)</span><br><span class="line">        <span class="operator">&lt;</span><span class="operator">/</span>foreach<span class="operator">&gt;</span></span><br><span class="line">    <span class="operator">&lt;</span><span class="operator">/</span><span class="keyword">insert</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="时间带T"><a href="#时间带T" class="headerlink" title="时间带T"></a>时间带T</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFormat(timezone = &quot;GMT+8&quot;,pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;)</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="选取null的字段"><a href="#选取null的字段" class="headerlink" title="选取null的字段"></a>选取null的字段</h2><p>一定要用is，而不能用=</p>
-<h2 id="批量操作时，一般需要回滚的"><a href="#批量操作时，一般需要回滚的" class="headerlink" title="批量操作时，一般需要回滚的"></a>批量操作时，一般需要回滚的</h2><h1 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h1><h2 id="不传递非空字段"><a href="#不传递非空字段" class="headerlink" title="不传递非空字段"></a>不传递非空字段</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonInclude(JsonInclude.Include.NON_NULL)</span></span><br></pre></td></tr></table></figure>
-
-<p>加在实体类上面，或者具体成员变量上都行</p>
-<p>配合数据库的view视图，就不用另外新建实体类了</p>
-<h2 id="从request中获取json数据"><a href="#从request中获取json数据" class="headerlink" title="从request中获取json数据"></a>从request中获取json数据</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getJsonFromRequest</span><span class="params">(HttpServletRequest req)</span></span>&#123;</span><br><span class="line">    BufferedReader streamReader;</span><br><span class="line">    StringBuilder stringBuilder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        streamReader = <span class="keyword">new</span> BufferedReader( <span class="keyword">new</span> InputStreamReader(req.getInputStream(), <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">        String str;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            str = streamReader.readLine();</span><br><span class="line">            <span class="keyword">if</span> (str==<span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            stringBuilder.append(str);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> stringBuilder.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>报错：在进入AOP前，spring框架在使用 对象类型转换器(converter)时</p>
-<p>已经使用过一次body了（获取body是以流的形式，且由此可知，这个类型转换是优先于AOP切面的）</p>
-<p>所以在AOP切面处理时，想获取body体数据，发生”stream closed”异常</p>
-<p>解决：</p>
-<p>从joinPoint中获取</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(JSON.toJSONString(joinPoint.getArgs()[<span class="number">0</span>]));</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<p>这里有另外一个问题，没有json数据的该怎么处理</p>
-<p>或者上传的接口该怎么处理</p>
-<h2 id="Requestbody-为空"><a href="#Requestbody-为空" class="headerlink" title="Requestbody 为空"></a>Requestbody 为空</h2><p>像page size这样有默认值的参数</p>
-<p>如果前端不穿json过来</p>
-<p>甚至Requestbody对应的对象都不会被实例化</p>
-<p>也就是如果想用getter</p>
-<p>都是报空指针的异常</p>
-<p>解决：</p>
-<p>if 判断 request 是否为空</p>
-<h2 id="仅传需要更新的数据？"><a href="#仅传需要更新的数据？" class="headerlink" title="仅传需要更新的数据？"></a>仅传需要更新的数据？</h2><h2 id="decimal"><a href="#decimal" class="headerlink" title="decimal"></a>decimal</h2><p>对应java是 <code>BigDecimal</code></p>
-<p>构造<code>BigDecimal</code> 最好使用字符串</p>
-<p>直接使用浮点数的话会有误差（莫名其妙多很多数位）</p>
-<p>还有，千万注意！</p>
-<p>小数位不要设置为0</p>
-<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><p><a target="_blank" rel="noopener" href="https://github.com/EZLippi/practical-programming-books/blob/master/src/logging.md">经验帖</a></p>
-<h2 id="没有返回值"><a href="#没有返回值" class="headerlink" title="没有返回值"></a>没有返回值</h2><p>第一种情况：</p>
-<p>没有return</p>
-<p>解决：</p>
-<p>在doAround里增加return</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = joinPoint.proceed();</span><br><span class="line"><span class="keyword">return</span> result;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="记录异常的日志时，前端没有收到返回值"><a href="#记录异常的日志时，前端没有收到返回值" class="headerlink" title="记录异常的日志时，前端没有收到返回值"></a>记录异常的日志时，前端没有收到返回值</h2><p>第二种情况：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220509121750235.png" alt="image-20220509121750235"></p>
-<p>执行业务逻辑时抛出了异常</p>
-<p>没有把返回结果赋值给result</p>
-<p>导致前端收到的result是空的null</p>
-<p>解决：</p>
-<p>在catch里额外写逻辑</p>
-<h2 id="做切面日志时的异常捕获"><a href="#做切面日志时的异常捕获" class="headerlink" title="做切面日志时的异常捕获"></a>做切面日志时的异常捕获</h2><p>使用try-catch的话</p>
-<p>在方法后加 <code>throw Throwable</code> 的话，会把异常捕获交给ExceptionController来完成</p>
-<p>但是这样一来就没办法做日志储存了</p>
-<h2 id="返回结果类不一样时，异常处理该怎么设计"><a href="#返回结果类不一样时，异常处理该怎么设计" class="headerlink" title="返回结果类不一样时，异常处理该怎么设计"></a>返回结果类不一样时，异常处理该怎么设计</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    buildWebLogByRequest(webLog);</span><br><span class="line">&#125;<span class="keyword">catch</span> (Throwable t)&#123;</span><br><span class="line">    BusinessException e = (BusinessException) t;</span><br><span class="line">    System.out.println(method.getReturnType().getName());</span><br><span class="line">    <span class="keyword">if</span>(method.getReturnType() == R.class)&#123;</span><br><span class="line">        result = R.codeEnum(CodeEnum.FAILED).setCode(e.getCode()).setMessage(e.getMessage());</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        result = RQ.codeEnum(CodeEnum.FAILED).setCode(e.getCode()).setMessage(e.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="json请求参数与文件的区分"><a href="#json请求参数与文件的区分" class="headerlink" title="json请求参数与文件的区分"></a>json请求参数与文件的区分</h2><p>json和文件上传都是在inputstream中获取数据</p>
-<p>解决：</p>
-<p>利用请求头中的Content-Type来做区别</p>
-<p>实在不行，让开发者在日志注解上表参数类型</p>
-<p>然后还需另外在传参时做try-catch</p>
-<p>防止系统异常，而返回“参数错误”</p>
-<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p>命令行获取ip</p>
-<h1 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h1><h2 id="省份的数据库设计"><a href="#省份的数据库设计" class="headerlink" title="省份的数据库设计"></a>省份的数据库设计</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506181541967.png" alt="image-20220506181541967"></p>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="插入和修改哪个快"><a href="#插入和修改哪个快" class="headerlink" title="插入和修改哪个快"></a>插入和修改哪个快</h2><h2 id="只查一个数据有必要联表吗"><a href="#只查一个数据有必要联表吗" class="headerlink" title="只查一个数据有必要联表吗"></a>只查一个数据有必要联表吗</h2><h2 id="往同部门调，默许还是提示"><a href="#往同部门调，默许还是提示" class="headerlink" title="往同部门调，默许还是提示"></a>往同部门调，默许还是提示</h2><h2 id="日志时间和实际图片上传的时间不一致"><a href="#日志时间和实际图片上传的时间不一致" class="headerlink" title="日志时间和实际图片上传的时间不一致"></a>日志时间和实际图片上传的时间不一致</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/19/Java-AOP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/19/Java-AOP/" class="post-title-link" itemprop="url">Java-AOP</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-19 10:34:18" itemprop="dateCreated datePublished" datetime="2022-04-19T10:34:18+08:00">2022-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/16/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%BD%91%E7%BB%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/16/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">计算机-网络</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-16 21:18:36" itemprop="dateCreated datePublished" datetime="2022-04-16T21:18:36+08:00">2022-04-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="花生壳"><a href="#花生壳" class="headerlink" title="花生壳"></a>花生壳</h1><p>域名解析错误</p>
-<p>把DNS修改为<code>223.5.5.5</code></p>
-<p>实在不行就是hosts文件出问题了</p>
-<p>注释掉新增的东西就行了</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1226,7 +1016,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">296</span>
+          <span class="site-state-item-count">300</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210709200926441.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210709200939142.png">
 <meta property="article:published_time" content="2021-07-09T12:08:06.000Z">
-<meta property="article:modified_time" content="2022-06-27T07:48:34.602Z">
+<meta property="article:modified_time" content="2022-07-25T06:51:23.586Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -214,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
+                <time title="Modified: 2022-07-25 14:51:23" itemprop="dateModified" datetime="2022-07-25T14:51:23+08:00">2022-07-25</time>
               </span>
 
           
@@ -250,13 +250,9 @@
 
 <p>解决：</p>
 <p>配置settings.json</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;c&quot;</span>: <span class="string">&quot;cd <span class="variable">$dir</span> &amp;&amp; gcc <span class="variable">$fileName</span> -o <span class="variable">$fileNameWithoutExt</span> &amp;&amp; $dir<span class="variable">$fileNameWithoutExt</span>&quot;</span>,</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;code-runner.executorMap&quot;: &#123;</span><br><span class="line">        &quot;c&quot;: &quot;cd /d $dir &amp;&amp; gcc $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&quot;,</span><br><span class="line">        &quot;cpp&quot;: &quot;cd /d $dir &amp;&amp; g++ -o $fileNameWithoutExt $fileName  &amp;&amp; $dir$fileNameWithoutExt&quot;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
-<p>把这一行修改为</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;c&quot;</span>: <span class="string">&quot;cd /d <span class="variable">$dir</span> &amp;&amp; gcc <span class="variable">$fileName</span> -o <span class="variable">$fileNameWithoutExt</span> &amp;&amp; $dir<span class="variable">$fileNameWithoutExt</span>&quot;</span>,</span><br></pre></td></tr></table></figure>
-
-
-
+<p>Ps：运行cpp要用g++</p>
 <p>其他出现相同问题的同理</p>
 <h4 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h4><p>增加断点</p>
 <p>F5开始调试</p>
@@ -356,7 +352,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">296</span>
+          <span class="site-state-item-count">300</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

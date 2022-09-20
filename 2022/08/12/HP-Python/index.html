@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="vscode 安装c&#x2F;c++插件后才能跳转 Python 原理PyObject*  Basic rule CPython id 就是内存地址 123import sysprint(sys.getsizeof([]))    Otherwise, Memory protection rules imposed by the operating system will produce some sor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HP_Python">
+<meta property="og:url" content="http://example.com/2022/08/12/HP-Python/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="vscode 安装c&#x2F;c++插件后才能跳转 Python 原理PyObject*  Basic rule CPython id 就是内存地址 123import sysprint(sys.getsizeof([]))    Otherwise, Memory protection rules imposed by the operating system will produce some sor">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823162918787.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220902183048816.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818101844837.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220816162827683.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912111239395.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821233759265.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821233914955.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821235639691.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828230521214.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908103855402.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908104016495.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908112432400.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908114033276.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908113951135.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908114555070.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908115558851.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908120816823.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908135823168.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908140820387.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908141049239.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828205946122.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901140919154.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901140857842.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901141258000.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901141233980.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901141337666.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901141613297.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113420143.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916151025380.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916151048402.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916163900938.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916155615173.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916150558247.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113202232.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113223141.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113301601.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908113725314.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828110216742.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912100357000.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909233623295.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828202911546.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828203343767.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101459730.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220907181447776.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822000747996.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822000717627.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822000737299.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822001231853.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822001451725.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910223512145.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912095541557.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908095829386.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828203230431.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828203051815.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818102051244.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818102324082.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818102428257.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818104743139.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818103033036.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220907010203957.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909231937202.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220907003800206.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912102649055.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828200236499.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828235707513.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828235816873.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812104258814.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823172037306.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823171609158.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823172803442.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823163552110.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823165856496.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823164605841.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220829002937657.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824163821631.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824165627136.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912171354414.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912143421146.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912142907529.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912143310143.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916153334550.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910220254778.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818103459613.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173606048.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220829004256082.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220829004633348.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105009850.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220913013104725.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914093218199.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914093229851.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823175023720.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173829465.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173807342.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173849213.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823084031141.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823084219648.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910211016960.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910212703897.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105213076.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818111819810.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818144334419.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818144452626.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818111915501.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818112240243.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818112549467.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818140616581.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818140445960.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818140949866.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914102218285.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914110204455.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914144129797.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914141931549.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914142355502.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914141437580.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914151701426.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914151835010.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914152128108.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914153256130.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914154034628.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822224903763.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901150220813.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824095533523.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908100618288.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908102148324.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908100835287.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908101021903.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824170818187.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824100513252.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822231033293.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101903987.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101840551.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101813845.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101742369.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912100913951.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912100851321.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220816160111042.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220816160356867.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822234039747.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818133303696.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818133908082.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818134207085.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818134424126.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910223902808.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822223821775.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822225314640.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822225726962.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823162436558.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901143330354.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901153447402.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220902094347411.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220902094729701.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824170005377.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824094800242.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830132253776.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818180437920.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818180350693.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818180158542.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818175355624.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818182840543.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818183138878.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822235509102.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823000448297.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823000942352.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823001028210.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220913010547399.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901115713035.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909232146864.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912224924690.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912230552236.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912230918094.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912230841370.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821210401183.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821213138627.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821223435366.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821211446609.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821214527967.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821213028574.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821213408548.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822235232971.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818174310557.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818174423273.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909143031828.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909143752109.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910221846345.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910221339526.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910221632807.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910221537149.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910222445850.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824173739289.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830133520638.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830140033271.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830140207930.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830140137877.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830133743812.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830134410341.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830134701529.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830134843126.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830135118279.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830135358956.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830135713258.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830152258580.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830152110304.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830152237431.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830153051324.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830152840661.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830153305250.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830153445636.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830153650050.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105437755.png">
+<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105457749.png">
+<meta property="article:published_time" content="2022-08-12T02:40:24.000Z">
+<meta property="article:modified_time" content="2022-09-20T05:48:23.667Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823162918787.png">
+
+<link rel="canonical" href="http://example.com/2022/08/12/HP-Python/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>HP_Python | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/12/HP-Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HP_Python
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-08-12 10:40:24" itemprop="dateCreated datePublished" datetime="2022-08-12T10:40:24+08:00">2022-08-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-20 13:48:23" itemprop="dateModified" datetime="2022-09-20T13:48:23+08:00">2022-09-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>vscode 安装c/c++插件后才能跳转</strong></p>
+<h1 id="Python-原理"><a href="#Python-原理" class="headerlink" title="Python 原理"></a>Python 原理</h1><h2 id="PyObject"><a href="#PyObject" class="headerlink" title="PyObject*"></a>PyObject*</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823162918787.png" alt="image-20220823162918787"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220902183048816.png" alt="image-20220902183048816"></p>
+<h2 id="Basic-rule"><a href="#Basic-rule" class="headerlink" title="Basic rule"></a>Basic rule</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818101844837.png" alt="image-20220818101844837"></p>
+<h2 id="CPython"><a href="#CPython" class="headerlink" title="CPython"></a>CPython</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220816162827683.png" alt="image-20220816162827683"></p>
+<p>id 就是内存地址</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sys.getsizeof([]))</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Otherwise, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memory_protection">Memory protection</a> rules imposed by the operating system will produce some sort of memory fault and ultimately kill the program trying to read “illegal” memory.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Address 0x1aed06b0 out of bounds&gt;</span><br><span class="line">内存越界，访问到了不属于你的内存。可以用bt命令看调用堆栈</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<p><strong>Virtual memory address</strong></p>
+<p>A virtual address is a <a target="_blank" rel="noopener" href="https://www.techtarget.com/whatis/definition/binary">binary</a> number in <a target="_blank" rel="noopener" href="https://www.techtarget.com/searchstorage/definition/virtual-memory">virtual memory</a> that enables a process to use a location in <a target="_blank" rel="noopener" href="https://www.techtarget.com/searchstorage/definition/primary-storage">primary storage</a> (main memory) independently of other processes and to use more space than actually exists in primary storage by temporarily relegating some contents to a <a target="_blank" rel="noopener" href="https://www.techtarget.com/searchstorage/definition/hard-disk">hard disk</a> or internal <a target="_blank" rel="noopener" href="https://www.techtarget.com/searchstorage/definition/flash-based-solid-state-drive-SSD">flash drive</a>.</p>
+<h2 id="del"><a href="#del" class="headerlink" title="del"></a>del</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912111239395.png" alt="image-20220912111239395"></p>
+<p>并不是直接释放内存！！！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">lst1 = lst</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> lst</span><br><span class="line"><span class="built_in">print</span> lst1</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="compile"><a href="#compile" class="headerlink" title="compile"></a>compile</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821233759265.png" alt="image-20220821233759265"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821233914955.png" alt="image-20220821233914955"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821235639691.png" alt="image-20220821235639691"></p>
+<h2 id="Python-virtual-machine"><a href="#Python-virtual-machine" class="headerlink" title="Python virtual machine"></a>Python virtual machine</h2><p>The Python interpreter does a lot of work to try to abstract away the underlying computing elements that are being used. </p>
+<p>At no point does a programmer need to worry about allocating memory for arrays</p>
+<p>how to arrange that memory, or in what sequence it is being sent to the CPU. </p>
+<p>This is a benefit of Python, since it lets you focus on the algorithms that are being implemented. </p>
+<p>However, it comes at a huge performance cost.  </p>
+<h2 id="Source-code-structure"><a href="#Source-code-structure" class="headerlink" title="Source code structure"></a>Source code structure</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828230521214.png" alt="image-20220828230521214"></p>
+<h2 id="sequence"><a href="#sequence" class="headerlink" title="sequence"></a>sequence</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908103855402.png" alt="image-20220908103855135"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908104016495.png" alt="image-20220908104016495"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908112432400.png" alt="image-20220908112432400"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a)) <span class="comment"># Tuple</span></span><br></pre></td></tr></table></figure>
+
+<p>以致于<code>Tuple</code>没有专门的<code>iterable</code>的生成方法</p>
+<p>ast只是构造语法树，具体Tuple的创建在compile</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908114033276.png" alt="image-20220908114033276"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908113951135.png" alt="image-20220908113951135"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908114555070.png" alt="image-20220908114555070"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1           0 LOAD_CONST               0 (1)</span><br><span class="line">            2 STORE_NAME               0 (a)</span><br><span class="line"></span><br><span class="line">2           4 LOAD_CONST               1 (2)</span><br><span class="line">            6 STORE_NAME               1 (b)</span><br><span class="line"></span><br><span class="line">3           8 LOAD_NAME                1 (b)</span><br><span class="line">           10 LOAD_NAME                0 (a)</span><br><span class="line">           12 ROT_TWO</span><br><span class="line">           14 STORE_NAME               0 (a)</span><br><span class="line">           16 STORE_NAME               1 (b)</span><br><span class="line">           18 LOAD_CONST               2 (None)</span><br><span class="line">           20 RETURN_VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 交换两个最顶层的堆栈项</span><br><span class="line"># ps:只是取元素，并没有pop()出来</span><br><span class="line">ROT_TWO </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908115558851.png" alt="image-20220908115558851"></p>
+<p>紧接着</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">14 STORE_NAME               0 (a)</span><br><span class="line">16 STORE_NAME               1 (b)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908120816823.png" alt="image-20220908120816823"></p>
+<p>注意！取出来的不是字节码中的index，而是py对象指针</p>
+<p>字节码和实际程序运行的堆栈不是一一对应的</p>
+<p>字节码只是指令的集合</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908135823168.png" alt="image-20220908135823168"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locals() 函数会以字典类型返回当前位置的全部局部变量</span><br></pre></td></tr></table></figure>
+
+<p><code>LOAD_NAME</code> 找变量，然后<code>push</code>入栈</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908140820387.png" alt="image-20220908140820387"></p>
+<p><code>STORE_NAME</code></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908141049239.png" alt="image-20220908141049239"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;1 2 3&quot;</span>.split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>对于可迭代的对象可以这么赋值，那么同理：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="string">&quot;abc&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Ps：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># error</span></span><br><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;1 2 3&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<p>因为一位一位迭代的，迭代到空格时，无法应用<code>int()</code>则出错</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;123&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<p>这样可以，但是只能应对一位数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># error</span></span><br><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;1234&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<p>超数位的话，会报错</p>
+<p>因为map可以迭代4次， 但是左边只有3个对象</p>
+<h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828205946122.png" alt="image-20220828205946122"></p>
+<h2 id="官网文档"><a href="#官网文档" class="headerlink" title="官网文档"></a>官网文档</h2><p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/language.html">https://docs.python.org/zh-cn/3/library/language.html</a></p>
+<h1 id="Buildin"><a href="#Buildin" class="headerlink" title="Buildin"></a>Buildin</h1><h2 id="id"><a href="#id" class="headerlink" title="id()"></a>id()</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901140919154.png" alt="image-20220901140919154"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901140857842.png" alt="image-20220901140857842"></p>
+<p>就是当前指针指向的内存地址</p>
+<h2 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901141258000.png" alt="image-20220901141258000"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901141233980.png" alt="image-20220901141233980"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901141337666.png" alt="image-20220901141337666"></p>
+<p>以上是Python2.5.6的源码，返回的<code>result</code>是个<code>list</code></p>
+<p>但是，在python3中</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901141613297.png" alt="image-20220901141613297"></p>
+<p>返回的是可迭代的<code>mapobject</code></p>
+<p>所以，可以再把map转成list</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, [<span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>]))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;12345&quot;</span>)))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="Bool"><a href="#Bool" class="headerlink" title="Bool"></a>Bool</h1><p>特殊的int类型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> PyIntObject PyBoolObject;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113420143.png" alt="image-20220916113420143"></p>
+<p>if 后面、and or 左右可以放任何类型的数据</p>
+<p>只是在进行and or 操作的时候、在if判断的时候</p>
+<p>每种类型有各自的计算bool值的方法——<code>object.c</code>里</p>
+<p>数字–是否为0</p>
+<p>序列–长度是否为0</p>
+<h2 id="compare"><a href="#compare" class="headerlink" title="compare"></a>compare</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">1</span>&gt;<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0 LOAD_CONST               0 (1)</span><br><span class="line">2 LOAD_CONST               1 (2)</span><br><span class="line">4 COMPARE_OP               4 (&gt;)</span><br><span class="line">6 STORE_NAME               0 (b)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916151025380.png" alt="image-20220916151025380"></p>
+<p>对于其他类型则各自处理</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916151048402.png" alt="image-20220916151048402"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916163900938.png" alt="image-20220916163900938"></p>
+<h2 id="expression"><a href="#expression" class="headerlink" title="expression"></a>expression</h2><p>来者不拒。。各种类型都可以放里面</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916155615173.png" alt="image-20220916155615173"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">abs</span> <span class="keyword">or</span> <span class="number">1</span>) <span class="comment"># &lt;built-in function abs&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="short-circuit"><a href="#short-circuit" class="headerlink" title="short-circuit"></a>short-circuit</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;&quot;</span> <span class="keyword">or</span> <span class="string">&quot;It is a empty string&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2           0 LOAD_CONST               0 (&#x27;&#x27;)</span><br><span class="line">            2 JUMP_IF_TRUE_OR_POP      6</span><br><span class="line">            4 LOAD_CONST               1 (&#x27;It is a empty string&#x27;)</span><br><span class="line">      &gt;&gt;    6 STORE_NAME               0 (a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916150558247.png" alt="image-20220916150558247"></p>
+<h2 id="string-to-bool"><a href="#string-to-bool" class="headerlink" title="string to bool"></a>string to bool</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113202232.png" alt="image-20220916113202232"></p>
+<p>如果是字符串，ok则为字符串长度</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113223141.png" alt="image-20220916113223141"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113301601.png" alt="image-20220916113301601"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="string">&quot;&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h1><h2 id="asdl"><a href="#asdl" class="headerlink" title="asdl"></a>asdl</h2><p>Abstract Syntax Definition Language</p>
+<h2 id="Augassign-and-Assign"><a href="#Augassign-and-Assign" class="headerlink" title="Augassign and Assign"></a>Augassign and Assign</h2><p>增强赋值</p>
+<p>+=</p>
+<p>assign 在compile</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908113725314.png" alt="image-20220908113725314"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	asdl_seq *targets;</span><br><span class="line">	expr_ty value;</span><br><span class="line">&#125; Assign;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="base"><a href="#base" class="headerlink" title="base"></a>base</h2><p>进制</p>
+<p>base = 16 表示16进制</p>
+<h2 id="callable"><a href="#callable" class="headerlink" title="callable"></a>callable</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828110216742.png" alt="image-20220828110216742"></p>
+<h2 id="cxt-context？"><a href="#cxt-context？" class="headerlink" title="cxt context？"></a>cxt context？</h2><h2 id="del-1"><a href="#del-1" class="headerlink" title="del"></a>del</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912100357000.png" alt="image-20220912100357000"></p>
+<h2 id="expression-1"><a href="#expression-1" class="headerlink" title="expression"></a>expression</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909233623295.png" alt="image-20220909233623295"></p>
+<h2 id="factor？"><a href="#factor？" class="headerlink" title="factor？"></a>factor？</h2><h2 id="flags"><a href="#flags" class="headerlink" title="flags"></a>flags</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828202911546.png" alt="image-20220828202911546"></p>
+<h2 id="free-variable"><a href="#free-variable" class="headerlink" title="free variable"></a>free variable</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828203343767.png" alt="image-20220828203343767"></p>
+<h2 id="inplace-operator"><a href="#inplace-operator" class="headerlink" title="inplace operator"></a>inplace operator</h2><p>+=</p>
+<p>-=</p>
+<p>……</p>
+<h2 id="locals"><a href="#locals" class="headerlink" title="locals?"></a>locals?</h2><h2 id="literal"><a href="#literal" class="headerlink" title="literal"></a>literal</h2><p>固定值</p>
+<h2 id="mapping"><a href="#mapping" class="headerlink" title="mapping"></a>mapping</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101459730.png" alt="image-20220912101459730"></p>
+<p>python里边</p>
+<p>变量？</p>
+<p>字典？</p>
+<h2 id="mangling"><a href="#mangling" class="headerlink" title="mangling"></a>mangling</h2><p>public private 等修饰</p>
+<p>can be considered a way to implement private members in python</p>
+<h2 id="main不是主函数"><a href="#main不是主函数" class="headerlink" title="main不是主函数"></a>main不是主函数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220907181447776.png" alt="image-20220907181447776"></p>
+<h2 id="name"><a href="#name" class="headerlink" title="__name__"></a>__name__</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__name__ == &#x27;__main__&#x27; 就表示在当前文件中，可以在if __name__ == &#x27;__main__&#x27;:条件下写入测试代码，如此可以避免测试代码在模块被导入后执行</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="opname"><a href="#opname" class="headerlink" title="opname"></a>opname</h2><p>人类可读的操作名称</p>
+<h2 id="pyc"><a href="#pyc" class="headerlink" title="pyc"></a>pyc</h2><p>编译后的字节码文件</p>
+<p>其实就是对应PyCodeObject保存在硬盘中的存在形式</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822000747996.png" alt="image-20220822000747996"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822000717627.png" alt="image-20220822000717627"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822000737299.png" alt="image-20220822000737299"></p>
+<p>Ps: Item 已经是对象了</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822001231853.png" alt="image-20220822001231853"></p>
+<p>常量的GETITEM</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822001451725.png" alt="image-20220822001451725"></p>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910223512145.png" alt="image-20220910223512145"></p>
+<p>一个python对象被引用的时候ob_refcnt + 1</p>
+<p>如果该对象减少一个引用的时候，则ob_refcnt - 1</p>
+<p>比如说：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912095541557.png" alt="image-20220912095541557"></p>
+<h2 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908095829386.png" alt="image-20220908095829386"></p>
+<h2 id="stmt"><a href="#stmt" class="headerlink" title="stmt"></a>stmt</h2><p>statement</p>
+<p>an instruction that a Python interpreter can execute</p>
+<h2 id="Suite"><a href="#Suite" class="headerlink" title="Suite"></a>Suite</h2><p>A group of individual statements, which make a single code block are called suites in Python.</p>
+<p>Header lines begin the statement (with the keyword) and terminate with a colon (: ) and are followed by one or more lines which make up the suite. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> expr1==<span class="literal">True</span>:</span><br><span class="line">  stmt1</span><br><span class="line">  stmt2</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="symtable"><a href="#symtable" class="headerlink" title="symtable"></a>symtable</h2><p><a target="_blank" rel="noopener" href="https://eli.thegreenplace.net/2010/09/18/python-internals-symbol-tables-part-1/">https://eli.thegreenplace.net/2010/09/18/python-internals-symbol-tables-part-1/</a></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828203230431.png" alt="image-20220828203230431"></p>
+<p><a target="_blank" rel="noopener" href="https://eli.thegreenplace.net/2010/09/20/python-internals-symbol-tables-part-2">https://eli.thegreenplace.net/2010/09/20/python-internals-symbol-tables-part-2</a></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828203051815.png" alt="image-20220828203051815"></p>
+<h2 id="sys-getsizeof"><a href="#sys-getsizeof" class="headerlink" title="sys.getsizeof()"></a>sys.getsizeof()</h2><p>python2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">1</span>) <span class="comment"># 24</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">1l</span>) <span class="comment"># 28</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int = pyobject_head + long = 20 + 4</span><br><span class="line">long = pyobjecy_var_head + unsigh short*</span><br><span class="line">	 = pyobject_head + ob_size + unsigh short* </span><br><span class="line">	 = 20 + 4 + 4 + 28</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="typeObject"><a href="#typeObject" class="headerlink" title="typeObject"></a>typeObject</h2><p>每个Object都有，用来表明type</p>
+<p>包括申请内存、相关function等meta-information</p>
+<h2 id="testlist"><a href="#testlist" class="headerlink" title="testlist"></a>testlist</h2><p>用<code>,</code>隔开的序列</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>:</span><br><span class="line">    <span class="built_in">print</span> i</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># error：参数列表不一样</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="varnames"><a href="#varnames" class="headerlink" title="varnames"></a>varnames</h2><p>变量名表</p>
+<h2 id="Var-Object"><a href="#Var-Object" class="headerlink" title="Var Object"></a>Var Object</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818102051244.png" alt="image-20220818102051244"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818102324082.png" alt="image-20220818102324082"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818102428257.png" alt="image-20220818102428257"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818104743139.png" alt="image-20220818104743139"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818103033036.png" alt="image-20220818103033036"></p>
+<h2 id="void-0"><a href="#void-0" class="headerlink" title="void(0)"></a>void(0)</h2><p>null</p>
+<h2 id="unary-binary-inplace"><a href="#unary-binary-inplace" class="headerlink" title="unary binary inplace"></a>unary binary inplace</h2><p>unary =&gt; 一元，如: 负数-、取反~等</p>
+<p>binary =&gt; 二元</p>
+<p>inplace =&gt;就地操作</p>
+<h2 id="weak-ref"><a href="#weak-ref" class="headerlink" title="weak ref"></a>weak ref</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220907010203957.png" alt="image-20220907010203957"></p>
+<h2 id="yield（later）"><a href="#yield（later）" class="headerlink" title="yield（later）"></a>yield（later）</h2><p>v.出产</p>
+<p>生成器</p>
+<p><code>yield</code> 是一个类似 <code>return</code> 的关键字，只是这个函数返回的是个生成器。</p>
+<h1 id="Compile"><a href="#Compile" class="headerlink" title="Compile"></a>Compile</h1><p><code>compile.c</code></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909231937202.png" alt="image-20220909231937202"></p>
+<h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m py_compile main.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m compileall -b .</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="index"><a href="#index" class="headerlink" title="index"></a>index</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">999</span></span><br><span class="line">b = <span class="number">999</span>+<span class="number">998</span></span><br><span class="line">d = <span class="string">&quot;h&quot;</span></span><br><span class="line">c = <span class="number">1000</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="optimize"><a href="#optimize" class="headerlink" title="optimize"></a>optimize</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220907003800206.png" alt="image-20220907003800206"></p>
+<h2 id="no-matter-fail"><a href="#no-matter-fail" class="headerlink" title="no matter fail"></a>no matter fail</h2><p>报错的代码也会把字节码给编出来（运行时报错，不是编译的报错）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912102649055.png" alt="image-20220912102649055"></p>
+<h2 id="number"><a href="#number" class="headerlink" title="number+"></a>number+</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828200236499.png" alt="image-20220828200236499"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828235707513.png" alt="image-20220828235707513"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">666</span>+<span class="number">666</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828235816873.png" alt="image-20220828235816873"></p>
+<h2 id="return-0"><a href="#return-0" class="headerlink" title="return 0"></a>return 0</h2><p>return之前的<code>LOAD_CONST</code></p>
+<p>表示当前Suite执行完毕</p>
+<h2 id="VISIT"><a href="#VISIT" class="headerlink" title="VISIT?"></a>VISIT?</h2><p>对应的visit方法</p>
+<p>简单地说是把某个量push入栈</p>
+<h1 id="Computer"><a href="#Computer" class="headerlink" title="Computer"></a>Computer</h1><h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812104258814.png" alt="image-20220812104258814"></p>
+<h1 id="Dict"><a href="#Dict" class="headerlink" title="Dict"></a>Dict</h1><p>Dictionaries and sets use hash tables to achieve their O(1) lookups and insertions.  </p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823172037306.png" alt="image-20220823172037306"></p>
+<p>entry 是dict内的每一个键值对</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823171609158.png" alt="image-20220823171609158"></p>
+<h2 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823172803442.png" alt="image-20220823172803442"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823163552110.png" alt="image-20220823163552110"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823165856496.png" alt="image-20220823165856496"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823164605841.png" alt="image-20220823164605841"></p>
+<h1 id="function"><a href="#function" class="headerlink" title="function"></a>function</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#x27;function&#x27;&gt;</span><br><span class="line">&lt;class &#x27;builtin_function_or_method&#x27;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="Nested-function"><a href="#Nested-function" class="headerlink" title="Nested function"></a>Nested function</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220829002937657.png" alt="image-20220829002937657"></p>
+<h2 id="Interesting"><a href="#Interesting" class="headerlink" title="Interesting"></a>Interesting</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="number">99</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(f)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="Float"><a href="#Float" class="headerlink" title="Float"></a>Float</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824163821631.png" alt="image-20220824163821631"></p>
+<h2 id="String-to-Float"><a href="#String-to-Float" class="headerlink" title="String to Float"></a>String to Float</h2><p>Ps:需要一位一位遍历的</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824165627136.png" alt="image-20220824165627136"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912171354414.png" alt="image-20220912171354414"></p>
+<h2 id="print"><a href="#print" class="headerlink" title="print"></a>print</h2><p><strong>print的并不一定是实际存的</strong></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912143421146.png" alt="image-20220912143421146"></p>
+<p>python3</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.300000000000000004</span>)</span><br><span class="line"><span class="comment"># 0.3</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.30000000000000004</span>)</span><br><span class="line"><span class="comment"># 0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+
+<p>17位</p>
+<p>python2.7</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">0.3000000000004</span></span><br><span class="line"><span class="comment"># 0.3</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">0.300000000004</span></span><br><span class="line"><span class="comment"># 0.300000000004</span></span><br></pre></td></tr></table></figure>
+
+<p>12位</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912142907529.png" alt="image-20220912142907529"></p>
+<p>C 库函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">snprintf</span><span class="params">(<span class="keyword">char</span> *str, <span class="keyword">size_t</span> size, <span class="keyword">const</span> <span class="keyword">char</span> *format, ...)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>按照 format 格式化成字符串，并将字符串复制到 str 中，size 为要写入的字符的最大数目，超过 size 会被截断。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Have PyOS_snprintf do the hard work */</span></span><br><span class="line">    PyOS_snprintf(buffer, buf_size, format, d);</span><br></pre></td></tr></table></figure>
+
+<p>double值按照format去解析</p>
+<p>然后把结果放到buffer里</p>
+<p>（稀奇古怪的输出结果都是在这个函数里面。。但它是c的库函数。。。我觉得没有再往下研究的必要了）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">1.300000000004</span></span><br><span class="line"><span class="comment"># 1.3</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>小数减少一位</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">1.30000000004</span></span><br><span class="line"><span class="comment"># 1.30000000004</span></span><br><span class="line"><span class="comment"># 1个整数+1个.+11位小数 = 13</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">5.30000000004</span></span><br><span class="line"><span class="comment"># 5.30000000004</span></span><br><span class="line"><span class="comment"># 1+1+11 = 13</span></span><br></pre></td></tr></table></figure>
+
+<p>是因为申请的buffer就这么大</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">10.30000000004</span></span><br><span class="line"><span class="comment"># 10.3</span></span><br><span class="line"><span class="comment"># 2+1+11 = 14 &gt; 13 最后面的4被截断，然后除去多余的0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> -<span class="number">1.30000000004</span></span><br><span class="line"><span class="comment"># -1.30000000004</span></span><br><span class="line"><span class="comment"># 1+1+1+11 = 14 ok 因为符号和数字不同处理的</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PyFloat_STR_PRECISION 12</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">1.00</span>)</span><br><span class="line"><span class="comment"># 1.0</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912143310143.png" alt="image-20220912143310143"></p>
+<p>further</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(<span class="number">0.10000000000000001</span>))</span><br><span class="line"><span class="comment"># 0.1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(<span class="number">0.1000000000000001</span>))</span><br><span class="line"><span class="comment"># 0.1000000000000001</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="0-1-0-2-0-3"><a href="#0-1-0-2-0-3" class="headerlink" title="0.1+0.2!=0.3"></a>0.1+0.2!=0.3</h2><p>两个误差</p>
+<p>一个误差</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.1</span>+<span class="number">0.2</span> == <span class="number">0.3</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.3</span>) <span class="comment"># 0.3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">0.29999999999999999</span>) <span class="comment">#0.3</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.30000000000000004</span></span><br><span class="line"><span class="number">0.10000000000000001</span></span><br><span class="line"><span class="number">0.20000000000000001</span></span><br><span class="line"></span><br><span class="line"><span class="number">0.29999999999999999</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="if"><a href="#if" class="headerlink" title="if"></a>if</h1><p>比较运算符的结果是True或者False</p>
+<p>and、or 的结果是栈顶元素！而不是True或者False</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="literal">True</span> <span class="keyword">and</span> <span class="string">&quot;&quot;</span>) <span class="comment"># &quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>然后if 栈顶元素的时候，则是</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916153334550.png" alt="image-20220916153334550"></p>
+<h1 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h1><p><strong>different in interact terminal</strong></p>
+<h2 id="Byte"><a href="#Byte" class="headerlink" title="Byte"></a>Byte</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject_HEAD </span><br><span class="line">    <span class="keyword">long</span> ob_ival; </span><br><span class="line">&#125; PyIntObject; </span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">longobject</span> &#123;</span></span><br><span class="line">	PyObject_VAR_HEAD   </span><br><span class="line">	digit ob_digit[<span class="number">1</span>]; </span><br><span class="line">&#125;; 					  </span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910220254778.png" alt="image-20220910220254778"></p>
+<h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818103459613.png" alt="image-20220818103459613"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173606048.png" alt="image-20220823173606048"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line">a += <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="number">2265003682384</span></span><br><span class="line"><span class="number">2265003682704</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220829004256082.png" alt="image-20220829004256082"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220829004633348.png" alt="image-20220829004633348"></p>
+<h2 id="Compare"><a href="#Compare" class="headerlink" title="Compare"></a>Compare</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105009850.png" alt="image-20220818105009850"></p>
+<h2 id="Constant"><a href="#Constant" class="headerlink" title="Constant"></a>Constant</h2><h2 id="intern"><a href="#intern" class="headerlink" title="intern"></a>intern</h2><p><code>python3.9.6</code>的优化</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220913013104725.png" alt="image-20220913013104725"></p>
+<h2 id="int"><a href="#int" class="headerlink" title="int()"></a>int()</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914093218199.png" alt="image-20220914093218199"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914093229851.png" alt="image-20220914093229851"></p>
+<h2 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823175023720.png" alt="image-20220823175023720"></p>
+<h2 id="Object-Meta-data"><a href="#Object-Meta-data" class="headerlink" title="Object Meta-data"></a>Object Meta-data</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173829465.png" alt="image-20220823173829465"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173807342.png" alt="image-20220823173807342"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173849213.png" alt="image-20220823173849213"></p>
+<p>可变对象</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject ob_base;</span><br><span class="line">    Py_ssize_t ob_size; <span class="comment">/* Number of items in variable part */</span></span><br><span class="line">&#125; PyVarObject;</span><br></pre></td></tr></table></figure>
+
+<p>为什么int也是可变对象呢？</p>
+<p>因为python 的大数机制</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sys.getsizeof(<span class="number">4000</span>))</span><br><span class="line"><span class="built_in">print</span>(sys.getsizeof(<span class="number">999999999999999999</span>))</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">28</span><br><span class="line">32</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="Small-Int"><a href="#Small-Int" class="headerlink" title="Small Int"></a>Small Int</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823084031141.png" alt="image-20220823084031141"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823084219648.png" alt="image-20220823084219648"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> *<span class="title">next</span>;</span></span><br><span class="line">	PyIntObject objects[N_INTOBJECTS];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a>sizeof</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910211016960.png" alt="image-20220910211016960"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910212703897.png" alt="image-20220910212703897"></p>
+<h2 id=""><a href="#" class="headerlink" title="+"></a>+</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105213076.png" alt="image-20220818105213076"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818111819810.png" alt="image-20220818111819810"></p>
+<h2 id="Small-Int-1"><a href="#Small-Int-1" class="headerlink" title="Small Int"></a>Small Int</h2><p>如果是会被频繁使用的small int的话，则不再重新申请内存</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="built_in">int</span>(<span class="number">10.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2136571865680</span><br><span class="line">2136571865680</span><br></pre></td></tr></table></figure>
+
+
+
+<p>small int 的范围[-5, 256]</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818144334419.png" alt="image-20220818144334419"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818144452626.png" alt="image-20220818144452626"></p>
+<p>如果不是small int的话</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10000</span></span><br><span class="line">b = <span class="built_in">int</span>(<span class="number">10000.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1775767656144</span><br><span class="line">1775764920624</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<p>为什么要有对象池</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818111915501.png" alt="image-20220818111915501"></p>
+<p>修改python源码</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818112240243.png" alt="image-20220818112240243"></p>
+<p>具体过程</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818112549467.png" alt="image-20220818112549467"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818140616581.png" alt="image-20220818140616581"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818140445960.png" alt="image-20220818140445960"></p>
+<p>Ps：返回的是指针</p>
+<p>如果不是small int，则新申请内存，不再用池</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818140949866.png" alt="image-20220818140949866"></p>
+<h1 id="Long"><a href="#Long" class="headerlink" title="Long"></a>Long</h1><p><a target="_blank" rel="noopener" href="https://www.codementor.io/@arpitbhayani/how-python-implements-super-long-integers-12icwon5vk">https://www.codementor.io/@arpitbhayani/how-python-implements-super-long-integers-12icwon5vk</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct _longobject &#123;</span><br><span class="line">	PyObject_VAR_HEAD</span><br><span class="line">	digit ob_digit[<span class="number">1</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914102218285.png" alt="image-20220914102218285"></p>
+<p>fromstring</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914110204455.png" alt="image-20220914110204455"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> long(<span class="string">&quot;bbbbb&quot;</span>, <span class="number">16</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> long(<span class="string">&quot;zzzzz&quot;</span>, <span class="number">36</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BASE = 2**15 = 1&lt;&lt;15</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="built_in">print</span>(math.log(<span class="number">10</span>)/math.log(<span class="number">1</span>&lt;&lt;<span class="number">15</span>)) <span class="comment"># 0.22146187299249084</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">1073741823l</span>) <span class="comment"># 28</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">1073741824l</span>) <span class="comment"># 32</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><code>scan</code> - <code>str</code> &lt; 5</p>
+<p>最大的35进制数<code>9999</code> = 397224</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">2</span>**<span class="number">15</span> <span class="comment"># 32768</span></span><br><span class="line"><span class="built_in">print</span> <span class="number">2</span>**<span class="number">16</span> <span class="comment"># 65536</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914144129797.png" alt="image-20220914144129797"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PyLong_BASE = 2**15 = 32768</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="bit-length"><a href="#bit-length" class="headerlink" title="bit_length"></a>bit_length</h2><p>有效bits的长度</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914141931549.png" alt="image-20220914141931549"></p>
+<p>msd</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914142355502.png" alt="image-20220914142355502"></p>
+<p><code>ob_digit[0]</code>是低位</p>
+<h2 id="sizeof-1"><a href="#sizeof-1" class="headerlink" title="sizeof"></a>sizeof</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914141437580.png" alt="image-20220914141437580"></p>
+<p>24+2x2</p>
+<p>​    </p>
+<h2 id="sign"><a href="#sign" class="headerlink" title="sign?"></a>sign?</h2><h2 id="int-and-long"><a href="#int-and-long" class="headerlink" title="int and long"></a>int and long</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">2</span>**<span class="number">30</span>) <span class="comment"># 24</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">type</span>(<span class="number">2</span>**<span class="number">30</span>) <span class="comment"># int</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">2</span>**<span class="number">31</span>) <span class="comment"># 32</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">type</span>(<span class="number">2</span>**<span class="number">31</span>) <span class="comment"># long</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="fromstring"><a href="#fromstring" class="headerlink" title="fromstring"></a>fromstring</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914151701426.png" alt="image-20220914151701426"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914151835010.png" alt="image-20220914151835010"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914152128108.png" alt="image-20220914152128108"></p>
+<p>Ps: 1&lt;&lt;15</p>
+<p>1是到了第16位，2**15</p>
+<p>没有浪费</p>
+<p>然后</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PyLong_BASE	((digit)1 &lt;&lt; PyLong_SHIFT)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PyLong_MASK	((digit)(PyLong_BASE - 1))</span></span><br></pre></td></tr></table></figure>
+
+<p>mask是15位全1</p>
+<p>剩下的一位，继承于<code>c&gt;&gt;=15</code></p>
+<p><strong>也就间接实现了2^15进制</strong> 好好理解！</p>
+<p>2^15（100…0）正好取不到</p>
+<p><code>convmultmax=10000</code></p>
+<p><code>convwidth=4</code></p>
+<p>twodigits twodigits地处理 long是足够不溢出的</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914153256130.png" alt="image-20220914153256130"></p>
+<p>叠加是指1000和100叠加成100000</p>
+<p>然后把低位放到digit[0]</p>
+<p>右移c后把高位放到digit[1]</p>
+<p><code>ob_digit[0]</code>是低位</p>
+<h2 id="long-to-string"><a href="#long-to-string" class="headerlink" title="long to string"></a>long to string</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914154034628.png" alt="image-20220914154034628"></p>
+<h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822224903763.png" alt="image-20220822224903763"></p>
+<h2 id="Create-1"><a href="#Create-1" class="headerlink" title="Create"></a>Create</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901150220813.png" alt="image-20220901150220813"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824095533523.png" alt="image-20220824095533523"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908100618288.png" alt="image-20220908100618288"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908102148324.png" alt="image-20220908102148324"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908100835287.png" alt="image-20220908100835287"></p>
+<p>就是对应一个结构体———listType</p>
+<p>list独有的一些function都在这（还有list对象创建、维护所需的一些字段）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908101021903.png" alt="image-20220908101021903"></p>
+<h2 id="Access"><a href="#Access" class="headerlink" title="Access"></a>Access</h2><p><code>lst </code>和<code>lst[0]</code> 、<code>lst[:]</code>的区别</p>
+<p>没啥区别，都是<code>PyObject*</code></p>
+<p>切片其实不会新建intobject</p>
+<h2 id="String-to-List"><a href="#String-to-List" class="headerlink" title="String to List"></a>String to List</h2><p>为什么没有FromString</p>
+<p>因为可以用extend完美等效实现</p>
+<p>因为有new一个List，所以这个操作还是相对耗时的</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824170818187.png" alt="image-20220824170818187"></p>
+<p>这也是下面报错的原因（extend() 的对象一定要是iterable）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824100513252.png" alt="image-20220824100513252"></p>
+<h2 id="Change-value"><a href="#Change-value" class="headerlink" title="Change value"></a>Change value</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822231033293.png" alt="image-20220822231033293"></p>
+<h2 id="del-2"><a href="#del-2" class="headerlink" title="del"></a>del</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> lst[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101903987.png" alt="image-20220912101903987"></p>
+<p>(不需要重新push() 因为这里不是<code>slice</code>操作，而是<code>slice</code>赋值，二者完全不是一个东西, slice赋值是在原list的基础上进行修改)</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101840551.png" alt="image-20220912101840551"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101813845.png" alt="image-20220912101813845"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101742369.png" alt="image-20220912101742369"></p>
+<h2 id="extend"><a href="#extend" class="headerlink" title="extend"></a>extend</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912100913951.png" alt="image-20220912100913951"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912100851321.png" alt="image-20220912100851321"></p>
+<h2 id="List-and-Tuple"><a href="#List-and-Tuple" class="headerlink" title="List and Tuple"></a>List and Tuple</h2><p>Python stores data in these buckets by reference</p>
+<p>which means the number itself simply points to or refers to the data we actually care about.</p>
+<p>As a result, these buckets can store any type of data we want (as opposed to numpy arrays</p>
+<p>which have a static type and can store only that type of data).</p>
+<h2 id="Overallocation"><a href="#Overallocation" class="headerlink" title="Overallocation"></a>Overallocation</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220816160111042.png" alt="image-20220816160111042"></p>
+<p>For example, if you create a list with 8,000 elements using appends,</p>
+<p>Python will allocate space for about 8,600 elements, overallocating 600 elements! </p>
+<p>（It is for reduce the time for reallocate, but it actually do cost the extra resource）</p>
+<p><strong>Why mention Overallocation?</strong></p>
+<p><strong>1.time for copy</strong></p>
+<p>we can reduce the number of times this allocation must happen and thus the total number of memory copies that are necessary. </p>
+<p>This is important since memory copies can be quite expensive, especially when list sizes start growing.   </p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220816160356867.png" alt="image-20220816160356867"></p>
+<p><strong>2.extra memory</strong></p>
+<p>A list of size 100,000,000 created with any append operation actually uses 112,500,007 elements’ worth of memory </p>
+<p>（Because when it do the append(),  it already allocate 112,500,007 lements’ worth of memory ）</p>
+<p><strong>Then what about the Tuple?</strong></p>
+<p>a tuple holding the same data will only ever use exactly 100,000,000 elements’ worth of memory.</p>
+<p>This makes tuples lightweight and preferable when data becomes static.  </p>
+<p><strong>Furthermore</strong></p>
+<p>even if we create a list without append (and thus we don’t have the extra headroom introduced by an append operation)</p>
+<p>it will still be larger in memory than a tuple with the same data. </p>
+<p>This is because lists have to keep track of more information about their current state in order to efficiently resize. </p>
+<p>like current size etc</p>
+<p>While this extra information is quite small (the equivalent of one extra element)</p>
+<p>it can add up if several million lists are in use.  </p>
+<h2 id="Tuple-and-GC"><a href="#Tuple-and-GC" class="headerlink" title="Tuple and GC"></a>Tuple and GC</h2><p>Tuples is something Python does in the background: resource caching. </p>
+<p>Python is garbage collected, which means that when a variable isn’t used anymore</p>
+<p>Python frees the memory used by that variable, giving it back to the operating system for use in other applications</p>
+<p> (or for other variables)</p>
+<p>For tuples of sizes 1–20, however, when they are no longer in use</p>
+<p>the space isn’t immediately given back to the system: up to 20,000 of each size are saved for future use.</p>
+<p>This means that when a new tuple of that size is needed in the future</p>
+<p>we don’t need to communicate with the operating system to find a region in memory to put the data</p>
+<p>since we have a reserve of free memory already. </p>
+<p>However, this also means that the Python process will have some extra memory overhead.  </p>
+<h2 id="Time-to-create-List-and-Tuple"><a href="#Time-to-create-List-and-Tuple" class="headerlink" title="Time to create List and Tuple"></a>Time to create List and Tuple</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; %timeit l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br><span class="line">95 ns ± 1.87 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; %timeit t = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</span><br><span class="line">12.5 ns ± 0.199 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="Pointer-and-Copy"><a href="#Pointer-and-Copy" class="headerlink" title="Pointer and Copy"></a>Pointer and Copy</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1000</span>, <span class="number">2000</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a[<span class="number">0</span>]))</span><br></pre></td></tr></table></figure>
+
+<p>尝试思考输出的两个值分别是什么</p>
+<ul>
+<li>ListObject的address</li>
+<li>a[0]指向的内存的address，而不是a[0]的这个指针的地址</li>
+</ul>
+<p><strong>a[0]是个Pointer！！！</strong></p>
+<p><strong>所以! <code>id()</code> 其实是取指针的值</strong></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822234039747.png" alt="image-20220822234039747"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1000</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = a.copy()</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>List中存的确实是指针</p>
+<p>但是注意！</p>
+<p><strong>只是修改了<code>a[0]</code>的pointer</strong></p>
+<p><strong>并不是修改<code>a[0]</code> pointer的指向</strong></p>
+<p>好好理解上面两句话！！！</p>
+<p>再看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1000</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = a</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line">[<span class="number">10000</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">[<span class="number">10000</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<p>这里是a和b指向同一个ListObject</p>
+<p>a[0] = 10000 会影响a和b列表</p>
+<p>再看！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = a.copy()</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line">a[<span class="number">1</span>] = <span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line">[[<span class="number">10000</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">1000</span>, <span class="number">3</span>]</span><br><span class="line">[[<span class="number">10000</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<p><code>copy()</code>是 shallow copy </p>
+<p>只是单纯copy全部pointer，包括List里面的List</p>
+<p>deep copy则是会确实重新构建一个List</p>
+<h2 id="Overallocate"><a href="#Overallocate" class="headerlink" title="Overallocate"></a>Overallocate</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818133303696.png" alt="image-20220818133303696"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818133908082.png" alt="image-20220818133908082"></p>
+<h2 id="append"><a href="#append" class="headerlink" title="append"></a>append</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818134207085.png" alt="image-20220818134207085"></p>
+<h2 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818134424126.png" alt="image-20220818134424126"></p>
+<h2 id="index-1"><a href="#index-1" class="headerlink" title="index -1"></a>index -1</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910223902808.png" alt="image-20220910223902808"></p>
+<h2 id="Clear"><a href="#Clear" class="headerlink" title="Clear"></a>Clear</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822223821775.png" alt="image-20220822223821775"></p>
+<h2 id="Remove（不推荐使用）"><a href="#Remove（不推荐使用）" class="headerlink" title="Remove（不推荐使用）"></a>Remove（不推荐使用）</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822225314640.png" alt="image-20220822225314640"></p>
+<p>另外后续还有切片相关的操作。。也耗时的</p>
+<h2 id="Pop"><a href="#Pop" class="headerlink" title="Pop"></a>Pop</h2><p>pop的核心其实只是修改ob_size</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822225726962.png" alt="image-20220822225726962"></p>
+<h2 id="Iteration"><a href="#Iteration" class="headerlink" title="Iteration"></a>Iteration</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823162436558.png" alt="image-20220823162436558"></p>
+<h2 id="Slice"><a href="#Slice" class="headerlink" title="Slice"></a>Slice</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901143330354.png" alt="image-20220901143330354"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">lst[<span class="number">0</span>:<span class="number">2</span>][<span class="number">0</span>] = <span class="number">999</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(lst) <span class="comment"># [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
+<p>因为这只是在把<code>t</code>内的指针给替换了</p>
+<p><strong>原指针的指向关系并没有发生改变</strong></p>
+<p>Ps!!!!!</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901153447402.png" alt="image-20220901153447402"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切片赋值</span></span><br><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">lst[<span class="number">0</span>:<span class="number">2</span>] = [<span class="number">99</span>, <span class="number">99</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(lst) <span class="comment"># [99, 99, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">lst[<span class="number">0</span>:<span class="number">2</span>] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(lst) <span class="comment"># [1, 2, 3, 4, 5, 6, 7, 3, 4]</span></span><br></pre></td></tr></table></figure>
+
+<p>解释如下：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220902094347411.png" alt="image-20220902094347411"></p>
+<p>再看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">lst[<span class="number">0</span>:] = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(lst) <span class="comment"># [5, 6, 7]</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220902094729701.png" alt="image-20220902094729701"></p>
+<p><code>lst[0:]</code>则表示是要把整个<code>lst</code>重新赋值</p>
+<p>也就理所当然的原List的1234全没了</p>
+<p>对于恶意的范围</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824170005377.png" alt="image-20220824170005377"></p>
+<h2 id="subscript"><a href="#subscript" class="headerlink" title="subscript"></a>subscript</h2><h2 id="sizeof-2"><a href="#sizeof-2" class="headerlink" title="sizeof"></a>sizeof</h2><p>是会计算ob_item指向的那块内存的字节大小的</p>
+<h2 id="Print"><a href="#Print" class="headerlink" title="Print"></a>Print</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824094800242.png" alt="image-20220824094800242"></p>
+<h1 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h1><h2 id="Iter"><a href="#Iter" class="headerlink" title="Iter"></a>Iter</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830132253776.png" alt="image-20220830132253776"></p>
+<p>所以！</p>
+<p><code>range()</code>其实并没有一次性生成一个序列！</p>
+<p>只是每次返回一个<code>intobject</code></p>
+<p>Example</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(lst)):</span><br><span class="line">    lst.pop()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(lst)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">[]</span><br></pre></td></tr></table></figure>
+
+<p><code>range()</code>不会重复执行</p>
+<p>这一行<code>for</code>语句，其实只是在推动<code>iterator</code></p>
+<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><h2 id="Compare-1"><a href="#Compare-1" class="headerlink" title="Compare"></a>Compare</h2><p>首先是对比较双方两边的数据类型的确认</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818180437920.png" alt="image-20220818180437920"></p>
+<p>其次，看a、b的地址</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818180350693.png" alt="image-20220818180350693"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818180158542.png" alt="image-20220818180158542"></p>
+<p>再对于单纯的比较==</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818175355624.png" alt="image-20220818175355624"></p>
+<p>memcmp</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果返回值 &lt; 0，则表示 str1 小于 str2</span><br><span class="line">如果返回值 &gt; 0，则表示 str1 大于 str2</span><br><span class="line">如果返回值 = 0，则表示 str1 等于 str2</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>最后</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818182840543.png" alt="image-20220818182840543"></p>
+<h2 id="Int-to-String"><a href="#Int-to-String" class="headerlink" title="Int to String"></a>Int to String</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818183138878.png" alt="image-20220818183138878"></p>
+<h2 id="and-join"><a href="#and-join" class="headerlink" title="+ and join()"></a>+ and join()</h2><p>多字符串时，尽量避免使用+ —— 会调用<code>string_concat()</code></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822235509102.png" alt="image-20220822235509102"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823000448297.png" alt="image-20220823000448297"></p>
+<p><strong>join</strong></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823000942352.png" alt="image-20220823000942352"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;&#x27;</span>.join([<span class="string">&quot;hell&quot;</span>, <span class="string">&quot;o&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823001028210.png" alt="image-20220823001028210"></p>
+<h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220913010547399.png" alt="image-20220913010547399"></p>
+<p>取实际值做hash</p>
+<p>所以即使对象的id不一样</p>
+<p>但他们hash 的结果是一样的</p>
+<h2 id="interesting"><a href="#interesting" class="headerlink" title="interesting"></a>interesting</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;111&quot;</span></span><br><span class="line">b = <span class="string">&quot;11&quot;</span>+<span class="string">&quot;1&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br></pre></td></tr></table></figure>
+
+<p>这是Python编译时的优化，常量直接计算出来</p>
+<p>再看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;111&quot;</span></span><br><span class="line">t = <span class="string">&quot;1&quot;</span></span><br><span class="line">b = <span class="string">&quot;11&quot;</span> + t</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a)) <span class="comment"># 2317899936048</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b)) <span class="comment"># 2317899869040</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>”+“ 的原理（其实也是优化的结果）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901115713035.png" alt="image-20220901115713035"></p>
+<h2 id="intern-1"><a href="#intern-1" class="headerlink" title="intern"></a>intern</h2><p>是在<code>compile.c</code>中生产字节码文件时完成的</p>
+<p>(int的hash是它的long value)</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909232146864.png" alt="image-20220909232146864"></p>
+<p>解析源代码的时候确实是一个个都放到List里的</p>
+<p>但是转化成dict的consts时，优化掉了重复的，做了引用-1</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912224924690.png" alt="image-20220912224924690"></p>
+<p>然后这个是把dict转tuple做常量表用</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912230552236.png" alt="image-20220912230552236"></p>
+<p>optimize可能要删改，转成了List</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912230918094.png" alt="image-20220912230918094"></p>
+<p>优化完了又转回来了</p>
+<p>Ps: 因为是List转Tuple</p>
+<p>所以这里没有去重复优化！！！</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912230841370.png" alt="image-20220912230841370"></p>
+<h2 id="len"><a href="#len" class="headerlink" title="len"></a>len</h2><p>python 2中，字符串是有长度限制的</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821210401183.png" alt="image-20220821210401183"></p>
+<p>len()不需要便利整个字符串</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821213138627.png" alt="image-20220821213138627"></p>
+<p>单字符才会用到这个characters的池</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821223435366.png" alt="image-20220821223435366"></p>
+<p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">123</span></span><br><span class="line">a = <span class="built_in">str</span>(n)</span><br><span class="line">b = <span class="built_in">str</span>(n)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="number">2321637949768</span></span><br><span class="line"><span class="number">2321639465176</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="string">&quot;123&quot;</span></span><br><span class="line">a = <span class="built_in">str</span>(n)</span><br><span class="line">b = <span class="built_in">str</span>(n)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="number">2344578105672</span></span><br><span class="line"><span class="number">2344578105672</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>为什么！？</p>
+<p>fromString</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821211446609.png" alt="image-20220821211446609"></p>
+<p>因为FromString的时候是直接拷贝str的内存数据</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821214527967.png" alt="image-20220821214527967"></p>
+<p>print string</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821213028574.png" alt="image-20220821213028574"></p>
+<p>python源码也这样，哈哈哈！</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821213408548.png" alt="image-20220821213408548"></p>
+<p>concat 实现</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">memcpy(PyBytes_AS_STRING(*pv) + oldsize, wb.buf, wb.<span class="built_in">len</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="Short-strings"><a href="#Short-strings" class="headerlink" title="Short strings"></a>Short strings</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822235232971.png" alt="image-20220822235232971"></p>
+<p>长度为1的字符串会有share处理</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818174310557.png" alt="image-20220818174310557"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818174423273.png" alt="image-20220818174423273"></p>
+<h2 id="Strip"><a href="#Strip" class="headerlink" title="Strip"></a>Strip</h2><p>common case</p>
+<p>do-while on left-end  and right-ebd</p>
+<p>then return a string object</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909143031828.png" alt="image-20220909143031828"></p>
+<p>The given specified <code>str </code>as separator</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909143752109.png" alt="image-20220909143752109"></p>
+<h2 id="split"><a href="#split" class="headerlink" title="split"></a>split</h2><h3 id="Byte-1"><a href="#Byte-1" class="headerlink" title="Byte"></a>Byte</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">a = <span class="string">&#x27;&#x27;</span>.split()</span><br><span class="line">b = []</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(a) <span class="comment"># 160</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(b) <span class="comment"># 64</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">a = <span class="string">&#x27;&#x27;</span>.split()</span><br><span class="line">b = [<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(a) <span class="comment"># 160</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(b) <span class="comment"># 72</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">a = <span class="string">&#x27;&#x27;</span>.split()</span><br><span class="line">b = [<span class="number">0</span>]*<span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(a) <span class="comment"># 160</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(b) <span class="comment"># 160</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="parameter"><a href="#parameter" class="headerlink" title="parameter"></a>parameter</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello     world&#x27;</span>.split()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;hello&#x27;, &#x27;world&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello     world&#x27;</span>.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> a</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;hello&#x27;, &#x27;&#x27;, &#x27;&#x27;, &#x27;&#x27;, &#x27;&#x27;, &#x27;world&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p>为什么！？？</p>
+<p>默认split空格whitespace</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910221846345.png" alt="image-20220910221846345"></p>
+<p>这就是为什么默认时，若干个空格全给切了</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910221339526.png" alt="image-20220910221339526"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910221632807.png" alt="image-20220910221632807"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910221537149.png" alt="image-20220910221537149"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910222445850.png" alt="image-20220910222445850"></p>
+<h2 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824173739289.png" alt="image-20220824173739289"></p>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830133520638.png" alt="image-20220830133520638"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PySet_MINSIZE = 8</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Create-2"><a href="#Create-2" class="headerlink" title="Create"></a>Create</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830140033271.png" alt="image-20220830140033271"></p>
+<p>也就是说，可迭代的对象都可以放进来生成Set</p>
+<p>iter相关的代码：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830140207930.png" alt="image-20220830140207930"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830140137877.png" alt="image-20220830140137877"></p>
+<h2 id="add"><a href="#add" class="headerlink" title="add()"></a>add()</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830133743812.png" alt="image-20220830133743812"></p>
+<h2 id="lookup"><a href="#lookup" class="headerlink" title="lookup"></a>lookup</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830134410341.png" alt="image-20220830134410341"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830134701529.png" alt="image-20220830134701529"></p>
+<h2 id="iter"><a href="#iter" class="headerlink" title="iter"></a>iter</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830134843126.png" alt="image-20220830134843126"></p>
+<p>我们经常说Set是无序的</p>
+<p>因为hash值映射出来的 <code>i</code> 是随机的</p>
+<h2 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830135118279.png" alt="image-20220830135118279"></p>
+<h2 id="Print-Set"><a href="#Print-Set" class="headerlink" title="Print Set"></a>Print Set</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830135358956.png" alt="image-20220830135358956"></p>
+<p>根据迭代的顺序</p>
+<p><code>table[i] </code>从左往右迭代，但它是无序的噢</p>
+<h2 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h2><p>如果没有指定key的话，则是随机删除一个</p>
+<p>你懂的</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830135713258.png" alt="image-20220830135713258"></p>
+<h2 id="intersection"><a href="#intersection" class="headerlink" title="intersection"></a>intersection</h2><p>与<code>Set</code>做<code>intersection</code></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830152258580.png" alt="image-20220830152258580"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830152110304.png" alt="image-20220830152110304"></p>
+<p><strong>与<code>iterable</code> 对象做<code>intersection</code></strong></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830152237431.png" alt="image-20220830152237431"></p>
+<h2 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h2><p>同上，支持<code>itertable</code>对象</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830153051324.png" alt="image-20220830153051324"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830152840661.png" alt="image-20220830152840661"></p>
+<h2 id="subSet"><a href="#subSet" class="headerlink" title="subSet"></a>subSet</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830153305250.png" alt="image-20220830153305250"></p>
+<p>然后，也支持iterable对象</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830153445636.png" alt="image-20220830153445636"></p>
+<h2 id="compare-1"><a href="#compare-1" class="headerlink" title="compare++"></a>compare++</h2><p>!!?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="built_in">set</span>((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>))</span><br><span class="line">s2 = <span class="built_in">set</span>((<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(s1 &gt; s2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830153650050.png" alt="image-20220830153650050"></p>
+<h1 id="Python2-Python3-Diff"><a href="#Python2-Python3-Diff" class="headerlink" title="Python2 Python3 Diff"></a>Python2 Python3 Diff</h1><h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><p>python3:</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105437755.png" alt="image-20220818105437755"></p>
+<p>Python2:</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105457749.png" alt="image-20220818105457749"></p>
+<h2 id="consts-的优化"><a href="#consts-的优化" class="headerlink" title="consts 的优化"></a>consts 的优化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>python2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1           0 LOAD_CONST               0 (999)</span><br><span class="line">            2 STORE_NAME               0 (a)</span><br><span class="line"></span><br><span class="line">2           4 LOAD_CONST               1 (1997)</span><br><span class="line">            6 STORE_NAME               1 (b)</span><br><span class="line"></span><br><span class="line">3           8 LOAD_CONST               2 (&#x27;h&#x27;)</span><br><span class="line">           10 STORE_NAME               2 (d)</span><br><span class="line"></span><br><span class="line">4          12 LOAD_CONST               3 (1000)</span><br><span class="line">           14 STORE_NAME               3 (c)</span><br><span class="line">           16 LOAD_CONST               4 (None)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>python3</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1           0 LOAD_CONST               0 (999)</span><br><span class="line">            2 STORE_NAME               0 (a)</span><br><span class="line"></span><br><span class="line">2           4 LOAD_CONST               5 (1997)</span><br><span class="line">            6 STORE_NAME               1 (b)</span><br><span class="line"></span><br><span class="line">3           8 LOAD_CONST               2 (&#x27;h&#x27;)</span><br><span class="line">           10 STORE_NAME               2 (d)</span><br><span class="line"></span><br><span class="line">4          12 LOAD_CONST               3 (1000)</span><br><span class="line">           14 STORE_NAME               3 (c)</span><br><span class="line">           16 LOAD_CONST               4 (None)</span><br><span class="line">           18 RETURN_VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/21/%E8%B5%84%E6%BA%90%E7%AB%99/" rel="prev" title="资源站">
+      <i class="fa fa-chevron-left"></i> 资源站
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">Python 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PyObject"><span class="nav-number">1.1.</span> <span class="nav-text">PyObject*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-rule"><span class="nav-number">1.2.</span> <span class="nav-text">Basic rule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPython"><span class="nav-number">1.3.</span> <span class="nav-text">CPython</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#del"><span class="nav-number">1.4.</span> <span class="nav-text">del</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compile"><span class="nav-number">1.5.</span> <span class="nav-text">compile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-virtual-machine"><span class="nav-number">1.6.</span> <span class="nav-text">Python virtual machine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-code-structure"><span class="nav-number">1.7.</span> <span class="nav-text">Source code structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sequence"><span class="nav-number">1.8.</span> <span class="nav-text">sequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode"><span class="nav-number">1.9.</span> <span class="nav-text">vscode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%98%E7%BD%91%E6%96%87%E6%A1%A3"><span class="nav-number">1.10.</span> <span class="nav-text">官网文档</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Buildin"><span class="nav-number">2.</span> <span class="nav-text">Buildin</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#id"><span class="nav-number">2.1.</span> <span class="nav-text">id()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map"><span class="nav-number">2.2.</span> <span class="nav-text">map()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bool"><span class="nav-number">3.</span> <span class="nav-text">Bool</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#compare"><span class="nav-number">3.1.</span> <span class="nav-text">compare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#expression"><span class="nav-number">3.2.</span> <span class="nav-text">expression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#short-circuit"><span class="nav-number">3.3.</span> <span class="nav-text">short-circuit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-to-bool"><span class="nav-number">3.4.</span> <span class="nav-text">string to bool</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concept"><span class="nav-number">4.</span> <span class="nav-text">Concept</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#asdl"><span class="nav-number">4.1.</span> <span class="nav-text">asdl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Augassign-and-Assign"><span class="nav-number">4.2.</span> <span class="nav-text">Augassign and Assign</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#base"><span class="nav-number">4.3.</span> <span class="nav-text">base</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#callable"><span class="nav-number">4.4.</span> <span class="nav-text">callable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cxt-context%EF%BC%9F"><span class="nav-number">4.5.</span> <span class="nav-text">cxt context？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#del-1"><span class="nav-number">4.6.</span> <span class="nav-text">del</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#expression-1"><span class="nav-number">4.7.</span> <span class="nav-text">expression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#factor%EF%BC%9F"><span class="nav-number">4.8.</span> <span class="nav-text">factor？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flags"><span class="nav-number">4.9.</span> <span class="nav-text">flags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#free-variable"><span class="nav-number">4.10.</span> <span class="nav-text">free variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inplace-operator"><span class="nav-number">4.11.</span> <span class="nav-text">inplace operator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locals"><span class="nav-number">4.12.</span> <span class="nav-text">locals?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#literal"><span class="nav-number">4.13.</span> <span class="nav-text">literal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapping"><span class="nav-number">4.14.</span> <span class="nav-text">mapping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mangling"><span class="nav-number">4.15.</span> <span class="nav-text">mangling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#main%E4%B8%8D%E6%98%AF%E4%B8%BB%E5%87%BD%E6%95%B0"><span class="nav-number">4.16.</span> <span class="nav-text">main不是主函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#name"><span class="nav-number">4.17.</span> <span class="nav-text">__name__</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#opname"><span class="nav-number">4.18.</span> <span class="nav-text">opname</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyc"><span class="nav-number">4.19.</span> <span class="nav-text">pyc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref"><span class="nav-number">4.20.</span> <span class="nav-text">ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slot"><span class="nav-number">4.21.</span> <span class="nav-text">slot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stmt"><span class="nav-number">4.22.</span> <span class="nav-text">stmt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Suite"><span class="nav-number">4.23.</span> <span class="nav-text">Suite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#symtable"><span class="nav-number">4.24.</span> <span class="nav-text">symtable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sys-getsizeof"><span class="nav-number">4.25.</span> <span class="nav-text">sys.getsizeof()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeObject"><span class="nav-number">4.26.</span> <span class="nav-text">typeObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#testlist"><span class="nav-number">4.27.</span> <span class="nav-text">testlist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#varnames"><span class="nav-number">4.28.</span> <span class="nav-text">varnames</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Var-Object"><span class="nav-number">4.29.</span> <span class="nav-text">Var Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#void-0"><span class="nav-number">4.30.</span> <span class="nav-text">void(0)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unary-binary-inplace"><span class="nav-number">4.31.</span> <span class="nav-text">unary binary inplace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weak-ref"><span class="nav-number">4.32.</span> <span class="nav-text">weak ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield%EF%BC%88later%EF%BC%89"><span class="nav-number">4.33.</span> <span class="nav-text">yield（later）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Compile"><span class="nav-number">5.</span> <span class="nav-text">Compile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#command"><span class="nav-number">5.1.</span> <span class="nav-text">command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index"><span class="nav-number">5.2.</span> <span class="nav-text">index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimize"><span class="nav-number">5.3.</span> <span class="nav-text">optimize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#no-matter-fail"><span class="nav-number">5.4.</span> <span class="nav-text">no matter fail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#number"><span class="nav-number">5.5.</span> <span class="nav-text">number+</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return-0"><span class="nav-number">5.6.</span> <span class="nav-text">return 0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VISIT"><span class="nav-number">5.7.</span> <span class="nav-text">VISIT?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Computer"><span class="nav-number">6.</span> <span class="nav-text">Computer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory"><span class="nav-number">6.1.</span> <span class="nav-text">Memory</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dict"><span class="nav-number">7.</span> <span class="nav-text">Dict</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Index"><span class="nav-number">7.1.</span> <span class="nav-text">Index</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#function"><span class="nav-number">8.</span> <span class="nav-text">function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nested-function"><span class="nav-number">8.1.</span> <span class="nav-text">Nested function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interesting"><span class="nav-number">8.2.</span> <span class="nav-text">Interesting</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Float"><span class="nav-number">9.</span> <span class="nav-text">Float</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String-to-Float"><span class="nav-number">9.1.</span> <span class="nav-text">String to Float</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print"><span class="nav-number">9.2.</span> <span class="nav-text">print</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-1-0-2-0-3"><span class="nav-number">9.3.</span> <span class="nav-text">0.1+0.2!&#x3D;0.3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if"><span class="nav-number">10.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Integer"><span class="nav-number">11.</span> <span class="nav-text">Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Byte"><span class="nav-number">11.1.</span> <span class="nav-text">Byte</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create"><span class="nav-number">11.2.</span> <span class="nav-text">Create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compare"><span class="nav-number">11.3.</span> <span class="nav-text">Compare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constant"><span class="nav-number">11.4.</span> <span class="nav-text">Constant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intern"><span class="nav-number">11.5.</span> <span class="nav-text">intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#int"><span class="nav-number">11.6.</span> <span class="nav-text">int()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Init"><span class="nav-number">11.7.</span> <span class="nav-text">Init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Meta-data"><span class="nav-number">11.8.</span> <span class="nav-text">Object Meta-data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Small-Int"><span class="nav-number">11.9.</span> <span class="nav-text">Small Int</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof"><span class="nav-number">11.10.</span> <span class="nav-text">sizeof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">11.11.</span> <span class="nav-text">+</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Small-Int-1"><span class="nav-number">11.12.</span> <span class="nav-text">Small Int</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Long"><span class="nav-number">12.</span> <span class="nav-text">Long</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bit-length"><span class="nav-number">12.1.</span> <span class="nav-text">bit_length</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof-1"><span class="nav-number">12.2.</span> <span class="nav-text">sizeof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sign"><span class="nav-number">12.3.</span> <span class="nav-text">sign?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#int-and-long"><span class="nav-number">12.4.</span> <span class="nav-text">int and long</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromstring"><span class="nav-number">12.5.</span> <span class="nav-text">fromstring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#long-to-string"><span class="nav-number">12.6.</span> <span class="nav-text">long to string</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#List"><span class="nav-number">13.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-1"><span class="nav-number">13.1.</span> <span class="nav-text">Create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access"><span class="nav-number">13.2.</span> <span class="nav-text">Access</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-to-List"><span class="nav-number">13.3.</span> <span class="nav-text">String to List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Change-value"><span class="nav-number">13.4.</span> <span class="nav-text">Change value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#del-2"><span class="nav-number">13.5.</span> <span class="nav-text">del</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extend"><span class="nav-number">13.6.</span> <span class="nav-text">extend</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-and-Tuple"><span class="nav-number">13.7.</span> <span class="nav-text">List and Tuple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overallocation"><span class="nav-number">13.8.</span> <span class="nav-text">Overallocation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tuple-and-GC"><span class="nav-number">13.9.</span> <span class="nav-text">Tuple and GC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Time-to-create-List-and-Tuple"><span class="nav-number">13.10.</span> <span class="nav-text">Time to create List and Tuple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pointer-and-Copy"><span class="nav-number">13.11.</span> <span class="nav-text">Pointer and Copy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overallocate"><span class="nav-number">13.12.</span> <span class="nav-text">Overallocate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#append"><span class="nav-number">13.13.</span> <span class="nav-text">append</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#insert"><span class="nav-number">13.14.</span> <span class="nav-text">insert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index-1"><span class="nav-number">13.15.</span> <span class="nav-text">index -1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clear"><span class="nav-number">13.16.</span> <span class="nav-text">Clear</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove%EF%BC%88%E4%B8%8D%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%EF%BC%89"><span class="nav-number">13.17.</span> <span class="nav-text">Remove（不推荐使用）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pop"><span class="nav-number">13.18.</span> <span class="nav-text">Pop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iteration"><span class="nav-number">13.19.</span> <span class="nav-text">Iteration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Slice"><span class="nav-number">13.20.</span> <span class="nav-text">Slice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subscript"><span class="nav-number">13.21.</span> <span class="nav-text">subscript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof-2"><span class="nav-number">13.22.</span> <span class="nav-text">sizeof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Print"><span class="nav-number">13.23.</span> <span class="nav-text">Print</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Range"><span class="nav-number">14.</span> <span class="nav-text">Range</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Iter"><span class="nav-number">14.1.</span> <span class="nav-text">Iter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-number">15.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Compare-1"><span class="nav-number">15.1.</span> <span class="nav-text">Compare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Int-to-String"><span class="nav-number">15.2.</span> <span class="nav-text">Int to String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#and-join"><span class="nav-number">15.3.</span> <span class="nav-text">+ and join()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash"><span class="nav-number">15.4.</span> <span class="nav-text">hash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interesting"><span class="nav-number">15.5.</span> <span class="nav-text">interesting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intern-1"><span class="nav-number">15.6.</span> <span class="nav-text">intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#len"><span class="nav-number">15.7.</span> <span class="nav-text">len</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Short-strings"><span class="nav-number">15.8.</span> <span class="nav-text">Short strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Strip"><span class="nav-number">15.9.</span> <span class="nav-text">Strip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#split"><span class="nav-number">15.10.</span> <span class="nav-text">split</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Byte-1"><span class="nav-number">15.10.1.</span> <span class="nav-text">Byte</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parameter"><span class="nav-number">15.10.2.</span> <span class="nav-text">parameter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash"><span class="nav-number">15.11.</span> <span class="nav-text">Hash</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Set"><span class="nav-number">16.</span> <span class="nav-text">Set</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-2"><span class="nav-number">16.1.</span> <span class="nav-text">Create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add"><span class="nav-number">16.2.</span> <span class="nav-text">add()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lookup"><span class="nav-number">16.3.</span> <span class="nav-text">lookup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iter"><span class="nav-number">16.4.</span> <span class="nav-text">iter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge"><span class="nav-number">16.5.</span> <span class="nav-text">merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Print-Set"><span class="nav-number">16.6.</span> <span class="nav-text">Print Set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pop"><span class="nav-number">16.7.</span> <span class="nav-text">pop()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection"><span class="nav-number">16.8.</span> <span class="nav-text">intersection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Difference"><span class="nav-number">16.9.</span> <span class="nav-text">Difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subSet"><span class="nav-number">16.10.</span> <span class="nav-text">subSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compare-1"><span class="nav-number">16.11.</span> <span class="nav-text">compare++</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python2-Python3-Diff"><span class="nav-number">17.</span> <span class="nav-text">Python2 Python3 Diff</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#type"><span class="nav-number">17.1.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#consts-%E7%9A%84%E4%BC%98%E5%8C%96"><span class="nav-number">17.2.</span> <span class="nav-text">consts 的优化</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">300</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
