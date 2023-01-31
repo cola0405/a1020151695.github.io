@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="Hello World">
+<meta property="og:type" content="website">
+<meta property="og:title" content="藏经阁">
+<meta property="og:url" content="http://example.com/page/31/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="Hello World">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/31/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/03/Tensorflow-Error-Messages/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/03/Tensorflow-Error-Messages/" class="post-title-link" itemprop="url">Tensorflow Error Messages</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-03 10:39:52" itemprop="dateCreated datePublished" datetime="2021-01-03T10:39:52+08:00">2021-01-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learn/" itemprop="url" rel="index"><span itemprop="name">Machine Learn</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learn/Tensorflow/" itemprop="url" rel="index"><span itemprop="name">Tensorflow</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.</p>
+<p>Error</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError: (&#x27;Error when checking model target: expected no data, but got:&#x27;, array([&#x27;6947&#x27;, &#x27;7232&#x27;, &#x27;7967&#x27;, ..., &#x27;5646&#x27;, &#x27;3554&#x27;, &#x27;4656&#x27;], dtype=&#x27;&lt;U4&#x27;))</span><br></pre></td></tr></table></figure>
+
+<p>Reason</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">When using model.fit() the training data is not matching to the label array</span><br><span class="line">In other words, the length of training data array should be the same as label array</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2.</p>
+<p>Error</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError: Please provide as model inputs either a single array or a list of arrays.</span><br></pre></td></tr></table></figure>
+
+<p>Solution</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">training_data=np.array(training_ataset)</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/03/Python-Log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/03/Python-Log/" class="post-title-link" itemprop="url">Python Log</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-03 10:34:15" itemprop="dateCreated datePublished" datetime="2021-01-03T10:34:15+08:00">2021-01-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Sometimes the error messages will be to long </p>
+<p>Then the console is not big enough to display all messages</p>
+<p>And we can’t see the root cause</p>
+<p>The solution is output the error messages to a log file</p>
+<p>Here is the example</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> traceback</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"> </span><br><span class="line">logging.basicConfig(filename=<span class="string">&#x27;log.log&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">error_func</span>():</span></span><br><span class="line">  b = <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    error_func()</span><br><span class="line">  <span class="keyword">except</span>:</span><br><span class="line">    s = traceback.format_exc()</span><br><span class="line">    logging.error(s)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/Chinese-Chess-Conclusion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/Chinese-Chess-Conclusion/" class="post-title-link" itemprop="url">Chinese Chess Conclusion</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-02 23:41:28" itemprop="dateCreated datePublished" datetime="2021-01-02T23:41:28+08:00">2021-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project-Conclusion/" itemprop="url" rel="index"><span itemprop="name">Project Conclusion</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.Alpha-Beta Search</p>
+<p>Understand this algorithm in this way</p>
+<p>First is a question — how computer know the best move?</p>
+<p>Answer: This algorithm will evaluate the score, which represent the chance the computer will win</p>
+<p>So the best move is the move that make the highest score</p>
+<p>Second question — how computer know to protect it’s King?</p>
+<p>Answer: This algorithm will simulate the move for both red and black</p>
+<p>and it will simulate at least 2 depth, the algorithm will do the things follow:</p>
+<p>evaluate the current score then start to search (simulate)</p>
+<p>Simulate① – computer legal move “A”</p>
+<p>Keep on simulate② – people legal move “B”</p>
+<p>When reach the depth, start to evaluate the score again</p>
+<p>If Simulate② make the score reduce,</p>
+<p>Which means that the computer’s Simulate① move “A” makes computer be in dangerous</p>
+<p>And computer will avoid this kind of move</p>
+<p>That’s why computer knows to protect it’s King</p>
+<p>If it’s King is killed, it’s score will be super low</p>
+<p>Then the algorithm will tell the computer do not move in that way</p>
+<p>So that avoid the King be killed</p>
+<p>I learn the implement of the algorithm from this <a target="_blank" rel="noopener" href="https://github.com/dengl11/ChineseChessAI">github project</a></p>
+<hr>
+<p>2.Object Oriented is a very idea</p>
+<p>It’s the project will be pretty clear when you encapsulate the relative functions in a .py file as a class</p>
+<hr>
+<p>3.Cooperation </p>
+<p>The most important thing is responsibility</p>
+<p>Then is the ability to solve the problem</p>
+<hr>
+<p>4.Refactor</p>
+<p>If you always think implement first and refactor in the end</p>
+<p>The refactor will be pretty pretty hard</p>
+<p>The best solution is do the refactor job when you are coding</p>
+<p>And remember, don’t straightly coding</p>
+<p>Think more about efficiency, readability, maintainability</p>
+<hr>
+<p>5.Record</p>
+<p>It’s a good habit to record the bug when you meet with it</p>
+<p> And you can create two files</p>
+<p>“Bugs” record the bug waiting for solving</p>
+<p>“Solved Bugs” record the bug and the solution</p>
+<p>Maybe you can record other things more than bug</p>
+<p>Whatever, it’s a good habit</p>
+<hr>
+<p>6.Rest</p>
+<p>Do not keep coding for a long time</p>
+<p>It’s will make you brain numb</p>
+<p>And the efficiency will be lower</p>
+<hr>
+<p>7.Intresting Experience</p>
+<p>When the .txt file is big enough</p>
+<p>It will cost a long time to open the file</p>
+<p>You will think “Wow ! My computer can’t even deal with a txt file”</p>
+<p>And when you trying to modify some contents</p>
+<p>It also cost a long time ! Haha</p>
+<hr>
+<p>8.Debug</p>
+<p>With a long time apart with C and C++</p>
+<p>I almost forget the efficient way to find a bug — “Debug”</p>
+<p> Step by step, checking the variable to find the bug</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/Python-Class/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/Python-Class/" class="post-title-link" itemprop="url">Python Class</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-02 23:21:14" itemprop="dateCreated datePublished" datetime="2021-01-02T23:21:14+08:00">2021-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>simple example: (within the same package)</p>
+<p>Speaker.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Speaker</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sayHello</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Test.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speaker</span><br><span class="line">speaker = Speaker()</span><br><span class="line">speaker.sayHello()</span><br></pre></td></tr></table></figure>
+
+<p>If in different package:</p>
+<p>Test.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> packageName.Speaker <span class="keyword">import</span> Speaker</span><br><span class="line"></span><br><span class="line">speaker = Speaker()</span><br><span class="line">speaker.sayHello()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>You can also build a Constructor to initialize the object</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Speaker</span>:</span></span><br><span class="line">	name = <span class="literal">None</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name</span>):</span></span><br><span class="line">    	self.name = name</span><br><span class="line">	</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sayHello</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>Generally, we use import like this</p>
+<p>Lib.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span>():</span> <span class="comment"># this .py file do not have class, so do not need to instantiate</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Test.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Lib</span><br><span class="line"></span><br><span class="line">Lib.hello() </span><br></pre></td></tr></table></figure>
+
+<p>How can we import a class</p>
+<p>A class Import other class and use that class’s function</p>
+<p>Test.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> packageName.Speaker <span class="keyword">import</span> Speaker</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">	speaker = Speaker() <span class="comment"># you need to instantiate the object, so that you can use it</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">testSpeak</span>():</span></span><br><span class="line">        speaker.sayHello()</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/Python-List/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/Python-List/" class="post-title-link" itemprop="url">Python List</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-02 23:12:21" itemprop="dateCreated datePublished" datetime="2021-01-02T23:12:21+08:00">2021-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.Don’t forget the comma</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">          [<span class="string">&#x27;j1&#x27;</span>,<span class="string">&#x27;m1&#x27;</span>,<span class="string">&#x27;x1&#x27;</span>,<span class="string">&#x27;s1&#x27;</span>,<span class="string">&#x27;k&#x27;</span>,<span class="string">&#x27;s2&#x27;</span>,<span class="string">&#x27;x2&#x27;</span>,<span class="string">&#x27;m2&#x27;</span>,<span class="string">&#x27;j2&#x27;</span>],</span><br><span class="line">          [<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>],</span><br><span class="line">          [<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;p1&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;p2&#x27;</span>,<span class="string">&#x27;&#x27;</span>],</span><br><span class="line">          [<span class="string">&#x27;b1&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;b2&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;b3&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;b4&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;b5&#x27;</span>],</span><br><span class="line">          [<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>],</span><br><span class="line">          [<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>],</span><br><span class="line">          [<span class="string">&#x27;B1&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;B2&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;B3&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;B4&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;B5&#x27;</span>],</span><br><span class="line">          [<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;P1&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;P2&#x27;</span>, <span class="string">&#x27;&#x27;</span>],</span><br><span class="line">          [<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>],</span><br><span class="line">          [<span class="string">&#x27;J1&#x27;</span>,<span class="string">&#x27;M1&#x27;</span>,<span class="string">&#x27;X1&#x27;</span>,<span class="string">&#x27;S1&#x27;</span>,<span class="string">&#x27;K&#x27;</span>,<span class="string">&#x27;S2&#x27;</span>,<span class="string">&#x27;X2&#x27;</span>,<span class="string">&#x27;M2&#x27;</span>,<span class="string">&#x27;J2&#x27;</span>]</span><br><span class="line">      ]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>2.delete element</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">del</span>(a[<span class="number">2</span>]) <span class="comment"># arg is address</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">output:</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>3.Deep copy</p>
+<p>When you put a Object in a List</p>
+<p>You actually store a address in List</p>
+<p>So it’s easily to make a mistake</p>
+<p>You think you put different object in the List</p>
+<p>But actually, you just put an address in List for many time</p>
+<p>And all address in a List point to the same memory</p>
+<p>The solution is use deep copy</p>
+<p>And new a Object every time, not just use setter or assign</p>
+<p>Remember:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Setter will not create a new object</span><br><span class="line">Assignment will not create a new object </span><br><span class="line">(assignment just change the variable&#x27;s address to the target)</span><br></pre></td></tr></table></figure>
+
+<p>Wrong Example</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nextState = State(self.player, self.agent)</span><br><span class="line">nextState.board = current_state.board </span><br><span class="line"><span class="comment"># will not create a new board, just point to the same memory</span></span><br></pre></td></tr></table></figure>
+
+<p>Right Example</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line">nextState = State(self.player, self.agent) <span class="comment"># create a new object</span></span><br><span class="line">nextState.board = copy.deepcopy(current_state.board) </span><br><span class="line"><span class="comment"># create it&#x27;s own board instead of point to the same memory</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<ol start="4">
+<li>  2 dimension array</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">matrix = []</span><br><span class="line"> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">      matrix.append([<span class="number">0</span>] * <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Or</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">3</span></span><br><span class="line">m = <span class="number">3</span></span><br><span class="line">dp = [[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)] <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/Flask-Cors/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/Flask-Cors/" class="post-title-link" itemprop="url">Flask Cors</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-02 19:45:07" itemprop="dateCreated datePublished" datetime="2021-01-02T19:45:07+08:00">2021-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Config/" itemprop="url" rel="index"><span itemprop="name">Config</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Config/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Cors solution</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from flask_cors import *</span><br><span class="line">CORS(app, supports_credentials=True)</span><br></pre></td></tr></table></figure>
+
+<p>Then Note ! ! !</p>
+<p>Flask default listen on localhost</p>
+<p>if you want to use Flask to deploy an application</p>
+<p>do the thing below :</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.run(host=<span class="string">&#x27;0.0.0.0&#x27;</span>, port=<span class="number">5000</span>, debug=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/05/%E5%B7%A5%E5%85%B7-Hexo%E8%B8%A9%E5%9D%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/05/%E5%B7%A5%E5%85%B7-Hexo%E8%B8%A9%E5%9D%91/" class="post-title-link" itemprop="url">工具-Hexo踩坑</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-11-05 21:24:29" itemprop="dateCreated datePublished" datetime="2020-11-05T21:24:29+08:00">2020-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:51:49" itemprop="dateModified" datetime="2022-06-27T15:51:49+08:00">2022-06-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Config/" itemprop="url" rel="index"><span itemprop="name">Config</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Config/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="ssh密匙"><a href="#ssh密匙" class="headerlink" title="ssh密匙"></a>ssh密匙</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;邮件地址&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>找到<code>.ssh\id_rsa.pub</code>文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：</p>
+<p>将刚复制的内容粘贴到key那里，title随便填，保存。</p>
+<p>Win10下的~目录就是对应User下</p>
+<p>然后，id_rsa.pub这个文件不能直接打开，需要命令行指令</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;postName&quot;</span> #新建文章</span><br><span class="line">hexo generate #生成静态页面至<span class="keyword">public</span>目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口<span class="number">4000</span>，<span class="string">&#x27;ctrl + c&#x27;</span>关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line"># 你先执行hexo clean 然后再删除文章就可以了</span><br></pre></td></tr></table></figure>
+
+<p>部署步骤：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h4 id="每篇文章的配置"><a href="#每篇文章的配置" class="headerlink" title="每篇文章的配置"></a>每篇文章的配置</h4><p>示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: Spring注解是怎么工作的</span><br><span class="line">date: 2020-11-05 17:05:39</span><br><span class="line">tags:</span><br><span class="line">- Spring</span><br><span class="line">- Java</span><br><span class="line">categories:</span><br><span class="line">- [Java,Spring]</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置文件的修改"><a href="#配置文件的修改" class="headerlink" title="配置文件的修改"></a>配置文件的修改</h4><p>_config.yml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 藏经阁</span><br><span class="line">subtitle: &#x27;&#x27;</span><br><span class="line">description: &#x27;太多东西要学啦&#x27;</span><br><span class="line">keywords: Java</span><br><span class="line">author: FreeJim</span><br><span class="line">language: zh</span><br><span class="line">timezone: &#x27;Asia/Hong_Kong&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/a1020151695/a1020151695.github.io</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+
+<p>具体可查<a target="_blank" rel="noopener" href="https://hexo.io/docs/configuration">官方文档</a></p>
+<h4 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h4><p>Setting中设置自定义域名，然后Save保存</p>
+<p>阿里云域名管理，要添加两个纪录</p>
+<p>一个是CNAME www 把    把当前域名和xxx.github.io联系起来</p>
+<p>其实是把xxx.github.io指向你自己的域名</p>
+<p>CNAME content(Just the domain)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">freejim.icu </span><br></pre></td></tr></table></figure>
+
+<p>第二个是@ 你自己的域名指向一个IP（即xxx.github.io的实际IP）</p>
+<p>这里我踩了坑！</p>
+<p>你不能在你自己电脑上Ping！！！！</p>
+<p>拿你的云服务器去ping才有用</p>
+<p>或者不需要服务器，直接网上找一个域名解析的网站，去查</p>
+<p>例如<a target="_blank" rel="noopener" href="https://site.ip138.com/">这个</a></p>
+<p>gtihub上看得见的文件都是在“source”文件夹里面的—CNAME–域名配置文件</p>
+<h4 id="站长工具"><a href="#站长工具" class="headerlink" title="站长工具"></a>站长工具</h4><p>然后 如果要向google提交验证的话，我们用meta的方式</p>
+<p>如果用html的方式的话，hexo部署的时候会修改html文件里的内容</p>
+<p>导致google无法验证</p>
+<p>然后你也不能直接放到github中</p>
+<p>因为github仓库不完全等于hexo部署的服务器</p>
+<p>所以我们选择meta</p>
+<p>然后hexo是通过各主题模板来修改、生成各网页的</p>
+<p>和meta相关的head的模板在这</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">themes\landscape\layout\_partial\head.ejs</span><br></pre></td></tr></table></figure>
+
+<p>把google 给的meta 加进去就好了</p>
+<p>添加后可以在这里查看网站数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://search.google.com/search-console/about</span><br></pre></td></tr></table></figure>
+
+<p>查看是否验证成功</p>
+<p>几天后，google搜索：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:“你的网站”</span><br></pre></td></tr></table></figure>
+
+<p>之后我看了百度的验证</p>
+<p>不行！</p>
+<p>github把百度屏蔽掉了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">不到一分钟前freejim.icu使用HTML标签验证</span><br><span class="line">原因：服务器连接超时，请检查服务器设置或者稍后重试。</span><br><span class="line">问题分析&amp;解决办法： 连接网站时超时，可能是网络速度过慢，请检查服务器网络线路，或者稍后再试。</span><br></pre></td></tr></table></figure>
+
+<p>不允许百度去爬</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对此github官方是这样说的 : 由于百度爬虫爬得太猛烈，已经对很多Github用户造成了可用性的问题了，而禁用百度爬虫这一举措可能会一直持续下去。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>Please make sure you have the correct access rights</p>
+</blockquote>
+<p>原因:</p>
+<p>可能无意间动了ssh密钥，id_rsa.pub</p>
+<p>rsa， ssh-keygen 等</p>
+<p>解决：</p>
+<p>在github的setting中新增ssh密钥</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210609163127564.png" alt="image-20210609163127564"></p>
+<h4 id="派生文件夹"><a href="#派生文件夹" class="headerlink" title="派生文件夹"></a>派生文件夹</h4><p>_config.yml</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="搜索功能失效"><a href="#搜索功能失效" class="headerlink" title="搜索功能失效"></a>搜索功能失效</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.json</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 100000</span><br></pre></td></tr></table></figure>
+
+<p>用 <code>search.json</code> 而不用<code>search.xml</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/05/%E6%B1%87%E7%BC%96-Spring%E9%87%8D%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/05/%E6%B1%87%E7%BC%96-Spring%E9%87%8D%E6%9E%84/" class="post-title-link" itemprop="url">汇编-Spring重构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-11-05 21:23:17" itemprop="dateCreated datePublished" datetime="2020-11-05T21:23:17+08:00">2020-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:50:46" itemprop="dateModified" datetime="2022-06-27T15:50:46+08:00">2022-06-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.javax 是由Tomcat提供的</p>
+<p>2.Context 养成好习惯，用完记得close()</p>
+<p>3.“一次性”的变量能省就省</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">	WebApplicationContext context=WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());</span><br><span class="line">	context.getBean(<span class="string">&quot;helloImpl&quot;</span>,Hello.class).sayHello();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>4.Spring DI Bean之间是由依赖关系的，被引用的那个Bean应该先被创建</p>
+<p>XML的构建是按从上到下顺序的</p>
+<p>5.Static Factory 方法获取Bean</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;bean1&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.dgut.factory.StaticFactory&quot;</span> <span class="attr">factory-method</span>=<span class="string">&quot;createBean&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- you can set properties here  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- you can also set constructor-arg here  --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dgut.factory;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticFactory</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MyBean <span class="title">createBean</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> MyBean(<span class="string">&quot;Alice&quot;</span>,<span class="number">15</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">testStaticFactory</span><span class="params">()</span> </span>&#123;<span class="comment">//static </span></span><br><span class="line">	ConfigurableApplicationContext context =<span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;StaticFactory.xml&quot;</span>);</span><br><span class="line">	System.out.print(context.getBean(<span class="string">&quot;bean1&quot;</span>,MyBean.class));</span><br><span class="line">	context.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>只要beans.xsd</p>
+<p>7.BeanFactory 方法获取Bean</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dgut.factory;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FactoryBean</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> MyBean <span class="title">createBean</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> MyBean();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- factory instance to get bean --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;BeanFactory1&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.dgut.factory.FactoryBean&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;bean1&quot;</span> <span class="attr">factory-bean</span>=<span class="string">&quot;BeanFactory1&quot;</span> <span class="attr">factory-method</span>=<span class="string">&quot;createBean&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>只要beans.xsd</p>
+<p>8.由方法返回的像context这样的对象是会自动close()的</p>
+<p>也就是说，可立即使用，但不能二次使用</p>
+<p>9.在XML中的properties—对应的是getter和setter</p>
+<p>构造函数另有constructor-arg</p>
+<p>但特殊情况下，properties可以代替constructor-arg，不写constructor-arg</p>
+<p>原因是缺省constructor-arg时调用不含参的构造函数</p>
+<p>10.当prototype和singleton都指向同一个类时</p>
+<p>prototype 就没有意义了</p>
+<p>11.singleton的意义是在容启启动之初检查Bean是否有问题，很有必要</p>
+<p>所有，Bean 的默认加载方式是singleton</p>
+<p>12.XML中的autowire</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;Jim&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.dgut.autowire.Person&quot;</span> <span class="attr">autowire</span>=<span class="string">&quot;byName&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Jim&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;address&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.dgut.autowire.Address&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;city&quot;</span> <span class="attr">value</span>=<span class="string">&quot;meizhou&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dgut.autowire;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	Address address;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, Address address)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.address = address;</span><br><span class="line">	&#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">----------------------------------------------------------</span><br><span class="line"><span class="keyword">package</span> com.dgut.autowire;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Address</span> </span>&#123;</span><br><span class="line">	String city;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Address</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Address</span><span class="params">(String city)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.city = city;</span><br><span class="line">	&#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>byName对应Field(也可以说property)名</p>
+<p>byType </p>
+<blockquote>
+<p>“byType” Autowiring if there is exactly one bean of the property type in the container. If there is<br>more than one, a fatal error is raised, and you cannot use byType autowiring for that bean. </p>
+</blockquote>
+<hr>
+<p>第一次重构就到这里啦</p>
+<p>重构追求精简，清晰，但难免也会又进死胡同</p>
+<p>重构完一个地方就要进行单元测试，不然到时候全部写完测出错误很麻烦</p>
+<p>这次只展示了重构后的代码</p>
+<p>重构前的代码。。忘记存了，下次重构不会漏了</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/05/Spring%E6%B3%A8%E8%A7%A3%E6%98%AF%E6%80%8E%E4%B9%88%E5%B7%A5%E4%BD%9C%E7%9A%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/05/Spring%E6%B3%A8%E8%A7%A3%E6%98%AF%E6%80%8E%E4%B9%88%E5%B7%A5%E4%BD%9C%E7%9A%84/" class="post-title-link" itemprop="url">Spring注解是怎么工作的</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-11-05 17:05:39" itemprop="dateCreated datePublished" datetime="2020-11-05T17:05:39+08:00">2020-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>版本说明：Spring 5.2.9 </p>
+<p>本文侧重于源码的解读</p>
+<p>这里以@Autowired为例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutowiredAnnotationBeanPostProcessor</span></span></span><br><span class="line"><span class="class"><span class="keyword">extends</span> <span class="title">Object</span></span></span><br><span class="line"><span class="class"><span class="keyword">implements</span> <span class="title">SmartInstantiationAwareBeanPostProcessor</span>, <span class="title">MergedBeanDefinitionPostProcessor</span>, <span class="title">PriorityOrdered</span>, <span class="title">BeanFactoryAware</span></span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/config/BeanPostProcessor.html"><code>BeanPostProcessor</code></a> implementation that autowires annotated fields, setter methods, and arbitrary config methods. Such members to be injected are detected through annotations: by default, Spring’s <a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html"><code>@Autowired</code></a> and <a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Value.html"><code>@Value</code></a> annotations.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">processInjection</span><span class="params">(Object bean)</span> <span class="keyword">throws</span> BeanCreationException </span>&#123;</span><br><span class="line">		Class&lt;?&gt; clazz = bean.getClass();</span><br><span class="line">		InjectionMetadata metadata = findAutowiringMetadata(clazz.getName(), clazz, <span class="keyword">null</span>);</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			metadata.inject(bean, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (BeanCreationException ex) &#123;</span><br><span class="line">			<span class="keyword">throw</span> ex;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (Throwable ex) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> BeanCreationException(</span><br><span class="line">					<span class="string">&quot;Injection of autowired dependencies failed for class [&quot;</span> + clazz + <span class="string">&quot;]&quot;</span>, ex);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>获取AutowiringMetadata后，做inject</p>
+<p>其中的AutowiringMetadata，简单的说就是@Autowired</p>
+<blockquote>
+<p>an <strong>annotation</strong> is a form of syntactic <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Metadata">metadata</a> that can be added to Java <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Source_code">source code</a>.</p>
+</blockquote>
+<p>这是维基百科上的解释</p>
+<p>那Spring又是怎么确定是否存在@Autowired的呢</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> MergedAnnotation&lt;?&gt; findAutowiredAnnotation(AccessibleObject ao) &#123;</span><br><span class="line">	MergedAnnotations annotations = MergedAnnotations.from(ao);</span><br><span class="line">	<span class="keyword">for</span> (Class&lt;? extends Annotation&gt; type : <span class="keyword">this</span>.autowiredAnnotationTypes) &#123;</span><br><span class="line">		MergedAnnotation&lt;?&gt; annotation = annotations.get(type);</span><br><span class="line">		<span class="keyword">if</span> (annotation.isPresent()) &#123;</span><br><span class="line">			<span class="keyword">return</span> annotation;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Set&lt;Class&lt;? extends Annotation&gt;&gt; autowiredAnnotationTypes = <span class="keyword">new</span> LinkedHashSet&lt;&gt;(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.autowiredAnnotationTypes</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">AutowiredAnnotationBeanPostProcessor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.autowiredAnnotationTypes.add(Autowired.class);</span><br><span class="line">		<span class="keyword">this</span>.autowiredAnnotationTypes.add(Value.class);</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">this</span>.autowiredAnnotationTypes.add((Class&lt;? extends Annotation&gt;)</span><br><span class="line">					ClassUtils.forName(<span class="string">&quot;javax.inject.Inject&quot;</span>, AutowiredAnnotationBeanPostProcessor.class.getClassLoader()));</span><br><span class="line">			logger.trace(<span class="string">&quot;JSR-330 &#x27;javax.inject.Inject&#x27; annotation found and supported for autowiring&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (ClassNotFoundException ex) &#123;</span><br><span class="line">			<span class="comment">// JSR-330 API not available - simply skip.</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>已经很清晰了，存放了Autowired.class</p>
+<p>则回到findAutowiredAnnotation()中，如果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MergedAnnotations annotations = MergedAnnotations.from(ao);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MergedAnnotations</span></span></span><br><span class="line"><span class="class"><span class="keyword">extends</span> <span class="title">Iterable</span>&lt;<span class="title">MergedAnnotation</span>&lt;<span class="title">Annotation</span>&gt;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Provides access to a collection of merged annotations, usually obtained from a source such as a <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true"><code>Class</code></a> or <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Method.html?is-external=true"><code>Method</code></a>.</p>
+<p>获取这个Bean 的Annotations</p>
+<p>然后看其中是否存在Autowired</p>
+<p>那么确定是否有Autowired的问题解决了，之后就是inject了</p>
+<hr>
+<p>首先来看看调用inject()的InjectionMetadata</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InjectionMetadata</span></span></span><br><span class="line"><span class="class"><span class="keyword">extends</span> <span class="title">Object</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Internal class for managing injection metadata. Not intended for direct use in applications.</p>
+<p>对的，这个就是依赖注入里的inject</p>
+<p>不过，我暂时没有想法去了解，有兴趣的同学可以继续往下了解</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="http://www.avajava.com/tutorials/lessons/how-do-i-list-the-declared-fields-of-a-class.html">Field</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/30/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">309</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

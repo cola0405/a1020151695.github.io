@@ -177,6 +177,822 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/06/Android-Fragment-Tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/06/Android-Fragment-Tutorial/" class="post-title-link" itemprop="url">Android Fragment Tutorial</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-06 09:42:02" itemprop="dateCreated datePublished" datetime="2021-01-06T09:42:02+08:00">2021-01-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.New A Fragment</p>
+<p>“New” – “Fragment” – “Fragment Blank”</p>
+<p>Then we can get an fragment activity and relative layout file</p>
+<p>2.Add Fragment To Activity</p>
+<p>In target xml file</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">fragment</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/xxx&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">&quot;xxx&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> Note !</p>
+<p>Name and Id is essential ! ! !</p>
+<p>Name is the fragment activity you just created</p>
+<p>(Just the class name of the fragment activity)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.exmaple.BlankFragment</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class BlankFragment : Fragment()</span><br></pre></td></tr></table></figure>
+
+<p>Then you can name id as you like, but do not forget it, it is really important ! !</p>
+<hr>
+<p>After two steps, you can see a fragment is added to an activity</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-DeviceId/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-DeviceId/" class="post-title-link" itemprop="url">Android DeviceId</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 23:52:30" itemprop="dateCreated datePublished" datetime="2021-01-04T23:52:30+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Example</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var deviceId= Settings.System.getString(contentResolver, Settings.System.ANDROID_ID);</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-px-dp-sp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-px-dp-sp/" class="post-title-link" itemprop="url">Android px dp sp</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 23:33:26" itemprop="dateCreated datePublished" datetime="2021-01-04T23:33:26+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Layout/" itemprop="url" rel="index"><span itemprop="name">Layout</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>px is for the general unit</p>
+<p>Note !</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">devices only know px</span><br><span class="line">dp and sp is just use for display the appropriate views on different screen</span><br></pre></td></tr></table></figure>
+
+
+
+<p>dp is usually use for layout</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">density-independent pixels (dip,dp)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">px = dp * (dpi / 160)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">dip2px</span><span class="params">(context: <span class="type">Context</span>?, dpValue: <span class="type">Float</span>)</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">    <span class="keyword">val</span> scale = context?.resources?.displayMetrics?.density</span><br><span class="line">    <span class="keyword">return</span> (dpValue * scale!! + <span class="number">0.5f</span>).toInt()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Note </p>
+<p>You can pass context as a parameter</p>
+<blockquote>
+<p>dpi: Dots Per Inch</p>
+</blockquote>
+<p>sp is usually use for text size</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scale-independent pixels</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Layout-Rule/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-Layout-Rule/" class="post-title-link" itemprop="url">Android Layout Rule</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 23:15:12" itemprop="dateCreated datePublished" datetime="2021-01-04T23:15:12+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Layout/" itemprop="url" rel="index"><span itemprop="name">Layout</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.About Weight</p>
+<p>Allocate the rest space by it’s weight</p>
+<p>Pay attention to the “Rest Space”</p>
+<p>So it’s not right to use weight for all widgets</p>
+<p>For widget like TextView, we should give it a fixed value of height</p>
+<p>So that the text will not be strange</p>
+<p>But for the widget like ScrollView we’d better use weight</p>
+<p>because they should can be stretched</p>
+<p>Note !</p>
+<p>weight can be decimal ~</p>
+<hr>
+<p>2.Center</p>
+<p>If you want to put a image in the center of the whole page</p>
+<p>Do like this </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:orientation</span>=<span class="string">&quot;vertical&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">&quot;9&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_weight</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span>/&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_gravity</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:src</span>=<span class="string">&quot;@drawable/success_sign&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_weight</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span>/&gt;</span></span><br><span class="line">            </span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>That’s the power of weight</p>
+<p>With weight, the view can be stretched to fill the blank</p>
+<p>Beside this center </p>
+<p>If You just want to put a view to the center of a layout</p>
+<p>Then use the attribute “layout_gravity”, assign it “center”</p>
+<p>“layout_gravity”, decide the position of a widget within a layout</p>
+<p>“gravity”, decide the text position within a widget</p>
+<hr>
+<p>3.ViewGroup</p>
+<p>Like </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&lt;LinearLayout&gt;&lt;/LinearLayout&gt; is allow to add view into it</p>
+<p>&lt;/LinearLayout&gt; is not allow add view into it</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Fragment-And-Activity/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-Fragment-And-Activity/" class="post-title-link" itemprop="url">Android Fragment And Activity</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 22:57:17" itemprop="dateCreated datePublished" datetime="2021-01-04T22:57:17+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Fragment/" itemprop="url" rel="index"><span itemprop="name">Fragment</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Fragment’s feature is reusable</p>
+<p>A fragment is a completed page, and you can use a fragment tag(&lt;fragment/&gt;) to insert it to any Layout</p>
+<p>The code in fragment activity and normal activity is different</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Yes, fragment also has it&#x27;s activity called &quot;Fragment Activity&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Difference</p>
+<p>1.You can use “applicationContext” directly in normal activity </p>
+<p>But in Fragment Activity, you can’t !</p>
+<p>You need to invoke a method — getContext()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kotlin can use &quot;context&quot; directly, but in fact, it invoke the method getContext()</span><br></pre></td></tr></table></figure>
+
+<p>2.You can use “runOnUiThread” directly in normal activity </p>
+<p>But in Fragment Activity,  you can’t !</p>
+<p>You need to get the Activity which is connected to UI Thread</p>
+<p>Then </p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activity?.runOnUiThread &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Conclusion:</p>
+<p>There are some difference, but that’s not a big deal</p>
+<p>Android SDK has solved that problem for us  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Bundle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-Bundle/" class="post-title-link" itemprop="url">Android Bundle</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 22:26:13" itemprop="dateCreated datePublished" datetime="2021-01-04T22:26:13+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Transport-Data/" itemprop="url" rel="index"><span itemprop="name">Transport Data</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Bundle can be  use for transport data between Fragment</p>
+<p>Send</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> bundle = Bundle()</span><br><span class="line">bundle.putString(<span class="string">&quot;key1&quot;</span>, <span class="string">&quot;GFG :- Main Activity&quot;</span>)</span><br><span class="line">NavUtil.navController?.navigate(R.id.signStateForStudent,bundle)</span><br><span class="line"><span class="comment">// When you use navigation</span></span><br></pre></td></tr></table></figure>
+
+<p>Get</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> bundle = Intent.getExtras()</span><br><span class="line">bundle.getString(<span class="string">&quot;key1&quot;</span>, <span class="string">&quot;Default&quot;</span>) </span><br><span class="line"><span class="comment">// arg2 will be return when &quot;key1&quot; can&#x27;t be foud in bundle</span></span><br></pre></td></tr></table></figure>
+
+<p>But it can just be transported one time ! !</p>
+<p>When you back to the fragment, the bundle will gone </p>
+<p>Bundle just can be use for the “one-time” issue</p>
+<hr>
+<p>For the data you need to use many time </p>
+<p>You can use companion object {} to solve that problem</p>
+<p>All fragments can get the data directly from the companion object {} within an activity</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Dialog-Processing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-Dialog-Processing/" class="post-title-link" itemprop="url">Android Dialog Processing</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 22:11:27" itemprop="dateCreated datePublished" datetime="2021-01-04T22:11:27+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Display a circle in dialog when loading something</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">configLoadingProgress</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> loadingDialogBuilder = AlertDialog.Builder(<span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">val</span> loadingProgress = ProgressBar(<span class="keyword">this</span>)</span><br><span class="line">    loadingDialogBuilder.setView(loadingProgress)</span><br><span class="line">    loadingDialogBuilder.setTitle(<span class="string">&quot;正在登陆...&quot;</span>)</span><br><span class="line">    runOnUiThread &#123;</span><br><span class="line">        loadingDialog = loadingDialogBuilder.create()</span><br><span class="line">        loadingDialog!!.show()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The circle is just a ProgressBar widget in dialog</p>
+<p>Note !</p>
+<p>1.Create and show a dialog should be done by UI Thread</p>
+<p>2.There are some callback functions about the dialog, you can check the document</p>
+<p>If you want to close the dialog by program </p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loadingDialog?.cancel()</span><br></pre></td></tr></table></figure>
+
+<p>Note !</p>
+<p>1.You should invoke cancel() from dialog but not dialogBuilder</p>
+<p>2.dialog = dialogBuilder.create()</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> loadingDialogBuilder = AlertDialog.Builder(<span class="keyword">this</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Thread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-Thread/" class="post-title-link" itemprop="url">Android Thread</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 20:03:39" itemprop="dateCreated datePublished" datetime="2021-01-04T20:03:39+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Intent-Transport-Data/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-Intent-Transport-Data/" class="post-title-link" itemprop="url">Android Intent Transport Data</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 19:59:36" itemprop="dateCreated datePublished" datetime="2021-01-04T19:59:36+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Example:</p>
+<p>Send data</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">toStudentPage</span><span class="params">(loginInfo: <span class="type">JSONObject</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> intent = Intent(<span class="keyword">this</span>, StudentActivity::<span class="keyword">class</span>.java).apply &#123;&#125;</span><br><span class="line">    intent.putExtra(<span class="string">&quot;studentId&quot;</span>, loginInfo[<span class="string">&quot;studentId&quot;</span>].toString())</span><br><span class="line">    intent.putExtra(<span class="string">&quot;studentName&quot;</span>, loginInfo[<span class="string">&quot;studentName&quot;</span>].toString())</span><br><span class="line">    intent.putExtra(<span class="string">&quot;classId&quot;</span>, loginInfo[<span class="string">&quot;classId&quot;</span>].toString())</span><br><span class="line">    intent.putExtra(<span class="string">&quot;className&quot;</span>, loginInfo[<span class="string">&quot;className&quot;</span>].toString())</span><br><span class="line">    startActivity(intent)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Get data</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> studentId = intent.getStringExtra(<span class="string">&quot;studentId&quot;</span>)</span><br><span class="line"><span class="keyword">val</span> studentName = intent.getStringExtra(<span class="string">&quot;studentName&quot;</span>)</span><br><span class="line"><span class="keyword">val</span> classId = intent.getStringExtra(<span class="string">&quot;classId&quot;</span>)</span><br><span class="line"><span class="keyword">val</span> className = intent.getStringExtra(<span class="string">&quot;className&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Note:</p>
+<p>Intent is like a build-in object in Kotlin</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/%E5%B7%A5%E5%85%B7-Github-Basic-Config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -269,962 +1085,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/%E5%B7%A5%E5%85%B7-Git-Basic-Commands/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/%E5%B7%A5%E5%85%B7-Git-Basic-Commands/" class="post-title-link" itemprop="url">工具-Git Basic Commands</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 19:52:08" itemprop="dateCreated datePublished" datetime="2021-01-04T19:52:08+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="gitignore"><a href="#gitignore" class="headerlink" title="gitignore"></a>gitignore</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached 文件夹名</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached 文件名</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="Push"><a href="#Push" class="headerlink" title="Push"></a>Push</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>push master branch</p>
-<hr>
-<h1 id="Pull"><a href="#Pull" class="headerlink" title="Pull"></a>Pull</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="pull-指定分支"><a href="#pull-指定分支" class="headerlink" title="pull 指定分支"></a>pull 指定分支</h2><p>切换分支然后pull即可</p>
-<h1 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支和显示其他分支</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果已有分支</span></span><br><span class="line">git checkout dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果本地第一次切换到目标分支</span></span><br><span class="line">git checkout -b <span class="built_in">test</span> origin/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="Remote-Address"><a href="#Remote-Address" class="headerlink" title="Remote Address"></a>Remote Address</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote show</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Add remote address</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/fengcangjun/learngit.git</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Delete origin remote address</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Reset</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --mixed origin/main</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="init"><a href="#init" class="headerlink" title="init"></a>init</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;&quot;   (to current branch)</span><br><span class="line">git branch -M main   (switch to main branch)</span><br><span class="line">git remote add orgin main   (origin is a remote address)</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/%E5%B7%A5%E5%85%B7-Github-SSH-Deploy-Key/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/%E5%B7%A5%E5%85%B7-Github-SSH-Deploy-Key/" class="post-title-link" itemprop="url">工具-Github SSH Deploy Key</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 19:35:50" itemprop="dateCreated datePublished" datetime="2021-01-04T19:35:50+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Github/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>With Deploy key you can push directly, do not need to input username and password every time</p>
-<p>Generate SSH key</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -f deploy_key_blog -C &quot;1020151695@qq.com&quot;</span><br></pre></td></tr></table></figure>
-
-<p> Then press “Enter” twice is OK</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E-mail address like an &quot;id&quot;</span><br><span class="line">So that Github repository know who you are</span><br><span class="line">And you don&#x27;t need to input username and password again</span><br></pre></td></tr></table></figure>
-
-<p>Then it will create a new file named “deploy_key_blog.pub”</p>
-<p>Check it’s content use the command:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more deploy_key_blog.pub</span><br></pre></td></tr></table></figure>
-
-<p>Then copy the content and go to the project in Github</p>
-<p>“Setting”–”Deploy keys”</p>
-<p>Just do it !</p>
-<p>And SSH key absolutely just support the ssh way</p>
-<p>If you use HTTPS remote address, you need to switch it </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin      // delete origin remote address </span><br><span class="line"></span><br><span class="line">git remote add origin git@github.com:nickchou/gocode.git  // apply new remote address</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/%E5%B7%A5%E5%85%B7-Git-Fix-Conflict/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/%E5%B7%A5%E5%85%B7-Git-Fix-Conflict/" class="post-title-link" itemprop="url">工具-Git Fix Conflict</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 19:28:07" itemprop="dateCreated datePublished" datetime="2021-01-04T19:28:07+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line"></span><br><span class="line">xxxxxx // here is the origin content</span><br><span class="line"></span><br><span class="line">========</span><br><span class="line"></span><br><span class="line">xxxxxx // here is the content you pull</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;j43jk2293i23jk2n3</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Request/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/Android-Request/" class="post-title-link" itemprop="url">Android Request</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 19:16:01" itemprop="dateCreated datePublished" datetime="2021-01-04T19:16:01+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>How get data by request in Android?</p>
-<p>Here is an example</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">    Thread()&#123;</span><br><span class="line">        <span class="keyword">val</span> url = URL(<span class="string">&quot;https://api.thecatapi.com/v1/images/search&quot;</span>)</span><br><span class="line">        <span class="keyword">val</span> connection = url.openConnection() <span class="keyword">as</span> HttpURLConnection</span><br><span class="line">        connection.requestMethod = <span class="string">&quot;GET&quot;</span></span><br><span class="line">        <span class="keyword">val</span> inputstream = connection.inputStream</span><br><span class="line">        <span class="keyword">val</span> reader = inputstream.bufferedReader()</span><br><span class="line">        <span class="keyword">var</span> response = StringBuilder()</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">val</span> line = reader.readLine()</span><br><span class="line">            <span class="keyword">if</span> (line == <span class="literal">null</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            response.append(line)</span><br><span class="line">        &#125;</span><br><span class="line">        reader.close()</span><br><span class="line">        connection.disconnect()</span><br><span class="line">        <span class="keyword">val</span> jsons = JSONArray(response.toString())</span><br><span class="line">        runOnUiThread&#123;</span><br><span class="line">...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.start()</span><br></pre></td></tr></table></figure>
-
-<p>Note:</p>
-<p>1.You can’t request in UI thread, so you need to create a new thread to do this job</p>
-<p>2.The connection is actually established when you get inputStream from connection</p>
-<p>3.You can use try-catch here to deal with the issue that connect time out </p>
-<p>4.You can’t update UI in this new thread directly, you must use runOnUiThread{} to update UI</p>
-<p>5.Every time you establish a connection remember to close it, it’s a good habit</p>
-<hr>
-<p>How to deal with JsonArray in Android</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> signDataList = responseJson[<span class="string">&quot;activityInfo&quot;</span>] <span class="keyword">as</span> JSONArray</span><br><span class="line"><span class="keyword">for</span>(index <span class="keyword">in</span> <span class="number">0</span> until signDataList.length())&#123;</span><br><span class="line">	signDataList[index]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<p>Note</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The request codes can be integrated into a util class</span><br><span class="line">So that you don&#x27;t need to write the repeat codes again and again</span><br><span class="line">That&#x27;s the power of Refactor !</span><br></pre></td></tr></table></figure>
-
-<p>Just like this</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getDataByRequest</span><span class="params">(activity:<span class="type">Activity</span>?, context:<span class="type">Context</span>, urlForLogin:<span class="type">URL</span>?)</span></span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        getDataByUrl(urlForLogin)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e: Exception) &#123;</span><br><span class="line">        e.printStackTrace()</span><br><span class="line">        buildConnectFailDialog(context)</span><br><span class="line">        activity?.runOnUiThread &#123;</span><br><span class="line">            connectFailDialog = connectFailDialogBuilder?.create()</span><br><span class="line">            connectFailDialog?.show()</span><br><span class="line">        &#125;</span><br><span class="line">        Thread.currentThread().join()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getDataByUrl</span><span class="params">(url: <span class="type">URL</span>?)</span></span>&#123;</span><br><span class="line">    connection = url?.openConnection() <span class="keyword">as</span> HttpURLConnection</span><br><span class="line">    connection?.requestMethod = <span class="string">&quot;GET&quot;</span></span><br><span class="line">    inputStream = connection?.inputStream</span><br><span class="line">    reader = inputStream?.bufferedReader()</span><br><span class="line">    response = StringBuilder()</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">val</span> line = reader?.readLine() ?: <span class="keyword">break</span></span><br><span class="line">        response?.append(line)</span><br><span class="line">    &#125;</span><br><span class="line">    reader?.close()</span><br><span class="line">    connection?.disconnect()</span><br><span class="line">    responseJson = JSONObject(response.toString())</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">buildConnectFailDialog</span><span class="params">(context: <span class="type">Context</span>?)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (connectFailDialogBuilder == <span class="literal">null</span>) &#123;</span><br><span class="line">        connectFailDialogBuilder = AlertDialog.Builder(context!!)</span><br><span class="line">        connectFailDialogBuilder?.setTitle(<span class="string">&quot;提示信息&quot;</span>)</span><br><span class="line">        connectFailDialogBuilder?.setMessage(<span class="string">&quot;连接服务器失败&quot;</span>)</span><br><span class="line">        connectFailDialogBuilder?.setPositiveButton(<span class="string">&quot;确定&quot;</span>) &#123; dialog, id -&gt; &#123;&#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>There is a problem — in a separate util class how can util get the application’s context or activity ?</p>
-<p>Solution:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Just pass them as parameters !</span><br></pre></td></tr></table></figure>
-
-<p>Context, activity they are not something special</p>
-<p>In program, they are can be represent just with memory address</p>
-<p>So pass their address as parameter is the way to access them !</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Version/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/Android-Version/" class="post-title-link" itemprop="url">Android Version</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 18:55:57" itemprop="dateCreated datePublished" datetime="2021-01-04T18:55:57+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>The API version and Android version are different</p>
-<p>API version is Android SDK version</p>
-<p>It’s usually for developer</p>
-<p>Developer need Android SDK when making App</p>
-<p>And different SDK version will have usage, developer need to check the relative document</p>
-<p>And Android version is usually for user</p>
-<p>Like we can check our Android version of our mobile phone</p>
-<hr>
-<p>Generally, Android version is associated with SDK version</p>
-<p>example:</p>
-<table>
-<thead>
-<tr>
-<th>API Level</th>
-<th>Android Version</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>30</td>
-<td>11</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>29</td>
-<td>10</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>28</td>
-<td>9</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>27</td>
-<td>8.1</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>26</td>
-<td>8.0</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>If you use lower version of API to write an App</p>
-<p>It will have better compatibility</p>
-<p>But you can’t use the new feature of the SDK</p>
-<p>It depends on you</p>
-<p>Haha</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Back-Button/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/Android-Back-Button/" class="post-title-link" itemprop="url">Android Back Button</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 18:46:14" itemprop="dateCreated datePublished" datetime="2021-01-04T18:46:14+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onBackPressed</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onBackPressed()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>This function is what your Android do when you press the back button</p>
-<p>If you don’t want user use back button somewhere</p>
-<p>Just do like this</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onBackPressed</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// super.onBackPressed()</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Lifecycle-Of-Activity/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/Android-Lifecycle-Of-Activity/" class="post-title-link" itemprop="url">Android Lifecycle Of Activity</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 18:35:46" itemprop="dateCreated datePublished" datetime="2021-01-04T18:35:46+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://developer.android.com/guide/components/activities/activity-lifecycle">Document</a></p>
-<p>onCreate() just be invoked one time</p>
-<p>onStart() will be </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Qin-App-Conclusion/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/Qin-App-Conclusion/" class="post-title-link" itemprop="url">Qin App Conclusion</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 16:05:30" itemprop="dateCreated datePublished" datetime="2021-01-04T16:05:30+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project-Conclusion/" itemprop="url" rel="index"><span itemprop="name">Project Conclusion</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.API document</p>
-<p>Make a standard document of the request and response</p>
-<p>So that the Client and Server side can be isolated</p>
-<p>You can write your code as you like, but just follow the API document</p>
-<hr>
-<p>2.Modified API document</p>
-<p>The first version of API document may not be so perfect</p>
-<p>As the work beginning, we will found that the API document should be modified</p>
-<p>But don’t worry, if you do enough job in the first version of API document</p>
-<p>It’s not a big deal</p>
-<hr>
-<p>3.How to deal with API document</p>
-<p>For my team, we first step is to work out a flow chart according to our requirement </p>
-<p>With a basic flow chart, we can figure out the data we need</p>
-<p>Then we talk about the data base structure</p>
-<p>After these work, we can almost formulate the API</p>
-<hr>
-<p>4.Trouble with API document</p>
-<p>Even though my team make a API document</p>
-<p>But sometimes, my teammate still do not follow the document</p>
-<p>Even though I make a comment there </p>
-<p>But still miss that </p>
-<p>Ah..</p>
-<p>Then I meet with some strange bugs because of the wrong data I received</p>
-<hr>
-<p>5.Refactor and Lifecycle In Android</p>
-<p>It’s a funny thing that the most of time I spend is not for implement the function</p>
-<p>It’s for refactor</p>
-<p>Oh..</p>
-<p>Maybe my experience is not enough, not so familiar with Android and Kotlin</p>
-<p>I wrote some repeat code for Student-side and Teacher-side</p>
-<p>Actually, some repeat codes can be integrate into a util class</p>
-<p>And that’s the problem, I spend a lot of time when I am doing integration</p>
-<p>Almost every time I integrate the codes, the app will breakdown  </p>
-<p>Because I am not familiar with the lifecycle of Android </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The lifecycle is really important in Android</span><br></pre></td></tr></table></figure>
-
-<p>My teacher say it a long time ago, but I miss it</p>
-<p>Oh..</p>
-<p>I didn’t pay much attention to lifecycle of Activity</p>
-<p>That make a lot problems</p>
-<p>And I use Fragment also, I still not familiar with the lifecycle with Fragment</p>
-<p>They comes together ! ! </p>
-<p>And that’s why I almost go crazy when I deal with the bugs</p>
-<hr>
-<p>6.Record</p>
-<p>I got a good habit when working with this project</p>
-<p>That is record ! </p>
-<p>I record the bugs I meet, and put them in a file named “Bugs waiting to solve”</p>
-<p>And after I fix it I will commit in git and record the solution of it in another file named “Bugs”</p>
-<p>With these file I really feel I learn something from this project</p>
-<hr>
-<p>7.Github</p>
-<p>This is the first time I use Github work with a team (actually there are just 2 people in my team haha)</p>
-<p>Github is so cool ! ! </p>
-<p>You can see every commits</p>
-<p>You can see how many codes you have wrote</p>
-<p>When merge the code, you can easily deal with the conflict</p>
-<p>Perfect ! !</p>
-<p>And ssh key is important</p>
-<p>With ssh key you can push you code directly,</p>
-<p>Don’t need to input the username and password again and again</p>
-<hr>
-<p>8.Git</p>
-<p>With git, you don’t need to worry missing your code you just wrote</p>
-<p>Every time after you fix a bug or implement a function commit it to git !</p>
-<hr>
-<p>9.Android Document</p>
-<p>See official document ! !</p>
-<p>Please ! ! </p>
-<p>That’s the most correct way to solve the problem</p>
-<p>The other important thing is “Use you brain”</p>
-<p>Do not just follow the solutions other people provided</p>
-<p>That solutions just give us advices</p>
-<p>You need to learn from that</p>
-<p>Not just follow that</p>
-<p>And what’s more, pay you all attention to the Note!</p>
-<p>Every “Note” in document is pretty important ! !</p>
-<hr>
-<p>10.How to use a new function</p>
-<p>When you meet with unfamiliar function and don’t know how to use it </p>
-<p>And you can’t find it’s document (not official module)</p>
-<p>You can go to see it’s source code</p>
-<p>Maybe you can got you answer there</p>
-<p>Don’t be afraid of source code</p>
-<p>Generally, the source code is clean code</p>
-<p>And they are easily to read ~</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/03/%E6%B1%87%E7%BC%96-Refactor-Notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/03/%E6%B1%87%E7%BC%96-Refactor-Notes/" class="post-title-link" itemprop="url">汇编-Refactor Notes</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-03 11:18:10" itemprop="dateCreated datePublished" datetime="2021-01-03T11:18:10+08:00">2021-01-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:50:12" itemprop="dateModified" datetime="2022-06-27T15:50:12+08:00">2022-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Refactor/" itemprop="url" rel="index"><span itemprop="name">Refactor</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Refactor/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Code will be more clear if you use keyword &quot;else if&quot;</span><br></pre></td></tr></table></figure>
-
-<p>2.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Use more of constant</span><br><span class="line"></span><br><span class="line">example:(Kotlin)</span><br><span class="line"></span><br><span class="line">const val FAIL = 0</span><br><span class="line">if(state == FAIL)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Code will be much more clear</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/28/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/30/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/28/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/30/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1292,7 +1156,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">300</span>
+          <span class="site-state-item-count">309</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1328,7 +1192,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

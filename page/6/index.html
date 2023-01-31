@@ -177,6 +177,777 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/28/%E5%B7%A5%E5%85%B7-c-%E4%B8%87%E8%83%BD%E5%A4%B4%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/28/%E5%B7%A5%E5%85%B7-c-%E4%B8%87%E8%83%BD%E5%A4%B4%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">工具-c++万能头文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-28 10:30:26" itemprop="dateCreated datePublished" datetime="2022-02-28T10:30:26+08:00">2022-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>Go to definition</code></p>
+<p>找到<code>iostream</code>文件的位置</p>
+<p>新建文件夹<code>bits</code></p>
+<p>新建文件<code>stdc++.h</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C++ includes used for precompiling -*- C++ -*-</span></span><br><span class="line"><span class="comment">// Copyright (C) 2003-2014 Free Software Foundation, Inc. This file is part of the GNU ISO C++ Library.  This library is free// software; you can redistribute it and/or modify it under the// terms of the GNU General Public License as published by the// Free Software Foundation; either version 3, or (at your option)// any later version.</span></span><br><span class="line"><span class="comment">// This library is distributed in the hope that it will be useful,// but WITHOUT ANY WARRANTY; without even the implied warranty of// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the// GNU General Public License for more details.</span></span><br><span class="line"><span class="comment">// Under Section 7 of GPL version 3, you are granted additional// permissions described in the GCC Runtime Library Exception, version// 3.1, as published by the Free Software Foundation.</span></span><br><span class="line"><span class="comment">// You should have received a copy of the GNU General Public License and// a copy of the GCC Runtime Library Exception along with this program;// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see// &lt;http://www.gnu.org/licenses/&gt;.</span></span><br><span class="line"><span class="comment">/** @file stdc++.h *  This is an implementation file for a precompiled header. */</span></span><br><span class="line"><span class="comment">// 17.4.1.2 Headers</span></span><br><span class="line"><span class="comment">// C</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _GLIBCXX_NO_ASSERT</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cerrno&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cfloat&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ciso646&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;clocale&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;csetjmp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;csignal&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdarg&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstddef&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> __cplusplus &gt;= 201103L</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ccomplex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cfenv&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cinttypes&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdalign&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdbool&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdint&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctgmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cwchar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cwctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// C++</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;complex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;exception&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ios&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iosfwd&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;istream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;locale&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;new&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;numeric&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdexcept&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;streambuf&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;valarray&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> __cplusplus &gt;= 201103L</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;atomic&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;condition_variable&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;forward_list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;future&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;initializer_list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;random&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ratio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;regex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;scoped_allocator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;system_error&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;tuple&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeindex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;type_traits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/28/%E5%B7%A5%E5%85%B7-gitignore/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/28/%E5%B7%A5%E5%85%B7-gitignore/" class="post-title-link" itemprop="url">工具-gitignore</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-28 10:04:36" itemprop="dateCreated datePublished" datetime="2022-02-28T10:04:36+08:00">2022-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">HELP.md</span><br><span class="line">target/</span><br><span class="line">!.mvn/wrapper/maven-wrapper.jar</span><br><span class="line">!**/src/main/**</span><br><span class="line">!**/src/test/**</span><br><span class="line"></span><br><span class="line">### STS ###</span><br><span class="line">.apt_generated</span><br><span class="line">.classpath</span><br><span class="line">.factorypath</span><br><span class="line">.project</span><br><span class="line">.settings</span><br><span class="line">.springBeans</span><br><span class="line">.sts4-cache</span><br><span class="line"></span><br><span class="line">### IntelliJ IDEA ###</span><br><span class="line">.idea</span><br><span class="line">*.iws</span><br><span class="line">*.iml</span><br><span class="line">*.ipr</span><br><span class="line"></span><br><span class="line">### NetBeans ###</span><br><span class="line">/nbproject/private/</span><br><span class="line">/nbbuild/</span><br><span class="line">/dist/</span><br><span class="line">/nbdist/</span><br><span class="line">/.nb-gradle/</span><br><span class="line">build/</span><br><span class="line"></span><br><span class="line">### VS Code ###</span><br><span class="line">.vscode/</span><br><span class="line">.mvn</span><br><span class="line">.DS_Store</span><br><span class="line">mvnw</span><br><span class="line">mvnw.cmd</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>新建.gitignore文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 删除之前缓存的文件</span><br><span class="line">git rm -r --cached .</span><br></pre></td></tr></table></figure>
+
+<p>重新</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 此时的add操作会删除.gitignore中包含的文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/13/vue-admin-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/13/vue-admin-demo/" class="post-title-link" itemprop="url">vue-admin-demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-13 20:38:08" itemprop="dateCreated datePublished" datetime="2022-02-13T20:38:08+08:00">2022-02-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>demo</p>
+<p><a target="_blank" rel="noopener" href="https://element.eleme.cn/#/en-US/component/container">文档</a></p>
+<p>Ps：</p>
+<p>用的框架是<code>Element</code></p>
+<p><code>vue-element-admin</code>只是使用<code>element</code>框架，做出来的一个成品</p>
+<p>所以，要查文档，应该到<code>element</code>的文档去查</p>
+<h2 id="Vue创建项目"><a href="#Vue创建项目" class="headerlink" title="Vue创建项目"></a>Vue创建项目</h2><p>不要用那个eslint</p>
+<p>别忘了router</p>
+<h2 id="Vue路由"><a href="#Vue路由" class="headerlink" title="Vue路由"></a>Vue路由</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  <span class="attr">routes</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;Layout&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: Layout,</span><br><span class="line">      <span class="comment">// 嵌套路由</span></span><br><span class="line">      <span class="attr">children</span>: [&#123;</span><br><span class="line">        <span class="comment">// 这里不设置值，是把main作为默认页面</span></span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>, </span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;Main&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: Main</span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;User&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: User</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Vue引入框架"><a href="#Vue引入框架" class="headerlink" title="Vue引入框架"></a>Vue引入框架</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install element</span><br></pre></td></tr></table></figure>
+
+<p>main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加element-ui</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span>;</span><br><span class="line">Vue.use(ElementUI);</span><br></pre></td></tr></table></figure>
+
+<p>main中引入的，全局可以直接用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-container&gt;</span><br><span class="line">    &lt;el-header&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        I am Header</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    &lt;/el-header&gt;</span><br><span class="line"></span><br><span class="line">    &lt;el-container&gt;</span><br><span class="line">      &lt;el-aside&gt;</span><br><span class="line">        &lt;p&gt;aside&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;aside1&lt;/p&gt;</span><br><span class="line">      &lt;/el-aside&gt;</span><br><span class="line">      &lt;el-main&gt;</span><br><span class="line">        &lt;!-- 主界面的路由，在index.js --&gt;</span><br><span class="line">        &lt;router-view/&gt;</span><br><span class="line">      &lt;/el-main&gt;</span><br><span class="line">    &lt;/el-container&gt;</span><br><span class="line">  &lt;/el-container&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只是部分相关代码</span></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Layout&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: Layout,</span><br><span class="line">    <span class="attr">children</span>:[&#123;</span><br><span class="line">      <span class="attr">path</span>:<span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>:<span class="string">&#x27;Main&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>:Main</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;User&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: User</span><br><span class="line">      &#125;</span><br><span class="line">      ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Vue-preset"><a href="#Vue-preset" class="headerlink" title="Vue preset"></a>Vue preset</h2><p>vue 创建项目时的预设文件</p>
+<p><code>.vuerc</code>没有前缀</p>
+<p>位置在<code>/User/用户名/.vuerc</code></p>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220213203837247.png" alt="image-20220213203837247"></p>
+<h1 id="Vue颜色"><a href="#Vue颜色" class="headerlink" title="Vue颜色"></a>Vue颜色</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 背景，淡青色的那种</span><br><span class="line">background-color: aliceblue;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="颜色搭配"><a href="#颜色搭配" class="headerlink" title="颜色搭配"></a>颜色搭配</h2><h1 id="Vue事件"><a href="#Vue事件" class="headerlink" title="Vue事件"></a>Vue事件</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-menu-item v-on:click=&quot;toWeatherPage()&quot;&gt;&lt;/el-menu-item&gt;</span><br><span class="line">...</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  ...</span><br><span class="line">  methods:&#123;</span><br><span class="line">    toWeatherPage :function()&#123;</span><br><span class="line">      this.$router.push(&#123;path:&#x27;/weather&#x27;&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/24/%E6%95%B0%E5%AD%A6-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/24/%E6%95%B0%E5%AD%A6-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="post-title-link" itemprop="url">数学-线性回归</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-24 16:01:48" itemprop="dateCreated datePublished" datetime="2022-01-24T16:01:48+08:00">2022-01-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h1><p>least sqaure method</p>
+<p>顾名思义，找到合适的参数，使得取到minimum of the square</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220124160550012.png" alt="image-20220124160550012"></p>
+<p>那怎么找到那个参数呢</p>
+<p>梯度下降 - Grandient Descend</p>
+<h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><p>Grandient Descend</p>
+<p>最快取得函数最小值的一种方法（即解决上面 “使得sum of square 最小” 的问题）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220124162232558.png" alt="image-20220124162232558"></p>
+<p>Grandient：斜率</p>
+<p>当前位置最快下降的位置，是沿着当前点的切线的方向</p>
+<p>实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x**<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradient_descend</span>():</span></span><br><span class="line">    times = <span class="number">20</span></span><br><span class="line">    alpha = <span class="number">0.1</span></span><br><span class="line">    x0 = <span class="number">10</span></span><br><span class="line">    y0 = f(x0)</span><br><span class="line">    x = np.linspace(-<span class="number">10</span>,<span class="number">10</span>)</span><br><span class="line">    plt.figure()</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;x&#x27;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">    plt.plot(x,f(x))</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(times):</span><br><span class="line">        dot_x = x0</span><br><span class="line">        dot_y = y0</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;第%d次迭代：x=%f,y=%f&quot;</span>%(i+<span class="number">1</span>, x0, y0))</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 2x为y=x^2的导数</span></span><br><span class="line">        x0 = x0 - alpha*<span class="number">2</span>*x0</span><br><span class="line">        y0 = f(x0)</span><br><span class="line">        </span><br><span class="line">        plt.plot([dot_x,x0],[dot_y,y0],<span class="string">&#x27;go&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    gradient_descend()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220124170157518.png" alt="image-20220124170157518"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220124170210590.png" alt="image-20220124170210590"></p>
+<h1 id="线性回归实现"><a href="#线性回归实现" class="headerlink" title="线性回归实现"></a>线性回归实现</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/17/%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E8%AF%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/17/%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E8%AF%BE/" class="post-title-link" itemprop="url">算法-算法课</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-17 19:27:56" itemprop="dateCreated datePublished" datetime="2022-01-17T19:27:56+08:00">2022-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:34:34" itemprop="dateModified" datetime="2022-06-27T15:34:34+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="规律题"><a href="#规律题" class="headerlink" title="规律题"></a>规律题</h2><p>多动手推样例</p>
+<p>多观察，抽象</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="空间限制"><a href="#空间限制" class="headerlink" title="空间限制"></a>空间限制</h2><p>7个0没问题</p>
+<p>数组大小8个0有点危险</p>
+<p>9个0肯定爆了</p>
+<h2 id="练习读题"><a href="#练习读题" class="headerlink" title="练习读题"></a>练习读题</h2><p>上来把题目说一下</p>
+<h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><h2 id="公式法"><a href="#公式法" class="headerlink" title="公式法"></a>公式法</h2><p>结果就出来了</p>
+<p>第 i 组是什么</p>
+<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>flying window</p>
+<h2 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h2><h2 id="max取最大值"><a href="#max取最大值" class="headerlink" title="max取最大值"></a>max取最大值</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="comment">// 这个不可少，是在std库里的max</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p>多少个</p>
+<p>数值大小</p>
+<p>估计时间复杂度</p>
+<p>估计数据类型 long long</p>
+<h2 id="桶计数"><a href="#桶计数" class="headerlink" title="桶计数"></a>桶计数</h2><p>数的最大值作范围，数组开这么大</p>
+<p>需要考虑数据范围</p>
+<h2 id="简单的升级"><a href="#简单的升级" class="headerlink" title="简单的升级"></a>简单的升级</h2><h2 id="模"><a href="#模" class="headerlink" title="模"></a>模</h2><p>每次取模</p>
+<p>然后数组count</p>
+<h2 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h2><p>3个for</p>
+<p>前缀和优化掉一个</p>
+<p>起码让小数据过</p>
+<h2 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">memset</span>(s,<span class="number">0</span>,<span class="keyword">sizeof</span>(s));	<span class="comment">// 数组清0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="空间时间"><a href="#空间时间" class="headerlink" title="空间时间"></a>空间时间</h2><p>数据范围离谱</p>
+<p>我们就拿时间换空间</p>
+<h2 id="层次"><a href="#层次" class="headerlink" title="层次"></a>层次</h2><p>俯视算法题。。</p>
+<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><h2 id="为什么模质数"><a href="#为什么模质数" class="headerlink" title="为什么模质数"></a>为什么模质数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220122165547080.png" alt="image-20220122165547080"></p>
+<h2 id="链表与邻接表"><a href="#链表与邻接表" class="headerlink" title="链表与邻接表"></a>链表与邻接表</h2><p>链表操作起来麻烦，我们用邻接表</p>
+<h2 id="邻接表解决hash冲突"><a href="#邻接表解决hash冲突" class="headerlink" title="邻接表解决hash冲突"></a>邻接表解决hash冲突</h2><h2 id="Prefix-Sum-amp-Fifference"><a href="#Prefix-Sum-amp-Fifference" class="headerlink" title="Prefix Sum &amp; Fifference"></a>Prefix Sum &amp; Fifference</h2><h3 id="1D"><a href="#1D" class="headerlink" title="1D"></a>1D</h3><h3 id="2D"><a href="#2D" class="headerlink" title="2D"></a>2D</h3><h3 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h3><h3 id="差分矩阵"><a href="#差分矩阵" class="headerlink" title="差分矩阵"></a>差分矩阵</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220124100724583.png" alt="image-20220124100724583"></p>
+<h2 id="Two-Pointer"><a href="#Two-Pointer" class="headerlink" title="Two Pointer"></a>Two Pointer</h2><h2 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h2><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p>求树的深度</p>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><p>两点连通的问题</p>
+<p>O(n+e)</p>
+<h3 id="连通问题上，与DFS的对比"><a href="#连通问题上，与DFS的对比" class="headerlink" title="连通问题上，与DFS的对比"></a>连通问题上，与DFS的对比</h3><p>DFS - O(n+e) 只能找某一对</p>
+<p>并查集 - O(n+e) 找全部对</p>
+<h3 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h3><p>什么样的进行merge</p>
+<h3 id="路径压缩"><a href="#路径压缩" class="headerlink" title="路径压缩"></a>路径压缩</h3><p>丢掉了具体的路径信息</p>
+<p>只知道两点的连接关系</p>
+<p>一棵树，A到B，只有唯一的一条路径</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/16/todolist-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/16/todolist-demo/" class="post-title-link" itemprop="url">todolist-demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-16 20:44:22" itemprop="dateCreated datePublished" datetime="2022-01-16T20:44:22+08:00">2022-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="enter键入"><a href="#enter键入" class="headerlink" title="enter键入"></a>enter键入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input @keyup.enter=&quot;addTodo&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="component-命名"><a href="#component-命名" class="headerlink" title="component 命名"></a>component 命名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:Todo</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="新增项"><a href="#新增项" class="headerlink" title="新增项"></a>新增项</h2><h2 id="关闭eslint"><a href="#关闭eslint" class="headerlink" title="关闭eslint"></a>关闭eslint</h2><p>实在太烦了</p>
+<p>进package.json删了，然后</p>
+<h2 id="component引入"><a href="#component引入" class="headerlink" title="component引入"></a>component引入</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Todo <span class="keyword">from</span> <span class="string">&#x27;@/components/Todo&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>不用在export中命名</p>
+<p>除非你要起别名</p>
+<h2 id="默认import和export-default"><a href="#默认import和export-default" class="headerlink" title="默认import和export default"></a>默认import和export default</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>淦，一开始表示找不到，我还以为漏装了一个包，结果。。。</p>
+<p><code>./store</code>表示的是src下的目录</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220116225345082.png" alt="image-20220116225345082"></p>
+<p>而且，如果目标目录下有index，且没有指定from哪一个js文件</p>
+<p>此时，会默认from <code>index.js</code></p>
+<p>然后，再index.js中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123;  </span><br><span class="line">     realconsole</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> realconsole <span class="keyword">from</span> <span class="string">&#x27;./xxx&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>但是，还需要注意export default，这叫默认导出</p>
+<p>也就是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>此时，要import这个store的话</p>
+<p>乱来都行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hello <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>（相当于可以外边给名字）</p>
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>父传子</p>
+<h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p>函数，返回值</p>
+<h2 id="style-scoped"><a href="#style-scoped" class="headerlink" title="style scoped"></a>style scoped</h2><p>在vue文件中的style标签上，有一个特殊的属性：scoped。 当一个style标签拥有scoped属性时，它的CSS样式就只能作用于当前的组件</p>
+<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>实时获取值，赋值</p>
+<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>v-bind是单向绑定，而v-model 是双向绑定</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数表达式更适用于那些本来需要匿名函数的地方</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcName</span>(<span class="params">params</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> params + <span class="number">2</span>;</span><br><span class="line"> &#125;</span><br><span class="line">funcName(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>可以简洁地表示为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcName = <span class="function">(<span class="params">params</span>) =&gt;</span> params + <span class="number">2</span></span><br><span class="line">funcName(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>如果只有一个参数，可以省略括号: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">params =&gt; params + <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>如果不需要参数，则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">() =&gt;&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果该箭头函数有不止一条语句，则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(params,...) =&gt;&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><p>简单声明一个函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果想让它匿名，成为没有名字的function</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样是会报错的</p>
+<p>需要</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>现在不会报错，但是改函数也不会被调用</p>
+<p>应该再加一个括号</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>如果还想要传参</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>+name);</span><br><span class="line">&#125;)(<span class="string">&quot;cola&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>应用场景</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sub=<span class="built_in">document</span>.querySelector(<span class="string">&quot;#sub&quot;</span>);</span><br><span class="line">sub.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">    <span class="attr">fn</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/16/blog-app-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/16/blog-app-demo/" class="post-title-link" itemprop="url">blog-app-demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-16 12:10:40" itemprop="dateCreated datePublished" datetime="2022-01-16T12:10:40+08:00">2022-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Gridsome"><a href="#Gridsome" class="headerlink" title="Gridsome"></a>Gridsome</h2><p>基于 Vue.js 构建的 Jamstack 框架</p>
+<p>项目结构的<a target="_blank" rel="noopener" href="https://gridsome.org/docs/directory-structure/">说明</a></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220116135353925.png" alt="image-20220116135353925"></p>
+<p>与传统vue的mount并不完全一致</p>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><p>包管理工具</p>
+<h2 id="vuetify"><a href="#vuetify" class="headerlink" title="vuetify"></a>vuetify</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220116135224033.png" alt="image-20220116135224033"></p>
+<h2 id="npm-install-–save-dev"><a href="#npm-install-–save-dev" class="headerlink" title="npm install –save-dev"></a>npm install –save-dev</h2><p>save to dev的<code>dependencies</code></p>
+<p>vue项目run dev 的都需要那个dev的args</p>
+<h2 id="export-default-component"><a href="#export-default-component" class="headerlink" title="export default component"></a>export default component</h2><h2 id="v-app"><a href="#v-app" class="headerlink" title="v-app"></a>v-app</h2><h2 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h2><p>占坑</p>
+<h2 id="gridsome-main"><a href="#gridsome-main" class="headerlink" title="gridsome main"></a>gridsome main</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import DefaultLayout from &#x27;~/layouts/Default.vue&#x27;</span><br><span class="line"></span><br><span class="line">export default function (Vue, &#123; router, head, isClient &#125;) &#123;</span><br><span class="line">  // Set default layout as a global component</span><br><span class="line">  Vue.component(&#x27;Layout&#x27;, DefaultLayout)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>DefaultLayout 只是相当于别名一样的东西</p>
+<p>Layout 这个标签名，则是映射到Default.vue中</p>
+<p>main中导入的这个Layout标签是全局使用的</p>
+<p>Default.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;layout&quot;&gt;</span><br><span class="line">    &lt;header class=&quot;header&quot;&gt;</span><br><span class="line">      &lt;strong&gt;</span><br><span class="line">        &lt;g-link to=&quot;/&quot;&gt;&#123;&#123; $static.metadata.siteName &#125;&#125;&lt;/g-link&gt;</span><br><span class="line">      &lt;/strong&gt;</span><br><span class="line">      &lt;nav class=&quot;nav&quot;&gt;</span><br><span class="line">        &lt;g-link class=&quot;nav__link&quot; to=&quot;/&quot;&gt;Home&lt;/g-link&gt;</span><br><span class="line">        &lt;g-link class=&quot;nav__link&quot; to=&quot;/about/&quot;&gt;About&lt;/g-link&gt;</span><br><span class="line">      &lt;/nav&gt;</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;slot/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>g-link</code> 是页面跳转的标签</p>
+<p>导航跳转时，只有<code>slot</code>标签里的内容会发生改变</p>
+<p><code>/</code>是跳转到<code>src/pages/index.vue</code></p>
+<p><code>/about</code>是跳转到 <code>src/pages/about.vue</code></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220116143715716.png" alt="image-20220116143715716"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220116142916017.png" alt="image-20220116142916017"></p>
+<p>Layout 再main中已经设置成全局的一个标签</p>
+<p>古不用再export引入</p>
+<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><p>安装的包会自动更新到package.json的</p>
+<h2 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/manim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/11/manim/" class="post-title-link" itemprop="url">manim</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-11 16:54:43" itemprop="dateCreated datePublished" datetime="2022-01-11T16:54:43+08:00">2022-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220111165502148.png" alt="image-20220111165502148"></p>
+<p><a target="_blank" rel="noopener" href="https://3b1b.github.io/manim/getting_started/example_scenes.html">视频网站</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/manim-demo">demo</a></p>
+<h2 id="鼠标怎么隐藏"><a href="#鼠标怎么隐藏" class="headerlink" title="鼠标怎么隐藏"></a>鼠标怎么隐藏</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/%E5%B7%A5%E5%85%B7-brew/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -390,703 +1161,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/11/first-order-model-demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/11/first-order-model-demo/" class="post-title-link" itemprop="url">first-order-model-demo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-11 12:38:11" itemprop="dateCreated datePublished" datetime="2022-01-11T12:38:11+08:00">2022-01-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="构建环境"><a href="#构建环境" class="headerlink" title="构建环境"></a>构建环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="视频转换的准备"><a href="#视频转换的准备" class="headerlink" title="视频转换的准备"></a>视频转换的准备</h2><p>借助 face-alignment 获取crop视频的参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/1adrianb/face-alignment</span><br><span class="line"><span class="built_in">cd</span> face-alignment</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line">python setup.py install</span><br><span class="line"></span><br><span class="line">python crop-video.py --inp super-idol.mp4 --cpu</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i super-idol.mp4 -ss 0.0 -t 14.366666666666667 -filter:v <span class="string">&quot;crop=643:643:7:134, scale=256:256&quot;</span> crop.mp4</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="numpy版本不适配的问题"><a href="#numpy版本不适配的问题" class="headerlink" title="numpy版本不适配的问题"></a>numpy版本不适配的问题</h3><p>可以单独把 crop-video.py copy使用</p>
-<p>它并不依赖于first-order-model</p>
-<h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/taichi-256.yaml --driving_video ./crop.mp4 --source_image captain.jpg --checkpoint ./taichi-cpk.pth.tar --relative --adapt_scale --cpu</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/dataset_name.yaml --driving_video path/to/driving --source_image path/to/<span class="built_in">source</span> --checkpoint path/to/checkpoint --relative --adapt_scale</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled-1"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled-1" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="这种python-项目都创建新虚拟环境吧"><a href="#这种python-项目都创建新虚拟环境吧" class="headerlink" title="这种python 项目都创建新虚拟环境吧"></a>这种python 项目都创建新虚拟环境吧</h2><p>别去影响自己原来的库</p>
-<h2 id="Anaconda可以不可创建任意版本的python解释器"><a href="#Anaconda可以不可创建任意版本的python解释器" class="headerlink" title="Anaconda可以不可创建任意版本的python解释器"></a>Anaconda可以不可创建任意版本的python解释器</h2><p>没有任意版本，但确实还有其他版本，比如说3.7等等</p>
-<p>然后再Pycharm里选conda的环境</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220111125244953.png" alt="image-20220111125244953"></p>
-<h2 id="进入虚拟的python环境"><a href="#进入虚拟的python环境" class="headerlink" title="进入虚拟的python环境"></a>进入虚拟的python环境</h2><p>在Pycharm中打开命令行即可以进入到虚拟环境中</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220111133302445.png" alt="image-20220111133302445"></p>
-<h2 id="checkpoint-是什么"><a href="#checkpoint-是什么" class="headerlink" title="checkpoint 是什么"></a>checkpoint 是什么</h2><p>二进制文件，储存了模型中的各个变量</p>
-<p>没有什么数据结构</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/10/hibernate-demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/10/hibernate-demo/" class="post-title-link" itemprop="url">hibernate-demo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-10 19:56:52" itemprop="dateCreated datePublished" datetime="2022-01-10T19:56:52+08:00">2022-01-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://gitee.com/simple_one1/hibernate-demo">demo</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/10/Redis-demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/10/Redis-demo/" class="post-title-link" itemprop="url">Redis-demo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-10 16:44:31" itemprop="dateCreated datePublished" datetime="2022-01-10T16:44:31+08:00">2022-01-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>连接redis</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br></pre></td></tr></table></figure>
-
-
-
-<p>查询所有值</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keys *</span><br></pre></td></tr></table></figure>
-
-
-
-<p>获取值</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get key</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">微信公众号开发</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-09 23:21:14" itemprop="dateCreated datePublished" datetime="2022-01-09T23:21:14+08:00">2022-01-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="扫码关注公众号获取验证码"><a href="#扫码关注公众号获取验证码" class="headerlink" title="扫码关注公众号获取验证码"></a>扫码关注公众号获取验证码</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109232843586.png" alt="image-20220109232843586"></p>
-<p>主要流程：</p>
-<p>用户点击“关注公众号领取”，发送请求到公众号的个人服务器</p>
-<p>个人服务器向微信的接口请求生成导向公众号的“二维码”，并返回到前端</p>
-<p>用户微信扫码后，被导航到公众号那</p>
-<p>同时，微信的服务器会向开发者推送消息</p>
-<p>目标地址为这里的URL</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109232626285.png" alt="image-20220109232626285"></p>
-<p>后端拿一个RequestMapping接收就行</p>
-<p>然后，产生一个验证码</p>
-<p>再调用微信的“发送消息给用户”的接口，把时效验证码推送给用户即可</p>
-<p>（服务器本身也做好准备，把该验证码存在当前Session里，供验证用户输入使用）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/%E5%B7%A5%E5%85%B7-pycharm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/09/%E5%B7%A5%E5%85%B7-pycharm/" class="post-title-link" itemprop="url">工具-pycharm</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-09 14:10:54" itemprop="dateCreated datePublished" datetime="2022-01-09T14:10:54+08:00">2022-01-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:51:49" itemprop="dateModified" datetime="2022-06-27T15:51:49+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="添加conda的环境"><a href="#添加conda的环境" class="headerlink" title="添加conda的环境"></a>添加conda的环境</h2><p>Setting - Project - Python Interpreter - Add - System Interpreter</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109145510823.png" alt="image-20220109145510823"> </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/%E5%B7%A5%E5%85%B7-Jupyter/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/09/%E5%B7%A5%E5%85%B7-Jupyter/" class="post-title-link" itemprop="url">工具-Jupyter</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-09 14:09:25" itemprop="dateCreated datePublished" datetime="2022-01-09T14:09:25+08:00">2022-01-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109141029319.png" alt="image-20220109141029319"></p>
-<h2 id="为什么使用Jupyter"><a href="#为什么使用Jupyter" class="headerlink" title="为什么使用Jupyter"></a>为什么使用Jupyter</h2><p>可局部运行代码</p>
-<p>保存的文件名为 .ipynb</p>
-<h2 id="修改行间距"><a href="#修改行间距" class="headerlink" title="修改行间距"></a>修改行间距</h2><p><code>\Anaconda3\Lib\site-packages\notebook\static\style\style.min.css</code></p>
-<p>代码间距：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220525102148832.png" alt="image-20220525102148832"></p>
-<p>输出结果间距：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220525102114991.png" alt="image-20220525102114991"></p>
-<p>单元格间距：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220525150538226.png" alt="image-20220525150538226"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/08/%E8%AF%AD%E8%A8%80-%E8%B6%8A%E5%8D%97%E8%AF%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/08/%E8%AF%AD%E8%A8%80-%E8%B6%8A%E5%8D%97%E8%AF%AD/" class="post-title-link" itemprop="url">语言-越南语</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-08 23:59:54" itemprop="dateCreated datePublished" datetime="2022-01-08T23:59:54+08:00">2022-01-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:38:27" itemprop="dateModified" datetime="2022-06-27T15:38:27+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="元音12"><a href="#元音12" class="headerlink" title="元音12"></a>元音12</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220421215826729.png" alt="image-20220421215826729"></p>
-<h2 id="a"><a href="#a" class="headerlink" title="a"></a>a</h2><p>a:</p>
-<h2 id="a-1"><a href="#a-1" class="headerlink" title="ă"></a>ă</h2><p>啊！？</p>
-<h2 id="a-2"><a href="#a-2" class="headerlink" title="â"></a>â</h2><p>鹅！？</p>
-<h2 id="e"><a href="#e" class="headerlink" title="e"></a>e</h2><p>就发ER，英文字母连读</p>
-<h2 id="e-1"><a href="#e-1" class="headerlink" title="ê"></a>ê</h2><p>ei（像A，英文字母发音）</p>
-<h2 id="i、y"><a href="#i、y" class="headerlink" title="i、y"></a>i、y</h2><p>e（英文字母）</p>
-<h2 id="o"><a href="#o" class="headerlink" title="o"></a>o</h2><p>哦~（）</p>
-<p>唇内凹</p>
-<h2 id="o-1"><a href="#o-1" class="headerlink" title="ô"></a>ô</h2><p>欧</p>
-<p>唇外凸</p>
-<h2 id="o-2"><a href="#o-2" class="headerlink" title="ơ"></a>ơ</h2><p>额 down</p>
-<h2 id="u"><a href="#u" class="headerlink" title="u"></a>u</h2><p>u:</p>
-<p>喉咙发音</p>
-<h2 id="u-1"><a href="#u-1" class="headerlink" title="ư*"></a>ư*</h2><p>额</p>
-<p>牙齿合起来，喉咙重音</p>
-<p>但极短促</p>
-<h1 id="子音17"><a href="#子音17" class="headerlink" title="子音17"></a>子音17</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220421215747544.png" alt="image-20220421215747544"></p>
-<h2 id="b"><a href="#b" class="headerlink" title="b"></a>b</h2><p>双唇紧闭，b出来</p>
-<h2 id="c"><a href="#c" class="headerlink" title="c"></a>c</h2><p>个儿</p>
-<h2 id="d"><a href="#d" class="headerlink" title="d"></a>d</h2><p>衣惹（一个音，别发成两个）</p>
-<h2 id="d-1"><a href="#d-1" class="headerlink" title="đ"></a>đ</h2><p>the</p>
-<h2 id="g"><a href="#g" class="headerlink" title="g"></a>g</h2><p>葛</p>
-<h2 id="h"><a href="#h" class="headerlink" title="h"></a>h</h2><p>he 第三声</p>
-<h2 id="k"><a href="#k" class="headerlink" title="k"></a>k</h2><p>加（客）</p>
-<h2 id="l"><a href="#l" class="headerlink" title="l"></a>l</h2><p>了</p>
-<h2 id="m"><a href="#m" class="headerlink" title="m"></a>m</h2><p>m（英文字母） mer （down）</p>
-<h2 id="n"><a href="#n" class="headerlink" title="n"></a>n</h2><p>m（英文字母） ner （down）</p>
-<h2 id="p"><a href="#p" class="headerlink" title="p"></a>p</h2><h2 id="q"><a href="#q" class="headerlink" title="q"></a>q</h2><h2 id="r"><a href="#r" class="headerlink" title="r"></a>r</h2><p>惹(down)</p>
-<h2 id="s"><a href="#s" class="headerlink" title="s"></a>s</h2><p>sher (down)</p>
-<h2 id="t"><a href="#t" class="headerlink" title="t"></a>t</h2><p>der (down)</p>
-<h2 id="v"><a href="#v" class="headerlink" title="v"></a>v</h2><p>ver (down)</p>
-<h2 id="x"><a href="#x" class="headerlink" title="x"></a>x</h2><p>ser (down)</p>
-<h1 id="复子音11"><a href="#复子音11" class="headerlink" title="复子音11"></a>复子音11</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220422124509336.png" alt="image-20220422124509336"></p>
-<h2 id="ch、gi"><a href="#ch、gi" class="headerlink" title="ch、gi"></a>ch、gi</h2><p>z耳 （down）</p>
-<h2 id="kh"><a href="#kh" class="headerlink" title="kh"></a>kh</h2><p>h耳（down）</p>
-<h2 id="gh-g"><a href="#gh-g" class="headerlink" title="gh=g"></a>gh=g</h2><p>g耳（汉语拼音的g）</p>
-<h2 id="ph"><a href="#ph" class="headerlink" title="ph"></a>ph</h2><p>f耳</p>
-<h2 id="th"><a href="#th" class="headerlink" title="th"></a>th</h2><p>t耳</p>
-<h2 id="tr"><a href="#tr" class="headerlink" title="tr"></a>tr</h2><p>zh耳</p>
-<h2 id="qu"><a href="#qu" class="headerlink" title="qu"></a>qu</h2><p>gu耳</p>
-<h2 id="ng-ngh"><a href="#ng-ngh" class="headerlink" title="ng=ngh"></a>ng=ngh</h2><p>舌根抵住喉咙+耳</p>
-<h2 id="ng"><a href="#ng" class="headerlink" title="ng"></a>ng</h2><p>舌根抵住喉咙+你+耳</p>
-<h1 id="复母音"><a href="#复母音" class="headerlink" title="复母音"></a>复母音</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220422195107618.png" alt="image-20220422195107618"></p>
-<h1 id="拼音"><a href="#拼音" class="headerlink" title="拼音"></a>拼音</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220421220631674.png" alt="image-20220421220631674"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220421220922200.png" alt="image-20220421220922200"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220421221053683.png" alt="image-20220421221053683"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220421221530089.png" alt="image-20220421221530089"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220422124617131.png" alt="image-20220422124617131"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220422124541634.png" alt="image-20220422124541634"></p>
-<h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>直接上扬</p>
-<p>而不是拼好之后再扬</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/07/%E5%B7%A5%E5%85%B7-python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/07/%E5%B7%A5%E5%85%B7-python/" class="post-title-link" itemprop="url">工具-python</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-07 15:47:24" itemprop="dateCreated datePublished" datetime="2022-01-07T15:47:24+08:00">2022-01-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:51:49" itemprop="dateModified" datetime="2022-06-27T15:51:49+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="python-降级"><a href="#python-降级" class="headerlink" title="python 降级"></a>python 降级</h1><p>打开anaconda prompt</p>
-<p>然后输入指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install python=3.6</span><br></pre></td></tr></table></figure>
-
-
-
-<p>anaconda 是包管理工具</p>
-<p>python降级时，还会帮我们做环境适配</p>
-<h1 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall Pillow</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pillow==8.1.1</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-r, --requirement</span><br><span class="line"><span class="comment"># Install from the given requirements file. This option can be used multiple times.</span></span><br></pre></td></tr></table></figure>
-
-<p>不知道怎么用命令行参数的时候</p>
-<p>直接去<a target="_blank" rel="noopener" href="https://pip.pypa.io/en/stable/cli/pip_install/">官方文档</a></p>
-<p>那里肯定有的</p>
-<h2 id="python环境继承全局"><a href="#python环境继承全局" class="headerlink" title="python环境继承全局"></a>python环境继承全局</h2><p>pip会影响全局吗</p>
-<h2 id="pypi"><a href="#pypi" class="headerlink" title="pypi"></a>pypi</h2><p>The Python Package Index </p>
-<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.loc[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109150630032.png" alt="image-20220109150630032"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res[<span class="string">&#x27;Facenet_cosine&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109150809565.png" alt="image-20220109150809565"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(similar_rates[similar_rates&lt;<span class="number">2</span>][similar_rates&gt;<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109151433500.png" alt="image-20220109151433500"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1154,7 +1232,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">300</span>
+          <span class="site-state-item-count">309</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1190,7 +1268,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

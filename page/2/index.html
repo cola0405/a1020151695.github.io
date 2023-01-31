@@ -177,6 +177,763 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-title-link" itemprop="url">计算机</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-07-21 14:51:41" itemprop="dateCreated datePublished" datetime="2022-07-21T14:51:41+08:00">2022-07-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-24 17:33:36" itemprop="dateModified" datetime="2022-09-24T17:33:36+08:00">2022-09-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="机器语言"><a href="#机器语言" class="headerlink" title="机器语言"></a>机器语言</h2><p>hight-level language</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101509026.png" alt="image-20220725101509026"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101638238.png" alt="image-20220725101638238"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101750847.png" alt="image-20220725101750847"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721145224672.png" alt="image-20220721145224672"></p>
+<p>对应的汇编</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721145259050.png" alt="image-20220721145259050"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 调整I/O模式（把开关和LED关联起来）</span><br><span class="line">LD A,207</span><br><span class="line">OUT (2),A</span><br><span class="line">LD A,255</span><br><span class="line">OUT (2),A</span><br><span class="line"></span><br><span class="line">LD A,207</span><br><span class="line">OUT (3),A</span><br><span class="line">LD A,0</span><br><span class="line">OUT (3),A</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 控制LED的核心代码</span><br><span class="line"></span><br><span class="line">IN A,(0) # 把地址()的值存放到寄存器A中</span><br><span class="line">OUT (1),A # 把寄存器A的值写入到地址()中</span><br><span class="line"></span><br><span class="line"># (0)为输入</span><br><span class="line"># (1)为LED的开关</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>附录：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721150525786.png" alt="image-20220721150525786"></p>
+<h1 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h1><p>加法器</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721163221851.png" alt="image-20220721163221851"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721164647736.png" alt="image-20220721164647736"></p>
+<p>（电池在底下，正负极一阶已接好，那个掰的额其实其实就是个开关，接通电路罢了，相当于发了电信号）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812143629029.png" alt="image-20220812143629029"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812143656859.png" alt="image-20220812143656859"></p>
+<h2 id="半加器（一位加法器）"><a href="#半加器（一位加法器）" class="headerlink" title="半加器（一位加法器）"></a>半加器（一位加法器）</h2><p>两个输入</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729181317135.png" alt="image-20220729181317135"></p>
+<h2 id="全加器"><a href="#全加器" class="headerlink" title="全加器"></a>全加器</h2><p>三个输入</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729181109498.png" alt="image-20220729181109498"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729173854646.png" alt="image-20220729173854646"></p>
+<h2 id="二位加法器"><a href="#二位加法器" class="headerlink" title="二位加法器"></a>二位加法器</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729183005816.png" alt="image-20220729183005816"></p>
+<h2 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h2><p>Javascript、Python</p>
+<p>执行时并没有直接被编译成机器码</p>
+<h2 id="compiler"><a href="#compiler" class="headerlink" title="compiler"></a>compiler</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172736585.png" alt="image-20220924172736585"></p>
+<h2 id="x86-amd64"><a href="#x86-amd64" class="headerlink" title="x86 amd64"></a>x86 amd64</h2><p>计算机指令集</p>
+<p>x86 是Intel一开始的32位指令集</p>
+<p>然后AMD推出了首款64位CPU</p>
+<p>即amd64</p>
+<p>后来Intel为了赶上竞争对手</p>
+<p>则有了x86-64</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924173335078.png" alt="image-20220924173335078"></p>
+<h1 id="计算机结构"><a href="#计算机结构" class="headerlink" title="计算机结构"></a>计算机结构</h1><p>Computer orgnization</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725121004378.png" alt="image-20220725121004378"></p>
+<h3 id="CPU-Central-Processing-Unit"><a href="#CPU-Central-Processing-Unit" class="headerlink" title="CPU(Central Processing Unit)"></a>CPU(Central Processing Unit)</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170304484.png" alt="image-20220721170304484"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170245488.png" alt="image-20220721170245488"></p>
+<h3 id="内存-Random-Access-Memory"><a href="#内存-Random-Access-Memory" class="headerlink" title="内存(Random Access Memory)"></a>内存(Random Access Memory)</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725171116116.png"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220726093747072.png" alt="image-20220726093747072"></p>
+<h3 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/08428c427a41872f2ed43bf2a9be69da.gif" alt="08428c427a41872f2ed43bf2a9be69da"></p>
+<h3 id="显示器数据流动"><a href="#显示器数据流动" class="headerlink" title="显示器数据流动"></a>显示器数据流动</h3><p>1．从总线进入GPU（图形处理器）：将CPU送来的数据送到北桥，再送到GPU里面进行处理。<br>2．将芯片处理完的数据送到显存。<br>3．从显存读取出数据再送到随机读写存储数—模转换器进行数模转换的工作。（但是如果是DVI接口类型的显卡，则不需要经过数字信号转模拟信号。而直接输出数字信号。）<br>4．从DAC进入显示器：将转换完的模拟信号送到显示屏。</p>
+<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><h3 id="数据单位"><a href="#数据单位" class="headerlink" title="数据单位"></a>数据单位</h3><p>bit和Byte</p>
+<p>1Byte = 1B = 8bit</p>
+<p>1KB = 1024B</p>
+<p>1MB = 1024KB</p>
+<p>KB和Kb</p>
+<p>1KB=8Kb</p>
+<p>100Mb/s=12.5MB/s</p>
+<p>因为二进制是计算技术中广泛采用的一种数制。</p>
+<p>二进制数据是用0和1两个数码来表示的数。 </p>
+<p>而2的10次恰好等于1024 ，所以为了方便就用了1024进制。</p>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><p>电脑文件系统一般以一定大小的区块做为最小存储管理单位，比如4K字节</p>
+<p>所以如果一个文件就算只有1字节，也会占用4K空间</p>
+<p>占用空间会比文件实际大小要大</p>
+<h1 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h1><p>Java最初被设计为一种安全的受控环境。尽管如此，Java HotSpot还是包含了一个“后门”</p>
+<p>提供了一些可以直接操控内存和线程的低层次操作</p>
+<p>这个后门类——sun.misc.Unsafe——被JDK广泛用于自己的包中</p>
+<p>如java.nio和java.util.concurrent。但是丝毫不建议在生产环境中使用这个后门</p>
+<p>因为这个API十分不安全、不轻便、而且不稳定</p>
+<p>这个不安全的类提供了一个观察HotSpot JVM内部结构并且可以对其进行修改</p>
+<p>有时它可以被用来在不适用C++调试的情况下学习虚拟机内部结构，有时也可以被拿来做性能监控和开发工具</p>
+<p>（Python也有）</p>
+<h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><p>内存地址——C++展示</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    cout &lt;&lt; &amp;a[<span class="number">3</span>] &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; &amp;a[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>危险</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    a[<span class="number">2</span>] = <span class="number">666</span>;</span><br><span class="line">    cout &lt;&lt; &amp;a[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">int</span> result=*(<span class="keyword">int</span> *)<span class="number">0x61feec</span>;</span><br><span class="line">    cout &lt;&lt; result;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="GUI原理"><a href="#GUI原理" class="headerlink" title="GUI原理"></a>GUI原理</h1><p>是不是一张一张图片</p>
+<p>那么准备好相应的数据是不是就ok了</p>
+<p>最简单的文本框解释</p>
+<h1 id="RAM"><a href="#RAM" class="headerlink" title="RAM"></a>RAM</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172249840.png" alt="image-20220924172249840"></p>
+<p>细品</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172319368.png" alt="image-20220924172319368"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172331545.png" alt="image-20220924172331545"></p>
+<p>厚礼蟹</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172352277.png" alt="image-20220924172352277"></p>
+<h1 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h1><p>system bus——系统总线</p>
+<p>Arithmetic and logic unit——ALU</p>
+<p>Information technology —— IT</p>
+<p>software as a service——(SaaS) Office365 Online版</p>
+<p>看着好像是remote帮你跑了一个Office</p>
+<p>实际上。。。</p>
+<p>platform as a service——(PaaS)</p>
+<p>上传应用给好启动参数就行了，他们会部署到他们自己的云上的服务器</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/18/FL680/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/18/FL680/" class="post-title-link" itemprop="url">FL680</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-07-18 16:32:27 / Modified: 16:35:02" itemprop="dateCreated datePublished" datetime="2022-07-18T16:32:27+08:00">2022-07-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FN+e</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/%E5%B7%A5%E5%85%B7-%E9%98%BF%E9%87%8C%E4%BA%91oss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/27/%E5%B7%A5%E5%85%B7-%E9%98%BF%E9%87%8C%E4%BA%91oss/" class="post-title-link" itemprop="url">工具-阿里云oss</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-06-27 17:11:06 / Modified: 17:11:21" itemprop="dateCreated datePublished" datetime="2022-06-27T17:11:06+08:00">2022-06-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220627171119693.png" alt="image-20220627171119693"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/SQL%E6%B3%A8%E5%85%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/27/SQL%E6%B3%A8%E5%85%A5/" class="post-title-link" itemprop="url">SQL注入</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-06-27 14:31:24 / Modified: 14:31:47" itemprop="dateCreated datePublished" datetime="2022-06-27T14:31:24+08:00">2022-06-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ichunqiu/p/9604564.html">启蒙</a></p>
+<h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><h3 id="绕过密码登录"><a href="#绕过密码登录" class="headerlink" title="绕过密码登录"></a>绕过密码登录</h3><p>（也叫条件注入）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418151828925.png" alt="image-20220418151828925"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418150656284.png" alt="image-20220418150656284"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418150718927.png" alt="image-20220418150718927"></p>
+<p>只要username正确，那么直接绕过密码了:)</p>
+<p>原因是sql语句被恶意篡改成了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM user WHERE id = 4 OR TRUE AND password = $&#123;password&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>如果它不过滤查询字符串，它将给出如下错误：</p>
+<p>第5行的Article.php中的5MySQL语法错误</p>
+<p>则该网站易受攻击</p>
+<p>简单检查密码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@NotBlank(message = &quot;密码不能为空&quot;)</span></span><br><span class="line"><span class="meta">@Pattern(regexp = &quot;^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]&#123;8,32&#125;$&quot;,message = &quot;密码不符合格式要求&quot;)</span></span><br><span class="line"><span class="keyword">private</span> String password;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="查看数据库某表的列数"><a href="#查看数据库某表的列数" class="headerlink" title="查看数据库某表的列数"></a>查看数据库某表的列数</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418151803683.png" alt="image-20220418151803683"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418151653801.png" alt="image-20220418151653801"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418153235568.png" alt="image-20220418153235568"></p>
+<p>（原语法：order by + 列名，以某列的值作排序的依据）</p>
+<p>（如果是数字的话，则相当于用各列的下标来表示各列）</p>
+<p>不断增大order by后的数字</p>
+<p>不报错，就说明该列存在</p>
+<p>报错了，就说明当前表的列数是它减一:)</p>
+<p>Ps：</p>
+<h3 id="查看数据库中所有得表名"><a href="#查看数据库中所有得表名" class="headerlink" title="查看数据库中所有得表名"></a>查看数据库中所有得表名</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418155712707.png" alt="image-20220418155712707"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418155741695.png" alt="image-20220418155741695"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418160326964.png" alt="image-20220418160326964"></p>
+<p>原本要返回的本来是当前班级的学生列表的</p>
+<p>每个学生的信息包括：ID和姓名</p>
+<p>这sql注入直接利用UNION把数据库里所有的表名当成学生数据返回了</p>
+<p>注入部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 UNION SELECT 1,table_name,3,4 FROM information_schema.tables--</span><br></pre></td></tr></table></figure>
+
+<p>字段解释：</p>
+<p>1 —— 班级id</p>
+<p>UNION —— 把两个select的结果连接起来</p>
+<p>（理所当然的要求前后两个select的列数要一致）</p>
+<p>（这也是为什么要获取列数的原因）</p>
+<p>1,table_name,3,4 —— 是第二个select语句的各列</p>
+<p>information_schema.tables —— 是所有数据库都有的一张表，包含了所有表的表名</p>
+<p>（新建的表一般在末尾，前面的都是mysql自带的一些表）</p>
+<h3 id="获取所有列名"><a href="#获取所有列名" class="headerlink" title="获取所有列名:)"></a>获取所有列名:)</h3><p>切入口和上面一致</p>
+<p>注入的sql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">1</span>,column_name,<span class="number">3</span>,<span class="number">4</span> <span class="keyword">FROM</span> information_schema.columns<span class="comment">--</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418160853376.png" alt="image-20220418160853376"></p>
+<p>:) :) :)</p>
+<h3 id="获取密码"><a href="#获取密码" class="headerlink" title="获取密码"></a>获取密码</h3><p>首先是查看user表的列名</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418161435037.png" alt="image-20220418161435037"></p>
+<p>注入的sql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">1</span>,column_name,<span class="number">3</span>,<span class="number">4</span> <span class="keyword">FROM</span> information_schema.columns <span class="keyword">WHERE</span> table_name<span class="operator">=</span><span class="string">&#x27;user&#x27;</span><span class="comment">--</span></span><br></pre></td></tr></table></figure>
+
+<p>获取密码</p>
+<p>用户名：密码</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418161713453.png" alt="image-20220418161713453"></p>
+<p>注入的sql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">1</span>,concat(id,<span class="number">0x3a</span>,password),<span class="number">3</span>,<span class="number">4</span> <span class="keyword">FROM</span> <span class="keyword">user</span><span class="comment">--</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="时间盲注"><a href="#时间盲注" class="headerlink" title="时间盲注"></a>时间盲注</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418164445613.png" alt="image-20220418164445613"></p>
+<h2 id="攻击的特殊手段"><a href="#攻击的特殊手段" class="headerlink" title="攻击的特殊手段"></a>攻击的特殊手段</h2><p>–可以把后面的语句给注释掉</p>
+<p>null不会导致任何类型转换错误</p>
+<p>OR TRUE</p>
+<p>UNION 可以理所当然得把查询语句嵌进来（得先用ORDER BY把列数试出来）</p>
+<h3 id="堆叠注入局限"><a href="#堆叠注入局限" class="headerlink" title="堆叠注入局限"></a>堆叠注入局限</h3><p>就是输入类似<code>1;update user set password = &#39;12345&#39; where id =1</code>这种方式</p>
+<p>让执行完查询语句后在执行更新语句，以达到我们的目的</p>
+<p>但是很遗憾，这种方式有很大的局限性</p>
+<p>主要就是我们常用的ORM框架并不支持同时执行多条sql语句，因此很难实现注入</p>
+<p>据了解，这种方式在php语言中可以成功实践。</p>
+<h2 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h2><p>Integer类型反而不容易被注入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">checkRow</span><span class="params">(Integer id)</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/24/%E6%B8%B8%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/24/%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">游记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-06-24 17:26:04" itemprop="dateCreated datePublished" datetime="2022-06-24T17:26:04+08:00">2022-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 17:35:28" itemprop="dateModified" datetime="2022-06-27T17:35:28+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h2><p>我觉得我不喜欢QQ原因是 ，微信他对于人和人之间的关系弄的很好，举个例子 ，你看人家朋友圈 ，你看了 你可以不点赞 ，不评论 对方也不知道你看了，但QQ不是这样 ，QQ是有那个访客的 ，那这一下有没有权限 ，那就是人和人之间的矛盾了，微信很舒服 ，现在肯定有的人微信里加的好友 ，不一定是想加的</p>
+<h2 id="平均数和中位数"><a href="#平均数和中位数" class="headerlink" title="平均数和中位数"></a>平均数和中位数</h2><p>在极端贫富分化的社会，很多数据只能用平均数，因为中位数一旦让大家知道，谎言就戳破了。</p>
+<p>比如收入方面，平均数会因为那1%极高收入者而被抬高。</p>
+<h2 id="俄罗斯与中国"><a href="#俄罗斯与中国" class="headerlink" title="俄罗斯与中国"></a>俄罗斯与中国</h2><p>中国人在俄罗斯是底层，和黑人差不多。俄罗斯是全球唯一一个禁止唐人街的国家，理由是中国人文化素质太低</p>
+<h2 id="牛逼的服务"><a href="#牛逼的服务" class="headerlink" title="牛逼的服务"></a>牛逼的服务</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220627165828795.png" alt="image-20220627165828795"></p>
+<h2 id="朝鲜战争"><a href="#朝鲜战争" class="headerlink" title="朝鲜战争"></a>朝鲜战争</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220627171843239.png" alt="image-20220627171843239"></p>
+<h2 id="买不买"><a href="#买不买" class="headerlink" title="买不买"></a>买不买</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220627172349540.png" alt="image-20220627172349540"></p>
+<h2 id="官方的消息"><a href="#官方的消息" class="headerlink" title="官方的消息"></a>官方的消息</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220627173344850.png" alt="image-20220627173344850"></p>
+<h2 id="资源配置"><a href="#资源配置" class="headerlink" title="资源配置"></a>资源配置</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220627173506979.png" alt="image-20220627173506979"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220627173526875.png" alt="image-20220627173526875"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/22/CSharp-Pasker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/22/CSharp-Pasker/" class="post-title-link" itemprop="url">CSharp-Pasker</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-06-22 09:37:51" itemprop="dateCreated datePublished" datetime="2022-06-22T09:37:51+08:00">2022-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-24 14:18:34" itemprop="dateModified" datetime="2022-06-24T14:18:34+08:00">2022-06-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="窗体跳转"><a href="#窗体跳转" class="headerlink" title="窗体跳转"></a>窗体跳转</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">page.Main mainForm = new page.Main();</span><br><span class="line">this.Hide();</span><br><span class="line">mainForm.Show();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后添加<code>FormClosed</code>事件到新窗体</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">private void Main_FormClosed(object sender, FormClosedEventArgs e)</span><br><span class="line">&#123;</span><br><span class="line">	Application.Exit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="包引用"><a href="#包引用" class="headerlink" title="包引用"></a>包引用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">using HelloWorld.entity;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="循环次数不对"><a href="#循环次数不对" class="headerlink" title="循环次数不对"></a>循环次数不对</h2><p>其实是回调函数的问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private void itemList_Paint(object sender, PaintEventArgs e)</span><br></pre></td></tr></table></figure>
+
+<p>每添加一个新组件，又会重新回调一下这个函数</p>
+<p>所以List里面只有1个元素，但是却循环了3次</p>
+<h2 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h2><p>setting中存数据</p>
+<p>数据读取</p>
+<p>首先，第三方库利用NuGet安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install-package newtonsoft.json </span><br></pre></td></tr></table></figure>
+
+
+
+<p>反序列化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List &lt;Password&gt; json = JsonConvert.DeserializeObject&lt;List&lt;Password&gt;&gt;(Properties.Settings.Default.password1);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>序列化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Student&gt; lstStuModel = new List&lt;Student&gt;()&#123;</span><br><span class="line">	new Student()&#123;ID=1,Name=&quot;張飛&quot;,Age=250,Sex=&quot;男&quot;&#125;,</span><br><span class="line">	new Student()&#123;ID=2,Name=&quot;潘金蓮&quot;,Age=300,Sex=&quot;女&quot;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//Newtonsoft.Json序列化</span><br><span class="line">string jsonData = JsonConvert.SerializeObject(lstStuModel);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/14/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/14/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/" class="post-title-link" itemprop="url">社会科学</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-06-14 09:40:50" itemprop="dateCreated datePublished" datetime="2022-06-14T09:40:50+08:00">2022-06-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="网民构成"><a href="#网民构成" class="headerlink" title="网民构成"></a>网民构成</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094103778.png" alt="image-20220614094103778"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094306945.png" alt="image-20220614094306945"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094323931.png" alt="image-20220614094323931"></p>
+<h2 id="用户规模"><a href="#用户规模" class="headerlink" title="用户规模"></a>用户规模</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094713840.png" alt="image-20220614094713840"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094734006.png" alt="image-20220614094734006"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094829205.png" alt="image-20220614094829205"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094854253.png" alt="image-20220614094854253"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/quartz/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/06/quartz/" class="post-title-link" itemprop="url">quartz</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-06-06 15:40:33" itemprop="dateCreated datePublished" datetime="2022-06-06T15:40:33+08:00">2022-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><h2 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_FIRED_TRIGGERS;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_PAUSED_TRIGGER_GRPS;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_SCHEDULER_STATE;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_LOCKS;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_SIMPLE_TRIGGERS;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_SIMPROP_TRIGGERS;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_CRON_TRIGGERS;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_BLOB_TRIGGERS;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_TRIGGERS;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_JOB_DETAILS;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> QRTZ_CALENDARS;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_JOB_DETAILS</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    JOB_NAME  <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    JOB_GROUP <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    DESCRIPTION <span class="type">VARCHAR</span>(<span class="number">250</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    JOB_CLASS_NAME   <span class="type">VARCHAR</span>(<span class="number">250</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    IS_DURABLE <span class="type">VARCHAR</span>(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    IS_NONCONCURRENT <span class="type">VARCHAR</span>(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    IS_UPDATE_DATA <span class="type">VARCHAR</span>(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    REQUESTS_RECOVERY <span class="type">VARCHAR</span>(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    JOB_DATA <span class="type">BLOB</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,JOB_NAME,JOB_GROUP)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_TRIGGERS</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_GROUP <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    JOB_NAME  <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    JOB_GROUP <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    DESCRIPTION <span class="type">VARCHAR</span>(<span class="number">250</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    NEXT_FIRE_TIME <span class="type">BIGINT</span>(<span class="number">13</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    PREV_FIRE_TIME <span class="type">BIGINT</span>(<span class="number">13</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    PRIORITY <span class="type">INTEGER</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_STATE <span class="type">VARCHAR</span>(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_TYPE <span class="type">VARCHAR</span>(<span class="number">8</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    START_TIME <span class="type">BIGINT</span>(<span class="number">13</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    END_TIME <span class="type">BIGINT</span>(<span class="number">13</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    CALENDAR_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    MISFIRE_INSTR <span class="type">SMALLINT</span>(<span class="number">2</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    JOB_DATA <span class="type">BLOB</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP),</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY (SCHED_NAME,JOB_NAME,JOB_GROUP)</span><br><span class="line">        <span class="keyword">REFERENCES</span> QRTZ_JOB_DETAILS(SCHED_NAME,JOB_NAME,JOB_GROUP)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_SIMPLE_TRIGGERS</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_GROUP <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    REPEAT_COUNT <span class="type">BIGINT</span>(<span class="number">7</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    REPEAT_INTERVAL <span class="type">BIGINT</span>(<span class="number">12</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TIMES_TRIGGERED <span class="type">BIGINT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP),</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY (SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP)</span><br><span class="line">        <span class="keyword">REFERENCES</span> QRTZ_TRIGGERS(SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_CRON_TRIGGERS</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_GROUP <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    CRON_EXPRESSION <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TIME_ZONE_ID <span class="type">VARCHAR</span>(<span class="number">80</span>),</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP),</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY (SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP)</span><br><span class="line">        <span class="keyword">REFERENCES</span> QRTZ_TRIGGERS(SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_SIMPROP_TRIGGERS</span><br><span class="line">  (          </span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_GROUP <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    STR_PROP_1 <span class="type">VARCHAR</span>(<span class="number">512</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    STR_PROP_2 <span class="type">VARCHAR</span>(<span class="number">512</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    STR_PROP_3 <span class="type">VARCHAR</span>(<span class="number">512</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    INT_PROP_1 <span class="type">INT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    INT_PROP_2 <span class="type">INT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    LONG_PROP_1 <span class="type">BIGINT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    LONG_PROP_2 <span class="type">BIGINT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    DEC_PROP_1 <span class="type">NUMERIC</span>(<span class="number">13</span>,<span class="number">4</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    DEC_PROP_2 <span class="type">NUMERIC</span>(<span class="number">13</span>,<span class="number">4</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    BOOL_PROP_1 <span class="type">VARCHAR</span>(<span class="number">1</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    BOOL_PROP_2 <span class="type">VARCHAR</span>(<span class="number">1</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP),</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY (SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP) </span><br><span class="line">    <span class="keyword">REFERENCES</span> QRTZ_TRIGGERS(SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_BLOB_TRIGGERS</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_GROUP <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    BLOB_DATA <span class="type">BLOB</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP),</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY (SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP)</span><br><span class="line">        <span class="keyword">REFERENCES</span> QRTZ_TRIGGERS(SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_CALENDARS</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    CALENDAR_NAME  <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    CALENDAR <span class="type">BLOB</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,CALENDAR_NAME)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_PAUSED_TRIGGER_GRPS</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_GROUP  <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>, </span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,TRIGGER_GROUP)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_FIRED_TRIGGERS</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    ENTRY_ID <span class="type">VARCHAR</span>(<span class="number">95</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    TRIGGER_GROUP <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    INSTANCE_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    FIRED_TIME <span class="type">BIGINT</span>(<span class="number">13</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    SCHED_TIME <span class="type">BIGINT</span>(<span class="number">13</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    PRIORITY <span class="type">INTEGER</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    STATE <span class="type">VARCHAR</span>(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    JOB_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    JOB_GROUP <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    IS_NONCONCURRENT <span class="type">VARCHAR</span>(<span class="number">1</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    REQUESTS_RECOVERY <span class="type">VARCHAR</span>(<span class="number">1</span>) <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,ENTRY_ID)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_SCHEDULER_STATE</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    INSTANCE_NAME <span class="type">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    LAST_CHECKIN_TIME <span class="type">BIGINT</span>(<span class="number">13</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    CHECKIN_INTERVAL <span class="type">BIGINT</span>(<span class="number">13</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,INSTANCE_NAME)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> QRTZ_LOCKS</span><br><span class="line">  (</span><br><span class="line">    SCHED_NAME <span class="type">VARCHAR</span>(<span class="number">120</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    LOCK_NAME  <span class="type">VARCHAR</span>(<span class="number">40</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>, </span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (SCHED_NAME,LOCK_NAME)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">commit</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># 实例化ThreadPool时，使用的线程类为SimpleThreadPool</span><br><span class="line">org.quartz.threadPool.class = org.quartz.simpl.SimpleThreadPool</span><br><span class="line"># threadCount和threadPriority将以setter的形式注入ThreadPool实例</span><br><span class="line"># 并发个数</span><br><span class="line">org.quartz.threadPool.threadCount = 5</span><br><span class="line"># 优先级</span><br><span class="line">org.quartz.threadPool.threadPriority = 5</span><br><span class="line">org.quartz.threadPool.threadsInheritContextClassLoaderOfInitializingThread = true</span><br><span class="line">org.quartz.jobStore.misfireThreshold = 5000</span><br><span class="line">#持久化使用的类</span><br><span class="line">org.quartz.jobStore.class = org.quartz.impl.jdbcjobstore.JobStoreTX</span><br><span class="line">#数据库中表的前缀</span><br><span class="line">org.quartz.jobStore.tablePrefix = QRTZ_</span><br><span class="line">#数据源命名</span><br><span class="line">org.quartz.jobStore.dataSource = qzDS</span><br><span class="line">#qzDS 数据源</span><br><span class="line">org.quartz.dataSource.qzDS.driver = com.mysql.jdbc.Driver</span><br><span class="line">org.quartz.dataSource.qzDS.URL = jdbc:mysql://localhost:3306/quartz?useUnicode=true&amp;characterEncoding=UTF-8</span><br><span class="line">org.quartz.dataSource.qzDS.user = root</span><br><span class="line">org.quartz.dataSource.qzDS.password = root</span><br><span class="line">org.quartz.dataSource.qzDS.maxConnections = 10</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="配置类"><a href="#配置类" class="headerlink" title="配置类"></a>配置类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lpcs.modules.task.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.quartz.Scheduler;</span><br><span class="line"><span class="keyword">import</span> org.quartz.ee.servlet.QuartzInitializerListener;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.config.PropertiesFactoryBean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.core.io.ClassPathResource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.quartz.SchedulerFactoryBean;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Qartz配置, 搭配quartz.properties文件自定义配置, 该处目的使定时任务持久化</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SchedulerConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取quartz.properties 文件</span></span><br><span class="line"><span class="comment">     * 将值初始化</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Properties <span class="title">quartzProperties</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        PropertiesFactoryBean propertiesFactoryBean = <span class="keyword">new</span> PropertiesFactoryBean();</span><br><span class="line">        propertiesFactoryBean.setLocation(<span class="keyword">new</span> ClassPathResource(<span class="string">&quot;/quartz.properties&quot;</span>));</span><br><span class="line">        propertiesFactoryBean.afterPropertiesSet();</span><br><span class="line">        <span class="keyword">return</span> propertiesFactoryBean.getObject();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将配置文件的数据加载到SchedulerFactoryBean中</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SchedulerFactoryBean <span class="title">schedulerFactoryBean</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        SchedulerFactoryBean schedulerFactoryBean = <span class="keyword">new</span> SchedulerFactoryBean();</span><br><span class="line">        schedulerFactoryBean.setQuartzProperties(quartzProperties());</span><br><span class="line">        <span class="keyword">return</span> schedulerFactoryBean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 初始化监听器</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> QuartzInitializerListener <span class="title">executorListener</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> QuartzInitializerListener();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获得Scheduler 对象</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Scheduler <span class="title">scheduler</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> schedulerFactoryBean().getScheduler();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="通过方法名获取不同job"><a href="#通过方法名获取不同job" class="headerlink" title="通过方法名获取不同job"></a>通过方法名获取不同job</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># task是job</span><br><span class="line">taskInfo.setTask(SpringUtil.getBean(<span class="string">&quot;Hello&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="观察"><a href="#观察" class="headerlink" title="观察"></a>观察</h1><h2 id="trigger"><a href="#trigger" class="headerlink" title="trigger"></a>trigger</h2><p>数据库修改满频繁的</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220606164948631.png" alt="image-20220606164948631"></p>
+<p>每次定时都会更新一下这个</p>
+<p>正在运行的定时任务是“WAITING” 或 “ACQUIRED”</p>
+<p>暂停的定时任务是“PAUSE”</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/%E6%B1%87%E7%BC%96-python%E6%B8%B8%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -319,636 +1076,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">计算机-计算机游记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-05-20 17:10:00" itemprop="dateCreated datePublished" datetime="2022-05-20T17:10:00+08:00">2022-05-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p>Software as a Service</p>
-<p>连上网直接用服务</p>
-<p>应用的部署不用用户操心</p>
-<h2 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h2><p>客户端告诉代理服务器，帮我访问这个地址，然后把返回结果再传一份给我</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520172550105.png" alt="image-20220520172550105"></p>
-<p>客户端并不知道实际服务的Web服务器</p>
-<p>只是访问代理的那个服务器</p>
-<p>不关系代理服务到底是怎么和Web服务器交互的</p>
-<p>客户端等一个结果就行</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220520172625580.png" alt="image-20220520172625580"></p>
-<h1 id="桌面开发"><a href="#桌面开发" class="headerlink" title="桌面开发"></a>桌面开发</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220523151811522.png" alt="image-20220523151811522"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/17/China/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/17/China/" class="post-title-link" itemprop="url">China</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-05-17 13:58:59" itemprop="dateCreated datePublished" datetime="2022-05-17T13:58:59+08:00">2022-05-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Visa"><a href="#Visa" class="headerlink" title="Visa"></a>Visa</h1><p>Common (<strong>L-Type</strong>) 1到6个月</p>
-<p><strong>F or Z visa</strong> and you’ll need a letter of invitation from the company you’ll be working with in China</p>
-<p><strong>X visa</strong> and will need a letter from the college where you’ll be studying.</p>
-<p>If you need to extend your visa while in China</p>
-<p>this can be done by visiting the local <strong>Public Security Bureau</strong></p>
-<h2 id="香港签证"><a href="#香港签证" class="headerlink" title="香港签证"></a>香港签证</h2><p>Citizens of most Western countries do not need a visa for short visits to Hong Kong as long as employment isn’t sought.</p>
-<h1 id="海关"><a href="#海关" class="headerlink" title="海关"></a>海关</h1><p>You’re not allowed to bring more than ¥6000 in Chinese money, 400 cigarettes or two liters of alcohol.</p>
-<h1 id="机票"><a href="#机票" class="headerlink" title="机票"></a>机票</h1><p>Direct flights from the West Coast to China take about 13 hours</p>
-<p>will cost between US$700 and US$1,500 round-trip</p>
-<p>Hong Kong is China’s best-served international gateway and some</p>
-<p>of the cheapest China flights you’ll find from North America,</p>
-<p>Europe and Australasia head here</p>
-<h1 id="水路"><a href="#水路" class="headerlink" title="水路"></a>水路</h1><p>Not many people arrive in China by ship, but it is still a possibility</p>
-<p>and Shanghai is served by ferries from <strong>Japan</strong> (see p. 292)</p>
-<h1 id="exchange"><a href="#exchange" class="headerlink" title="exchange"></a>exchange</h1><p>The <strong>Bank of China</strong> (not the Agricultural Bank of China, ConstructionBank of China</p>
-<p>Industrial Bank of China or any of the other similarly named institutions) is the only bank licensed to exchange foreign currency</p>
-<p>or travelers’ checks. Their opening hours may vary but are generally <strong>Mon</strong></p>
-<p><strong>day to Friday from 9 am-noon and 2-5 pm</strong>.</p>
-<h1 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h1><p>菜系 - style</p>
-<p>干 - sundried</p>
-<p>long known in the West as <strong>Canton</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/06/%E5%B7%A5%E5%85%B7-adb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/06/%E5%B7%A5%E5%85%B7-adb/" class="post-title-link" itemprop="url">工具-adb</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-05-06 10:35:13" itemprop="dateCreated datePublished" datetime="2022-05-06T10:35:13+08:00">2022-05-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>到电脑</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull /run/Publisher.jar D:\project\folder\智慧灯杆\网关</span><br></pre></td></tr></table></figure>
-
-
-
-<p>电脑到设备</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb push test.txt /sdcard/test</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/05/%E5%B7%A5%E5%85%B7-procreate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/05/%E5%B7%A5%E5%85%B7-procreate/" class="post-title-link" itemprop="url">工具-procreate</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-05-05 22:00:13" itemprop="dateCreated datePublished" datetime="2022-05-05T22:00:13+08:00">2022-05-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="笔刷"><a href="#笔刷" class="headerlink" title="笔刷"></a>笔刷</h1><p>gloaming+evolve</p>
-<p>用gloaming画高光</p>
-<p>gloaming作橡皮擦！做出梦幻的感觉</p>
-<p>海浪不一定要水平</p>
-<h1 id="调色板"><a href="#调色板" class="headerlink" title="调色板"></a>调色板</h1><p>可以利用图片导入</p>
-<h1 id="绘画"><a href="#绘画" class="headerlink" title="绘画"></a>绘画</h1><h2 id="光影"><a href="#光影" class="headerlink" title="光影"></a>光影</h2><h3 id="正方体光影"><a href="#正方体光影" class="headerlink" title="正方体光影"></a>正方体光影</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506080948226.png" alt="image-20220506080948226"></p>
-<p>三阶颜色</p>
-<p>下一阶最亮的颜色约等于上一阶最暗的颜色就好</p>
-<h3 id="眼睛光影"><a href="#眼睛光影" class="headerlink" title="眼睛光影"></a>眼睛光影</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506081652732.png" alt="image-20220506081652732"></p>
-<h2 id="虚实"><a href="#虚实" class="headerlink" title="虚实"></a>虚实</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506081245538.png" alt="image-20220506081245538"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220506081505004.png" alt="image-20220506081505004"></p>
-<p>球体底下有点暗面反光</p>
-<h2 id="手"><a href="#手" class="headerlink" title="手"></a>手</h2><p>关节处拿橡皮去擦</p>
-<p>有棱有角</p>
-<p>好看噢~</p>
-<h2 id="线稿"><a href="#线稿" class="headerlink" title="线稿"></a>线稿</h2><p>黑色线稿出来之后</p>
-<p>细画</p>
-<p>有需要的话，还可以用别的颜色重新画那部分的线稿</p>
-<h1 id="图层"><a href="#图层" class="headerlink" title="图层"></a>图层</h1><h2 id="上色"><a href="#上色" class="headerlink" title="上色"></a>上色</h2><p>一个物体一个图层</p>
-<p>上色</p>
-<h2 id="图层组"><a href="#图层组" class="headerlink" title="图层组"></a>图层组</h2><p>看起来就不会那么多图层了</p>
-<h2 id="剪辑蒙版"><a href="#剪辑蒙版" class="headerlink" title="剪辑蒙版"></a>剪辑蒙版</h2><p>剪辑到下一层，颜色不会出去</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/01/%E8%AF%AD%E8%A8%80-%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/01/%E8%AF%AD%E8%A8%80-%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD/" class="post-title-link" itemprop="url">语言-西班牙语</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-05-01 09:24:17" itemprop="dateCreated datePublished" datetime="2022-05-01T09:24:17+08:00">2022-05-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:38:27" itemprop="dateModified" datetime="2022-06-27T15:38:27+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>o la - 你好</p>
-<p>a di o s - 拜拜</p>
-<p>a ne ma na - 姐姐</p>
-<p>ko la - 屁股</p>
-<p>hermana - 姐姐</p>
-<p>e re ma na</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Junit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/29/Junit/" class="post-title-link" itemprop="url">Junit</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-29 17:38:22" itemprop="dateCreated datePublished" datetime="2022-04-29T17:38:22+08:00">2022-04-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h1><p>代码迭代，一键测试</p>
-<h1 id="Test时启动Spring-Boot-应用"><a href="#Test时启动Spring-Boot-应用" class="headerlink" title="Test时启动Spring Boot 应用"></a>Test时启动Spring Boot 应用</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220429174147972.png" alt="image-20220429174147972"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest(classes = LpcsApplication.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountManageTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    AccountManageController accountManageController;</span><br><span class="line"></span><br><span class="line">    MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mockMvc = MockMvcBuilders.standaloneSetup(accountManageController).build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addSubAccount</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        setup();</span><br><span class="line">        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(<span class="string">&quot;/account/manage/add/sub/account&quot;</span>))</span><br><span class="line">                .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">                .andDo(MockMvcResultHandlers.print())</span><br><span class="line">                .andReturn();</span><br><span class="line">        System.out.println(mvcResult.getResponse().getContentAsString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Linux实际使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-29 10:23:47" itemprop="dateCreated datePublished" datetime="2022-04-29T10:23:47+08:00">2022-04-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="时区错误"><a href="#时区错误" class="headerlink" title="时区错误"></a>时区错误</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/28/nginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/28/nginx/" class="post-title-link" itemprop="url">nginx</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-28 13:37:19" itemprop="dateCreated datePublished" datetime="2022-04-28T13:37:19+08:00">2022-04-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>nginx.conf 位置：<code>/etc/nginx/</code></p>
-<p>日志位置：<code>/var/log/nginx/</code></p>
-<p>简单部署就安装了简易版的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx-light</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">       listen 8080;</span><br><span class="line">       location / &#123;</span><br><span class="line">         root   /var/www/html/dist/;</span><br><span class="line">         try_files $uri $uri/ /index.html;</span><br><span class="line">        &#125;</span><br><span class="line">        location /api &#123;</span><br><span class="line">          proxy_pass http://40.72.185.138:8082/;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
-
-<p>root 为dis解压后的目录</p>
-<p>proxy_pass 是后端api的地址</p>
-<p>第二个location的意思是</p>
-<p>把/api的请求</p>
-<p>转到40.72.185.138:8082/</p>
-<p>Ps：8082后加不加斜杠，取决于vue里面怎么拼接</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!qa # 不保存退出vi</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -s reload</span><br></pre></td></tr></table></figure>
-
-
-
-<p>卸载nginx</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove nginx nginx-common</span><br><span class="line">sudo apt-get purge nginx nginx-common</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get remove nginx-full nginx-common</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1016,7 +1147,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">300</span>
+          <span class="site-state-item-count">309</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1052,7 +1183,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
