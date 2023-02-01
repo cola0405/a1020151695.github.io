@@ -177,6 +177,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/01/%E9%9A%90%E7%A7%81%E8%84%B1%E6%95%8F%E8%AF%BE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/01/%E9%9A%90%E7%A7%81%E8%84%B1%E6%95%8F%E8%AF%BE%E9%A2%98/" class="post-title-link" itemprop="url">隐私脱敏课题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-01 14:21:17" itemprop="dateCreated datePublished" datetime="2022-04-01T14:21:17+08:00">2022-04-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="数据脱敏"><a href="#数据脱敏" class="headerlink" title="数据脱敏"></a>数据脱敏</h1><p>先来看看什么是数据脱敏？</p>
+<p>数据脱敏也叫数据的去隐私化</p>
+<p>在我们给定脱敏规则和策略的情况下</p>
+<p>对敏感数据比如 <code>手机号</code>、<code>银行卡号</code> 等信息，进行转换或者修改的一种技术手段</p>
+<p>防止敏感数据直接在不可靠的环境下使用</p>
+<p>像政府、医疗行业、金融机构、移动运营商是比较早开始应用数据脱敏的</p>
+<p>因为他们所掌握的都是用户最核心的私密数据，如果泄露后果是不可估量的</p>
+<p>数据脱敏的应用在生活中是比较常见的，比如我们在淘宝买东西订单详情中</p>
+<p>商家账户信息会被用 <code>*</code> 遮挡，保障了商户隐私不泄露，这就是一种数据脱敏方式</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401143615596.png" alt="image-20220401143615596"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401143701899.png" alt="image-20220401143701899"></p>
+<h2 id="敏感信息识别"><a href="#敏感信息识别" class="headerlink" title="敏感信息识别"></a>敏感信息识别</h2><p>现在有两种方式来识别敏感数据。第一种是通过人工指定</p>
+<p>比如通过正则来指定敏感数据的格式</p>
+<p>Oracle公司开发的Oracle Data Masking Pack中就使用了这一种方法来指定</p>
+<p>第二种方式就是自动识别了，在文献[2]中</p>
+<p>作者给出了基于数据特征学习以及自然语言处理等技术进行敏感数据识别的自动识别方案(没有具体的实现,只提出了模型)</p>
+<p>具体的实现在gayhub上找了一个java实现的工程，</p>
+<p>chlorine-finder，看了下源码具体原理是通过提前预置的规则来识别一些常见的敏感数据</p>
+<p>比如信用卡号，SSN， 手机号，电子邮箱，IP地址，住址等</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/29/kkeeper/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3075,76 +3158,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/02/flex-%E5%B8%83%E5%B1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/02/flex-%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">flex 布局</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-03-02 11:47:27" itemprop="dateCreated datePublished" datetime="2022-03-02T11:47:27+08:00">2022-03-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="http://c.biancheng.net/css3/flex.html">参考</a></p>
-<h1 id="外层"><a href="#外层" class="headerlink" title="外层"></a>外层</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.el-aside</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220302115614982.png" alt="image-20220302115614982"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -3216,7 +3229,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">309</span>
+          <span class="site-state-item-count">310</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

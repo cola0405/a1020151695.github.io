@@ -177,6 +177,113 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/%E7%AE%97%E6%B3%95-%E6%95%A3%E5%88%97%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/12/%E7%AE%97%E6%B3%95-%E6%95%A3%E5%88%97%E8%A1%A8/" class="post-title-link" itemprop="url">算法-散列表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-12 10:00:42" itemprop="dateCreated datePublished" datetime="2021-07-12T10:00:42+08:00">2021-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:34:34" itemprop="dateModified" datetime="2022-06-27T15:34:34+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h1><p>散列表（Hash table，也叫哈希表）</p>
+<h1 id="哈希函数（映射）"><a href="#哈希函数（映射）" class="headerlink" title="哈希函数（映射）"></a>哈希函数（映射）</h1><p><font color=red>根据Key来计算存储位置的计算规则我们称之为哈希函数</font></p>
+<p>假如我们有一组数据,某位工程师每年的收入情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2017 -- 100000</span><br><span class="line">2018 -- 130000</span><br><span class="line">2019 -- 140000</span><br><span class="line">2020 -- 200000</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 新建一个长度为2020的数组array[]</span><br><span class="line">2. 根据H(x) = x 计算存储位置，将数据放入数组中。</span><br><span class="line">   array[2017] = 100000</span><br><span class="line">   array[2018] = 130000</span><br><span class="line">   array[2019] = 140000</span><br><span class="line">   array[2020] = 200000</span><br><span class="line">3. 查询2019年收入情况时，通过H(x) = x 计算出存储位置，直接取出数据array[2019]</span><br></pre></td></tr></table></figure>
+
+<h2 id="直接定址法"><a href="#直接定址法" class="headerlink" title="直接定址法"></a>直接定址法</h2><p><strong>Hash（Key）= A*Key + B</strong>。<br>优点：简单、均匀<br>缺点：需要事先知道关键字的分布情况(<font color=red>判断其对应关系是否为线性</font>)</p>
+<h2 id="除留余数法"><a href="#除留余数法" class="headerlink" title="除留余数法"></a>除留余数法</h2><p><strong>Hash( key ) = key % p ( p &lt;= m)</strong></p>
+<p>m为地址数</p>
+<p>p为一个不大于m，但最接近或者等于m的质数</p>
+<h1 id="散列表的运作流程"><a href="#散列表的运作流程" class="headerlink" title="散列表的运作流程"></a>散列表的运作流程</h1><p>输入要查找的值key，使用 Hash(key) 得到一个值i</p>
+<p>若 array[i] = key ，则查找成功</p>
+<p>若 array[i] 不存在，则插入元素，返回 ”查找失败“</p>
+<p>若 array[i] ≠ key，则进行哈希冲突处理</p>
+<h1 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h1><p>哈希函数算出来的位置已有元素, 即为冲突</p>
+<h1 id="冲突处理"><a href="#冲突处理" class="headerlink" title="冲突处理"></a>冲突处理</h1><h2 id="线性探查法"><a href="#线性探查法" class="headerlink" title="线性探查法"></a>线性探查法</h2><p><font  color=red>产生冲突，依次查看其后的下一个桶，如果发现空位置插入新元素</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210712101645062.png" alt="image-20210712101645062"></p>
+<h2 id="平方探测法-二次探测法-【-】"><a href="#平方探测法-二次探测法-【-】" class="headerlink" title="平方探测法(二次探测法)【+】"></a>平方探测法(二次探测法)【+】</h2><p>相对比上面的i+1, 平方探测法为 i+(平方序列)</p>
+<p><font color=red >平方序列: </font></p>
+<p>1, -1, 4, -4, 9, -9</p>
+<p>线性探测容易聚集，二次探测聚集情况较线性探测要好</p>
+<p>散列表长度是某个4k＋3形式的素数时，平方探测法就可以探查到整个散列表空间</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210712104248398.png" alt="image-20210712104248398"></p>
+<p>插入20</p>
+<p>h(20)=8冲突</p>
+<p>+1冲突，-1冲突</p>
+<p>+4 (9+4)%11=2 无冲突‘</p>
+<p>冲突次数=3</p>
+<h2 id="链地址法"><a href="#链地址法" class="headerlink" title="链地址法"></a>链地址法</h2><p>开散列法又叫<strong>链地址法</strong>(开链法)</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211010155225930.png" alt="image-20211010155225930"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211010155233200.png" alt="image-20211010155233200"></p>
+<h1 id="载荷因子（装填因子、装载因子）"><a href="#载荷因子（装填因子、装载因子）" class="headerlink" title="载荷因子（装填因子、装载因子）"></a>载荷因子（装填因子、装载因子）</h1><p>满1</p>
+<p><strong>散列表的载荷因子：a = 插入元素个数n / 散列表的长度m</strong></p>
+<p>a是散列表装满程度的标志因子。</p>
+<p><strong>散列表的平均查找长度</strong>依赖于散列表的装填因子</p>
+<p>而不直接依赖于n和m</p>
+<h2 id="装填因子与平均查找长度"><a href="#装填因子与平均查找长度" class="headerlink" title="装填因子与平均查找长度"></a>装填因子与平均查找长度</h2><p>装填因子越大，散列表越满，越容易发生冲突</p>
+<p>装填因子越小，越不容易发生冲突，平均查找长度就越小</p>
+<p><font color=red>散列表不满，容易查找不成功，但是其查找长度就是短了呀</font></p>
+<p>（array[i] 若不存在则插入并返回”查找失败“）</p>
+<h1 id="散列表的效率"><a href="#散列表的效率" class="headerlink" title="散列表的效率"></a>散列表的效率</h1><h2 id="影响因素"><a href="#影响因素" class="headerlink" title="影响因素"></a>影响因素</h2><p>散列函数、处理冲突的方法、装填因子</p>
+<p>散列表的平均查找长度依赖于散列表的装填因子</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/%E7%AE%97%E6%B3%95-%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1118,81 +1225,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/10/%E6%95%B0%E5%AD%A6-%E6%95%B0%E5%AD%A6%E7%AD%94%E9%A2%98%E8%A7%84%E8%8C%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/10/%E6%95%B0%E5%AD%A6-%E6%95%B0%E5%AD%A6%E7%AD%94%E9%A2%98%E8%A7%84%E8%8C%83/" class="post-title-link" itemprop="url">数学-数学答题规范</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-10 17:24:57" itemprop="dateCreated datePublished" datetime="2021-07-10T17:24:57+08:00">2021-07-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710172509452.png" alt="image-20210710172509452"></p>
-<p>这种答案不要把他合并起来</p>
-<hr>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713165919731.png" alt="image-20210713165919731"></p>
-<p>不用硬提2（结果本来就是要去括号的）</p>
-<p>这题不把那括号拆开来估计是为了分好部分</p>
-<p>还有就是eln一般是得化掉（<font color=red>e的指数上有ln</font>）</p>
-<hr>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913104703226.png" alt="image-20210913104703226"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913105004393.png" alt="image-20210913105004393"></p>
-<h1 id="大题"><a href="#大题" class="headerlink" title="大题"></a>大题</h1><h2 id="可分离变量的微分方程"><a href="#可分离变量的微分方程" class="headerlink" title="可分离变量的微分方程"></a>可分离变量的微分方程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911103415792.png" alt="image-20210911103415792"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1264,7 +1296,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">309</span>
+          <span class="site-state-item-count">310</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
