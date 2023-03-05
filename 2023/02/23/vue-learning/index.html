@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230223182402911.png">
 <meta property="og:image" content="https://v2.cn.vuejs.org/images/lifecycle.png">
 <meta property="article:published_time" content="2023-02-23T02:13:34.000Z">
-<meta property="article:modified_time" content="2023-02-26T09:55:18.304Z">
+<meta property="article:modified_time" content="2023-03-05T10:28:13.848Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-26 17:55:18" itemprop="dateModified" datetime="2023-02-26T17:55:18+08:00">2023-02-26</time>
+                <time title="Modified: 2023-03-05 18:28:13" itemprop="dateModified" datetime="2023-03-05T18:28:13+08:00">2023-03-05</time>
               </span>
 
           
@@ -242,6 +242,29 @@
 <p><img src="https://v2.cn.vuejs.org/images/lifecycle.png" alt="img"></p>
 <h2 id="版本支持"><a href="#版本支持" class="headerlink" title="版本支持"></a>版本支持</h2><p>Vue.js 也抛弃了对 IE8 的支持</p>
 <p>在移动端支持到 Android 4.2+ 和 iOS 7+。</p>
+<h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h1><p><code>util/axios.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> service = axios.create(&#123;</span><br><span class="line">    <span class="attr">baseURL</span>:<span class="string">&#x27;http://localhost:8080&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> service</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>api/problem.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> service <span class="keyword">from</span> <span class="string">&#x27;@/util/axios&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getProblemList</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> service.request(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;/problem/getList&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>:<span class="string">&#x27;get&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>App.vue</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">beforeMount</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  getProblemList().then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// init table data</span></span><br><span class="line">  <span class="built_in">this</span>.resetTableData()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// init page 1</span></span><br><span class="line">  <span class="built_in">this</span>.updatePage(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
 <h1 id="command"><a href="#command" class="headerlink" title="command"></a>command</h1><h2 id=""><a href="#" class="headerlink" title="@"></a>@</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># @表示安装最新版</span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
 
 
@@ -265,9 +288,98 @@
 
 
 
+<h1 id="component-组件"><a href="#component-组件" class="headerlink" title="component 组件"></a>component 组件</h1><h2 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h2><p>1） $parent: 父组件实例。<br>2） $children: 包含所有子组件实例。<br>3） $root: 组件所在的根实例。  </p>
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HelloWorld</span> <span class="attr">msg</span>=<span class="string">&quot;Welcome to Your Vue.js App&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
 
-<h1 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h1><h2 id="data属性"><a href="#data属性" class="headerlink" title="data属性"></a>data属性</h2><p>vue实例中的data属性既可以是一个对象，也可以是一个函数</p>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;HelloWorld&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    msg: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="emit"><a href="#emit" class="headerlink" title="$emit"></a>$emit</h2><p>在实例本身上触发事件。  </p>
+<h2 id="dispatch"><a href="#dispatch" class="headerlink" title="$dispatch"></a>$dispatch</h2><p>派发事件，事件沿着父链冒泡，并且在第一次触发回调之后自动停止冒泡，除非触发函<br>数明确返回 true，才会继续向上冒泡。  </p>
+<h2 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h2><p>子 (ProblemFilter)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法名、数据</span></span><br><span class="line"><span class="built_in">this</span>.$emit(<span class="string">&#x27;newFilter&#x27;</span>, <span class="built_in">this</span>.problemTypes)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>父</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ProblemFilter</span> @<span class="attr">newFilter</span>=<span class="string">&quot;doFilter&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ProblemFilter</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doFilter : <span class="function"><span class="keyword">function</span> (<span class="params">problemTypes</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="分页算法"><a href="#分页算法" class="headerlink" title="分页算法"></a>分页算法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">updatePage : <span class="function"><span class="keyword">function</span> (<span class="params">targetPage</span>)</span>&#123;</span><br><span class="line">     <span class="built_in">this</span>.showData = []</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">let</span> i=(targetPage-<span class="number">1</span>)*<span class="built_in">this</span>.pageSize;i&lt;<span class="built_in">this</span>.tableData.length;i++)&#123;</span><br><span class="line">       <span class="built_in">this</span>.showData.push(<span class="built_in">this</span>.tableData[i]);</span><br><span class="line">       <span class="keyword">if</span>(<span class="built_in">this</span>.showData.length===<span class="built_in">this</span>.pageSize) <span class="keyword">break</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="交集"><a href="#交集" class="headerlink" title="交集"></a>交集</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="built_in">this</span>.originData.length;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> curTypes = <span class="built_in">this</span>.originData[i].type</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> intersect = curTypes.filter(<span class="function"><span class="params">x</span> =&gt;</span> problemTypes.has(x))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(intersect.length === problemTypes.size)&#123;</span><br><span class="line">          <span class="built_in">this</span>.tableData.push(<span class="built_in">this</span>.originData[i]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="修改页码"><a href="#修改页码" class="headerlink" title="修改页码"></a>修改页码</h2><p><code>:</code> 是为了取值</p>
+<p><code>current-page</code> 当前页数</p>
+<p><code>.sync</code> 表示同步</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-pagination</span></span></span><br><span class="line"><span class="tag">         @<span class="attr">current-change</span>=<span class="string">&quot;updatePage&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:current-page.sync</span>=<span class="string">&quot;curPage&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">background</span></span></span><br><span class="line"><span class="tag">         <span class="attr">layout</span>=<span class="string">&quot;prev, pager, next&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:page-size</span>=<span class="string">&quot;pageSize&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:total</span>=<span class="string">&quot;this.tableData.length&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">el-pagination</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.curPage = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.el-main</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(<span class="number">120deg</span>, <span class="number">#fdfbfb</span> <span class="number">0%</span>, <span class="number">#ebedee</span> <span class="number">100%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.el-container</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-<span class="selector-tag">aside</span> <span class="attribute">width</span>=&quot;<span class="number">150px</span>&quot;&gt;&lt;/el-<span class="selector-tag">aside</span>&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h1><h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p>在项目开发中，我们展示的数据往往需要经过一些处理。除了在模板中绑定表达式或者<br>利用过滤器外， Vue.js 还提供了计算属性这种方法，避免在模板中加入过重的业务逻辑，保证<br>模板的结构清晰和可维护性。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	<span class="attr">el</span> : <span class="string">&#x27;#app,</span></span><br><span class="line"><span class="string">	data: &#123;</span></span><br><span class="line"><span class="string">		firstName : &#x27;</span>Gavin<span class="string">&#x27;，</span></span><br><span class="line"><span class="string">		lastName: &#x27;</span>CLY<span class="string">&#x27;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">	computed : &#123;</span></span><br><span class="line"><span class="string">		fullName : function() &#123;</span></span><br><span class="line"><span class="string">		// this 指向 vm 实例</span></span><br><span class="line"><span class="string">			return this.firstName + &#x27;</span> <span class="string">&#x27; + this.lastName</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">	&#125;);</span></span><br><span class="line"><span class="string">&lt;p&gt;&#123;&#123; firstName &#125;&#125;&lt;/p&gt; // Gavin</span></span><br><span class="line"><span class="string">&lt;p&gt;&#123;&#123; lastName &#125;&#125;&lt;/p&gt; // CLY</span></span><br><span class="line"><span class="string">&lt;p&gt;&#123;&#123; fullName &#125;&#125;&lt;/p&gt; // Gavin CLY</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="data属性"><a href="#data属性" class="headerlink" title="data属性"></a>data属性</h2><p>vue实例中的data属性既可以是一个对象，也可以是一个函数</p>
 <p><strong>组件中定义data属性，只能是一个函数</strong></p>
 <p><strong>vue组件可能会有很多个实例，采用函数返回一个全新data形式，使每个实例对象的数据不会受到其他实例对象数据的污染</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">message</span>: <span class="string">&#x27;hello vue.js&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -283,10 +395,9 @@
 
 
 
+<h2 id="-1"><a href="#-1" class="headerlink" title=":"></a>:</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-input</span> <span class="attr">type</span>=<span class="string">&quot;textarea&quot;</span> <span class="attr">:autosize</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-
-
+<p>true 属性前加 :</p>
 <h1 id="Directive-指令"><a href="#Directive-指令" class="headerlink" title="Directive 指令"></a>Directive 指令</h1><h2 id="v-if-与-v-show"><a href="#v-if-与-v-show" class="headerlink" title="v-if 与 v-show"></a>v-if 与 v-show</h2><p><code>v-if</code></p>
 <p>true – 加载到DOM中（能在html代码中看到）</p>
 <p>false – 不加载到DOM中</p>
@@ -297,6 +408,14 @@
 <p><code>v-show</code></p>
 <p>true – 显示</p>
 <p>false – 不显示</p>
+<h2 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;inner&quot;</span>&gt;</span>inner<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span>not inner<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 <h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使用 <code>v-bind</code> 指令：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -359,6 +478,65 @@
 <h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(App),</span><br><span class="line">  <span class="attr">data</span>:&#123;</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;hello vue.js&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).$mount(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
+
+
+
+
+
+
+
+<h1 id="method"><a href="#method" class="headerlink" title="method"></a>method</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cur_change : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">this</span>.update_page()</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="attr">update_page</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">     alert(<span class="built_in">this</span>.pageSize)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="Table"><a href="#Table" class="headerlink" title="Table"></a>Table</h1><h2 id="Filter-筛选"><a href="#Filter-筛选" class="headerlink" title="Filter 筛选"></a>Filter 筛选</h2><p>如果不用分页，则直接用<code>Table-column Attributes</code> 的<code>filter-method</code> 即可筛选</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果是多选的筛选项，对每一条数据会执行多次，任意一次返回 true 就会显示</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果同时还要分页，则是要用<code>Table Events</code> 的<code>filter-change</code> </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:data</span>=<span class="string">&quot;showData&quot;</span></span></span><br><span class="line"><span class="tag">        @<span class="attr">filter-change</span>=<span class="string">&quot;doDifficultyFilter&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">&quot;width: 100%&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">          <span class="attr">prop</span>=<span class="string">&quot;id&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">label</span>=<span class="string">&quot;ID&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">          <span class="attr">align</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">prop</span>=<span class="string">&quot;name&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">label</span>=<span class="string">&quot;题目名称&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">          <span class="attr">id</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:column-key</span>=<span class="string">&quot;&#x27;difficulty&#x27;&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:filters</span>=<span class="string">&quot;[&#123; text:&#x27;简单&#x27;, value: &#x27;简单&#x27;&#125;, &#123; text:&#x27;中等&#x27;, value: &#x27;中等&#x27;&#125;, &#123; text:&#x27;困难&#x27;, value: &#x27;困难&#x27;&#125;]&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">align</span>=<span class="string">&quot;right&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">prop</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">label</span>=<span class="string">&quot;难度&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>要筛选的那一列</p>
+<p>需要配置<code>:column-key</code> 和<code>filters</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当表格的筛选条件发生变化的时候会触发该事件</span><br><span class="line">参数的值是一个对象，对象的 key 是 column 的 columnKey，对应的 value 为用户选择的筛选条件的数组</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">          <span class="attr">id</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:column-key</span>=<span class="string">&quot;&#x27;difficulty&#x27;&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:filters</span>=<span class="string">&quot;[&#123; text:&#x27;简单&#x27;, value: &#x27;简单&#x27;&#125;, &#123; text:&#x27;中等&#x27;, value: &#x27;中等&#x27;&#125;, &#123; text:&#x27;困难&#x27;, value: &#x27;困难&#x27;&#125;]&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">align</span>=<span class="string">&quot;right&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">prop</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">label</span>=<span class="string">&quot;难度&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> doDifficultyFilter : <span class="function"><span class="keyword">function</span> (<span class="params">columns</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">let</span> difficultySet = <span class="keyword">new</span> <span class="built_in">Set</span>(columns[<span class="string">&#x27;difficulty&#x27;</span>])</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 无筛选</span></span><br><span class="line">   <span class="keyword">if</span>(difficultySet.size === <span class="number">0</span>)&#123;</span><br><span class="line">     <span class="built_in">this</span>.resetTableData()</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">     <span class="built_in">this</span>.tableData = []</span><br><span class="line"></span><br><span class="line">     <span class="comment">// 符合difficultySet内的problems都放入tableData</span></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="built_in">this</span>.originData.length;i++)&#123;</span><br><span class="line">       <span class="keyword">let</span> curDifficulty = <span class="built_in">this</span>.originData[i].difficulty</span><br><span class="line">       <span class="keyword">if</span>(difficultySet.has(curDifficulty))&#123;</span><br><span class="line">         <span class="built_in">this</span>.tableData.push(<span class="built_in">this</span>.originData[i]);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="comment">// 更新分页数据，翻回第一页</span></span><br><span class="line">   <span class="built_in">this</span>.adjustPagination()</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Page-分页"><a href="#Page-分页" class="headerlink" title="Page 分页"></a>Page 分页</h2><h1 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router -s</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对应上vue 2.6</span></span><br><span class="line">npm install vue-router@3.5.2</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span>;</span><br><span class="line">Vue.use(VueRouter);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
     </div>
 
     
@@ -376,7 +554,10 @@
     <a href="/2023/02/20/algorithm/" rel="prev" title="algorithm">
       <i class="fa fa-chevron-left"></i> algorithm
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/27/element-ui-learning/" rel="next" title="element-ui-learning">
+      element-ui-learning <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -435,7 +616,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%81"><span class="nav-number">1.1.</span> <span class="nav-text">版本支持</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#command"><span class="nav-number">2.</span> <span class="nav-text">command</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">@</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npx"><span class="nav-number">2.2.</span> <span class="nav-text">npx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-number">2.3.</span> <span class="nav-text">npm指定版本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">3.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#data%E5%B1%9E%E6%80%A7"><span class="nav-number">3.1.</span> <span class="nav-text">data属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">3.2.</span> <span class="nav-text">this</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Directive-%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">Directive 指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#v-if-%E4%B8%8E-v-show"><span class="nav-number">4.1.</span> <span class="nav-text">v-if 与 v-show</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-bind"><span class="nav-number">4.2.</span> <span class="nav-text">v-bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model"><span class="nav-number">4.3.</span> <span class="nav-text">v-model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-on"><span class="nav-number">4.4.</span> <span class="nav-text">v-on</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-for"><span class="nav-number">4.5.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVVM"><span class="nav-number">4.6.</span> <span class="nav-text">MVVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-number">4.7.</span> <span class="nav-text">响应式编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vm"><span class="nav-number">4.8.</span> <span class="nav-text">vm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue2-%E4%B8%8E-vue3"><span class="nav-number">4.9.</span> <span class="nav-text">vue2 与 vue3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#main-js"><span class="nav-number">5.</span> <span class="nav-text">main.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mount"><span class="nav-number">5.1.</span> <span class="nav-text">mount()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="nav-number">5.2.</span> <span class="nav-text">全局变量</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%81"><span class="nav-number">1.1.</span> <span class="nav-text">版本支持</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#axios"><span class="nav-number">2.</span> <span class="nav-text">axios</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#command"><span class="nav-number">3.</span> <span class="nav-text">command</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text">@</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npx"><span class="nav-number">3.2.</span> <span class="nav-text">npx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-number">3.3.</span> <span class="nav-text">npm指定版本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#component-%E7%BB%84%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">component 组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="nav-number">4.1.</span> <span class="nav-text">组件间通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#props"><span class="nav-number">4.2.</span> <span class="nav-text">props</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emit"><span class="nav-number">4.3.</span> <span class="nav-text">$emit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dispatch"><span class="nav-number">4.4.</span> <span class="nav-text">$dispatch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E4%BC%A0%E7%88%B6"><span class="nav-number">4.5.</span> <span class="nav-text">子传父</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E7%AE%97%E6%B3%95"><span class="nav-number">4.6.</span> <span class="nav-text">分页算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E9%9B%86"><span class="nav-number">4.7.</span> <span class="nav-text">交集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%A1%B5%E7%A0%81"><span class="nav-number">4.8.</span> <span class="nav-text">修改页码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css"><span class="nav-number">5.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">6.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#computed"><span class="nav-number">6.1.</span> <span class="nav-text">computed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data%E5%B1%9E%E6%80%A7"><span class="nav-number">6.2.</span> <span class="nav-text">data属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">6.3.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">6.4.</span> <span class="nav-text">:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Directive-%E6%8C%87%E4%BB%A4"><span class="nav-number">7.</span> <span class="nav-text">Directive 指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#v-if-%E4%B8%8E-v-show"><span class="nav-number">7.1.</span> <span class="nav-text">v-if 与 v-show</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-else"><span class="nav-number">7.2.</span> <span class="nav-text">v-else</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-bind"><span class="nav-number">7.3.</span> <span class="nav-text">v-bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model"><span class="nav-number">7.4.</span> <span class="nav-text">v-model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-on"><span class="nav-number">7.5.</span> <span class="nav-text">v-on</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-for"><span class="nav-number">7.6.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVVM"><span class="nav-number">7.7.</span> <span class="nav-text">MVVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-number">7.8.</span> <span class="nav-text">响应式编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vm"><span class="nav-number">7.9.</span> <span class="nav-text">vm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue2-%E4%B8%8E-vue3"><span class="nav-number">7.10.</span> <span class="nav-text">vue2 与 vue3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#main-js"><span class="nav-number">8.</span> <span class="nav-text">main.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mount"><span class="nav-number">8.1.</span> <span class="nav-text">mount()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="nav-number">8.2.</span> <span class="nav-text">全局变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#method"><span class="nav-number">9.</span> <span class="nav-text">method</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Table"><span class="nav-number">10.</span> <span class="nav-text">Table</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Filter-%E7%AD%9B%E9%80%89"><span class="nav-number">10.1.</span> <span class="nav-text">Filter 筛选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-%E5%88%86%E9%A1%B5"><span class="nav-number">10.2.</span> <span class="nav-text">Page 分页</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-router"><span class="nav-number">11.</span> <span class="nav-text">vue-router</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -451,7 +632,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">311</span>
+          <span class="site-state-item-count">313</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

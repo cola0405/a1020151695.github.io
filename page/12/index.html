@@ -177,6 +177,244 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/08/%E4%B8%93%E4%B8%9A%E8%AF%BE-18%E5%B9%B4914%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/08/%E4%B8%93%E4%B8%9A%E8%AF%BE-18%E5%B9%B4914%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">专业课-18年914试题分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-10-08 16:53:54" itemprop="dateCreated datePublished" datetime="2021-10-08T16:53:54+08:00">2021-10-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:35:47" itemprop="dateModified" datetime="2022-06-27T15:35:47+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="出入栈"><a href="#出入栈" class="headerlink" title="出入栈"></a>出入栈</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165411525.png" alt="image-20211008165411525"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Push</span><span class="params">(SqStack &amp;S, SElemType e)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(size=MAXSIZE<span class="number">-1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	S-&gt;data[size++]=e;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Pop</span><span class="params">(SqStack &amp;S, SElemType &amp;e)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(size==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	*e=S-&gt;data[size--];</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="顺序存储的优缺点"><a href="#顺序存储的优缺点" class="headerlink" title="顺序存储的优缺点"></a>顺序存储的优缺点</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165418827.png" alt="image-20211008165418827"></p>
+<p>答：</p>
+<p>优点：数据结构简单；随机访问效率高</p>
+<p>缺点：插入元素和删除元素效率低；必须是连续的一块内存</p>
+<h1 id="二叉树结点数量问题"><a href="#二叉树结点数量问题" class="headerlink" title="二叉树结点数量问题"></a>二叉树结点数量问题</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165425062.png" alt="image-20211008165425062"></p>
+<p>答案：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014153655417.png" alt="image-20211014153655417"></p>
+<h1 id="图的深度优先生成树"><a href="#图的深度优先生成树" class="headerlink" title="图的深度优先生成树"></a>图的深度优先生成树</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165455878.png" alt="image-20211008165455878"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014160658539.png" alt="image-20211014160658539"></p>
+<p>好好审题，可以节约不少时间（邻接矩阵表示的无向图）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014161016282.png" alt="image-20211014161016282"></p>
+<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165502143.png" alt="image-20211008165502143"></p>
+<p>答：归并排序的方法：</p>
+<p>假定待排序含有n个记录，可以看成是n个有序的子表，每个子表长度为1</p>
+<p>然后两两合并，得到n/2个长度为2的有序子表，再进行两两合并</p>
+<p>如此重复，直到合成出一个长度为n的有序表为止</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014162153776.png" alt="image-20211014162153776"></p>
+<h1 id="二维数组的地址"><a href="#二维数组的地址" class="headerlink" title="二维数组的地址"></a>二维数组的地址</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165507621.png" alt="image-20211008165507621"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211015150016477.png" alt="image-20211015150016477"></p>
+<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165515374.png" alt="image-20211008165515374"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211015151213843.png" alt="image-20211015151213843"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211015151217056.png" alt="image-20211015151217056"></p>
+<h1 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165520986.png" alt="image-20211008165520986"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211015152658039.png" alt="image-20211015152658039"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211015152715150.png" alt="image-20211015152715150"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/08/%E4%B8%93%E4%B8%9A%E8%AF%BE-19%E5%B9%B4914%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/08/%E4%B8%93%E4%B8%9A%E8%AF%BE-19%E5%B9%B4914%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">专业课-19年914试题分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-10-08 16:51:21" itemprop="dateCreated datePublished" datetime="2021-10-08T16:51:21+08:00">2021-10-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:35:47" itemprop="dateModified" datetime="2022-06-27T15:35:47+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="随机生成【-】"><a href="#随机生成【-】" class="headerlink" title="随机生成【+++++】"></a>随机生成【+++++】</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165138989.png" alt="image-20211008165138989"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> length;</span><br><span class="line">	<span class="keyword">int</span> data[<span class="number">20</span>];</span><br><span class="line">&#125;Sqlist;</span><br><span class="line"></span><br><span class="line"><span class="function">Sqlist <span class="title">getSqlist</span><span class="params">(Sqlist &amp;L)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,k=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> temp[<span class="number">20</span>];</span><br><span class="line">	L.length=<span class="number">20</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)&#123;</span><br><span class="line">		L.data[i]=random(<span class="number">100</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(L.data[i]&lt;<span class="number">50</span>)&#123;</span><br><span class="line">			L.data[k++]=L.data[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			temp[j++]=L.data[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;j;i++)&#123;</span><br><span class="line">		L.data[k++]=temp[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="链表删除重复元素"><a href="#链表删除重复元素" class="headerlink" title="链表删除重复元素"></a>链表删除重复元素</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165147976.png" alt="image-20211008165147976"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LinkList <span class="title">unique</span><span class="params">(LinkList &amp;L)</span></span>&#123;</span><br><span class="line">	LNode *p,*q,*f;</span><br><span class="line">	p=L;</span><br><span class="line">	q=L-&gt;next;</span><br><span class="line">	<span class="keyword">while</span>(q!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(q-&gt;data==p-&gt;data)&#123;</span><br><span class="line">			p-&gt;next=q-&gt;next;</span><br><span class="line">			f=q;</span><br><span class="line">			q=q-&gt;next;</span><br><span class="line">			<span class="built_in">free</span>(f);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			p=p-&gt;next;</span><br><span class="line">			q=q-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="判断回文【-】"><a href="#判断回文【-】" class="headerlink" title="判断回文【+++++】"></a>判断回文【+++++】</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165154535.png" alt="image-20211008165154535"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;*Liststack,LNode;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> length,i;</span><br><span class="line">	Liststack L;</span><br><span class="line">	LNode p;</span><br><span class="line">	L=(LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">	L-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	length=StrLength(s);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">		p=(LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">		p-&gt;data=s[i];</span><br><span class="line">		<span class="keyword">if</span>(L==<span class="literal">NULL</span>)L=p;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			p-&gt;next=L;</span><br><span class="line">			L=p;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;length/<span class="number">2</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]!=p-&gt;data)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;该字符串不是回文\n&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	prinf(<span class="string">&quot;该字符串是回文\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="链式队列的出入列操作【-】"><a href="#链式队列的出入列操作【-】" class="headerlink" title="链式队列的出入列操作【+++++】"></a>链式队列的出入列操作【+++++】</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165208192.png" alt="image-20211008165208192"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(LiQueue *&amp;q,ElemType e)</span></span>&#123;</span><br><span class="line">	QNode p=(QNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(QNode));</span><br><span class="line">	p-&gt;data=e;</span><br><span class="line">	p-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	q.rear-&gt;next=p;</span><br><span class="line">	q.rear=p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deQueue</span><span class="params">(LiQueue *&amp;q,ElemType &amp;e)</span></span>&#123;  <span class="comment">// e是地址，把出列元素赋值到地址e</span></span><br><span class="line">	<span class="keyword">if</span>(q.rear==q.front) <span class="keyword">return</span> ;</span><br><span class="line">	QNode *p=q.front-&gt;next;  <span class="comment">// front 是不带数据的头结点，p指向即将出列的点</span></span><br><span class="line">	*e=p-&gt;data;</span><br><span class="line">	q.front-&gt;next=p-&gt;next;  </span><br><span class="line">	<span class="keyword">if</span>(q.rear==p)q.rear=q.front; <span class="comment">// 若front的next是rear时，栈满，此时rear应该更新</span></span><br><span class="line">	<span class="built_in">free</span>(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="递归设计"><a href="#递归设计" class="headerlink" title="递归设计"></a>递归设计</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165215883.png" alt="image-20211008165215883"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165227591.png" alt="image-20211008165227591"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BTC</span><span class="params">(BinTreeNode *BT)</span></span>&#123;</span><br><span class="line">	BinTreeNode *temp;</span><br><span class="line">	<span class="keyword">if</span>(BT-&gt;leftChild==<span class="literal">NULL</span>||BT-&gt;rightChild==<span class="literal">NULL</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(BT-&gt;leftChild-&gt;data&gt;BT-&gt;rightChild-&gt;data)&#123;</span><br><span class="line">		temp=BT-&gt;leftChild;</span><br><span class="line">		BT-&gt;leftChild=BT-&gt;rightChild;</span><br><span class="line">		BT-&gt;rightChild=temp;</span><br><span class="line">	&#125;</span><br><span class="line">	BTC(BT-&gt;leftChild);</span><br><span class="line">	BTC(BT-&gt;rightChild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="图的遍历【-】"><a href="#图的遍历【-】" class="headerlink" title="图的遍历【+++++】"></a>图的遍历【+++++】</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165244764.png" alt="image-20211008165244764"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165251728.png" alt="image-20211008165251728"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014095628554.png" alt="image-20211014095628554"></p>
+<p>关于DFS序列和BFS序列：</p>
+<p>若用图去决出序列，那么会出现各种情况</p>
+<p>但是，用代码的思维去决出序列的话，只会有唯一一种序列</p>
+<p>DFS 是遍历数组故对于顶点3，next必定是顶点0</p>
+<p>则序列一定是：4,3,0,2,1</p>
+<p>BFS同理，一定是4,3,0,1,2</p>
+<h1 id="希尔排序过程"><a href="#希尔排序过程" class="headerlink" title="希尔排序过程"></a>希尔排序过程</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165257714.png" alt="image-20211008165257714"></p>
+<p>因为是 “过程” 所以一定要有 “增量” 这个说明</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014101140191.png" alt="image-20211014101140191"></p>
+<h1 id="冒泡排序代码"><a href="#冒泡排序代码" class="headerlink" title="冒泡排序代码"></a>冒泡排序代码</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165302982.png" alt="image-20211008165302982"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(ElemType *t1, ElemType *t2)</span></span>&#123;	<span class="comment">// 允许不止一个函数</span></span><br><span class="line">	ElemType temp;</span><br><span class="line">	temp=*t1;</span><br><span class="line">	*t1=*t2;</span><br><span class="line">	*t2=temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(ElemType a[],ElemType n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=n<span class="number">-1</span>;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])swap(&amp;a[j],&amp;a[j+<span class="number">1</span>]);  <span class="comment">// 取地址符号</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="查找大题【-】"><a href="#查找大题【-】" class="headerlink" title="查找大题【+++++】"></a>查找大题【+++++】</h1><p><font color=red>因为二分查找是在有序的情况下进行，所以不能直接对源数列进行二分查找</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008165309024.png" alt="image-20211008165309024"></p>
+<p>顺序查找</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sqeSearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> key)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(key==a[i])&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;查找成功\n&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>二分查找</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BinSearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> len,<span class="keyword">int</span> key)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> low,mid,high;</span><br><span class="line">	low=<span class="number">0</span>;</span><br><span class="line">	high=len<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span>(low&lt;=high)&#123;</span><br><span class="line">		mid=(low+high)/<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span>(a[mid]==key)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;查找成功\n&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(a[mid]&gt;key)&#123;</span><br><span class="line">			high=mid<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> low=mid+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>二叉排序树查找</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BiTree* <span class="title">BSTSearch</span><span class="params">(BiTree &amp;T,<span class="keyword">int</span> key)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(T==<span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;data==key)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;查找成功\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> T;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;data&gt;key)<span class="keyword">return</span> BSTSearch(T-&gt;lChild,key);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> BSTSearch(T-&gt;rChild,key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>顺序表</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014110252940.png" alt="image-20211014110252940"></p>
+<p><font color=red>因为二分查找是在有序的情况下进行，所以不能直接对源数列进行二分查找</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014110258949.png" alt="image-20211014110258949"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014110306326.png" alt="image-20211014110306326"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014110312278.png" alt="image-20211014110312278"></p>
+<p>拉链法</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014110319467.png" alt="image-20211014110319467"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014110331358.png" alt="image-20211014110331358"> </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/07/%E7%AE%97%E6%B3%95-%E5%B9%BF%E4%B9%89%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1154,213 +1392,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/23/%E6%95%B0%E5%AD%A6-17%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/23/%E6%95%B0%E5%AD%A6-17%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/" class="post-title-link" itemprop="url">数学-17年数学二真题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-23 19:18:32" itemprop="dateCreated datePublished" datetime="2021-09-23T19:18:32+08:00">2021-09-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="分段函数连续性"><a href="#分段函数连续性" class="headerlink" title="分段函数连续性"></a>分段函数连续性</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923191942155.png" alt="image-20210923191942155"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192222022.png" alt="image-20210923192222022"></p>
-<h2 id="导数与定积分"><a href="#导数与定积分" class="headerlink" title="导数与定积分"></a>导数与定积分</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192008053.png" alt="image-20210923192008053"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192237940.png" alt="image-20210923192237940"></p>
-<h2 id="数列的收敛"><a href="#数列的收敛" class="headerlink" title="数列的收敛"></a>数列的收敛</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192020829.png" alt="image-20210923192020829"></p>
-<p>答案：D</p>
-<p>ABC都有反例</p>
-<h2 id="微分方程的复数解"><a href="#微分方程的复数解" class="headerlink" title="微分方程的复数解"></a>微分方程的复数解</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192035856.png" alt="image-20210923192035856"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192311098.png" alt="image-20210923192311098"></p>
-<h2 id="偏导数"><a href="#偏导数" class="headerlink" title="偏导数"></a>偏导数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192055725.png" alt="image-20210923192055725"></p>
-<h2 id="定积分的应用"><a href="#定积分的应用" class="headerlink" title="定积分的应用"></a>定积分的应用</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192111425.png" alt="image-20210923192111425"></p>
-<p>答案：C</p>
-<h2 id="相似矩阵的性质"><a href="#相似矩阵的性质" class="headerlink" title="相似矩阵的性质"></a>相似矩阵的性质</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192133378.png" alt="image-20210923192133378"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192144200.png" alt="image-20210923192144200"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192358029.png" alt="image-20210923192358029"></p>
-<h2 id="相似矩阵的判断"><a href="#相似矩阵的判断" class="headerlink" title="相似矩阵的判断"></a>相似矩阵的判断</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192202477.png" alt="image-20210923192202477"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192426446.png" alt="image-20210923192426446"></p>
-<p>我错选了A，因为λ为1的时候看到都没问题</p>
-<p>选了最前面的A（为了贪时间，导致故意粗心）</p>
-<p>明明知道肯定不选A的—–<font color=red>无论如何各种路实际走一下，碰出个不一样的答案</font></p>
-<h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/21/%E6%95%B0%E5%AD%A6-18%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/21/%E6%95%B0%E5%AD%A6-18%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/" class="post-title-link" itemprop="url">数学-18年数学二真题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-21 23:50:35" itemprop="dateCreated datePublished" datetime="2021-09-21T23:50:35+08:00">2021-09-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="已知极限求参数"><a href="#已知极限求参数" class="headerlink" title="已知极限求参数"></a>已知极限求参数</h2><p><font color=red>ex与x方的泰勒联系</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921235146137.png" alt="image-20210921235146137"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921235701785.png" alt="image-20210921235701785"></p>
-<p>暴力法排除不了BD选项</p>
-<p>因为b系数会因为洛两次而不确定</p>
-<h2 id="函数不可导"><a href="#函数不可导" class="headerlink" title="函数不可导"></a>函数不可导</h2><p><font color=red>实践才知道哪里有路可走</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921235214908.png" alt="image-20210921235214908"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921235833534.png" alt="image-20210921235833534"></p>
-<p>别没动手就武断排除</p>
-<h2 id="分段复合函数连续性"><a href="#分段复合函数连续性" class="headerlink" title="分段复合函数连续性"></a>分段复合函数连续性</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921235238252.png" alt="image-20210921235238252"></p>
-<p>答案：D</p>
-<p>f(x)是不连续的</p>
-<p>f(x)+g(x)连续</p>
-<p>则不能孤立研究g(x)的独立性</p>
-<h2 id="二阶导与定积分"><a href="#二阶导与定积分" class="headerlink" title="二阶导与定积分"></a>二阶导与定积分</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921235303912.png" alt="image-20210921235303912"></p>
-<p>答案：D</p>
-<p>AC可以排除</p>
-<p>因为一阶导没这个决定性</p>
-<p>然后看BD</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922000414693.png" alt="image-20210922000414693"></p>
-<p>只有D符合题意</p>
-<h2 id="比较函数大小"><a href="#比较函数大小" class="headerlink" title="比较函数大小"></a>比较函数大小</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205053092.png" alt="image-20210922205053092"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205717126.png" alt="image-20210922205717126"></p>
-<p>同积分限，比较函数大小即可</p>
-<p><font color=red>缩放、因式分解</font></p>
-<p><font color=red>基本初等函数的大小关系</font></p>
-<p>用单调性求解的时候，其实已经感受到了其中的复杂</p>
-<p>肯定还有更聪明的办法</p>
-<p>（基本初等函数的大小规律）</p>
-<h2 id="利用奇偶性求二重积分"><a href="#利用奇偶性求二重积分" class="headerlink" title="利用奇偶性求二重积分"></a>利用奇偶性求二重积分</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205155694.png" alt="image-20210922205155694"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205837030.png" alt="image-20210922205837030"></p>
-<p>考研数学没有蠢题</p>
-<p><font color=red>y轴对称，不代表一定可以求一半乘以二</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922211232468.png" alt="image-20210922211232468"></p>
-<p>故被积函数为1</p>
-<h2 id="求相似矩阵"><a href="#求相似矩阵" class="headerlink" title="求相似矩阵"></a>求相似矩阵</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205204244.png" alt="image-20210922205204244"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922211619685.png" alt="image-20210922211619685"></p>
-<p><font color=red>把不满足相似矩阵性质的选项给排除</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922212025342.png" alt="image-20210922212025342"></p>
-<h2 id="秩的性质"><a href="#秩的性质" class="headerlink" title="秩的性质"></a>秩的性质</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922205213784.png" alt="image-20210922205213784"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922212131333.png" alt="image-20210922212131333"></p>
-<p>做的时候我是方法是举反例</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922212400631.png" alt="image-20210922212400631"></p>
-<h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1><h2 id="夹逼-拉格朗日求极限"><a href="#夹逼-拉格朗日求极限" class="headerlink" title="夹逼+拉格朗日求极限"></a>夹逼+拉格朗日求极限</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091111857.png" alt="image-20210923091111857"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091311151.png" alt="image-20210923091311151"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091458455.png" alt="image-20210923091458455"></p>
-<p>移项</p>
-<h2 id="拐点"><a href="#拐点" class="headerlink" title="拐点"></a>拐点</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091217673.png" alt="image-20210923091217673"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091718854.png" alt="image-20210923091718854"></p>
-<h2 id="分式法求不定积分"><a href="#分式法求不定积分" class="headerlink" title="分式法求不定积分"></a>分式法求不定积分</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091222453.png" alt="image-20210923091222453"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091727814.png" alt="image-20210923091727814"></p>
-<h2 id="已知参数方程求曲率"><a href="#已知参数方程求曲率" class="headerlink" title="已知参数方程求曲率"></a>已知参数方程求曲率</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091227206.png" alt="image-20210923091227206"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091736801.png" alt="image-20210923091736801"></p>
-<p>我脑子一抽，把二阶导当答案填上去了</p>
-<h2 id="zxy偏导数"><a href="#zxy偏导数" class="headerlink" title="zxy偏导数"></a>zxy偏导数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091245642.png" alt="image-20210923091245642"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091808838.png" alt="image-20210923091808838"></p>
-<p><font color=red>zx的偏导，则z是含x的式子，有z’</font></p>
-<p>而y则当成纯常数</p>
-<h2 id="实特征值"><a href="#实特征值" class="headerlink" title="实特征值"></a>实特征值</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091255565.png" alt="image-20210923091255565"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091943540.png" alt="image-20210923091943540"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1432,7 +1463,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">311</span>
+          <span class="site-state-item-count">313</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

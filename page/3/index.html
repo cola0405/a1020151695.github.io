@@ -177,6 +177,180 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/22/CSharp-Pasker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/22/CSharp-Pasker/" class="post-title-link" itemprop="url">CSharp-Pasker</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-06-22 09:37:51" itemprop="dateCreated datePublished" datetime="2022-06-22T09:37:51+08:00">2022-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-24 14:18:34" itemprop="dateModified" datetime="2022-06-24T14:18:34+08:00">2022-06-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="窗体跳转"><a href="#窗体跳转" class="headerlink" title="窗体跳转"></a>窗体跳转</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">page.Main mainForm = new page.Main();</span><br><span class="line">this.Hide();</span><br><span class="line">mainForm.Show();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后添加<code>FormClosed</code>事件到新窗体</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">private void Main_FormClosed(object sender, FormClosedEventArgs e)</span><br><span class="line">&#123;</span><br><span class="line">	Application.Exit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="包引用"><a href="#包引用" class="headerlink" title="包引用"></a>包引用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">using HelloWorld.entity;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="循环次数不对"><a href="#循环次数不对" class="headerlink" title="循环次数不对"></a>循环次数不对</h2><p>其实是回调函数的问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private void itemList_Paint(object sender, PaintEventArgs e)</span><br></pre></td></tr></table></figure>
+
+<p>每添加一个新组件，又会重新回调一下这个函数</p>
+<p>所以List里面只有1个元素，但是却循环了3次</p>
+<h2 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h2><p>setting中存数据</p>
+<p>数据读取</p>
+<p>首先，第三方库利用NuGet安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install-package newtonsoft.json </span><br></pre></td></tr></table></figure>
+
+
+
+<p>反序列化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List &lt;Password&gt; json = JsonConvert.DeserializeObject&lt;List&lt;Password&gt;&gt;(Properties.Settings.Default.password1);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>序列化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Student&gt; lstStuModel = new List&lt;Student&gt;()&#123;</span><br><span class="line">	new Student()&#123;ID=1,Name=&quot;張飛&quot;,Age=250,Sex=&quot;男&quot;&#125;,</span><br><span class="line">	new Student()&#123;ID=2,Name=&quot;潘金蓮&quot;,Age=300,Sex=&quot;女&quot;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//Newtonsoft.Json序列化</span><br><span class="line">string jsonData = JsonConvert.SerializeObject(lstStuModel);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/14/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/14/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/" class="post-title-link" itemprop="url">社会科学</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-06-14 09:40:50" itemprop="dateCreated datePublished" datetime="2022-06-14T09:40:50+08:00">2022-06-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:25" itemprop="dateModified" datetime="2022-06-21T18:28:25+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="网民构成"><a href="#网民构成" class="headerlink" title="网民构成"></a>网民构成</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094103778.png" alt="image-20220614094103778"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094306945.png" alt="image-20220614094306945"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094323931.png" alt="image-20220614094323931"></p>
+<h2 id="用户规模"><a href="#用户规模" class="headerlink" title="用户规模"></a>用户规模</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094713840.png" alt="image-20220614094713840"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094734006.png" alt="image-20220614094734006"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094829205.png" alt="image-20220614094829205"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220614094854253.png" alt="image-20220614094854253"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/quartz/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -802,150 +976,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Junit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/29/Junit/" class="post-title-link" itemprop="url">Junit</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-29 17:38:22" itemprop="dateCreated datePublished" datetime="2022-04-29T17:38:22+08:00">2022-04-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h1><p>代码迭代，一键测试</p>
-<h1 id="Test时启动Spring-Boot-应用"><a href="#Test时启动Spring-Boot-应用" class="headerlink" title="Test时启动Spring Boot 应用"></a>Test时启动Spring Boot 应用</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220429174147972.png" alt="image-20220429174147972"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest(classes = LpcsApplication.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountManageTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    AccountManageController accountManageController;</span><br><span class="line"></span><br><span class="line">    MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mockMvc = MockMvcBuilders.standaloneSetup(accountManageController).build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addSubAccount</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        setup();</span><br><span class="line">        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(<span class="string">&quot;/account/manage/add/sub/account&quot;</span>))</span><br><span class="line">                .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">                .andDo(MockMvcResultHandlers.print())</span><br><span class="line">                .andReturn();</span><br><span class="line">        System.out.println(mvcResult.getResponse().getContentAsString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Linux实际使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-29 10:23:47" itemprop="dateCreated datePublished" datetime="2022-04-29T10:23:47+08:00">2022-04-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="时区错误"><a href="#时区错误" class="headerlink" title="时区错误"></a>时区错误</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1017,7 +1047,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">311</span>
+          <span class="site-state-item-count">313</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

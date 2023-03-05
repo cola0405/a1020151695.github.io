@@ -177,6 +177,162 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-tutorial/" class="post-title-link" itemprop="url">云服务器 tutorial</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-19 09:02:29" itemprop="dateCreated datePublished" datetime="2021-06-19T09:02:29+08:00">2021-06-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 11:34:27" itemprop="dateModified" datetime="2022-06-27T11:34:27+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="云服务器文件传输"><a href="#云服务器文件传输" class="headerlink" title="云服务器文件传输"></a>云服务器文件传输</h4><p>Windows到Linux</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp D:\Resource\hello.txt root@192.168.0.1:/home/admin</span><br></pre></td></tr></table></figure>
+
+<p>Linux到Windows</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp root@:/home/admin/hello.txt D:\resource\</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="云服务器简陋部署vue"><a href="#云服务器简陋部署vue" class="headerlink" title="云服务器简陋部署vue"></a>云服务器简陋部署vue</h4><p>如果想要最快部署vue 的话</p>
+<p>利用git把项目部署到服务器是最快的</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/18/js-%E8%AF%B7%E6%B1%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/18/js-%E8%AF%B7%E6%B1%82/" class="post-title-link" itemprop="url">js 请求</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-18 21:00:14" itemprop="dateCreated datePublished" datetime="2021-06-18T21:00:14+08:00">2021-06-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> username = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;username&#x27;</span>).value</span><br><span class="line">       <span class="keyword">let</span> password = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;password&#x27;</span>).value</span><br><span class="line">       <span class="keyword">var</span> httpRequest = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">       httpRequest.open(<span class="string">&#x27;POST&#x27;</span>, <span class="string">&#x27;http://localhost:8080/user/login_frontend&#x27;</span>, <span class="literal">true</span>)</span><br><span class="line">       <span class="keyword">var</span> formData = <span class="keyword">new</span> FormData()</span><br><span class="line">       formData.append(<span class="string">&quot;username&quot;</span>,username)</span><br><span class="line">       formData.append(<span class="string">&quot;password&quot;</span>,password)</span><br><span class="line">       httpRequest.send(formData);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="重定向和转发"><a href="#重定向和转发" class="headerlink" title="重定向和转发"></a>重定向和转发</h4><p>重定向：服务器向浏览器发送一个302状态码以及一个location消息头，浏览器收到请求后会向重定向地址发出请求。</p>
+<p>转发：一个web组件将未完成的处理通过容器转交给另一个web组件继续完成</p>
+<hr>
+<h4 id="Preflight"><a href="#Preflight" class="headerlink" title="Preflight"></a>Preflight</h4><p>跨域请求可以正常发起，但是返回的结果被浏览器拦截了</p>
+<p>为了防止这种情况的发生，规范要求，对这种可能对服务器数据产生副作用的HTTP请求方法，浏览器必须先使用<code>OPTIONS</code>方法发起一个预检请求，从而获知服务器是否允许该跨域请求：如果允许，就发送带数据的真实请求；如果不允许，则阻止发送带数据的真实请求。</p>
+<hr>
+<h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addScriptTag</span>(<span class="params">src</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">       script.setAttribute(<span class="string">&quot;type&quot;</span>,<span class="string">&quot;text/javascript&quot;</span>);</span><br><span class="line">       script.src = src;</span><br><span class="line">       <span class="built_in">document</span>.body.appendChild(script);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>通过插入script标签实现GET请求（不可POST）</p>
+<p>src为请求地址，可携带params</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/17/JPA-tutorial/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -592,7 +748,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
+                <time title="Modified: 2023-02-28 16:58:13" itemprop="dateModified" datetime="2023-02-28T16:58:13+08:00">2023-02-28</time>
               </span>
 
           
@@ -606,21 +762,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm intall</span><br></pre></td></tr></table></figure>
-
+          <p>–save -s</p>
+<p>保存到<code>package.json</code>的依赖中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save xxx</span><br></pre></td></tr></table></figure>
 
-<h4 id="快速删除node-modules"><a href="#快速删除node-modules" class="headerlink" title="快速删除node_modules"></a>快速删除node_modules</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install rimraf -g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rimraf node_modules</span><br></pre></td></tr></table></figure>
 
 
 
-<hr>
-<h4 id="error-Missing-required-argument"><a href="#error-Missing-required-argument" class="headerlink" title="error Missing required argument"></a>error Missing required argument</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g n</span><br><span class="line">sudo n latestsudo </span><br><span class="line">npm install -g npm</span><br><span class="line"><span class="built_in">hash</span> -d npm</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h4 id="npm-切换版本"><a href="#npm-切换版本" class="headerlink" title="npm 切换版本"></a>npm 切换版本</h4>
+<p><code>-g</code>全局安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g xxx</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
       
     </div>
 
@@ -800,156 +957,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/08/Spring-Boot-%E5%89%8D%E7%AB%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/08/Spring-Boot-%E5%89%8D%E7%AB%AF/" class="post-title-link" itemprop="url">Spring Boot 前端</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-08 08:57:33" itemprop="dateCreated datePublished" datetime="2021-06-08T08:57:33+08:00">2021-06-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="spring-boot-Cannot-resolve-MVC-View"><a href="#spring-boot-Cannot-resolve-MVC-View" class="headerlink" title="spring boot Cannot resolve MVC View"></a>spring boot Cannot resolve MVC View</h4><p>添加依赖</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-freemarker&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/07/Vue-%E8%B7%A8%E5%9F%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/07/Vue-%E8%B7%A8%E5%9F%9F/" class="post-title-link" itemprop="url">Vue 跨域</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-07 13:09:21" itemprop="dateCreated datePublished" datetime="2021-06-07T13:09:21+08:00">2021-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>找到devServer配置项</p>
-<p>其所在位置分两种情况</p>
-<p>1.如果使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack projectName</span><br></pre></td></tr></table></figure>
-
-<p>构建vue项目，则再/build/webpack.dev.conf.js中</p>
-<p>然后其引用了/config/index中的value</p>
-<p>2.如果使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create &lt;project-name&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">   	<span class="attr">port</span>:<span class="number">8081</span>,  <span class="comment">// 代理端口</span></span><br><span class="line">   	<span class="attr">host</span>: <span class="string">&#x27;0.0.0.0&#x27;</span>,</span><br><span class="line">       <span class="attr">proxy</span>:&#123;</span><br><span class="line">           <span class="string">&#x27;/health-post&#x27;</span>:&#123;</span><br><span class="line">       		<span class="attr">target</span>:<span class="string">&#x27;http://localhost:8080/&#x27;</span>,  <span class="comment">//目标服务器端口</span></span><br><span class="line">       		<span class="attr">changeOrigin</span>:<span class="literal">true</span>,</span><br><span class="line">       		<span class="attr">pathRewrite</span>: &#123;</span><br><span class="line">         		<span class="string">&#x27;^/health-post&#x27;</span>: <span class="string">&#x27;/health-post&#x27;</span>  <span class="comment">// 不可省</span></span><br><span class="line">       &#125;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>请求成功的url</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8081/health-post</span><br></pre></td></tr></table></figure>
-
-<p>就是vue的端口，而不是目标服务器端口（8080）</p>
-<p>真正和服务器交互的是vue的代理</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1021,7 +1028,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">311</span>
+          <span class="site-state-item-count">313</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

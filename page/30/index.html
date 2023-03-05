@@ -177,6 +177,162 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Dialog-Processing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-Dialog-Processing/" class="post-title-link" itemprop="url">Android Dialog Processing</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 22:11:27" itemprop="dateCreated datePublished" datetime="2021-01-04T22:11:27+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Display a circle in dialog when loading something</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">configLoadingProgress</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> loadingDialogBuilder = AlertDialog.Builder(<span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">val</span> loadingProgress = ProgressBar(<span class="keyword">this</span>)</span><br><span class="line">    loadingDialogBuilder.setView(loadingProgress)</span><br><span class="line">    loadingDialogBuilder.setTitle(<span class="string">&quot;正在登陆...&quot;</span>)</span><br><span class="line">    runOnUiThread &#123;</span><br><span class="line">        loadingDialog = loadingDialogBuilder.create()</span><br><span class="line">        loadingDialog!!.show()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The circle is just a ProgressBar widget in dialog</p>
+<p>Note !</p>
+<p>1.Create and show a dialog should be done by UI Thread</p>
+<p>2.There are some callback functions about the dialog, you can check the document</p>
+<p>If you want to close the dialog by program </p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loadingDialog?.cancel()</span><br></pre></td></tr></table></figure>
+
+<p>Note !</p>
+<p>1.You should invoke cancel() from dialog but not dialogBuilder</p>
+<p>2.dialog = dialogBuilder.create()</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> loadingDialogBuilder = AlertDialog.Builder(<span class="keyword">this</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Thread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/Android-Thread/" class="post-title-link" itemprop="url">Android Thread</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-04 20:03:39" itemprop="dateCreated datePublished" datetime="2021-01-04T20:03:39+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Intent-Transport-Data/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -991,247 +1147,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Android-Lifecycle-Of-Activity/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/Android-Lifecycle-Of-Activity/" class="post-title-link" itemprop="url">Android Lifecycle Of Activity</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 18:35:46" itemprop="dateCreated datePublished" datetime="2021-01-04T18:35:46+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://developer.android.com/guide/components/activities/activity-lifecycle">Document</a></p>
-<p>onCreate() just be invoked one time</p>
-<p>onStart() will be </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/Qin-App-Conclusion/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/Qin-App-Conclusion/" class="post-title-link" itemprop="url">Qin App Conclusion</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-04 16:05:30" itemprop="dateCreated datePublished" datetime="2021-01-04T16:05:30+08:00">2021-01-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project-Conclusion/" itemprop="url" rel="index"><span itemprop="name">Project Conclusion</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.API document</p>
-<p>Make a standard document of the request and response</p>
-<p>So that the Client and Server side can be isolated</p>
-<p>You can write your code as you like, but just follow the API document</p>
-<hr>
-<p>2.Modified API document</p>
-<p>The first version of API document may not be so perfect</p>
-<p>As the work beginning, we will found that the API document should be modified</p>
-<p>But don’t worry, if you do enough job in the first version of API document</p>
-<p>It’s not a big deal</p>
-<hr>
-<p>3.How to deal with API document</p>
-<p>For my team, we first step is to work out a flow chart according to our requirement </p>
-<p>With a basic flow chart, we can figure out the data we need</p>
-<p>Then we talk about the data base structure</p>
-<p>After these work, we can almost formulate the API</p>
-<hr>
-<p>4.Trouble with API document</p>
-<p>Even though my team make a API document</p>
-<p>But sometimes, my teammate still do not follow the document</p>
-<p>Even though I make a comment there </p>
-<p>But still miss that </p>
-<p>Ah..</p>
-<p>Then I meet with some strange bugs because of the wrong data I received</p>
-<hr>
-<p>5.Refactor and Lifecycle In Android</p>
-<p>It’s a funny thing that the most of time I spend is not for implement the function</p>
-<p>It’s for refactor</p>
-<p>Oh..</p>
-<p>Maybe my experience is not enough, not so familiar with Android and Kotlin</p>
-<p>I wrote some repeat code for Student-side and Teacher-side</p>
-<p>Actually, some repeat codes can be integrate into a util class</p>
-<p>And that’s the problem, I spend a lot of time when I am doing integration</p>
-<p>Almost every time I integrate the codes, the app will breakdown  </p>
-<p>Because I am not familiar with the lifecycle of Android </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The lifecycle is really important in Android</span><br></pre></td></tr></table></figure>
-
-<p>My teacher say it a long time ago, but I miss it</p>
-<p>Oh..</p>
-<p>I didn’t pay much attention to lifecycle of Activity</p>
-<p>That make a lot problems</p>
-<p>And I use Fragment also, I still not familiar with the lifecycle with Fragment</p>
-<p>They comes together ! ! </p>
-<p>And that’s why I almost go crazy when I deal with the bugs</p>
-<hr>
-<p>6.Record</p>
-<p>I got a good habit when working with this project</p>
-<p>That is record ! </p>
-<p>I record the bugs I meet, and put them in a file named “Bugs waiting to solve”</p>
-<p>And after I fix it I will commit in git and record the solution of it in another file named “Bugs”</p>
-<p>With these file I really feel I learn something from this project</p>
-<hr>
-<p>7.Github</p>
-<p>This is the first time I use Github work with a team (actually there are just 2 people in my team haha)</p>
-<p>Github is so cool ! ! </p>
-<p>You can see every commits</p>
-<p>You can see how many codes you have wrote</p>
-<p>When merge the code, you can easily deal with the conflict</p>
-<p>Perfect ! !</p>
-<p>And ssh key is important</p>
-<p>With ssh key you can push you code directly,</p>
-<p>Don’t need to input the username and password again and again</p>
-<hr>
-<p>8.Git</p>
-<p>With git, you don’t need to worry missing your code you just wrote</p>
-<p>Every time after you fix a bug or implement a function commit it to git !</p>
-<hr>
-<p>9.Android Document</p>
-<p>See official document ! !</p>
-<p>Please ! ! </p>
-<p>That’s the most correct way to solve the problem</p>
-<p>The other important thing is “Use you brain”</p>
-<p>Do not just follow the solutions other people provided</p>
-<p>That solutions just give us advices</p>
-<p>You need to learn from that</p>
-<p>Not just follow that</p>
-<p>And what’s more, pay you all attention to the Note!</p>
-<p>Every “Note” in document is pretty important ! !</p>
-<hr>
-<p>10.How to use a new function</p>
-<p>When you meet with unfamiliar function and don’t know how to use it </p>
-<p>And you can’t find it’s document (not official module)</p>
-<p>You can go to see it’s source code</p>
-<p>Maybe you can got you answer there</p>
-<p>Don’t be afraid of source code</p>
-<p>Generally, the source code is clean code</p>
-<p>And they are easily to read ~</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1303,7 +1218,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">311</span>
+          <span class="site-state-item-count">313</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

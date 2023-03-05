@@ -177,6 +177,150 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Junit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/29/Junit/" class="post-title-link" itemprop="url">Junit</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-29 17:38:22" itemprop="dateCreated datePublished" datetime="2022-04-29T17:38:22+08:00">2022-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h1><p>代码迭代，一键测试</p>
+<h1 id="Test时启动Spring-Boot-应用"><a href="#Test时启动Spring-Boot-应用" class="headerlink" title="Test时启动Spring Boot 应用"></a>Test时启动Spring Boot 应用</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220429174147972.png" alt="image-20220429174147972"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest(classes = LpcsApplication.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountManageTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    AccountManageController accountManageController;</span><br><span class="line"></span><br><span class="line">    MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mockMvc = MockMvcBuilders.standaloneSetup(accountManageController).build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addSubAccount</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        setup();</span><br><span class="line">        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(<span class="string">&quot;/account/manage/add/sub/account&quot;</span>))</span><br><span class="line">                .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">                .andDo(MockMvcResultHandlers.print())</span><br><span class="line">                .andReturn();</span><br><span class="line">        System.out.println(mvcResult.getResponse().getContentAsString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/29/Linux%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Linux实际使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-29 10:23:47" itemprop="dateCreated datePublished" datetime="2022-04-29T10:23:47+08:00">2022-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="时区错误"><a href="#时区错误" class="headerlink" title="时区错误"></a>时区错误</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/28/nginx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1078,281 +1222,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/%E6%B1%87%E7%BC%96-Coding-Style/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/02/%E6%B1%87%E7%BC%96-Coding-Style/" class="post-title-link" itemprop="url">汇编-Coding-Style</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-02 10:25:29" itemprop="dateCreated datePublished" datetime="2022-04-02T10:25:29+08:00">2022-04-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:46:17" itemprop="dateModified" datetime="2022-06-27T15:46:17+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><p><a target="_blank" rel="noopener" href="https://peps.python.org/pep-0008/#blank-lines">文档</a></p>
-<h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><p>Use blank lines in functions, sparingly, to indicate logical sections.</p>
-<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="whitespace"><a href="#whitespace" class="headerlink" title="whitespace"></a>whitespace</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">spam(ham[<span class="number">1</span>], &#123;eggs: <span class="number">2</span>&#125;)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">spam( ham[ <span class="number">1</span> ], &#123; eggs: <span class="number">2</span> &#125; )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">foo = (<span class="number">0</span>,)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">bar = (<span class="number">0</span>, )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span>: <span class="built_in">print</span>(x, y); x, y = y, x</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span> : <span class="built_in">print</span>(x , y) ; x , y = y , x</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">ham[<span class="number">1</span>:<span class="number">9</span>], ham[<span class="number">1</span>:<span class="number">9</span>:<span class="number">3</span>], ham[:<span class="number">9</span>:<span class="number">3</span>], ham[<span class="number">1</span>::<span class="number">3</span>], ham[<span class="number">1</span>:<span class="number">9</span>:]</span><br><span class="line">ham[lower:upper], ham[lower:upper:], ham[lower::step]</span><br><span class="line">ham[lower+offset : upper+offset]</span><br><span class="line">ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]</span><br><span class="line">ham[lower + offset : upper + offset]</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">ham[lower + offset:upper + offset]</span><br><span class="line">ham[<span class="number">1</span>: <span class="number">9</span>], ham[<span class="number">1</span> :<span class="number">9</span>], ham[<span class="number">1</span>:<span class="number">9</span> :<span class="number">3</span>]</span><br><span class="line">ham[lower : : upper]</span><br><span class="line">ham[ : upper]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">i = i + <span class="number">1</span></span><br><span class="line">submitted += <span class="number">1</span></span><br><span class="line">x = x*<span class="number">2</span> - <span class="number">1</span></span><br><span class="line">hypot2 = x*x + y*y</span><br><span class="line">c = (a+b) * (a-b)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">i=i+<span class="number">1</span></span><br><span class="line">submitted +=<span class="number">1</span></span><br><span class="line">x = x * <span class="number">2</span> - <span class="number">1</span></span><br><span class="line">hypot2 = x * x + y * y</span><br><span class="line">c = (a + b) * (a - b)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Correct:</span><br><span class="line">def complex(real, imag=0.0):</span><br><span class="line">    return magic(r=real, i=imag)</span><br><span class="line"># Wrong:</span><br><span class="line">def complex(real, imag = 0.0):</span><br><span class="line">    return magic(r = real, i = imag)</span><br></pre></td></tr></table></figure>
-
-<h3 id="function-name"><a href="#function-name" class="headerlink" title="function name"></a>function name</h3><p>lowercase with words separated by underscores as necessary to improve readability.</p>
-<h3 id="function-return"><a href="#function-return" class="headerlink" title="function return"></a>function return</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">FILES = [</span><br><span class="line">    <span class="string">&#x27;setup.cfg&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;tox.ini&#x27;</span>,</span><br><span class="line">    ]</span><br><span class="line">initialize(FILES,</span><br><span class="line">           error=<span class="literal">True</span>,</span><br><span class="line">           )</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">FILES = [<span class="string">&#x27;setup.cfg&#x27;</span>, <span class="string">&#x27;tox.ini&#x27;</span>,]</span><br><span class="line">initialize(FILES, error=<span class="literal">True</span>,)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = x + <span class="number">1</span>                 <span class="comment"># Increment x</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="naming"><a href="#naming" class="headerlink" title="naming"></a>naming</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">b (single lowercase letter)</span><br><span class="line">B (single uppercase letter)</span><br><span class="line"></span><br><span class="line">lowercase</span><br><span class="line">lower_case_with_underscores</span><br><span class="line"></span><br><span class="line">UPPERCASE</span><br><span class="line">UPPER_CASE_WITH_UNDERSCORES</span><br><span class="line"></span><br><span class="line">CapitalizedWords</span><br><span class="line">mixedCase</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="avoid"><a href="#avoid" class="headerlink" title="avoid"></a>avoid</h3><p>Never use the characters ‘l’ (lowercase letter el),</p>
-<p> ‘O’ (uppercase letter oh)</p>
-<p>or ‘I’ (uppercase letter eye) as single character variable names</p>
-<p>In some fonts, these characters are indistinguishable from the numerals one and zero</p>
-<p>When tempted to use ‘l’, use ‘L’ instead</p>
-<h2 id="module-name"><a href="#module-name" class="headerlink" title="module name"></a>module name</h2><p>Python packages should also have short all-lowercase names</p>
-<p>although the use of underscores is discouraged.</p>
-<h3 id="class-name"><a href="#class-name" class="headerlink" title="class name"></a>class name</h3><p>CapWords</p>
-<h2 id="operation"><a href="#operation" class="headerlink" title="operation"></a>operation</h2><p><code>&#39;&#39;.join()</code> form should be used instead</p>
-<h3 id="file-operation"><a href="#file-operation" class="headerlink" title="file operation"></a>file operation</h3><p>use a <code>with</code> statement to ensure it is cleaned up promptly and reliably after use</p>
-<h2 id="underscores"><a href="#underscores" class="headerlink" title="underscores"></a>underscores</h2><p>double leading underscores should be used only to avoid name conflicts </p>
-<p>with attributes in classes designed to be subclassed</p>
-<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><h3 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> foo.startswith(<span class="string">&#x27;bar&#x27;</span>):</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> foo[:<span class="number">3</span>] == <span class="string">&#x27;bar&#x27;</span>:</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="empty"><a href="#empty" class="headerlink" title="empty"></a>empty</h3><p>(strings, lists, tuples), use the fact that empty sequences are false</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> seq:</span><br><span class="line"><span class="keyword">if</span> seq:</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(seq):</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">len</span>(seq):</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> greeting:</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> greeting == <span class="literal">True</span>:</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428210603194.png" alt="image-20220428210603194"></p>
-<h2 id="comment-1"><a href="#comment-1" class="headerlink" title="comment"></a>comment</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> TRUE;            <span class="comment">/* special case */</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> isPrime(a);      <span class="comment">/* works only for odd a */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Very short comments can appear on the same line as the code they describe</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (foo &gt; <span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Do a double-flip.</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;          <span class="comment">// Explain why here.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//if (bar &gt; 1) &#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    // Do a triple-flip.</span></span><br><span class="line"><span class="comment">//    ...</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="comment">//else &#123;</span></span><br><span class="line"><span class="comment">//    return false;</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>It shouldn’t be used on consecutive multiple lines for text comments</p>
-<p>however, it can be used in consecutive multiple lines for commenting out sections of code</p>
-<h2 id="variable"><a href="#variable" class="headerlink" title="variable"></a>variable</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> level;</span><br><span class="line"><span class="keyword">int</span> size;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>A keyword followed by a parenthesis(括号) should be separated by a space</p>
-<h2 id="try"><a href="#try" class="headerlink" title="try"></a>try</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">catch</span> (ExceptionClass e) &#123;</span><br><span class="line">     statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="package"><a href="#package" class="headerlink" title="package"></a>package</h2><p>should be one of the top-level domain names</p>
-<p>currently com, edu, gov, mil, net, org, or one of the English two-letter codes </p>
-<p>identifying countries as specified in ISO Standard 3166, 1981</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.sun.eng</span><br><span class="line">com.apple.quicktime.v2</span><br><span class="line">edu.cmu.cs.bovik.cheese</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><p>我觉得可读性是&gt;简洁性的</p>
-<p>当然，也不能太啰嗦</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428213114022.png" alt="image-20220428213114022"></p>
-<h2 id="函数大小"><a href="#函数大小" class="headerlink" title="函数大小"></a>函数大小</h2><p>一般不超过50行</p>
-<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428214753281.png" alt="image-20220428214753281"></p>
-<h2 id="多层级关系"><a href="#多层级关系" class="headerlink" title="多层级关系"></a>多层级关系</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428215046699.png" alt="image-20220428215046699"></p>
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>Always use uppercase for the reserved keywords like <code>SELECT</code> and <code>WHERE</code></p>
-<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> file_hash</span><br><span class="line">  <span class="keyword">FROM</span> file_system</span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Updating the file record after writing to the file */</span></span><br><span class="line">UPDATE file_system</span><br><span class="line">   <span class="keyword">SET</span> file_modified_date <span class="operator">=</span> <span class="string">&#x27;1980-02-22 13:19:01.00000&#x27;</span>,</span><br><span class="line">       file_size <span class="operator">=</span> <span class="number">209732</span></span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name <span class="keyword">AS</span> fn</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s1</span><br><span class="line">  <span class="keyword">JOIN</span> students <span class="keyword">AS</span> s2</span><br><span class="line">    <span class="keyword">ON</span> s2.mentor_id <span class="operator">=</span> s1.staff_num;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(s.monitor_tally) <span class="keyword">AS</span> monitor_total</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> albums (title, release_date, recording_date)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">&#x27;Charcoal Lane&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;The New Danger&#x27;</span>, <span class="string">&#x27;2008-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/01/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E5%AF%86%E7%A0%81%E5%AD%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/01/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E5%AF%86%E7%A0%81%E5%AD%A6/" class="post-title-link" itemprop="url">计算机-密码学</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-01 15:44:20" itemprop="dateCreated datePublished" datetime="2022-04-01T15:44:20+08:00">2022-04-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h1><h2 id="为什么要加密"><a href="#为什么要加密" class="headerlink" title="为什么要加密"></a>为什么要加密</h2><p>（1）网络嗅探</p>
-<p>网络嗅探工具可以监听处于同一个物理网络内发送到自己网络接口的数据帧</p>
-<p>因此可以监听到一个由集线器构成的广播型局域网内的所有数据</p>
-<p>无法监听到不是发送到自己网络端口的数据帧</p>
-<p>但是！</p>
-<p>arp欺骗和ip欺骗</p>
-<p>如果明文，那完了</p>
-<p>（2）数据经过第三方</p>
-<p>宽带运营商</p>
-<h2 id="破解密文"><a href="#破解密文" class="headerlink" title="破解密文"></a>破解密文</h2><p>解密出来的midnight也不一定是原明文</p>
-<h2 id="密钥的保护"><a href="#密钥的保护" class="headerlink" title="密钥的保护"></a>密钥的保护</h2><h2 id="密钥配送"><a href="#密钥配送" class="headerlink" title="密钥配送"></a>密钥配送</h2><h3 id="直接告知密钥"><a href="#直接告知密钥" class="headerlink" title="直接告知密钥"></a>直接告知密钥</h3><h3 id="密钥分配中心"><a href="#密钥分配中心" class="headerlink" title="密钥分配中心"></a>密钥分配中心</h3><p>登录</p>
-<h3 id="公钥私钥"><a href="#公钥私钥" class="headerlink" title="公钥私钥"></a>公钥私钥</h3><p>接收者把公钥明文发给发送者</p>
-<p>发送者把明文进行加密，发给接收者</p>
-<p>接收者用私钥解密（只有私钥能解密）</p>
-<h2 id="伪随机数"><a href="#伪随机数" class="headerlink" title="伪随机数"></a>伪随机数</h2><p>简单的取余数</p>
-<h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>加密解密用同一密钥</p>
-<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>加密用公钥，解密用私钥</p>
-<h1 id="Https"><a href="#Https" class="headerlink" title="Https"></a>Https</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220401164800074.png" alt="image-20220401164800074"></p>
-<h3 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h3><p>Secure Socket Layer</p>
-<h3 id="TSL"><a href="#TSL" class="headerlink" title="TSL"></a>TSL</h3><p>Transport Layer Security</p>
-<h1 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h1><p>CA（Certification Authority）</p>
-<p>证书（即公钥证书）确实属于此人</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1424,7 +1293,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">311</span>
+          <span class="site-state-item-count">313</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

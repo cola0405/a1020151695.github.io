@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="弹性布局layout占满全屏幕 1234567891011&lt;style&gt;    html,body,#app&amp;#123;        height:100%;        margin: 0px;        padding: 0px;    &amp;#125;    .el-container&amp;#123;      height: 100%;    &amp;#125;&lt;&#x2F;style&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="element-ui-learning">
+<meta property="og:url" content="http://example.com/2023/02/27/element-ui-learning/index.html">
+<meta property="og:site_name" content="藏经阁">
+<meta property="og:description" content="弹性布局layout占满全屏幕 1234567891011&lt;style&gt;    html,body,#app&amp;#123;        height:100%;        margin: 0px;        padding: 0px;    &amp;#125;    .el-container&amp;#123;      height: 100%;    &amp;#125;&lt;&#x2F;style&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/10201/AppData/Roaming/Typora/typora-user-images/image-20230228164410194.png">
+<meta property="article:published_time" content="2023-02-27T08:39:00.000Z">
+<meta property="article:modified_time" content="2023-02-28T08:44:42.555Z">
+<meta property="article:author" content="FreeJim">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/10201/AppData/Roaming/Typora/typora-user-images/image-20230228164410194.png">
+
+<link rel="canonical" href="http://example.com/2023/02/27/element-ui-learning/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>element-ui-learning | 藏经阁</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="code-ezgXxhziUq" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">藏经阁</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/27/element-ui-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          element-ui-learning
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-02-27 16:39:00" itemprop="dateCreated datePublished" datetime="2023-02-27T16:39:00+08:00">2023-02-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-28 16:44:42" itemprop="dateModified" datetime="2023-02-28T16:44:42+08:00">2023-02-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h2><h2 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h2><p><strong>占满全屏幕</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    <span class="selector-tag">html</span>,<span class="selector-tag">body</span>,<span class="selector-id">#app</span>&#123;</span><br><span class="line">        <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">0px</span>;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">0px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.el-container</span>&#123;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="侧边栏颜色"><a href="#侧边栏颜色" class="headerlink" title="侧边栏颜色"></a>侧边栏颜色</h3><p>不是el-menu、 el-aside 的background</p>
+<h2 id="aside"><a href="#aside" class="headerlink" title="aside"></a>aside</h2><h3 id="icon"><a href="#icon" class="headerlink" title="icon"></a>icon</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;el-icon-message&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> 1</span><br><span class="line"><span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="css绑定"><a href="#css绑定" class="headerlink" title="css绑定"></a>css绑定</h2><h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#difficulty</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>找到 id 为 difficulty 的</p>
+<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.el-menu</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>指定标签</p>
+<h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><h3 id="column-靠右"><a href="#column-靠右" class="headerlink" title="column 靠右"></a>column 靠右</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">             <span class="attr">id</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">align</span>=<span class="string">&quot;right&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">prop</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">label</span>=<span class="string">&quot;Difficulty&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="selector"><a href="#selector" class="headerlink" title="selector"></a>selector</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-select</span> <span class="attr">id</span>=<span class="string">&quot;difficulty-select&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;value&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Select&quot;</span> <span class="attr">v-</span>		<span class="attr">on:change</span>=<span class="string">&quot;select_difficulty(value)&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-option</span></span></span><br><span class="line"><span class="tag">               <span class="attr">v-for</span>=<span class="string">&quot;item in options&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">:key</span>=<span class="string">&quot;item.value&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">:label</span>=<span class="string">&quot;item.label&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">:value</span>=<span class="string">&quot;item.value&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods :&#123;</span><br><span class="line">    <span class="attr">select_difficulty</span> : <span class="function"><span class="keyword">function</span> (<span class="params">v</span>)</span>&#123;</span><br><span class="line">      alert(v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="filter-method"><a href="#filter-method" class="headerlink" title="filter-method"></a>filter-method</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this method will be called multiple times for each row</span><br><span class="line">a row will display if one of the calls returns true</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20230228164410194.png" alt="image-20230228164410194"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:data</span>=<span class="string">&quot;tableData&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">&quot;width: 100%&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">      <span class="attr">prop</span>=<span class="string">&quot;id&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">label</span>=<span class="string">&quot;id&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">width</span>=<span class="string">&quot;180&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">      <span class="attr">align</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">prop</span>=<span class="string">&quot;name&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">label</span>=<span class="string">&quot;题目&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">      <span class="attr">id</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:filters</span>=<span class="string">&quot;[&#123; text:&#x27;简单&#x27;, value: &#x27;简单&#x27;&#125;, &#123; text:&#x27;中等&#x27;, value: &#x27;中等&#x27;&#125;, &#123; text:&#x27;困难&#x27;, value: &#x27;困难&#x27;&#125;]&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:filter-method</span>=<span class="string">&quot;filter_difficulty&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">align</span>=<span class="string">&quot;right&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">prop</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">label</span>=<span class="string">&quot;难度&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">names</span>: [<span class="string">&quot;Cola&quot;</span>, <span class="string">&quot;Amy&quot;</span>, <span class="string">&quot;Coco&quot;</span>],</span><br><span class="line">      <span class="attr">content</span> : <span class="string">&quot;Cola&quot;</span>,</span><br><span class="line">      <span class="attr">tableData</span>: [&#123;</span><br><span class="line">        <span class="attr">id</span>: <span class="string">&#x27;1&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;硬币&#x27;</span>,</span><br><span class="line">        <span class="attr">difficulty</span>: <span class="string">&#x27;简单&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        <span class="attr">id</span>: <span class="string">&#x27;2&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;开关灯&#x27;</span>,</span><br><span class="line">        <span class="attr">difficulty</span>: <span class="string">&#x27;中等&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        <span class="attr">id</span>: <span class="string">&#x27;3&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;装箱&#x27;</span>,</span><br><span class="line">        <span class="attr">difficulty</span>: <span class="string">&#x27;困难&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        <span class="attr">id</span>: <span class="string">&#x27;4&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;吃冰棍&#x27;</span>,</span><br><span class="line">        <span class="attr">difficulty</span>: <span class="string">&#x27;困难&#x27;</span></span><br><span class="line">      &#125;],</span><br><span class="line">      <span class="attr">options</span>: [&#123;</span><br><span class="line">        <span class="attr">value</span>: <span class="string">&#x27;简单&#x27;</span>,</span><br><span class="line">        <span class="attr">label</span>: <span class="string">&#x27;简单&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        <span class="attr">value</span>: <span class="string">&#x27;中等&#x27;</span>,</span><br><span class="line">        <span class="attr">label</span>: <span class="string">&#x27;中等&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        <span class="attr">value</span>: <span class="string">&#x27;困难&#x27;</span>,</span><br><span class="line">        <span class="attr">label</span>: <span class="string">&#x27;困难&#x27;</span></span><br><span class="line">      &#125;],</span><br><span class="line">      <span class="attr">value</span>: <span class="string">&#x27;简单&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span> :&#123;</span><br><span class="line">    <span class="attr">filter_difficulty</span> : <span class="function"><span class="keyword">function</span> (<span class="params">value, row</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> row.difficulty === value;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/23/vue-learning/" rel="prev" title="vue learning">
+      <i class="fa fa-chevron-left"></i> vue learning
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/05/docker-Windows/" rel="next" title="docker-Windows">
+      docker-Windows <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80"><span class="nav-number">1.</span> <span class="nav-text">弹性布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layout"><span class="nav-number">2.</span> <span class="nav-text">layout</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%A2%9C%E8%89%B2"><span class="nav-number">2.1.</span> <span class="nav-text">侧边栏颜色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aside"><span class="nav-number">3.</span> <span class="nav-text">aside</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#icon"><span class="nav-number">3.1.</span> <span class="nav-text">icon</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css%E7%BB%91%E5%AE%9A"><span class="nav-number">4.</span> <span class="nav-text">css绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#id"><span class="nav-number">4.1.</span> <span class="nav-text">id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tag"><span class="nav-number">4.2.</span> <span class="nav-text">tag</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#table"><span class="nav-number">5.</span> <span class="nav-text">table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#column-%E9%9D%A0%E5%8F%B3"><span class="nav-number">5.1.</span> <span class="nav-text">column 靠右</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#selector"><span class="nav-number">6.</span> <span class="nav-text">selector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter-method"><span class="nav-number">7.</span> <span class="nav-text">filter-method</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FreeJim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">FreeJim</p>
+  <div class="site-description" itemprop="description">Hello World</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">313</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FreeJim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
