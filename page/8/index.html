@@ -177,6 +177,148 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/09/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">微信公众号开发</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-09 23:21:14" itemprop="dateCreated datePublished" datetime="2022-01-09T23:21:14+08:00">2022-01-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="扫码关注公众号获取验证码"><a href="#扫码关注公众号获取验证码" class="headerlink" title="扫码关注公众号获取验证码"></a>扫码关注公众号获取验证码</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109232843586.png" alt="image-20220109232843586"></p>
+<p>主要流程：</p>
+<p>用户点击“关注公众号领取”，发送请求到公众号的个人服务器</p>
+<p>个人服务器向微信的接口请求生成导向公众号的“二维码”，并返回到前端</p>
+<p>用户微信扫码后，被导航到公众号那</p>
+<p>同时，微信的服务器会向开发者推送消息</p>
+<p>目标地址为这里的URL</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109232626285.png" alt="image-20220109232626285"></p>
+<p>后端拿一个RequestMapping接收就行</p>
+<p>然后，产生一个验证码</p>
+<p>再调用微信的“发送消息给用户”的接口，把时效验证码推送给用户即可</p>
+<p>（服务器本身也做好准备，把该验证码存在当前Session里，供验证用户输入使用）</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/%E5%B7%A5%E5%85%B7-pycharm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/09/%E5%B7%A5%E5%85%B7-pycharm/" class="post-title-link" itemprop="url">工具-pycharm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-09 14:10:54" itemprop="dateCreated datePublished" datetime="2022-01-09T14:10:54+08:00">2022-01-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:51:49" itemprop="dateModified" datetime="2022-06-27T15:51:49+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="添加conda的环境"><a href="#添加conda的环境" class="headerlink" title="添加conda的环境"></a>添加conda的环境</h2><p>Setting - Project - Python Interpreter - Add - System Interpreter</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109145510823.png" alt="image-20220109145510823"> </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/09/%E5%B7%A5%E5%85%B7-Jupyter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1584,178 +1726,6 @@
 <p>长久不变</p>
 <h1 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h1><p>8.134.82.101</p>
 <p>root Hnsc123456</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/SpringCloud-HelloWorld/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/29/SpringCloud-HelloWorld/" class="post-title-link" itemprop="url">SpringCloud-HelloWorld</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-12-29 14:47:14" itemprop="dateCreated datePublished" datetime="2021-12-29T14:47:14+08:00">2021-12-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211229144749944.png" alt="image-20211229144749944"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211229144820871.png" alt="image-20211229144820871"></p>
-<p>then the server will know to get which yml</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/29/SpringCloud-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/29/SpringCloud-Tutorial/" class="post-title-link" itemprop="url">SpringCloud-Tutorial</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-12-29 13:40:11" itemprop="dateCreated datePublished" datetime="2021-12-29T13:40:11+08:00">2021-12-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Dynamic-scale-up-and-down"><a href="#Dynamic-scale-up-and-down" class="headerlink" title="Dynamic scale up and down"></a>Dynamic scale up and down</h1><p>Feign for rest client</p>
-<h1 id="Fault-tolerance"><a href="#Fault-tolerance" class="headerlink" title="Fault tolerance"></a>Fault tolerance</h1><h2 id="hystrix"><a href="#hystrix" class="headerlink" title="hystrix"></a>hystrix</h2><p>service shut down, then give some default response</p>
-<h1 id="Gateway"><a href="#Gateway" class="headerlink" title="Gateway"></a>Gateway</h1><h2 id="Netflix-API-gateway"><a href="#Netflix-API-gateway" class="headerlink" title="Netflix API gateway"></a>Netflix API gateway</h2><p>rating limiting </p>
-<h2 id="tracing"><a href="#tracing" class="headerlink" title="tracing"></a>tracing</h2><p>Zipkin Distributed Tracing</p>
-<p>(when the request go)</p>
-<h1 id="Scalable"><a href="#Scalable" class="headerlink" title="Scalable"></a>Scalable</h1><p>可升级的</p>
-<h1 id="Cloud-native-application"><a href="#Cloud-native-application" class="headerlink" title="Cloud native application"></a>Cloud native application</h1><p>Spring Cloud build default cloud native app</p>
-<h1 id="Spring-Cloud-and-Spring-Boot"><a href="#Spring-Cloud-and-Spring-Boot" class="headerlink" title="Spring Cloud and Spring Boot"></a>Spring Cloud and Spring Boot</h1><p>where you can run jar</p>
-<p>and you can run spring cloud app</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211229135259084.png" alt="image-20211229135259084"></p>
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Config-Server"><a href="#Config-Server" class="headerlink" title="Config Server"></a>Config Server</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211229135928243.png" alt="image-20211229135928243"></p>
-<p>Config server can store the config</p>
-<p>refresh the config as the schedule </p>
-<p>you don’t need to shut down the service and redeploy</p>
-<p>or the config notify the micro to refresh</p>
-<h2 id="Service-Discovery"><a href="#Service-Discovery" class="headerlink" title="Service Discovery"></a>Service Discovery</h2><p>micro service know where they live</p>
-<p>know the current URL, status</p>
-<p>Netflix Eureka</p>
-<p>zookeeper</p>
-<p>consul</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211229145753209.png" alt="image-20211229145753209"></p>
-<h2 id="Circuit-Breakers"><a href="#Circuit-Breakers" class="headerlink" title="Circuit Breakers"></a>Circuit Breakers</h2><p>fault tolorance</p>
-<h2 id="Routing-and-Message"><a href="#Routing-and-Message" class="headerlink" title="Routing and Message"></a>Routing and Message</h2><p>request between micro service</p>
-<h2 id="API-Gateway"><a href="#API-Gateway" class="headerlink" title="API Gateway"></a>API Gateway</h2><p>client to the micro service</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211229140541204.png" alt="image-20211229140541204"></p>
-<p>确实，不仅仅是微服务之间需要discovery</p>
-<p>client和server之间则是API Gateway 在帮忙</p>
-<h2 id="Tracing"><a href="#Tracing" class="headerlink" title="Tracing"></a>Tracing</h2><p>debugging</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211229150941801.png" alt="image-20211229150941801"></p>
-<h2 id="CI-pipelines-and-testing"><a href="#CI-pipelines-and-testing" class="headerlink" title="CI pipelines and testing"></a>CI pipelines and testing</h2><p>??</p>
-<p>test between the micro services</p>
-<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><h2 id="Spring-cloud-CLI"><a href="#Spring-cloud-CLI" class="headerlink" title="Spring cloud CLI"></a>Spring cloud CLI</h2><h1 id="Spring-boot-CLI"><a href="#Spring-boot-CLI" class="headerlink" title="Spring boot CLI"></a>Spring boot CLI</h1><p><a target="_blank" rel="noopener" href="https://repo.spring.io/ui/native/release/org/springframework/boot/spring-boot-cli">仓库</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring install org.springframework.cloud:spring-cloud-cli:1.4.0.RELEASE</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211229233854233.png" alt="image-20211229233854233"></p>
-<p>spring-boot-starter-parent的父依赖是spring-boot-dependences，里面管理了所有需要的默认的依赖版本。</p>
-<p>Spring Cloud CLI 2.1.x will work with Spring Boot CLI 2.1.x<br>Spring Cloud CLI 2.0.x will work with Spring Boot CLI 2.0.x<br>Spring Cloud CLI 1.4.x will work with Spring Boot CLI 1.5.x</p>
 
       
     </div>

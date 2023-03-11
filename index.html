@@ -177,6 +177,161 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/pcer-backend/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/07/pcer-backend/" class="post-title-link" itemprop="url">pcer_backend</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-03-07 10:50:04" itemprop="dateCreated datePublished" datetime="2023-03-07T10:50:04+08:00">2023-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-03-11 13:38:18" itemprop="dateModified" datetime="2023-03-11T13:38:18+08:00">2023-03-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="component无法注入"><a href="#component无法注入" class="headerlink" title="component无法注入"></a>component无法注入</h2><p>默认扫 <code>com.pcer</code></p>
+<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="性别存储"><a href="#性别存储" class="headerlink" title="性别存储"></a>性别存储</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@TableName(&quot;problem&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Problem</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@TableId(type = IdType.AUTO)</span></span><br><span class="line">    Integer id;</span><br><span class="line"></span><br><span class="line">    String name;</span><br><span class="line">    String difficulty;</span><br><span class="line"></span><br><span class="line">    String [] d = &#123;<span class="string">&quot;简单&quot;</span>,<span class="string">&quot;中等&quot;</span>,<span class="string">&quot;困难&quot;</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setDifficulty</span><span class="params">(String difficulty)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.difficulty =  d[Integer.parseInt(difficulty)];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="多tag-建表、数据访问"><a href="#多tag-建表、数据访问" class="headerlink" title="多tag 建表、数据访问"></a>多tag 建表、数据访问</h2><p>relation</p>
+<p>就多次查询吧</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;ProblemItem&gt; <span class="title">getProblems</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ArrayList&lt;ProblemItem&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    List&lt;Problem&gt; problems = problemDao.getProblems();</span><br><span class="line">    <span class="keyword">for</span>(Problem problem : problems)&#123;</span><br><span class="line">        ProblemItem p = <span class="keyword">new</span> ProblemItem();</span><br><span class="line">        p.setId(problem.getId());</span><br><span class="line">        p.setName(problem.getName());</span><br><span class="line">        p.setDifficulty(problem.getDifficulty());</span><br><span class="line">        p.setTags(problemDao.getProblemTags());</span><br><span class="line">        res.add(p);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="插入数据中文乱码"><a href="#插入数据中文乱码" class="headerlink" title="插入数据中文乱码"></a>插入数据中文乱码</h2><p>mybatis配置</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/pcer?serverTimezone=UTC&amp;characterEncoding=utf8</span></span><br></pre></td></tr></table></figure>
+
+<p>加上编码设置就行</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/06/mybatis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/06/mybatis/" class="post-title-link" itemprop="url">mybatis</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-06 17:30:23 / Modified: 17:32:54" itemprop="dateCreated datePublished" datetime="2023-03-06T17:30:23+08:00">2023-03-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="type-字段存储"><a href="#type-字段存储" class="headerlink" title="type 字段存储"></a>type 字段存储</h2><p>数据库存储长度为1的<code>char</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0 -&gt; 简单</span><br><span class="line">1 -&gt; 中等</span><br><span class="line">2 -&gt; 困难</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>entity</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@TableName(&quot;problem&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Problem</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@TableId(type = IdType.AUTO)</span></span><br><span class="line">    Integer id;</span><br><span class="line"></span><br><span class="line">    String name;</span><br><span class="line">    String difficulty;</span><br><span class="line"></span><br><span class="line">    String [] d = &#123;<span class="string">&quot;简单&quot;</span>,<span class="string">&quot;中等&quot;</span>,<span class="string">&quot;困难&quot;</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDifficulty</span><span class="params">(String difficulty)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.difficulty = d[Integer.parseInt(difficulty)];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/docker-Windows/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -392,7 +547,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-05 18:28:13" itemprop="dateModified" datetime="2023-03-05T18:28:13+08:00">2023-03-05</time>
+                <time title="Modified: 2023-03-11 13:45:37" itemprop="dateModified" datetime="2023-03-11T13:45:37+08:00">2023-03-11</time>
               </span>
 
           
@@ -418,10 +573,9 @@
 <p>Vue.js 的核心是一个响应式的数据绑定系统</p>
 <p>建立绑定后， DOM 将和数据保持同步，这样就无需手动维护 DOM</p>
 <p>使代码能够更加简洁易懂、提升效率</p>
-<p><img src="https://v2.cn.vuejs.org/images/lifecycle.png" alt="img"></p>
 <h2 id="版本支持"><a href="#版本支持" class="headerlink" title="版本支持"></a>版本支持</h2><p>Vue.js 也抛弃了对 IE8 的支持</p>
 <p>在移动端支持到 Android 4.2+ 和 iOS 7+。</p>
-<h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h1><p><code>util/axios.js</code></p>
+<h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h1><h2 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h2><p><code>util/axios.js</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> service = axios.create(&#123;</span><br><span class="line">    <span class="attr">baseURL</span>:<span class="string">&#x27;http://localhost:8080&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> service</span><br></pre></td></tr></table></figure>
 
 
@@ -437,6 +591,11 @@
 
 
 
+
+
+
+<h2 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h2><p><code>api/problem.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">newProblem</span>(<span class="params">formData</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> axios.request(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;api/problem/new&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>:<span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: formData</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -467,10 +626,39 @@
 
 
 
-<h1 id="component-组件"><a href="#component-组件" class="headerlink" title="component 组件"></a>component 组件</h1><h2 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h2><p>1） $parent: 父组件实例。<br>2） $children: 包含所有子组件实例。<br>3） $root: 组件所在的根实例。  </p>
+<h1 id="component-组件"><a href="#component-组件" class="headerlink" title="component 组件"></a>component 组件</h1><h2 id="emit"><a href="#emit" class="headerlink" title="$emit"></a>$emit</h2><p>在实例本身上触发事件。  </p>
+<h2 id="dispatch"><a href="#dispatch" class="headerlink" title="$dispatch"></a>$dispatch</h2><p>派发事件，事件沿着父链冒泡，并且在第一次触发回调之后自动停止冒泡，除非触发函<br>数明确返回 true，才会继续向上冒泡。  </p>
+<h2 id="分页算法"><a href="#分页算法" class="headerlink" title="分页算法"></a>分页算法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">updatePage : <span class="function"><span class="keyword">function</span> (<span class="params">targetPage</span>)</span>&#123;</span><br><span class="line">     <span class="built_in">this</span>.showData = []</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">let</span> i=(targetPage-<span class="number">1</span>)*<span class="built_in">this</span>.pageSize;i&lt;<span class="built_in">this</span>.tableData.length;i++)&#123;</span><br><span class="line">       <span class="built_in">this</span>.showData.push(<span class="built_in">this</span>.tableData[i]);</span><br><span class="line">       <span class="keyword">if</span>(<span class="built_in">this</span>.showData.length===<span class="built_in">this</span>.pageSize) <span class="keyword">break</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="back-header"><a href="#back-header" class="headerlink" title="back header"></a>back header</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-page-header</span> @<span class="attr">back</span>=<span class="string">&quot;goBack&quot;</span> <span class="attr">content</span>=<span class="string">&quot;题目详情&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-page-header</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  <span class="function"><span class="title">goBack</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.$router.back()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="交集"><a href="#交集" class="headerlink" title="交集"></a>交集</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="built_in">this</span>.originData.length;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> curTypes = <span class="built_in">this</span>.originData[i].type</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> intersect = curTypes.filter(<span class="function"><span class="params">x</span> =&gt;</span> problemTypes.has(x))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(intersect.length === problemTypes.size)&#123;</span><br><span class="line">          <span class="built_in">this</span>.tableData.push(<span class="built_in">this</span>.originData[i]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HelloWorld</span> <span class="attr">msg</span>=<span class="string">&quot;Welcome to Your Vue.js App&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;HelloWorld&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    msg: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -478,9 +666,26 @@
 
 
 
-<h2 id="emit"><a href="#emit" class="headerlink" title="$emit"></a>$emit</h2><p>在实例本身上触发事件。  </p>
-<h2 id="dispatch"><a href="#dispatch" class="headerlink" title="$dispatch"></a>$dispatch</h2><p>派发事件，事件沿着父链冒泡，并且在第一次触发回调之后自动停止冒泡，除非触发函<br>数明确返回 true，才会继续向上冒泡。  </p>
-<h2 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h2><p>子 (ProblemFilter)</p>
+
+
+
+
+<h2 id="修改页码"><a href="#修改页码" class="headerlink" title="修改页码"></a>修改页码</h2><p><code>:</code> 是为了取值</p>
+<p><code>current-page</code> 当前页数</p>
+<p><code>.sync</code> 表示同步</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-pagination</span></span></span><br><span class="line"><span class="tag">         @<span class="attr">current-change</span>=<span class="string">&quot;updatePage&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:current-page.sync</span>=<span class="string">&quot;curPage&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">background</span></span></span><br><span class="line"><span class="tag">         <span class="attr">layout</span>=<span class="string">&quot;prev, pager, next&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:page-size</span>=<span class="string">&quot;pageSize&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:total</span>=<span class="string">&quot;this.tableData.length&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">el-pagination</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.curPage = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><p>组件引用</p>
+<h2 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h2><p>1） $parent: 父组件实例。<br>2） $children: 包含所有子组件实例。<br>3） $root: 组件所在的根实例。  </p>
+<h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3><p>子 (ProblemFilter)</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法名、数据</span></span><br><span class="line"><span class="built_in">this</span>.$emit(<span class="string">&#x27;newFilter&#x27;</span>, <span class="built_in">this</span>.problemTypes)</span><br></pre></td></tr></table></figure>
 
 
@@ -500,32 +705,20 @@
 
 
 
-
-
-<h2 id="分页算法"><a href="#分页算法" class="headerlink" title="分页算法"></a>分页算法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">updatePage : <span class="function"><span class="keyword">function</span> (<span class="params">targetPage</span>)</span>&#123;</span><br><span class="line">     <span class="built_in">this</span>.showData = []</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">let</span> i=(targetPage-<span class="number">1</span>)*<span class="built_in">this</span>.pageSize;i&lt;<span class="built_in">this</span>.tableData.length;i++)&#123;</span><br><span class="line">       <span class="built_in">this</span>.showData.push(<span class="built_in">this</span>.tableData[i]);</span><br><span class="line">       <span class="keyword">if</span>(<span class="built_in">this</span>.showData.length===<span class="built_in">this</span>.pageSize) <span class="keyword">break</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-
+<h1 id="第三方-Component"><a href="#第三方-Component" class="headerlink" title="第三方 Component"></a>第三方 Component</h1><h2 id="md编辑器"><a href="#md编辑器" class="headerlink" title="md编辑器"></a>md编辑器</h2><p><a target="_blank" rel="noopener" href="https://github.com/hinesboy/mavonEditor">https://github.com/hinesboy/mavonEditor</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mavon-editor --save</span><br></pre></td></tr></table></figure>
 
 
 
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mavon-editor</span></span></span><br><span class="line"><span class="tag">            <span class="attr">placeholder</span>=<span class="string">&quot;请输入题目内容...&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">:toolbars</span>=<span class="string">&quot;toolbars&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">v-model</span>=<span class="string">&quot;form.content&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-<h2 id="交集"><a href="#交集" class="headerlink" title="交集"></a>交集</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="built_in">this</span>.originData.length;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> curTypes = <span class="built_in">this</span>.originData[i].type</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> intersect = curTypes.filter(<span class="function"><span class="params">x</span> =&gt;</span> problemTypes.has(x))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(intersect.length === problemTypes.size)&#123;</span><br><span class="line">          <span class="built_in">this</span>.tableData.push(<span class="built_in">this</span>.originData[i]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">form</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      <span class="attr">difficulty</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      <span class="attr">content</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">toolbars</span>: &#123;</span><br><span class="line">      <span class="attr">bold</span>: <span class="literal">false</span>, <span class="comment">// 粗体</span></span><br><span class="line">      <span class="attr">italic</span>: <span class="literal">false</span>, <span class="comment">// 斜体</span></span><br><span class="line">      <span class="attr">header</span>: <span class="literal">false</span>, <span class="comment">// 标题</span></span><br><span class="line">      <span class="attr">underline</span>: <span class="literal">false</span>, <span class="comment">// 下划线</span></span><br><span class="line">      <span class="attr">strikethrough</span>: <span class="literal">false</span>, <span class="comment">// 中划线</span></span><br><span class="line">      <span class="attr">mark</span>: <span class="literal">false</span>, <span class="comment">// 标记</span></span><br><span class="line">      <span class="attr">superscript</span>: <span class="literal">false</span>, <span class="comment">// 上角标</span></span><br><span class="line">      <span class="attr">subscript</span>: <span class="literal">false</span>, <span class="comment">// 下角标</span></span><br><span class="line">      <span class="attr">quote</span>: <span class="literal">false</span>, <span class="comment">// 引用</span></span><br><span class="line">      <span class="attr">ol</span>: <span class="literal">false</span>, <span class="comment">// 有序列表</span></span><br><span class="line">      <span class="attr">ul</span>: <span class="literal">false</span>, <span class="comment">// 无序列表</span></span><br><span class="line">      <span class="attr">link</span>: <span class="literal">false</span>, <span class="comment">// 链接</span></span><br><span class="line">      <span class="attr">imagelink</span>: <span class="literal">true</span>, <span class="comment">// 图片链接</span></span><br><span class="line">      <span class="attr">code</span>: <span class="literal">true</span>, <span class="comment">// code</span></span><br><span class="line">      <span class="attr">table</span>: <span class="literal">false</span>, <span class="comment">// 表格</span></span><br><span class="line">      <span class="attr">fullscreen</span>: <span class="literal">false</span>, <span class="comment">// 全屏编辑</span></span><br><span class="line">      <span class="attr">readmodel</span>: <span class="literal">false</span>, <span class="comment">// 沉浸式阅读</span></span><br><span class="line">      <span class="attr">htmlcode</span>: <span class="literal">false</span>, <span class="comment">// 展示html源码</span></span><br><span class="line">      <span class="attr">help</span>: <span class="literal">false</span>, <span class="comment">// 帮助</span></span><br><span class="line">      <span class="comment">/* 1.3.5 */</span></span><br><span class="line">      <span class="attr">undo</span>: <span class="literal">false</span>, <span class="comment">// 上一步</span></span><br><span class="line">      <span class="attr">redo</span>: <span class="literal">false</span>, <span class="comment">// 下一步</span></span><br><span class="line">      <span class="attr">trash</span>: <span class="literal">false</span>, <span class="comment">// 清空</span></span><br><span class="line">      <span class="attr">save</span>: <span class="literal">false</span>, <span class="comment">// 保存（触发events中的save事件）</span></span><br><span class="line">      <span class="attr">navigation</span>: <span class="literal">false</span>, <span class="comment">// 导航目录</span></span><br><span class="line">      <span class="attr">alignleft</span>: <span class="literal">false</span>, <span class="comment">// 左对齐</span></span><br><span class="line">      <span class="attr">aligncenter</span>: <span class="literal">false</span>, <span class="comment">// 居中</span></span><br><span class="line">      <span class="attr">alignright</span>: <span class="literal">false</span>, <span class="comment">// 右对齐</span></span><br><span class="line">      <span class="comment">/* 2.2.1 */</span></span><br><span class="line">      <span class="attr">subfield</span>: <span class="literal">true</span>, <span class="comment">// 单双栏模式</span></span><br><span class="line">      <span class="attr">preview</span>: <span class="literal">true</span> <span class="comment">// 预览</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-
-
-<h2 id="修改页码"><a href="#修改页码" class="headerlink" title="修改页码"></a>修改页码</h2><p><code>:</code> 是为了取值</p>
-<p><code>current-page</code> 当前页数</p>
-<p><code>.sync</code> 表示同步</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-pagination</span></span></span><br><span class="line"><span class="tag">         @<span class="attr">current-change</span>=<span class="string">&quot;updatePage&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:current-page.sync</span>=<span class="string">&quot;curPage&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">background</span></span></span><br><span class="line"><span class="tag">         <span class="attr">layout</span>=<span class="string">&quot;prev, pager, next&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:page-size</span>=<span class="string">&quot;pageSize&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:total</span>=<span class="string">&quot;this.tableData.length&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">el-pagination</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.curPage = <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-
+<h3 id="md-预览"><a href="#md-预览" class="headerlink" title="md 预览"></a>md 预览</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mavon-editor</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:toolbars</span>=<span class="string">&quot;false&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:subfield</span>=<span class="string">&quot;false&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">default-open</span>=<span class="string">&quot;preview&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-model</span>=<span class="string">&quot;this.content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">mavon-editor</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -642,7 +835,22 @@
 
 
 
-<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># concept</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## DOM</span><br><span class="line"></span><br><span class="line">Document Object Model</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## hook function</span><br><span class="line"></span><br><span class="line">和回调函数一个意思</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## JSX</span><br><span class="line"></span><br><span class="line">[JSX](https://facebook.github.io/jsx/) 是 JavaScript 的一个类似 XML 的扩展，有了它，我们可以用以下的方式来书写代码：</span><br><span class="line"></span><br><span class="line">```js</span><br><span class="line">render (h) &#123;</span><br><span class="line">	return (</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;h1 on-click=&#123;this.handleClick&#125;&gt;Hello from JSX&lt;/h1&gt;</span><br><span class="line">			&lt;p&gt; Hello World &lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">    <span class="attr">align</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">prop</span>=<span class="string">&quot;tags&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">label</span>=<span class="string">&quot;标签&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-tag</span> <span class="attr">v-for</span>=<span class="string">&quot;tag in scope.row.tags&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;tag&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; tag &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-tag</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h1><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>Document Object Model</p>
+<h2 id="hook-function"><a href="#hook-function" class="headerlink" title="hook function"></a>hook function</h2><p>和回调函数一个意思</p>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p><a target="_blank" rel="noopener" href="https://facebook.github.io/jsx/">JSX</a> 是 JavaScript 的一个类似 XML 的扩展，有了它，我们可以用以下的方式来书写代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">render (h) &#123;</span><br><span class="line">	<span class="keyword">return</span> (</span><br><span class="line">		<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">h1</span> <span class="attr">on-click</span>=<span class="string">&#123;this.handleClick&#125;</span>&gt;</span>Hello from JSX<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">p</span>&gt;</span> Hello World <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">	)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -674,6 +882,38 @@
 
 
 
+
+
+<h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">├── build                      // 构建相关  </span><br><span class="line">├── config                     // 配置相关</span><br><span class="line">├── src                        // 源代码</span><br><span class="line">│   ├── api                    // 所有请求</span><br><span class="line">│   ├── assets                 // 主题 字体等静态资源</span><br><span class="line">│   ├── components             // 全局公用组件</span><br><span class="line">│   ├── directive              // 全局指令</span><br><span class="line">│   ├── filtres                // 全局 filter</span><br><span class="line">│   ├── icons                  // 项目所有 svg icons</span><br><span class="line">│   ├── lang                   // 国际化 language</span><br><span class="line">│   ├── mock                   // 项目mock 模拟数据</span><br><span class="line">│   ├── router                 // 路由</span><br><span class="line">│   ├── store                  // 全局 store管理</span><br><span class="line">│   ├── styles                 // 全局样式</span><br><span class="line">│   ├── utils                  // 全局公用方法</span><br><span class="line">│   ├── vendor                 // 公用vendor</span><br><span class="line">│   ├── views                   // view</span><br><span class="line">│   ├── App.vue                // 入口页面</span><br><span class="line">│   ├── main.js                // 入口 加载组件 初始化等</span><br><span class="line">│   └── permission.js          // 权限管理</span><br><span class="line">├── static                     // 第三方不打包资源</span><br><span class="line">│   └── Tinymce                // 富文本</span><br><span class="line">├── .babelrc                   // babel-loader 配置</span><br><span class="line">├── eslintrc.js                // eslint 配置项</span><br><span class="line">├── .gitignore                 // git 忽略项</span><br><span class="line">├── favicon.ico                // favicon图标</span><br><span class="line">├── index.html                 // html模板</span><br><span class="line">└── package.json               // package.json</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="proxy-端口"><a href="#proxy-端口" class="headerlink" title="proxy 端口"></a>proxy 端口</h1><p><code>vue.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="attr">devServer</span>: &#123;</span><br><span class="line">        <span class="attr">port</span>: <span class="number">8081</span>,</span><br><span class="line">        <span class="attr">host</span>: <span class="string">&#x27;0.0.0.0&#x27;</span>,</span><br><span class="line">        <span class="attr">proxy</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">                <span class="comment">// url 这里会做拼接</span></span><br><span class="line">                <span class="attr">target</span>: <span class="string">&#x27;http://localhost:8080/&#x27;</span>,  <span class="comment">//目标服务器端口</span></span><br><span class="line">                <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="attr">pathRewrite</span>: &#123;	  <span class="comment">// 在proxy处重写url</span></span><br><span class="line">                    <span class="string">&#x27;^/api&#x27;</span>: <span class="string">&#x27;&#x27;</span>  <span class="comment">// 表示删除url中的api</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>之所以要加 <code>api</code></p>
+<p>原因在于，我们只希望发往后端的请求才走proxy</p>
+<p>对于前端的页面跳转，我们不需要proxy</p>
+<p><code>problem.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getProblemList</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> axios.request(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;api/problem/getList&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>:<span class="string">&#x27;get&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="权限验证"><a href="#权限验证" class="headerlink" title="权限验证"></a>权限验证</h1><p>前端验证还是后端验证？</p>
+<p>若后端验证，则每增加一个页面，后端就要动一下</p>
+<p>若前端验证，则只在前端动就行</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220103203722855.png" alt="image-20220103203722855"></p>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="function"><span class="title">created</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://v2.cn.vuejs.org/images/lifecycle.png" alt="img"></p>
 <h1 id="Table"><a href="#Table" class="headerlink" title="Table"></a>Table</h1><h2 id="Filter-筛选"><a href="#Filter-筛选" class="headerlink" title="Filter 筛选"></a>Filter 筛选</h2><p>如果不用分页，则直接用<code>Table-column Attributes</code> 的<code>filter-method</code> 即可筛选</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果是多选的筛选项，对每一条数据会执行多次，任意一次返回 true 就会显示</span><br></pre></td></tr></table></figure>
 
@@ -700,7 +940,15 @@
 
 
 
-<h2 id="Page-分页"><a href="#Page-分页" class="headerlink" title="Page 分页"></a>Page 分页</h2><h1 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router -s</span><br></pre></td></tr></table></figure>
+<h2 id="Page-分页"><a href="#Page-分页" class="headerlink" title="Page 分页"></a>Page 分页</h2><h1 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h1><h2 id="template"><a href="#template" class="headerlink" title="template"></a>template</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">    <span class="attr">align</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">prop</span>=<span class="string">&quot;tags&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">label</span>=<span class="string">&quot;标签&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-tag</span> <span class="attr">v-for</span>=<span class="string">&quot;tag in scope.row.tags&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;tag&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; tag &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-tag</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h1><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router -s</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对应上vue 2.6</span></span><br><span class="line">npm install vue-router@3.5.2</span><br></pre></td></tr></table></figure>
 
@@ -710,6 +958,59 @@
 
 <p>main.js</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span>;</span><br><span class="line">Vue.use(VueRouter);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="router-view"><a href="#router-view" class="headerlink" title="router-view"></a>router-view</h2><h3 id="局部router-view"><a href="#局部router-view" class="headerlink" title="局部router-view"></a>局部router-view</h3><p><code>router.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> NewProblem <span class="keyword">from</span> <span class="string">&quot;@/components/NewProblem.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> Main <span class="keyword">from</span> <span class="string">&quot;@/components/Main.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> ProblemList <span class="keyword">from</span> <span class="string">&quot;@/components/ProblemList.vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routers = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: Main,</span><br><span class="line">        <span class="attr">children</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;problem/list&#x27;</span>,</span><br><span class="line">                <span class="attr">component</span>: ProblemList</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;new/problem&#x27;</span>,</span><br><span class="line">                <span class="attr">component</span>: NewProblem</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> routers</span><br></pre></td></tr></table></figure>
+
+<p>里面的 <code>children</code> 只会匹配嵌套在内层的 <code>router-view</code></p>
+<h3 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">methods : &#123;</span><br><span class="line">  <span class="attr">toProblemList</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.$router.push(<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">toNewProblem</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.$router.push(<span class="string">&#x27;/new/problem&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Ps: url最前面的<code>/</code>不可省</p>
+<h3 id="默认页面"><a href="#默认页面" class="headerlink" title="默认页面"></a>默认页面</h3><p><code>router.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> NewProblem <span class="keyword">from</span> <span class="string">&quot;@/components/NewProblem.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> Main <span class="keyword">from</span> <span class="string">&quot;@/components/Main.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> ProblemList <span class="keyword">from</span> <span class="string">&quot;@/components/ProblemList.vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routers = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: Main,</span><br><span class="line">        <span class="attr">children</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">                <span class="attr">component</span>: ProblemList</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;new/problem&#x27;</span>,</span><br><span class="line">                <span class="attr">component</span>: NewProblem</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> routers</span><br></pre></td></tr></table></figure>
+
+<p><code>problemList</code> 则是默认界面</p>
+<h3 id="共用表单"><a href="#共用表单" class="headerlink" title="共用表单"></a>共用表单</h3><p>使用 <code>created</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">created</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">this</span>.$route.query.type === <span class="string">&#x27;update&#x27;</span>)&#123;</span><br><span class="line">    <span class="built_in">this</span>.form.name = <span class="built_in">this</span>.$route.query.problemData.name</span><br><span class="line">    <span class="built_in">this</span>.form.difficulty = <span class="built_in">this</span>.$route.query.problemData.difficulty;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h3 id="跳转页面传递数据"><a href="#跳转页面传递数据" class="headerlink" title="跳转页面传递数据"></a>跳转页面传递数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">editProblem</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.$router.push(&#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/new/problem&#x27;</span>,</span><br><span class="line">    <span class="attr">query</span>:&#123;</span><br><span class="line">      <span class="attr">id</span> : id</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>取数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">beforeCreate</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.$route.query)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="重复点击路由-报错"><a href="#重复点击路由-报错" class="headerlink" title="重复点击路由 报错"></a>重复点击路由 报错</h2><p><code>main.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> originalPush = VueRouter.prototype.push</span><br><span class="line">VueRouter.prototype.push = <span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">location</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> originalPush.call(<span class="built_in">this</span>, location).catch(<span class="function"><span class="params">err</span> =&gt;</span> err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h1><p>官方的脚手架生成工具 <code>vue-cli</code></p>
+<p><code>vue-cli</code> 总共提供了 5 种脚手架   </p>
+<p><code>webpack</code>、<code>webpack-simple  </code>、<code>browerify  </code>、<code>browerify-simple  </code>、<code>simple  </code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack myproject</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1481,142 +1782,6 @@
 
 <p>如果ok，则开始配置vs</p>
 <p>“Tool” – “Options” – “Cross Platform” – “Connection Manager” – “Add”</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/09/clion/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/09/clion/" class="post-title-link" itemprop="url">clion</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-01-09 14:38:52 / Modified: 15:17:34" itemprop="dateCreated datePublished" datetime="2023-01-09T14:38:52+08:00">2023-01-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="单独运行c-文件"><a href="#单独运行c-文件" class="headerlink" title="单独运行c++文件"></a>单独运行c++文件</h2><p>C/C++ Single File Execution Plugin</p>
-<p>然后</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.24)</span><br><span class="line">project(usaco_cpp)</span><br><span class="line"></span><br><span class="line">set(CMAKE_CXX_STANDARD 17)</span><br><span class="line"></span><br><span class="line">add_executable(usaco_cpp main.cpp)</span><br><span class="line"></span><br><span class="line">add_executable(t t.cpp)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="out文件位置到当前目录"><a href="#out文件位置到当前目录" class="headerlink" title="out文件位置到当前目录"></a>out文件位置到当前目录</h2><p>编辑配置 - Working Dir 修改为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$FileDir$</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/09/go/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/09/go/" class="post-title-link" itemprop="url">go</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-01-09 14:38:44 / Modified: 18:32:02" itemprop="dateCreated datePublished" datetime="2023-01-09T14:38:44+08:00">2023-01-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="无法运行"><a href="#无法运行" class="headerlink" title="无法运行"></a>无法运行</h2><h2 id="运行多个single-file"><a href="#运行多个single-file" class="headerlink" title="运行多个single file"></a>运行多个single file</h2><p>在Configuration里面，把运行类型改为file</p>
-<h2 id="goland-无法运行"><a href="#goland-无法运行" class="headerlink" title="goland 无法运行"></a>goland 无法运行</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 
       
     </div>

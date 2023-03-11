@@ -177,6 +177,92 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/08/%E5%B7%A5%E5%85%B7-Intellij-%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/08/%E5%B7%A5%E5%85%B7-Intellij-%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">工具-Intellij 使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-08 09:12:21" itemprop="dateCreated datePublished" datetime="2021-06-08T09:12:21+08:00">2021-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:48:34" itemprop="dateModified" datetime="2022-06-27T15:48:34+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>有些函数没有解释，是需要先下载源码先</p>
+<h4 id="lombok报错"><a href="#lombok报错" class="headerlink" title="lombok报错"></a>lombok报错</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalAccessError: class lombok.javac.apt.LombokProcessor cannot access class com.sun.tools.javac.processing.JavacProcessingEnvironment [duplicate]</span><br></pre></td></tr></table></figure>
+
+<p>解决</p>
+<p>Switch to at least the <code>1.18.20</code> version of Lombok that contains <a target="_blank" rel="noopener" href="https://github.com/rzwitserloot/lombok/issues/2681">the fix</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.18.20&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="无效的源发行版：14"><a href="#无效的源发行版：14" class="headerlink" title="无效的源发行版：14"></a>无效的源发行版：14</h1><p>1.Project Structure-SDK version</p>
+<p>2.Module-Language Level</p>
+<p>3.Build,Execution,Deployment - Java Compiler - project bytecode version </p>
+<h1 id="resolving-maven-depen…"><a href="#resolving-maven-depen…" class="headerlink" title="resolving maven depen…"></a>resolving maven depen…</h1><p>解决：</p>
+<p>Build, Execution, Deployment - Build Tools - Maven - Runner - VM options</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-DarchetypeCatalog=internal</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="莫名其妙扫描不到存在的文件"><a href="#莫名其妙扫描不到存在的文件" class="headerlink" title="莫名其妙扫描不到存在的文件"></a>莫名其妙扫描不到存在的文件</h1><p>解决：</p>
+<p>清缓存–重启Intellij</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/08/Spring-Boot-%E5%89%8D%E7%AB%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -802,211 +888,6 @@
 <p>Cache</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Web页面设计中，建少HTTP请求可以提高页面响应速度。</span><br><span class="line">浏览器在第一次访问页面时下载的资源会缓存起来</span><br><span class="line">第二次访问时会判断在缓存中是否已有该资源并且有没有更新过</span><br><span class="line">如果已有该资源且没有更新过，则去缓存去取</span><br><span class="line">这样减少了下载资源的时间。</span><br><span class="line">原理上是通过HTTP Rquest Header中的 if-modifaders中的last-modified来实现</span><br></pre></td></tr></table></figure>
 
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/01/Vue-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/01/Vue-Tutorial/" class="post-title-link" itemprop="url">Vue Tutorial</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-01 10:56:08" itemprop="dateCreated datePublished" datetime="2021-06-01T10:56:08+08:00">2021-06-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://blog.jetbrains.com/webstorm/2019/03/get-started-building-apps-with-vue-js-in-webstorm/">官方介绍</a></p>
-<h1 id="Vue目录结构"><a href="#Vue目录结构" class="headerlink" title="Vue目录结构"></a>Vue目录结构</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">├── build                      // 构建相关  </span><br><span class="line">├── config                     // 配置相关</span><br><span class="line">├── src                        // 源代码</span><br><span class="line">│   ├── api                    // 所有请求</span><br><span class="line">│   ├── assets                 // 主题 字体等静态资源</span><br><span class="line">│   ├── components             // 全局公用组件</span><br><span class="line">│   ├── directive              // 全局指令</span><br><span class="line">│   ├── filtres                // 全局 filter</span><br><span class="line">│   ├── icons                  // 项目所有 svg icons</span><br><span class="line">│   ├── lang                   // 国际化 language</span><br><span class="line">│   ├── mock                   // 项目mock 模拟数据</span><br><span class="line">│   ├── router                 // 路由</span><br><span class="line">│   ├── store                  // 全局 store管理</span><br><span class="line">│   ├── styles                 // 全局样式</span><br><span class="line">│   ├── utils                  // 全局公用方法</span><br><span class="line">│   ├── vendor                 // 公用vendor</span><br><span class="line">│   ├── views                   // view</span><br><span class="line">│   ├── App.vue                // 入口页面</span><br><span class="line">│   ├── main.js                // 入口 加载组件 初始化等</span><br><span class="line">│   └── permission.js          // 权限管理</span><br><span class="line">├── static                     // 第三方不打包资源</span><br><span class="line">│   └── Tinymce                // 富文本</span><br><span class="line">├── .babelrc                   // babel-loader 配置</span><br><span class="line">├── eslintrc.js                // eslint 配置项</span><br><span class="line">├── .gitignore                 // git 忽略项</span><br><span class="line">├── favicon.ico                // favicon图标</span><br><span class="line">├── index.html                 // html模板</span><br><span class="line">└── package.json               // package.json</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<p><img src="https://www.runoob.com/wp-content/uploads/2017/01/B6E593E3-F284-4C58-A610-94C6ACDAD485.jpg" alt="img"></p>
-<table>
-<thead>
-<tr>
-<th>build</th>
-<th>项目构建(webpack)相关代码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>config</td>
-<td>配置目录，包括端口号等。我们初学可以使用默认的。</td>
-</tr>
-<tr>
-<td>node_modules</td>
-<td>npm 加载的项目依赖模块</td>
-</tr>
-<tr>
-<td>src</td>
-<td>这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：assets: 放置一些图片，如logo等。components: 目录里面放了一个组件文件，可以不用。App.vue: 项目入口文件，我们也可以直接将组件写这里，而不使用 components 目录。main.js: 项目的核心文件。</td>
-</tr>
-<tr>
-<td>static</td>
-<td>静态资源目录，如图片、字体等。</td>
-</tr>
-<tr>
-<td>test</td>
-<td>初始测试目录，可删除</td>
-</tr>
-<tr>
-<td>.xxxx文件</td>
-<td>这些是一些配置文件，包括语法配置，git配置等。</td>
-</tr>
-<tr>
-<td>index.html</td>
-<td>首页入口文件，你可以添加一些 meta 信息或统计代码啥的。</td>
-</tr>
-<tr>
-<td>package.json</td>
-<td>项目配置文件。</td>
-</tr>
-</tbody></table>
-<p>Webstorm项目构建工具</p>
-<blockquote>
-<p>By default, all the apps generated with the Vue CLI use the webpack dev server</p>
-</blockquote>
-<p>Components</p>
-<blockquote>
-<p>Vue is a framework for building modularized front-end apps, so it considers files with the .vue extension as components.</p>
-</blockquote>
-<blockquote>
-<p>Components contain three sections for code: template (HTML), script (JavaScript or TypeScript), and styles (CSS or any stylesheet language).</p>
-</blockquote>
-<p>App.vue</p>
-<blockquote>
-<p>The project template creates a file called <em>App.vue</em> which is the primary component that is attached to the root element defined in the Vue instance.</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;img alt=&quot;Vue logo&quot; src=&quot;./assets/logo.png&quot;&gt;</span><br><span class="line">    &lt;HelloWorld/&gt;  // 创建好的组件可以当作自定义标签使用</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;  // 导入Helloworld组件，下面两步都不可少</span><br><span class="line">import HelloWorld from &#x27;./components/HelloWorld.vue&#x27; </span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;App&#x27;,</span><br><span class="line">  components: &#123;  </span><br><span class="line">    HelloWorld</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="数据传递"><a href="#数据传递" class="headerlink" title="数据传递"></a>数据传递</h1><p>Helloworld.vue</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;HelloWorld&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    msg: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>reveals the <code>msg</code> variable as a property (called <code>props</code>) of the component, and that is how the message data is passed into the HelloWorld component.</p>
-</blockquote>
-<p>How to pass data</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;img alt=&quot;Vue logo&quot; src=&quot;./assets/logo.png&quot;&gt;</span><br><span class="line">    &lt;HelloWorld msg=&quot;Jim&quot;/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>访问assert内的文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./assets/logo.png&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<p>export</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,  <span class="comment">// 其他文件import当前vue时用的名字</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>main.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>  <span class="comment">// 从文件中导入App组件</span></span><br><span class="line"></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span>  <span class="comment">// 关闭生产模式</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;  <span class="comment">// 创建了vue实例</span></span><br><span class="line">  <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(App),</span><br><span class="line">&#125;).$mount(<span class="string">&#x27;#app&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>The call to $mount(‘#app’); attaches the Vue instance to the root DOM element, which is an element with an id of “app”. You can find the root element inside of public\index.html</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">noscript</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>We&#x27;re sorry but &lt;%= htmlWebpackPlugin.options.title %&gt; doesn&#x27;t work properly without JavaScript enabled. Please enable it to continue.<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- built files will be auto injected --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>method</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;HelloWorld&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    // msg: String</span><br><span class="line">  &#125;,</span><br><span class="line">  data: function () &#123;</span><br><span class="line">    return &#123;msg:&quot;Welcome!&quot;&#125;;  // msg is like variable name</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    changeMessage:function () &#123;  // changeMessage is like method name, which is used for invoke</span><br><span class="line">      this.msg=&quot;Welcome man&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=&quot;changeMessage&quot;&gt;Change Message&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<p>localhost显示的首页</p>
-<h1 id="默认首页"><a href="#默认首页" class="headerlink" title="默认首页"></a>默认首页</h1><p>其实就是 public 文件夹中的index.html</p>
-<p>然后其用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="WebStorm与Vue"><a href="#WebStorm与Vue" class="headerlink" title="WebStorm与Vue"></a>WebStorm与Vue</h1><p>虽然最新版的前端开发利器WebStorm支持了Vue，但是大部分人的WebStorm依然是默认不支持Vue的老版本（比如之前的我），所以需要手动添加WebStorm对Vue的支持。要想让WebStorm支持Vue主要分两步，第一步是安装Vue.js插件，使得WebStorm能够对Vue语法进行提示；第二步是配置Vue模板，即快速创建Vue文件</p>
-<h1 id="Vuex-Store"><a href="#Vuex-Store" class="headerlink" title="Vuex-Store"></a>Vuex-Store</h1><p>vuex的store 统一管理多个模块的数据，如：token，用户信息</p>
-<p>如果没有必要，页面本身存储数据就行，不用存在Store里</p>
-<h1 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220103200927673.png" alt="image-20220103200927673"></p>
-<h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">LoginByUsername</span>(<span class="params">&#123; commit &#125;, userInfo</span>)</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> username = userInfo.username.trim()</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    loginByUsername(username, userInfo.password).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> data = response.data</span><br><span class="line">      Cookies.set(<span class="string">&#x27;Token&#x27;</span>, response.data.token) <span class="comment">//登录成功后将token存储在cookie之中</span></span><br><span class="line">      commit(<span class="string">&#x27;SET_TOKEN&#x27;</span>, data.token)</span><br><span class="line">      resolve()</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">      reject(error)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>cookie 储存服务器返回的token</p>
-<p>则完成了保存用户的登录状态的功能</p>
-<p>再设置Token有效期（Expires/Max-Age）为Session，即浏览器关闭即丢失</p>
-<p>（也可以设置成1周）</p>
-<h1 id="钩子"><a href="#钩子" class="headerlink" title="钩子"></a>钩子</h1><p>与生命周期相关的被调函数</p>
-<p>如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="权限验证"><a href="#权限验证" class="headerlink" title="权限验证"></a>权限验证</h1><p>前端验证还是后端验证？</p>
-<p>若后端验证，则每增加一个页面，后端就要动一下</p>
-<p>若前端验证，则只在前端动就行</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220103203722855.png" alt="image-20220103203722855"></p>
-<h1 id="next"><a href="#next" class="headerlink" title="next()"></a>next()</h1><p>放行，中断当前导航，执行新的导航</p>
 
       
     </div>
