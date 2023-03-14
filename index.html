@@ -177,6 +177,237 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/14/df/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/14/df/" class="post-title-link" itemprop="url">df</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-14 16:03:29 / Modified: 16:03:57" itemprop="dateCreated datePublished" datetime="2023-03-14T16:03:29+08:00">2023-03-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.loc[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109150630032.png" alt="image-20220109150630032"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res[<span class="string">&#x27;Facenet_cosine&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109150809565.png" alt="image-20220109150809565"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(similar_rates[similar_rates&lt;<span class="number">2</span>][similar_rates&gt;<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109151433500.png" alt="image-20220109151433500"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/14/hexo-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/14/hexo-install/" class="post-title-link" itemprop="url">hexo install</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-14 15:41:21 / Modified: 15:54:53" itemprop="dateCreated datePublished" datetime="2023-03-14T15:41:21+08:00">2023-03-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li>安装主题</li>
+</ol>
+<h1 id="一、安装主题"><a href="#一、安装主题" class="headerlink" title="一、安装主题"></a>一、安装主题</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-site</span><br><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="二、安装-search-engine"><a href="#二、安装-search-engine" class="headerlink" title="**二、安装 search **engine"></a>**二、安装 search **engine</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>root/_config.yml</code> 新增</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.json</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>theme/_config.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># unescape html strings to the readable one</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、数学公式"><a href="#三、数学公式" class="headerlink" title="三、数学公式"></a>三、数学公式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+
+<p><code>theme/_config.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (false) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to true, it will load mathjax / katex script EVERY PAGE.</span></span><br><span class="line">  <span class="attr">every_page:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: none | ams | all</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="string">none</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/12/%E9%98%BF%E9%87%8C%E4%BA%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/12/%E9%98%BF%E9%87%8C%E4%BA%91/" class="post-title-link" itemprop="url">阿里云</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-03-12 10:20:27" itemprop="dateCreated datePublished" datetime="2023-03-12T10:20:27+08:00">2023-03-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-03-14 16:00:57" itemprop="dateModified" datetime="2023-03-14T16:00:57+08:00">2023-03-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230312102116164.png" alt="image-20230312102116164"></p>
+<p>直接填域名</p>
+<p>然后把SSL的文件下载下来</p>
+<p>放到Nginx 配置好</p>
+<p>然后重启Nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen              80;</span><br><span class="line">    server_name         120.24.111.127 homework.culiu-tech.com;</span><br><span class="line">    rewrite ^(.*)$ https://homework.culiu-tech.com permanent;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen              443 ssl;</span><br><span class="line">    server_name         homework.culiu-tech.com;</span><br><span class="line">    ssl_certificate      &#x27;/etc/nginx/certification/9462160_homework.culiu-tech.com.pem&#x27;;</span><br><span class="line">    ssl_certificate_key  &#x27;/etc/nginx/certification/9462160_homework.culiu-tech.com.key&#x27;;</span><br><span class="line">    location / &#123;</span><br><span class="line">       #some setting of moodle is in /yjdata/www/wwwroot/config.php</span><br><span class="line">        proxy_pass      https://172.18.91.248:81;</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220627171119693.png" alt="image-20220627171119693"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/pcer-backend/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -208,7 +439,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-11 13:38:18" itemprop="dateModified" datetime="2023-03-11T13:38:18+08:00">2023-03-11</time>
+                <time title="Modified: 2023-03-14 12:25:28" itemprop="dateModified" datetime="2023-03-14T12:25:28+08:00">2023-03-14</time>
               </span>
 
           
@@ -245,6 +476,52 @@
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/pcer?serverTimezone=UTC&amp;characterEncoding=utf8</span></span><br></pre></td></tr></table></figure>
 
 <p>加上编码设置就行</p>
+<h1 id="dao"><a href="#dao" class="headerlink" title="dao"></a>dao</h1><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>利用事务处理，可以保证一组操作不会中途停止，它们会作为整体执行</p>
+<p>如果没有错误发生，整组语句提交给（写到）数据库表</p>
+<p>如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">start transaction;</span><br><span class="line">delete ...</span><br><span class="line">delete ...</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
+
+<p>当 <code>commit</code> 或 <code>rollback</code> 语句执行后，事务会自动关闭  </p>
+<p><code>savepoint</code> 回滚到 <code>savepoint</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">savepoint delete1;</span><br><span class="line">...</span><br><span class="line">rollback to delete1;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="事务问题"><a href="#事务问题" class="headerlink" title="事务问题"></a>事务问题</h2><h3 id="脏写（更新丢失）"><a href="#脏写（更新丢失）" class="headerlink" title="脏写（更新丢失）"></a>脏写（更新丢失）</h3><p>就是我刚才明明写了一个数据值，结果过了一会却没了。</p>
+<p>而它的本质就是事务 B 去修改了事务 A 修改过的值，但是此时事务 A 还没提交，所以事务 A 随时会回滚</p>
+<p>导致事务 B 修改的值也没了，这就是脏写的定义。</p>
+<h3 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h3><p>它的本质是事务 B 去查询了事务 A 修改过的数据，但是此时事务 A 还没提交，</p>
+<p>所以事务 A 随时会回滚导致事务 B 再次查询就读不到刚才事务 A 修改的数据了，这就是脏读。</p>
+<p>service有多个sql查询</p>
+<p>需要锁表，不然会脏读</p>
+<h3 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h3><p>在同一个事务内，两个相同的查询返回了不同的结果</p>
+<h3 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h3><p>你一个事务 A，先发送一条 SQL 语句，里面有一个条件，要查询一批数据出来</p>
+<p>如 <code>SELECT * FROM table WHERE id &gt; 10</code>。然后呢，它一开始查询出来了 10 条数据</p>
+<p>接着这个时候，别的事务 B往表里插了几条数据，而且事务 B 还提交了，此时多了几行数据</p>
+<p>幻读就是你一个事务用一样的 SQL 多次查询</p>
+<p>结果每次查询都会发现查到一些之前没看到过的数据</p>
+<p>注意，幻读特指的是你查询到了之前查询没看到过的数据，此时说明你是幻读了</p>
+<p>Ps: 不可重复读重点在于<strong>update和delete</strong>，而幻读的重点在于<strong>insert</strong></p>
+<h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isolation=Isolation.READ_UNCOMMITTED</span><br></pre></td></tr></table></figure>
+
+<p>以操作同一行数据为前提，读事务允许其他读事务和写事务，未提交的写事务<strong>禁止其他写事务（但允许其他读事务）</strong></p>
+<p>此隔离级别可以防止更新丢失，但不能防止脏读、不可重复读、幻读。此隔离级别可以通过“排他写锁”实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.READ_COMMITTED</span><br></pre></td></tr></table></figure>
+
+<p>以操作同一行数据为前提，读事务允许其他读事务和写事务，未提交的写事务<strong>禁止其他读事务和写事务</strong></p>
+<p>此隔离级别可以防止更新丢失、脏读，但不能防止不可重复读、幻读。此隔离级别可以通过“瞬间共享读锁”和“排他写锁”实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.REPEATABLE_READ</span><br></pre></td></tr></table></figure>
+
+<p><strong>事务的默认隔离等级</strong></p>
+<p>以操作同一行数据为前提，读事务<strong>禁止其他写事务（但允许其他读事务）</strong>，未提交的写事务<strong>禁止其他读事务和写事务</strong></p>
+<p>此隔离级别可以防止更新丢失、脏读、不可重复读，但<strong>不能防止幻读</strong>。此隔离级别可以通过“共享读锁”和“排他写锁”实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.SERIALIZABLE</span><br></pre></td></tr></table></figure>
+
+<p>提供严格的事务隔离。它要求事务序列化执行，事务只能一个接着一个地执行，不能并发执行。</p>
+<p>此隔离级别<strong>可以防止更新丢失、脏读、不可重复读、幻读</strong></p>
+<p>如果仅仅通过“行级锁”是无法实现事务序列化的，必须通过其他机制保证新插入的数据不会被刚执行查询操作的事务访问到。</p>
 
       
     </div>
@@ -547,7 +824,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-11 13:45:37" itemprop="dateModified" datetime="2023-03-11T13:45:37+08:00">2023-03-11</time>
+                <time title="Modified: 2023-03-13 17:44:07" itemprop="dateModified" datetime="2023-03-13T17:44:07+08:00">2023-03-13</time>
               </span>
 
           
@@ -699,12 +976,21 @@
 
 
 
+<h2 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h2><p>父</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TagManageDialog</span> <span class="attr">v-bind:tagList</span>=<span class="string">&quot;tagList&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">TagManageDialog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props : &#123;</span><br><span class="line">    <span class="attr">tagList</span>:&#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Array</span>,</span><br><span class="line">      <span class="attr">required</span>:<span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">this</span>.tagList)</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-
+<p>Ps: 子组件中修改值，会影响父组件</p>
 <h1 id="第三方-Component"><a href="#第三方-Component" class="headerlink" title="第三方 Component"></a>第三方 Component</h1><h2 id="md编辑器"><a href="#md编辑器" class="headerlink" title="md编辑器"></a>md编辑器</h2><p><a target="_blank" rel="noopener" href="https://github.com/hinesboy/mavonEditor">https://github.com/hinesboy/mavonEditor</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mavon-editor --save</span><br></pre></td></tr></table></figure>
 
@@ -780,6 +1066,16 @@
 <p><code>v-show</code></p>
 <p>true – 显示</p>
 <p>false – 不显示</p>
+<h3 id="v-if-更新不及时"><a href="#v-if-更新不及时" class="headerlink" title="v-if 更新不及时"></a>v-if 更新不及时</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 强制刷新</span><br><span class="line">this.$forceUpdate()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
 <h2 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;inner&quot;</span>&gt;</span>inner<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span>not inner<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
@@ -839,7 +1135,23 @@
 
 
 
+<h3 id="iteration-index"><a href="#iteration-index" class="headerlink" title="iteration index"></a>iteration index</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">&quot;(tag, i) in tagList&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+
+
+
+
+<h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><p>有唯一标识就行</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">&quot;(tag, i) in tagList&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-input</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;input-new-tag&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:key</span>=<span class="string">&quot;i&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:ref</span>=<span class="string">&quot;&#x27;input&#x27;+i&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-if</span>=<span class="string">&quot;editTag[i]&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-model</span>=<span class="string">&quot;tagList[i]&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">size</span>=<span class="string">&quot;small&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="动态ref"><a href="#动态ref" class="headerlink" title="动态ref"></a>动态ref</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-input</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;input-new-tag&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:key</span>=<span class="string">&quot;i&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:ref</span>=<span class="string">&quot;&#x27;input&#x27;+i&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-if</span>=<span class="string">&quot;editTag[i]&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-model</span>=<span class="string">&quot;tagList[i]&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">size</span>=<span class="string">&quot;small&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Ps：必须在nextTick中才能正常访问$refs</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.$nextTick(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.$refs[<span class="string">&#x27;input&#x27;</span>+i][<span class="number">0</span>].$refs.input.focus()</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 
 
@@ -861,6 +1173,15 @@
 <h2 id="响应式编程"><a href="#响应式编程" class="headerlink" title="响应式编程"></a>响应式编程</h2><p>保持状态和视图的同步</p>
 <h2 id="vm"><a href="#vm" class="headerlink" title="vm"></a>vm</h2><p>ViewModel </p>
 <h2 id="vue2-与-vue3"><a href="#vue2-与-vue3" class="headerlink" title="vue2 与 vue3"></a>vue2 与 vue3</h2><p>对于 Vue 3，你应该使用 npm 上可用的 Vue CLI v4.5 作为 @vue/cli。</p>
+<h1 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h1><p>Ps：不要用<code>element-ui</code>自带的flex</p>
+<p>外面套一个<code>div</code>来操作</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;tags&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-checkbox</span></span></span><br><span class="line"><span class="tag">       <span class="attr">v-for</span>=<span class="string">&quot;name in tagList&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">:key</span>=<span class="string">&quot;name&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">:label</span>=<span class="string">&quot;name&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">border</span></span></span><br><span class="line"><span class="tag">       <span class="attr">size</span>=<span class="string">&quot;medium&quot;</span></span></span><br><span class="line"><span class="tag">       @<span class="attr">change</span>=<span class="string">&quot;updateProblems&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-checkbox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#tags</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230312110826227.png" alt="image-20230312110826227"></p>
 <h1 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h1><h2 id="mount"><a href="#mount" class="headerlink" title="mount()"></a>mount()</h2><p>对于每个应用实例，<code>mount()</code> 仅能调用一次。</p>
 <h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(App),</span><br><span class="line">  <span class="attr">data</span>:&#123;</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;hello vue.js&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).$mount(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
@@ -1226,581 +1547,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/28/ms/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/28/ms/" class="post-title-link" itemprop="url">ms</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-01-28 09:59:33 / Modified: 10:01:07" itemprop="dateCreated datePublished" datetime="2023-01-28T09:59:33+08:00">2023-01-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>Content Delivery Network</p>
-<p>内容分发网络</p>
-<h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p>用户不关心目标内部服务器的组成</p>
-<p>只与反向代理的服务器交互</p>
-<p><img src="https://bkimg.cdn.bcebos.com/pic/3812b31bb051f81993dddee7d4b44aed2f73e7a7?x-bce-process=image/resize,m_lfit,w_440,limit_1"></p>
-<h2 id="GET-POST"><a href="#GET-POST" class="headerlink" title="GET/POST"></a>GET/POST</h2><p>本质上都是<code>TCP</code>链接，并无差别</p>
-<p>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</p>
-<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>http明文</p>
-<p>端口：80</p>
-<p>https密文</p>
-<p>端口：443</p>
-<h2 id="浏览器访问"><a href="#浏览器访问" class="headerlink" title="浏览器访问"></a>浏览器访问</h2><p>URL解析 – 协议、域名、端口、参数</p>
-<p>DNS解析</p>
-<p>TCP连接</p>
-<p>页面渲染</p>
-<h2 id="三次握手和四次握手"><a href="#三次握手和四次握手" class="headerlink" title="三次握手和四次握手"></a>三次握手和四次握手</h2><p>建立连接需要三次</p>
-<ul>
-<li>第一次握手：客户端发送网络包，服务端收到了<br>这样服务端就能得出结论：客户端的发送能力、服务端的接收能力是正常的。</li>
-<li>第二次握手：服务端发包，客户端收到了<br>这样客户端就能得出结论：服务端的接收、发送能力，客户端的接收、发送能力是正常的。不过此时服务器并不能确认客户端的接收能力是否正常</li>
-<li>第三次握手：客户端发包，服务端收到了。<br>这样服务端就能得出结论：客户端的接收、发送能力正常，服务器自己的发送、接收能力也正常</li>
-</ul>
-<p>通过三次握手，就能确定双方的接收和发送能力是正常的。之后就可以正常通信了</p>
-<p>断开连接需要四次</p>
-<ul>
-<li>第一次挥手：客户端发送一个 FIN 报文，报文中会指定一个序列号。此时客户端处于 FIN_WAIT1 状态，停止发送数据，等待服务端的确认</li>
-<li>第二次挥手：服务端收到 FIN 之后，会发送 ACK 报文，且把客户端的序列号值 +1 作为 ACK 报文的序列号值，表明已经收到客户端的报文了，此时服务端处于 CLOSE_WAIT状态</li>
-<li>第三次挥手：如果服务端也想断开连接了，和客户端的第一次挥手一样，发给 FIN 报文，且指定一个序列号。此时服务端处于 <code>LAST_ACK</code> 的状态</li>
-<li>第四次挥手：客户端收到 FIN 之后，一样发送一个 ACK 报文作为应答，且把服务端的序列号值 +1 作为自己 ACK 报文的序列号值，此时客户端处于 TIME_WAIT状态。需要过一阵子以确保服务端收到自己的 ACK 报文之后才会进入 CLOSED 状态，服务端收到 ACK 报文之后，就处于关闭连接了，处于 CLOSED 状态</li>
-</ul>
-<h2 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h2><p>Transmission Control Protocol</p>
-<p>Internet Protocol</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230105151136518.png" alt="image-20230105151136518"></p>
-<p>TCP首部</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230105151423008.png" alt="image-20230105151423008"></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45160969/article/details/99240740">https://blog.csdn.net/weixin_45160969/article/details/99240740</a></p>
-<p>IP首部</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/f857f25c39d64989330f76d9f9ab2096.png"></p>
-<h2 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h2><p>实时通信</p>
-<p>全双工</p>
-<p>通信允许数据在两个方向上同时传输</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ws://www.chrono.com</span><br><span class="line">ws://www.chrono.com:8080/srv</span><br><span class="line">wss://www.chrono.com:445/im?user_id=xxx</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>较少的控制开销：数据包头部协议较小，不同于http每次请求需要携带完整的头部</li>
-<li>更强的实时性：相对于HTTP请求需要等待客户端发起请求服务端才能响应，延迟明显更少</li>
-<li>保持创连接状态：创建通信后，可省略状态信息，不同于HTTP每次请求需要携带身份验证</li>
-</ul>
-<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="git-pull-和-git-fetch"><a href="#git-pull-和-git-fetch" class="headerlink" title="git pull 和 git fetch"></a>git pull 和 git fetch</h3><p><code>git fetch</code>是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中</p>
-<p><code>git pull</code> 则是将远程主机的最新内容拉下来后直接合并</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230105154407229.png" alt="image-20230105154407229"></p>
-<h3 id="branch-和-fork"><a href="#branch-和-fork" class="headerlink" title="branch 和 fork"></a>branch 和 fork</h3><ul>
-<li>fork 只能对代码仓进行操作，且 fork 不属于 git 的命令，通常用于代码仓托管平台的一种“操作”（复制到自己的仓库）</li>
-<li>branch 得到的是一个代码仓的一个新分支，从开发主线上分离开来，以免影响开发主线</li>
-</ul>
-<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p>主要是有四大块：List、Set、Queue、Map</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230106102026894.png" alt="image-20230106102026894"></p>
-<h3 id="为什么要有集合"><a href="#为什么要有集合" class="headerlink" title="为什么要有集合"></a>为什么要有集合</h3><p>数组的缺点是一旦声明之后，长度就不可变了；同时，声明数组时的数据类型也决定了该数组存储的数据的类型；</p>
-<p>而且，数组存储的数据是有序的、可重复的，特点单一。 </p>
-<p>但是集合提高了数据存储的灵活性，Java 集合不仅可以用来存储不同类型不同数量的对象，还可以保存具有映射关系的数据。</p>
-<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>底层是 object 数组</p>
-<p>ArrayList会比Vector快，他是非同步的，如果设计涉及到多线程，还是用Vector比较好一些</p>
-<p>线程不安全（非同步）</p>
-<p>ArrayList基于数组的查询虽然高效，但增删数据的时候却很耗性能</p>
-<p>因为每增删一个元素就要移动对应index后面的所有元素，数据量少点还无所谓</p>
-<p>但如果存储上千上万的数据就很吃力了，所以，如果是频繁增删的情况，不建议用ArrayList</p>
-<p>ArrayList扩容的时候，它会默认把数组的容量扩大到原来的1.5倍的</p>
-<p>源码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> oldCapacity = elementData.length;</span><br><span class="line">        <span class="comment">// 整句运算式的结果就是将新容量更新为旧容量的1.5倍，</span></span><br><span class="line">        <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = minCapacity;</span><br><span class="line">        <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">        <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">        elementData = Arrays.copyOf(elementData, newCapacity);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h3 id="ArrayList-和-LinkedList"><a href="#ArrayList-和-LinkedList" class="headerlink" title="ArrayList 和 LinkedList"></a>ArrayList 和 LinkedList</h3><ul>
-<li><p><strong>是否保证线程安全：</strong> <code>ArrayList</code> 和 <code>LinkedList</code> 都是不同步的，也就是不保证线程安全；</p>
-</li>
-<li><p><strong>底层数据结构：</strong> <code>ArrayList</code> 底层使用的是 <strong><code>Object</code> 数组</strong>；<code>LinkedList</code> 底层使用的是 <strong>双向链表</strong> 数据结构（JDK1.6 之前为循环链表，JDK1.7 取消了循环。注意双向链表和双向循环链表的区别，下面有介绍到！）</p>
-</li>
-<li><p><strong>插入和删除是否受元素位置的影响：</strong>ArrayList基于数组的查询虽然高效，但增删数据的时候却很耗性能</p>
-</li>
-</ul>
-<p>​        因为每增删一个元素就要移动对应index后面的所有元素，数据量少点还无所谓</p>
-<p>​        但如果存储上千上万的数据就很吃力了，所以，如果是频繁增删的情况，不建议用ArrayList</p>
-<ul>
-<li><strong>是否支持快速随机访问：</strong> <code>LinkedList</code> 不支持高效的随机元素访问，而 <code>ArrayList</code> 支持。快速随机访问就是通过元素的序号快速获取元素对象(对应于<code>get(int index)</code>方法)。</li>
-<li><strong>内存空间占用：</strong> <code>ArrayList</code> 的空 间浪费主要体现在在 list 列表的结尾会预留一定的容量空间，而 LinkedList 的空间花费则体现在它的每一个元素都需要消耗比 ArrayList 更多的空间（因为要存放直接后继和直接前驱以及数据）。</li>
-</ul>
-<p>删除效率对比</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ArrayList:10</span></span><br><span class="line"><span class="comment">// LinkedList:82</span></span><br><span class="line"><span class="comment">// 数量到10,0000都是ArrayList删除速度快</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">al</span><span class="params">(ArrayList&lt;Integer&gt; a)</span></span>&#123;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">50000</span>; i&lt;<span class="number">51000</span>; i++)&#123;</span><br><span class="line">           a.remove(i);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ll</span><span class="params">(LinkedList&lt;Integer&gt; l)</span></span>&#123;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">50000</span>; i&lt;<span class="number">51000</span>; i++)&#123;</span><br><span class="line">           l.remove(i);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       ArrayList&lt;Integer&gt; a = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">100000</span>; i++)&#123;</span><br><span class="line">           a.add(<span class="keyword">new</span> Integer(i));</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       LinkedList&lt;Integer&gt; l = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">100000</span>; i++)&#123;</span><br><span class="line">           l.add(<span class="keyword">new</span> Integer(i));</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">long</span> startTime = System.currentTimeMillis();</span><br><span class="line">       al(a);</span><br><span class="line">       <span class="keyword">long</span> endTime = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">       System.out.println(<span class="string">&quot;ArrayList:&quot;</span> + (endTime-startTime));</span><br><span class="line"></span><br><span class="line">       startTime = System.currentTimeMillis();</span><br><span class="line">       ll(l);</span><br><span class="line">       endTime = System.currentTimeMillis();</span><br><span class="line">       System.out.println(<span class="string">&quot;LinkedList:&quot;</span> + (endTime-startTime));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ArrayList:171</span></span><br><span class="line"><span class="comment">// LinkedList:141</span></span><br><span class="line"><span class="comment">// 数量上去100,0000之后LinkedList是比ArrayList快的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">al</span><span class="params">(ArrayList&lt;Integer&gt; a)</span></span>&#123;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">50000</span>; i&lt;<span class="number">51000</span>; i++)&#123;</span><br><span class="line">           a.remove(i);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ll</span><span class="params">(LinkedList&lt;Integer&gt; l)</span></span>&#123;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">50000</span>; i&lt;<span class="number">51000</span>; i++)&#123;</span><br><span class="line">           l.remove(i);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       ArrayList&lt;Integer&gt; a = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">1000000</span>; i++)&#123;</span><br><span class="line">           a.add(<span class="keyword">new</span> Integer(i));</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       LinkedList&lt;Integer&gt; l = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">1000000</span>; i++)&#123;</span><br><span class="line">           l.add(<span class="keyword">new</span> Integer(i));</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">long</span> startTime = System.currentTimeMillis();</span><br><span class="line">       al(a);</span><br><span class="line">       <span class="keyword">long</span> endTime = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">       System.out.println(<span class="string">&quot;ArrayList:&quot;</span> + (endTime-startTime));</span><br><span class="line"></span><br><span class="line">       startTime = System.currentTimeMillis();</span><br><span class="line">       ll(l);</span><br><span class="line">       endTime = System.currentTimeMillis();</span><br><span class="line">       System.out.println(<span class="string">&quot;LinkedList:&quot;</span> + (endTime-startTime));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>ArrayList基于数组的查询虽然高效，但增删数据的时候却很耗性能</p>
-<p>因为每增删一个元素就要移动对应index后面的所有元素，数据量少点还无所谓</p>
-<p>但如果存储上千上万的数据就很吃力了，所以，如果是频繁增删的情况，不建议用ArrayList。</p>
-<p>所以，一般建议LinkedList使用于增删多，查询少的情景。</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230106113511020.png" alt="image-20230106113511020"></p>
-<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><p>ArrayList会比Vector快，他是非同步的，如果设计涉及到多线程，还是用Vector比较好一些</p>
-<p>可增长数组</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Vector v = <span class="keyword">new</span> Vector();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 默认capacity是10</span></span><br><span class="line">    <span class="comment">// 但size是0</span></span><br><span class="line">    System.out.println(<span class="string">&quot;default capacity: &quot;</span> + v.capacity());</span><br><span class="line">    System.out.println(<span class="string">&quot;init size: &quot;</span> + v.size());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 允许重复，允许各种不同类型</span></span><br><span class="line">    v.add(<span class="number">1</span>);</span><br><span class="line">    v.add(<span class="number">1</span>);</span><br><span class="line">    v.add(<span class="number">2</span>);</span><br><span class="line">    v.add(<span class="keyword">new</span> Integer(<span class="number">2</span>));</span><br><span class="line">    v.add(<span class="keyword">new</span> Integer(<span class="number">2</span>));</span><br><span class="line">    v.add(<span class="keyword">new</span> Integer(<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;v.size(); i++)&#123;</span><br><span class="line">        System.out.println(v.get(i));</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;end&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过值或者index删除</span></span><br><span class="line">    <span class="comment">// Returns the element that was removed from the Vector</span></span><br><span class="line">    <span class="comment">// int类型时，java会认为是index</span></span><br><span class="line">    <span class="comment">// Integer时，java会认为是删除值</span></span><br><span class="line">    v.remove(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从左往右只删除一个</span></span><br><span class="line">    v.remove(<span class="keyword">new</span> Integer(<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;v.size(); i++)&#123;</span><br><span class="line">        System.out.println(v.get(i));</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;end&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-<h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><p>这就好比BBC的记者，在知道皇马拿到欧冠冠军之后，拿起手机，翻开皇马球迷通讯录，给球迷一个一个打电话，告诉他们，皇马夺冠了。</p>
-<p>事实上，BBC的记者只需要在他们官网发布这条消息，然后球迷自行访问BBC，去上面获取这条新闻；又或者球迷订阅了BBC，那么订阅系统会主动把发布在官网的消息推送给球迷。</p>
-<p>同样，createOrder也需要一个像BBC官网那样的载体，也就是消息中间件，在订单创建完成之后，把一条主题为“orderCreated”的消息，放到消息中间件去就ok了，不必关心需要把这条消息发给谁。这就完成了消息的生产。</p>
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><p><a target="_blank" rel="noopener" href="https://kafka.apache.org/downloads">https://kafka.apache.org/downloads</a></p>
-<p>找到2.1.0的版本</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230116160611900.png" alt="image-20230116160611900"></p>
-<p>windows下修改配置文件：</p>
-<p>config\zookeeper.properties</p>
-<p>16行，自己新建一个文件夹、重写路径</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataDir=D:\\data\\kafka_data</span><br></pre></td></tr></table></figure>
-
-
-
-<p>config\server.properties</p>
-<p>60行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log.dirs=D:\\data\\kafka_log</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p><strong>启动zookeeper</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>启动kafka</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\bin\windows\kafka-server-start.bat .\config\server.properties</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>创建名为 test1 的主题</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test1</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>producer 发送信息</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test1</span><br></pre></td></tr></table></figure>
-
-
-
-<p>consumer 接收信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test1 --from-beginning</span><br></pre></td></tr></table></figure>
-
-
-
-<p>然后在producer中发消息，完成demo</p>
-<h3 id="Java的demo"><a href="#Java的demo" class="headerlink" title="Java的demo"></a>Java的demo</h3><p>首先是配置文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">commons.version</span>&gt;</span>5.0.7<span class="tag">&lt;/<span class="name">commons.version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">junit.version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">junit.version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.kafka<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-kafka<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">&lt;!-- 使用lombok打印日志 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.24<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;junit.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>application.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">kafkademo</span></span><br><span class="line">  <span class="attr">kafka:</span></span><br><span class="line">    <span class="attr">bootstrap-servers:</span> <span class="string">localhost:9092</span></span><br><span class="line">    <span class="attr">producer:</span></span><br><span class="line">      <span class="attr">key-serializer:</span> <span class="string">org.apache.kafka.common.serialization.StringSerializer</span></span><br><span class="line">      <span class="attr">value-serializer:</span> <span class="string">org.apache.kafka.common.serialization.StringSerializer</span></span><br><span class="line">    <span class="attr">consumer:</span></span><br><span class="line">      <span class="attr">group-id:</span> <span class="string">test</span></span><br><span class="line">      <span class="attr">enable-auto-commit:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">auto-commit-interval:</span> <span class="number">1000</span></span><br><span class="line">      <span class="attr">key-deserializer:</span> <span class="string">org.apache.kafka.common.serialization.StringDeserializer</span></span><br><span class="line">      <span class="attr">value-deserializer:</span> <span class="string">org.apache.kafka.common.serialization.StringDeserializer</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>这里要注意的是bootstrap-servers</p>
-<p>应该在kafka服务器的 <code>config/producer.properties</code> 中找</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Licensed to the Apache Software Foundation (ASF) under one or more</span></span><br><span class="line"><span class="comment"># contributor license agreements.  See the NOTICE file distributed with</span></span><br><span class="line"><span class="comment"># this work for additional information regarding copyright ownership.</span></span><br><span class="line"><span class="comment"># The ASF licenses this file to You under the Apache License, Version 2.0</span></span><br><span class="line"><span class="comment"># (the &quot;License&quot;); you may not use this file except in compliance with</span></span><br><span class="line"><span class="comment"># the License.  You may obtain a copy of the License at</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#    http://www.apache.org/licenses/LICENSE-2.0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Unless required by applicable law or agreed to in writing, software</span></span><br><span class="line"><span class="comment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></span><br><span class="line"><span class="comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span><br><span class="line"><span class="comment"># See the License for the specific language governing permissions and</span></span><br><span class="line"><span class="comment"># limitations under the License.</span></span><br><span class="line"><span class="comment"># see org.apache.kafka.clients.producer.ProducerConfig for more details</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">############################# Producer Basics #############################</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># list of brokers used for bootstrapping knowledge about the rest of the cluster</span></span><br><span class="line"><span class="comment"># format: host1:port1,host2:port2 ...</span></span><br><span class="line"><span class="meta">bootstrap.servers</span>=<span class="string">localhost:9092</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># specify the compression codec for all data generated: none, gzip, snappy, lz4, zstd</span></span><br><span class="line"><span class="meta">compression.type</span>=<span class="string">none</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># name of the partitioner class for partitioning events; default partition spreads data randomly</span></span><br><span class="line"><span class="comment">#partitioner.class=</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># the maximum amount of time the client will wait for the response of a request</span></span><br><span class="line"><span class="comment">#request.timeout.ms=</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># how long `KafkaProducer.send` and `KafkaProducer.partitionsFor` will block for</span></span><br><span class="line"><span class="comment">#max.block.ms=</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># the producer will wait for up to the given delay to allow other records to be sent so that the sends can be batched together</span></span><br><span class="line"><span class="comment">#linger.ms=</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># the maximum size of a request in bytes</span></span><br><span class="line"><span class="comment">#max.request.size=</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># the default batch size in bytes when batching multiple records sent to a partition</span></span><br><span class="line"><span class="comment">#batch.size=</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># the total bytes of memory the producer can use to buffer records waiting to be sent to the server</span></span><br><span class="line"><span class="comment">#buffer.memory=</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>而不是 <code>server.properties</code> 中的2181</p>
-<p>下面是具体的代码实现：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230116175159526.png" alt="image-20230116175159526"></p>
-<p><strong>producer</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/kafka&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> KafkaTemplate&lt;String, String&gt; kafkaTemplate;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/send&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">send</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 消息的主题 test</span></span><br><span class="line">        kafkaTemplate.send(<span class="string">&quot;test&quot;</span>, msg);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p><strong>consumer</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CController</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 一直监听着，一旦有produce，则会调用</span></span><br><span class="line">    <span class="meta">@KafkaListener(topics = &quot;test&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">listen</span><span class="params">(ConsumerRecord&lt;?,?&gt; record)</span> </span>&#123;</span><br><span class="line">        Optional&lt;?&gt; kafkaMessage = Optional.ofNullable(record.value());</span><br><span class="line">        log.info(<span class="string">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; record = &quot;</span> + kafkaMessage);</span><br><span class="line">        <span class="keyword">if</span>(kafkaMessage.isPresent()) &#123;</span><br><span class="line">            String topic = record.topic();</span><br><span class="line">            <span class="keyword">long</span> offset = record.offset();</span><br><span class="line">            Object value = record.value();</span><br><span class="line">            System.out.printf(<span class="string">&quot;topic = %s, offset = %d, value = %s \n&quot;</span>, topic, offset, value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>main</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KafkaDemoApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(KafkaDemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//通过页面测试</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/helloKafka&quot;,method = RequestMethod.GET)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">helloKafka</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;helloKafka&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//也可模拟消息的发送，在启动项目时会发送消息</span></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> PController kafkaProducerController;</span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// 循环调用消息生产者的发送方法</span></span><br><span class="line">            kafkaProducerController.send(<span class="string">&quot;i see kafka No.&quot;</span> + String.valueOf(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>测试，访问</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080/kafka/send?msg=hello</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h2 id="开放封闭原则"><a href="#开放封闭原则" class="headerlink" title="开放封闭原则"></a>开放封闭原则</h2><p>有新业务尽量能统一扩展（复用、调整）、不逐一修改</p>
-<h2 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h2><h3 id="变长参数"><a href="#变长参数" class="headerlink" title="变长参数"></a>变长参数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        print(<span class="string">&quot;Holis&quot;</span>, <span class="string">&quot;公众号:Hollis&quot;</span>, <span class="string">&quot;博客：www.hollischuang.com&quot;</span>, <span class="string">&quot;QQ：907607222&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String... strs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(strs[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 反编译</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    print(<span class="keyword">new</span> String[] &#123;</span><br><span class="line">        <span class="string">&quot;Holis&quot;</span>, <span class="string">&quot;\u516C\u4F17\u53F7:Hollis&quot;</span>, <span class="string">&quot;\u535A\u5BA2\uFF1Awww.hollischuang.com&quot;</span>, <span class="string">&quot;QQ\uFF1A907607222&quot;</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">transient</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String strs[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs.length; i++)</span><br><span class="line">        System.out.println(strs[i]);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">10000</span>;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//反编译</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AssertTest</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">AssertTest</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(!$assertionsDisabled &amp;&amp; a != b)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> AssertionError();</span><br><span class="line">    System.out.println(<span class="string">&quot;\u516C\u4F17\u53F7\uFF1AHollis&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span>(!$assertionsDisabled &amp;&amp; a == b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> AssertionError(<span class="string">&quot;Hollis&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;\u535A\u5BA2\uFF1Awww.hollischuang.com&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">boolean</span> $assertionsDisabled = !com/hollis/suguar/AssertTest.desiredAssertionStatus();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>其实断言的底层实现就是 if 语言，如果断言结果为 true，则什么都不做，程序继续执行，如果断言结果为 false，则程序抛出 AssertError 来打断程序的执行</p>
-<h3 id="for-each"><a href="#for-each" class="headerlink" title="for-each"></a>for-each</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> </span>&#123;</span><br><span class="line">    String[] strs = &#123;<span class="string">&quot;Hollis&quot;</span>, <span class="string">&quot;公众号：Hollis&quot;</span>, <span class="string">&quot;博客：www.hollischuang.com&quot;</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (String s : strs) &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">    List&lt;String&gt; strList = ImmutableList.of(<span class="string">&quot;Hollis&quot;</span>, <span class="string">&quot;公众号：Hollis&quot;</span>, <span class="string">&quot;博客：www.hollischuang.com&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (String s : strList) &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//反编译</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">transient</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String strs[] = &#123;</span><br><span class="line">        <span class="string">&quot;Hollis&quot;</span>, <span class="string">&quot;\u516C\u4F17\u53F7\uFF1AHollis&quot;</span>, <span class="string">&quot;\u535A\u5BA2\uFF1Awww.hollischuang.com&quot;</span></span><br><span class="line">    &#125;;</span><br><span class="line">    String args1[] = strs;</span><br><span class="line">    <span class="keyword">int</span> i = args1.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        String s = args1[j];</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    List strList = ImmutableList.of(<span class="string">&quot;Hollis&quot;</span>, <span class="string">&quot;\u516C\u4F17\u53F7\uFF1AHollis&quot;</span>, <span class="string">&quot;\u535A\u5BA2\uFF1Awww.hollischuang.com&quot;</span>);</span><br><span class="line">    String s;</span><br><span class="line">    <span class="keyword">for</span>(Iterator iterator = strList.iterator(); iterator.hasNext(); System.out.println(s))</span><br><span class="line">        s = (String)iterator.next();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h3 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> </span>&#123;</span><br><span class="line">    List&lt;String&gt; strList = ImmutableList.of(<span class="string">&quot;Hollis&quot;</span>, <span class="string">&quot;公众号：Hollis&quot;</span>, <span class="string">&quot;博客：www.hollischuang.com&quot;</span>);</span><br><span class="line"></span><br><span class="line">    strList.forEach( s -&gt; &#123; System.out.println(s); &#125; );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//反编译</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="comment">/* varargs */</span> <span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(String ... args)</span> </span>&#123;</span><br><span class="line">    ImmutableList strList = ImmutableList.of((Object)<span class="string">&quot;Hollis&quot;</span>, (Object)<span class="string">&quot;\u516c\u4f17\u53f7\uff1aHollis&quot;</span>, (Object)<span class="string">&quot;\u535a\u5ba2\uff1awww.hollischuang.com&quot;</span>);</span><br><span class="line">    strList.forEach((Consumer&lt;String&gt;)LambdaMetafactory.metafactory(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, (Ljava/lang/Object;)V, lambda$main$<span class="number">0</span>(java.lang.String ), (Ljava/lang/String;)V)());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="comment">/* synthetic */</span> <span class="keyword">void</span> lambda$main$<span class="number">0</span>(String s) &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h3 id="自动装箱和拆箱"><a href="#自动装箱和拆箱" class="headerlink" title="自动装箱和拆箱"></a>自动装箱和拆箱</h3><p>int转化为Integer叫做装箱</p>
-<p>反过来则是拆箱</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line">    Integer n = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 反编译</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line">    Integer n = Integer.valueOf(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Integer i = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> n = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 反编译</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Integer i = Integer.valueOf(<span class="number">10</span>);</span><br><span class="line">    <span class="keyword">int</span> n = i.intValue();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h3 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">10_000</span>;</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">10000</span>;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>不暴露创建对象的具体逻辑，而是将将逻辑封装在一个函数中，那么这个函数就可以被视为一个工厂</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">Factory</span><span class="params">(career)</span> </span>&#123;</span><br><span class="line">    <span class="function">function <span class="title">User</span><span class="params">(career, work)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.career = career </span><br><span class="line">        <span class="keyword">this</span>.work = work</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">let work</span></span><br><span class="line"><span class="function">    <span class="title">switch</span><span class="params">(career)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;coder&#x27;</span>:</span><br><span class="line">            work =  [<span class="string">&#x27;写代码&#x27;</span>, <span class="string">&#x27;修Bug&#x27;</span>] </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;hr&#x27;</span>:</span><br><span class="line">            work = [<span class="string">&#x27;招聘&#x27;</span>, <span class="string">&#x27;员工信息管理&#x27;</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;driver&#x27;</span>:</span><br><span class="line">            work = [<span class="string">&#x27;开车&#x27;</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;boss&#x27;</span>:</span><br><span class="line">            work = [<span class="string">&#x27;喝茶&#x27;</span>, <span class="string">&#x27;开会&#x27;</span>, <span class="string">&#x27;审批文件&#x27;</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let coder = <span class="keyword">new</span> Factory(<span class="string">&#x27;coder&#x27;</span>)</span><br><span class="line">console.log(coder)</span><br><span class="line">let boss = <span class="keyword">new</span> Factory(<span class="string">&#x27;boss&#x27;</span>)</span><br><span class="line">console.log(boss)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>当我们调用工厂函数时，只需要传递career就可以获取到包含用户工作内容的实例对象</p>
-<h3 id="抽象工厂"><a href="#抽象工厂" class="headerlink" title="抽象工厂"></a>抽象工厂</h3><p>抽象工厂模式的工作就是生产工厂的</p>
-<p>抽象工厂是接口类，写好接口，然后子类再具体对其进行实现</p>
-<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><p>说白了就是方法复用</p>
-<p>不重复写同一功能的代码</p>
-<h2 id="zookeeper"><a href="#zookeeper" class="headerlink" title="zookeeper"></a>zookeeper</h2><p>分布式协调服务</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230116150903697.png" alt="image-20230116150903697"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/12/virtual-box/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/12/virtual-box/" class="post-title-link" itemprop="url">virtual-box</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-01-12 14:10:56 / Modified: 16:05:38" itemprop="dateCreated datePublished" datetime="2023-01-12T14:10:56+08:00">2023-01-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h2><p>灰色</p>
-<p>更换一下显卡控制器即可自己设定分辨率——改为VBoxVGA</p>
-<h2 id="无法打开Terminal"><a href="#无法打开Terminal" class="headerlink" title="无法打开Terminal"></a>无法打开Terminal</h2><p>语言冲突</p>
-<p>语言和地区调成一致就行</p>
-<h2 id="共享剪切板不生效"><a href="#共享剪切板不生效" class="headerlink" title="共享剪切板不生效"></a>共享剪切板不生效</h2><p>得安装增强</p>
-<p>在ubuntu内</p>
-<p>运行<code>VBoxxx.run</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/12/cpp-web/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/12/cpp-web/" class="post-title-link" itemprop="url">cpp web</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-01-12 09:37:52 / Modified: 11:46:19" itemprop="dateCreated datePublished" datetime="2023-01-12T09:37:52+08:00">2023-01-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>cmake</p>
-<p>g++</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake</span><br><span class="line">sudo apt-get install g++</span><br></pre></td></tr></table></figure>
-
-
-
-<p>boost</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libboost-all-dev</span><br></pre></td></tr></table></figure>
-
-<p>openssl</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libssl-dev</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h2 id="源"><a href="#源" class="headerlink" title="源"></a>源</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i &quot;s@http://.*archive.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g&quot; /etc/apt/sources.list</span><br><span class="line">sudo sed -i &quot;s@http://.*security.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g&quot; /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="check-c-standard"><a href="#check-c-standard" class="headerlink" title="check c++ standard"></a>check c++ standard</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (__cplusplus == <span class="number">201703L</span>) std::cout &lt;&lt; <span class="string">&quot;C++17\n&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (__cplusplus == <span class="number">201402L</span>) std::cout &lt;&lt; <span class="string">&quot;C++14\n&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (__cplusplus == <span class="number">201103L</span>) std::cout &lt;&lt; <span class="string">&quot;C++11\n&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (__cplusplus == <span class="number">199711L</span>) std::cout &lt;&lt; <span class="string">&quot;C++98\n&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> std::cout &lt;&lt; <span class="string">&quot;pre-standard C++\n&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><h3 id="句柄和描述符"><a href="#句柄和描述符" class="headerlink" title="句柄和描述符"></a>句柄和描述符</h3><p>Windows 平台——“句柄”</p>
-<p> Linux 平台——“描述符”</p>
-<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><p>插座</p>
-<p>为了表示和区分已经打开的文件，UNIX/Linux 会给每个文件分配一个 ID，这个 ID 就是一个整数，被称为文件描述符（File Descriptor）。例如：</p>
-<ul>
-<li>通常用 0 来表示标准输入文件（stdin），它对应的硬件设备就是键盘；</li>
-<li>通常用 1 来表示标准输出文件（stdout），它对应的硬件设备就是显示器。</li>
-</ul>
-<p>UNIX/Linux 程序在执行任何形式的 I/O 操作时，都是在读取或者写入一个文件描述符。一个文件描述符只是一个和打开的文件相关联的整数，它的背后可能是一个硬盘上的普通文件、FIFO、管道、终端、键盘、显示器，甚至是一个网络连接。</p>
-<p>请注意，网络连接也是一个文件，它也有文件描述符！你必须理解这句话。</p>
-<p>我们可以通过 socket() 函数来创建一个网络连接，或者说打开一个网络文件，socket() 的返回值就是文件描述符。有了文件描述符，我们就可以使用普通的文件操作函数来传输数据了，例如：</p>
-<ul>
-<li>用 read() 读取从远程计算机传来的数据；</li>
-<li>用 write() 向远程计算机写入数据。</li>
-</ul>
-<p>你看，只要用 socket() 创建了连接，剩下的就是文件操作了，网络编程原来就是如此简单！</p>
-<h2 id="compile-and-run"><a href="#compile-and-run" class="headerlink" title="compile and run"></a>compile and run</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -o output foo.cpp</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="wsl-vs"><a href="#wsl-vs" class="headerlink" title="wsl-vs"></a>wsl-vs</h2><p>修改配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">port=22</span><br><span class="line">PasswordAuthentication yes</span><br><span class="line">PermitRootLogin yes</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>wsl开启ssh</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service ssh start</span><br><span class="line">sudo service ssh restart</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Windows端ssh测试</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh cola@localhost</span><br></pre></td></tr></table></figure>
-
-
-
-<p>如果ok，则开始配置vs</p>
-<p>“Tool” – “Options” – “Cross Platform” – “Connection Manager” – “Add”</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1868,16 +1618,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">313</span>
+          <span class="site-state-item-count">291</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

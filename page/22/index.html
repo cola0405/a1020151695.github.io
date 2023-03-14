@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/09/%E7%AE%97%E6%B3%95-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/30/%E6%95%B0%E5%AD%A6-%E9%97%B4%E6%96%AD%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -191,7 +191,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/09/%E7%AE%97%E6%B3%95-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="post-title-link" itemprop="url">算法-时间复杂度</a>
+            <a href="/2021/06/30/%E6%95%B0%E5%AD%A6-%E9%97%B4%E6%96%AD%E7%82%B9/" class="post-title-link" itemprop="url">数学-间断点</a>
         </h2>
 
         <div class="post-meta">
@@ -201,102 +201,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-09 16:09:56" itemprop="dateCreated datePublished" datetime="2021-07-09T16:09:56+08:00">2021-07-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:34:34" itemprop="dateModified" datetime="2022-06-27T15:34:34+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="时间复杂度分析过程"><a href="#时间复杂度分析过程" class="headerlink" title="时间复杂度分析过程"></a>时间复杂度分析过程</h1><p>循环嵌套的时间复杂度</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716222020880.png" alt="image-20210716222020880"></p>
-<p>答：时间复杂度为$$O(log_2n)$$</p>
-<p>要计算k=k+1的执行次数</p>
-<p>对于for循环：因为$$n=2^t$$故有$$T_0(n)=O(log_2n)$$</p>
-<p>对于while循环：仅有n&gt;=1的判断故有$$T_1(n)=O(1)$$</p>
-<p>综上：$$T(n) = T_0(n)*T_1(n) = O(log_2n)*O(1) = O(log_2n)$$</p>
-<hr>
-<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><h2 id="理解时间复杂"><a href="#理解时间复杂" class="headerlink" title="理解时间复杂"></a>理解时间复杂</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725203332174.png" alt="image-20210725203332174"></p>
-<h2 id="最坏情况的理解"><a href="#最坏情况的理解" class="headerlink" title="最坏情况的理解"></a>最坏情况的理解</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725203432101.png" alt="image-20210725203432101"></p>
-<p><font color=blue>是客观的最坏情况，而不是最笨的方法</font></p>
-<p>首先明确合并的方法：</p>
-<p><font color=green>另外新建一个链表</font></p>
-<p><font color=green>每次看两个列表的头元素，根据大小关系把他们接到新的链表中</font></p>
-<p><font color=red>最坏的情况下我也可以一套带走，则数量级就是n，然后取max(m, n)</font></p>
-<h2 id="抽象的O-n-1-2"><a href="#抽象的O-n-1-2" class="headerlink" title="抽象的O(n^1/2^)"></a>抽象的O(n^1/2^)</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725204102430.png" alt="image-20210725204102430"></p>
-<p>分析：</p>
-<p>a<del>1</del>=0</p>
-<p>d=1</p>
-<p>a<del>n</del>=n-1</p>
-<p>S<del>n</del>=$$\frac{n(n-1)}{2}$$</p>
-<p>数量级为O($n^2$)</p>
-<p>即sum的累计速度能达到$$n^2$$</p>
-<p>故循环次数为$$\sqrt{n}$$</p>
-<p><font color=blue>举一反三：</font></p>
-<p>当sum的积累速度达到$$2^n$$时，即</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sum=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(sum&lt;=n)</span><br><span class="line">    sum*=<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-
-<p>此时循环次数为$$log_2n$$</p>
-<p>即时间复杂度为$$O(log_2n)$$</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/07/%E6%95%B0%E5%AD%A6-%E6%9B%B2%E7%8E%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/07/%E6%95%B0%E5%AD%A6-%E6%9B%B2%E7%8E%87/" class="post-title-link" itemprop="url">数学-曲率</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-07 17:33:04" itemprop="dateCreated datePublished" datetime="2021-07-07T17:33:04+08:00">2021-07-07</time>
+              <time title="Created: 2021-06-30 16:56:22" itemprop="dateCreated datePublished" datetime="2021-06-30T16:56:22+08:00">2021-06-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -317,612 +222,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707173612864.png" alt="image-20210707173612864"></p>
-<p>两函数再x0处的一阶二阶导相等则在x0处它们曲率相等</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/07/%E6%95%B0%E5%AD%A6-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/07/%E6%95%B0%E5%AD%A6-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="post-title-link" itemprop="url">数学-微分方程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-07 09:42:28" itemprop="dateCreated datePublished" datetime="2021-07-07T09:42:28+08:00">2021-07-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="什么是微分方程"><a href="#什么是微分方程" class="headerlink" title="什么是微分方程"></a>什么是微分方程</h1><p>表示未知函数的导数和自变量关系的方程</p>
-<h1 id="微分方程的阶"><a href="#微分方程的阶" class="headerlink" title="微分方程的阶"></a>微分方程的阶</h1><p>最高阶导数的阶数</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707094811726.png" alt="image-20210707094811726"></p>
-<h1 id="通解和特解"><a href="#通解和特解" class="headerlink" title="通解和特解"></a>通解和特解</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707094325973.png" alt="image-20210707094325973"></p>
-<h2 id="通解的例子"><a href="#通解的例子" class="headerlink" title="通解的例子"></a>通解的例子</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707094952450.png" alt="image-20210707094952450"></p>
-<p>(1-3)是(1-1)的通解</p>
-<h2 id="特解和通解之间的关系"><a href="#特解和通解之间的关系" class="headerlink" title="特解和通解之间的关系"></a>特解和通解之间的关系</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707095141686.png" alt="image-20210707095141686"></p>
-<p>例子</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707095244171.png" alt="image-20210707095244171"></p>
-<hr>
-<h1 id="齐次"><a href="#齐次" class="headerlink" title="齐次"></a>齐次</h1><h2 id="齐次微分方程"><a href="#齐次微分方程" class="headerlink" title="齐次微分方程"></a>齐次微分方程</h2><p>能用y/x表示导数</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707095617452.png" alt="image-20210707095617452"></p>
-<h2 id="齐次线性微分方程"><a href="#齐次线性微分方程" class="headerlink" title="齐次线性微分方程"></a>齐次线性微分方程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911105303883.png" alt="image-20210911105303883"></p>
-<p>右侧为0</p>
-<h2 id="详细解析"><a href="#详细解析" class="headerlink" title="详细解析"></a>详细解析</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911110403585.png" alt="image-20210911110403585"></p>
-<h1 id="齐次微分方程-1"><a href="#齐次微分方程-1" class="headerlink" title="齐次微分方程"></a>齐次微分方程</h1><h2 id="可分离变量的方程"><a href="#可分离变量的方程" class="headerlink" title="可分离变量的方程"></a>可分离变量的方程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911101233765.png" alt="image-20210911101233765"></p>
-<p><font color=blue>移项、积分</font></p>
-<h3 id="因式分解"><a href="#因式分解" class="headerlink" title="因式分解"></a>因式分解</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911102500243.png" alt="image-20210911102500243"></p>
-<p><font color=red>因式分解，硬把xy拆分开来</font></p>
-<p><font color=red>这是这类题最基本的解题方法</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911102909343.png" alt="image-20210911102909343"></p>
-<h3 id="对数型"><a href="#对数型" class="headerlink" title="对数型"></a>对数型</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911103415792.png" alt="image-20210911103415792"></p>
-<p><font color=red>注意书写格式，y≠0</font></p>
-<p><font color=red>对数型一般要化简成Ce的形式</font></p>
-<p>还利用通解公式：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911111622560.png" alt="image-20210911111622560"></p>
-<h2 id="齐次线性方程"><a href="#齐次线性方程" class="headerlink" title="齐次线性方程"></a>齐次线性方程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911110647561.png" alt="image-20210911110647561"></p>
-<p><font color=red>y=ux，分别对方程两边求导</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714230508553.png" alt="image-20210714230508553"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713194241741.png" alt="image-20210713194241741"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911110819675.png" alt="image-20210911110819675"></p>
-<h1 id="一阶线性微分方程"><a href="#一阶线性微分方程" class="headerlink" title="一阶线性微分方程"></a>一阶线性微分方程</h1><p><font color=red>多了 “线性” 二字</font></p>
-<h2 id="一阶齐次线性微分方程"><a href="#一阶齐次线性微分方程" class="headerlink" title="一阶齐次线性微分方程"></a>一阶齐次线性微分方程</h2><h3 id="形如"><a href="#形如" class="headerlink" title="形如"></a>形如</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714230508553.png" alt="image-20210714230508553"></p>
-<h3 id="通解"><a href="#通解" class="headerlink" title="通解"></a>通解</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911111217783.png" alt="image-20210911111217783"></p>
-<h3 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713194241741.png" alt="image-20210713194241741"></p>
-<h3 id="套公式"><a href="#套公式" class="headerlink" title="套公式"></a>套公式</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911111622560.png" alt="image-20210911111622560"></p>
-<h2 id="一阶非齐次线性微分方程"><a href="#一阶非齐次线性微分方程" class="headerlink" title="一阶非齐次线性微分方程"></a>一阶非齐次线性微分方程</h2><h3 id="形如-1"><a href="#形如-1" class="headerlink" title="形如"></a>形如</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714231349638.png" alt="image-20210714231349638"></p>
-<h3 id="通解-1"><a href="#通解-1" class="headerlink" title="通解"></a>通解</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911111324670.png" alt="image-20210911111324670"></p>
-<h3 id="推导过程-1"><a href="#推导过程-1" class="headerlink" title="推导过程"></a>推导过程</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714231338019.png" alt="image-20210714231338019"></p>
-<p>通解</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713194528489.png" alt="image-20210713194528489"></p>
-<h3 id="直接套公式"><a href="#直接套公式" class="headerlink" title="直接套公式"></a>直接套公式</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911112023765.png" alt="image-20210911112023765"></p>
-<p>就可以了</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713193005592.png" alt="image-20210713193005592"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713193349110.png" alt="image-20210713193349110"></p>
-<h3 id="dx-dy-型（变形后再套）"><a href="#dx-dy-型（变形后再套）" class="headerlink" title="dx/dy 型（变形后再套）"></a>dx/dy 型（变形后再套）</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911112132385.png" alt="image-20210911112132385"> </p>
-<h1 id="高阶线性微分方程"><a href="#高阶线性微分方程" class="headerlink" title="高阶线性微分方程"></a>高阶线性微分方程</h1><h2 id="常系数齐次线性微分方程"><a href="#常系数齐次线性微分方程" class="headerlink" title="常系数齐次线性微分方程"></a>常系数齐次线性微分方程</h2><p><font color=red>上面齐次微分方程的系数是P(x)，不是常数，以此区分开来</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707101330325.png" alt="image-20210707101330325"></p>
-<h2 id="常系数非齐次线性微分方程"><a href="#常系数非齐次线性微分方程" class="headerlink" title="常系数非齐次线性微分方程"></a>常系数非齐次线性微分方程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707101649488.png" alt="image-20210707101649488"></p>
-<p>Ps：</p>
-<p>特解中的λ和特征方程的解无关，而是与f(x)联系</p>
-<p>“k为特征方程含根λ的重复次数”解释：在f(x)中得到λ的值，再看特征方程的解中有几个和λ值相等的解</p>
-<p>“Q(x)与P(x)同次”解释：若P(x)中有x，则设Q(x)=b0x+b1</p>
-<p>具体看例题</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707103234211.png" alt="image-20210707103234211"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210708101658924.png" alt="image-20210708101658924"></p>
-<p>Ps：</p>
-<p><font color=red>非齐次的通解=齐次通解+特解</font></p>
-<p>NM，这特解代入走一遍我人没了</p>
-<hr>
-<p>还有一种更简单的，不含ex（即λ=0）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707103328214.png" alt="image-20210707103328214"></p>
-<p>真题</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707101901899.png" alt="image-20210707101901899"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707101850780.png" alt="image-20210707101850780"></p>
-<p>Ps：</p>
-<p>给出的通解其实告知了我们特解为ex</p>
-<p>则把特解代入原式即可求解c的值</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/06/%E6%95%B0%E5%AD%A6-%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/06/%E6%95%B0%E5%AD%A6-%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">数学-反常积分</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-06 18:55:34" itemprop="dateCreated datePublished" datetime="2021-07-06T18:55:34+08:00">2021-07-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>分为无穷积分和瑕积分</p>
-<h4 id="无穷积分"><a href="#无穷积分" class="headerlink" title="无穷积分"></a>无穷积分</h4><p>积分限带无穷</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706190730876.png" alt="image-20210706190730876"></p>
-<p>遇到的坑</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706194719745.png" alt="image-20210706194719745"></p>
-<p><font color=red>x遇上e^-x时，把ex放到底下洛</font></p>
-<h4 id="瑕积分"><a href="#瑕积分" class="headerlink" title="瑕积分"></a>瑕积分</h4><h5 id="瑕点"><a href="#瑕点" class="headerlink" title="瑕点"></a>瑕点</h5><p>被积函数f在点a近旁是无界的，点a称为f的瑕点</p>
-<p>例子</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706190616699.png" alt="image-20210706190616699"></p>
-<p>该积分使用分部积分，是x乘对数型，可参考</p>
-<p>$-\frac{1}{4}$</p>
-<h4 id="反常积分敛散性"><a href="#反常积分敛散性" class="headerlink" title="反常积分敛散性"></a>反常积分敛散性</h4><p>极限存在即收敛（结果为无穷即不存在，发散）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706195419370.png" alt="image-20210706195419370"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706195453116.png" alt="image-20210706195453116"></p>
-<p>Ps：</p>
-<p>A为x乘ex型，利用分部积分</p>
-<p>B直接法即可</p>
-<p>C是第一类换元，把1/(1+x^2)提上去</p>
-<p>D为反常积分发散的具体例子（无穷即为不存在）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706195628521.png" alt="image-20210706195628521"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/05/%E6%95%B0%E5%AD%A6-%E6%97%8B%E8%BD%AC%E4%BD%93%E4%BD%93%E7%A7%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/05/%E6%95%B0%E5%AD%A6-%E6%97%8B%E8%BD%AC%E4%BD%93%E4%BD%93%E7%A7%AF/" class="post-title-link" itemprop="url">数学-旋转体体积</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-05 18:03:54" itemprop="dateCreated datePublished" datetime="2021-07-05T18:03:54+08:00">2021-07-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>重在画图</p>
-<p>例题</p>
-<h5 id="环曲面体积分"><a href="#环曲面体积分" class="headerlink" title="环曲面体积分"></a>环曲面体积分</h5><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705180413077.png" alt="image-20210705180413077"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705180430975.png" alt="image-20210705180430975"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705180759598.png" alt="image-20210705180759598"></p>
-<p>俯视图</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705180443440.png" alt="image-20210705180443440"></p>
-<p>使用底面积x高的方法求体积</p>
-<p>底的话时相当于求环的面积，大圆减小圆</p>
-<p>由于高用y积分表示，故底也用y表示x，然后</p>
-<p>由y=ex得x=y/e</p>
-<p>由y=e^x得x=lny</p>
-<p>则体积为：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705182505781.png" alt="image-20210705182505781"></p>
-<hr>
-<h5 id="曲面体积分和立体分割"><a href="#曲面体积分和立体分割" class="headerlink" title="曲面体积分和立体分割"></a>曲面体积分和立体分割</h5><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706153801574.png" alt="image-20210706153801574"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706154421591.png" alt="image-20210706154421591"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706155034325.png" alt="image-20210706155034325"></p>
-<p>这里我自己的解法更容易理解，把旋转体分成两部分</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210708121701240.png" alt="image-20210708121701240"></p>
-<p>然后利用底d高积分</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210708122117803.png" alt="image-20210708122117803"></p>
-<p>Ps：</p>
-<p>arctan根号3=60°</p>
-<p>三角函数更多可参考</p>
-<p>画出区域后乱积都</p>
-<hr>
-<h5 id="函数表示底面积然后对高积分"><a href="#函数表示底面积然后对高积分" class="headerlink" title="函数表示底面积然后对高积分"></a>函数表示底面积然后对高积分</h5><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713193005592.png" alt="image-20210713193005592"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713193349110.png" alt="image-20210713193349110"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/05/%E6%95%B0%E5%AD%A6-%E6%B8%90%E8%BF%91%E7%BA%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/05/%E6%95%B0%E5%AD%A6-%E6%B8%90%E8%BF%91%E7%BA%BF/" class="post-title-link" itemprop="url">数学-渐近线</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-05 10:52:49" itemprop="dateCreated datePublished" datetime="2021-07-05T10:52:49+08:00">2021-07-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="判定"><a href="#判定" class="headerlink" title="判定"></a>判定</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133910385.png" alt="image-20210918133910385"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705105324896.png" alt="image-20210705105324896"></p>
-<h1 id="求斜渐近线【-】"><a href="#求斜渐近线【-】" class="headerlink" title="求斜渐近线【++++++】"></a>求斜渐近线【++++++】</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705105339153.png" alt="image-20210705105339153"></p>
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705105312578.png" alt="image-20210705105312578"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705105402144.png" alt="image-20210705105402144"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210708201953059.png" alt="image-20210708201953059"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706100125599.png" alt="image-20210706100125599"></p>
-<hr>
-<h2 id="渐近线【-】"><a href="#渐近线【-】" class="headerlink" title="渐近线【++++++】"></a>渐近线【++++++】</h2><p><font color=red>还涉及到了局部代换禁止</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133241463.png" alt="image-20210918133241463"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133253104.png" alt="image-20210918133253104"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133307940.png" alt="image-20210918133307940"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133910385.png" alt="image-20210918133910385"></p>
-<p><font color=red>局部代换禁止</font></p>
-<p>错误示范</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918135630515.png" alt="image-20210918135630515"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E6%95%B0%E5%AD%A6-%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/04/%E6%95%B0%E5%AD%A6-%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">数学-二重积分</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-04 17:16:42" itemprop="dateCreated datePublished" datetime="2021-07-04T17:16:42+08:00">2021-07-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="理解二重积分"><a href="#理解二重积分" class="headerlink" title="理解二重积分"></a>理解二重积分</h1><p>一重积分积出面，二重积分积出体</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922211003119.png" alt="image-20210922211003119"></p>
-<h1 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h1><p><font color=red>“原式解定积分”</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163317329.png" alt="image-20210706163317329"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163630234.png" alt="image-20210706163630234"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163310523.png" alt="image-20210706163310523"></p>
-<p>Ps：</p>
-<p>换元后，这里不需要对dx和dy做下放处理</p>
-<p>需要做的是把dx和dy换成dθ和dr并重新确定积分限</p>
-<p>一般是后积θ，因为积分限角度是常数</p>
-<p>积分限参考上面画的函数图像的范围</p>
-<p>积dr时，θ相当于常数可以先移到外面</p>
-<p>设计到sec的奇数次积分可参考</p>
-<h1 id="二重积分改变积分顺序"><a href="#二重积分改变积分顺序" class="headerlink" title="二重积分改变积分顺序"></a>二重积分改变积分顺序</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704183533426.png" alt="image-20210704183533426"></p>
-<p>用积分限的上下确定积分区域</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704185959377.png"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704183015340.png" alt="image-20210704183015340"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704190313855.png" alt="image-20210704190313855"></p>
-<p>Ps：</p>
-<p><strong>因为sinx/x对于dy来说相当于常数，所以可以随意移出去</strong></p>
-<p>然后关于xsinx的积分，则使用x乘sin型分部积分</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704182956051.png" alt="image-20210704182956051"></p>
-<p>在平面直角坐标系中画出积分限的图像</p>
-<p>两块区域合成一片区域，然后只对那新的一块区域进行积分即可</p>
-<hr>
-<h1 id="奇偶性求二重积分"><a href="#奇偶性求二重积分" class="headerlink" title="奇偶性求二重积分"></a>奇偶性求二重积分</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922211403467.png" alt="image-20210922211403467"></p>
-<h1 id="明确一些概念"><a href="#明确一些概念" class="headerlink" title="明确一些概念"></a>明确一些概念</h1><h2 id="二重积分和二次积分"><a href="#二重积分和二次积分" class="headerlink" title="二重积分和二次积分"></a>二重积分和二次积分</h2><p>严格意义上来说上面这些是二次积分，二重积分是这样的</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704191305150.png" alt="image-20210704191305150"></p>
-<h2 id="X型和Y型"><a href="#X型和Y型" class="headerlink" title="X型和Y型"></a>X型和Y型</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704191456461.png" alt="image-20210704191456461"></p>
-<p>X型即dy，积分限用x表示</p>
-<hr>
-<h1 id="二重积分法"><a href="#二重积分法" class="headerlink" title="二重积分法"></a>二重积分法</h1><p>先积的是x，则提出无关的y，就容易了</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706155710893.png" alt="image-20210706155710893"></p>
-<h1 id="二重积分比较大小"><a href="#二重积分比较大小" class="headerlink" title="二重积分比较大小"></a>二重积分比较大小</h1><p>当积分限一样时，比较被积函数的大小即可</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707171633757.png" alt="image-20210707171633757"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210919093335656.png" alt="image-20210919093335656"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210919092542955.png" alt="image-20210919092542955"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E6%95%B0%E5%AD%A6-%E6%95%B0%E5%AD%A6%E5%BA%94%E8%AF%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/04/%E6%95%B0%E5%AD%A6-%E6%95%B0%E5%AD%A6%E5%BA%94%E8%AF%95/" class="post-title-link" itemprop="url">数学-数学应试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-04 13:33:41" itemprop="dateCreated datePublished" datetime="2021-07-04T13:33:41+08:00">2021-07-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210804232626728.png" alt="image-20210804232626728"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210804232640037.png" alt="image-20210804232640037"></p>
-<h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="考研数学怎么出题"><a href="#考研数学怎么出题" class="headerlink" title="考研数学怎么出题"></a>考研数学怎么出题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707174505197.png" alt="image-20210707174505197"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707175835450.png" alt="image-20210707175835450"></p>
-<p>上式中的分母(x-a)^2不可以直接当作(x-a)来带进定义式</p>
-<p>因为这是x逼近与a，(x-a)的值不能直接当0处理</p>
-<p>正确打开上式的方式的是<strong>洛必达</strong></p>
-<p>很容易忽略的一点，已知条件为<strong>相切，除了告知导数值相等外，该点的函数值也是相等的</strong></p>
-<p>但是等值代换确是可以</p>
-<p><font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font></p>
-<p>可以得出f(x)=g(x)但是0/0的极限值为0是得不出来的</p>
-<h2 id="题意构造法"><a href="#题意构造法" class="headerlink" title="题意构造法"></a>题意构造法</h2><p><font color=blue>根据题意去构造</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704133409946.png" alt="image-20210704133409946"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704133856494.png" alt="image-20210704133856494"></p>
-<h2 id="便利构造法"><a href="#便利构造法" class="headerlink" title="便利构造法"></a>便利构造法</h2><p><font color=blue>题目的限制条件少，可以选择简单的实例暴力排除</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816233102055.png" alt="image-20210816233102055"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816233402686.png" alt="image-20210816233402686"></p>
-<h2 id="提高暴力法效率"><a href="#提高暴力法效率" class="headerlink" title="提高暴力法效率"></a>提高暴力法效率</h2><p> 一个例子试四次，把ABCD选项都试一遍</p>
-<p>效率可能会更高</p>
-<h2 id="N问题"><a href="#N问题" class="headerlink" title="N问题"></a>N问题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102424227.png" alt="image-20210912102424227"></p>
-<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
-<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102432946.png" alt="image-20210912102432946"></p>
-<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
-<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
-<h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1><h2 id="填空题也可以暴力法"><a href="#填空题也可以暴力法" class="headerlink" title="填空题也可以暴力法"></a>填空题也可以暴力法</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824123355236.png" alt="image-20210824123355236"></p>
-<p>暴力法：</p>
-<p>假设出复合符合题意的AB</p>
-<p>乘积等于和，比较容易想到的是2*2=2+2</p>
-<p>则有：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824123552288.png" alt="image-20210824123552288"></p>
-<p>然后一个例子一般是不能确认答案的</p>
-<p>一般再来一个，AB搞成3阶的</p>
-<p>若一致无矛盾，则OK了</p>
-<p>正确解析：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824123348602.png" alt="image-20210824123348602"></p>
-<h2 id="暴力中的暴力"><a href="#暴力中的暴力" class="headerlink" title="暴力中的暴力"></a>暴力中的暴力</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912154824033.png" alt="image-20210912154824033"></p>
-<p><font color=red>“x” 趋于0才可以代换</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915170816342.png" alt="image-20210915170816342"></p>
-<p>答案：1</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915184622874.png" alt="image-20210915184622874"></p>
-<p><font color=red>两次暴力，一般答案就不带参数了，放心写</font></p>
-<h2 id="特殊值法的坑"><a href="#特殊值法的坑" class="headerlink" title="特殊值法的坑"></a>特殊值法的坑</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092334055.png" alt="image-20210913092334055"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092406321.png" alt="image-20210913092406321"></p>
-<p>特殊值法确实使得即算方便了</p>
-<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
-<p><font color=red>答案带参数</font></p>
-<p>再回到这道题（尽力观察吧，看参数是否会影响洛的结果）</p>
-<p>这道题其实不难看出来</p>
-<p>利用$$e^{- \infty }$$的特殊性</p>
-<hr>
-<h2 id="出题人不一定是坏人"><a href="#出题人不一定是坏人" class="headerlink" title="出题人不一定是坏人"></a>出题人不一定是坏人</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913161744051.png" alt="image-20210913161744051"></p>
+          <h1 id="间断点划分"><a href="#间断点划分" class="headerlink" title="间断点划分"></a>间断点划分</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210909095233236.png" alt="image-20210909095233236"></p>
+<p>key：符号正负</p>
+<h1 id="各种类型间断点的函数图像"><a href="#各种类型间断点的函数图像" class="headerlink" title="各种类型间断点的函数图像"></a>各种类型间断点的函数图像</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630194734783.png" alt="image-20210630194734783"></p>
+<h1 id="什么叫“左右极限至少有一个不存在”"><a href="#什么叫“左右极限至少有一个不存在”" class="headerlink" title="什么叫“左右极限至少有一个不存在”"></a>什么叫“左右极限至少有一个不存在”</h1><p>左右极限为无穷时，即称为“极限不存在”</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630194837869.png" alt="image-20210630194837869"></p>
+<h1 id="间断点判断"><a href="#间断点判断" class="headerlink" title="间断点判断"></a>间断点判断</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210909095310868.png" alt="image-20210909095310868"></p>
+<p>Ps：判断是否为间断点时，直接x0</p>
+<p>判断具体是哪类间断点时，需要用到左右极限</p>
+<h1 id="求间断点个数"><a href="#求间断点个数" class="headerlink" title="求间断点个数"></a>求间断点个数</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630171428082.png" alt="image-20210630171428082"></p>
+<p>错误解法：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630171651371.png"></p>
+<p>注意，x-&gt;0时，sinx是趋近于0的</p>
+<p><font color=red>即问题其实是∞·0</font></p>
+<p>不能用这样的暴力法</p>
+<p>正确的解法是遵循x-&gt;0的暗示，利用等价无穷小求x=0时的极限</p>
+<p>（乘除可带换，求出是0就是极限为0，可去间断点）</p>
+<h1 id="原封不动"><a href="#原封不动" class="headerlink" title="原封不动"></a>原封不动</h1><p>值为无穷或0时，原封不动</p>
+<p>再求极限</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630184128576.png" alt="image-20210630184128576"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630195549794.png" alt="image-20210630195549794"></p>
+<p>关于①的易错：</p>
+<p>容易偷换概念成：$$\frac{lnx}{e^x-1}$$</p>
+<p><font color=red>因为$ln(1+x)$在x趋于0时值为0，故原封不动</font></p>
+<p><font color=red>有0时，联想到等价代换，方便解决问题</font></p>
+<h1 id="间断点定义的掌握【-】"><a href="#间断点定义的掌握【-】" class="headerlink" title="间断点定义的掌握【++++】"></a>间断点定义的掌握【++++】</h1><p><font color=red>洛必达是有条件的</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913161744051.png" alt="image-20210913161744051"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913161753855.png" alt="image-20210913161753855"></p>
 <p><font color=red>顺着出题人的意思走，就不会迷失于间断点的三个判定规则了</font></p>
 <p>虽然我个人不确定f(x) 的间断点只有两个</p>
@@ -931,97 +256,6 @@
 <p><font color=red>忽略了洛必达也是有条件的</font></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913162253174.png" alt="image-20210913162253174"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913162146786.png" alt="image-20210913162146786"></p>
-<h1 id="习惯"><a href="#习惯" class="headerlink" title="习惯"></a>习惯</h1><p>不急于求成，一步步稳扎稳打，草稿工整（以备验算）</p>
-<p><font color=red>如何有效验算呢</font></p>
-<p>答案稀奇古怪时记得多个心眼</p>
-<h2 id="鼠目寸光"><a href="#鼠目寸光" class="headerlink" title="鼠目寸光"></a>鼠目寸光</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102424227.png" alt="image-20210912102424227"></p>
-<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
-<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102432946.png" alt="image-20210912102432946"></p>
-<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
-<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
-<p>牛牛牛</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211109192656441.png" alt="image-20211109192656441"></p>
-<p>1-cos 不用代换，而是用来洛</p>
-<hr>
-<h2 id="暗示可消"><a href="#暗示可消" class="headerlink" title="暗示可消"></a>暗示可消</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920090246718.png" alt="image-20210920090246718"></p>
-<h2 id="这明明是错误的"><a href="#这明明是错误的" class="headerlink" title="这明明是错误的"></a>这明明是错误的</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192202477.png" alt="image-20210923192202477"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192426446.png" alt="image-20210923192426446"></p>
-<p>我错选了A，因为λ为1的时候看到都没问题</p>
-<p>就选了最前面的A（为了贪时间）</p>
-<p>明明知道肯定不选A的—–<font color=red>无论如何各种路实际走一下，碰出个不一样的答案</font></p>
-<h1 id="恒等式的坑"><a href="#恒等式的坑" class="headerlink" title="恒等式的坑"></a>恒等式的坑</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824121426700.png" alt="image-20210824121426700"></p>
-<p>解析：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824121442617.png" alt="image-20210824121442617"></p>
-<p><font color=red>D的表述并不是说r(A)=1, r(A-E)=1</font></p>
-<p>我们常用恒等式，但这存在的坑一定要小心</p>
-<h1 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h1><h2 id="最终的eln"><a href="#最终的eln" class="headerlink" title="最终的eln"></a>最终的eln</h2><p><font color=red>最终结果一般要把eln给化掉</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160003298.png" alt="image-20210912160003298"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160017462.png" alt="image-20210912160017462"></p>
-<p>我的答案：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160111597.png" alt="image-20210912160111597"></p>
-<h2 id="最后的正负号"><a href="#最后的正负号" class="headerlink" title="最后的正负号"></a>最后的正负号</h2><p>拿笔算</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911173122229.png" alt="image-20210911173122229"></p>
-<p>解析：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911173411512.png" alt="image-20210911173411512"></p>
-<p><font color=red>出题人喜欢在符号上挖坑</font></p>
-<p>辛辛苦苦做出来了，但是符号没搞对</p>
-<p>最好的应对方法是:</p>
-<p><font color=blue size=5>不嫌麻烦，每一行都不省略</font></p>
-<h2 id="特殊值法的坑-1"><a href="#特殊值法的坑-1" class="headerlink" title="特殊值法的坑"></a>特殊值法的坑</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092334055.png" alt="image-20210913092334055"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092406321.png" alt="image-20210913092406321"></p>
-<p>特殊值法确实使得即算方便了</p>
-<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
-<p><font color=red>答案带参数</font></p>
-<p>再回到这道题</p>
-<p>利用$$e^{- \infty }$$的特殊性</p>
-<h1 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h1><h2 id="左右导数"><a href="#左右导数" class="headerlink" title="左右导数"></a>左右导数</h2><p>$$f’_{+}(2)$$</p>
-<p>$$f’_{-}(1)$$</p>
-<h2 id="由得"><a href="#由得" class="headerlink" title="由得"></a>由得</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210910173732467.png" alt="image-20210910173732467"></p>
-<h2 id="罗尔定理连写"><a href="#罗尔定理连写" class="headerlink" title="罗尔定理连写"></a>罗尔定理连写</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210910173827428.png" alt="image-20210910173827428"></p>
-<h2 id="计算过程"><a href="#计算过程" class="headerlink" title="计算过程"></a>计算过程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211212083410490.png" alt="image-20211212083410490"></p>
-<h1 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h1><h2 id="复杂导数运算"><a href="#复杂导数运算" class="headerlink" title="复杂导数运算"></a>复杂导数运算</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917161714247.png" alt="image-20210917161714247"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917162025829.png" alt="image-20210917162025829"></p>
-<p><font color=red>两条路线，截然不同的难度</font></p>
-<h2 id="求极限–局部代换禁止【-】"><a href="#求极限–局部代换禁止【-】" class="headerlink" title="求极限–局部代换禁止【+】"></a>求极限–局部代换禁止【+】</h2><p><font color=red>还涉及到了局部代换禁止</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133241463.png" alt="image-20210918133241463"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133253104.png" alt="image-20210918133253104"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133307940.png" alt="image-20210918133307940"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133910385.png" alt="image-20210918133910385"></p>
-<p><font color=red>局部代换禁止</font></p>
-<p>错误示范</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918135630515.png" alt="image-20210918135630515"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211110094252565.png" alt="image-20211110094252565"></p>
-<p><font color=red>根号也洛它，因为没路走了</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211110094123935.png" alt="image-20211110094123935"></p>
-<h2 id="化简"><a href="#化简" class="headerlink" title="化简"></a>化简</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914101304444.png" alt="image-20210914101304444"></p>
-<h2 id="复杂根号的求导"><a href="#复杂根号的求导" class="headerlink" title="复杂根号的求导"></a>复杂根号的求导</h2><p>（已知参数方程求导数）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704135103082.png" alt="image-20210704135103082"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704135010581.png" alt="image-20210704135010581"></p>
-<p><font color=red>不要慌，大多时候都是可以抵消掉的</font></p>
-<p><font color=red>你应该开心才是</font></p>
-<h2 id="配凑幂"><a href="#配凑幂" class="headerlink" title="配凑幂"></a>配凑幂</h2><p><font color=red>解决幂问题的方法不止eln一种</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110039065.png" alt="image-20210912110039065"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110022191.png" alt="image-20210912110022191"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110030545.png" alt="image-20210912110030545"></p>
-<h2 id="分式相减【-】"><a href="#分式相减【-】" class="headerlink" title="分式相减【+】"></a>分式相减【+】</h2><p><font color=red>分式相减，合一下试试</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912155007856.png" alt="image-20210912155007856"></p>
-<p>答案：2</p>
-<p>$$arctanx\backsim x$$</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912155407095.png" alt="image-20210912155407095"></p>
-<h2 id="分式的浪漫【-】"><a href="#分式的浪漫【-】" class="headerlink" title="分式的浪漫【+】"></a>分式的浪漫【+】</h2><p><font color=red>其实不仅限于eln，遇到分式都可以洛洛</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912161726673.png" alt="image-20210912161726673"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912161915863.png" alt="image-20210912161915863"></p>
-<h2 id="指数函数"><a href="#指数函数" class="headerlink" title="指数函数"></a>指数函数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913154045916.png" alt="image-20210913154045916"></p>
-<h2 id="三角函数与三角函数"><a href="#三角函数与三角函数" class="headerlink" title="三角函数与三角函数"></a>三角函数与三角函数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913105004393.png" alt="image-20210913105004393"></p>
-<h2 id="最值问题灵活处理"><a href="#最值问题灵活处理" class="headerlink" title="最值问题灵活处理"></a>最值问题灵活处理</h2><p><font color=red>利用不等式变形，转化了问题</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917170324709.png" alt="image-20210917170324709"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917170330272.png" alt="image-20210917170330272"></p>
-<p>我错误的解法是硬从f(x)出发</p>
-<p>然后走了很多弯路（<font color=red>其实做的时候就应该发觉了，这是不归路</font>）</p>
-<p><font color=blue>方向对了，少走很多弯路</font></p>
-<h2 id="绝对值和反常积分【-】"><a href="#绝对值和反常积分【-】" class="headerlink" title="绝对值和反常积分【+】"></a>绝对值和反常积分【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210924170033261.png" alt="image-20210924170033261"></p>
-<p><font color=red>遇到绝对值的第一反应就是去绝对值</font></p>
-<p><font color=red>反常积分通常与奇偶性结合考察</font></p>
 
       
     </div>
@@ -1041,7 +275,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E6%95%B0%E5%AD%A6-%E5%AF%BC%E6%95%B0%E5%92%8C%E5%BE%AE%E5%88%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/30/%E6%95%B0%E5%AD%A6-%E6%9E%81%E9%99%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -1055,7 +289,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/04/%E6%95%B0%E5%AD%A6-%E5%AF%BC%E6%95%B0%E5%92%8C%E5%BE%AE%E5%88%86/" class="post-title-link" itemprop="url">数学-导数和微分</a>
+            <a href="/2021/06/30/%E6%95%B0%E5%AD%A6-%E6%9E%81%E9%99%90/" class="post-title-link" itemprop="url">数学-极限</a>
         </h2>
 
         <div class="post-meta">
@@ -1065,7 +299,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-04 13:16:12" itemprop="dateCreated datePublished" datetime="2021-07-04T13:16:12+08:00">2021-07-04</time>
+              <time title="Created: 2021-06-30 09:25:40" itemprop="dateCreated datePublished" datetime="2021-06-30T09:25:40+08:00">2021-06-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -1086,76 +320,133 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="常用导数公式"><a href="#常用导数公式" class="headerlink" title="常用导数公式"></a>常用导数公式</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706175938655.png" alt="image-20210706175938655"></p>
-<h1 id="导数定义式"><a href="#导数定义式" class="headerlink" title="导数定义式"></a>导数定义式</h1><h2 id="导数定义式变形【-】"><a href="#导数定义式变形【-】" class="headerlink" title="导数定义式变形【+++++】"></a>导数定义式变形【+++++】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914201539038.png" alt="image-20210914201539038"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914201548218.png" alt="image-20210914201548218"></p>
-<p><font color=red>key抓着就代到定义式里去先，其他该配合的配合就好了</font></p>
-<p><font color=red>负的Δx是出题</font></p>
-<h1 id="对x求导和对a-x求导"><a href="#对x求导和对a-x求导" class="headerlink" title="对x求导和对a+x求导"></a>对x求导和对a+x求导</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915111514931.png" alt="image-20210915111514931"></p>
-<p>$$f’()$$都是统一向<font color=red>自变量</font>求导</p>
-<p>而不是x+1</p>
-<h1 id="已知f-x-求f’-x-【-】"><a href="#已知f-x-求f’-x-【-】" class="headerlink" title="已知f(x)求f’(x)【+++++】"></a>已知f(x)求f’(x)【+++++】</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713171423821.png" alt="image-20210713171423821"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713171434551.png" alt="image-20210713171434551"></p>
-<p>主要是在<font color=red>临界值的特殊处理</font></p>
-<p>导数存在的充要条件：<strong>左右导数都存在且相等</strong></p>
-<h2 id="已知f-x-求f’-x-【品】"><a href="#已知f-x-求f’-x-【品】" class="headerlink" title="已知f(x)求f’(x)【品】"></a>已知f(x)求f’(x)【品】</h2><p><font color=red>一点红型</font></p>
-<p><font color=red>分段函数连续性与导数的关系</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094107331.png" alt="image-20210914094107331"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094328582.png" alt="image-20210914094328582"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094353550.png" alt="image-20210914094353550"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094410790.png" alt="image-20210914094410790"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094450641.png" alt="image-20210914094450641"></p>
-<p><font color=red>f(0)=C，不能得出f’(0)=0</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914095228755.png" alt="image-20210914095228755"></p>
-<p>而应该用定义式去求该点的导数</p>
-<p>然后需要求出式子中未知的b</p>
-<p>据题意“处处可导”，则在x=0处也可导</p>
-<p>又根据“可导必连续” 则可以向分段函数列等式求出b</p>
-<p><font color=blue>最后是注意定义域的书写</font></p>
-<p><font color=red>抽象f(x)的定义域并不是我们默认的(-∞,+∞)</font></p>
-<h2 id="导数定义式与连续性【品】"><a href="#导数定义式与连续性【品】" class="headerlink" title="导数定义式与连续性【品】"></a>导数定义式与连续性【品】</h2><p><font color=red>导数定义式与连续性对分段函数的应用场景</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914192448500.png" alt="image-20210914192448500"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914192508457.png" alt="image-20210914192508457"></p>
-<p><font color=red>“只要考虑f(x)在x=0点的情况”</font></p>
-<p>$$f(x)$$可导（没说处处可导，故不能用连续性的性质），即应用<font color=blue>导数的定义式</font></p>
-<p>$$f’(x)$$连续，即 极限=$$f’(x_0)$$</p>
-<p>$$f(x)$$的归属：<font color=blue>有定义域的一方</font></p>
-<p>$$f’(x_0)$$的归属：<font color=blue>有定义域的一方</font></p>
-<h1 id="求单调区间"><a href="#求单调区间" class="headerlink" title="求单调区间"></a>求单调区间</h1><p>一阶导为0</p>
-<p>再根据函数大致图像确定单调区间，需画表格</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917160411181.png" alt="image-20210917160411181"></p>
-<h1 id="求极值点"><a href="#求极值点" class="headerlink" title="求极值点"></a>求极值点</h1><p>一阶导为0的点为驻点</p>
-<p>驻点左右侧一阶导符号相反，该点则为极值点</p>
-<h1 id="什么是微分"><a href="#什么是微分" class="headerlink" title="什么是微分"></a>什么是微分</h1><p>是指函数在某一点处（趋近于无穷小）的变化量，是一种变化的量</p>
-<p>例如：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704131919185.png" alt="image-20210704131919185"></p>
-<h1 id="已知参数方程求导数"><a href="#已知参数方程求导数" class="headerlink" title="已知参数方程求导数"></a>已知参数方程求导数</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704140731623.png" alt="image-20210704140731623"></p>
-<p>技巧：dt/dx的倒数</p>
-<h1 id="拐点和驻点"><a href="#拐点和驻点" class="headerlink" title="拐点和驻点"></a>拐点和驻点</h1><p>驻点是<font color=blue>一阶导数等于零</font>的点</p>
-<p>拐点是指<font color=red>曲线斜率变化的单调性发生改变</font>（具体看下面解析）</p>
-<h2 id="拐点的性质"><a href="#拐点的性质" class="headerlink" title="拐点的性质"></a>拐点的性质</h2><p>拐点处二阶导为0</p>
-<h2 id="拐点的判定"><a href="#拐点的判定" class="headerlink" title="拐点的判定"></a>拐点的判定</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210909195119120.png" alt="image-20210909195119120"></p>
-<h2 id="拐点的理解【-】"><a href="#拐点的理解【-】" class="headerlink" title="拐点的理解【+++++】"></a>拐点的理解【+++++】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210909195642982.png" alt="image-20210909195642982"></p>
-<p>左半部分，曲线斜率逐渐增大</p>
-<p>右半部分，曲线斜率逐渐减小</p>
-<p>而产生这一转变的那一个点就是拐点</p>
-<p>加深理解</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210909200539992.png" alt="image-20210909200539992"></p>
-<p><font color=red>曲线斜率变化的单调性发生改变</font></p>
-<p>据此，再反过来理解拐点的判定条件</p>
-<p>①三阶导不为0，才可能会发生这种转变</p>
-<p>②二阶导异号，即斜率变化的单调性相异</p>
-<h2 id="凹凸区间"><a href="#凹凸区间" class="headerlink" title="凹凸区间"></a>凹凸区间</h2><p>凹区间斜率逐渐增大（二阶导＞0）</p>
-<p>凸区间斜率逐渐减小（二阶导＜0）</p>
-<p>例题：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706181858166.png" alt="image-20210706181858166"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706181850242.png" alt="image-20210706181850242"></p>
-<h1 id="考研数学怎么考导数"><a href="#考研数学怎么考导数" class="headerlink" title="考研数学怎么考导数"></a>考研数学怎么考导数</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707174505197.png" alt="image-20210707174505197"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707175835450.png" alt="image-20210707175835450"></p>
-<p>上式中的分母(x-a)^2不可以直接当作(x-a)来带进定义式</p>
-<p>因为这是x逼近与a，(x-a)的值不能直接当0处理</p>
-<p>正确打开上式的方式的是<strong>洛必达</strong></p>
-<p>很容易忽略的一点，已知条件为<strong>相切，除了告知导数值相等外，该点的函数值也是相等的</strong></p>
-<p>但是等值代换确是可以</p>
-<p><font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font></p>
+          <h1 id="局部的极限【-】"><a href="#局部的极限【-】" class="headerlink" title="局部的极限【++++++】"></a>局部的极限【++++++】</h1><p><font color=red>终于理解到了</font></p>
+<p>不能局部洛必达、不能局部带入的原因（误差不能忽略，导致结果不同）</p>
+<h1 id="一题搞懂代换和洛必达的局限性"><a href="#一题搞懂代换和洛必达的局限性" class="headerlink" title="一题搞懂代换和洛必达的局限性"></a>一题搞懂代换和洛必达的局限性</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210925155248478.png" alt="image-20210925155248478"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210925155258569.png" alt="image-20210925155258569"></p>
+<p>错误示范（<font color=blue>不能书写局部洛必达</font>，<font color=red>不能局部代换之后进行加减法</font>）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210925161112927.png" alt="image-20210925161112927"></p>
+<p>来看看正常的不涉及加减的局部代换</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630102311236.png" alt="image-20210630102311236"></p>
+<p>关于该题答案中没有解析的步骤</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210925161644718.png" alt="image-20210925161644718"></p>
+<h1 id="求极限的方法总结"><a href="#求极限的方法总结" class="headerlink" title="求极限的方法总结"></a>求极限的方法总结</h1><p>—等价无穷小—有理数运算法则—洛必达—泰勒—夹逼—单调</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630094814469.png" alt="image-20210630094814469"></p>
+<p>常用结论绿色部分，证明利用指数型无穷小代换（转化成eln 下面有相关题目）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630094820296.png" alt="image-20210630094820296"></p>
+<p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/07/04/%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F/">泰勒公式参考</a></p>
+<p>单看是没用的，要通过做题熟练才可以</p>
+<h2 id="别用常规规律【-】"><a href="#别用常规规律【-】" class="headerlink" title="别用常规规律【++++++】"></a>别用常规规律【++++++】</h2><p><font color=red> “1的任何次方都是1” 那你就完了</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630102311236.png" alt="image-20210630102311236"></p>
+<h2 id="求极限好用的规律"><a href="#求极限好用的规律" class="headerlink" title="求极限好用的规律"></a>求极限好用的规律</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911180624162.png" alt="image-20210911180624162"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912154609811.png" alt="image-20210912154609811"></p>
+<h2 id="泰勒【祖】"><a href="#泰勒【祖】" class="headerlink" title="泰勒【祖】"></a>泰勒【祖】</h2><p><font color=red>泰勒的条件—趋于0</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912095226129.png" alt="image-20210912095226129"></p>
+<p><img src="https://pic3.zhimg.com/80/v2-1a8a9989e10507de70e7ffe7b0e8cb6d_720w.jpg?source=1940ef5c" alt="img"></p>
+<h3 id="泰勒推导"><a href="#泰勒推导" class="headerlink" title="泰勒推导"></a>泰勒推导</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915181237580.png" alt="image-20210915181237580"></p>
+<h3 id="泰勒的书写"><a href="#泰勒的书写" class="headerlink" title="泰勒的书写"></a>泰勒的书写</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915181335070.png" alt="image-20210915181335070"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915181318307.png" alt="image-20210915181318307"></p>
+<p>n个$$o(x^4)$$的和仍为$$o(x^4)$$</p>
+<h3 id="泰勒引诱【-】"><a href="#泰勒引诱【-】" class="headerlink" title="泰勒引诱【++++++】"></a>泰勒引诱【++++++】</h3><p><font color=red>注意区分：</font>$$sin^2x和sinx^2$$</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912095131031.png" alt="image-20210912095131031"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912095328001.png" alt="image-20210912095328001"></p>
+<p><font color=red>第一反应等价代换行不通，约不尽</font></p>
+<p><font color=red>再看到分母这种“孤儿”，多半就是泰勒了</font></p>
+<p><font color=blue>用泰勒的话，就尽量保留多的sin来进行抵消</font></p>
+<p><font color=green>我做的时候不会泰勒，用的硬洛（三角函数与洛其实很契合）</font></p>
+<h3 id="高次泰勒【-】"><a href="#高次泰勒【-】" class="headerlink" title="高次泰勒【++++++】"></a>高次泰勒【++++++】</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912164442498.png" alt="image-20210912164442498"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912164433989.png" alt="image-20210912164433989"></p>
+<p><font color=red>泰勒有条件，所以要同除构趋于0</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912165746568.png" alt="image-20210912165746568"></p>
+<h2 id="等价无穷小代换"><a href="#等价无穷小代换" class="headerlink" title="等价无穷小代换"></a>等价无穷小代换</h2><p><font color=red>本质是泰勒展开的简单形式</font></p>
+<p>常见参照表</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911175808955.png" alt="image-20210911175808955"></p>
+<p>Ps：</p>
+<p>$$(1+x)^a-1\backsim ax$$的a可以是分数，即根号</p>
+<p>需要1的地方可配凑</p>
+<p>$$ln(1+x)$$ 的 “x” 可以是复杂式子，但无论如何，它必须趋于0 </p>
+<p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/06/30/%E6%97%A0%E7%A9%B7%E5%B0%8F%E9%87%8F/">具体练习</a></p>
+<h3 id="等价无穷小使用的条件"><a href="#等价无穷小使用的条件" class="headerlink" title="等价无穷小使用的条件"></a>等价无穷小使用的条件</h3><p><font color=red>首先无穷小只是泰勒展开式在特定情况下的应用而已</font></p>
+<p><font color=red>无穷小其实只是用了第一项，有些情况不能用就是因为</font></p>
+<p><font color=red>这道题极限需要泰勒展开到第二项第三项这样</font></p>
+<h2 id="洛必达"><a href="#洛必达" class="headerlink" title="洛必达"></a>洛必达</h2><p><font color=red>可中途化简，使得求导更容易</font></p>
+<p><font color=blue>但是化简过程中需保证洛必达的使用条件</font></p>
+<h3 id="洛必达是有条件的【-】"><a href="#洛必达是有条件的【-】" class="headerlink" title="洛必达是有条件的【++++++】"></a>洛必达是有条件的【++++++】</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913162146786.png" alt="image-20210913162146786"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914084339321.png" alt="image-20210914084339321"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914084423590.png" alt="image-20210914084423590"></p>
+<p><font color=red>涉及到极限的各种题型都是要把抽象的极限给求出来</font></p>
+<p><font color=blue>因抽象，所以不一定能洛</font></p>
+<p>错误解法：<img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914085417466.png" alt="image-20210914085417466"></p>
+<p>x＞0的时候纯属是碰巧</p>
+<p>（lim下是谁，谁就是主体）</p>
+<h3 id="洛必达的极限与原极限"><a href="#洛必达的极限与原极限" class="headerlink" title="洛必达的极限与原极限"></a>洛必达的极限与原极限</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915120709026.png" alt="image-20210915120709026"></p>
+<h3 id="抽象但可以洛的原因"><a href="#抽象但可以洛的原因" class="headerlink" title="抽象但可以洛的原因"></a>抽象但可以洛的原因</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912153008015.png" alt="image-20210912153008015"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912153002137.png" alt="image-20210912153002137"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912152916696.png" alt="image-20210912152916696"></p>
+<p><font color=red>之所以可以洛的原因是分母为0</font></p>
+<h3 id="三角函数与洛必达很契合"><a href="#三角函数与洛必达很契合" class="headerlink" title="三角函数与洛必达很契合"></a>三角函数与洛必达很契合</h3><h3 id="洛符"><a href="#洛符" class="headerlink" title="洛符"></a>洛符</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912100522739.png" alt="image-20210912100522739"></p>
+<h3 id="不允许的局部洛必达"><a href="#不允许的局部洛必达" class="headerlink" title="不允许的局部洛必达"></a>不允许的局部洛必达</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915104954983.png" alt="image-20210915104954983"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915105014111.png" alt="image-20210915105014111"></p>
+<h2 id="极限四则运算法则"><a href="#极限四则运算法则" class="headerlink" title="极限四则运算法则"></a>极限四则运算法则</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102424227.png" alt="image-20210912102424227"></p>
+<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
+<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102432946.png" alt="image-20210912102432946"></p>
+<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
+<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
+<h2 id="定积分与极限"><a href="#定积分与极限" class="headerlink" title="定积分与极限"></a>定积分与极限</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912152916696.png" alt="image-20210912152916696"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912153008015.png" alt="image-20210912153008015"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912153002137.png" alt="image-20210912153002137"></p>
+<h2 id="夹逼"><a href="#夹逼" class="headerlink" title="夹逼"></a>夹逼</h2><h3 id="夹逼-拉格朗日求极限"><a href="#夹逼-拉格朗日求极限" class="headerlink" title="夹逼+拉格朗日求极限"></a>夹逼+拉格朗日求极限</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091111857.png" alt="image-20210923091111857"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091311151.png" alt="image-20210923091311151"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923091458455.png" alt="image-20210923091458455"></p>
+<p>移项</p>
+<h2 id="单调有界"><a href="#单调有界" class="headerlink" title="单调有界"></a>单调有界</h2><h3 id="单调有界的第n和n-1项【-】"><a href="#单调有界的第n和n-1项【-】" class="headerlink" title="单调有界的第n和n-1项【++++++】"></a>单调有界的第n和n-1项【++++++】</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913095042529.png" alt="image-20210913095042529"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913095109662.png" alt="image-20210913095109662"></p>
+<p>f(x) 单调递增，且f(x) &lt; 2 并不能说明f(x) 就收敛于2</p>
+<p><font color=red>它还可能收敛与小于2的某个值</font></p>
+<p>这里设为a</p>
+<p>f(x) 的值即是$$x_n$$的值</p>
+<p>也就是说$$x_n$$单调有界</p>
+<p>则可认为$$x_n=x_{n-1}=a$$</p>
+<h2 id="易错题"><a href="#易错题" class="headerlink" title="易错题"></a>易错题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171337995.png" alt="image-20210710171337995"></p>
+<p>错误解法</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171609403.png"></p>
+<p>（这样 “偏袒” 是会出事的）</p>
+<p>正确解法：</p>
+<p><font color=red size=5>eln后洛</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171811759.png" alt="image-20210710171811759"></p>
+<h3 id="1的任意次方陷阱【-】"><a href="#1的任意次方陷阱【-】" class="headerlink" title="1的任意次方陷阱【++++++】"></a>1的任意次方陷阱【++++++】</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915095156221.png" alt="image-20210915095156221"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915095211806.png" alt="image-20210915095211806"></p>
+<p><font color=red>“1的任意次方的结果是1” 基本都是坑</font></p>
+<p>错误解法及启迪：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915100642776.png" alt="image-20210915100642776"></p>
+<h1 id="极限的考点"><a href="#极限的考点" class="headerlink" title="极限的考点"></a>极限的考点</h1><h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914084339321.png" alt="image-20210914084339321"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914084423590.png" alt="image-20210914084423590"></p>
+<p><font color=red>涉及到极限的各种题型都是要把抽象的极限给求出来</font></p>
+<p><font color=blue>因抽象，所以不一定能洛</font></p>
+<hr>
+<h1 id="等价无穷小"><a href="#等价无穷小" class="headerlink" title="等价无穷小"></a>等价无穷小</h1><h2 id="说法一"><a href="#说法一" class="headerlink" title="说法一"></a>说法一</h2><p>求N阶导之后变成不是无穷小它就是N阶无穷小</p>
+<p>这样也就可以理解了</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630091757441.png" alt="image-20210630091757441"></p>
+<h2 id="说法二"><a href="#说法二" class="headerlink" title="说法二"></a>说法二</h2><p>a是b的n阶无穷小</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913102017925.png" alt="image-20210913102017925"></p>
+<h2 id="积分与无穷小的阶"><a href="#积分与无穷小的阶" class="headerlink" title="积分与无穷小的阶"></a>积分与无穷小的阶</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913102250649.png" alt="image-20210913102250649"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913102334534.png" alt="image-20210913102334534"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913102340626.png" alt="image-20210913102340626"></p>
+<p><font color=red>无穷小的阶说到底还是求极限</font></p>
+<p>也就是说，对待积分的方法还是和求极限的时候一样</p>
+<p>用洛必达+定积分的导</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912152916696.png" alt="image-20210912152916696"></p>
+<h2 id="求无穷小阶数的捷径【-】"><a href="#求无穷小阶数的捷径【-】" class="headerlink" title="求无穷小阶数的捷径【++++++】"></a>求无穷小阶数的捷径【++++++】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913104335234.png" alt="image-20210913104335234"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913104345249.png" alt="image-20210913104345249"></p>
+<p><font color=red>分式上下约分</font></p>
+<p>分子直接少了一个因式</p>
+<p>洛起来畅通无阻</p>
+<p>20年真题</p>
+<p>（求导时记得无穷小量的代换）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630091331826.png" alt="image-20210630091331826"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630091918464.png" alt="image-20210630091918464"></p>
+<p>这里需要注意的是x-&gt;0，x^-1其实是无穷大</p>
+<p>即比出来x的指数是复数，则结果为无穷大</p>
+<h1 id="渐近线"><a href="#渐近线" class="headerlink" title="渐近线"></a>渐近线</h1><p><a target="_blank" rel="noopener" href="http://freejim.icu/2021/07/05/%E6%B8%90%E8%BF%91%E7%BA%BF/">链接</a></p>
 
       
     </div>
@@ -1175,7 +466,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E6%95%B0%E5%AD%A6-%E5%8F%AF%E5%AF%BC%E3%80%81%E5%8F%AF%E5%BE%AE%E3%80%81%E5%8F%AF%E7%A7%AF%E3%80%81%E8%BF%9E%E7%BB%AD/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/30/%E6%95%B0%E5%AD%A6-%E6%97%A0%E7%A9%B7%E5%B0%8F%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -1189,7 +480,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/04/%E6%95%B0%E5%AD%A6-%E5%8F%AF%E5%AF%BC%E3%80%81%E5%8F%AF%E5%BE%AE%E3%80%81%E5%8F%AF%E7%A7%AF%E3%80%81%E8%BF%9E%E7%BB%AD/" class="post-title-link" itemprop="url">数学-可导、可微、可积、连续</a>
+            <a href="/2021/06/30/%E6%95%B0%E5%AD%A6-%E6%97%A0%E7%A9%B7%E5%B0%8F%E9%87%8F/" class="post-title-link" itemprop="url">数学-无穷小量</a>
         </h2>
 
         <div class="post-meta">
@@ -1199,14 +490,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-04 12:43:45" itemprop="dateCreated datePublished" datetime="2021-07-04T12:43:45+08:00">2021-07-04</time>
+              <time title="Created: 2021-06-30 08:34:55" itemprop="dateCreated datePublished" datetime="2021-06-30T08:34:55+08:00">2021-06-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:30:29" itemprop="dateModified" datetime="2022-06-27T15:30:29+08:00">2022-06-27</time>
+                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
               </span>
 
           
@@ -1220,17 +511,786 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>一元记文字，多元记图</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705102538087.png" alt="image-20210705102538087"></p>
-<p>可导一定连续，连续不一定可导</p>
-<p>可微与可导是一样的</p>
-<p><strong>可积不一定连续，连续一定可积</strong></p>
-<p>不连续则一定不可导（同样适用于二阶导数）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704131526632.png" alt="image-20210704131526632"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704131454235.png" alt="image-20210704131454235"></p>
-<h4 id="导数与偏导数"><a href="#导数与偏导数" class="headerlink" title="导数与偏导数"></a>导数与偏导数</h4><p>可导指的是偏导数存在,即沿x轴,y轴方向的导数存在</p>
-<p>Ps：</p>
-<p>多元函数才有偏导的概念</p>
+          <h1 id="什么是无穷小量"><a href="#什么是无穷小量" class="headerlink" title="什么是无穷小量"></a>什么是无穷小量</h1><p>x-&gt;x0时，f(x)的极限为0，则称f(x)为x-&gt;x0时的无穷小量</p>
+<p>（无穷小量是极限中涉及到的知识）</p>
+<h1 id="等价无穷小代换"><a href="#等价无穷小代换" class="headerlink" title="等价无穷小代换"></a>等价无穷小代换</h1><h2 id="无穷小代换的条件"><a href="#无穷小代换的条件" class="headerlink" title="无穷小代换的条件"></a>无穷小代换的条件</h2><p><font color=red>首先无穷小只是泰勒展开式在特定情况下的应用而已</font></p>
+<p><font color=red>无穷小其实只是用了第一项，有些情况不能用就是因为</font></p>
+<p><font color=red>这道题极限需要泰勒展开到第二项第三项这样</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630100140805.png" alt="image-20210630100140805"></p>
+<p>提tanx（提sin也行）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915115932002.png" alt="image-20210915115932002"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915115939656.png" alt="image-20210915115939656"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915120050288.png" alt="image-20210915120050288"></p>
+<p>上面提了tanx之后可以代换的原因是级数够了（2）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915120154921.png" alt="image-20210915120154921"></p>
+<h2 id="1-cosx"><a href="#1-cosx" class="headerlink" title="1-cosx"></a>1-cosx</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630094450777.png" alt="image-20210630094450777"></p>
+<p>（其实可以利用上面常用结论中的绿色部分）</p>
+<hr>
+<h2 id="arcsin，ln，ex"><a href="#arcsin，ln，ex" class="headerlink" title="arcsin，ln，ex"></a>arcsin，ln，ex</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630100304066.png" alt="image-20210630100304066"></p>
+<h2 id="x-sinx"><a href="#x-sinx" class="headerlink" title="x-sinx"></a>x-sinx</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630101158640.png" alt="image-20210630101158640"></p>
+<p>注意1/6*x^3里的x是代指</p>
+<h2 id="tan-sin"><a href="#tan-sin" class="headerlink" title="tan-sin"></a>tan-sin</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911181001998.png" alt="image-20210911181001998"></p>
+<hr>
+<h2 id="指数型求极限，tan"><a href="#指数型求极限，tan" class="headerlink" title="指数型求极限，tan"></a>指数型求极限，tan</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630101418183.png" alt="image-20210630101418183"></p>
+<p>淦，ln里的根号也是可以提出来的</p>
+<hr>
+<h2 id="eln和配凑幂"><a href="#eln和配凑幂" class="headerlink" title="eln和配凑幂"></a>eln和配凑幂</h2><p><font color=red>解决幂问题的方法不止eln一种</font></p>
+<h3 id="eln洛"><a href="#eln洛" class="headerlink" title="eln洛"></a>eln洛</h3><p>简单的</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630102311236.png" alt="image-20210630102311236"></p>
+<p>这里是上面常用结论绿色部分的解析</p>
+<p><font color=red size=5>一般是出eln后再洛</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630101418183.png"></p>
+<h3 id="配凑幂"><a href="#配凑幂" class="headerlink" title="配凑幂"></a>配凑幂</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110039065.png" alt="image-20210912110039065"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110022191.png" alt="image-20210912110022191"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110030545.png" alt="image-20210912110030545"></p>
+<h3 id="最终的eln【-】"><a href="#最终的eln【-】" class="headerlink" title="最终的eln【+++++】"></a>最终的eln【+++++】</h3><p><font color=red>最终结果一般要把eln给化掉</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160003298.png" alt="image-20210912160003298"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160017462.png" alt="image-20210912160017462"></p>
+<p>我的答案：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160111597.png" alt="image-20210912160111597"></p>
+<hr>
+<h2 id="x作指数"><a href="#x作指数" class="headerlink" title="x作指数"></a>x作指数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630102717834.png" alt="image-20210630102717834"></p>
+<h2 id="配凑"><a href="#配凑" class="headerlink" title="配凑"></a>配凑</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630100343710.png" alt="image-20210630100343710"></p>
+<p>等价无穷小代换条件：乘除</p>
+<h2 id="平方差法"><a href="#平方差法" class="headerlink" title="平方差法"></a>平方差法</h2><p><font color=red>差为0，但是和不为0</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911173122229.png" alt="image-20210911173122229"></p>
+<p>解析：</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911173411512.png" alt="image-20210911173411512"></p>
+<hr>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913153759859.png" alt="image-20210913153759859"></p>
+<h2 id="趋于无穷的好"><a href="#趋于无穷的好" class="headerlink" title="趋于无穷的好"></a>趋于无穷的好</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911174537568.png" alt="image-20210911174537568"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911174812111.png" alt="image-20210911174812111"></p>
+<p><font color=red>一方面用换元可以得到趋于0</font></p>
+<p><font color=red>另一方面趋于无穷的可用性比趋于0更好</font></p>
+<p>解析中划线部分，不要用宏观去猜测</p>
+<p>用洛必达去解</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630101130034.png" alt="image-20210630101130034"></p>
+<p>另外无穷经常牵扯到这条规律</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911180624162.png" alt="image-20210911180624162"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630094804589.png" alt="image-20210630094804589"></p>
+<h2 id="e代换【-】"><a href="#e代换【-】" class="headerlink" title="e代换【++++++】"></a>e代换【++++++】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092334055.png" alt="image-20210913092334055"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092406321.png" alt="image-20210913092406321"></p>
+<p>特殊值法确实使得即算方便了</p>
+<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
+<p><font color=red>答案带参数</font></p>
+<p>再回到这道题</p>
+<p>利用$$e^{- \infty }$$的特殊性</p>
+<hr>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914084423590.png" alt="image-20210914084423590"></p>
+<hr>
+<h2 id="不能乱入"><a href="#不能乱入" class="headerlink" title="不能乱入"></a>不能乱入</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171337995.png" alt="image-20210710171337995"></p>
+<p>错误解法</p>
+<p><font color=red>不能乱入</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171609403.png" alt="image-20210710171609403"></p>
+<p>正确解法</p>
+<p><font color=red size=5>eln后洛</font></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171811759.png" alt="image-20210710171811759"></p>
+<hr>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630100209423.png" alt="image-20210630100209423"></p>
+<h2 id="这是最难的求极限了【-】"><a href="#这是最难的求极限了【-】" class="headerlink" title="这是最难的求极限了【+++++】"></a>这是最难的求极限了【+++++】</h2><p>(还要这样先配凑)<img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706100125599.png" alt="image-20210706100125599"></p>
+<p><font color='green' size=5>x趋于无穷时，常配凑出1/x得趋于0，然后用等价无穷小代换</font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/28/%E6%95%B0%E5%AD%A6-%E5%88%86%E6%AE%B5%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/28/%E6%95%B0%E5%AD%A6-%E5%88%86%E6%AE%B5%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">数学-分段函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-28 16:48:12" itemprop="dateCreated datePublished" datetime="2021-06-28T16:48:12+08:00">2021-06-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:24:44" itemprop="dateModified" datetime="2022-06-27T15:24:44+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>连接处的左右导数是否相等来判断是否可导</p>
+<h4 id="分段函数与连续性"><a href="#分段函数与连续性" class="headerlink" title="分段函数与连续性"></a>分段函数与连续性</h4><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704132147882.png" alt="image-20210704132147882"></p>
+<p>分段函数三个式子把(0,0)代入，结果都是0，即表示连续，而且lim=0</p>
+<p><font color='red' size=5>分段函数对极限其实很友好</font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/23/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/23/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="post-title-link" itemprop="url">计算机-计算机网络期末复习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-23 16:46:44" itemprop="dateCreated datePublished" datetime="2021-06-23T16:46:44+08:00">2021-06-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0204.PNG" alt="IMG_0204"></p>
+<h4 id="5层网络体系结构"><a href="#5层网络体系结构" class="headerlink" title="5层网络体系结构"></a>5层网络体系结构</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0202.PNG" alt="IMG_0202"></p>
+<h4 id="TCP-IP-4层协议"><a href="#TCP-IP-4层协议" class="headerlink" title="TCP/IP 4层协议"></a>TCP/IP 4层协议</h4><p>1、数据链路层；以处理数据在物理媒介上的传输</p>
+<p>2、网络层；实现数据包的选路和转发</p>
+<p>3、传输层；为两台主机上的应用程序提供端到端的通信</p>
+<p>4、应用层；负责处理应用程序的逻辑</p>
+<h4 id="OSI-7层协议"><a href="#OSI-7层协议" class="headerlink" title="OSI 7层协议"></a>OSI 7层协议</h4><h4 id="协议三要素"><a href="#协议三要素" class="headerlink" title="协议三要素"></a>协议三要素</h4><p>语法、语义、同步（事件顺序）</p>
+<h4 id="标准化工作"><a href="#标准化工作" class="headerlink" title="标准化工作"></a>标准化工作</h4><p>互联网草案==建议标准==互联网标准</p>
+<h2 id="一、物理层"><a href="#一、物理层" class="headerlink" title="一、物理层"></a>一、物理层</h2><h4 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0200.PNG" alt="IMG_0200"></p>
+<p>分组交换在报文交换的基础上解决了中大文件的问题（报文大小没有限制，大文件容易出错）</p>
+<p>分组交换是把报文拆分后又有差错控制</p>
+<h4 id="虚电路"><a href="#虚电路" class="headerlink" title="虚电路"></a>虚电路</h4><p>数据报+电路交换</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0257.PNG" alt="IMG_0257"></p>
+<h4 id="数据传输相参数"><a href="#数据传输相参数" class="headerlink" title="数据传输相参数"></a>数据传输相参数</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0201.PNG" alt="IMG_0201"></p>
+<p>总时延=发送时延+传播时延+处理时延+排队时延</p>
+<p>RTU 往返时间（Round-Trip Time）</p>
+<h4 id="香农公式"><a href="#香农公式" class="headerlink" title="香农公式"></a>香农公式</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0199.PNG" alt="IMG_0199"></p>
+<p>例题：</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0238.PNG" alt="IMG_0238"></p>
+<h4 id="调制和编码"><a href="#调制和编码" class="headerlink" title="调制和编码"></a>调制和编码</h4><p>调制：数据变为模拟信号（波浪）</p>
+<p>编码：数据变为数字信号（01）</p>
+<h4 id="曼彻斯特编码"><a href="#曼彻斯特编码" class="headerlink" title="曼彻斯特编码"></a>曼彻斯特编码</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0205.PNG" alt="IMG_0205"></p>
+<p>额外的规定是为了同步信息</p>
+<h2 id="三、数据链路层"><a href="#三、数据链路层" class="headerlink" title="三、数据链路层"></a>三、数据链路层</h2><h4 id="信道复用技术"><a href="#信道复用技术" class="headerlink" title="信道复用技术"></a>信道复用技术</h4><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210623173902101.png" alt="image-20210623173902101"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0207.PNG" alt="IMG_0207"></p>
+<p>CDMA（码分多址）为CMD的一种（NM数学的一种）</p>
+<h4 id="CRC"><a href="#CRC" class="headerlink" title="CRC"></a>CRC</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0208.PNG" alt="IMG_0208"></p>
+<h4 id="PPP协议"><a href="#PPP协议" class="headerlink" title="PPP协议"></a>PPP协议</h4><p>链路层协议</p>
+<p>p2p</p>
+<p>SLIP基础上发展而来</p>
+<h4 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0209.PNG" alt="IMG_0209"></p>
+<p>有3种分类</p>
+<p>1-坚持CSMA：监听到信道空闲立即发送数据，若信道忙则持续监听</p>
+<p>非坚持CSMA：监听到信道空闲立即发送数据，若信道忙则随机一段时间后再次监听</p>
+<p>p-坚持CSMA：监听到信道空闲以概率p发送数据，1-p的概率在下一个时隙发送数据，若信道忙则随即一段时间后再监听</p>
+<h4 id="争用期"><a href="#争用期" class="headerlink" title="争用期"></a>争用期</h4><p>RTU=2r</p>
+<p>r为单程传播时延</p>
+<p>这是最坏的情况，也就是A发送的数据刚到B时，B发送数据，然后发生碰撞</p>
+<p>碰撞信号传回A，加上之前A到B那一程的时间，正好为RTU</p>
+<p>所谓争用期，也就是抢占信道若RTU内没收到碰撞信号，则表示信道抢占成功</p>
+<p>之后B检测到信道不是空闲的，不会再发，之后A到B的传输也就不会有碰撞了</p>
+<p>（并不是真的抢占，只是B监听到A一直在给自己传输，然后B一直不发而已，看起来像A抢占了信道罢了）</p>
+<h4 id="最短帧长"><a href="#最短帧长" class="headerlink" title="最短帧长"></a>最短帧长</h4><p>接着上面，再结合图理解</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0240.PNG" alt="IMG_0240"></p>
+<p>由于这不是单向的信道</p>
+<p>B已经发送的数据还是会传到A</p>
+<p>所以CSMA设置一个最短帧长来过滤掉这些不完整的数据帧（CSMA规定检查到数据就立即停止发送，会产生残缺帧）</p>
+<p>最短帧长=2x单程传播时延x数据传输速率</p>
+<p>至于为什么要乘以2，则是因为碰撞信号传回发送方是需要时间的，在这段时间里发送方仍然在继续发送数据</p>
+<p>例题:</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0239.PNG" alt="IMG_0239"></p>
+<h4 id="CSMA-CA"><a href="#CSMA-CA" class="headerlink" title="CSMA/CA"></a>CSMA/CA</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0210.PNG" alt="IMG_0210"></p>
+<h4 id="交换机和Hub"><a href="#交换机和Hub" class="headerlink" title="交换机和Hub"></a>交换机和Hub</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0236.PNG" alt="IMG_0236"></p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h3 id="更快的以太网"><a href="#更快的以太网" class="headerlink" title="更快的以太网"></a>更快的以太网</h3><h4 id="100BASE-T"><a href="#100BASE-T" class="headerlink" title="100BASE-T"></a>100BASE-T</h4><p>10BASE-T中的“10”表示信号在电缆上的传输速率为10MB/s</p>
+<p>“BASE”表示电缆上的信号是基带信号</p>
+<p>“T”代表双绞线星形网</p>
+<h2 id="四、网络层"><a href="#四、网络层" class="headerlink" title="四、网络层"></a>四、网络层</h2><h4 id="MTU"><a href="#MTU" class="headerlink" title="MTU"></a>MTU</h4><p>最大传送单元</p>
+<h4 id="片偏移"><a href="#片偏移" class="headerlink" title="片偏移"></a>片偏移</h4><p>每一分片的长度是8字节的整数倍</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0213.PNG" alt="IMG_0213"></p>
+<h3 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h3><h4 id="五类IP地址"><a href="#五类IP地址" class="headerlink" title="五类IP地址"></a>五类IP地址</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0241.PNG" alt="IMG_0241"></p>
+<p>IP地址=（类别位）网络号net-id，主机号host-id</p>
+<p>类别位：ABCDE</p>
+<p>一台主机允许有多个IP没错</p>
+<p>但是在同一网络下，主机只能有一个IP</p>
+<p>例如：</p>
+<p>学校的主机，除了有一个局域网IP（校园网内通信用）还有一个公网IP（NAT转换）</p>
+<h4 id="多播（组播）"><a href="#多播（组播）" class="headerlink" title="多播（组播）"></a>多播（组播）</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0252.PNG" alt="IMG_0252"></p>
+<p>给某个多播地址发数据，其实是给一个组的主机发数据（交由多播路由器完成）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A device can join a group by sending an IGMP “membership report” message to the group IP address.</span><br><span class="line">This packet is received by a multicast router on the segment</span><br><span class="line">the router does whatever is necessary to start forwarding the data stream to this device.</span><br></pre></td></tr></table></figure>
+
+<p>多播地址就类似于 QQ 群号，多播组相当于 QQ 群，一个个的主机就相当于群里面的成员</p>
+<p>一台主机也可以属于几个多播组</p>
+<h4 id="特殊IP（网络号）"><a href="#特殊IP（网络号）" class="headerlink" title="特殊IP（网络号）"></a>特殊IP（网络号）</h4><p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0242.PNG" alt="IMG_0242"></p>
+<p>关于多少个主机的话 – 减2</p>
+<p>分别是全0和全1</p>
+<p>主机号全“0”的主机号被解释成”本”网络</p>
+<p>主机号全为”1”的网络地址用于广播之用</p>
+<p>网络号127是一个保留地址</p>
+<h4 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h4><p>匹配则处于同一网络</p>
+<p>子网掩码010怎么办</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0247.PNG" alt="IMG_0247"></p>
+<h4 id="NAT"><a href="#NAT" class="headerlink" title="NAT"></a>NAT</h4><p>Network Address Translation</p>
+<p>NAT路由器</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0243.PNG" alt="IMG_0243"></p>
+<h4 id="CIDR"><a href="#CIDR" class="headerlink" title="CIDR"></a>CIDR</h4><p>作用：把小的网络汇聚成大的超网</p>
+<p>IP地址=网络前缀，主机号</p>
+<h4 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h4><p>网络层协议</p>
+<p>给网络中的主机动态分配IP地址</p>
+<p>过程:</p>
+<p>1.客户机广播找到DHCP服务器（DHCP发现）</p>
+<p>2.DHCP服务器进行广播，其中包含了分配的客户机IP及相关配置信息（DHCP提供）</p>
+<p>3.客户机如果接受DHCP服务器提供的IP，则通过广播向服务器请求该IP（DHCP请求）</p>
+<p>4.DHCP服务器广播确认消息，将IP分配给客户机（DHCP确认）</p>
+<h4 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h4><p>网络层协议</p>
+<p>对于特定的IP地址，查询其物理地址</p>
+<p>四种情景:</p>
+<p>1.主机到本网络的另一主机</p>
+<p>2.主机到另一网络的主机</p>
+<p>（主机先找到本网络一路由器的硬件地址，接下来的工作交给路由器完成）</p>
+<p>3.路由器到本网络的一主机</p>
+<p>4.路由器到另一网络的主机</p>
+<p>（路由器找到当前网络上的一个路由器的硬件地址，接下来的工作交给那个路由器）</p>
+<h4 id="RARP"><a href="#RARP" class="headerlink" title="RARP"></a>RARP</h4><p>硬件地址到IP地址</p>
+<h4 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h4><p>网络层协议</p>
+<p>作IP分组的数据部分，加上IP首部组成IP数据报</p>
+<p>共有5中类型：终点不可达，超时，重定向，源点抑制，参数问题</p>
+<p>ICMP协议是一种面向无连接的协议，用于传输出错报告控制信息</p>
+<p>例如:</p>
+<p>DF=1 但是分组大小又大于MTU时，丢弃该分组，并向源主机报告</p>
+<h4 id="路由转发"><a href="#路由转发" class="headerlink" title="路由转发"></a>路由转发</h4><p>目的地址、子网掩码、下一跳地址</p>
+<p>最长前缀匹配原则</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0245.PNG" alt="IMG_0245"></p>
+<h4 id="距离-向量路由"><a href="#距离-向量路由" class="headerlink" title="距离-向量路由"></a>距离-向量路由</h4><p>（RIP）</p>
+<p>定期把他们的整个路由表传送给直接相邻的节点</p>
+<h4 id="链路状态路由算法"><a href="#链路状态路由算法" class="headerlink" title="链路状态路由算法"></a>链路状态路由算法</h4><p>（OSPF）</p>
+<p>通过广播的方式与所有其他节点交流</p>
+<p>只有当链路状态发生改变的时候才发送</p>
+<h4 id="路径向量路由选择协议"><a href="#路径向量路由选择协议" class="headerlink" title="路径向量路由选择协议"></a>路径向量路由选择协议</h4><p>（BGP 边界网关协议）</p>
+<p>选择较好的路径即可</p>
+<h4 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h4><p>参考<a target="_blank" rel="noopener" href="http://freejim.icu/2021/05/29/%E7%BD%91%E7%BB%9C%E5%B1%82/">这篇文章</a></p>
+<p>下一跳如果是它，则无论如何都要换</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0251.PNG" alt="IMG_0251"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0250.PNG" alt="IMG_0250"></p>
+<p>好消息传播快，坏消息传播慢</p>
+<p>16</p>
+<p>定期交换路由表信息</p>
+<h4 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h4><p>洪泛法</p>
+<p>参考<a target="_blank" rel="noopener" href="http://freejim.icu/2021/05/29/%E7%BD%91%E7%BB%9C%E5%B1%82/">这篇文章</a></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0249.PNG" alt="IMG_0249"></p>
+<p>距离：在RIP即跳数</p>
+<hr>
+<h2 id="IP数据报字段"><a href="#IP数据报字段" class="headerlink" title="IP数据报字段"></a>IP数据报字段</h2><h4 id="DF（Don’t-Fragment）"><a href="#DF（Don’t-Fragment）" class="headerlink" title="DF（Don’t Fragment）"></a>DF（Don’t Fragment）</h4><h4 id="MF（More-Fragment）"><a href="#MF（More-Fragment）" class="headerlink" title="MF（More Fragment）"></a>MF（More Fragment）</h4><p>MF=1时表示还有别的分片</p>
+<h4 id="MTU（Maximum-Transmission-Unit，最大传输单元）"><a href="#MTU（Maximum-Transmission-Unit，最大传输单元）" class="headerlink" title="MTU（Maximum Transmission Unit，最大传输单元）"></a>MTU（Maximum Transmission Unit，最大传输单元）</h4><p>当IP分组的大小大于MTU时就需要进行分片</p>
+<p>（每个分片有自己的新头部）</p>
+<h4 id="生命期TTL"><a href="#生命期TTL" class="headerlink" title="生命期TTL"></a>生命期TTL</h4><p>避免循环</p>
+<p>转发分组之前把TTL减1</p>
+<h4 id="首部检验和"><a href="#首部检验和" class="headerlink" title="首部检验和"></a>首部检验和</h4><p>只校验分组的首部，而不检验数据部分</p>
+<h3 id="流水线差错控制"><a href="#流水线差错控制" class="headerlink" title="流水线差错控制"></a>流水线差错控制</h3><p>网络层</p>
+<h4 id="回退N步-GBN-也常称滑动窗口协议"><a href="#回退N步-GBN-也常称滑动窗口协议" class="headerlink" title="回退N步(GBN 也常称滑动窗口协议)"></a>回退N步(GBN 也常称滑动窗口协议)</h4><p>（快，但是出错率更大）</p>
+<p>发送过程中丢包（重传了丢失的2及之后的34）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/20191113192200848.gif" alt="20191113192200848"></p>
+<p>接受过程中丢包（完蛋，检测不出来）</p>
+<p>不是说不等，而是3 4 的ACK是正确的，则接收方认为没有错误就忽略了2</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/20191113192954925.gif" alt="20191113192954925"></p>
+<h4 id="选择重传（SR）"><a href="#选择重传（SR）" class="headerlink" title="选择重传（SR）"></a>选择重传（SR）</h4><p>（慢一些，但是可靠）</p>
+<p>接收过程丢包（等待超时重传）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/20191113205433523.gif" alt="20191113205433523"></p>
+<p>发送过程中丢失</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/20191113201934575.gif" alt="20191113201934575"></p>
+<hr>
+<h4 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h4><p>主要为了解决IPv4地址耗尽的问题</p>
+<p>首部长度固定</p>
+<p>取消了校验和字段（除了网络层，还有运输层会作差错检测）</p>
+<h2 id="五、传输层"><a href="#五、传输层" class="headerlink" title="五、传输层"></a>五、传输层</h2><h4 id="熟知端口号"><a href="#熟知端口号" class="headerlink" title="熟知端口号"></a>熟知端口号</h4><h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p>参考<a target="_blank" rel="noopener" href="http://freejim.icu/2021/05/24/N-TCP/">文章</a></p>
+<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><h4 id="停止等待协议"><a href="#停止等待协议" class="headerlink" title="停止等待协议"></a>停止等待协议</h4><p>超时重传</p>
+<h4 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h4><p>滑动窗口</p>
+<h4 id="拥塞"><a href="#拥塞" class="headerlink" title="拥塞"></a>拥塞</h4><p>负载越来越大，但是吞吐量反而越来越小</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0215.PNG" alt="IMG_0215"></p>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><h4 id="慢开始"><a href="#慢开始" class="headerlink" title="慢开始"></a>慢开始</h4><p>一开始拥塞窗口cwnd=1，然后接收到一个ACK的话，cwnd就加1</p>
+<p>例：</p>
+<p>1 – 2 – 4 – 8 （指数型增长）</p>
+<p>当达到阈值时改用拥塞避免算法</p>
+<h4 id="拥塞避免"><a href="#拥塞避免" class="headerlink" title="拥塞避免"></a>拥塞避免</h4><p>每经过一个RTU，cwnd才加1</p>
+<p>而当出现一次超时时，cwnd重置1，并把阈值设置成当前cwnd的一半</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0253.PNG" alt="IMG_0253"></p>
+<h4 id="快重传"><a href="#快重传" class="headerlink" title="快重传"></a>快重传</h4><p>当发送方连续收到三个重复的ACK时</p>
+<p>（若接收方收到的报文不对劲，则发回的ACK是上一次的，发送方也就会收到重复的ACK）</p>
+<p>直接重传对方未收到的报文段，而不用等待计时器</p>
+<h4 id="快恢复"><a href="#快恢复" class="headerlink" title="快恢复"></a>快恢复</h4><p>收到三个冗余ACK时，把阈值设置为当前cwnd的一般，并且cwnd重置为原cwnd的一半，然后执行拥塞避免算法</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0254.PNG" alt="IMG_0254"></p>
+<h2 id="六、应用层"><a href="#六、应用层" class="headerlink" title="六、应用层"></a>六、应用层</h2><h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4><p>根域名服务器 </p>
+<p>顶级域名服务器 </p>
+<p>权限域名服务器 </p>
+<p>本地域名服务器</p>
+<p>=主机向本地域名服务器的查询一般都是采用递归查询。如果主机所询问的本地域名服务器不知道被查询域名的 IP 地址，那么本地域名服务器就以 DNS 客户的身份，向其他根域名服务器继续发出查询请求报文。（人大代表）</p>
+<p>=本地域名服务器向根域名服务器的查询通常是采用迭代查询。当根域名服务器收到本地域名服务器的迭代查询请求报文时，要么给出所要查询的 IP 地址，要么告诉本地域名服务器：“你下一步应当向哪一个域名服务器进行查询”。然后让本地域名服务器进行后续的查询。</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0256.PNG" alt="IMG_0256"></p>
+<h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><p>两类：请求报文和响应报文</p>
+<h4 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h4><p>TCP</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0214.PNG" alt="IMG_0214"></p>
+<p>SMTP</p>
+<h4 id="万维网"><a href="#万维网" class="headerlink" title="万维网"></a>万维网</h4><p>并非某种特殊的计算机网络，而是一个大规模的、联机式的信息储藏所</p>
+<p>通过链接获取各种信息</p>
+<p>HTML则是可以把这些信息更好地展示</p>
+<h4 id="TELNET"><a href="#TELNET" class="headerlink" title="TELNET"></a>TELNET</h4><p>能将用户的击键传到远地主机</p>
+<p>同时也能将远地主机的输出通过 TCP 连接返回到用户屏幕</p>
+<p>这种服务是透明的，因为用户感觉到好像键盘和显示器是直接连在远地主机上</p>
+<h2 id="七、特殊设备"><a href="#七、特殊设备" class="headerlink" title="七、特殊设备"></a>七、特殊设备</h2><p>网络适配器（即网卡）来实现数据链路层和物理层这两层的协议的硬件和软件</p>
+<p>物理层中继系统：转发器(repeater)</p>
+<p>数据链路层中继系统：网桥或桥接器(bridge)</p>
+<p>网络层中继系统：路由器(router)</p>
+<p>网桥和路由器的混合物：桥路器(brouter)</p>
+<p>网络层以上的中继系统：网关(gateway)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/20/Spring-Boot-%E8%BF%94%E5%9B%9ECSV/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/20/Spring-Boot-%E8%BF%94%E5%9B%9ECSV/" class="post-title-link" itemprop="url">Spring Boot 返回CSV</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-20 16:00:47" itemprop="dateCreated datePublished" datetime="2021-06-20T16:00:47+08:00">2021-06-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最需要明确的一点: 不同于浏览器，axois是无法直接通过请求进行文件下载的</p>
+<p>正确方式:</p>
+<p>前端：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">        <span class="attr">withCredentials</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;/admin/data.csv&#x27;</span>,</span><br><span class="line">        <span class="attr">responseType</span>: <span class="string">&#x27;blob&#x27;</span>,</span><br><span class="line">        <span class="attr">timeout</span>: <span class="number">4000</span>,</span><br><span class="line">        <span class="attr">data</span>: <span class="built_in">this</span>.tableData</span><br><span class="line">      &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res)</span><br><span class="line">        <span class="keyword">let</span> url = <span class="built_in">window</span>.URL.createObjectURL(<span class="keyword">new</span> Blob([res.data]))</span><br><span class="line">        <span class="keyword">let</span> link = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">        link.style.display = <span class="string">&#x27;none&#x27;</span></span><br><span class="line">        link.href = url</span><br><span class="line">        link.setAttribute(<span class="string">&#x27;download&#x27;</span>, <span class="string">&#x27;data.csv&#x27;</span>)</span><br><span class="line">        <span class="built_in">document</span>.body.appendChild(link)</span><br><span class="line">        link.click()</span><br><span class="line">      &#125;, <span class="function"><span class="params">ErrorEvent</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.$message(<span class="string">&#x27;请求数据失败&#x27;</span>)</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>后端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/admin/data.csv&quot;)</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getExcel</span><span class="params">(<span class="meta">@RequestBody</span> JSONArray array, HttpServletResponse response)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        System.out.println(array);</span><br><span class="line">        String csvContent = analyseService.buildCSV(array);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        response.setContentType(<span class="string">&quot;multipart/form-data&quot;</span>);</span><br><span class="line">        response.setHeader(<span class="string">&quot;Content-Disposition&quot;</span>, <span class="string">&quot;attachment;fileName=data.csv&quot;</span>);</span><br><span class="line">        OutputStream out = response.getOutputStream();</span><br><span class="line">        out.write(csvContent.getBytes());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/vue-%E7%89%88%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/19/vue-%E7%89%88%E6%9C%AC/" class="post-title-link" itemprop="url">vue 版本</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-19 11:46:20" itemprop="dateCreated datePublished" datetime="2021-06-19T11:46:20+08:00">2021-06-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-03-06 11:20:30" itemprop="dateModified" datetime="2023-03-06T11:20:30+08:00">2023-03-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>安装新的版本前，需要先把之前安装的版本卸载掉。</p>
+<p>vue卸载：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall vue-cli -g（3.0以下版本卸载）</span><br><span class="line">npm uninstall -g @vue/cli（3.0以上版本卸载）</span><br></pre></td></tr></table></figure>
+
+
+
+<p>vue安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli （安装的是最新版）</span><br><span class="line">npm install vue-cli@2.9.6 （指定版本安装【指定版本为3.0以下版本】，其中2.9.6为版本号）</span><br><span class="line">npm install -g @vue/cli@3.11.0（指定版本安装【指定版本为3.0以上版本】，其中3.11.0为版本号）</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>vue2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@vue/cli 4.4.6</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/Linux-nodejs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/19/Linux-nodejs/" class="post-title-link" itemprop="url">Linux nodejs</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-19 11:12:19" itemprop="dateCreated datePublished" datetime="2021-06-19T11:12:19+08:00">2021-06-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="Linux-nodejs-安装"><a href="#Linux-nodejs-安装" class="headerlink" title="Linux nodejs 安装"></a>Linux nodejs 安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nodejs</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install npm</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/docker-mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/19/docker-mysql/" class="post-title-link" itemprop="url">docker mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-19 10:01:58" itemprop="dateCreated datePublished" datetime="2021-06-19T10:01:58+08:00">2021-06-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># docker 中下载 mysql</span><br><span class="line">docker pull mysql:5.7</span><br><span class="line"></span><br><span class="line">#启动</span><br><span class="line">sudo docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7</span><br><span class="line"></span><br><span class="line">#进入容器</span><br><span class="line">sudo docker exec -it mysql bash</span><br><span class="line"></span><br><span class="line">#登录mysql</span><br><span class="line">mysql -u root -p</span><br><span class="line"></span><br><span class="line"># 外部访问</span><br><span class="line">grant all privileges on *.* to root@&#x27;%&#x27; identified by &quot;password&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>传输sql文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp &lt;path&gt; container_name:path</span><br></pre></td></tr></table></figure>
+
+
+
+<p>执行sql文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source xxx.sql</span><br></pre></td></tr></table></figure>
+
+
+
+<p>修改密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET PASSWORD FOR &#x27;root&#x27;@&#x27;%&#x27; = &#x27;1a1a1a1A&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>Ps</p>
+<p>如果是root@localhost的话，只是修改本地访问mysql的密码</p>
+<p>而不能修改外部访问的密码</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-tutorial/" class="post-title-link" itemprop="url">云服务器 tutorial</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-19 09:02:29" itemprop="dateCreated datePublished" datetime="2021-06-19T09:02:29+08:00">2021-06-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 11:34:27" itemprop="dateModified" datetime="2022-06-27T11:34:27+08:00">2022-06-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="云服务器文件传输"><a href="#云服务器文件传输" class="headerlink" title="云服务器文件传输"></a>云服务器文件传输</h4><p>Windows到Linux</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp D:\Resource\hello.txt root@192.168.0.1:/home/admin</span><br></pre></td></tr></table></figure>
+
+<p>Linux到Windows</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp root@:/home/admin/hello.txt D:\resource\</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="云服务器简陋部署vue"><a href="#云服务器简陋部署vue" class="headerlink" title="云服务器简陋部署vue"></a>云服务器简陋部署vue</h4><p>如果想要最快部署vue 的话</p>
+<p>利用git把项目部署到服务器是最快的</p>
 
       
     </div>
@@ -1249,7 +1309,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/21/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/23/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/21/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/23/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1317,16 +1377,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">313</span>
+          <span class="site-state-item-count">291</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

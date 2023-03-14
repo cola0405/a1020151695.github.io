@@ -28,7 +28,7 @@
 <meta property="og:description" content="component无法注入默认扫 com.pcer JDBC性别存储1234567891011121314@Data@TableName(&quot;problem&quot;)public class Problem implements Serializable &amp;#123;    @TableId(type &#x3D; IdType.AUTO)    Integer id;    String na">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-07T02:50:04.000Z">
-<meta property="article:modified_time" content="2023-03-11T05:38:18.874Z">
+<meta property="article:modified_time" content="2023-03-14T04:25:28.468Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -210,7 +210,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-11 13:38:18" itemprop="dateModified" datetime="2023-03-11T13:38:18+08:00">2023-03-11</time>
+                <time title="Modified: 2023-03-14 12:25:28" itemprop="dateModified" datetime="2023-03-14T12:25:28+08:00">2023-03-14</time>
               </span>
 
           
@@ -247,6 +247,52 @@
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/pcer?serverTimezone=UTC&amp;characterEncoding=utf8</span></span><br></pre></td></tr></table></figure>
 
 <p>加上编码设置就行</p>
+<h1 id="dao"><a href="#dao" class="headerlink" title="dao"></a>dao</h1><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>利用事务处理，可以保证一组操作不会中途停止，它们会作为整体执行</p>
+<p>如果没有错误发生，整组语句提交给（写到）数据库表</p>
+<p>如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">start transaction;</span><br><span class="line">delete ...</span><br><span class="line">delete ...</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
+
+<p>当 <code>commit</code> 或 <code>rollback</code> 语句执行后，事务会自动关闭  </p>
+<p><code>savepoint</code> 回滚到 <code>savepoint</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">savepoint delete1;</span><br><span class="line">...</span><br><span class="line">rollback to delete1;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="事务问题"><a href="#事务问题" class="headerlink" title="事务问题"></a>事务问题</h2><h3 id="脏写（更新丢失）"><a href="#脏写（更新丢失）" class="headerlink" title="脏写（更新丢失）"></a>脏写（更新丢失）</h3><p>就是我刚才明明写了一个数据值，结果过了一会却没了。</p>
+<p>而它的本质就是事务 B 去修改了事务 A 修改过的值，但是此时事务 A 还没提交，所以事务 A 随时会回滚</p>
+<p>导致事务 B 修改的值也没了，这就是脏写的定义。</p>
+<h3 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h3><p>它的本质是事务 B 去查询了事务 A 修改过的数据，但是此时事务 A 还没提交，</p>
+<p>所以事务 A 随时会回滚导致事务 B 再次查询就读不到刚才事务 A 修改的数据了，这就是脏读。</p>
+<p>service有多个sql查询</p>
+<p>需要锁表，不然会脏读</p>
+<h3 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h3><p>在同一个事务内，两个相同的查询返回了不同的结果</p>
+<h3 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h3><p>你一个事务 A，先发送一条 SQL 语句，里面有一个条件，要查询一批数据出来</p>
+<p>如 <code>SELECT * FROM table WHERE id &gt; 10</code>。然后呢，它一开始查询出来了 10 条数据</p>
+<p>接着这个时候，别的事务 B往表里插了几条数据，而且事务 B 还提交了，此时多了几行数据</p>
+<p>幻读就是你一个事务用一样的 SQL 多次查询</p>
+<p>结果每次查询都会发现查到一些之前没看到过的数据</p>
+<p>注意，幻读特指的是你查询到了之前查询没看到过的数据，此时说明你是幻读了</p>
+<p>Ps: 不可重复读重点在于<strong>update和delete</strong>，而幻读的重点在于<strong>insert</strong></p>
+<h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isolation=Isolation.READ_UNCOMMITTED</span><br></pre></td></tr></table></figure>
+
+<p>以操作同一行数据为前提，读事务允许其他读事务和写事务，未提交的写事务<strong>禁止其他写事务（但允许其他读事务）</strong></p>
+<p>此隔离级别可以防止更新丢失，但不能防止脏读、不可重复读、幻读。此隔离级别可以通过“排他写锁”实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.READ_COMMITTED</span><br></pre></td></tr></table></figure>
+
+<p>以操作同一行数据为前提，读事务允许其他读事务和写事务，未提交的写事务<strong>禁止其他读事务和写事务</strong></p>
+<p>此隔离级别可以防止更新丢失、脏读，但不能防止不可重复读、幻读。此隔离级别可以通过“瞬间共享读锁”和“排他写锁”实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.REPEATABLE_READ</span><br></pre></td></tr></table></figure>
+
+<p><strong>事务的默认隔离等级</strong></p>
+<p>以操作同一行数据为前提，读事务<strong>禁止其他写事务（但允许其他读事务）</strong>，未提交的写事务<strong>禁止其他读事务和写事务</strong></p>
+<p>此隔离级别可以防止更新丢失、脏读、不可重复读，但<strong>不能防止幻读</strong>。此隔离级别可以通过“共享读锁”和“排他写锁”实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.SERIALIZABLE</span><br></pre></td></tr></table></figure>
+
+<p>提供严格的事务隔离。它要求事务序列化执行，事务只能一个接着一个地执行，不能并发执行。</p>
+<p>此隔离级别<strong>可以防止更新丢失、脏读、不可重复读、幻读</strong></p>
+<p>如果仅仅通过“行级锁”是无法实现事务序列化的，必须通过其他机制保证新插入的数据不会被刚执行查询操作的事务访问到。</p>
 
     </div>
 
@@ -265,7 +311,10 @@
     <a href="/2023/03/06/mybatis/" rel="prev" title="mybatis">
       <i class="fa fa-chevron-left"></i> mybatis
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/12/%E9%98%BF%E9%87%8C%E4%BA%91/" rel="next" title="阿里云">
+      阿里云 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -324,7 +373,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#component%E6%97%A0%E6%B3%95%E6%B3%A8%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">component无法注入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC"><span class="nav-number"></span> <span class="nav-text">JDBC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E5%88%AB%E5%AD%98%E5%82%A8"><span class="nav-number">1.</span> <span class="nav-text">性别存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number"></span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9Atag-%E5%BB%BA%E8%A1%A8%E3%80%81%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE"><span class="nav-number">1.</span> <span class="nav-text">多tag 建表、数据访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">插入数据中文乱码</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#component%E6%97%A0%E6%B3%95%E6%B3%A8%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">component无法注入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC"><span class="nav-number"></span> <span class="nav-text">JDBC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E5%88%AB%E5%AD%98%E5%82%A8"><span class="nav-number">1.</span> <span class="nav-text">性别存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number"></span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9Atag-%E5%BB%BA%E8%A1%A8%E3%80%81%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE"><span class="nav-number">1.</span> <span class="nav-text">多tag 建表、数据访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">插入数据中文乱码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dao"><span class="nav-number"></span> <span class="nav-text">dao</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">事务问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%84%8F%E5%86%99%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%A2%E5%A4%B1%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">脏写（更新丢失）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%84%8F%E8%AF%BB"><span class="nav-number">2.2.</span> <span class="nav-text">脏读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB"><span class="nav-number">2.3.</span> <span class="nav-text">不可重复读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%BB%E8%AF%BB"><span class="nav-number">2.4.</span> <span class="nav-text">幻读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">隔离级别</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -340,16 +389,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">313</span>
+          <span class="site-state-item-count">291</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
