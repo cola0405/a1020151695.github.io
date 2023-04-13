@@ -177,6 +177,788 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/23/vue-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/23/vue-learning/" class="post-title-link" itemprop="url">vue learning</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-02-23 10:13:34" itemprop="dateCreated datePublished" datetime="2023-02-23T10:13:34+08:00">2023-02-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-03-18 13:56:58" itemprop="dateModified" datetime="2023-03-18T13:56:58+08:00">2023-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>所谓 ViewModel 即为保持状态和视图的同步  </p>
+<p>可以将任意封装好的代码注册成标签  </p>
+<p>一个 Vue 实例相当于一个 MVVM 模式中的 ViewModel </p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230223182402911.png" alt="image-20230223182402911"></p>
+<p>Vue.js 作为数据驱动视图的框架，我们首先要知道的就是如何将数据在视图中展示出来</p>
+<p>传统的 Web 项目中，这一过程往往是通过后端模板引擎来进行数据和视图的渲染</p>
+<p>例如 PHP的 smarty， Java 的 velocity 和 freemarker</p>
+<p>但这样导致的情况是前后端语法会交杂在一起，前端 HTML 文件中需要包含后端模板引擎的语法</p>
+<p>而且渲染完成后如果需要再次修改视图，就只能通过获取 DOM 的方法进行修改，且手动维持数据和视图的一致。  </p>
+<p>Vue.js 的核心是一个响应式的数据绑定系统</p>
+<p>建立绑定后， DOM 将和数据保持同步，这样就无需手动维护 DOM</p>
+<p>使代码能够更加简洁易懂、提升效率</p>
+<h2 id="版本支持"><a href="#版本支持" class="headerlink" title="版本支持"></a>版本支持</h2><p>Vue.js 也抛弃了对 IE8 的支持</p>
+<p>在移动端支持到 Android 4.2+ 和 iOS 7+。</p>
+<h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h1><h2 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h2><p><code>util/axios.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> service = axios.create(&#123;</span><br><span class="line">    <span class="attr">baseURL</span>:<span class="string">&#x27;http://localhost:8080&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> service</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>api/problem.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> service <span class="keyword">from</span> <span class="string">&#x27;@/util/axios&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getProblemList</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> service.request(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;/problem/getList&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>:<span class="string">&#x27;get&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>App.vue</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">beforeMount</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  getProblemList().then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// init table data</span></span><br><span class="line">  <span class="built_in">this</span>.resetTableData()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// init page 1</span></span><br><span class="line">  <span class="built_in">this</span>.updatePage(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h2><p><code>api/problem.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">newProblem</span>(<span class="params">formData</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> axios.request(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;api/problem/new&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>:<span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: formData</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="command"><a href="#command" class="headerlink" title="command"></a>command</h1><h2 id=""><a href="#" class="headerlink" title="@"></a>@</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># @表示安装最新版</span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="npx"><a href="#npx" class="headerlink" title="npx"></a>npx</h2><p>npx 是 npm5.2.0版本新增的一个工具包，定义为npm包的执行者，相比 npm，npx 会自动安装依赖包并执行某个命令。</p>
+<h2 id="npm指定版本"><a href="#npm指定版本" class="headerlink" title="npm指定版本"></a>npm指定版本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall -g @vue/cli</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-cli@2.9.6 （指定版本安装【指定版本为3.0以下版本】）</span><br><span class="line">npm install -g @vue/cli@3.11.0（指定版本安装【指定版本为3.0以上版本】）</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli@4.4</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="component-组件"><a href="#component-组件" class="headerlink" title="component 组件"></a>component 组件</h1><h2 id="emit"><a href="#emit" class="headerlink" title="$emit"></a>$emit</h2><p>在实例本身上触发事件。  </p>
+<h2 id="dispatch"><a href="#dispatch" class="headerlink" title="$dispatch"></a>$dispatch</h2><p>派发事件，事件沿着父链冒泡，并且在第一次触发回调之后自动停止冒泡，除非触发函<br>数明确返回 true，才会继续向上冒泡。  </p>
+<h2 id="分页算法"><a href="#分页算法" class="headerlink" title="分页算法"></a>分页算法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">updatePage : <span class="function"><span class="keyword">function</span> (<span class="params">targetPage</span>)</span>&#123;</span><br><span class="line">     <span class="built_in">this</span>.showData = []</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">let</span> i=(targetPage-<span class="number">1</span>)*<span class="built_in">this</span>.pageSize;i&lt;<span class="built_in">this</span>.tableData.length;i++)&#123;</span><br><span class="line">       <span class="built_in">this</span>.showData.push(<span class="built_in">this</span>.tableData[i]);</span><br><span class="line">       <span class="keyword">if</span>(<span class="built_in">this</span>.showData.length===<span class="built_in">this</span>.pageSize) <span class="keyword">break</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="back-header"><a href="#back-header" class="headerlink" title="back header"></a>back header</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-page-header</span> @<span class="attr">back</span>=<span class="string">&quot;goBack&quot;</span> <span class="attr">content</span>=<span class="string">&quot;题目详情&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-page-header</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  <span class="function"><span class="title">goBack</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.$router.back()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="交集"><a href="#交集" class="headerlink" title="交集"></a>交集</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="built_in">this</span>.originData.length;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> curTypes = <span class="built_in">this</span>.originData[i].type</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> intersect = curTypes.filter(<span class="function"><span class="params">x</span> =&gt;</span> problemTypes.has(x))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(intersect.length === problemTypes.size)&#123;</span><br><span class="line">          <span class="built_in">this</span>.tableData.push(<span class="built_in">this</span>.originData[i]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HelloWorld</span> <span class="attr">msg</span>=<span class="string">&quot;Welcome to Your Vue.js App&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;HelloWorld&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    msg: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="修改页码"><a href="#修改页码" class="headerlink" title="修改页码"></a>修改页码</h2><p><code>:</code> 是为了取值</p>
+<p><code>current-page</code> 当前页数</p>
+<p><code>.sync</code> 表示同步</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-pagination</span></span></span><br><span class="line"><span class="tag">         @<span class="attr">current-change</span>=<span class="string">&quot;updatePage&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:current-page.sync</span>=<span class="string">&quot;curPage&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">background</span></span></span><br><span class="line"><span class="tag">         <span class="attr">layout</span>=<span class="string">&quot;prev, pager, next&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:page-size</span>=<span class="string">&quot;pageSize&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">:total</span>=<span class="string">&quot;this.tableData.length&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">el-pagination</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.curPage = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><p>组件引用</p>
+<h2 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h2><p>1） $parent: 父组件实例。<br>2） $children: 包含所有子组件实例。<br>3） $root: 组件所在的根实例。  </p>
+<h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3><p>子 (ProblemFilter)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法名、数据</span></span><br><span class="line"><span class="built_in">this</span>.$emit(<span class="string">&#x27;newFilter&#x27;</span>, <span class="built_in">this</span>.problemTypes)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>父</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ProblemFilter</span> @<span class="attr">newFilter</span>=<span class="string">&quot;doFilter&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ProblemFilter</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doFilter : <span class="function"><span class="keyword">function</span> (<span class="params">problemTypes</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h2><p>父</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TagManageDialog</span> <span class="attr">v-bind:tagList</span>=<span class="string">&quot;tagList&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">TagManageDialog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props : &#123;</span><br><span class="line">    <span class="attr">tagList</span>:&#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Array</span>,</span><br><span class="line">      <span class="attr">required</span>:<span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">this</span>.tagList)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Ps: 子组件中修改值，会影响父组件</p>
+<h1 id="第三方-Component"><a href="#第三方-Component" class="headerlink" title="第三方 Component"></a>第三方 Component</h1><h2 id="md编辑器"><a href="#md编辑器" class="headerlink" title="md编辑器"></a>md编辑器</h2><p><a target="_blank" rel="noopener" href="https://github.com/hinesboy/mavonEditor">https://github.com/hinesboy/mavonEditor</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mavon-editor --save</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mavon-editor</span></span></span><br><span class="line"><span class="tag">            <span class="attr">placeholder</span>=<span class="string">&quot;请输入题目内容...&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">:toolbars</span>=<span class="string">&quot;toolbars&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">v-model</span>=<span class="string">&quot;form.content&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">form</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      <span class="attr">difficulty</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      <span class="attr">content</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">toolbars</span>: &#123;</span><br><span class="line">      <span class="attr">bold</span>: <span class="literal">false</span>, <span class="comment">// 粗体</span></span><br><span class="line">      <span class="attr">italic</span>: <span class="literal">false</span>, <span class="comment">// 斜体</span></span><br><span class="line">      <span class="attr">header</span>: <span class="literal">false</span>, <span class="comment">// 标题</span></span><br><span class="line">      <span class="attr">underline</span>: <span class="literal">false</span>, <span class="comment">// 下划线</span></span><br><span class="line">      <span class="attr">strikethrough</span>: <span class="literal">false</span>, <span class="comment">// 中划线</span></span><br><span class="line">      <span class="attr">mark</span>: <span class="literal">false</span>, <span class="comment">// 标记</span></span><br><span class="line">      <span class="attr">superscript</span>: <span class="literal">false</span>, <span class="comment">// 上角标</span></span><br><span class="line">      <span class="attr">subscript</span>: <span class="literal">false</span>, <span class="comment">// 下角标</span></span><br><span class="line">      <span class="attr">quote</span>: <span class="literal">false</span>, <span class="comment">// 引用</span></span><br><span class="line">      <span class="attr">ol</span>: <span class="literal">false</span>, <span class="comment">// 有序列表</span></span><br><span class="line">      <span class="attr">ul</span>: <span class="literal">false</span>, <span class="comment">// 无序列表</span></span><br><span class="line">      <span class="attr">link</span>: <span class="literal">false</span>, <span class="comment">// 链接</span></span><br><span class="line">      <span class="attr">imagelink</span>: <span class="literal">true</span>, <span class="comment">// 图片链接</span></span><br><span class="line">      <span class="attr">code</span>: <span class="literal">true</span>, <span class="comment">// code</span></span><br><span class="line">      <span class="attr">table</span>: <span class="literal">false</span>, <span class="comment">// 表格</span></span><br><span class="line">      <span class="attr">fullscreen</span>: <span class="literal">false</span>, <span class="comment">// 全屏编辑</span></span><br><span class="line">      <span class="attr">readmodel</span>: <span class="literal">false</span>, <span class="comment">// 沉浸式阅读</span></span><br><span class="line">      <span class="attr">htmlcode</span>: <span class="literal">false</span>, <span class="comment">// 展示html源码</span></span><br><span class="line">      <span class="attr">help</span>: <span class="literal">false</span>, <span class="comment">// 帮助</span></span><br><span class="line">      <span class="comment">/* 1.3.5 */</span></span><br><span class="line">      <span class="attr">undo</span>: <span class="literal">false</span>, <span class="comment">// 上一步</span></span><br><span class="line">      <span class="attr">redo</span>: <span class="literal">false</span>, <span class="comment">// 下一步</span></span><br><span class="line">      <span class="attr">trash</span>: <span class="literal">false</span>, <span class="comment">// 清空</span></span><br><span class="line">      <span class="attr">save</span>: <span class="literal">false</span>, <span class="comment">// 保存（触发events中的save事件）</span></span><br><span class="line">      <span class="attr">navigation</span>: <span class="literal">false</span>, <span class="comment">// 导航目录</span></span><br><span class="line">      <span class="attr">alignleft</span>: <span class="literal">false</span>, <span class="comment">// 左对齐</span></span><br><span class="line">      <span class="attr">aligncenter</span>: <span class="literal">false</span>, <span class="comment">// 居中</span></span><br><span class="line">      <span class="attr">alignright</span>: <span class="literal">false</span>, <span class="comment">// 右对齐</span></span><br><span class="line">      <span class="comment">/* 2.2.1 */</span></span><br><span class="line">      <span class="attr">subfield</span>: <span class="literal">true</span>, <span class="comment">// 单双栏模式</span></span><br><span class="line">      <span class="attr">preview</span>: <span class="literal">true</span> <span class="comment">// 预览</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="md-预览"><a href="#md-预览" class="headerlink" title="md 预览"></a>md 预览</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mavon-editor</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:toolbars</span>=<span class="string">&quot;false&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:subfield</span>=<span class="string">&quot;false&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">default-open</span>=<span class="string">&quot;preview&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-model</span>=<span class="string">&quot;this.content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">mavon-editor</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.el-main</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(<span class="number">120deg</span>, <span class="number">#fdfbfb</span> <span class="number">0%</span>, <span class="number">#ebedee</span> <span class="number">100%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.el-container</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-<span class="selector-tag">aside</span> <span class="attribute">width</span>=&quot;<span class="number">150px</span>&quot;&gt;&lt;/el-<span class="selector-tag">aside</span>&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h1><h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p>在项目开发中，我们展示的数据往往需要经过一些处理。除了在模板中绑定表达式或者<br>利用过滤器外， Vue.js 还提供了计算属性这种方法，避免在模板中加入过重的业务逻辑，保证<br>模板的结构清晰和可维护性。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	<span class="attr">el</span> : <span class="string">&#x27;#app,</span></span><br><span class="line"><span class="string">	data: &#123;</span></span><br><span class="line"><span class="string">		firstName : &#x27;</span>Gavin<span class="string">&#x27;，</span></span><br><span class="line"><span class="string">		lastName: &#x27;</span>CLY<span class="string">&#x27;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">	computed : &#123;</span></span><br><span class="line"><span class="string">		fullName : function() &#123;</span></span><br><span class="line"><span class="string">		// this 指向 vm 实例</span></span><br><span class="line"><span class="string">			return this.firstName + &#x27;</span> <span class="string">&#x27; + this.lastName</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">	&#125;);</span></span><br><span class="line"><span class="string">&lt;p&gt;&#123;&#123; firstName &#125;&#125;&lt;/p&gt; // Gavin</span></span><br><span class="line"><span class="string">&lt;p&gt;&#123;&#123; lastName &#125;&#125;&lt;/p&gt; // CLY</span></span><br><span class="line"><span class="string">&lt;p&gt;&#123;&#123; fullName &#125;&#125;&lt;/p&gt; // Gavin CLY</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="data属性"><a href="#data属性" class="headerlink" title="data属性"></a>data属性</h2><p>vue实例中的data属性既可以是一个对象，也可以是一个函数</p>
+<p><strong>组件中定义data属性，只能是一个函数</strong></p>
+<p><strong>vue组件可能会有很多个实例，采用函数返回一个全新data形式，使每个实例对象的数据不会受到其他实例对象数据的污染</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">message</span>: <span class="string">&#x27;hello vue.js&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>In a method, this refers to the component that the method is attached to.  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">	<span class="attr">numbers</span>: [-<span class="number">5</span>, <span class="number">0</span>, <span class="number">2</span>, -<span class="number">1</span>, <span class="number">1</span>, <span class="number">0.5</span>]</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">	<span class="function"><span class="title">getPositiveNumbers</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">this</span>.numbers;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="-1"><a href="#-1" class="headerlink" title=":"></a>:</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-input</span> <span class="attr">type</span>=<span class="string">&quot;textarea&quot;</span> <span class="attr">:autosize</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>true 属性前加 :</p>
+<h2 id="get-inside"><a href="#get-inside" class="headerlink" title="get inside"></a>get inside</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="built_in">this</span>.tagList.length;i++)&#123;</span><br><span class="line">  <span class="keyword">if</span> (tags.find(<span class="function">(<span class="params">tag</span>) =&gt;</span> tag.id === <span class="built_in">this</span>.tagList[i].id))&#123;</span><br><span class="line">      <span class="built_in">this</span>.form.tags.push(<span class="built_in">this</span>.tagList[i].name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="Directive-指令"><a href="#Directive-指令" class="headerlink" title="Directive 指令"></a>Directive 指令</h1><h2 id="v-if-与-v-show"><a href="#v-if-与-v-show" class="headerlink" title="v-if 与 v-show"></a>v-if 与 v-show</h2><p><code>v-if</code></p>
+<p>true – 加载到DOM中（能在html代码中看到）</p>
+<p>false – 不加载到DOM中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-if=&quot;true&quot;&gt;one&lt;/div&gt;</span><br><span class="line">&lt;div v-if=&quot;false&quot;&gt;two&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>v-show</code></p>
+<p>true – 显示</p>
+<p>false – 不显示</p>
+<h3 id="v-if-更新不及时"><a href="#v-if-更新不及时" class="headerlink" title="v-if 更新不及时"></a>v-if 更新不及时</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 强制刷新</span><br><span class="line">this.$forceUpdate()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;inner&quot;</span>&gt;</span>inner<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span>not inner<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使用 <code>v-bind</code> 指令：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>缩写</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">:href</span>=<span class="string">&quot;url&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">:</span>[<span class="attr">key</span>]=<span class="string">&quot;url&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Ps: 这是one-way data binding  </p>
+<p>仅取决于内存中的dynamicId</p>
+<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>双向绑定 two-way data binding  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> &#123;&#123;content&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">names</span>: [<span class="string">&quot;Cola&quot;</span>, <span class="string">&quot;Amy&quot;</span>, <span class="string">&quot;Coco&quot;</span>],</span><br><span class="line">    <span class="attr">content</span> : <span class="string">&quot;Cola&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 完整语法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click</span>=<span class="string">&quot;doSomething&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> @<span class="attr">click</span>=<span class="string">&quot;doSomething&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 动态参数的缩写 (2.6.0+) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> @[<span class="attr">event</span>]=<span class="string">&quot;doSomething&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click</span>=<span class="string">&quot;say&quot;</span>&gt;</span> hello <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods :&#123;</span><br><span class="line">  <span class="attr">say</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;helloooooo&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">    <span class="attr">align</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">prop</span>=<span class="string">&quot;tags&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">label</span>=<span class="string">&quot;标签&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-tag</span> <span class="attr">v-for</span>=<span class="string">&quot;tag in scope.row.tags&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;tag&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; tag &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-tag</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="iteration-index"><a href="#iteration-index" class="headerlink" title="iteration index"></a>iteration index</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">&quot;(tag, i) in tagList&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><p>有唯一标识就行</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">&quot;(tag, i) in tagList&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-input</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;input-new-tag&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:key</span>=<span class="string">&quot;i&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:ref</span>=<span class="string">&quot;&#x27;input&#x27;+i&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-if</span>=<span class="string">&quot;editTag[i]&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-model</span>=<span class="string">&quot;tagList[i]&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">size</span>=<span class="string">&quot;small&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="动态ref"><a href="#动态ref" class="headerlink" title="动态ref"></a>动态ref</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-input</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;input-new-tag&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:key</span>=<span class="string">&quot;i&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:ref</span>=<span class="string">&quot;&#x27;input&#x27;+i&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-if</span>=<span class="string">&quot;editTag[i]&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-model</span>=<span class="string">&quot;tagList[i]&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">size</span>=<span class="string">&quot;small&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Ps：必须在nextTick中才能正常访问$refs</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.$nextTick(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.$refs[<span class="string">&#x27;input&#x27;</span>+i][<span class="number">0</span>].$refs.input.focus()</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h1><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>Document Object Model</p>
+<h2 id="hook-function"><a href="#hook-function" class="headerlink" title="hook function"></a>hook function</h2><p>和回调函数一个意思</p>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p><a target="_blank" rel="noopener" href="https://facebook.github.io/jsx/">JSX</a> 是 JavaScript 的一个类似 XML 的扩展，有了它，我们可以用以下的方式来书写代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">render (h) &#123;</span><br><span class="line">	<span class="keyword">return</span> (</span><br><span class="line">		<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">h1</span> <span class="attr">on-click</span>=<span class="string">&#123;this.handleClick&#125;</span>&gt;</span>Hello from JSX<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">p</span>&gt;</span> Hello World <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">	)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p>Model-View View-Model  </p>
+<p>which is based on the concept of two-way binding data to components and views  </p>
+<h2 id="响应式编程"><a href="#响应式编程" class="headerlink" title="响应式编程"></a>响应式编程</h2><p>保持状态和视图的同步</p>
+<h2 id="vm"><a href="#vm" class="headerlink" title="vm"></a>vm</h2><p>ViewModel </p>
+<h2 id="vue2-与-vue3"><a href="#vue2-与-vue3" class="headerlink" title="vue2 与 vue3"></a>vue2 与 vue3</h2><p>对于 Vue 3，你应该使用 npm 上可用的 Vue CLI v4.5 作为 @vue/cli。</p>
+<h1 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h1><p>Ps：不要用<code>element-ui</code>自带的flex</p>
+<p>外面套一个<code>div</code>来操作</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;tags&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-checkbox</span></span></span><br><span class="line"><span class="tag">       <span class="attr">v-for</span>=<span class="string">&quot;name in tagList&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">:key</span>=<span class="string">&quot;name&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">:label</span>=<span class="string">&quot;name&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">border</span></span></span><br><span class="line"><span class="tag">       <span class="attr">size</span>=<span class="string">&quot;medium&quot;</span></span></span><br><span class="line"><span class="tag">       @<span class="attr">change</span>=<span class="string">&quot;updateProblems&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-checkbox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#tags</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230312110826227.png" alt="image-20230312110826227"></p>
+<h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="built_in">this</span>.tagList.length;i++)&#123;</span><br><span class="line">  <span class="keyword">if</span> (tags.find(<span class="function">(<span class="params">tag</span>) =&gt;</span> tag.id === <span class="built_in">this</span>.tagList[i].id))&#123;</span><br><span class="line">      <span class="built_in">this</span>.selectedTags.push(<span class="built_in">this</span>.tagList[i].name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h1><h2 id="mount"><a href="#mount" class="headerlink" title="mount()"></a>mount()</h2><p>对于每个应用实例，<code>mount()</code> 仅能调用一次。</p>
+<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(App),</span><br><span class="line">  <span class="attr">data</span>:&#123;</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;hello vue.js&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).$mount(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="method"><a href="#method" class="headerlink" title="method"></a>method</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cur_change : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">this</span>.update_page()</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="attr">update_page</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">     alert(<span class="built_in">this</span>.pageSize)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">├── build                      // 构建相关  </span><br><span class="line">├── config                     // 配置相关</span><br><span class="line">├── src                        // 源代码</span><br><span class="line">│   ├── api                    // 所有请求</span><br><span class="line">│   ├── assets                 // 主题 字体等静态资源</span><br><span class="line">│   ├── components             // 全局公用组件</span><br><span class="line">│   ├── directive              // 全局指令</span><br><span class="line">│   ├── filtres                // 全局 filter</span><br><span class="line">│   ├── icons                  // 项目所有 svg icons</span><br><span class="line">│   ├── lang                   // 国际化 language</span><br><span class="line">│   ├── mock                   // 项目mock 模拟数据</span><br><span class="line">│   ├── router                 // 路由</span><br><span class="line">│   ├── store                  // 全局 store管理</span><br><span class="line">│   ├── styles                 // 全局样式</span><br><span class="line">│   ├── utils                  // 全局公用方法</span><br><span class="line">│   ├── vendor                 // 公用vendor</span><br><span class="line">│   ├── views                   // view</span><br><span class="line">│   ├── App.vue                // 入口页面</span><br><span class="line">│   ├── main.js                // 入口 加载组件 初始化等</span><br><span class="line">│   └── permission.js          // 权限管理</span><br><span class="line">├── static                     // 第三方不打包资源</span><br><span class="line">│   └── Tinymce                // 富文本</span><br><span class="line">├── .babelrc                   // babel-loader 配置</span><br><span class="line">├── eslintrc.js                // eslint 配置项</span><br><span class="line">├── .gitignore                 // git 忽略项</span><br><span class="line">├── favicon.ico                // favicon图标</span><br><span class="line">├── index.html                 // html模板</span><br><span class="line">└── package.json               // package.json</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="proxy-端口"><a href="#proxy-端口" class="headerlink" title="proxy 端口"></a>proxy 端口</h1><p><code>vue.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="attr">devServer</span>: &#123;</span><br><span class="line">        <span class="attr">port</span>: <span class="number">8081</span>,</span><br><span class="line">        <span class="attr">host</span>: <span class="string">&#x27;0.0.0.0&#x27;</span>,</span><br><span class="line">        <span class="attr">proxy</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">                <span class="comment">// url 这里会做拼接</span></span><br><span class="line">                <span class="attr">target</span>: <span class="string">&#x27;http://localhost:8080/&#x27;</span>,  <span class="comment">//目标服务器端口</span></span><br><span class="line">                <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="attr">pathRewrite</span>: &#123;	  <span class="comment">// 在proxy处重写url</span></span><br><span class="line">                    <span class="string">&#x27;^/api&#x27;</span>: <span class="string">&#x27;&#x27;</span>  <span class="comment">// 表示删除url中的api</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>之所以要加 <code>api</code></p>
+<p>原因在于，我们只希望发往后端的请求才走proxy</p>
+<p>对于前端的页面跳转，我们不需要proxy</p>
+<p><code>problem.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getProblemList</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> axios.request(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;api/problem/getList&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>:<span class="string">&#x27;get&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="权限验证"><a href="#权限验证" class="headerlink" title="权限验证"></a>权限验证</h1><p>前端验证还是后端验证？</p>
+<p>若后端验证，则每增加一个页面，后端就要动一下</p>
+<p>若前端验证，则只在前端动就行</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220103203722855.png" alt="image-20220103203722855"></p>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="function"><span class="title">created</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://v2.cn.vuejs.org/images/lifecycle.png" alt="img"></p>
+<h1 id="Table"><a href="#Table" class="headerlink" title="Table"></a>Table</h1><h2 id="Filter-筛选"><a href="#Filter-筛选" class="headerlink" title="Filter 筛选"></a>Filter 筛选</h2><p>如果不用分页，则直接用<code>Table-column Attributes</code> 的<code>filter-method</code> 即可筛选</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果是多选的筛选项，对每一条数据会执行多次，任意一次返回 true 就会显示</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果同时还要分页，则是要用<code>Table Events</code> 的<code>filter-change</code> </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:data</span>=<span class="string">&quot;showData&quot;</span></span></span><br><span class="line"><span class="tag">        @<span class="attr">filter-change</span>=<span class="string">&quot;doDifficultyFilter&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">&quot;width: 100%&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">          <span class="attr">prop</span>=<span class="string">&quot;id&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">label</span>=<span class="string">&quot;ID&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">          <span class="attr">align</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">prop</span>=<span class="string">&quot;name&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">label</span>=<span class="string">&quot;题目名称&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">          <span class="attr">id</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:column-key</span>=<span class="string">&quot;&#x27;difficulty&#x27;&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:filters</span>=<span class="string">&quot;[&#123; text:&#x27;简单&#x27;, value: &#x27;简单&#x27;&#125;, &#123; text:&#x27;中等&#x27;, value: &#x27;中等&#x27;&#125;, &#123; text:&#x27;困难&#x27;, value: &#x27;困难&#x27;&#125;]&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">align</span>=<span class="string">&quot;right&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">prop</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">label</span>=<span class="string">&quot;难度&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>要筛选的那一列</p>
+<p>需要配置<code>:column-key</code> 和<code>filters</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当表格的筛选条件发生变化的时候会触发该事件</span><br><span class="line">参数的值是一个对象，对象的 key 是 column 的 columnKey，对应的 value 为用户选择的筛选条件的数组</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">          <span class="attr">id</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:column-key</span>=<span class="string">&quot;&#x27;difficulty&#x27;&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:filters</span>=<span class="string">&quot;[&#123; text:&#x27;简单&#x27;, value: &#x27;简单&#x27;&#125;, &#123; text:&#x27;中等&#x27;, value: &#x27;中等&#x27;&#125;, &#123; text:&#x27;困难&#x27;, value: &#x27;困难&#x27;&#125;]&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">align</span>=<span class="string">&quot;right&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">prop</span>=<span class="string">&quot;difficulty&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">label</span>=<span class="string">&quot;难度&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> doDifficultyFilter : <span class="function"><span class="keyword">function</span> (<span class="params">columns</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">let</span> difficultySet = <span class="keyword">new</span> <span class="built_in">Set</span>(columns[<span class="string">&#x27;difficulty&#x27;</span>])</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 无筛选</span></span><br><span class="line">   <span class="keyword">if</span>(difficultySet.size === <span class="number">0</span>)&#123;</span><br><span class="line">     <span class="built_in">this</span>.resetTableData()</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">     <span class="built_in">this</span>.tableData = []</span><br><span class="line"></span><br><span class="line">     <span class="comment">// 符合difficultySet内的problems都放入tableData</span></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="built_in">this</span>.originData.length;i++)&#123;</span><br><span class="line">       <span class="keyword">let</span> curDifficulty = <span class="built_in">this</span>.originData[i].difficulty</span><br><span class="line">       <span class="keyword">if</span>(difficultySet.has(curDifficulty))&#123;</span><br><span class="line">         <span class="built_in">this</span>.tableData.push(<span class="built_in">this</span>.originData[i]);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="comment">// 更新分页数据，翻回第一页</span></span><br><span class="line">   <span class="built_in">this</span>.adjustPagination()</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Page-分页"><a href="#Page-分页" class="headerlink" title="Page 分页"></a>Page 分页</h2><h1 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h1><h2 id="template"><a href="#template" class="headerlink" title="template"></a>template</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">    <span class="attr">align</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">prop</span>=<span class="string">&quot;tags&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">label</span>=<span class="string">&quot;标签&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-tag</span> <span class="attr">v-for</span>=<span class="string">&quot;tag in scope.row.tags&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;tag&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; tag &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-tag</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h1><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router -s</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对应上vue 2.6</span></span><br><span class="line">npm install vue-router@3.5.2</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span>;</span><br><span class="line">Vue.use(VueRouter);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="router-view"><a href="#router-view" class="headerlink" title="router-view"></a>router-view</h2><h3 id="局部router-view"><a href="#局部router-view" class="headerlink" title="局部router-view"></a>局部router-view</h3><p><code>router.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> NewProblem <span class="keyword">from</span> <span class="string">&quot;@/components/NewProblem.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> Main <span class="keyword">from</span> <span class="string">&quot;@/components/Main.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> ProblemList <span class="keyword">from</span> <span class="string">&quot;@/components/ProblemList.vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routers = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: Main,</span><br><span class="line">        <span class="attr">children</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;problem/list&#x27;</span>,</span><br><span class="line">                <span class="attr">component</span>: ProblemList</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;new/problem&#x27;</span>,</span><br><span class="line">                <span class="attr">component</span>: NewProblem</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> routers</span><br></pre></td></tr></table></figure>
+
+<p>里面的 <code>children</code> 只会匹配嵌套在内层的 <code>router-view</code></p>
+<h3 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">methods : &#123;</span><br><span class="line">  <span class="attr">toProblemList</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.$router.push(<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">toNewProblem</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.$router.push(<span class="string">&#x27;/new/problem&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Ps: url最前面的<code>/</code>不可省</p>
+<h3 id="默认页面"><a href="#默认页面" class="headerlink" title="默认页面"></a>默认页面</h3><p><code>router.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> NewProblem <span class="keyword">from</span> <span class="string">&quot;@/components/NewProblem.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> Main <span class="keyword">from</span> <span class="string">&quot;@/components/Main.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> ProblemList <span class="keyword">from</span> <span class="string">&quot;@/components/ProblemList.vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routers = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: Main,</span><br><span class="line">        <span class="attr">children</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">                <span class="attr">component</span>: ProblemList</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;new/problem&#x27;</span>,</span><br><span class="line">                <span class="attr">component</span>: NewProblem</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> routers</span><br></pre></td></tr></table></figure>
+
+<p><code>problemList</code> 则是默认界面</p>
+<h3 id="共用表单"><a href="#共用表单" class="headerlink" title="共用表单"></a>共用表单</h3><p>使用 <code>created</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">created</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">this</span>.$route.query.type === <span class="string">&#x27;update&#x27;</span>)&#123;</span><br><span class="line">    <span class="built_in">this</span>.form.name = <span class="built_in">this</span>.$route.query.problemData.name</span><br><span class="line">    <span class="built_in">this</span>.form.difficulty = <span class="built_in">this</span>.$route.query.problemData.difficulty;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h3 id="跳转页面传递数据"><a href="#跳转页面传递数据" class="headerlink" title="跳转页面传递数据"></a>跳转页面传递数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">editProblem</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.$router.push(&#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/new/problem&#x27;</span>,</span><br><span class="line">    <span class="attr">query</span>:&#123;</span><br><span class="line">      <span class="attr">id</span> : id</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>取数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">beforeCreate</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.$route.query)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="重复点击路由-报错"><a href="#重复点击路由-报错" class="headerlink" title="重复点击路由 报错"></a>重复点击路由 报错</h2><p><code>main.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> originalPush = VueRouter.prototype.push</span><br><span class="line">VueRouter.prototype.push = <span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">location</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> originalPush.call(<span class="built_in">this</span>, location).catch(<span class="function"><span class="params">err</span> =&gt;</span> err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h1><p>官方的脚手架生成工具 <code>vue-cli</code></p>
+<p><code>vue-cli</code> 总共提供了 5 种脚手架   </p>
+<p><code>webpack</code>、<code>webpack-simple  </code>、<code>browerify  </code>、<code>browerify-simple  </code>、<code>simple  </code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack myproject</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h1><h2 id="编辑进去之后没办法新建"><a href="#编辑进去之后没办法新建" class="headerlink" title="编辑进去之后没办法新建"></a>编辑进去之后没办法新建</h2><h2 id="mk-down-editor-报错"><a href="#mk-down-editor-报错" class="headerlink" title="mk down editor 报错"></a>mk down editor 报错</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/20/algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/20/algorithm/" class="post-title-link" itemprop="url">algorithm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-02-20 18:20:21" itemprop="dateCreated datePublished" datetime="2023-02-20T18:20:21+08:00">2023-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-21 11:25:10" itemprop="dateModified" datetime="2023-02-21T11:25:10+08:00">2023-02-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="permutation-全排列"><a href="#permutation-全排列" class="headerlink" title="permutation 全排列"></a>permutation 全排列</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permute</span>(<span class="params">nums</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">        <span class="comment"># 因为待会要for i in permutation</span></span><br><span class="line">        <span class="comment"># 然后把nums和其他[]做拼接</span></span><br><span class="line">        <span class="comment"># 所以这里需要用[nums]</span></span><br><span class="line">        <span class="keyword">return</span> [nums]</span><br><span class="line">    result = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">        curr = nums[i]</span><br><span class="line">        <span class="comment"># 移除当前元素</span></span><br><span class="line">        remaining = nums[:i] + nums[i+<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 递归求剩余元素的 permutation</span></span><br><span class="line">        remaining_permutation = permute(remaining)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 把curr加上各种permutation</span></span><br><span class="line">        <span class="keyword">for</span> permutation <span class="keyword">in</span> remaining_permutation:</span><br><span class="line">            result.append([curr] + permutation)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(permute([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="collections"><a href="#collections" class="headerlink" title="collections"></a>collections</h2><h3 id="defaultdict"><a href="#defaultdict" class="headerlink" title="defaultdict"></a>defaultdict</h3><p>defaultdict是一个字典的子类，它重载了一个方法并添加了一个可调用的默认值。如果使用一个不存在的键访问defaultdict中的元素，那么该元素将被初始化为指定的默认值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line">d = defaultdict(<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(d[<span class="string">&#x27;a&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a>Counter</h3><p>Counter是一个用于计数的容器类型，它可以自动统计元素出现的次数。Counter可以接受任何可迭代对象作为输入，并返回一个字典，其中元素作为键，它们出现的次数作为值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">c = Counter(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(c)  <span class="comment"># 输出 Counter(&#123;&#x27;l&#x27;: 3, &#x27;o&#x27;: 2, &#x27;e&#x27;: 1, &#x27;h&#x27;: 1, &#x27; &#x27;: 1, &#x27;w&#x27;: 1, &#x27;r&#x27;: 1, &#x27;d&#x27;: 1&#125;)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><p>deque是一个双端队列，它支持在队列的两端进行快速的插入和删除操作。与列表相比，deque能够更快地执行append和pop操作，特别是在队列中包含大量元素时。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">q = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">q.appendleft(<span class="number">0</span>)</span><br><span class="line">q.append(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(q)  <span class="comment"># 输出 deque([0, 1, 2, 3, 4])</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230221101233462.png" alt="image-20230221101233462"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230221101715358.png" alt="image-20230221101715358"></p>
+<h3 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230221101548008.png" alt="image-20230221101548008"></p>
+<h2 id="Graph-图"><a href="#Graph-图" class="headerlink" title="Graph 图"></a>Graph 图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可作无向图，也可为有向图</span></span><br><span class="line">graph = &#123;</span><br><span class="line">    <span class="string">&#x27;A&#x27;</span>: [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;B&#x27;</span>: [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;C&#x27;</span>: [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;D&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;D&#x27;</span>: [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可为有向图</span></span><br><span class="line"><span class="comment"># 对于大型图来说，可能会导致存储和计算效率低下</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">graph = np.array([</span><br><span class="line">    [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>]</span><br><span class="line">])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>删除节点</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_node</span>(<span class="params">graph, node</span>):</span></span><br><span class="line">    <span class="comment"># 从图中删除节点</span></span><br><span class="line">    <span class="keyword">del</span> graph[node]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 从其他节点的邻居列表中删除该节点</span></span><br><span class="line">    <span class="keyword">for</span> _, neighbors <span class="keyword">in</span> graph.items():</span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">in</span> neighbors:</span><br><span class="line">            neighbors.remove(node)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>dfs</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">graph, start, visited=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> visited <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        visited = <span class="built_in">set</span>()</span><br><span class="line">    visited.add(start)</span><br><span class="line">    <span class="built_in">print</span>(start)</span><br><span class="line">    <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph[start]:</span><br><span class="line">        <span class="keyword">if</span> neighbor <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">            dfs(graph, neighbor, visited)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>bfs</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bfs</span>(<span class="params">graph, start</span>):</span></span><br><span class="line">    visited = <span class="built_in">set</span>()</span><br><span class="line">    queue = deque([start])</span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        node = queue.popleft()</span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">            visited.add(node)</span><br><span class="line">            <span class="built_in">print</span>(node)</span><br><span class="line">            <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph[node]:</span><br><span class="line">                <span class="keyword">if</span> neighbor <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                    queue.append(neighbor)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/01/django/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/01/django/" class="post-title-link" itemprop="url">django</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-02-01 15:00:37 / Modified: 16:14:47" itemprop="dateCreated datePublished" datetime="2023-02-01T15:00:37+08:00">2023-02-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>pycharm pro</p>
+<p>demo</p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=rHux0gMZ3Eg">https://www.youtube.com/watch?v=rHux0gMZ3Eg</a></p>
+<h2 id="管理员账号"><a href="#管理员账号" class="headerlink" title="管理员账号"></a>管理员账号</h2><p>sqlite3的问题</p>
+<p>importError: DLL load failed while importing _sqlite3: 找不到指定的模块</p>
+<p>解决方法：</p>
+<p>在<code>anaconda\Library\bin</code>下找到<code>sqlite3.dll</code></p>
+<p>把他放到<code>anaconda\DLLs</code>下即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/28/%E9%9D%A2%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -208,7 +990,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-14 15:55:29" itemprop="dateModified" datetime="2023-03-14T15:55:29+08:00">2023-03-14</time>
+                <time title="Modified: 2023-04-13 17:56:38" itemprop="dateModified" datetime="2023-04-13T17:56:38+08:00">2023-04-13</time>
               </span>
 
           
@@ -448,6 +1230,132 @@
 
 
 <h2 id="开放封闭原则"><a href="#开放封闭原则" class="headerlink" title="开放封闭原则"></a>开放封闭原则</h2><p>有新业务尽量能统一扩展（复用、调整）、不逐一修改</p>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>不暴露创建对象的具体逻辑，而是将将逻辑封装在一个函数中，那么这个函数就可以被视为一个工厂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">Factory</span><span class="params">(career)</span> </span>&#123;</span><br><span class="line">    <span class="function">function <span class="title">User</span><span class="params">(career, work)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.career = career </span><br><span class="line">        <span class="keyword">this</span>.work = work</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">let work</span></span><br><span class="line"><span class="function">    <span class="title">switch</span><span class="params">(career)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;coder&#x27;</span>:</span><br><span class="line">            work =  [<span class="string">&#x27;写代码&#x27;</span>, <span class="string">&#x27;修Bug&#x27;</span>] </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;hr&#x27;</span>:</span><br><span class="line">            work = [<span class="string">&#x27;招聘&#x27;</span>, <span class="string">&#x27;员工信息管理&#x27;</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;driver&#x27;</span>:</span><br><span class="line">            work = [<span class="string">&#x27;开车&#x27;</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;boss&#x27;</span>:</span><br><span class="line">            work = [<span class="string">&#x27;喝茶&#x27;</span>, <span class="string">&#x27;开会&#x27;</span>, <span class="string">&#x27;审批文件&#x27;</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let coder = <span class="keyword">new</span> Factory(<span class="string">&#x27;coder&#x27;</span>)</span><br><span class="line">console.log(coder)</span><br><span class="line">let boss = <span class="keyword">new</span> Factory(<span class="string">&#x27;boss&#x27;</span>)</span><br><span class="line">console.log(boss)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当我们调用工厂函数时，只需要传递career就可以获取到包含用户工作内容的实例对象</p>
+<h3 id="抽象工厂"><a href="#抽象工厂" class="headerlink" title="抽象工厂"></a>抽象工厂</h3><p>抽象工厂模式的工作就是生产工厂的</p>
+<p>抽象工厂是接口类，写好接口，然后子类再具体对其进行实现</p>
+<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><p>说白了就是方法复用</p>
+<p>不重复写同一功能的代码</p>
+<h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h3 id="IoC"><a href="#IoC" class="headerlink" title="IoC"></a>IoC</h3><p>Inversion of Control 控制反转</p>
+<p>It is a design principle — 也就是说，不是Spring 独创的，而是Spring 应用了这一设计原则</p>
+<p>而DI（依赖注入）就是这个原则的一种实现</p>
+<p>那先来了解一下IoC是什么</p>
+<p>类比一个例子来说明：</p>
+<p>Suppose you drive a car to your work place. This means you control the car. </p>
+<p>The IoC principle suggests to invert the control, meaning that instead of driving the car yourself</p>
+<p><strong>you hire a cab, where another person will drive the car</strong>. Thus, this is called inversion of the control - from you to the cab driver. </p>
+<p>You don’t have to drive a car yourself and you can let the driver do the driving so that you can focus on your main work.</p>
+<p>在编程层面：</p>
+<p>As an example, with traditional programming, the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Main_function">main function</a> of an application might make function calls into a menu library to display a list of available <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Command_(computing)">commands</a> and query the user to select one.[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Inversion_of_control#cite_note-FowlerDI-4">4]</a> </p>
+<p>The library thus would return the chosen option as the value of the function call, and the main function uses this value to execute the associated command.</p>
+<p>例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">namespace FlowControlDemo</span><br><span class="line">&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Program</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span><span class="params">(string[] args)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">           bool continueExecution = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">do</span></span><br><span class="line">            &#123;</span><br><span class="line">                Console.Write(<span class="string">&quot;Enter First Name:&quot;</span>);</span><br><span class="line">                <span class="keyword">var</span> firstName = Console.ReadLine();</span><br><span class="line"></span><br><span class="line">                Console.Write(<span class="string">&quot;Enter Last Name:&quot;</span>);</span><br><span class="line">                <span class="keyword">var</span> lastName = Console.ReadLine();</span><br><span class="line"></span><br><span class="line">                Console.Write(<span class="string">&quot;Do you want to save it? Y/N: &quot;</span>);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">var</span> wantToSave = Console.ReadLine();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (wantToSave.ToUpper() == <span class="string">&quot;Y&quot;</span>)</span><br><span class="line">                    SaveToDB(firstName, lastName);</span><br><span class="line"></span><br><span class="line">                Console.Write(<span class="string">&quot;Do you want to exit? Y/N: &quot;</span>);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">var</span> wantToExit = Console.ReadLine();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (wantToExit.ToUpper() == <span class="string">&quot;Y&quot;</span>)</span><br><span class="line">                    continueExecution = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">            &#125;<span class="keyword">while</span> (continueExecution);</span><br><span class="line">         </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SaveToDB</span><span class="params">(string firstName, string lastName)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="comment">//save firstName and lastName to the database here..</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>IoC can be applied to the above program by creating a GUI-based application such as the following windows-based application, wherein the framework will handle the flow of a program by using events.</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230413142812167.png" alt="image-20230413142812167"></p>
+<h3 id="Spring-IoC"><a href="#Spring-IoC" class="headerlink" title="Spring IoC"></a>Spring IoC</h3><p>Spring IoC is the mechanism to achieve loose-coupling between Objects dependencies. </p>
+<p>Spring IoC container is the program that <strong>injects</strong> dependencies into an object and make it ready for our use.</p>
+<h3 id="Bean"><a href="#Bean" class="headerlink" title="Bean"></a>Bean</h3><p>any object in the Spring framework that we initialize through Spring container is called Spring Bean</p>
+<h3 id="Bean-Scopes"><a href="#Bean-Scopes" class="headerlink" title="Bean Scopes"></a>Bean Scopes</h3><p>作用域</p>
+<ol>
+<li><strong>singleton</strong> - Only one instance of the bean will be created for each container. This is the default scope for the spring beans. While using this scope, make sure bean doesn’t have shared instance variables otherwise it might lead to data inconsistency issues.</li>
+<li><strong>prototype</strong> - A new instance will be created every time the bean is requested.</li>
+<li><strong>request</strong> - This is same as prototype scope, however it’s meant to be used for web applications. A new instance of the bean will be created for each HTTP request.</li>
+<li><strong>session</strong> - A new bean will be created for each HTTP session by the container.</li>
+<li><strong>global-session</strong> - This is used to create global session beans for Portlet applications.</li>
+</ol>
+<h3 id="Bean-Configuration"><a href="#Bean-Configuration" class="headerlink" title="Bean Configuration"></a>Bean Configuration</h3><p>Spring Framework provides three ways to configure beans to be used in the application.</p>
+<ol>
+<li><strong>Annotation Based Configuration</strong> - By using <a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/users/service">@Service</a> or <a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/users/component">@Component</a> annotations. Scope details can be provided with <a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/users/scope">@Scope</a> annotation.</li>
+<li><strong>XML Based Configuration</strong> - By creating Spring Configuration XML file to configure the beans. If you are using Spring MVC framework, the xml based configuration can be loaded automatically by writing some boiler plate code in web.xml file.</li>
+<li><strong>Java Based Configuration</strong> - Starting from Spring 3.0, we can configure Spring beans using java programs. Some important annotations used for java based configuration are <a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/users/configuration">@Configuration</a>, <a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/users/componentscan">@ComponentScan</a> and <a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/users/bean">@Bean</a>.</li>
+</ol>
+<h4 id="annotation-based"><a href="#annotation-based" class="headerlink" title="annotation based"></a>annotation based</h4><p><code>MyService.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.journaldev.spring.main;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="keyword">new</span> Date()+<span class="string">&quot;::&quot;</span>+msg);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>MyConfiguration.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.journaldev.spring.main;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.ComponentScan;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan(value=&quot;com.journaldev.spring.main&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyConfiguration</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Bean</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> MyService <span class="title">getService</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> MyService();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>usage</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AnnotationConfigApplicationContext ctx = <span class="keyword">new</span> AnnotationConfigApplicationContext(MyConfiguration.class);</span><br><span class="line">MyService service = ctx.getBean(MyService.class);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="xml-based"><a href="#xml-based" class="headerlink" title="xml based"></a>xml based</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans:beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;https://www.springframework.org/schema/mvc&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:beans</span>=<span class="string">&quot;https://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:context</span>=<span class="string">&quot;https://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;https://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">		https://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">		https://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- DispatcherServlet Context: defines this servlet&#x27;s request-processing infrastructure --&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">&lt;!-- Enables the Spring MVC @Controller programming model --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">annotation-driven</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the $&#123;webappRoot&#125;/resources directory --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">resources</span> <span class="attr">mapping</span>=<span class="string">&quot;/resources/**&quot;</span> <span class="attr">location</span>=<span class="string">&quot;/resources/&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">beans:bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">&quot;prefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;/WEB-INF/views/&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">&quot;suffix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;.jsp&quot;</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">beans:bean</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;com.journaldev.spring&quot;</span> /&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">beans:bean</span> <span class="attr">name</span>=<span class="string">&quot;myBean&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.journaldev.spring.beans.MyBean&quot;</span> <span class="attr">scope</span>=<span class="string">&quot;singleton&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">beans:bean</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">beans:beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ClassPathXmlApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;applicationContext.xml&quot;</span>);</span><br><span class="line">MyService app = context.getBean(MyService.class);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="java-based"><a href="#java-based" class="headerlink" title="java based"></a>java based</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldConfig</span> </span>&#123;</span><br><span class="line">   <span class="meta">@Bean</span> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> HelloWorld <span class="title">helloWorld</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> HelloWorld();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>和annotation based 的区别在于，这个不用新建类，@Bean放函数上就行</p>
+<h3 id="依赖注入过程"><a href="#依赖注入过程" class="headerlink" title="依赖注入过程"></a>依赖注入过程</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230413152421858.png" alt="image-20230413152421858"></p>
+<h3 id="循环依赖"><a href="#循环依赖" class="headerlink" title="循环依赖"></a>循环依赖</h3><h3 id="simple-web-service"><a href="#simple-web-service" class="headerlink" title="simple web service"></a>simple web service</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@RequestMapping(&quot;/&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">home</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;Hello Docker World&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(Application.class, args);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="注入方式"><a href="#注入方式" class="headerlink" title="注入方式"></a>注入方式</h3><h4 id="field-注入"><a href="#field-注入" class="headerlink" title="field 注入"></a>field 注入</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    HelloService helloService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="function">String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        helloService.sayHello();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="构造器注入"><a href="#构造器注入" class="headerlink" title="构造器注入"></a>构造器注入</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> HelloService helloService;</span><br><span class="line">	<span class="comment">// 不需要@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">HelloController</span><span class="params">(HelloService helloService)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.helloService = helloService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="function">String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        helloService.sayHello();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="setter-注入"><a href="#setter-注入" class="headerlink" title="setter 注入"></a>setter 注入</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">    HelloService helloService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHelloService</span><span class="params">(HelloService helloService)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.helloService = helloService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="function">String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        helloService.sayHello();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h4><p>Spring 官方文档有明确提出来不同注入方法的<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-setter-injection">使用建议</a></p>
+<p>关键在</p>
+<blockquote>
+<p>constructor injection with programmatic validation of arguments is preferable.</p>
+</blockquote>
+<p>强制依赖就用构造器方式（我看github开源的仓库。。其实大家都是用field注入。。。）</p>
+<p>可选、可变的依赖就用setter 注入</p>
+<p>但是在单元测试中，仍然用field 注入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.springboot;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.web.client.TestRestTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.ResponseEntity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.assertj.core.api.Assertions.assertThat;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloControllerIT</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> TestRestTemplate template;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getHello</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        ResponseEntity&lt;String&gt; response = template.getForEntity(<span class="string">&quot;/&quot;</span>, String.class);</span><br><span class="line">        assertThat(response.getBody()).isEqualTo(<span class="string">&quot;Greetings from Spring Boot!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><h4 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h4><p>Tags the class as a source of bean definitions for the application context.</p>
+<h4 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h4><h4 id="Data-and-Entity"><a href="#Data-and-Entity" class="headerlink" title="@Data and @Entity"></a>@Data and @Entity</h4><h4 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h4><p>indicates that the data returned by each method will be written straight into the response body instead of rendering a template.</p>
+<p>默认情况下@Controller 里return String 是去找对应的view视图</p>
+<p>找不到会报404错误</p>
+<h4 id="ResponseBody"><a href="#ResponseBody" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h4><p>signals that it is rendered straight into the response body.</p>
+<p>可以在@Controller 中直接返回字符串，而不去找view</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span></span><br><span class="line">    HelloService helloService;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">HelloController</span><span class="params">(HelloService helloService)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.helloService = helloService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="function">String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        helloService.sayHello();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h4 id="SpringBootApplication"><a href="#SpringBootApplication" class="headerlink" title="@SpringBootApplication"></a>@SpringBootApplication</h4><p>It is a meta-annotation that pulls in <strong>component scanning</strong>, <strong>autoconfiguration</strong>, and <strong>property support</strong>. </p>
 <h2 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h2><h3 id="变长参数"><a href="#变长参数" class="headerlink" title="变长参数"></a>变长参数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        print(<span class="string">&quot;Holis&quot;</span>, <span class="string">&quot;公众号:Hollis&quot;</span>, <span class="string">&quot;博客：www.hollischuang.com&quot;</span>, <span class="string">&quot;QQ：907607222&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String... strs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(strs[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -521,18 +1429,34 @@
 
 
 
-<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>不暴露创建对象的具体逻辑，而是将将逻辑封装在一个函数中，那么这个函数就可以被视为一个工厂</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">Factory</span><span class="params">(career)</span> </span>&#123;</span><br><span class="line">    <span class="function">function <span class="title">User</span><span class="params">(career, work)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.career = career </span><br><span class="line">        <span class="keyword">this</span>.work = work</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">let work</span></span><br><span class="line"><span class="function">    <span class="title">switch</span><span class="params">(career)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;coder&#x27;</span>:</span><br><span class="line">            work =  [<span class="string">&#x27;写代码&#x27;</span>, <span class="string">&#x27;修Bug&#x27;</span>] </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;hr&#x27;</span>:</span><br><span class="line">            work = [<span class="string">&#x27;招聘&#x27;</span>, <span class="string">&#x27;员工信息管理&#x27;</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;driver&#x27;</span>:</span><br><span class="line">            work = [<span class="string">&#x27;开车&#x27;</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;boss&#x27;</span>:</span><br><span class="line">            work = [<span class="string">&#x27;喝茶&#x27;</span>, <span class="string">&#x27;开会&#x27;</span>, <span class="string">&#x27;审批文件&#x27;</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> User(career, work)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let coder = <span class="keyword">new</span> Factory(<span class="string">&#x27;coder&#x27;</span>)</span><br><span class="line">console.log(coder)</span><br><span class="line">let boss = <span class="keyword">new</span> Factory(<span class="string">&#x27;boss&#x27;</span>)</span><br><span class="line">console.log(boss)</span><br></pre></td></tr></table></figure>
 
 
-
-<p>当我们调用工厂函数时，只需要传递career就可以获取到包含用户工作内容的实例对象</p>
-<h3 id="抽象工厂"><a href="#抽象工厂" class="headerlink" title="抽象工厂"></a>抽象工厂</h3><p>抽象工厂模式的工作就是生产工厂的</p>
-<p>抽象工厂是接口类，写好接口，然后子类再具体对其进行实现</p>
-<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><p>说白了就是方法复用</p>
-<p>不重复写同一功能的代码</p>
 <h2 id="zookeeper"><a href="#zookeeper" class="headerlink" title="zookeeper"></a>zookeeper</h2><p>分布式协调服务</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230116150903697.png" alt="image-20230116150903697"></p>
+<h1 id="quiz"><a href="#quiz" class="headerlink" title="quiz"></a>quiz</h1><h2 id="Java-1"><a href="#Java-1" class="headerlink" title="Java"></a>Java</h2><h3 id="进程和线程的区别？"><a href="#进程和线程的区别？" class="headerlink" title="进程和线程的区别？"></a>进程和线程的区别？</h3><p>进程，process</p>
+<p>每当一个应用启动的时候，都会创建一个进程</p>
+<p>进程中包含了程序的代码，数据等，用于程序的运行</p>
+<p>每个进程都有自己独立的一块内存空间，一个进程可以有多个线程</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230413173958813.png" alt="image-20230413173958813"></p>
+<p>线程是由进程创建的更小的执行单位</p>
+<p>当进程创建新线程的时候，则在OS会在那process占有的那块内存中分配一些给线程用</p>
+<p>线程同样有代码、数据、程序计数器等等</p>
+<p>最重要的一点是，进程之间是独立的，而<strong>线程之间是共享内存等资源的</strong></p>
+<h3 id="线程池原理"><a href="#线程池原理" class="headerlink" title="线程池原理"></a>线程池原理</h3><p>首先线程池有几个核心的参数概念：</p>
+<ol>
+<li>最大线程数maximumPoolSize</li>
+<li>核心线程数corePoolSize</li>
+<li>活跃时间keepAliveTime</li>
+<li>阻塞队列workQueue</li>
+<li>拒绝策略RejectedExecutionHandler</li>
+</ol>
+<p>当提交一个新任务到线程池时，具体的执行流程如下：</p>
+<ol>
+<li>当我们提交任务，线程池会根据corePoolSize大小创建若干任务数量线程执行任务</li>
+<li>当任务的数量超过corePoolSize数量，后续的任务将会进入阻塞队列阻塞排队</li>
+<li>当阻塞队列也满了之后，那么将会继续创建(maximumPoolSize-corePoolSize)个数量的线程来执行任务，如果任务处理完成，maximumPoolSize-corePoolSize额外创建的线程等待keepAliveTime之后被自动销毁</li>
+<li>如果达到maximumPoolSize，阻塞队列还是满的状态，那么将根据不同的拒绝策略对应处理</li>
+</ol>
 
       
     </div>
@@ -2546,288 +3470,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/21/%E8%B5%84%E6%BA%90%E7%AB%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/07/21/%E8%B5%84%E6%BA%90%E7%AB%99/" class="post-title-link" itemprop="url">资源站</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-07-21 15:15:06 / Modified: 15:41:23" itemprop="dateCreated datePublished" datetime="2022-07-21T15:15:06+08:00">2022-07-21</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="电子书"><a href="#电子书" class="headerlink" title="电子书"></a>电子书</h2><h3 id="浏览"><a href="#浏览" class="headerlink" title="浏览"></a>浏览</h3><p><a target="_blank" rel="noopener" href="https://www.ituring.com.cn/book">https://www.ituring.com.cn/book</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.dangdang.com/">http://www.dangdang.com/</a></p>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p><a target="_blank" rel="noopener" href="http://libgen.rs/%EF%BC%88%E4%B9%A6%E5%81%8F%E8%80%81%EF%BC%89">http://libgen.rs/（书偏老）</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-title-link" itemprop="url">计算机</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-07-21 14:51:41" itemprop="dateCreated datePublished" datetime="2022-07-21T14:51:41+08:00">2022-07-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-24 17:33:36" itemprop="dateModified" datetime="2022-09-24T17:33:36+08:00">2022-09-24</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="机器语言"><a href="#机器语言" class="headerlink" title="机器语言"></a>机器语言</h2><p>hight-level language</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101509026.png" alt="image-20220725101509026"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101638238.png" alt="image-20220725101638238"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725101750847.png" alt="image-20220725101750847"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721145224672.png" alt="image-20220721145224672"></p>
-<p>对应的汇编</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721145259050.png" alt="image-20220721145259050"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 调整I/O模式（把开关和LED关联起来）</span><br><span class="line">LD A,207</span><br><span class="line">OUT (2),A</span><br><span class="line">LD A,255</span><br><span class="line">OUT (2),A</span><br><span class="line"></span><br><span class="line">LD A,207</span><br><span class="line">OUT (3),A</span><br><span class="line">LD A,0</span><br><span class="line">OUT (3),A</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 控制LED的核心代码</span><br><span class="line"></span><br><span class="line">IN A,(0) # 把地址()的值存放到寄存器A中</span><br><span class="line">OUT (1),A # 把寄存器A的值写入到地址()中</span><br><span class="line"></span><br><span class="line"># (0)为输入</span><br><span class="line"># (1)为LED的开关</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>附录：</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721150525786.png" alt="image-20220721150525786"></p>
-<h1 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h1><p>加法器</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721163221851.png" alt="image-20220721163221851"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721164647736.png" alt="image-20220721164647736"></p>
-<p>（电池在底下，正负极一阶已接好，那个掰的额其实其实就是个开关，接通电路罢了，相当于发了电信号）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812143629029.png" alt="image-20220812143629029"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220812143656859.png" alt="image-20220812143656859"></p>
-<h2 id="半加器（一位加法器）"><a href="#半加器（一位加法器）" class="headerlink" title="半加器（一位加法器）"></a>半加器（一位加法器）</h2><p>两个输入</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729181317135.png" alt="image-20220729181317135"></p>
-<h2 id="全加器"><a href="#全加器" class="headerlink" title="全加器"></a>全加器</h2><p>三个输入</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729181109498.png" alt="image-20220729181109498"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729173854646.png" alt="image-20220729173854646"></p>
-<h2 id="二位加法器"><a href="#二位加法器" class="headerlink" title="二位加法器"></a>二位加法器</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220729183005816.png" alt="image-20220729183005816"></p>
-<h2 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h2><p>Javascript、Python</p>
-<p>执行时并没有直接被编译成机器码</p>
-<h2 id="compiler"><a href="#compiler" class="headerlink" title="compiler"></a>compiler</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172736585.png" alt="image-20220924172736585"></p>
-<h2 id="x86-amd64"><a href="#x86-amd64" class="headerlink" title="x86 amd64"></a>x86 amd64</h2><p>计算机指令集</p>
-<p>x86 是Intel一开始的32位指令集</p>
-<p>然后AMD推出了首款64位CPU</p>
-<p>即amd64</p>
-<p>后来Intel为了赶上竞争对手</p>
-<p>则有了x86-64</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924173335078.png" alt="image-20220924173335078"></p>
-<h1 id="计算机结构"><a href="#计算机结构" class="headerlink" title="计算机结构"></a>计算机结构</h1><p>Computer orgnization</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725121004378.png" alt="image-20220725121004378"></p>
-<h3 id="CPU-Central-Processing-Unit"><a href="#CPU-Central-Processing-Unit" class="headerlink" title="CPU(Central Processing Unit)"></a>CPU(Central Processing Unit)</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170304484.png" alt="image-20220721170304484"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170245488.png" alt="image-20220721170245488"></p>
-<h3 id="内存-Random-Access-Memory"><a href="#内存-Random-Access-Memory" class="headerlink" title="内存(Random Access Memory)"></a>内存(Random Access Memory)</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725171116116.png"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220726093747072.png" alt="image-20220726093747072"></p>
-<h3 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/08428c427a41872f2ed43bf2a9be69da.gif" alt="08428c427a41872f2ed43bf2a9be69da"></p>
-<h3 id="显示器数据流动"><a href="#显示器数据流动" class="headerlink" title="显示器数据流动"></a>显示器数据流动</h3><p>1．从总线进入GPU（图形处理器）：将CPU送来的数据送到北桥，再送到GPU里面进行处理。<br>2．将芯片处理完的数据送到显存。<br>3．从显存读取出数据再送到随机读写存储数—模转换器进行数模转换的工作。（但是如果是DVI接口类型的显卡，则不需要经过数字信号转模拟信号。而直接输出数字信号。）<br>4．从DAC进入显示器：将转换完的模拟信号送到显示屏。</p>
-<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><h3 id="数据单位"><a href="#数据单位" class="headerlink" title="数据单位"></a>数据单位</h3><p>bit和Byte</p>
-<p>1Byte = 1B = 8bit</p>
-<p>1KB = 1024B</p>
-<p>1MB = 1024KB</p>
-<p>KB和Kb</p>
-<p>1KB=8Kb</p>
-<p>100Mb/s=12.5MB/s</p>
-<p>因为二进制是计算技术中广泛采用的一种数制。</p>
-<p>二进制数据是用0和1两个数码来表示的数。 </p>
-<p>而2的10次恰好等于1024 ，所以为了方便就用了1024进制。</p>
-<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><p>电脑文件系统一般以一定大小的区块做为最小存储管理单位，比如4K字节</p>
-<p>所以如果一个文件就算只有1字节，也会占用4K空间</p>
-<p>占用空间会比文件实际大小要大</p>
-<h1 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h1><p>Java最初被设计为一种安全的受控环境。尽管如此，Java HotSpot还是包含了一个“后门”</p>
-<p>提供了一些可以直接操控内存和线程的低层次操作</p>
-<p>这个后门类——sun.misc.Unsafe——被JDK广泛用于自己的包中</p>
-<p>如java.nio和java.util.concurrent。但是丝毫不建议在生产环境中使用这个后门</p>
-<p>因为这个API十分不安全、不轻便、而且不稳定</p>
-<p>这个不安全的类提供了一个观察HotSpot JVM内部结构并且可以对其进行修改</p>
-<p>有时它可以被用来在不适用C++调试的情况下学习虚拟机内部结构，有时也可以被拿来做性能监控和开发工具</p>
-<p>（Python也有）</p>
-<h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><p>内存地址——C++展示</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    cout &lt;&lt; &amp;a[<span class="number">3</span>] &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; &amp;a[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>危险</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    a[<span class="number">2</span>] = <span class="number">666</span>;</span><br><span class="line">    cout &lt;&lt; &amp;a[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">int</span> result=*(<span class="keyword">int</span> *)<span class="number">0x61feec</span>;</span><br><span class="line">    cout &lt;&lt; result;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="GUI原理"><a href="#GUI原理" class="headerlink" title="GUI原理"></a>GUI原理</h1><p>是不是一张一张图片</p>
-<p>那么准备好相应的数据是不是就ok了</p>
-<p>最简单的文本框解释</p>
-<h1 id="RAM"><a href="#RAM" class="headerlink" title="RAM"></a>RAM</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172249840.png" alt="image-20220924172249840"></p>
-<p>细品</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172319368.png" alt="image-20220924172319368"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172331545.png" alt="image-20220924172331545"></p>
-<p>厚礼蟹</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924172352277.png" alt="image-20220924172352277"></p>
-<h1 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h1><p>system bus——系统总线</p>
-<p>Arithmetic and logic unit——ALU</p>
-<p>Information technology —— IT</p>
-<p>software as a service——(SaaS) Office365 Online版</p>
-<p>看着好像是remote帮你跑了一个Office</p>
-<p>实际上。。。</p>
-<p>platform as a service——(PaaS)</p>
-<p>上传应用给好启动参数就行了，他们会部署到他们自己的云上的服务器</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/18/FL680/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/07/18/FL680/" class="post-title-link" itemprop="url">FL680</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-07-18 16:32:27" itemprop="dateCreated datePublished" datetime="2022-07-18T16:32:27+08:00">2022-07-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-14 16:00:30" itemprop="dateModified" datetime="2023-03-14T16:00:30+08:00">2023-03-14</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230314160024306.png" alt="image-20230314160024306"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2899,7 +3541,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-count">294</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

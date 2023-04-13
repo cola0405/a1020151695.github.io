@@ -177,6 +177,256 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/07/axois/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/07/axois/" class="post-title-link" itemprop="url">axois</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-07 11:36:37" itemprop="dateCreated datePublished" datetime="2021-06-07T11:36:37+08:00">2021-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">        name: &quot;Register&quot;,</span><br><span class="line">        data()&#123;</span><br><span class="line">            return&#123;</span><br><span class="line">                messageInfo:&quot;&quot;,</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            register()&#123;</span><br><span class="line">                axios.post(&#x27;/register&#x27;, &#123;</span><br><span class="line">                    &quot;username&quot;:this.username,</span><br><span class="line">                    &quot;password&quot;:this.password,</span><br><span class="line">                    &quot;password1&quot;:this.password,</span><br><span class="line">                &#125;).then((res)=&gt;&#123;</span><br><span class="line">                    console.log(res)</span><br><span class="line">                    this.messageInfo=res.data.message</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;	</span><br></pre></td></tr></table></figure>
+
+<h4 id="Post指定form-data"><a href="#Post指定form-data" class="headerlink" title="Post指定form-data"></a>Post指定form-data</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	axios(&#123;</span><br><span class="line">        method: &#x27;post&#x27;,</span><br><span class="line">        url: &#x27;http://localhost:8080/health-post&#x27;,</span><br><span class="line">        headers: &#123;</span><br><span class="line">          &#x27;Content-Type&#x27;: &#x27;multipart/form-data&#x27;</span><br><span class="line">        &#125;,</span><br><span class="line">        withCredentials: true,</span><br><span class="line">        data: formData</span><br><span class="line">      &#125;).then((res) =&gt; &#123;</span><br><span class="line">      &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Spring Boot 接收数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/health-post&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">healthPost</span><span class="params">(<span class="meta">@RequestParam</span> Map&lt;String,String&gt; params)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (String key : params.keySet())&#123;</span><br><span class="line">        System.out.println(key+<span class="string">&quot;is&quot;</span>+params.get(key));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Good&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h4 id="axios-headers"><a href="#axios-headers" class="headerlink" title="axios headers"></a>axios headers</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Axios.request(&#123;</span><br><span class="line">     <span class="attr">url</span>: <span class="string">&quot;http://example.com&quot;</span>,</span><br><span class="line">     <span class="attr">method</span>: <span class="string">&quot;get&quot;</span>,</span><br><span class="line">     <span class="attr">headers</span>:&#123;</span><br><span class="line">         <span class="attr">Cookie</span>: <span class="string">&quot;cookie1=value; cookie2=value; cookie3=value;&quot;</span></span><br><span class="line">     &#125; </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>axios统一添加headers</p>
+<p>在main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line">axios.interceptors.request.use(</span><br><span class="line">  <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    config.headers.common = &#123;</span><br><span class="line">      <span class="string">&#x27;xxxxxxxxxx&#x27;</span>: <span class="string">&#x27;oooooooooooooo&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="params">err</span> =&gt;</span> &#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">       <span class="attr">withCredentials</span>: <span class="literal">true</span>,</span><br><span class="line">       <span class="attr">maxRedirects</span>: <span class="number">0</span>,</span><br><span class="line">       <span class="attr">method</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">       <span class="attr">url</span>: <span class="string">&#x27;/admin/getExcel&#x27;</span>,</span><br><span class="line">       <span class="attr">timeout</span>: <span class="number">4000</span></span><br><span class="line">     &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(res)</span><br><span class="line">     &#125;, <span class="function"><span class="params">ErrorEvent</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="built_in">this</span>.$message(<span class="string">&#x27;请求数据失败&#x27;</span>)</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="axois-post-列表-json-Array"><a href="#axois-post-列表-json-Array" class="headerlink" title="axois post 列表 json Array"></a>axois post 列表 json Array</h4><p>前端</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">       <span class="attr">withCredentials</span>: <span class="literal">true</span>,</span><br><span class="line">       <span class="attr">method</span>: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">       <span class="attr">url</span>: <span class="string">&#x27;/admin/getExcel&#x27;</span>,</span><br><span class="line">       <span class="attr">headers</span>: &#123;</span><br><span class="line">         <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span></span><br><span class="line">       &#125;,</span><br><span class="line">       <span class="attr">timeout</span>: <span class="number">4000</span>,</span><br><span class="line">       <span class="attr">data</span>: <span class="built_in">this</span>.tableData</span><br><span class="line">     &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(res)</span><br><span class="line">     &#125;, <span class="function"><span class="params">ErrorEvent</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="built_in">this</span>.$message(<span class="string">&#x27;请求数据失败&#x27;</span>)</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>后端 Spring Boot</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/admin/getExcel&quot;)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getExcel</span><span class="params">(<span class="meta">@RequestBody</span> JSONArray re)</span> </span>&#123;</span><br><span class="line">    System.out.println(re);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;ok&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/06/Vue-localhost/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/06/Vue-localhost/" class="post-title-link" itemprop="url">Vue localhost</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-06 16:12:48" itemprop="dateCreated datePublished" datetime="2021-06-06T16:12:48+08:00">2021-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="只能通过localhost访问"><a href="#只能通过localhost访问" class="headerlink" title="只能通过localhost访问"></a>只能通过localhost访问</h2><p>解决:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.查看`config`文件夹下的 `index.js`，将`dev`中将`host`重新定义为：`0.0.0.0`即可</span><br><span class="line"></span><br><span class="line">2.修改`package.json`中`script`下`dev`的值，在后面加入`--host 0.0.0.0` 也可以解决</span><br></pre></td></tr></table></figure>
+
+<p>Note</p>
+<blockquote>
+<p>别忘了把防火墙给关了</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/06/Vue-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA-VsCode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/06/Vue-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA-VsCode/" class="post-title-link" itemprop="url">Vue-项目创建-VsCode</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-06 15:18:07" itemprop="dateCreated datePublished" datetime="2021-06-06T15:18:07+08:00">2021-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>所需插件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Vetur  // Vue开发插件</span><br><span class="line">ESLint // 代码校验</span><br></pre></td></tr></table></figure>
+
+<p>工具：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g vue-cli</span><br></pre></td></tr></table></figure>
+
+<p>命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack projectName</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">You seem to be using old vue-cli and </span><br><span class="line">scaffolded your project using vue init webpack &lt;project-name&gt;.</span><br><span class="line"></span><br><span class="line">Since it all evolved into vue cli 3</span><br><span class="line">old vue-cli is deprecated</span><br><span class="line">we are now using @vue/cli</span><br><span class="line">vue create &lt;project-name&gt; for scaffolding out projects.</span><br><span class="line"></span><br><span class="line">It&#x27;s perfectly fine for you to use the old way(and I still do sometimes)</span><br><span class="line">vue.config.js is the global configuration file for your project </span><br><span class="line">when you are using @vue/cli. Check more about it here.</span><br><span class="line"></span><br><span class="line">For webpack configurations when using vue-cli</span><br><span class="line">in projects scaffolded using npm init command</span><br><span class="line">check the /build directory in the root of the project folder.</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="新建项目启动慢"><a href="#新建项目启动慢" class="headerlink" title="新建项目启动慢"></a>新建项目启动慢</h2><p>解决：更换npm的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/06/Vue-%E7%BB%84%E4%BB%B6%E5%BA%93%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -885,296 +1135,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/24/%E8%AE%A1%E7%AE%97%E6%9C%BA-N-TCP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/24/%E8%AE%A1%E7%AE%97%E6%9C%BA-N-TCP/" class="post-title-link" itemprop="url">计算机-N-TCP</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-24 08:26:52" itemprop="dateCreated datePublished" datetime="2021-05-24T08:26:52+08:00">2021-05-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:43:00" itemprop="dateModified" datetime="2022-06-27T15:43:00+08:00">2022-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Transmission Control Protocol</p>
-<p>TCP连接的建立（三次握手）</p>
-<p>第一次握手（A发给B）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524084347239.png" alt="image-20210524084347239"></p>
-<p>然后SYN置为1（set）</p>
-<p>随机初始序号2319633865</p>
-<p>然后自己的序号sequence number为0 （自己的序号也可称为相对序号，relative sequence number）</p>
-<p>第二次握手（B回复A）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524084547340.png" alt="image-20210524084547340"></p>
-<p>首先看Ack部分</p>
-<p>ack=A自己序号+1即0+1=1 （relative ack number）</p>
-<p>然后下面的ack序号为A的初始随机序号+1即2319633865+1=231963386</p>
-<p>再是自己的序号从0开始</p>
-<p>又随机生成一个序号670416643发给A</p>
-<p>第三次握手（A回复B）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524084814392.png" alt="image-20210524084814392"></p>
-<p>A自己的序号=原序号+1即0+1=1</p>
-<p>然后随机序号也+1</p>
-<p>接下来是Ack部分</p>
-<p>ack=B自己的序号+1即0+1=1</p>
-<p>然后ack随机序号=B的随即序号+1即670416643+1=670416644</p>
-<p>以上数据确认都没问题的话，就可以分配端口资源（套接字）然后正式建立连接了</p>
-<p>Conclusion：</p>
-<p>随机序号的作用</p>
-<p>答：一定程度上防止TCP syn 攻击</p>
-<p>建立连接时的标志位</p>
-<p>答：涉及连接建立的TCP报文，SYN都置1，回复方的ACK置为1（第二次和第三次握手）</p>
-<p>ACK和ack是不一样的，一个是标志位，一个是序号</p>
-<p>ACK再标志位中的全称叫 Acknowledgment</p>
-<p>关于相对序号</p>
-<p>答:初始双方都是0，然后收到对方回复的ack后才有机会增加</p>
-<hr>
-<p> TCP连接的释放</p>
-<p>（1）A发给B（A准备关闭连接）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524212654486.png" alt="image-20210524212654486"></p>
-<p>主要是在标志位FIN置为1</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524212759858.png"></p>
-<p>Ps：SYN在连接释放时置为0</p>
-<p>（2）B回复A</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524213038001.png" alt="image-20210524213038001"></p>
-<p>ack加1</p>
-<p>但是！relative sequence number 并未做加1操作</p>
-<p>再看标志位</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524213208909.png" alt="image-20210524213208909"></p>
-<p>FIN置为0，ACK置为1</p>
-<p>此时，A的发送通道就关闭了，即A不能主动发送数据包到B了（但是可以被动回复B）</p>
-<p>（建立连接后有两条通路，分别是A和B的发送通道）</p>
-<p>（3）B发给A（B也准备关闭连接）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524213407417.png" alt="image-20210524213407417"></p>
-<p>relative sequence number 仍未做加1操作</p>
-<p>ack也没有做加1操作</p>
-<p>（也就是说，和之前B回复给A的数据包序号都一样）</p>
-<p>再看标志位</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524213548780.png" alt="image-20210524213548780"></p>
-<p>FIN置为了1</p>
-<p>（4）A回复B</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524213612152.png" alt="image-20210524213612152"></p>
-<p>relative sequence number 未做加1操作</p>
-<p>ack加1了</p>
-<p>再看标志位</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524213917593.png" alt="image-20210524213917593"></p>
-<p>关于ack的总结</p>
-<p>ack加1表示接收方确实受到了</p>
-<p>每次回复时，ack都会加1</p>
-<p>但是，连续发送两个TCP数据报，relative sequence number 是不会变化的（因为期间并没有收到对方的ack）</p>
-<p>只有收到了对方的ack，相对序号才有加的机会</p>
-<hr>
-<p>误区</p>
-<p>序号每次只会加1</p>
-<p>答：不对</p>
-<p>举个例子</p>
-<p>发送方，此时相对序号为769，发送了一个600字节数据</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524214756347.png" alt="image-20210524214756347"></p>
-<p>接收方的回复</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210524214911160.png" alt="image-20210524214911160"></p>
-<p>ack=769+600=1369</p>
-<p>所以说，序号与发送数据的大小有关</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Ajax-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/11/Ajax-Tutorial/" class="post-title-link" itemprop="url">Ajax Tutorial</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-11 10:26:00" itemprop="dateCreated datePublished" datetime="2021-05-11T10:26:00+08:00">2021-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">            <span class="attr">type</span>: <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="string">&quot;http://localhost:8080/getRecord?area=&quot;</span>+area,</span><br><span class="line">            <span class="attr">dataType</span>: <span class="string">&quot;json&quot;</span>,</span><br><span class="line">            <span class="attr">jsonp</span>: <span class="string">&quot;callback&quot;</span>,</span><br><span class="line">            <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(json);</span><br><span class="line">                <span class="keyword">let</span> mainBody = <span class="built_in">document</span>.getElementById(<span class="string">&quot;main-body&quot;</span>);</span><br><span class="line">                <span class="keyword">let</span> table = <span class="string">&quot;&lt;table class=&#x27;table&#x27;&gt;&quot;</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">const</span> key <span class="keyword">in</span> json)&#123;</span><br><span class="line">                    table += <span class="string">&quot;&lt;tr&gt;&lt;td&gt;&quot;</span>+key+<span class="string">&quot;&lt;/td&gt;&lt;td&gt;&quot;</span>+json[key]+<span class="string">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;</span></span><br><span class="line">                &#125;</span><br><span class="line">                table+=<span class="string">&quot;&lt;/table&gt;&quot;</span></span><br><span class="line">                mainBody.innerHTML=table;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h4 id="ajax不发送请求"><a href="#ajax不发送请求" class="headerlink" title="ajax不发送请求"></a>ajax不发送请求</h4><p>原因：没有正确引入jquery</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>虽然某些别的js脚本也有引入jquery</p>
-<p>但是那个版本可能不支持ajax</p>
-<p>以导致ajax失效</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/11/Spring-Boot-Static-Page/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/11/Spring-Boot-Static-Page/" class="post-title-link" itemprop="url">Spring Boot Static Page</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-11 09:23:38" itemprop="dateCreated datePublished" datetime="2021-05-11T09:23:38+08:00">2021-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-21 18:28:24" itemprop="dateModified" datetime="2022-06-21T18:28:24+08:00">2022-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/META-INF/resources/  </span><br><span class="line">/resources/  </span><br><span class="line">/<span class="keyword">static</span>/  </span><br><span class="line">/<span class="keyword">public</span>/</span><br></pre></td></tr></table></figure>
-
-<p>Then access directly</p>
-<h4 id="Spring-Boot保存文件"><a href="#Spring-Boot保存文件" class="headerlink" title="Spring Boot保存文件"></a>Spring Boot保存文件</h4><p>/ 根目录在static内</p>
-<p>不加的话，新建的文件在项目根目录</p>
-<p>外部请求文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080/data.csv</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1246,7 +1206,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-count">294</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
