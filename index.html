@@ -177,6 +177,705 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/08/mc-sensor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/08/08/mc-sensor/" class="post-title-link" itemprop="url">mc_sensor</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-08-08 18:20:39" itemprop="dateCreated datePublished" datetime="2023-08-08T18:20:39+08:00">2023-08-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-17 16:55:28" itemprop="dateModified" datetime="2023-08-17T16:55:28+08:00">2023-08-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>针脚</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230808182121652.png" alt="image-20230808182121652"></p>
+<p>bcm</p>
+<p>蜂鸣器：<a target="_blank" rel="noopener" href="https://blog.csdn.net/hnmpf/article/details/110312964">https://blog.csdn.net/hnmpf/article/details/110312964</a></p>
+<h1 id="传感器"><a href="#传感器" class="headerlink" title="传感器"></a>传感器</h1><h2 id="敲击传感器"><a href="#敲击传感器" class="headerlink" title="敲击传感器"></a>敲击传感器</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230810171839886.png" alt="image-20230810171839886"></p>
+<p>接5 7 9</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230814182015479.png" alt="image-20230814182015479"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#回调函数，这里写敲击之后执行的方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">n</span>):</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;knocked&quot;</span>)</span><br><span class="line">	x,y,z = player.getTilePos()</span><br><span class="line">	player.setPos(x,y+<span class="number">20</span>,z)</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">====================================================</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> minecraft</span><br><span class="line">mc = minecraft.Minecraft.create()</span><br><span class="line">player = mc.player</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置输入</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)</span><br><span class="line">GPIO_PIN = <span class="number">4</span></span><br><span class="line">GPIO.setup(GPIO_PIN, GPIO.IN)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Sensor [ctrl+c to stop]&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加触发事件，当敲击后100ms触发回调函数</span></span><br><span class="line">GPIO.add_event_detect(GPIO_PIN, GPIO.FALLING, callback=f, bouncetime=<span class="number">100</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">		time.sleep(<span class="number">1</span>)  </span><br><span class="line"><span class="comment"># ctrl+c 终止程序</span></span><br><span class="line"><span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">	GPIO.cleanup()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="温湿度传感器"><a href="#温湿度传感器" class="headerlink" title="温湿度传感器"></a>温湿度传感器</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230810180456331.png" alt="image-20230810180456331"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自己来diy吧！</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    x,y,z = player.getTilePos()</span><br><span class="line">    mc.setBlock(x,y+<span class="number">2</span>,z,block.WATER)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">====================================================</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Adafruit_DHT</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> minecraft,block</span><br><span class="line"></span><br><span class="line">mc = minecraft.Minecraft.create(<span class="string">&#x27;192.168.50.169&#x27;</span>)</span><br><span class="line">player = mc.player</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set sensor type : Options are DHT11,DHT22 or AM2302</span></span><br><span class="line">sensor = Adafruit_DHT.DHT11</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set GPIO sensor is connected to</span></span><br><span class="line">gpio = <span class="number">18</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use read_retry method. This will retry up to 15 times to</span></span><br><span class="line"><span class="comment"># get a sensor reading (waiting 2 seconds between each retry).</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"><span class="comment"># Reading the DHT11 is very sensitive to timings and occasionally</span></span><br><span class="line"><span class="comment"># the Pi might fail to get a valid reading. So check if readings are valid.</span></span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    humidity, temperature = Adafruit_DHT.read_retry(sensor, gpio)</span><br><span class="line">    <span class="keyword">if</span> humidity <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">and</span> temperature <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Temp=&#123;0:0.1f&#125;*C Humidty=&#123;1:0.1f&#125;%&quot;</span>.<span class="built_in">format</span>(temperature, humidity))</span><br><span class="line">        <span class="keyword">if</span> humidity&gt;<span class="number">70</span>:</span><br><span class="line">            f()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Failed to get reading. Try again!&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="旋钮"><a href="#旋钮" class="headerlink" title="旋钮"></a>旋钮</h2><p>13 15 11 4 6</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230813151350604.png" alt="image-20230813151350604"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BtnPin = 11    # Button Pin</span><br><span class="line">RoAPin = 13    # CLK Pin</span><br><span class="line">RoBPin = 15    # DT Pin</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自己来diy吧！</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    mc.setBlock(x,y+<span class="number">2</span>,z,globalCounter)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">====================================================</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> minecraft</span><br><span class="line"></span><br><span class="line">mc = minecraft.Minecraft.create()</span><br><span class="line">player = mc.player</span><br><span class="line">x,y,z = player.getTilePos()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">RoAPin = <span class="number">13</span>    <span class="comment"># CLK Pin</span></span><br><span class="line">RoBPin = <span class="number">15</span>    <span class="comment"># DT Pin</span></span><br><span class="line">BtnPin = <span class="number">11</span>    <span class="comment"># Button Pin</span></span><br><span class="line">globalCounter = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">flag = <span class="number">0</span></span><br><span class="line">Last_RoB_Status = <span class="number">0</span></span><br><span class="line">Current_RoB_Status = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setup</span>():</span></span><br><span class="line">	GPIO.setmode(GPIO.BOARD)       <span class="comment"># Numbers GPIOs by physical location</span></span><br><span class="line">	GPIO.setup(RoAPin, GPIO.IN)    <span class="comment"># input mode</span></span><br><span class="line">	GPIO.setup(RoBPin, GPIO.IN)</span><br><span class="line">	GPIO.setup(BtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotaryDeal</span>():</span></span><br><span class="line">	<span class="keyword">global</span> flag</span><br><span class="line">	<span class="keyword">global</span> Last_RoB_Status</span><br><span class="line">	<span class="keyword">global</span> Current_RoB_Status</span><br><span class="line">	<span class="keyword">global</span> globalCounter</span><br><span class="line">	Last_RoB_Status = GPIO.<span class="built_in">input</span>(RoBPin)  </span><br><span class="line">	<span class="keyword">while</span>(<span class="keyword">not</span> GPIO.<span class="built_in">input</span>(RoAPin)):      <span class="comment">#未旋转时，GPIO.input(RoAPin)值为1，旋转时会变为0</span></span><br><span class="line">		Current_RoB_Status = GPIO.<span class="built_in">input</span>(RoBPin)  <span class="comment">#旋转时的当前值</span></span><br><span class="line">		flag = <span class="number">1</span></span><br><span class="line">	<span class="keyword">if</span> flag == <span class="number">1</span>:</span><br><span class="line">		flag = <span class="number">0</span></span><br><span class="line">		<span class="keyword">if</span> (Last_RoB_Status == <span class="number">1</span>) <span class="keyword">and</span> (Current_RoB_Status == <span class="number">0</span>):</span><br><span class="line">			globalCounter = globalCounter - <span class="number">1</span>  <span class="comment">#顺时针旋转</span></span><br><span class="line">		<span class="keyword">if</span> (Last_RoB_Status == <span class="number">0</span>) <span class="keyword">and</span> (Current_RoB_Status == <span class="number">1</span>):</span><br><span class="line">			globalCounter = globalCounter + <span class="number">1</span>  <span class="comment">#逆时针旋转</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">btnISR</span>(<span class="params">channel</span>):</span></span><br><span class="line">	<span class="keyword">global</span> globalCounter</span><br><span class="line">	globalCounter = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop</span>():</span></span><br><span class="line">	<span class="keyword">global</span> globalCounter</span><br><span class="line">	tmp = <span class="number">0</span>	<span class="comment"># Rotary Temperary</span></span><br><span class="line"></span><br><span class="line">	GPIO.add_event_detect(BtnPin, GPIO.FALLING, callback=btnISR)</span><br><span class="line">	<span class="comment">#当按下按钮时，调用回调函数btnISR</span></span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">		rotaryDeal()</span><br><span class="line">		<span class="keyword">if</span> tmp != globalCounter:</span><br><span class="line">			<span class="built_in">print</span> (<span class="string">&#x27;globalCounter = %d&#x27;</span> % globalCounter)</span><br><span class="line">			tmp = globalCounter</span><br><span class="line">			f()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">destroy</span>():</span></span><br><span class="line">	GPIO.cleanup()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>: </span><br><span class="line">	setup()</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		loop()</span><br><span class="line">	<span class="keyword">except</span> KeyboardInterrupt:  <span class="comment"># When &#x27;Ctrl+C&#x27; is pressed, the child program destroy() will be  executed.</span></span><br><span class="line">		destroy()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="RGB"><a href="#RGB" class="headerlink" title="RGB"></a>RGB</h2><p>9 11 13 15</p>
+<p><img src="C:\Users\cola\AppData\Roaming\Typora\typora-user-images\image-20230815163415165.png" alt="image-20230815163415165"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> minecraft,block</span><br><span class="line">mc = minecraft.Minecraft.create()</span><br><span class="line">player = mc.player</span><br><span class="line">GPIO.setmode(GPIO.BCM)</span><br><span class="line">RGlist = [<span class="number">17</span>,<span class="number">27</span>,<span class="number">22</span>]</span><br><span class="line">GPIO.setup(RGlist,GPIO.OUT)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        x,y,z = player.getTilePos()</span><br><span class="line">        block_id = mc.getBlock(x,y,z)</span><br><span class="line">        under = mc.getBlock(x,y-<span class="number">1</span>,z)</span><br><span class="line">        <span class="keyword">if</span> block_id == block.WATER.<span class="built_in">id</span>:</span><br><span class="line">            GPIO.output(<span class="number">22</span>,<span class="number">1</span>)</span><br><span class="line">            time.sleep(<span class="number">0.5</span>)</span><br><span class="line">            GPIO.output(<span class="number">22</span>,<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">elif</span> block_id == block.LAVA.<span class="built_in">id</span>:</span><br><span class="line">            GPIO.output(<span class="number">17</span>,<span class="number">1</span>)</span><br><span class="line">            time.sleep(<span class="number">0.5</span>)</span><br><span class="line">            GPIO.output(<span class="number">17</span>,<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">elif</span> under == block.GRASS.<span class="built_in">id</span>:</span><br><span class="line">            GPIO.output(<span class="number">27</span>,<span class="number">1</span>)</span><br><span class="line">            time.sleep(<span class="number">0.5</span>)</span><br><span class="line">            GPIO.output(<span class="number">27</span>,<span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">    GPIO.output(<span class="number">27</span>,<span class="number">0</span>)</span><br><span class="line">    GPIO.output(<span class="number">17</span>,<span class="number">0</span>)</span><br><span class="line">    GPIO.output(<span class="number">22</span>,<span class="number">0</span>)</span><br><span class="line">    GPIO.cleanup()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="按键"><a href="#按键" class="headerlink" title="按键"></a>按键</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/29/docker-linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/29/docker-linux/" class="post-title-link" itemprop="url">docker_linux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-07-29 10:16:12 / Modified: 10:19:58" itemprop="dateCreated datePublished" datetime="2023-07-29T10:16:12+08:00">2023-07-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">DRY_RUN=1 sh ./get-docker.sh</span><br><span class="line">sudo sh get-docker.sh</span><br><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/11/mc-dev/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/11/mc-dev/" class="post-title-link" itemprop="url">mc_dev</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-11 15:15:26" itemprop="dateCreated datePublished" datetime="2023-07-11T15:15:26+08:00">2023-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-08 13:39:16" itemprop="dateModified" datetime="2023-08-08T13:39:16+08:00">2023-08-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="plugin-创建"><a href="#plugin-创建" class="headerlink" title="plugin 创建"></a>plugin 创建</h1><p><a target="_blank" rel="noopener" href="https://www.spigotmc.org/wiki/creating-a-plugin-with-maven-using-intellij-idea/">https://www.spigotmc.org/wiki/creating-a-plugin-with-maven-using-intellij-idea/</a></p>
+<h3 id="1-新建-Maven-项目"><a href="#1-新建-Maven-项目" class="headerlink" title="1.新建 Maven 项目"></a>1.新建 Maven 项目</h3><p><code>pom.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>spigot-repo<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://hub.spigotmc.org/nexus/content/repositories/snapshots/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.spigotmc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spigot-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.5-R0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>版本选择可以到<a target="_blank" rel="noopener" href="https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/spigotmc/spigot-api/">仓库</a>中看</p>
+<h3 id="2-新建-package"><a href="#2-新建-package" class="headerlink" title="2.新建 package"></a>2.新建 package</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">me.&#123;name&#125;.&#123;pluginname&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-新建个-Main-类"><a href="#3-新建个-Main-类" class="headerlink" title="3.新建个 Main 类"></a>3.新建个 Main 类</h3><p> (类名可以自己改)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> me.cola.demo;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.Bukkit;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.ChatColor;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.plugin.java.JavaPlugin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">JavaPlugin</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEnable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        getLogger().info(<span class="string">&quot;onEnable is called!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDisable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        getLogger().info(<span class="string">&quot;onDisable is called!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-resources-中新建文件-plugin-yml"><a href="#4-resources-中新建文件-plugin-yml" class="headerlink" title="4.resources 中新建文件 plugin.yml"></a>4.<code>resources</code> 中新建文件 <code>plugin.yml</code></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">demo</span></span><br><span class="line"><span class="attr">version:</span> <span class="number">1.0</span></span><br><span class="line"><span class="attr">main:</span> <span class="string">me.cola.demo.Main</span>  <span class="comment"># 用于插件启动</span></span><br><span class="line"><span class="attr">api-version:</span> <span class="number">1.16</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-打包"><a href="#5-打包" class="headerlink" title="5.打包"></a>5.打包</h3><p>Maven – lifecycle – package</p>
+<p>打包完后，在 target 文件夹中找即可</p>
+<p>jar包名可自己改</p>
+<p><a target="_blank" rel="noopener" href="https://helpch.at/docs/1.16.5/index.html">bukkit API</a></p>
+<p><a target="_blank" rel="noopener" href="https://lingluo-hub.github.io/SpigotMC/official-plugin-development/using-the-event-api/">plugin 教程</a></p>
+<p>具体的 plugin demo 可以到 <a target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/">Spigot</a> 找开源的插件学习</p>
+<h1 id="plugin-调试"><a href="#plugin-调试" class="headerlink" title="plugin 调试"></a>plugin 调试</h1><h2 id="1-Artifacts-配置"><a href="#1-Artifacts-配置" class="headerlink" title="1.Artifacts 配置"></a>1.Artifacts 配置</h2><p>把输出目录设置到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\software\mc\1.16.5\plugins</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230711162434247.png" alt="image-20230711162434247"></p>
+<h2 id="2-新建debug项"><a href="#2-新建debug项" class="headerlink" title="2.新建debug项"></a>2.新建debug项</h2><p><code>Edit Configuration </code> – <code>JAR Application</code>  </p>
+<p>修改 <code>Path to JAR</code> 为 <code>spigot 服务器jar包</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\software\mc\1.16.5\spigot-1.16.5.jar</span><br></pre></td></tr></table></figure>
+
+<p>修改 <code>Working directory</code> 为服务器目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\software\mc\1.16.5</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建 <code>before launch</code> – <code>Build xxx artifacts</code></p>
+<p>(每次重新打包插件的jar包，然后重启服务器)</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230711162406396.png" alt="image-20230711162406396"></p>
+<h3 id="3-启动"><a href="#3-启动" class="headerlink" title="3.启动"></a>3.启动</h3><p>点击绿色小虫</p>
+<h2 id="4-打断点"><a href="#4-打断点" class="headerlink" title="4.打断点"></a>4.打断点</h2><p>目标段看完，可以 resume 恢复程序</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230711162337185.png" alt="image-20230711162337185"></p>
+<p>断点可以动态加，是有效的</p>
+<h2 id="5-plugin-热更新"><a href="#5-plugin-热更新" class="headerlink" title="5.plugin 热更新"></a>5.plugin 热更新</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230711175559201.png" alt="image-20230711175559201"></p>
+<p>代码修改之后，重新build</p>
+<p>之后选择 reload， 别再询问即可</p>
+<p>Ps: 如果是修改文件，那可以热更新</p>
+<p>如果是<strong>新增的 java 文件，则需要重启才行</strong></p>
+<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><p><a target="_blank" rel="noopener" href="https://helpch.at/docs/1.16.5/index.html">bukkit API</a></p>
+<p><a target="_blank" rel="noopener" href="https://lingluo-hub.github.io/SpigotMC/official-plugin-development/using-the-event-api/">plugin 教程</a></p>
+<p>具体的 plugin demo 可以到 <a target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/">Spigot</a> 找开源的插件学习</p>
+<h2 id="item"><a href="#item" class="headerlink" title="item"></a>item</h2><h3 id="custom-item"><a href="#custom-item" class="headerlink" title="custom item"></a>custom item</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ItemStack item = <span class="keyword">new</span> ItemStack(Material.NETHER_STAR);</span><br><span class="line">ItemMeta itemMeta = item.getItemMeta();</span><br><span class="line"><span class="keyword">if</span>(itemMeta!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    itemMeta.setDisplayName(<span class="string">&quot;key&quot;</span>);</span><br><span class="line">    item.setItemMeta(itemMeta);</span><br><span class="line">&#125;</span><br><span class="line">inventory.setItem(<span class="number">0</span>, item);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="player"><a href="#player" class="headerlink" title="player"></a>player</h2><h2 id="点击物品"><a href="#点击物品" class="headerlink" title="点击物品"></a>点击物品</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PlayerInteractEvent</span><br><span class="line">   event.getAction() == Action.RIGHT_CLICK_AIR</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="movement"><a href="#movement" class="headerlink" title="movement"></a>movement</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.setVelocity(<span class="keyword">new</span> Vector(<span class="number">0</span>,<span class="number">5</span>,<span class="number">0</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="particle"><a href="#particle" class="headerlink" title="particle"></a>particle</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.spawnParticle(Particle.EXPLOSION_NORMAL,player.getLocation(),<span class="number">50</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h1><p>把入站规则填好，可以限定 ip</p>
+<p>！！另外注意，入站规则之间可能会有影响，新建的入站规则不生效，可能是受到其他block规则的影响</p>
+<p>解决办法：<strong>把 java相关的block入站规则全部禁用</strong>，或者把防火墙全部关闭（这样子不能控制 ip，不推荐）</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230808133700720.png" alt="image-20230808133700720"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mcpi.minecraft <span class="keyword">as</span> minecraft</span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> block</span><br><span class="line">mc = minecraft.Minecraft.create(<span class="string">&#x27;localhost&#x27;</span>)  <span class="comment"># 服务器的ip</span></span><br><span class="line">player = mc.player</span><br><span class="line"></span><br><span class="line">x,y,z = player.getTilePos()</span><br><span class="line">mc.setBlock(x, y, z, block.TNT)</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/03/sd-in-linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/03/sd-in-linux/" class="post-title-link" itemprop="url">sd in linux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-03 10:32:21" itemprop="dateCreated datePublished" datetime="2023-07-03T10:32:21+08:00">2023-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-07-28 09:37:04" itemprop="dateModified" datetime="2023-07-28T09:37:04+08:00">2023-07-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
+<p>… 官网默认装的是最新的</p>
+<p>如果要下载指定版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cuda-toolkit-11-8</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="重装驱动"><a href="#重装驱动" class="headerlink" title="重装驱动"></a>重装驱动</h3><p>首先需要卸载原驱动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt --purge remove <span class="string">&quot;cublas*&quot;</span> <span class="string">&quot;cuda*&quot;</span></span><br><span class="line">sudo apt --purge remove <span class="string">&quot;nvidia*&quot;</span></span><br><span class="line">rm -rf /usr/<span class="built_in">local</span>/cuda*</span><br><span class="line">sudo apt-get autoremove &amp;&amp; sudo apt-get autoclean</span><br><span class="line"></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install build essentials</span></span><br><span class="line">sudo apt-get install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev</span><br></pre></td></tr></table></figure>
+
+<p>再安装CUDA，选好版本，不要选中间的(network)</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703131955810.png" alt="image-20230703131955810"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run</span><br><span class="line">sudo sh cuda_11.8.0_520.61.05_linux.run</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="安装SD"><a href="#安装SD" class="headerlink" title="安装SD"></a>安装SD</h2><p>根据不同的 linux 选一条执行</p>
+<p>ubuntu是基于 debian 的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Debian-based:</span></span><br><span class="line">sudo apt install wget git python3 python3-venv</span><br><span class="line"><span class="comment"># Red Hat-based:</span></span><br><span class="line">sudo dnf install wget git python3</span><br><span class="line"><span class="comment"># Arch-based:</span></span><br><span class="line">sudo pacman -S wget git python3</span><br></pre></td></tr></table></figure>
+
+
+
+<p>选好安装目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)</span><br></pre></td></tr></table></figure>
+
+<p>进入目录，运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webui.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="手动安装依赖"><a href="#手动安装依赖" class="headerlink" title="手动安装依赖"></a>手动安装依赖</h3><p>遇到有中断的，<strong>可以手动用 <code>venv </code> 中的 pip 或 python3 安装依赖</strong></p>
+<p>阿里云网络的问题。。。一时能下载，一时下不了</p>
+<p>多试几次</p>
+<h3 id="启动参数"><a href="#启动参数" class="headerlink" title="启动参数"></a>启动参数</h3><p>启动参数的配置文件 – <strong><code>linux </code> 是 <code>sh</code>，<code>windows </code> 是 <code>bat</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi webui-user.bat</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 部署在0.0.0.0才允许外部访问</span></span><br><span class="line">--liten</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--listen --no-half --disable-nan-check --medvram --precision full --xformers --enable-insecure-extension-access</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weget <span class="string">&quot;url&quot;</span> -O <span class="string">&quot;xxx.safesensor&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>具体后缀名根据文件改</p>
+<h2 id="clash"><a href="#clash" class="headerlink" title="clash"></a>clash</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash">clash</a></p>
+<p>下载对应版本</p>
+<p>linux的话amd64就行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunzip clash-linux-amd64-v1.4.1.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压出来就是一个可执行文件</p>
+<p>重命名方便操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv clash-linux-amd64 clash</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<p>赋予运行权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x clash</span><br></pre></td></tr></table></figure>
+
+<p>移动到bin目录下，之后命令行就能直接运行了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv clash /usr/<span class="built_in">local</span>/bin/clash</span><br></pre></td></tr></table></figure>
+
+
+
+<p>添加配置文件 – 来自你的订阅</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.config/clash/config.yaml</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703151658705.png" alt="image-20230703151658705"></p>
+<p>然后可以试着运行一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clash</span><br></pre></td></tr></table></figure>
+
+<p>如果数据库文件 <code>Country.mmdb</code> 下载不下来</p>
+<p>则根据链接手动下载，然后同样放在 <code>~/.config/clash/</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system/</span><br><span class="line">vim clash.service</span><br></pre></td></tr></table></figure>
+
+<p>改一下自己的 <code>/home/用户名</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description= proxy</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/usr/local/bin/clash -f /home/&#123;YOUR_USERNAME&#125;/.config/clash/config.yaml</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>一种方法是，直接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clash</span><br></pre></td></tr></table></figure>
+
+<p>一个终端挂着跑代理，别关</p>
+<p>然后，另起一个端口来用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget &quot;机场给你的订阅链接&quot; -O config.yaml</span><br></pre></td></tr></table></figure>
+
+<p>将 <code>config.yaml</code>、<code>Country.mmdb</code> 两个文件存放至 <code>/home/tao/.config/clash</code> 文件夹里</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="all-black"><a href="#all-black" class="headerlink" title="all black"></a>all black</h3><p>all black – 模型的问题(文件名有严格要求，后缀，也别另外加引号)</p>
+<h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>CUDA12 是可用的</p>
+<h3 id="xformer"><a href="#xformer" class="headerlink" title="xformer"></a>xformer</h3><p>启动参数加 <code>--xformerx </code> 会自动下载相关依赖</p>
+<h3 id="阿里云镜像"><a href="#阿里云镜像" class="headerlink" title="阿里云镜像"></a>阿里云镜像</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703162018078.png"></p>
+<p>所以这些东西都是存在地方服务器的 – 杭州、深圳这样（现在理解为什么要分别不同区域了）</p>
+<p>如果要跨区得额外做镜像复制</p>
+<p>包括镜像的导出，还得存在**同区域自己的 oss **中，然后再下载</p>
+<h3 id="permission-denied"><a href="#permission-denied" class="headerlink" title="permission denied"></a>permission denied</h3><p>用root用户安装的插件。。。普通用户运行脚本涉及到修改时，自然没权限了</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/22/cpp11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="FreeJim">
+      <meta itemprop="description" content="Hello World">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="藏经阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/22/cpp11/" class="post-title-link" itemprop="url">cpp11</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-22 16:04:09" itemprop="dateCreated datePublished" datetime="2023-06-22T16:04:09+08:00">2023-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-07-08 18:05:11" itemprop="dateModified" datetime="2023-07-08T18:05:11+08:00">2023-07-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="传参问题"><a href="#传参问题" class="headerlink" title="传参问题"></a>传参问题</h2><p>默认值拷贝</p>
+<h2 id="cmp"><a href="#cmp" class="headerlink" title="cmp"></a>cmp</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">0</span>]&lt;b[<span class="number">0</span>];  <span class="comment">// 小于则从小到大</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="精度问题"><a href="#精度问题" class="headerlink" title="精度问题"></a>精度问题</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> res = (<span class="keyword">double</span>)(p[n]-p[k] - lowest) / (n-k<span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
+
+<p>如果写成这样</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> res = (p[n]-p[k] - lowest) / (n-k<span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
+
+<p>减法得到的结果会被强制转换成 int 类型，因为第一项是 int</p>
+<p>解决方法是先把其转成浮点数，然后再进行除法运算</p>
+<h2 id="index-and-iterator"><a href="#index-and-iterator" class="headerlink" title="index and iterator"></a>index and iterator</h2><p>index to iterator</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t.<span class="built_in">erase</span>(t.<span class="built_in">begin</span>()+idx);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>iterator to index</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">it-t.<span class="built_in">begin</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="lower-bound返回值"><a href="#lower-bound返回值" class="headerlink" title="lower_bound返回值"></a>lower_bound返回值</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> idx = <span class="built_in">lower_bound</span>(t.<span class="built_in">begin</span>(), t.<span class="built_in">end</span>(), a) - t.<span class="built_in">begin</span>();</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="min-and-max"><a href="#min-and-max" class="headerlink" title="min and max"></a>min and max</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> lowest = *<span class="built_in">min_element</span>(scores.<span class="built_in">begin</span>()+k, scores.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+
+<p>vector 用 min_element()</p>
+<p>普通数字比较可以直接用 min()</p>
+<p>返回的是迭代器，所以加星号取值</p>
+<p>时间复杂度是O(n)</p>
+<h2 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100716391.png" alt="image-20230624100716391"></p>
+<p>原因是 std 下也有一个 visit</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100745188.png" alt="image-20230624100745188"></p>
+<h2 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">end_time</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; duration, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, vector&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; pq; <span class="comment">// greater means 最小堆， 默认是less&lt;int&gt; 最大堆</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; i++)&#123;</span><br><span class="line">        pq.<span class="built_in">push</span>(duration[i]);  <span class="comment">// O(logn)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i&lt;duration.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();  <span class="comment">// pop没有返回值</span></span><br><span class="line">        pq.<span class="built_in">push</span>(t+duration[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!pq.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="stable-sort"><a href="#stable-sort" class="headerlink" title="stable sort"></a>stable sort</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(<span class="keyword">const</span> vector&lt;<span class="keyword">int</span>&gt;&amp; a, <span class="keyword">const</span> vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">0</span>]&lt;b[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">stable_sort</span>(cows.<span class="built_in">begin</span>(), cows.<span class="built_in">end</span>(),cmp2);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(milk.<span class="built_in">begin</span>(), milk.<span class="built_in">end</span>(), greater&lt;<span class="keyword">int</span>&gt;());</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> total = <span class="built_in">accumulate</span>(scores.<span class="built_in">begin</span>(), scores.<span class="built_in">end</span>(),<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<p>有三个参数</p>
+<p>第三个参数是初始值</p>
+<h2 id="unorder-map"><a href="#unorder-map" class="headerlink" title="unorder_map"></a>unorder_map</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, unordered_map&lt;string, <span class="keyword">int</span>&gt;&gt; c;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, string&gt; win = &#123;&#123;<span class="string">&quot;H&quot;</span>,<span class="string">&quot;S&quot;</span>&#125;, &#123;<span class="string">&quot;S&quot;</span>,<span class="string">&quot;P&quot;</span>&#125;, &#123;<span class="string">&quot;P&quot;</span>,<span class="string">&quot;H&quot;</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化前缀和</span></span><br><span class="line">unordered_map&lt;string, vector&lt;<span class="keyword">int</span>&gt;&gt; count = &#123;&#123;<span class="string">&quot;P&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;,&#123;<span class="string">&quot;H&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;,&#123;<span class="string">&quot;S&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>insert</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">already.<span class="built_in">insert</span>(&#123;id, start&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="unorder-map-and-unorder-set"><a href="#unorder-map-and-unorder-set" class="headerlink" title="unorder_map and unorder_set"></a>unorder_map and unorder_set</h2><p>map 和 set 是基于红黑树实现</p>
+<p>unorder_map 和 unorder_set 是基于hash实现</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// int ans=0;</span></span><br><span class="line"><span class="comment">// for(auto item : s2c)&#123;</span></span><br><span class="line"><span class="comment">//     string s = item.first;</span></span><br><span class="line"><span class="comment">//     unordered_set&lt;string&gt; &amp; cities = item.second;</span></span><br><span class="line"><span class="comment">//     for(const auto &amp;c : cities)&#123;</span></span><br><span class="line"><span class="comment">//         if(c2s[c].find(s)!=c2s[c].end())&#123;</span></span><br><span class="line"><span class="comment">//             ans++;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="与python中的map做对比"><a href="#与python中的map做对比" class="headerlink" title="与python中的map做对比"></a>与python中的map做对比</h2><p>map 的遍历和Python的不太一样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">item.first</span><br><span class="line">item.second</span><br></pre></td></tr></table></figure>
+
+
+
+<p>c++中的map不能在key时不报错</p>
+<p>且尝试访问的时候，还会创建key，只是value可能还是空</p>
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v.<span class="built_in">push_back</span>(&#123;city, state&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/18/cpp%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -728,424 +1427,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/11/commandline-tool/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/11/commandline-tool/" class="post-title-link" itemprop="url">commandline tool</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-04-11 11:09:26 / Modified: 11:09:46" itemprop="dateCreated datePublished" datetime="2023-04-11T11:09:26+08:00">2023-04-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><p>①</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
-
-
-
-<p>②</p>
-<p>create <code>bin/index.js</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env node</span><br><span class="line">console.log(&#x27;hello&#x27;);</span><br></pre></td></tr></table></figure>
-
-<p>We place a <code>hashbang</code> directive at the top of our file stating which interpreter will be used to execute our script.</p>
-<p>③</p>
-<p><code>package.json</code></p>
-<p>add a new property</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;bin&quot;</span>: <span class="string">&quot;bin/index.js&quot;</span>,</span><br></pre></td></tr></table></figure>
-
-
-
-<p>④</p>
-<p>打包</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm link</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm login</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
-
-<p>如果报403，说明 cli 重名了</p>
-<p>进入 <code>package.json</code> 修改 <code>name</code> 属性</p>
-<p>这个 <code>name</code> 属性用于install 也用于该 cli 工具的使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install cola-test044 -g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\10201\Desktop&gt;cola-test044</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/21/transformers-learning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/21/transformers-learning/" class="post-title-link" itemprop="url">transformers_learning</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-03-21 18:10:45 / Modified: 18:33:57" itemprop="dateCreated datePublished" datetime="2023-03-21T18:10:45+08:00">2023-03-21</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230321181455710.png" alt="image-20230321181455710"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230321181624461.png" alt="image-20230321181624461"></p>
-<p>然后是更细化的encode（矩阵运算）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230321182522002.png" alt="image-20230321182522002"></p>
-<p>从这里也可以看到value, key, query 都是统一的矩阵</p>
-<p>只是他们将会进行的运算不一样</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230321182704207.png" alt="image-20230321182704207"></p>
-<p>然后key和value参与一系列运算后（左边），和query再运算（右边）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230321182820031.png" alt="image-20230321182820031"></p>
-<p>multi head 的输出</p>
-<p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20230321182958355.png" alt="image-20230321182958355"></p>
-<p>把multi head 的输出 和head前的输入结合运算</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230321183016978.png" alt="image-20230321183016978"></p>
-<p>再一步，得到encoder的最终输出（即完成“我很好”的编码，包含了<strong>字的位置信息</strong>和<strong>字之间的关联</strong> 等信息）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230321183101827.png" alt="image-20230321183101827"></p>
-<p>右边的decoder同理，只是encoder的输出做key和value再来一遍</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230321183255419.png" alt="image-20230321183255419"></p>
-<p>最后每个位置做一个百万分类，得到 “I am fine”</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230321183326613.png" alt="image-20230321183326613"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/20/midjourney/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/20/midjourney/" class="post-title-link" itemprop="url">midjourney</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-03-20 10:42:06 / Modified: 11:23:59" itemprop="dateCreated datePublished" datetime="2023-03-20T10:42:06+08:00">2023-03-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="base-on-image"><a href="#base-on-image" class="headerlink" title="base on image"></a>base on image</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.discordapp.com/attachments/899873725745340457/1087198992691122246/WeChat_Image_20230320101823.png robot, white background, cartoon --v 4</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>调整权重</p>
-<p>Earlier <a target="_blank" rel="noopener" href="https://docs.midjourney.com/models">Midjourney Model Versions</a> can use the image weight parameter <code>--iw</code></p>
-<p><code>--iw</code> accepts integers -10,000–10,000</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://kandinsky.png vibrant California poppies --v 3 --iw &lt;value&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>但是v3的效果真不行。。。</p>
-<h2 id="seed"><a href="#seed" class="headerlink" title="seed"></a>seed</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://s.mj.run/63HZ9hhdWAM robot, orange body, wear a hat, wear a glass, white background, cartoon, 2d,chunky arms, chunky legs, square head, say hello --seed 3389217019</span><br></pre></td></tr></table></figure>
-
-
-
-<p>在discord 里评论 <code>midjourney</code> ，回复一个envelop 就行</p>
-<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--test</span><br></pre></td></tr></table></figure>
-
-
-
-<p>只能在生成图片的时候使用</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/14/df/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/14/df/" class="post-title-link" itemprop="url">df</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-03-14 16:03:29 / Modified: 16:03:57" itemprop="dateCreated datePublished" datetime="2023-03-14T16:03:29+08:00">2023-03-14</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.loc[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109150630032.png" alt="image-20220109150630032"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res[<span class="string">&#x27;Facenet_cosine&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109150809565.png" alt="image-20220109150809565"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(similar_rates[similar_rates&lt;<span class="number">2</span>][similar_rates&gt;<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109151433500.png" alt="image-20220109151433500"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/14/hexo-install/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="FreeJim">
-      <meta itemprop="description" content="Hello World">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="藏经阁">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/14/hexo-install/" class="post-title-link" itemprop="url">hexo install</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-03-14 15:41:21" itemprop="dateCreated datePublished" datetime="2023-03-14T15:41:21+08:00">2023-03-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-04-13 18:05:36" itemprop="dateModified" datetime="2023-04-13T18:05:36+08:00">2023-04-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一、安装主题"><a href="#一、安装主题" class="headerlink" title="一、安装主题"></a>一、安装主题</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-site</span><br><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="二、安装-search-engine"><a href="#二、安装-search-engine" class="headerlink" title="二、安装 search engine"></a>二、安装 search engine</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-
-
-
-<p><code>root/_config.yml</code> 新增</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.json</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><code>theme/_config.yml</code></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># unescape html strings to the readable one</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="三、数学公式"><a href="#三、数学公式" class="headerlink" title="三、数学公式"></a>三、数学公式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
-
-<p><code>theme/_config.yml</code></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (false) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to true, it will load mathjax / katex script EVERY PAGE.</span></span><br><span class="line">  <span class="attr">every_page:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: none | ams | all</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="string">none</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1213,7 +1498,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">299</span>
+          <span class="site-state-item-count">304</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
