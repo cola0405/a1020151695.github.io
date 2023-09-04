@@ -1076,7 +1076,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-14 16:05:05" itemprop="dateModified" datetime="2023-03-14T16:05:05+08:00">2023-03-14</time>
+                <time title="Modified: 2023-08-24 15:53:39" itemprop="dateModified" datetime="2023-08-24T15:53:39+08:00">2023-08-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1104,11 +1104,13 @@
 
       
           <p>With Deploy key you can push directly, do not need to input username and password every time</p>
-<p>Generate SSH key</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -f deploy_key_blog -C &quot;1020151695@qq.com&quot;</span><br></pre></td></tr></table></figure>
+<p>进入.ssh 目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;1020151695@qq.com&quot;</span><br></pre></td></tr></table></figure>
 
 
 
+<p>注意！！！生成的文件默认命名为id_rsa</p>
+<p>本地 git <strong>只会默认读取 id_rsa 文件</strong>，如果自定义文件名需要添加文件指向配置</p>
 <p> Then press “Enter” twice is OK</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E-mail address like an &quot;id&quot;</span><br><span class="line">So that Github repository know who you are</span><br><span class="line">And you don&#x27;t need to input username and password again</span><br></pre></td></tr></table></figure>
 
@@ -1117,8 +1119,6 @@
 <p>Then it will create a new file named “deploy_key_blog.pub”</p>
 <p>Check it’s content use the command:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more deploy_key_blog.pub</span><br></pre></td></tr></table></figure>
-
-
 
 <p>Then copy the content and go to the project in Github</p>
 <p>“Setting”–”Deploy keys”</p>
