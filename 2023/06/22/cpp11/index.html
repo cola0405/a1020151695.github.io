@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100716391.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100745188.png">
 <meta property="article:published_time" content="2023-06-22T08:04:09.000Z">
-<meta property="article:modified_time" content="2023-07-08T10:05:11.096Z">
+<meta property="article:modified_time" content="2023-11-01T03:30:57.478Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-08 18:05:11" itemprop="dateModified" datetime="2023-07-08T18:05:11+08:00">2023-07-08</time>
+                <time title="Modified: 2023-11-01 11:30:57" itemprop="dateModified" datetime="2023-11-01T11:30:57+08:00">2023-11-01</time>
               </span>
 
           
@@ -255,6 +255,12 @@
 
 
 
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>将一个浮点数直接赋值给整数变量会进行隐式的类型转换。在这种情况下，浮点数会被截断为整数部分</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">3.4</span>;   <span class="comment">//a=3</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>对于整数类型，如果其中一个操作数是<code>long long</code>类型，那么表达式的结果类型将是<code>long long</code>。</p>
 <h2 id="lower-bound返回值"><a href="#lower-bound返回值" class="headerlink" title="lower_bound返回值"></a>lower_bound返回值</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> idx = <span class="built_in">lower_bound</span>(t.<span class="built_in">begin</span>(), t.<span class="built_in">end</span>(), a) - t.<span class="built_in">begin</span>();</span><br></pre></td></tr></table></figure>
 
 
@@ -296,9 +302,8 @@
 
 <p>有三个参数</p>
 <p>第三个参数是初始值</p>
-<h2 id="unorder-map"><a href="#unorder-map" class="headerlink" title="unorder_map"></a>unorder_map</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, unordered_map&lt;string, <span class="keyword">int</span>&gt;&gt; c;</span><br></pre></td></tr></table></figure>
-
-
+<h2 id="unorder-map"><a href="#unorder-map" class="headerlink" title="unorder_map"></a>unorder_map</h2><p>init</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, unordered_map&lt;string, <span class="keyword">int</span>&gt;&gt; c;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, string&gt; win = &#123;&#123;<span class="string">&quot;H&quot;</span>,<span class="string">&quot;S&quot;</span>&#125;, &#123;<span class="string">&quot;S&quot;</span>,<span class="string">&quot;P&quot;</span>&#125;, &#123;<span class="string">&quot;P&quot;</span>,<span class="string">&quot;H&quot;</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化前缀和</span></span><br><span class="line">unordered_map&lt;string, vector&lt;<span class="keyword">int</span>&gt;&gt; count = &#123;&#123;<span class="string">&quot;P&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;,&#123;<span class="string">&quot;H&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;,&#123;<span class="string">&quot;S&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;&#125;;</span><br></pre></td></tr></table></figure>
 
@@ -309,9 +314,33 @@
 
 
 
+<p>access</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map[top]</span><br></pre></td></tr></table></figure>
+
+<p>如果 top 不在map中，也不会把报错</p>
+<p>而是创建默认值 0</p>
+<p>查找key的最大值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> pair&lt;<span class="keyword">double</span>, <span class="keyword">int</span>&gt; &amp;p1, <span class="keyword">const</span> pair&lt;<span class="keyword">double</span>, <span class="keyword">int</span>&gt; &amp;p2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> p1.first &lt; p2.first;</span><br><span class="line">&#125;</span><br><span class="line">(*<span class="built_in">max_element</span>(final_score.<span class="built_in">begin</span>(), final_score.<span class="built_in">end</span>())).first</span><br></pre></td></tr></table></figure>
 
 
-<h2 id="unorder-map-and-unorder-set"><a href="#unorder-map-and-unorder-set" class="headerlink" title="unorder_map and unorder_set"></a>unorder_map and unorder_set</h2><p>map 和 set 是基于红黑树实现</p>
+
+<p>判断元素是否存在</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (final_score.<span class="built_in">find</span>(res) != final_score.<span class="built_in">end</span>())&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>遍历</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> it: map)&#123;</span><br><span class="line">    <span class="keyword">if</span> (map.<span class="built_in">find</span>(it.second) != map.<span class="built_in">end</span>())&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="unorder-set"><a href="#unorder-set" class="headerlink" title="unorder_set"></a>unorder_set</h2><h2 id="unorder-map-and-unorder-set"><a href="#unorder-map-and-unorder-set" class="headerlink" title="unorder_map and unorder_set"></a>unorder_map and unorder_set</h2><p>map 和 set 是基于红黑树实现</p>
 <p>unorder_map 和 unorder_set 是基于hash实现</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// int ans=0;</span></span><br><span class="line"><span class="comment">// for(auto item : s2c)&#123;</span></span><br><span class="line"><span class="comment">//     string s = item.first;</span></span><br><span class="line"><span class="comment">//     unordered_set&lt;string&gt; &amp; cities = item.second;</span></span><br><span class="line"><span class="comment">//     for(const auto &amp;c : cities)&#123;</span></span><br><span class="line"><span class="comment">//         if(c2s[c].find(s)!=c2s[c].end())&#123;</span></span><br><span class="line"><span class="comment">//             ans++;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
 
@@ -327,6 +356,11 @@
 <p>c++中的map不能在key时不报错</p>
 <p>且尝试访问的时候，还会创建key，只是value可能还是空</p>
 <h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v.<span class="built_in">push_back</span>(&#123;city, state&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>pop</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> top = stack.<span class="built_in">back</span>();</span><br><span class="line">stack.<span class="built_in">pop_back</span>();</span><br></pre></td></tr></table></figure>
 
 
 
@@ -410,7 +444,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E5%8F%82%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">传参问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmp"><span class="nav-number">2.</span> <span class="nav-text">cmp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">精度问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index-and-iterator"><span class="nav-number">4.</span> <span class="nav-text">index and iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lower-bound%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">5.</span> <span class="nav-text">lower_bound返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#min-and-max"><span class="nav-number">6.</span> <span class="nav-text">min and max</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#namespace"><span class="nav-number">7.</span> <span class="nav-text">namespace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue"><span class="nav-number">8.</span> <span class="nav-text">priority_queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stable-sort"><span class="nav-number">9.</span> <span class="nav-text">stable sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">10.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sum"><span class="nav-number">11.</span> <span class="nav-text">sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-map"><span class="nav-number">12.</span> <span class="nav-text">unorder_map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-map-and-unorder-set"><span class="nav-number">13.</span> <span class="nav-text">unorder_map and unorder_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8Epython%E4%B8%AD%E7%9A%84map%E5%81%9A%E5%AF%B9%E6%AF%94"><span class="nav-number">14.</span> <span class="nav-text">与python中的map做对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-number">15.</span> <span class="nav-text">vector</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E5%8F%82%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">传参问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmp"><span class="nav-number">2.</span> <span class="nav-text">cmp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">精度问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index-and-iterator"><span class="nav-number">4.</span> <span class="nav-text">index and iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lower-bound%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">6.</span> <span class="nav-text">lower_bound返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#min-and-max"><span class="nav-number">7.</span> <span class="nav-text">min and max</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#namespace"><span class="nav-number">8.</span> <span class="nav-text">namespace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue"><span class="nav-number">9.</span> <span class="nav-text">priority_queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stable-sort"><span class="nav-number">10.</span> <span class="nav-text">stable sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">11.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sum"><span class="nav-number">12.</span> <span class="nav-text">sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-map"><span class="nav-number">13.</span> <span class="nav-text">unorder_map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-set"><span class="nav-number">14.</span> <span class="nav-text">unorder_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-map-and-unorder-set"><span class="nav-number">15.</span> <span class="nav-text">unorder_map and unorder_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8Epython%E4%B8%AD%E7%9A%84map%E5%81%9A%E5%AF%B9%E6%AF%94"><span class="nav-number">16.</span> <span class="nav-text">与python中的map做对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-number">17.</span> <span class="nav-text">vector</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
