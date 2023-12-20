@@ -235,21 +235,15 @@
       
         <p>1.源文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere]</span><br><span class="line">&quot;ShowBasedOnVelocityId&quot;=dword:00639bc8</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere\command]</span><br><span class="line">@=&quot;cmd.exe /s /k pushd \&quot;%V\&quot;&quot;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>2.想要Windows Terminal </p>
 <p>把其快捷方式放到System32下（即和cmd.exe一起）</p>
 <p>然后</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere]</span><br><span class="line">&quot;ShowBasedOnVelocityId&quot;=dword:00639bc8</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere\command]</span><br><span class="line">@=&quot;wt.exe cmd.exe /s /k pushd \&quot;%V\&quot;&quot;</span><br></pre></td></tr></table></figure>
-
 <p>pushd 相当于cd</p>
 <p>你也可以在cmd下输入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmd pushd g:</span><br></pre></td></tr></table></figure>
-
 <p>相当于</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd g:</span><br></pre></td></tr></table></figure>
-
 <p>具体原理我不是很想研究。。</p>
 <p>会用就好了 这玩意儿</p>
 <p>3.进入注册表</p>

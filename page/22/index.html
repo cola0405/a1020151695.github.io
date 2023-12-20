@@ -224,34 +224,40 @@
       
           <h1 id="时间复杂度分析过程"><a href="#时间复杂度分析过程" class="headerlink" title="时间复杂度分析过程"></a>时间复杂度分析过程</h1><p>循环嵌套的时间复杂度</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716222020880.png" alt="image-20210716222020880"></p>
-<p>答：时间复杂度为$$O(log_2n)$$</p>
+<p>答：时间复杂度为<script type="math/tex">O(log_2n)</script></p>
 <p>要计算k=k+1的执行次数</p>
-<p>对于for循环：因为$$n=2^t$$故有$$T_0(n)=O(log_2n)$$</p>
-<p>对于while循环：仅有n&gt;=1的判断故有$$T_1(n)=O(1)$$</p>
-<p>综上：$$T(n) = T_0(n)*T_1(n) = O(log_2n)*O(1) = O(log_2n)$$</p>
+<p>对于for循环：因为<script type="math/tex">n=2^t</script>故有<script type="math/tex">T_0(n)=O(log_2n)</script></p>
+<p>对于while循环：仅有n&gt;=1的判断故有<script type="math/tex">T_1(n)=O(1)</script></p>
+<p>综上：<script type="math/tex">T(n) = T_0(n)*T_1(n) = O(log_2n)*O(1) = O(log_2n)</script></p>
 <hr>
 <h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><h2 id="理解时间复杂"><a href="#理解时间复杂" class="headerlink" title="理解时间复杂"></a>理解时间复杂</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725203332174.png" alt="image-20210725203332174"></p>
 <h2 id="最坏情况的理解"><a href="#最坏情况的理解" class="headerlink" title="最坏情况的理解"></a>最坏情况的理解</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725203432101.png" alt="image-20210725203432101"></p>
-<p><font color=blue>是客观的最坏情况，而不是最笨的方法</font></p>
+<font color=blue>是客观的最坏情况，而不是最笨的方法</font>
+
 <p>首先明确合并的方法：</p>
-<p><font color=green>另外新建一个链表</font></p>
-<p><font color=green>每次看两个列表的头元素，根据大小关系把他们接到新的链表中</font></p>
-<p><font color=red>最坏的情况下我也可以一套带走，则数量级就是n，然后取max(m, n)</font></p>
+<font color=green>另外新建一个链表</font>
+
+<font color=green>每次看两个列表的头元素，根据大小关系把他们接到新的链表中</font>
+
+<font color=red>最坏的情况下我也可以一套带走，则数量级就是n，然后取max(m, n)</font>
+
+
+
 <h2 id="抽象的O-n-1-2"><a href="#抽象的O-n-1-2" class="headerlink" title="抽象的O(n^1/2^)"></a>抽象的O(n^1/2^)</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210725204102430.png" alt="image-20210725204102430"></p>
 <p>分析：</p>
-<p>a<del>1</del>=0</p>
+<p>a~1~=0</p>
 <p>d=1</p>
-<p>a<del>n</del>=n-1</p>
-<p>S<del>n</del>=$$\frac{n(n-1)}{2}$$</p>
+<p>a~n~=n-1</p>
+<p>S~n~=<script type="math/tex">\frac{n(n-1)}{2}</script></p>
 <p>数量级为O($n^2$)</p>
-<p>即sum的累计速度能达到$$n^2$$</p>
-<p>故循环次数为$$\sqrt{n}$$</p>
-<p><font color=blue>举一反三：</font></p>
-<p>当sum的积累速度达到$$2^n$$时，即</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sum=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(sum&lt;=n)</span><br><span class="line">    sum*=<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>即sum的累计速度能达到<script type="math/tex">n^2</script></p>
+<p>故循环次数为<script type="math/tex">\sqrt{n}</script></p>
+<font color=blue>举一反三：</font>
 
-<p>此时循环次数为$$log_2n$$</p>
-<p>即时间复杂度为$$O(log_2n)$$</p>
+<p>当sum的积累速度达到<script type="math/tex">2^n</script>时，即</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sum=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(sum&lt;=n)</span><br><span class="line">    sum*=<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>此时循环次数为<script type="math/tex">log_2n</script></p>
+<p>即时间复杂度为<script type="math/tex">O(log_2n)</script></p>
 <hr>
 
       
@@ -399,22 +405,33 @@
 <p>右侧为0</p>
 <h2 id="详细解析"><a href="#详细解析" class="headerlink" title="详细解析"></a>详细解析</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911110403585.png" alt="image-20210911110403585"></p>
 <h1 id="齐次微分方程-1"><a href="#齐次微分方程-1" class="headerlink" title="齐次微分方程"></a>齐次微分方程</h1><h2 id="可分离变量的方程"><a href="#可分离变量的方程" class="headerlink" title="可分离变量的方程"></a>可分离变量的方程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911101233765.png" alt="image-20210911101233765"></p>
-<p><font color=blue>移项、积分</font></p>
+<font color=blue>移项、积分</font>
+
 <h3 id="因式分解"><a href="#因式分解" class="headerlink" title="因式分解"></a>因式分解</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911102500243.png" alt="image-20210911102500243"></p>
-<p><font color=red>因式分解，硬把xy拆分开来</font></p>
-<p><font color=red>这是这类题最基本的解题方法</font></p>
+<font color=red>因式分解，硬把xy拆分开来</font>
+
+<font color=red>这是这类题最基本的解题方法</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911102909343.png" alt="image-20210911102909343"></p>
 <h3 id="对数型"><a href="#对数型" class="headerlink" title="对数型"></a>对数型</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911103415792.png" alt="image-20210911103415792"></p>
-<p><font color=red>注意书写格式，y≠0</font></p>
-<p><font color=red>对数型一般要化简成Ce的形式</font></p>
+<font color=red>注意书写格式，y≠0</font>
+
+<font color=red>对数型一般要化简成Ce的形式</font>
+
+
+
 <p>还利用通解公式：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911111622560.png" alt="image-20210911111622560"></p>
 <h2 id="齐次线性方程"><a href="#齐次线性方程" class="headerlink" title="齐次线性方程"></a>齐次线性方程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911110647561.png" alt="image-20210911110647561"></p>
-<p><font color=red>y=ux，分别对方程两边求导</font></p>
+<font color=red>y=ux，分别对方程两边求导</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714230508553.png" alt="image-20210714230508553"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713194241741.png" alt="image-20210713194241741"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911110819675.png" alt="image-20210911110819675"></p>
-<h1 id="一阶线性微分方程"><a href="#一阶线性微分方程" class="headerlink" title="一阶线性微分方程"></a>一阶线性微分方程</h1><p><font color=red>多了 “线性” 二字</font></p>
+<h1 id="一阶线性微分方程"><a href="#一阶线性微分方程" class="headerlink" title="一阶线性微分方程"></a>一阶线性微分方程</h1><font color=red>多了 “线性” 二字</font>
+
+
+
 <h2 id="一阶齐次线性微分方程"><a href="#一阶齐次线性微分方程" class="headerlink" title="一阶齐次线性微分方程"></a>一阶齐次线性微分方程</h2><h3 id="形如"><a href="#形如" class="headerlink" title="形如"></a>形如</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714230508553.png" alt="image-20210714230508553"></p>
 <h3 id="通解"><a href="#通解" class="headerlink" title="通解"></a>通解</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911111217783.png" alt="image-20210911111217783"></p>
 <h3 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713194241741.png" alt="image-20210713194241741"></p>
@@ -429,7 +446,8 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713193005592.png" alt="image-20210713193005592"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713193349110.png" alt="image-20210713193349110"></p>
 <h3 id="dx-dy-型（变形后再套）"><a href="#dx-dy-型（变形后再套）" class="headerlink" title="dx/dy 型（变形后再套）"></a>dx/dy 型（变形后再套）</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911112132385.png" alt="image-20210911112132385"> </p>
-<h1 id="高阶线性微分方程"><a href="#高阶线性微分方程" class="headerlink" title="高阶线性微分方程"></a>高阶线性微分方程</h1><h2 id="常系数齐次线性微分方程"><a href="#常系数齐次线性微分方程" class="headerlink" title="常系数齐次线性微分方程"></a>常系数齐次线性微分方程</h2><p><font color=red>上面齐次微分方程的系数是P(x)，不是常数，以此区分开来</font></p>
+<h1 id="高阶线性微分方程"><a href="#高阶线性微分方程" class="headerlink" title="高阶线性微分方程"></a>高阶线性微分方程</h1><h2 id="常系数齐次线性微分方程"><a href="#常系数齐次线性微分方程" class="headerlink" title="常系数齐次线性微分方程"></a>常系数齐次线性微分方程</h2><font color=red>上面齐次微分方程的系数是P(x)，不是常数，以此区分开来</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707101330325.png" alt="image-20210707101330325"></p>
 <h2 id="常系数非齐次线性微分方程"><a href="#常系数非齐次线性微分方程" class="headerlink" title="常系数非齐次线性微分方程"></a>常系数非齐次线性微分方程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707101649488.png" alt="image-20210707101649488"></p>
 <p>Ps：</p>
@@ -439,7 +457,8 @@
 <p>具体看例题</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210707103234211.png" alt="image-20210707103234211"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210708101658924.png" alt="image-20210708101658924"></p>
 <p>Ps：</p>
-<p><font color=red>非齐次的通解=齐次通解+特解</font></p>
+<font color=red>非齐次的通解=齐次通解+特解</font>
+
 <p>NM，这特解代入走一遍我人没了</p>
 <hr>
 <p>还有一种更简单的，不含ex（即λ=0）</p>
@@ -520,7 +539,8 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706190730876.png" alt="image-20210706190730876"></p>
 <p>遇到的坑</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706194719745.png" alt="image-20210706194719745"></p>
-<p><font color=red>x遇上e^-x时，把ex放到底下洛</font></p>
+<font color=red>x遇上e^-x时，把ex放到底下洛</font>
+
 <h4 id="瑕积分"><a href="#瑕积分" class="headerlink" title="瑕积分"></a>瑕积分</h4><h5 id="瑕点"><a href="#瑕点" class="headerlink" title="瑕点"></a>瑕点</h5><p>被积函数f在点a近旁是无界的，点a称为f的瑕点</p>
 <p>例子</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706190616699.png" alt="image-20210706190616699"></p>
@@ -698,12 +718,14 @@
 <h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705105312578.png" alt="image-20210705105312578"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705105402144.png" alt="image-20210705105402144"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210708201953059.png" alt="image-20210708201953059"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706100125599.png" alt="image-20210706100125599"></p>
 <hr>
-<h2 id="渐近线【-】"><a href="#渐近线【-】" class="headerlink" title="渐近线【++++++】"></a>渐近线【++++++】</h2><p><font color=red>还涉及到了局部代换禁止</font></p>
+<h2 id="渐近线【-】"><a href="#渐近线【-】" class="headerlink" title="渐近线【++++++】"></a>渐近线【++++++】</h2><font color=red>还涉及到了局部代换禁止</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133241463.png" alt="image-20210918133241463"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133253104.png" alt="image-20210918133253104"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133307940.png" alt="image-20210918133307940"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133910385.png" alt="image-20210918133910385"></p>
-<p><font color=red>局部代换禁止</font></p>
+<font color=red>局部代换禁止</font>
+
 <p>错误示范</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918135630515.png" alt="image-20210918135630515"></p>
 
@@ -772,7 +794,10 @@
       
           <h1 id="理解二重积分"><a href="#理解二重积分" class="headerlink" title="理解二重积分"></a>理解二重积分</h1><p>一重积分积出面，二重积分积出体</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922211003119.png" alt="image-20210922211003119"></p>
-<h1 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h1><p><font color=red>“原式解定积分”</font></p>
+<h1 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h1><font color=red>“原式解定积分”</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163317329.png" alt="image-20210706163317329"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163630234.png" alt="image-20210706163630234"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163310523.png" alt="image-20210706163310523"></p>
@@ -785,7 +810,7 @@
 <p>设计到sec的奇数次积分可参考</p>
 <h1 id="二重积分改变积分顺序"><a href="#二重积分改变积分顺序" class="headerlink" title="二重积分改变积分顺序"></a>二重积分改变积分顺序</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704183533426.png" alt="image-20210704183533426"></p>
 <p>用积分限的上下确定积分区域</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704185959377.png"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704185959377.png" alt=""></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704183015340.png" alt="image-20210704183015340"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704190313855.png" alt="image-20210704190313855"></p>
 <p>Ps：</p>
@@ -880,22 +905,37 @@
 <p>正确打开上式的方式的是<strong>洛必达</strong></p>
 <p>很容易忽略的一点，已知条件为<strong>相切，除了告知导数值相等外，该点的函数值也是相等的</strong></p>
 <p>但是等值代换确是可以</p>
-<p><font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font></p>
+<font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font>
+
+
+
 <p>可以得出f(x)=g(x)但是0/0的极限值为0是得不出来的</p>
-<h2 id="题意构造法"><a href="#题意构造法" class="headerlink" title="题意构造法"></a>题意构造法</h2><p><font color=blue>根据题意去构造</font></p>
+<h2 id="题意构造法"><a href="#题意构造法" class="headerlink" title="题意构造法"></a>题意构造法</h2><font color=blue>根据题意去构造</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704133409946.png" alt="image-20210704133409946"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704133856494.png" alt="image-20210704133856494"></p>
-<h2 id="便利构造法"><a href="#便利构造法" class="headerlink" title="便利构造法"></a>便利构造法</h2><p><font color=blue>题目的限制条件少，可以选择简单的实例暴力排除</font></p>
+<h2 id="便利构造法"><a href="#便利构造法" class="headerlink" title="便利构造法"></a>便利构造法</h2><font color=blue>题目的限制条件少，可以选择简单的实例暴力排除</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816233102055.png" alt="image-20210816233102055"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816233402686.png" alt="image-20210816233402686"></p>
 <h2 id="提高暴力法效率"><a href="#提高暴力法效率" class="headerlink" title="提高暴力法效率"></a>提高暴力法效率</h2><p> 一个例子试四次，把ABCD选项都试一遍</p>
 <p>效率可能会更高</p>
 <h2 id="N问题"><a href="#N问题" class="headerlink" title="N问题"></a>N问题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102424227.png" alt="image-20210912102424227"></p>
-<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
-<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
+<font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font>
+
+<font color=blue>平方差解决了第一项，但是后面的并不能解决</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102432946.png" alt="image-20210912102432946"></p>
-<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
-<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
+<font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font>
+
+<font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font>
+
+
+
+
+
+
+
 <h1 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h1><h2 id="填空题也可以暴力法"><a href="#填空题也可以暴力法" class="headerlink" title="填空题也可以暴力法"></a>填空题也可以暴力法</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824123355236.png" alt="image-20210824123355236"></p>
 <p>暴力法：</p>
 <p>假设出复合符合题意的AB</p>
@@ -908,38 +948,59 @@
 <p>正确解析：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824123348602.png" alt="image-20210824123348602"></p>
 <h2 id="暴力中的暴力"><a href="#暴力中的暴力" class="headerlink" title="暴力中的暴力"></a>暴力中的暴力</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912154824033.png" alt="image-20210912154824033"></p>
-<p><font color=red>“x” 趋于0才可以代换</font></p>
+<font color=red>“x” 趋于0才可以代换</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915170816342.png" alt="image-20210915170816342"></p>
 <p>答案：1</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915184622874.png" alt="image-20210915184622874"></p>
-<p><font color=red>两次暴力，一般答案就不带参数了，放心写</font></p>
+<font color=red>两次暴力，一般答案就不带参数了，放心写</font>
+
+
+
+
+
+
+
+
+
 <h2 id="特殊值法的坑"><a href="#特殊值法的坑" class="headerlink" title="特殊值法的坑"></a>特殊值法的坑</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092334055.png" alt="image-20210913092334055"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092406321.png" alt="image-20210913092406321"></p>
 <p>特殊值法确实使得即算方便了</p>
-<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
-<p><font color=red>答案带参数</font></p>
+<font color=blue>但是出题人也可能在这上面挖坑</font>
+
+<font color=red>答案带参数</font>
+
 <p>再回到这道题（尽力观察吧，看参数是否会影响洛的结果）</p>
 <p>这道题其实不难看出来</p>
-<p>利用$$e^{- \infty }$$的特殊性</p>
+<p>利用<script type="math/tex">e^{- \infty }</script>的特殊性</p>
 <hr>
 <h2 id="出题人不一定是坏人"><a href="#出题人不一定是坏人" class="headerlink" title="出题人不一定是坏人"></a>出题人不一定是坏人</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913161744051.png" alt="image-20210913161744051"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913161753855.png" alt="image-20210913161753855"></p>
-<p><font color=red>顺着出题人的意思走，就不会迷失于间断点的三个判定规则了</font></p>
+<font color=red>顺着出题人的意思走，就不会迷失于间断点的三个判定规则了</font>
+
 <p>虽然我个人不确定f(x) 的间断点只有两个</p>
 <p>但这现成的两个 <font color=blue>“没有定义的点”</font> 完全可以先顺着出题人的意思先用起来（有矛盾的地方再说）</p>
 <p>错误解法：</p>
-<p><font color=red>忽略了洛必达也是有条件的</font></p>
+<font color=red>忽略了洛必达也是有条件的</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913162253174.png" alt="image-20210913162253174"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913162146786.png" alt="image-20210913162146786"></p>
 <h1 id="习惯"><a href="#习惯" class="headerlink" title="习惯"></a>习惯</h1><p>不急于求成，一步步稳扎稳打，草稿工整（以备验算）</p>
-<p><font color=red>如何有效验算呢</font></p>
+<font color=red>如何有效验算呢</font>
+
 <p>答案稀奇古怪时记得多个心眼</p>
 <h2 id="鼠目寸光"><a href="#鼠目寸光" class="headerlink" title="鼠目寸光"></a>鼠目寸光</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102424227.png" alt="image-20210912102424227"></p>
-<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
-<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
+<font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font>
+
+<font color=blue>平方差解决了第一项，但是后面的并不能解决</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102432946.png" alt="image-20210912102432946"></p>
-<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
-<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
+<font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font>
+
+<font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font>
+
+
+
 <p>牛牛牛</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211109192656441.png" alt="image-20211109192656441"></p>
 <p>1-cos 不用代换，而是用来洛</p>
@@ -949,13 +1010,15 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210923192426446.png" alt="image-20210923192426446"></p>
 <p>我错选了A，因为λ为1的时候看到都没问题</p>
 <p>就选了最前面的A（为了贪时间）</p>
-<p>明明知道肯定不选A的—–<font color=red>无论如何各种路实际走一下，碰出个不一样的答案</font></p>
+<p>明明知道肯定不选A的——-<font color=red>无论如何各种路实际走一下，碰出个不一样的答案</font></p>
 <h1 id="恒等式的坑"><a href="#恒等式的坑" class="headerlink" title="恒等式的坑"></a>恒等式的坑</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824121426700.png" alt="image-20210824121426700"></p>
 <p>解析：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824121442617.png" alt="image-20210824121442617"></p>
-<p><font color=red>D的表述并不是说r(A)=1, r(A-E)=1</font></p>
+<font color=red>D的表述并不是说r(A)=1, r(A-E)=1</font>
+
 <p>我们常用恒等式，但这存在的坑一定要小心</p>
-<h1 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h1><h2 id="最终的eln"><a href="#最终的eln" class="headerlink" title="最终的eln"></a>最终的eln</h2><p><font color=red>最终结果一般要把eln给化掉</font></p>
+<h1 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h1><h2 id="最终的eln"><a href="#最终的eln" class="headerlink" title="最终的eln"></a>最终的eln</h2><font color=red>最终结果一般要把eln给化掉</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160003298.png" alt="image-20210912160003298"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160017462.png" alt="image-20210912160017462"></p>
 <p>我的答案：</p>
@@ -964,65 +1027,93 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911173122229.png" alt="image-20210911173122229"></p>
 <p>解析：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911173411512.png" alt="image-20210911173411512"></p>
-<p><font color=red>出题人喜欢在符号上挖坑</font></p>
+<font color=red>出题人喜欢在符号上挖坑</font>
+
 <p>辛辛苦苦做出来了，但是符号没搞对</p>
 <p>最好的应对方法是:</p>
-<p><font color=blue size=5>不嫌麻烦，每一行都不省略</font></p>
+<font color=blue size=5>不嫌麻烦，每一行都不省略</font>
+
+
+
 <h2 id="特殊值法的坑-1"><a href="#特殊值法的坑-1" class="headerlink" title="特殊值法的坑"></a>特殊值法的坑</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092334055.png" alt="image-20210913092334055"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092406321.png" alt="image-20210913092406321"></p>
 <p>特殊值法确实使得即算方便了</p>
-<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
-<p><font color=red>答案带参数</font></p>
+<font color=blue>但是出题人也可能在这上面挖坑</font>
+
+<font color=red>答案带参数</font>
+
 <p>再回到这道题</p>
-<p>利用$$e^{- \infty }$$的特殊性</p>
-<h1 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h1><h2 id="左右导数"><a href="#左右导数" class="headerlink" title="左右导数"></a>左右导数</h2><p>$$f’_{+}(2)$$</p>
-<p>$$f’_{-}(1)$$</p>
-<h2 id="由得"><a href="#由得" class="headerlink" title="由得"></a>由得</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210910173732467.png" alt="image-20210910173732467"></p>
+<p>利用<script type="math/tex">e^{- \infty }</script>的特殊性</p>
+<h1 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h1><h2 id="左右导数"><a href="#左右导数" class="headerlink" title="左右导数"></a>左右导数</h2><script type="math/tex; mode=display">f'_{+}(2)</script><script type="math/tex; mode=display">f'_{-}(1)</script><h2 id="由得"><a href="#由得" class="headerlink" title="由得"></a>由得</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210910173732467.png" alt="image-20210910173732467"></p>
 <h2 id="罗尔定理连写"><a href="#罗尔定理连写" class="headerlink" title="罗尔定理连写"></a>罗尔定理连写</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210910173827428.png" alt="image-20210910173827428"></p>
 <h2 id="计算过程"><a href="#计算过程" class="headerlink" title="计算过程"></a>计算过程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211212083410490.png" alt="image-20211212083410490"></p>
 <h1 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h1><h2 id="复杂导数运算"><a href="#复杂导数运算" class="headerlink" title="复杂导数运算"></a>复杂导数运算</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917161714247.png" alt="image-20210917161714247"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917162025829.png" alt="image-20210917162025829"></p>
-<p><font color=red>两条路线，截然不同的难度</font></p>
-<h2 id="求极限–局部代换禁止【-】"><a href="#求极限–局部代换禁止【-】" class="headerlink" title="求极限–局部代换禁止【+】"></a>求极限–局部代换禁止【+】</h2><p><font color=red>还涉及到了局部代换禁止</font></p>
+<font color=red>两条路线，截然不同的难度</font>
+
+
+
+
+
+<h2 id="求极限—局部代换禁止【-】"><a href="#求极限—局部代换禁止【-】" class="headerlink" title="求极限—局部代换禁止【+】"></a>求极限—局部代换禁止【+】</h2><font color=red>还涉及到了局部代换禁止</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133241463.png" alt="image-20210918133241463"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133253104.png" alt="image-20210918133253104"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133307940.png" alt="image-20210918133307940"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133910385.png" alt="image-20210918133910385"></p>
-<p><font color=red>局部代换禁止</font></p>
+<font color=red>局部代换禁止</font>
+
 <p>错误示范</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918135630515.png" alt="image-20210918135630515"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211110094252565.png" alt="image-20211110094252565"></p>
-<p><font color=red>根号也洛它，因为没路走了</font></p>
+<font color=red>根号也洛它，因为没路走了</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211110094123935.png" alt="image-20211110094123935"></p>
 <h2 id="化简"><a href="#化简" class="headerlink" title="化简"></a>化简</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914101304444.png" alt="image-20210914101304444"></p>
 <h2 id="复杂根号的求导"><a href="#复杂根号的求导" class="headerlink" title="复杂根号的求导"></a>复杂根号的求导</h2><p>（已知参数方程求导数）</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704135103082.png" alt="image-20210704135103082"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704135010581.png" alt="image-20210704135010581"></p>
-<p><font color=red>不要慌，大多时候都是可以抵消掉的</font></p>
-<p><font color=red>你应该开心才是</font></p>
-<h2 id="配凑幂"><a href="#配凑幂" class="headerlink" title="配凑幂"></a>配凑幂</h2><p><font color=red>解决幂问题的方法不止eln一种</font></p>
+<font color=red>不要慌，大多时候都是可以抵消掉的</font>
+
+<font color=red>你应该开心才是</font>
+
+
+
+<h2 id="配凑幂"><a href="#配凑幂" class="headerlink" title="配凑幂"></a>配凑幂</h2><font color=red>解决幂问题的方法不止eln一种</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110039065.png" alt="image-20210912110039065"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110022191.png" alt="image-20210912110022191"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110030545.png" alt="image-20210912110030545"></p>
-<h2 id="分式相减【-】"><a href="#分式相减【-】" class="headerlink" title="分式相减【+】"></a>分式相减【+】</h2><p><font color=red>分式相减，合一下试试</font></p>
+<h2 id="分式相减【-】"><a href="#分式相减【-】" class="headerlink" title="分式相减【+】"></a>分式相减【+】</h2><font color=red>分式相减，合一下试试</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912155007856.png" alt="image-20210912155007856"></p>
 <p>答案：2</p>
-<p>$$arctanx\backsim x$$</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912155407095.png" alt="image-20210912155407095"></p>
-<h2 id="分式的浪漫【-】"><a href="#分式的浪漫【-】" class="headerlink" title="分式的浪漫【+】"></a>分式的浪漫【+】</h2><p><font color=red>其实不仅限于eln，遇到分式都可以洛洛</font></p>
+<script type="math/tex; mode=display">arctanx\backsim x</script><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912155407095.png" alt="image-20210912155407095"></p>
+<h2 id="分式的浪漫【-】"><a href="#分式的浪漫【-】" class="headerlink" title="分式的浪漫【+】"></a>分式的浪漫【+】</h2><font color=red>其实不仅限于eln，遇到分式都可以洛洛</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912161726673.png" alt="image-20210912161726673"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912161915863.png" alt="image-20210912161915863"></p>
 <h2 id="指数函数"><a href="#指数函数" class="headerlink" title="指数函数"></a>指数函数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913154045916.png" alt="image-20210913154045916"></p>
 <h2 id="三角函数与三角函数"><a href="#三角函数与三角函数" class="headerlink" title="三角函数与三角函数"></a>三角函数与三角函数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913105004393.png" alt="image-20210913105004393"></p>
-<h2 id="最值问题灵活处理"><a href="#最值问题灵活处理" class="headerlink" title="最值问题灵活处理"></a>最值问题灵活处理</h2><p><font color=red>利用不等式变形，转化了问题</font></p>
+<h2 id="最值问题灵活处理"><a href="#最值问题灵活处理" class="headerlink" title="最值问题灵活处理"></a>最值问题灵活处理</h2><font color=red>利用不等式变形，转化了问题</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917170324709.png" alt="image-20210917170324709"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917170330272.png" alt="image-20210917170330272"></p>
 <p>我错误的解法是硬从f(x)出发</p>
 <p>然后走了很多弯路（<font color=red>其实做的时候就应该发觉了，这是不归路</font>）</p>
-<p><font color=blue>方向对了，少走很多弯路</font></p>
-<h2 id="绝对值和反常积分【-】"><a href="#绝对值和反常积分【-】" class="headerlink" title="绝对值和反常积分【+】"></a>绝对值和反常积分【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210924170033261.png" alt="image-20210924170033261"></p>
-<p><font color=red>遇到绝对值的第一反应就是去绝对值</font></p>
-<p><font color=red>反常积分通常与奇偶性结合考察</font></p>
+<font color=blue>方向对了，少走很多弯路</font>
 
+
+
+
+
+<h2 id="绝对值和反常积分【-】"><a href="#绝对值和反常积分【-】" class="headerlink" title="绝对值和反常积分【+】"></a>绝对值和反常积分【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210924170033261.png" alt="image-20210924170033261"></p>
+<font color=red>遇到绝对值的第一反应就是去绝对值</font>
+
+<font color=red>反常积分通常与奇偶性结合考察</font>
       
     </div>
 
@@ -1089,36 +1180,83 @@
           <h1 id="常用导数公式"><a href="#常用导数公式" class="headerlink" title="常用导数公式"></a>常用导数公式</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706175938655.png" alt="image-20210706175938655"></p>
 <h1 id="导数定义式"><a href="#导数定义式" class="headerlink" title="导数定义式"></a>导数定义式</h1><h2 id="导数定义式变形【-】"><a href="#导数定义式变形【-】" class="headerlink" title="导数定义式变形【+++++】"></a>导数定义式变形【+++++】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914201539038.png" alt="image-20210914201539038"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914201548218.png" alt="image-20210914201548218"></p>
-<p><font color=red>key抓着就代到定义式里去先，其他该配合的配合就好了</font></p>
-<p><font color=red>负的Δx是出题</font></p>
+<font color=red>key抓着就代到定义式里去先，其他该配合的配合就好了</font>
+
+<font color=red>负的Δx是出题</font>
+
+
+
 <h1 id="对x求导和对a-x求导"><a href="#对x求导和对a-x求导" class="headerlink" title="对x求导和对a+x求导"></a>对x求导和对a+x求导</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915111514931.png" alt="image-20210915111514931"></p>
-<p>$$f’()$$都是统一向<font color=red>自变量</font>求导</p>
-<p>而不是x+1</p>
-<h1 id="已知f-x-求f’-x-【-】"><a href="#已知f-x-求f’-x-【-】" class="headerlink" title="已知f(x)求f’(x)【+++++】"></a>已知f(x)求f’(x)【+++++】</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713171423821.png" alt="image-20210713171423821"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713171434551.png" alt="image-20210713171434551"></p>
-<p>主要是在<font color=red>临界值的特殊处理</font></p>
-<p>导数存在的充要条件：<strong>左右导数都存在且相等</strong></p>
-<h2 id="已知f-x-求f’-x-【品】"><a href="#已知f-x-求f’-x-【品】" class="headerlink" title="已知f(x)求f’(x)【品】"></a>已知f(x)求f’(x)【品】</h2><p><font color=red>一点红型</font></p>
-<p><font color=red>分段函数连续性与导数的关系</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094107331.png" alt="image-20210914094107331"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094328582.png" alt="image-20210914094328582"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094353550.png" alt="image-20210914094353550"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094410790.png" alt="image-20210914094410790"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094450641.png" alt="image-20210914094450641"></p>
-<p><font color=red>f(0)=C，不能得出f’(0)=0</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914095228755.png" alt="image-20210914095228755"></p>
-<p>而应该用定义式去求该点的导数</p>
-<p>然后需要求出式子中未知的b</p>
-<p>据题意“处处可导”，则在x=0处也可导</p>
-<p>又根据“可导必连续” 则可以向分段函数列等式求出b</p>
-<p><font color=blue>最后是注意定义域的书写</font></p>
-<p><font color=red>抽象f(x)的定义域并不是我们默认的(-∞,+∞)</font></p>
-<h2 id="导数定义式与连续性【品】"><a href="#导数定义式与连续性【品】" class="headerlink" title="导数定义式与连续性【品】"></a>导数定义式与连续性【品】</h2><p><font color=red>导数定义式与连续性对分段函数的应用场景</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914192448500.png" alt="image-20210914192448500"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914192508457.png" alt="image-20210914192508457"></p>
-<p><font color=red>“只要考虑f(x)在x=0点的情况”</font></p>
-<p>$$f(x)$$可导（没说处处可导，故不能用连续性的性质），即应用<font color=blue>导数的定义式</font></p>
-<p>$$f’(x)$$连续，即 极限=$$f’(x_0)$$</p>
-<p>$$f(x)$$的归属：<font color=blue>有定义域的一方</font></p>
-<p>$$f’(x_0)$$的归属：<font color=blue>有定义域的一方</font></p>
+<script type="math/tex; mode=display">f'()$$都是统一向<font color=red>自变量</font>求导
+
+而不是x+1
+
+
+
+
+
+# 已知f(x)求f'(x)【+++++】
+
+![image-20210713171423821](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713171423821.png)
+
+![image-20210713171434551](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713171434551.png)
+
+主要是在<font color=red>临界值的特殊处理</font>
+
+导数存在的充要条件：**左右导数都存在且相等**
+
+
+
+
+
+
+
+## 已知f(x)求f'(x)【品】
+
+<font color=red>一点红型</font>
+
+<font color=red>分段函数连续性与导数的关系</font>
+
+![image-20210914094107331](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094107331.png)
+
+![image-20210914094328582](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094328582.png)![image-20210914094353550](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094353550.png)![image-20210914094410790](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094410790.png)
+
+![image-20210914094450641](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094450641.png)
+
+<font color=red>f(0)=C，不能得出f'(0)=0</font>
+
+![image-20210914095228755](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914095228755.png)
+
+而应该用定义式去求该点的导数
+
+然后需要求出式子中未知的b
+
+据题意“处处可导”，则在x=0处也可导
+
+又根据“可导必连续” 则可以向分段函数列等式求出b
+
+<font color=blue>最后是注意定义域的书写</font>
+
+<font color=red>抽象f(x)的定义域并不是我们默认的(-∞,+∞)</font>
+
+
+
+
+
+## 导数定义式与连续性【品】
+
+<font color=red>导数定义式与连续性对分段函数的应用场景</font>
+
+![image-20210914192448500](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914192448500.png)
+
+![image-20210914192508457](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914192508457.png)
+
+<font color=red>“只要考虑f(x)在x=0点的情况”</font>
+
+$$f(x)$$可导（没说处处可导，故不能用连续性的性质），即应用<font color=blue>导数的定义式</font>
+
+$$f'(x)$$连续，即 极限=$$f’(x_0)</script><p><script type="math/tex">f(x)</script>的归属：<font color=blue>有定义域的一方</font></p>
+<p><script type="math/tex">f’(x_0)</script>的归属：<font color=blue>有定义域的一方</font></p>
 <h1 id="求单调区间"><a href="#求单调区间" class="headerlink" title="求单调区间"></a>求单调区间</h1><p>一阶导为0</p>
 <p>再根据函数大致图像确定单调区间，需画表格</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917160411181.png" alt="image-20210917160411181"></p>
@@ -1139,7 +1277,8 @@
 <p>而产生这一转变的那一个点就是拐点</p>
 <p>加深理解</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210909200539992.png" alt="image-20210909200539992"></p>
-<p><font color=red>曲线斜率变化的单调性发生改变</font></p>
+<font color=red>曲线斜率变化的单调性发生改变</font>
+
 <p>据此，再反过来理解拐点的判定条件</p>
 <p>①三阶导不为0，才可能会发生这种转变</p>
 <p>②二阶导异号，即斜率变化的单调性相异</p>
@@ -1155,8 +1294,7 @@
 <p>正确打开上式的方式的是<strong>洛必达</strong></p>
 <p>很容易忽略的一点，已知条件为<strong>相切，除了告知导数值相等外，该点的函数值也是相等的</strong></p>
 <p>但是等值代换确是可以</p>
-<p><font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font></p>
-
+<font color=red>出题人这是以导数为基础考察点，然后在曲率那挖坑</font>
       
     </div>
 

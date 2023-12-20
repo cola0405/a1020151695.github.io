@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="核心思想遍历一遍同时对调位置（冒泡排序） 冒泡排序子序列一路换上去(即冒泡) 两两比较，两两决定相对位置 最终结果是最小的到首位（或最大的到末尾） 一趟确定的位置，之后不再参与 直接插入排序是先挪好位置然后把目标元素插入  快速排序基于分治法（递归） 核心思想： 每次取首位为基准，不断把空位补上 直到 （i&#x3D;j）时放入基准，完成一次划分   实现  快速排序的性能分析空间复杂度不是指除了原数组空间">
+  <meta name="description" content="核心思想遍历一遍同时对调位置（冒泡排序） 冒泡排序子序列一路换上去(即冒泡)  两两比较，两两决定相对位置 最终结果是最小的到首位（或最大的到末尾） 一趟确定的位置，之后不再参与 直接插入排序是先挪好位置然后把目标元素插入   快速排序基于分治法（递归） 核心思想： 每次取首位为基准，不断把空位补上 直到 （i&#x3D;j）时放入基准，完成一次划分   实现  快速排序的性能分析空间复杂度不是指除了原数组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-交换排序">
 <meta property="og:url" content="http://example.com/2021/07/11/%E7%AE%97%E6%B3%95-%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="核心思想遍历一遍同时对调位置（冒泡排序） 冒泡排序子序列一路换上去(即冒泡) 两两比较，两两决定相对位置 最终结果是最小的到首位（或最大的到末尾） 一趟确定的位置，之后不再参与 直接插入排序是先挪好位置然后把目标元素插入  快速排序基于分治法（递归） 核心思想： 每次取首位为基准，不断把空位补上 直到 （i&#x3D;j）时放入基准，完成一次划分   实现  快速排序的性能分析空间复杂度不是指除了原数组空间">
+<meta property="og:description" content="核心思想遍历一遍同时对调位置（冒泡排序） 冒泡排序子序列一路换上去(即冒泡)  两两比较，两两决定相对位置 最终结果是最小的到首位（或最大的到末尾） 一趟确定的位置，之后不再参与 直接插入排序是先挪好位置然后把目标元素插入   快速排序基于分治法（递归） 核心思想： 每次取首位为基准，不断把空位补上 直到 （i&#x3D;j）时放入基准，完成一次划分   实现  快速排序的性能分析空间复杂度不是指除了原数组">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711220546498.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211009144034048.png">
@@ -233,11 +233,13 @@
 
       
         <h1 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h1><p>遍历一遍同时对调位置（冒泡排序）</p>
-<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p><font color=red>子序列一路换上去(即冒泡)</font></p>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><font color=red>子序列一路换上去(即冒泡)</font>
+
 <p>两两比较，两两决定相对位置</p>
 <p>最终结果是最小的到首位（或最大的到末尾）</p>
 <p>一趟确定的位置，之后不再参与</p>
-<p><font color=blue>直接插入排序是先挪好位置然后把目标元素插入</font></p>
+<font color=blue>直接插入排序是先挪好位置然后把目标元素插入</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711220546498.png" alt="image-20210711220546498"></p>
 <h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>基于分治法（递归）</p>
 <p>核心思想：</p>

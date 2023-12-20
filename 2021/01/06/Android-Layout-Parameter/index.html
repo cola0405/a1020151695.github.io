@@ -240,12 +240,8 @@
       
         <p>Build</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> layoutParamsForInfoUnit: LinearLayout.LayoutParams? = <span class="literal">null</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">buildLayoutParamsForInfoUnit</span><span class="params">(context: <span class="type">Context</span>?)</span></span>&#123;</span><br><span class="line">layoutParamsForInfoUnit =</span><br><span class="line">                LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DpUtil.dip2px(context,<span class="number">100f</span>))</span><br><span class="line">layoutParamsForInfoUnit?.setMargins(DpUtil.dip2px(context, <span class="number">10f</span>), DpUtil.dip2px(context,<span class="number">10f</span>), DpUtil.dip2px(context,<span class="number">10f</span>), <span class="number">0</span>) <span class="comment">// left,top,right,bottom</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Use</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">signDataView!!.layoutParams = LayoutUtil.layoutParamsForInfoUnit</span><br></pre></td></tr></table></figure>
-
-
-
 
     </div>
 

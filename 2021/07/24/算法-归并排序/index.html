@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="核心思想：合并 两个数列，每次把更小的放进临时序列 放完也就合并完了   左半、右半序列完成合并后，完成最后的总合并 即称为 “归并” 空间复杂度：O(n) 时间复杂度：每次合并是O(n)，共有log2n次合并 则归并排序的时间复杂度为O(nlog2n)">
+  <meta name="description" content="核心思想：合并 两个数列，每次把更小的放进临时序列 放完也就合并完了   左半、右半序列完成合并后，完成最后的总合并  即称为 “归并”    空间复杂度：O(n) 时间复杂度：每次合并是O(n)，共有log~2~n次合并 则归并排序的时间复杂度为O(nlog~2~n)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-归并排序">
 <meta property="og:url" content="http://example.com/2021/07/24/%E7%AE%97%E6%B3%95-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="核心思想：合并 两个数列，每次把更小的放进临时序列 放完也就合并完了   左半、右半序列完成合并后，完成最后的总合并 即称为 “归并” 空间复杂度：O(n) 时间复杂度：每次合并是O(n)，共有log2n次合并 则归并排序的时间复杂度为O(nlog2n)">
+<meta property="og:description" content="核心思想：合并 两个数列，每次把更小的放进临时序列 放完也就合并完了   左半、右半序列完成合并后，完成最后的总合并  即称为 “归并”    空间复杂度：O(n) 时间复杂度：每次合并是O(n)，共有log~2~n次合并 则归并排序的时间复杂度为O(nlog~2~n)">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724111329548.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724111444415.png">
@@ -232,11 +232,15 @@
 <p>放完也就合并完了</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724111329548.png" alt="image-20210724111329548"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724111444415.png" alt="image-20210724111444415"></p>
-<p><font color=red>左半、右半序列完成合并后，完成最后的总合并</font></p>
-<p><font color=red>即称为 “归并”</font></p>
+<font color=red>左半、右半序列完成合并后，完成最后的总合并</font>
+
+<font color=red>即称为 “归并”</font>
+
+
+
 <p>空间复杂度：O(n)</p>
-<p>时间复杂度：每次合并是O(n)，共有log<del>2</del>n次合并</p>
-<p>则归并排序的<strong>时间复杂度为O(nlog<del>2</del>n)</strong></p>
+<p>时间复杂度：每次合并是O(n)，共有log~2~n次合并</p>
+<p>则归并排序的<strong>时间复杂度为O(nlog~2~n)</strong></p>
 
     </div>
 

@@ -223,7 +223,8 @@
 
       
           <h1 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h1><p>相比交换排序多了选最值的环节（简单选择排序、堆排序）</p>
-<h1 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h1><p><font color=red>选到最值后swap</font></p>
+<h1 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h1><font color=red>选到最值后swap</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711213238436.png" alt="image-20210711213238436"></p>
 <h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><p>链接</p>
 
@@ -362,12 +363,15 @@
 
       
           <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810210652318.png" alt="image-20210810210652318"></p>
-<p><font color=red>由定义可知，图的边是线段，而不能是射线</font></p>
+<font color=red>由定义可知，图的边是线段，而不能是射线</font>
+
+
+
 <h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><h1 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h1><h2 id="【经典、无脑】最多"><a href="#【经典、无脑】最多" class="headerlink" title="【经典、无脑】最多"></a>【经典、无脑】最多</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812151706440.png" alt="image-20210812151706440"></p>
 <p>无脑代公式：</p>
-<p>$$\frac{1}{2}\sum (度数*定点个数)$$= 总边数</p>
-<p>$$(4<em>5+3</em>4+2n)/2=23$$</p>
-<p>得n=7</p>
+<script type="math/tex; mode=display">\frac{1}{2}\sum (度数*定点个数)$$= 总边数
+
+$$(4*5+3*4+2n)/2=23</script><p>得n=7</p>
 <p>则5+4+7=16，选D</p>
 <h2 id="【经典、无脑】至少"><a href="#【经典、无脑】至少" class="headerlink" title="【经典、无脑】至少"></a>【经典、无脑】至少</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812152525449.png" alt="image-20210812152525449"></p>
 <p>和上面不一样的是，这里我们需要根据题意 “至少” 选择度的最大的2</p>
@@ -377,15 +381,20 @@
 <hr>
 <h1 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h1><p>就一个考点</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812143546128.png" alt="image-20210812143546128"></p>
-<p><font color=red>图相关的题，第一件事就是确认是有向图还是无向图</font></p>
+<font color=red>图相关的题，第一件事就是确认是有向图还是无向图</font>
+
 <p>看到无向图，直接上票</p>
 <p> 再有一点就是，出/入度是对有向图而言的</p>
 <p>无向图只有 “度” 的概念</p>
 <h1 id="拓扑序列"><a href="#拓扑序列" class="headerlink" title="拓扑序列"></a>拓扑序列</h1><p>对于一个有向无环图，顶点活动网中将活动按发生的先后次序进行的一种排列。</p>
 <p><strong>每个活动的所有前驱活动都排在该活动的前面</strong></p>
-<p><font color=blue>如果有向图邻接矩阵对角线以下的元素都为0，则一定存在拓扑序列</font></p>
-<h1 id="环"><a href="#环" class="headerlink" title="环"></a>环</h1><p><font color=red>这是一个很容易让人混乱的考点</font></p>
-<p>（n-1）是**环的临界条件 **，一旦边数大于（n-1）则必然构成环</p>
+<font color=blue>如果有向图邻接矩阵对角线以下的元素都为0，则一定存在拓扑序列</font>
+
+
+
+<h1 id="环"><a href="#环" class="headerlink" title="环"></a>环</h1><font color=red>这是一个很容易让人混乱的考点</font>
+
+<p>（n-1）是<strong>环的临界条件 </strong>，一旦边数大于（n-1）则必然构成环</p>
 <p>逻辑证明：</p>
 <p>n个点，则（n-1）条边是图<strong>不构成环的极限</strong></p>
 <p><strong>再多一条边，无论如何都会成环</strong></p>
@@ -404,7 +413,8 @@
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>还有别的稀奇古怪的数量关系则用暴力法求解</p>
 <hr>
 <h1 id="强连通图"><a href="#强连通图" class="headerlink" title="强连通图"></a>强连通图</h1><p>即连通的有向图</p>
-<p><font color=red>前提是有向图</font></p>
+<font color=red>前提是有向图</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810213151158.png" alt="image-20210810213151158"></p>
 <h2 id="顶点与边"><a href="#顶点与边" class="headerlink" title="顶点与边"></a>顶点与边</h2><p>强连通图至少要n条边</p>
 <h1 id="重连通（chong）"><a href="#重连通（chong）" class="headerlink" title="重连通（chong）"></a>重连通（chong）</h1><p>在无向图中，<strong>任意</strong>两个顶点之间含有不止一条通路</p>
@@ -432,21 +442,27 @@
 <hr>
 <h1 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h1><p>一棵树为树，两棵树及以上则称为森林</p>
 <hr>
-<h1 id="邻接矩阵（Adjacency-Matrix）"><a href="#邻接矩阵（Adjacency-Matrix）" class="headerlink" title="邻接矩阵（Adjacency Matrix）"></a>邻接矩阵（Adjacency Matrix）</h1><p><font color=red>是二维数组</font></p>
+<h1 id="邻接矩阵（Adjacency-Matrix）"><a href="#邻接矩阵（Adjacency-Matrix）" class="headerlink" title="邻接矩阵（Adjacency Matrix）"></a>邻接矩阵（Adjacency Matrix）</h1><font color=red>是二维数组</font>
+
 <p> “adj” 指的是邻接</p>
 <p>易错题：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812150606193.png" alt="image-20210812150606193"></p>
 <p>答案：BD</p>
 <p>首先是知识点的讲解</p>
-<p>有向图的入度，顶点 $$V_i$$ 的入度为邻接矩阵第 i 列之和</p>
-<p>有向图的入出度，顶点 $$V_i$$ 的入度为邻接矩阵第 i 行之和</p>
-<p><font color=red>这里需要明确一点，临界矩阵的元素只有 0 和 1 表示是否连通，并不包含距离信息</font></p>
-<p>无向图的度，顶点 $$V_i$$ 的度为邻接矩阵第 i 列之和或邻接矩阵第 i 行之和</p>
+<p>有向图的入度，顶点 <script type="math/tex">V_i</script> 的入度为邻接矩阵第 i 列之和</p>
+<p>有向图的入出度，顶点 <script type="math/tex">V_i</script> 的入度为邻接矩阵第 i 行之和</p>
+<font color=red>这里需要明确一点，临界矩阵的元素只有 0 和 1 表示是否连通，并不包含距离信息</font>
+
+<p>无向图的度，顶点 <script type="math/tex">V_i</script> 的度为邻接矩阵第 i 列之和或邻接矩阵第 i 行之和</p>
 <p>其次补充一下A选项为什么不选：</p>
-<p>A选项虽然表示的是列，但其<strong>仅表示第 j 列，没有明确和题目所要求的 $$V_i$$ 对应</strong>，故不选</p>
+<p>A选项虽然表示的是列，但其<strong>仅表示第 j 列，没有明确和题目所要求的 <script type="math/tex">V_i</script> 对应</strong>，故不选</p>
 <hr>
-<h1 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h1><p><font color=red>是链表</font></p>
-<p><font color=blue>邻接矩阵和邻接表是不同的</font></p>
+<h1 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h1><font color=red>是链表</font>
+
+<font color=blue>邻接矩阵和邻接表是不同的</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812160942746.png" alt="image-20210812160942746"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812161003775.png" alt="image-20210812161003775"></p>
 <p>误区：</p>
@@ -454,7 +470,10 @@
 <p>解析：</p>
 <p><strong>邻接表也可以表示无向图，只是冗余而已</strong></p>
 <p>邻接表中存在两种结点：</p>
-<p><font color=red>顶点表节点</font>和<font color=blue>边表节点</font></p>
+<font color=red>顶点表节点</font>和<font color=blue>边表节点</font>
+
+
+
 <h2 id="定点表结点"><a href="#定点表结点" class="headerlink" title="定点表结点"></a>定点表结点</h2><p>表头</p>
 <h2 id="边表结点"><a href="#边表结点" class="headerlink" title="边表结点"></a>边表结点</h2><p>边表上除表头的其他结点</p>
 <p><strong>不是指每行的表头，而是各个节点</strong></p>
@@ -464,20 +483,26 @@
 <p>而一旦出现奇数个边表结点，则说明图为有向图，选D</p>
 <h3 id="边表结点与结点"><a href="#边表结点与结点" class="headerlink" title="边表结点与结点"></a>边表结点与结点</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812160909506.png" alt="image-20210812160909506"></p>
 <p>暴力法，选B</p>
-<p><font color=red>但是有个前提，你要懂得什么是边表节点</font></p>
+<font color=red>但是有个前提，你要懂得什么是边表节点</font>
+
 <p>满满</p>
 <p>不用去重除以2</p>
-<h1 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h1><p><font color=red>仅用于有向图</font></p>
+<h1 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h1><font color=red>仅用于有向图</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812164645568.png" alt="image-20210812164645568"></p>
 <p>有两种节点：<strong>弧节点和顶点节点</strong></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812162452350.png" alt="image-20210812162452350"></p>
 <h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>注意看上图画圈部分</p>
-<p><font color=red>尤其注意理解hlink和tlink</font></p>
+<font color=red>尤其注意理解hlink和tlink</font>
+
 <p>h指向弧头相同的下一条弧</p>
 <p>t指向弧尾相同的下一条弧</p>
 <p>这两个域使得十字链表可以<strong>更容易地得到顶点的度</strong>，用不着遍历整个邻接表，只需要走一遍hlink或者tlink</p>
 <p><strong>十字链表的表达不唯一</strong></p>
-<h1 id="邻接多重表"><a href="#邻接多重表" class="headerlink" title="邻接多重表"></a>邻接多重表</h1><p><font color=red>仅用于无向图</font></p>
+<h1 id="邻接多重表"><a href="#邻接多重表" class="headerlink" title="邻接多重表"></a>邻接多重表</h1><font color=red>仅用于无向图</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812164330135.png" alt="image-20210812164330135"></p>
 <p>分别有：顶点结点和边结点</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812163437756.png" alt="image-20210812163437756"></p>
@@ -485,7 +510,8 @@
 <h2 id="邻接多重表与十字链表"><a href="#邻接多重表与十字链表" class="headerlink" title="邻接多重表与十字链表"></a>邻接多重表与十字链表</h2><p>其实他们很相像，唯一的区别就是</p>
 <p>十字链表是对有向图而言，对连贯弧前后顺序有一定要求</p>
 <p>而适用于无向图的邻接多重表则是不分先后，<strong>有连通关系就行</strong></p>
-<h2 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h2><p><font color=blue>不是简单地一行过去</font></p>
+<h2 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h2><font color=blue>不是简单地一行过去</font>
+
 <p>但是按指针深度搜索，可以得到某点相邻的边和顶点的信息</p>
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="【易错】时间复杂度"><a href="#【易错】时间复杂度" class="headerlink" title="【易错】时间复杂度"></a>【易错】时间复杂度</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812161422716.png" alt="image-20210812161422716"></p>
 <p>因为边数的增长<strong>只会影响到两个边表</strong>，不是全部边表，故不选D</p>
@@ -586,7 +612,8 @@
 
       
           <p>要带尺子！！！</p>
-<h1 id="真的是有傻逼题"><a href="#真的是有傻逼题" class="headerlink" title="真的是有傻逼题"></a>真的是有傻逼题</h1><p><font color=red>不要一昧相信自己的经验，根据具体情况分析</font></p>
+<h1 id="真的是有傻逼题"><a href="#真的是有傻逼题" class="headerlink" title="真的是有傻逼题"></a>真的是有傻逼题</h1><font color=red>不要一昧相信自己的经验，根据具体情况分析</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711100128939.png" alt="image-20210711100128939"></p>
 <h1 id="文字描述和代码描述"><a href="#文字描述和代码描述" class="headerlink" title="文字描述和代码描述"></a>文字描述和代码描述</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211007095359987.png" alt="image-20211007095359987"></p>
 <p>答案：栈顶指针</p>
@@ -597,24 +624,29 @@
 <p>“把栈顶指针的值赋给新结点的指针域”</p>
 <p>转换化成代码就是</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-&gt;next=Lhead;  <span class="comment">// 自信品“赋给”</span></span><br></pre></td></tr></table></figure>
-
 <p>上一步做完，其实就把结点和链表连接起来了</p>
 <p>剩下的最后一步就是把确定表头指针</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Lhead=node;</span><br></pre></td></tr></table></figure>
-
 <p>即“把新结点的存储位置赋给栈顶指针”</p>
-<h1 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h1><p><font color=red>适用于一脸懵的n</font></p>
+<h1 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h1><font color=red>适用于一脸懵的n</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711105236884.png" alt="image-20210711105236884"></p>
 <p>n=2,n=3,n=4 枚举带入选项</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812142935064.png" alt="image-20210812142935064"></p>
-<p><font color=blue>这谁知道呢，反正暴力试就van了</font></p>
+<font color=blue>这谁知道呢，反正暴力试就van了</font>
+
+
+
 <hr>
 <h1 id="暴力法yyds"><a href="#暴力法yyds" class="headerlink" title="暴力法yyds"></a>暴力法yyds</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008101717542.png" alt="image-20211008101717542"></p>
 <p>答案：4</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008101907258.png" alt="image-20211008101907258"></p>
 <h1 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h1><p>别重复写太多无关的东西</p>
 <h1 id="不正确"><a href="#不正确" class="headerlink" title="不正确"></a>不正确</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812143225318.png" alt="image-20210812143225318"></p>
-<p><font color=red>看到不正确直接上票</font></p>
+<font color=red>看到不正确直接上票</font>
+
+
+
 <h2 id="审题"><a href="#审题" class="headerlink" title="审题"></a>审题</h2><p>需要额外小心字眼</p>
 <p>什么 “结点” “叶结点”</p>
 <p>“正确” “不正确”</p>
@@ -630,47 +662,23 @@
 <p>没有简单题。。。都是套路啊</p>
 <h2 id="最短路径的表达"><a href="#最短路径的表达" class="headerlink" title="最短路径的表达"></a>最短路径的表达</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012202454176.png" alt="image-20211012202454176"></p>
 <h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *p;				<span class="comment">// 可以看成是 int* a</span></span><br><span class="line">    p=(<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">4</span>); <span class="comment">// 作类型时星号放后面</span></span><br><span class="line">    *p=<span class="number">2</span>;			   <span class="comment">// 访问指针*p</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*p);   <span class="comment">// printf里放数值  scanf里放地址p（p是指针，地址</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span>&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; QNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    QNode *front,*rear;</span><br><span class="line">&#125; LiQueue;		<span class="comment">// Liqueue 是实体</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(LiQueue *&amp;q,ElemType e)</span></span>&#123;&#125; <span class="comment">// 其实是没毛病的，可以看成LiQueue* &amp;q，对应LinkList &amp;L，LNode* &amp;L</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="prinf"><a href="#prinf" class="headerlink" title="prinf"></a>prinf</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005170928343.png" alt="image-20211005170928343"></p>
 <h2 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElemType;</span><br></pre></td></tr></table></figure>
-
 <p>typedef为C语言的关键字，作用是为一种数据类型定义一个新名字。</p>
 <p>这里的数据类型包括内部数据类型（int,char等）和自定义的数据类型（struct等）</p>
 <p>进阶</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">	ElemType data;</span><br><span class="line">	Struct Lnode *next;</span><br><span class="line">&#125; LNode, *LinkList;  <span class="comment">// 看成是LNode* LinkList，即LinkList是LNode类型的指针</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(LinkList &amp;L)</span></span>&#123;	<span class="comment">// LinkList是指针类型，故对L取地址符号 L是List实体</span></span><br><span class="line">    LNode *p;</span><br><span class="line">    L=(LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));  <span class="comment">// 按LNode的大小申请内存，malloc返回的是地址，转化成LNode的指针类型</span></span><br><span class="line">    p=(LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));	<span class="comment">// 这两语句是等效的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><p>代码选自王道</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014105602209.png" alt="image-20211014105602209"></p>
 <p>1表示成功，0表示失败</p>
 <p>但是有例外</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sqeSearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> key)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(key==a[i])&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;查找成功\n&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>因为数组下标包含0，故返回-1表示查找不成功</p>
 <p>另外，914.。。自己就支持bool作返回值</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014152420667.png" alt="image-20211014152420667"></p>
 <h2 id="函数调用传值"><a href="#函数调用传值" class="headerlink" title="函数调用传值"></a>函数调用传值</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BiTree* <span class="title">BSTSearch</span><span class="params">(BiTree &amp;T,<span class="keyword">int</span> key)</span></span>&#123;  <span class="comment">// 真有什么T的赋值操作也没关系，因为传过来的只是地址值，不会改变源指针</span></span><br><span class="line">	<span class="keyword">if</span>(T==<span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;data==key)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;查找成功\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> T;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;data&gt;key)<span class="keyword">return</span> BSTSearch(T-&gt;lChild,key);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> BSTSearch(T-&gt;rChild,key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><h2 id="邻接矩阵与图"><a href="#邻接矩阵与图" class="headerlink" title="邻接矩阵与图"></a>邻接矩阵与图</h2><p>adj—邻接矩阵（Adjacency Matrix）</p>
+<h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><h2 id="邻接矩阵与图"><a href="#邻接矩阵与图" class="headerlink" title="邻接矩阵与图"></a>邻接矩阵与图</h2><p>adj—-邻接矩阵（Adjacency Matrix）</p>
 <p>vertex 顶点</p>
 <p>arc 邻接关系，相当于边</p>
 <h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>ptr（pointer 指针）</p>
@@ -745,7 +753,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="平均查找时间"><a href="#平均查找时间" class="headerlink" title="平均查找时间"></a>平均查找时间</h4><p><font color=blue>本题易错</font></p>
+          <h4 id="平均查找时间"><a href="#平均查找时间" class="headerlink" title="平均查找时间"></a>平均查找时间</h4><font color=blue>本题易错</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726141615662.png" alt="image-20210726141615662"></p>
 <p>分最短时间和最长时间</p>
 <p>分别对应最好情况和最坏情况</p>
@@ -757,10 +766,10 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726142632133.png" alt="image-20210726142632133"></p>
 <p>平均，即最好情况和最坏情况</p>
 <hr>
-<p><font color=red>包含概率，即考虑数学期望</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726142517834.png" alt="image-20210726142517834"></p>
-<p>$$\frac{1}{2}$$ x 1+ $$\frac{1}{3}$$ x 2 + $$\frac{1}{6}$$ x 3 = $$\frac{5}{3}$$</p>
+<font color=red>包含概率，即考虑数学期望</font>
 
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726142517834.png" alt="image-20210726142517834"></p>
+<script type="math/tex; mode=display">\frac{1}{2}$$ x 1+ $$\frac{1}{3}$$ x 2 + $$\frac{1}{6}$$ x 3 = $$\frac{5}{3}</script>
       
     </div>
 
@@ -897,7 +906,8 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710173742807.png" alt="image-20210710173742807"></p>
 <p>错误解法</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710173840693.png" alt="image-20210710173840693"></p>
-<p><font color=red size=5>答案稀奇古怪时记得多个心眼</font></p>
+<font color=red size=5>答案稀奇古怪时记得多个心眼</font>
+
 <p>正确解法</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710173758243.png" alt="image-20210710173758243"></p>
 
@@ -1040,12 +1050,15 @@
 
       
           <h4 id="对数与极限"><a href="#对数与极限" class="headerlink" title="对数与极限"></a>对数与极限</h4><p>（有无穷小代换的话那更ok）</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630101418183.png"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630101418183.png" alt=""></p>
 <h4 id="等价无穷小代换易错题"><a href="#等价无穷小代换易错题" class="headerlink" title="等价无穷小代换易错题"></a>等价无穷小代换易错题</h4><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171337995.png" alt="image-20210710171337995"></p>
 <p>错误解法</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171609403.png"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171609403.png" alt=""></p>
 <p>正确解法</p>
-<p><font color=red size=5>eln后洛</font></p>
+<font color=red size=5>eln后洛</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210710171811759.png" alt="image-20210710171811759"></p>
 
       
@@ -1118,7 +1131,6 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210709200939142.png" alt="image-20210709200939142"></p>
 <p>然后把MinGW下的bin加到环境变量中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -V</span><br></pre></td></tr></table></figure>
-
 <h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><ol>
 <li>C/C++</li>
 <li>Code Runner</li>
@@ -1130,11 +1142,9 @@
 </li>
 </ul>
 <h4 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Jimmy&gt;<span class="built_in">cd</span> <span class="string">&quot;f:\桌面\c\&quot; &amp;&amp; gcc Untitled-1.c -o Untitled-1 &amp;&amp; &quot;</span>f:\桌面\c\&quot;Untitled-1</span><br><span class="line"><span class="string">&#x27;&quot;f:\桌面\c\&quot;Untitled-1&#x27;</span> 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br></pre></td></tr></table></figure>
-
 <p>解决：</p>
 <p>配置settings.json</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;code-runner.executorMap&quot;: &#123;</span><br><span class="line">        &quot;c&quot;: &quot;cd /d $dir &amp;&amp; gcc $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&quot;,</span><br><span class="line">        &quot;cpp&quot;: &quot;cd /d $dir &amp;&amp; g++ -o $fileNameWithoutExt $fileName  &amp;&amp; $dir$fileNameWithoutExt&quot;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
 <p>Ps：运行cpp要用g++</p>
 <p>其他出现相同问题的同理</p>
 <h4 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h4><p>增加断点</p>

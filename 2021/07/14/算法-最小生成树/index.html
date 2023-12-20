@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="内容归属：图 生成树n-1条边的连通图  最小生成树权值和最小的生成树  最小生成树的性质唯一性问题与算法无关 相关因素只有：“是否存在权值相等的边” 当图G各边的权值都不相等时，最小生成树是唯一的 代价唯一性虽然最小生成树可能不唯一，但是其代价总是唯一的 最小生成树算法Kruskal算法【贪心】适用于边稀疏点多的图  还需找一条边使得连通 算法特点最小生成树唯一 算法解析各边权值排序，看权值最小">
+  <meta name="description" content="内容归属：图 生成树n-1条边的连通图  最小生成树权值和最小的生成树  最小生成树的性质唯一性问题与算法无关 相关因素只有：“是否存在权值相等的边” 当图G各边的权值都不相等时，最小生成树是唯一的 代价唯一性虽然最小生成树可能不唯一，但是其代价总是唯一的 最小生成树算法Kruskal算法【贪心】适用于边稀疏点多的图  还需找一条边使得连通    算法特点最小生成树唯一 算法解析各边权值排序，看权">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-最小生成树">
 <meta property="og:url" content="http://example.com/2021/07/14/%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="内容归属：图 生成树n-1条边的连通图  最小生成树权值和最小的生成树  最小生成树的性质唯一性问题与算法无关 相关因素只有：“是否存在权值相等的边” 当图G各边的权值都不相等时，最小生成树是唯一的 代价唯一性虽然最小生成树可能不唯一，但是其代价总是唯一的 最小生成树算法Kruskal算法【贪心】适用于边稀疏点多的图  还需找一条边使得连通 算法特点最小生成树唯一 算法解析各边权值排序，看权值最小">
+<meta property="og:description" content="内容归属：图 生成树n-1条边的连通图  最小生成树权值和最小的生成树  最小生成树的性质唯一性问题与算法无关 相关因素只有：“是否存在权值相等的边” 当图G各边的权值都不相等时，最小生成树是唯一的 代价唯一性虽然最小生成树可能不唯一，但是其代价总是唯一的 最小生成树算法Kruskal算法【贪心】适用于边稀疏点多的图  还需找一条边使得连通    算法特点最小生成树唯一 算法解析各边权值排序，看权">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714180010738.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714180054823.png">
@@ -242,7 +242,10 @@
 <h2 id="代价唯一性"><a href="#代价唯一性" class="headerlink" title="代价唯一性"></a>代价唯一性</h2><p>虽然最小生成树可能不唯一，但是其代价总是唯一的</p>
 <h1 id="最小生成树算法"><a href="#最小生成树算法" class="headerlink" title="最小生成树算法"></a>最小生成树算法</h1><h2 id="Kruskal算法【贪心】"><a href="#Kruskal算法【贪心】" class="headerlink" title="Kruskal算法【贪心】"></a>Kruskal算法【贪心】</h2><p>适用于边稀疏点多的图</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714180815181.png" alt="image-20210714180815181"></p>
-<p><font color=red>还需找一条边使得连通</font></p>
+<font color=red>还需找一条边使得连通</font>
+
+
+
 <h3 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h3><p>最小生成树唯一</p>
 <h3 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h3><p>各边权值排序，看权值最小的边加入后是否构成回路</p>
 <p>若不构成回路则添加</p>

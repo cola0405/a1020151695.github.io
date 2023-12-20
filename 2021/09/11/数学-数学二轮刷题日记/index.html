@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="9&#x2F;11复合函数的考点 值域与定义域  求极限（含三角函数、对数）【+】  ①三角函数与平方差公式的应用场景蛮多的 ②先用eln，再用$$e^{x}-1 \backsim x$$ ③$$1-cosx \backsim \frac{1}{2}x^2$$ x趋于0时，1-cosx肯定为正数 相关链接 最后的极限拿笔算  解析：  差为0，但是和不为0 出题人喜欢在符号上挖坑 辛辛苦苦做出来了，但是符号">
+  <meta name="description" content="9&#x2F;11复合函数的考点 值域与定义域   求极限（含三角函数、对数）【+】  ①三角函数与平方差公式的应用场景蛮多的  ②先用eln，再用e^{x}-1 \backsim x ③1-cosx \backsim \frac{1}{2}x^2 x趋于0时，1-cosx肯定为正数 相关链接 最后的极限拿笔算  解析：  差为0，但是和不为0  出题人喜欢在符号上挖坑  辛辛苦苦做出来了，但是符号没搞对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学-数学二轮刷题日记">
 <meta property="og:url" content="http://example.com/2021/09/11/%E6%95%B0%E5%AD%A6-%E6%95%B0%E5%AD%A6%E4%BA%8C%E8%BD%AE%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="9&#x2F;11复合函数的考点 值域与定义域  求极限（含三角函数、对数）【+】  ①三角函数与平方差公式的应用场景蛮多的 ②先用eln，再用$$e^{x}-1 \backsim x$$ ③$$1-cosx \backsim \frac{1}{2}x^2$$ x趋于0时，1-cosx肯定为正数 相关链接 最后的极限拿笔算  解析：  差为0，但是和不为0 出题人喜欢在符号上挖坑 辛辛苦苦做出来了，但是符号">
+<meta property="og:description" content="9&#x2F;11复合函数的考点 值域与定义域   求极限（含三角函数、对数）【+】  ①三角函数与平方差公式的应用场景蛮多的  ②先用eln，再用e^{x}-1 \backsim x ③1-cosx \backsim \frac{1}{2}x^2 x趋于0时，1-cosx肯定为正数 相关链接 最后的极限拿笔算  解析：  差为0，但是和不为0  出题人喜欢在符号上挖坑  辛辛苦苦做出来了，但是符号没搞对">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911162844519.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911162935144.png">
@@ -364,74 +364,111 @@
 
       
         <h1 id="9-11"><a href="#9-11" class="headerlink" title="9/11"></a>9/11</h1><h2 id="复合函数的考点"><a href="#复合函数的考点" class="headerlink" title="复合函数的考点"></a>复合函数的考点</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911162844519.png" alt="image-20210911162844519"></p>
-<p><font color=red>值域与定义域</font></p>
+<font color=red>值域与定义域</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911162935144.png" alt="image-20210911162935144"></p>
 <h2 id="求极限（含三角函数、对数）【-】"><a href="#求极限（含三角函数、对数）【-】" class="headerlink" title="求极限（含三角函数、对数）【+】"></a>求极限（含三角函数、对数）【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911163853218.png" alt="image-20210911163853218"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911163905999.png" alt="image-20210911163905999"></p>
-<p><font color=red>①三角函数与平方差公式的应用场景蛮多的</font></p>
-<p>②先用eln，再用$$e^{x}-1 \backsim x$$</p>
-<p>③$$1-cosx \backsim \frac{1}{2}x^2$$</p>
+<font color=red>①三角函数与平方差公式的应用场景蛮多的</font>
+
+<p>②先用eln，再用<script type="math/tex">e^{x}-1 \backsim x</script></p>
+<p>③<script type="math/tex">1-cosx \backsim \frac{1}{2}x^2</script></p>
 <p>x趋于0时，1-cosx肯定为正数</p>
 <p>相关<a target="_blank" rel="noopener" href="http://freejim.icu/2021/06/30/%E6%9E%81%E9%99%90/">链接</a></p>
 <h2 id="最后的极限"><a href="#最后的极限" class="headerlink" title="最后的极限"></a>最后的极限</h2><p>拿笔算</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911173122229.png" alt="image-20210911173122229"></p>
 <p>解析：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911173411512.png" alt="image-20210911173411512"></p>
-<p><font color=red>差为0，但是和不为0</font></p>
-<p><font color=red>出题人喜欢在符号上挖坑</font></p>
+<font color=red>差为0，但是和不为0</font>
+
+<font color=red>出题人喜欢在符号上挖坑</font>
+
 <p>辛辛苦苦做出来了，但是符号没搞对</p>
 <p>最好的应对方法是:</p>
-<p><font color=blue size=5>不嫌麻烦，每一行都不省略</font></p>
+<font color=blue size=5>不嫌麻烦，每一行都不省略</font>
+
+
+
 <h2 id="趋近于无穷的好处【-】"><a href="#趋近于无穷的好处【-】" class="headerlink" title="趋近于无穷的好处【+】"></a>趋近于无穷的好处【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911174537568.png" alt="image-20210911174537568"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911174812111.png" alt="image-20210911174812111"></p>
-<p><font color=red>一方面用换元可以得到趋于0</font></p>
-<p><font color=red>另一方面趋于无穷的可用性比趋于0更好</font></p>
+<font color=red>一方面用换元可以得到趋于0</font>
+
+<font color=red>另一方面趋于无穷的可用性比趋于0更好</font>
+
 <p>解析中划线部分，不要用宏观去猜测</p>
 <p>用洛必达去解</p>
 <h2 id="无穷x-不作分母【-】"><a href="#无穷x-不作分母【-】" class="headerlink" title="无穷x 不作分母【+】"></a>无穷x 不作分母【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911213308900.png" alt="image-20210911213308900"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210911213811776.png" alt="image-20210911213811776"></p>
-<p><font color=red>有志者事竟成</font>（硬着头皮琢磨了十多分钟，终于做出来了！）</p>
-<p>底子是有的，别那么轻易放弃</p>
-<p><font color=red>老实一些，机会就来了</font></p>
+<font color=red>有志者事竟成</font>（硬着头皮琢磨了十多分钟，终于做出来了！）
+
+底子是有的，别那么轻易放弃
+
+<font color=red>老实一些，机会就来了</font>
+
 <p>分式时死活想不到那个ax的代换</p>
-<p><font color=blue>换成t，一下就反应过来了</font></p>
+<font color=blue>换成t，一下就反应过来了</font>
+
+
+
+
+
 <h1 id="9-12"><a href="#9-12" class="headerlink" title="9/12"></a>9/12</h1><h2 id="泰勒引诱【-】"><a href="#泰勒引诱【-】" class="headerlink" title="泰勒引诱【+】"></a>泰勒引诱【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211104152828249.png" alt="image-20211104152828249"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912095328001.png" alt="image-20210912095328001"></p>
-<p><font color=red>第一反应等价代换行不通，则可以用泰勒！泰勒不怕减减</font></p>
-<p><font color=red>再看到分母这种“孤儿”，多半就是泰勒了</font></p>
-<p><font color=blue>用泰勒的话，就尽量保留多的sin来进行抵消</font></p>
-<p><font color=green>我做的时候不会泰勒，用的硬洛（三角函数与洛其实很契合）</font></p>
+<font color=red>第一反应等价代换行不通，则可以用泰勒！泰勒不怕减减</font>
+
+<font color=red>再看到分母这种“孤儿”，多半就是泰勒了</font>
+
+<font color=blue>用泰勒的话，就尽量保留多的sin来进行抵消</font>
+
+<font color=green>我做的时候不会泰勒，用的硬洛（三角函数与洛其实很契合）</font>
+
 <p>然后把分母给洛没了</p>
 <h2 id="高次方就别考虑平方差了【-】"><a href="#高次方就别考虑平方差了【-】" class="headerlink" title="高次方就别考虑平方差了【+】"></a>高次方就别考虑平方差了【+】</h2><p>高次方也可以洛</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102424227.png" alt="image-20210912102424227"></p>
-<p><font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font></p>
-<p><font color=blue>平方差解决了第一项，但是后面的并不能解决</font></p>
+<font color=red>以为找到了方向，得意忘形了，很多细节漏掉了</font>
+
+<font color=blue>平方差解决了第一项，但是后面的并不能解决</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912102432946.png" alt="image-20210912102432946"></p>
-<p><font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font></p>
-<p><font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font></p>
-<h2 id="变换e的负无穷【-】"><a href="#变换e的负无穷【-】" class="headerlink" title="变换e的负无穷【+】"></a>变换e的负无穷【+】</h2><p><font color=red>解决幂问题，不止eln一种方法</font></p>
+<font color=red>沉住气，隐约感觉某条路错误的时候，退出来，继续观察全局</font>
+
+<font color=red>对于抽象N问题，可以令n=1先尽可能了解它，再尝试彻底解决问题</font>
+
+
+
+
+
+
+
+<h2 id="变换e的负无穷【-】"><a href="#变换e的负无穷【-】" class="headerlink" title="变换e的负无穷【+】"></a>变换e的负无穷【+】</h2><font color=red>解决幂问题，不止eln一种方法</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110039065.png" alt="image-20210912110039065"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110022191.png" alt="image-20210912110022191"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912110030545.png" alt="image-20210912110030545"></p>
 <h2 id="定积分与极限【-】"><a href="#定积分与极限【-】" class="headerlink" title="定积分与极限【+】"></a>定积分与极限【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912153008015.png" alt="image-20210912153008015"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912153002137.png" alt="image-20210912153002137"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912152916696.png" alt="image-20210912152916696"></p>
-<p><font color=red>之所以可以洛的原因是分母为0</font></p>
+<font color=red>之所以可以洛的原因是分母为0</font>
+
+
+
 <h2 id="应试特殊值法"><a href="#应试特殊值法" class="headerlink" title="应试特殊值法"></a>应试特殊值法</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912153747075.png" alt="image-20210912153747075"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912154538127.png" alt="image-20210912154538127"></p>
 <h2 id="eln"><a href="#eln" class="headerlink" title="eln"></a>eln</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912154824033.png" alt="image-20210912154824033"></p>
-<p><font color=red>“x” 趋于0才可以代换</font></p>
+<font color=red>“x” 趋于0才可以代换</font>
+
 <p>像这种a作指数，无法确定最终答案是否含a的</p>
 <p>可以两次暴力去解</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915170816342.png" alt="image-20210915170816342"></p>
 <p>答案：1</p>
-<h2 id="分式相减【-】"><a href="#分式相减【-】" class="headerlink" title="分式相减【+】"></a>分式相减【+】</h2><p><font color=red>分式相减，合一下试试</font></p>
+<h2 id="分式相减【-】"><a href="#分式相减【-】" class="headerlink" title="分式相减【+】"></a>分式相减【+】</h2><font color=red>分式相减，合一下试试</font>
+
 <p>大胆一点，尽管是减法</p>
 <p>不然没法做的</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912155007856.png" alt="image-20210912155007856"></p>
 <p>答案：2</p>
-<p>$$arctanx\backsim x$$</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912155407095.png" alt="image-20210912155407095"></p>
-<h2 id="eln化简"><a href="#eln化简" class="headerlink" title="eln化简"></a>eln化简</h2><p><font color=red>最终结果一般要把eln给化掉</font></p>
+<script type="math/tex; mode=display">arctanx\backsim x</script><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912155407095.png" alt="image-20210912155407095"></p>
+<h2 id="eln化简"><a href="#eln化简" class="headerlink" title="eln化简"></a>eln化简</h2><font color=red>最终结果一般要把eln给化掉</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160003298.png" alt="image-20210912160003298"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912160017462.png" alt="image-20210912160017462"></p>
 <p>我的答案：</p>
@@ -441,7 +478,8 @@
 <p>答案：2</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912161036921.png" alt="image-20210912161036921"></p>
 <p>答案：12</p>
-<h2 id="分式的浪漫"><a href="#分式的浪漫" class="headerlink" title="分式的浪漫"></a>分式的浪漫</h2><p><font color=red>其实不仅限于eln，遇到分式都可以洛洛看</font></p>
+<h2 id="分式的浪漫"><a href="#分式的浪漫" class="headerlink" title="分式的浪漫"></a>分式的浪漫</h2><font color=red>其实不仅限于eln，遇到分式都可以洛洛看</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912161726673.png" alt="image-20210912161726673"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912161915863.png" alt="image-20210912161915863"></p>
 <h2 id="高次无穷【-】"><a href="#高次无穷【-】" class="headerlink" title="高次无穷【+】"></a>高次无穷【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912164442498.png" alt="image-20210912164442498"></p>
@@ -450,18 +488,23 @@
 <h1 id="9-13"><a href="#9-13" class="headerlink" title="9/13"></a>9/13</h1><h2 id="特殊值法的坑【-】"><a href="#特殊值法的坑【-】" class="headerlink" title="特殊值法的坑【+】"></a>特殊值法的坑【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092334055.png" alt="image-20210913092334055"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913092406321.png" alt="image-20210913092406321"></p>
 <p>特殊值法确实使得即算方便了</p>
-<p><font color=blue>但是出题人也可能在这上面挖坑</font></p>
-<p><font color=red>答案带参数</font></p>
+<font color=blue>但是出题人也可能在这上面挖坑</font>
+
+<font color=red>答案带参数</font>
+
+
+
 <p>右边敏感得到p</p>
 <p>左边可洛得到-1</p>
 <h2 id="收敛的第n和n-1项的关系【-】"><a href="#收敛的第n和n-1项的关系【-】" class="headerlink" title="收敛的第n和n-1项的关系【+】"></a>收敛的第n和n-1项的关系【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913095042529.png" alt="image-20210913095042529"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913095109662.png" alt="image-20210913095109662"></p>
 <p>f(x) 单调递增，且f(x) &lt; 2 并不能说明f(x) 就收敛于2</p>
-<p><font color=red>它还可能收敛与小于2的某个值</font></p>
+<font color=red>它还可能收敛与小于2的某个值</font>
+
 <p>这里设为a</p>
-<p>f(x) 的值即是$$x_n$$的值</p>
-<p>也就是说$$x_n$$单调有界</p>
-<p>则可认为$$x_n=x_{n-1}=a$$</p>
+<p>f(x) 的值即是<script type="math/tex">x_n</script>的值</p>
+<p>也就是说<script type="math/tex">x_n</script>单调有界</p>
+<p>则可认为<script type="math/tex">x_n=x_{n-1}=a</script></p>
 <h2 id="积分与无穷小的阶【-】"><a href="#积分与无穷小的阶【-】" class="headerlink" title="积分与无穷小的阶【+】"></a>积分与无穷小的阶【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913102250649.png" alt="image-20210913102250649"></p>
 <p>答案：</p>
 <p>n+1</p>
@@ -474,57 +517,71 @@
 <p>别口算啊啊啊啊啊</p>
 <h2 id="求无穷小阶数的捷径【-】"><a href="#求无穷小阶数的捷径【-】" class="headerlink" title="求无穷小阶数的捷径【+】"></a>求无穷小阶数的捷径【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913104335234.png" alt="image-20210913104335234"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913104345249.png" alt="image-20210913104345249"></p>
-<p><font color=red>分式上下约分</font></p>
+<font color=red>分式上下约分</font>
+
 <p>分子直接少了一个因式</p>
 <p>洛起来畅通无阻</p>
 <h2 id="arctan-和-tan-的关系"><a href="#arctan-和-tan-的关系" class="headerlink" title="arctan 和 tan 的关系"></a>arctan 和 tan 的关系</h2><p> <img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913104703226.png" alt="image-20210913104703226"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913105004393.png" alt="image-20210913105004393"></p>
-<p>$$e^{-\frac{π}{4}}ln\sqrt{2}$$</p>
-<h2 id="连续型与极限"><a href="#连续型与极限" class="headerlink" title="连续型与极限"></a>连续型与极限</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913152529636.png" alt="image-20210913152529636"></p>
+<script type="math/tex; mode=display">e^{-\frac{π}{4}}ln\sqrt{2}</script><h2 id="连续型与极限"><a href="#连续型与极限" class="headerlink" title="连续型与极限"></a>连续型与极限</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913152529636.png" alt="image-20210913152529636"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913153123508.png" alt="image-20210913153123508"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913152714378.png" alt="image-20210913152714378"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913153017299.png" alt="image-20210913153017299"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913153759859.png" alt="image-20210913153759859"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913154045916.png" alt="image-20210913154045916"></p>
-<h2 id="间断点的定义的掌握【-】"><a href="#间断点的定义的掌握【-】" class="headerlink" title="间断点的定义的掌握【+】"></a>间断点的定义的掌握【+】</h2><p><font color=red>洛必达是有条件的</font></p>
+<h2 id="间断点的定义的掌握【-】"><a href="#间断点的定义的掌握【-】" class="headerlink" title="间断点的定义的掌握【+】"></a>间断点的定义的掌握【+】</h2><font color=red>洛必达是有条件的</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913161744051.png" alt="image-20210913161744051"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913161753855.png" alt="image-20210913161753855"></p>
-<p><font color=red>顺着出题人的意思走，就不会迷失于间断点的三个判定规则了</font></p>
+<font color=red>顺着出题人的意思走，就不会迷失于间断点的三个判定规则了</font>
+
 <p>虽然我个人不确定f(x) 的间断点只有两个</p>
 <p>但这现成的两个 <font color=blue>“没有定义的点”</font> 完全可以先顺着出题人的意思先用起来（有矛盾的地方再说）</p>
 <p>错误解法：</p>
-<p><font color=red>忽略了洛必达也是有条件的</font></p>
+<font color=red>忽略了洛必达也是有条件的</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913162253174.png" alt="image-20210913162253174"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210913162146786.png" alt="image-20210913162146786"></p>
 <h1 id="9-14"><a href="#9-14" class="headerlink" title="9/14"></a>9/14</h1><h2 id="连续区间与极限"><a href="#连续区间与极限" class="headerlink" title="连续区间与极限[+]"></a>连续区间与极限[+]</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914084339321.png" alt="image-20210914084339321"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914084423590.png" alt="image-20210914084423590"></p>
-<p><font color=red>涉及到极限的各种题型都是要把抽象的极限给求出来</font></p>
+<font color=red>涉及到极限的各种题型都是要把抽象的极限给求出来</font>
+
 <p>x&gt;0时，为无穷比无穷，是可以洛的</p>
 <h2 id="已知f-x-求f’-x-【-】"><a href="#已知f-x-求f’-x-【-】" class="headerlink" title="已知f(x)求f’(x)【+】"></a>已知f(x)求f’(x)【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914090811290.png" alt="image-20210914090811290"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914090744017.png" alt="image-20210914090744017"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914090800326.png" alt="image-20210914090800326"></p>
 <p>该题作者没有挖坑</p>
-<p><font color=red>导数要存在，需要左右导数存在且相等</font></p>
-<p><font color=blue>对于分段函数而言，即两段函数交接的地方</font></p>
+<font color=red>导数要存在，需要左右导数存在且相等</font>
+
+<font color=blue>对于分段函数而言，即两段函数交接的地方</font>
+
 <p>譬如这样的分段函数，交接那一点的导数是不存在的</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914091033014.png" alt="image-20210914091033014"></p>
 <p>再看一道题</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713171423821.png" alt="image-20210713171423821"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713171434551.png" alt="image-20210713171434551"></p>
-<h2 id="已知f-x-求f’-x-【品】"><a href="#已知f-x-求f’-x-【品】" class="headerlink" title="已知f(x)求f’(x)【品】"></a>已知f(x)求f’(x)【品】</h2><p><font color=red>分段函数连续性与导数的关系</font></p>
-<p><font color=red>一点红型</font></p>
+<h2 id="已知f-x-求f’-x-【品】"><a href="#已知f-x-求f’-x-【品】" class="headerlink" title="已知f(x)求f’(x)【品】"></a>已知f(x)求f’(x)【品】</h2><font color=red>分段函数连续性与导数的关系</font>
+
+<font color=red>一点红型</font>
+
 <p>重新定义定义域</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094107331.png" alt="image-20210914094107331"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094328582.png" alt="image-20210914094328582"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094353550.png" alt="image-20210914094353550"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094410790.png" alt="image-20210914094410790"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914094450641.png" alt="image-20210914094450641"></p>
-<p><font color=red>f(0)=C，不能得出f’(0)=0</font></p>
+<font color=red>f(0)=C，不能得出f'(0)=0</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914095228755.png" alt="image-20210914095228755"></p>
 <p>而应该用定义式去求该点的导数</p>
 <p>然后需要求出式子中未知的b</p>
 <p>据题意“处处可导”，则在x=0处也可导</p>
 <p>又根据“可导必连续” 则可以向分段函数列等式求出b</p>
-<p><font color=blue>最后是注意定义域的书写</font></p>
-<p><font color=red>抽象f(x)的定义域并不是我们默认的(-∞,+∞)</font></p>
-<h2 id="导数定义式与连续性【品】"><a href="#导数定义式与连续性【品】" class="headerlink" title="导数定义式与连续性【品】"></a>导数定义式与连续性【品】</h2><p><font color=red>导数定义式与连续性对分段函数的应用场景</font></p>
+<font color=blue>最后是注意定义域的书写</font>
+
+<font color=red>抽象f(x)的定义域并不是我们默认的(-∞,+∞)</font>
+
+
+
+<h2 id="导数定义式与连续性【品】"><a href="#导数定义式与连续性【品】" class="headerlink" title="导数定义式与连续性【品】"></a>导数定义式与连续性【品】</h2><font color=red>导数定义式与连续性对分段函数的应用场景</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914192448500.png" alt="image-20210914192448500"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914195326330.png" alt="image-20210914195326330"></p>
 <p>①连续不一定可导，故不能用f(x)的极限去求a 的取值</p>
@@ -532,21 +589,33 @@
 <p> ②淦</p>
 <h2 id="导数定义式变形【-】"><a href="#导数定义式变形【-】" class="headerlink" title="导数定义式变形【+】"></a>导数定义式变形【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914201539038.png" alt="image-20210914201539038"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210914201548218.png" alt="image-20210914201548218"></p>
-<p><font color=red>key抓着就代到定义式里去先，其他该配合的配合就好了</font></p>
-<p><font color=red>负的Δx是出题人习惯挖坑的地方</font></p>
+<font color=red>key抓着就代到定义式里去先，其他该配合的配合就好了</font>
+
+<font color=red>负的Δx是出题人习惯挖坑的地方</font>
+
+
+
 <h1 id="9-15"><a href="#9-15" class="headerlink" title="9/15"></a>9/15</h1><h2 id="1的任意次方陷阱【-】"><a href="#1的任意次方陷阱【-】" class="headerlink" title="1的任意次方陷阱【+】"></a>1的任意次方陷阱【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915095156221.png" alt="image-20210915095156221"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211106085035193.png" alt="image-20211106085035193"></p>
 <h2 id="不允许局部洛必达-野生泰勒【-】"><a href="#不允许局部洛必达-野生泰勒【-】" class="headerlink" title="不允许局部洛必达+野生泰勒【+】"></a>不允许局部洛必达+野生泰勒【+】</h2><p>但是全局可以</p>
 <p>所谓破而后立</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915104954983.png" alt="image-20210915104954983"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915105014111.png" alt="image-20210915105014111"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915121348175.png" alt="image-20210915121348175"></p>
-<p><font color=red>二阶导存在，说明一阶导存在且连续</font></p>
-<p><font color=red>如果换，那么等价相减，没意义</font></p>
-<p><font color=red>洛必达不能局部使用</font></p>
+<font color=red>二阶导存在，说明一阶导存在且连续</font>
+
+<font color=red>如果换，那么等价相减，没意义</font>
+
+<font color=red>洛必达不能局部使用</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916160556514.png" alt="image-20210916160556514"></p>
-<h2 id="无穷小代换的条件"><a href="#无穷小代换的条件" class="headerlink" title="无穷小代换的条件"></a>无穷小代换的条件</h2><p><font color=red>首先无穷小只是泰勒展开式在特定情况下的应用而已</font></p>
-<p><font color=red>无穷小其实只是用了第一项，有些情况不能用就是因为</font></p>
-<p><font color=red>这道题极限需要泰勒展开到第二项第三项这样</font></p>
+<h2 id="无穷小代换的条件"><a href="#无穷小代换的条件" class="headerlink" title="无穷小代换的条件"></a>无穷小代换的条件</h2><font color=red>首先无穷小只是泰勒展开式在特定情况下的应用而已</font>
+
+<font color=red>无穷小其实只是用了第一项，有些情况不能用就是因为</font>
+
+<font color=red>这道题极限需要泰勒展开到第二项第三项这样</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210630100140805.png" alt="image-20210630100140805"></p>
 <p>提tanx（提sin也行）</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915120050288.png" alt="image-20210915120050288"></p>
@@ -555,13 +624,15 @@
 <h2 id="泰勒推导"><a href="#泰勒推导" class="headerlink" title="泰勒推导"></a>泰勒推导</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915181237580.png" alt="image-20210915181237580"></p>
 <h2 id="泰勒的书写"><a href="#泰勒的书写" class="headerlink" title="泰勒的书写"></a>泰勒的书写</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915181335070.png" alt="image-20210915181335070"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915181318307.png" alt="image-20210915181318307"></p>
-<p>n个$$o(x^4)$$的和仍为$$o(x^4)$$</p>
+<p>n个<script type="math/tex">o(x^4)</script>的和仍为<script type="math/tex">o(x^4)</script></p>
 <h2 id="暴力中的暴力"><a href="#暴力中的暴力" class="headerlink" title="暴力中的暴力"></a>暴力中的暴力</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210912154824033.png" alt="image-20210912154824033"></p>
-<p><font color=red>“x” 趋于0才可以代换</font></p>
+<font color=red>“x” 趋于0才可以代换</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915170816342.png" alt="image-20210915170816342"></p>
 <p>答案：1</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915184622874.png" alt="image-20210915184622874"></p>
-<p><font color=red>两次暴力，一般答案就不带参数了，放心写</font></p>
+<font color=red>两次暴力，一般答案就不带参数了，放心写</font>
+
 <h2 id="日常挖坑"><a href="#日常挖坑" class="headerlink" title="日常挖坑"></a>日常挖坑</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915211302236.png" alt="image-20210915211302236"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915211313961.png" alt="image-20210915211313961"></p>
 <h2 id="换元新境界【-】"><a href="#换元新境界【-】" class="headerlink" title="换元新境界【+】"></a>换元新境界【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210915214011030.png" alt="image-20210915214011030"></p>
@@ -569,56 +640,83 @@
 <h1 id="9-16"><a href="#9-16" class="headerlink" title="9/16"></a>9/16</h1><h2 id="参数方程求导数及曲率"><a href="#参数方程求导数及曲率" class="headerlink" title="参数方程求导数及曲率"></a>参数方程求导数及曲率</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916162000055.png" alt="image-20210916162000055"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916162007142.png" alt="image-20210916162007142"></p>
 <p>答案怎么简洁怎么来</p>
-<h2 id="隐函数求导"><a href="#隐函数求导" class="headerlink" title="隐函数求导"></a>隐函数求导</h2><p><font color=red>用分子中的变量来表示答案—dy—y</font></p>
-<p><font color=red>y对x求导得dy/dx</font></p>
+<h2 id="隐函数求导"><a href="#隐函数求导" class="headerlink" title="隐函数求导"></a>隐函数求导</h2><font color=red>用分子中的变量来表示答案---dy---y</font>
+
+<font color=red>y对x求导得dy/dx</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916162851878.png" alt="image-20210916162851878"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916162905826.png" alt="image-20210916162905826"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916162910985.png" alt="image-20210916162910985"></p>
 <p>这一手化简真是神来之笔</p>
 <p>利用常数的导数是0</p>
-<h2 id="反隐函数求导【-】"><a href="#反隐函数求导【-】" class="headerlink" title="反隐函数求导【+】"></a>反隐函数求导【+】</h2><p><font color=red>用分子中的变量来表示答案—dx—x</font></p>
-<p><font color=red>这道题同样考察了复合函数，很重要，得悟</font></p>
+<h2 id="反隐函数求导【-】"><a href="#反隐函数求导【-】" class="headerlink" title="反隐函数求导【+】"></a>反隐函数求导【+】</h2><font color=red>用分子中的变量来表示答案---dx---x</font>
+
+<font color=red>这道题同样考察了复合函数，很重要，得悟</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916163538556.png" alt="image-20210916163538556"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916163546713.png" alt="image-20210916163546713"></p>
 <h2 id="定积分与导数"><a href="#定积分与导数" class="headerlink" title="定积分与导数"></a>定积分与导数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916164139953.png" alt="image-20210916164139953"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916164144097.png" alt="image-20210916164144097"></p>
 <h2 id="定积分与隐函数"><a href="#定积分与隐函数" class="headerlink" title="定积分与隐函数"></a>定积分与隐函数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916165730051.png" alt="image-20210916165730051"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916165723169.png" alt="image-20210916165723169"></p>
-<p><font color=red>y是与x变量有关，故导是对x导</font></p>
+<font color=red>y是与x变量有关，故导是对x导</font>
+
+
+
 <h2 id="dxyt-的代换【-】"><a href="#dxyt-的代换【-】" class="headerlink" title="dxyt 的代换【++】"></a>dxyt 的代换【++】</h2><p>总体思路是求出利用x=sint 求出dy/dt之后的之后再看怎么结合题目所给方程了</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916170425716.png" alt="image-20210916170425716"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210916171021329.png" alt="image-20210916171021329"></p>
-<p><font color=red>该题的主要目的是消去x，方程用y和t表示</font></p>
-<h1 id="9-17"><a href="#9-17" class="headerlink" title="9/17"></a>9/17</h1><h2 id="高阶导数与归纳法、泰勒【品】"><a href="#高阶导数与归纳法、泰勒【品】" class="headerlink" title="高阶导数与归纳法、泰勒【品】"></a>高阶导数与归纳法、泰勒【品】</h2><p><font color=red>对数的处理</font></p>
+<font color=red>该题的主要目的是消去x，方程用y和t表示</font>
+
+
+
+
+
+<h1 id="9-17"><a href="#9-17" class="headerlink" title="9/17"></a>9/17</h1><h2 id="高阶导数与归纳法、泰勒【品】"><a href="#高阶导数与归纳法、泰勒【品】" class="headerlink" title="高阶导数与归纳法、泰勒【品】"></a>高阶导数与归纳法、泰勒【品】</h2><font color=red>对数的处理</font>
+
 <p>入手难度超高时就该考虑技巧了</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917090554468.png" alt="image-20210917090554468"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917090654323.png" alt="image-20210917090654323"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917092044084.png" alt="image-20210917092044084"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917090722930.png" alt="image-20210917090722930"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917091143534.png" alt="image-20210917091143534"></p>
-<p><font color=red>k取到x的n阶导不为0，即k=n</font></p>
+<font color=red>k取到x的n阶导不为0，即k=n</font>
+
+
+
 <h2 id="高阶导与泰勒"><a href="#高阶导与泰勒" class="headerlink" title="高阶导与泰勒"></a>高阶导与泰勒</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917093834863.png" alt="image-20210917093834863"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917093845085.png" alt="image-20210917093845085"></p>
-<p><font color=red>k取到x的n阶导不为0，即k=n</font></p>
-<p><font color=red>做高阶导相关题目时，一般不把阶乘和n次幂展开</font></p>
+<font color=red>k取到x的n阶导不为0，即k=n</font>
+
+<font color=red>做高阶导相关题目时，一般不把阶乘和n次幂展开</font>
+
+
+
 <h2 id="混xy求极值点"><a href="#混xy求极值点" class="headerlink" title="混xy求极值点"></a>混xy求极值点</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917094431449.png" alt="image-20210917094431449"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917094423583.png" alt="image-20210917094423583"></p>
-<p><font color=red>y与x是有关的，导时相当于复合函数</font></p>
+<font color=red>y与x是有关的，导时相当于复合函数</font>
+
 <p>导为0，求出来的是驻点</p>
 <p>还需进一步确认极值点</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917095045695.png"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917095045695.png" alt=""></p>
 <h2 id="单调区间、极值、凹凸区间"><a href="#单调区间、极值、凹凸区间" class="headerlink" title="单调区间、极值、凹凸区间"></a>单调区间、极值、凹凸区间</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917160250662.png" alt="image-20210917160250662"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917161551801.png" alt="image-20210917160411181"></p>
-<p><font color=red>大题遇到时候得画这个表格说明</font></p>
+<font color=red>大题遇到时候得画这个表格说明</font>
+
 <p>填空题的话，取临近点算就好了</p>
-<p><font color=red>以一阶导为界判定单调区间</font></p>
+<font color=red>以一阶导为界判定单调区间</font>
+
 <p>一阶导为0的点为驻点</p>
 <p>驻点左右侧一阶导符号相反，该点则为极值点</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210909195119120.png" alt="image-20210909195119120"></p>
 <h2 id="已知拐点求未知参数"><a href="#已知拐点求未知参数" class="headerlink" title="已知拐点求未知参数"></a>已知拐点求未知参数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917163213823.png" alt="image-20210917163213823"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917163229756.png" alt="image-20210917163229756"></p>
-<p><font color=red>又多个值时需二次确认</font></p>
-<h2 id="最值问题灵活处理"><a href="#最值问题灵活处理" class="headerlink" title="最值问题灵活处理"></a>最值问题灵活处理</h2><p><font color=red>利用不等式变形，转化了问题</font></p>
+<font color=red>又多个值时需二次确认</font>
+
+
+
+<h2 id="最值问题灵活处理"><a href="#最值问题灵活处理" class="headerlink" title="最值问题灵活处理"></a>最值问题灵活处理</h2><font color=red>利用不等式变形，转化了问题</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917170324709.png" alt="image-20210917170324709"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917170330272.png" alt="image-20210917170330272"></p>
 <p>我错误的解法是硬从f(x)出发</p>
@@ -629,27 +727,34 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917171637342.png" alt="image-20210917171637342"></p>
 <h1 id="9-18"><a href="#9-18" class="headerlink" title="9/18"></a>9/18</h1><h2 id="有界函数"><a href="#有界函数" class="headerlink" title="有界函数"></a>有界函数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918130845986.png" alt="image-20210918130845986"></p>
 <p>答案：0</p>
-<p>无穷有界—斜率为0</p>
-<h2 id="渐近线【-】"><a href="#渐近线【-】" class="headerlink" title="渐近线【++++++】"></a>渐近线【++++++】</h2><p><font color=red>还涉及到了局部代换禁止</font></p>
+<p>无穷有界—-斜率为0</p>
+<h2 id="渐近线【-】"><a href="#渐近线【-】" class="headerlink" title="渐近线【++++++】"></a>渐近线【++++++】</h2><font color=red>还涉及到了局部代换禁止</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133241463.png" alt="image-20210918133241463"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133253104.png" alt="image-20210918133253104"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133307940.png" alt="image-20210918133307940"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918133910385.png" alt="image-20210918133910385"></p>
-<p><font color=red>局部代换禁止</font></p>
+<font color=red>局部代换禁止</font>
+
 <p>错误示范</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918135630515.png" alt="image-20210918135630515"></p>
 <h2 id="导数、连续性、极限【品】"><a href="#导数、连续性、极限【品】" class="headerlink" title="导数、连续性、极限【品】"></a>导数、连续性、极限【品】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918160824392.png" alt="image-20210918160824392"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918160844856.png" alt="image-20210918160844856"></p>
-<p><font color=red>导数定义式就是0/0型，只是0/0的极限不一定存在</font></p>
+<font color=red>导数定义式就是0/0型，只是0/0的极限不一定存在</font>
+
 <p>不需要说导数存在才推出分子为0</p>
-<p><font color=red>太极阵求解</font></p>
-<p>法线$$y=-\frac{1}{k}x+b$$</p>
+<font color=red>太极阵求解</font>
+
+<p>法线<script type="math/tex">y=-\frac{1}{k}x+b</script></p>
 <p>这道题其实我稀里糊涂的</p>
 <p>只是遵循着出题人的意思，给蒙出来了</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918162246855.png" alt="image-20210918162246855"></p>
 <h2 id="隐函数的理解"><a href="#隐函数的理解" class="headerlink" title="隐函数的理解"></a>隐函数的理解</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918163233011.png" alt="image-20210918163233011"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210918163240265.png" alt="image-20210918163240265"></p>
-<p><font color=red>y是关于x的函数，这里其实是对复合函数的考察</font></p>
+<font color=red>y是关于x的函数，这里其实是对复合函数的考察</font>
+
+
+
 <h1 id="9-19"><a href="#9-19" class="headerlink" title="9/19"></a>9/19</h1><p>刷19年数二真题去了</p>
 <h1 id="9-20"><a href="#9-20" class="headerlink" title="9/20"></a>9/20</h1><p>刷20年数二真题去了</p>
 <h1 id="9-21"><a href="#9-21" class="headerlink" title="9/21"></a>9/21</h1><p>刷18年真题去了</p>

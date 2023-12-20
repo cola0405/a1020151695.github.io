@@ -225,22 +225,12 @@
 
       
         <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># docker 中下载 mysql</span><br><span class="line">docker pull mysql:5.7</span><br><span class="line"></span><br><span class="line">#启动</span><br><span class="line">sudo docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7</span><br><span class="line"></span><br><span class="line">#进入容器</span><br><span class="line">sudo docker exec -it mysql bash</span><br><span class="line"></span><br><span class="line">#登录mysql</span><br><span class="line">mysql -u root -p</span><br><span class="line"></span><br><span class="line"># 外部访问</span><br><span class="line">grant all privileges on *.* to root@&#x27;%&#x27; identified by &quot;password&quot;;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>传输sql文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp &lt;path&gt; container_name:path</span><br></pre></td></tr></table></figure>
-
-
-
 <p>执行sql文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source xxx.sql</span><br></pre></td></tr></table></figure>
-
-
-
 <p>修改密码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET PASSWORD FOR &#x27;root&#x27;@&#x27;%&#x27; = &#x27;1a1a1a1A&#x27;;</span><br></pre></td></tr></table></figure>
-
 <p>Ps</p>
 <p>如果是root@localhost的话，只是修改本地访问mysql的密码</p>
 <p>而不能修改外部访问的密码</p>

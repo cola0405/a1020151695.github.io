@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="安装CUDAhttps:&#x2F;&#x2F;developer.nvidia.com&#x2F;cuda-toolkit-archive … 官网默认装的是最新的 如果要下载指定版本 1sudo apt install cuda-toolkit-11-8      重装驱动首先需要卸载原驱动 123456789sudo apt --purge remove &quot;cublas*&quot; &quot;cuda*&amp;q">
+  <meta name="description" content="安装CUDAhttps:&#x2F;&#x2F;developer.nvidia.com&#x2F;cuda-toolkit-archive … 官网默认装的是最新的 如果要下载指定版本 1sudo apt install cuda-toolkit-11-8 重装驱动首先需要卸载原驱动 123456789sudo apt --purge remove &quot;cublas*&quot; &quot;cuda*&quot;s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sd in linux">
 <meta property="og:url" content="http://example.com/2023/07/03/sd-in-linux/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="安装CUDAhttps:&#x2F;&#x2F;developer.nvidia.com&#x2F;cuda-toolkit-archive … 官网默认装的是最新的 如果要下载指定版本 1sudo apt install cuda-toolkit-11-8      重装驱动首先需要卸载原驱动 123456789sudo apt --purge remove &quot;cublas*&quot; &quot;cuda*&amp;q">
+<meta property="og:description" content="安装CUDAhttps:&#x2F;&#x2F;developer.nvidia.com&#x2F;cuda-toolkit-archive … 官网默认装的是最新的 如果要下载指定版本 1sudo apt install cuda-toolkit-11-8 重装驱动首先需要卸载原驱动 123456789sudo apt --purge remove &quot;cublas*&quot; &quot;cuda*&quot;s">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703131955810.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703151658705.png">
@@ -232,125 +232,63 @@
 <p>… 官网默认装的是最新的</p>
 <p>如果要下载指定版本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cuda-toolkit-11-8</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="重装驱动"><a href="#重装驱动" class="headerlink" title="重装驱动"></a>重装驱动</h3><p>首先需要卸载原驱动</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt --purge remove <span class="string">&quot;cublas*&quot;</span> <span class="string">&quot;cuda*&quot;</span></span><br><span class="line">sudo apt --purge remove <span class="string">&quot;nvidia*&quot;</span></span><br><span class="line">rm -rf /usr/<span class="built_in">local</span>/cuda*</span><br><span class="line">sudo apt-get autoremove &amp;&amp; sudo apt-get autoclean</span><br><span class="line"></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install build essentials</span></span><br><span class="line">sudo apt-get install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev</span><br></pre></td></tr></table></figure>
-
 <p>再安装CUDA，选好版本，不要选中间的(network)</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703131955810.png" alt="image-20230703131955810"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run</span><br><span class="line">sudo sh cuda_11.8.0_520.61.05_linux.run</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="安装SD"><a href="#安装SD" class="headerlink" title="安装SD"></a>安装SD</h2><p>根据不同的 linux 选一条执行</p>
 <p>ubuntu是基于 debian 的</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Debian-based:</span></span><br><span class="line">sudo apt install wget git python3 python3-venv</span><br><span class="line"><span class="comment"># Red Hat-based:</span></span><br><span class="line">sudo dnf install wget git python3</span><br><span class="line"><span class="comment"># Arch-based:</span></span><br><span class="line">sudo pacman -S wget git python3</span><br></pre></td></tr></table></figure>
-
-
-
 <p>选好安装目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)</span><br></pre></td></tr></table></figure>
-
 <p>进入目录，运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webui.sh</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="手动安装依赖"><a href="#手动安装依赖" class="headerlink" title="手动安装依赖"></a>手动安装依赖</h3><p>遇到有中断的，<strong>可以手动用 <code>venv </code> 中的 pip 或 python3 安装依赖</strong></p>
+<h3 id="手动安装依赖"><a href="#手动安装依赖" class="headerlink" title="手动安装依赖"></a>手动安装依赖</h3><p>遇到有中断的，<strong>可以手动用 <code>venv</code> 中的 pip 或 python3 安装依赖</strong></p>
 <p>阿里云网络的问题。。。一时能下载，一时下不了</p>
 <p>多试几次</p>
-<h3 id="启动参数"><a href="#启动参数" class="headerlink" title="启动参数"></a>启动参数</h3><p>启动参数的配置文件 – <strong><code>linux </code> 是 <code>sh</code>，<code>windows </code> 是 <code>bat</code></strong></p>
+<h3 id="启动参数"><a href="#启动参数" class="headerlink" title="启动参数"></a>启动参数</h3><p>启动参数的配置文件 — <strong><code>linux</code> 是 <code>sh</code>，<code>windows</code> 是 <code>bat</code></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi webui-user.bat</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 部署在0.0.0.0才允许外部访问</span></span><br><span class="line">--liten</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--listen --no-half --disable-nan-check --medvram --precision full --xformers --enable-insecure-extension-access</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weget <span class="string">&quot;url&quot;</span> -O <span class="string">&quot;xxx.safesensor&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p>具体后缀名根据文件改</p>
 <h2 id="clash"><a href="#clash" class="headerlink" title="clash"></a>clash</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash">clash</a></p>
 <p>下载对应版本</p>
 <p>linux的话amd64就行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunzip clash-linux-amd64-v1.4.1.gz</span><br></pre></td></tr></table></figure>
-
 <p>解压出来就是一个可执行文件</p>
 <p>重命名方便操作</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv clash-linux-amd64 clash</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
 <p>赋予运行权限：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x clash</span><br></pre></td></tr></table></figure>
-
 <p>移动到bin目录下，之后命令行就能直接运行了：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv clash /usr/<span class="built_in">local</span>/bin/clash</span><br></pre></td></tr></table></figure>
-
-
-
-<p>添加配置文件 – 来自你的订阅</p>
+<p>添加配置文件 — 来自你的订阅</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.config/clash/config.yaml</span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703151658705.png" alt="image-20230703151658705"></p>
 <p>然后可以试着运行一下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clash</span><br></pre></td></tr></table></figure>
-
 <p>如果数据库文件 <code>Country.mmdb</code> 下载不下来</p>
 <p>则根据链接手动下载，然后同样放在 <code>~/.config/clash/</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system/</span><br><span class="line">vim clash.service</span><br></pre></td></tr></table></figure>
-
 <p>改一下自己的 <code>/home/用户名</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description= proxy</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/usr/local/bin/clash -f /home/&#123;YOUR_USERNAME&#125;/.config/clash/config.yaml</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>一种方法是，直接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clash</span><br></pre></td></tr></table></figure>
-
 <p>一个终端挂着跑代理，别关</p>
 <p>然后，另起一个端口来用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget &quot;机场给你的订阅链接&quot; -O config.yaml</span><br></pre></td></tr></table></figure>
-
 <p>将 <code>config.yaml</code>、<code>Country.mmdb</code> 两个文件存放至 <code>/home/tao/.config/clash</code> 文件夹里</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="all-black"><a href="#all-black" class="headerlink" title="all black"></a>all black</h3><p>all black – 模型的问题(文件名有严格要求，后缀，也别另外加引号)</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="all-black"><a href="#all-black" class="headerlink" title="all black"></a>all black</h3><p>all black — 模型的问题(文件名有严格要求，后缀，也别另外加引号)</p>
 <h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>CUDA12 是可用的</p>
-<h3 id="xformer"><a href="#xformer" class="headerlink" title="xformer"></a>xformer</h3><p>启动参数加 <code>--xformerx </code> 会自动下载相关依赖</p>
-<h3 id="阿里云镜像"><a href="#阿里云镜像" class="headerlink" title="阿里云镜像"></a>阿里云镜像</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703162018078.png"></p>
-<p>所以这些东西都是存在地方服务器的 – 杭州、深圳这样（现在理解为什么要分别不同区域了）</p>
+<h3 id="xformer"><a href="#xformer" class="headerlink" title="xformer"></a>xformer</h3><p>启动参数加 <code>--xformerx</code> 会自动下载相关依赖</p>
+<h3 id="阿里云镜像"><a href="#阿里云镜像" class="headerlink" title="阿里云镜像"></a>阿里云镜像</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703162018078.png" alt=""></p>
+<p>所以这些东西都是存在地方服务器的 — 杭州、深圳这样（现在理解为什么要分别不同区域了）</p>
 <p>如果要跨区得额外做镜像复制</p>
-<p>包括镜像的导出，还得存在**同区域自己的 oss **中，然后再下载</p>
+<p>包括镜像的导出，还得存在<strong>同区域自己的 oss </strong>中，然后再下载</p>
 <h3 id="permission-denied"><a href="#permission-denied" class="headerlink" title="permission denied"></a>permission denied</h3><p>用root用户安装的插件。。。普通用户运行脚本涉及到修改时，自然没权限了</p>
 
     </div>

@@ -227,24 +227,11 @@
         <h2 id="axis"><a href="#axis" class="headerlink" title="axis"></a>axis</h2><p>{0 or ‘index’, 1 or ‘columns’}, default 0</p>
 <p>Whether to drop labels from the index (0 or ‘index’) or columns (1 or ‘columns’).</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除 &lt;Unnamed: 32&gt; 这一列</span></span><br><span class="line"><span class="comment"># 多列的话，都放到list里，他自己去迭代</span></span><br><span class="line"><span class="comment"># 单列的话，不用list也许</span></span><br><span class="line">x = df.drop([<span class="string">&#x27;Unnamed: 32&#x27;</span>], axis=<span class="string">&#x27;columns&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>默认drop的参数是index</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除index=1的那一行</span></span><br><span class="line">x = df.drop(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">         id diagnosis  ...  fractal_dimension_worst  Unnamed: 32</span><br><span class="line">0    842302         M  ...                  0.11890          NaN</span><br><span class="line">2  84300903         M  ...                  0.08758          NaN</span><br><span class="line">3  84348301         M  ...                  0.17300          NaN</span><br><span class="line">4  84358402         M  ...                  0.07678          NaN</span><br><span class="line">5    843786         M  ...                  0.12440          NaN</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="create"><a href="#create" class="headerlink" title="create"></a>create</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">z = np.zeros((<span class="number">2</span>,<span class="number">2</span>), dtype = <span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(z)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"> </span><br><span class="line">x =  [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] </span><br><span class="line">a = np.asarray(x)  </span><br><span class="line"><span class="built_in">print</span> (a)</span><br></pre></td></tr></table></figure>
-
 
     </div>
 

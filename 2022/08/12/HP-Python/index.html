@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="vscode 安装c&#x2F;c++插件后才能跳转 Python 原理PyObject*  Basic rule CPython id 就是内存地址 123import sysprint(sys.getsizeof([]))    Otherwise, Memory protection rules imposed by the operating system will produce some sor">
+  <meta name="description" content="vscode 安装c&#x2F;c++插件后才能跳转 Python 原理PyObject*  Basic rule CPython id 就是内存地址 123import sysprint(sys.getsizeof([])) Otherwise, Memory protection rules imposed by the operating system will produce some sort o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HP_Python">
 <meta property="og:url" content="http://example.com/2022/08/12/HP-Python/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="vscode 安装c&#x2F;c++插件后才能跳转 Python 原理PyObject*  Basic rule CPython id 就是内存地址 123import sysprint(sys.getsizeof([]))    Otherwise, Memory protection rules imposed by the operating system will produce some sor">
+<meta property="og:description" content="vscode 安装c&#x2F;c++插件后才能跳转 Python 原理PyObject*  Basic rule CPython id 就是内存地址 123import sysprint(sys.getsizeof([])) Otherwise, Memory protection rules imposed by the operating system will produce some sort o">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823162918787.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220902183048816.png">
@@ -461,20 +461,8 @@
 <h2 id="CPython"><a href="#CPython" class="headerlink" title="CPython"></a>CPython</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220816162827683.png" alt="image-20220816162827683"></p>
 <p>id 就是内存地址</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sys.getsizeof([]))</span><br></pre></td></tr></table></figure>
-
-
-
 <p>Otherwise, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memory_protection">Memory protection</a> rules imposed by the operating system will produce some sort of memory fault and ultimately kill the program trying to read “illegal” memory.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Address 0x1aed06b0 out of bounds&gt;</span><br><span class="line">内存越界，访问到了不属于你的内存。可以用bt命令看调用堆栈</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <p><strong>Virtual memory address</strong></p>
 <p>A virtual address is a <a target="_blank" rel="noopener" href="https://www.techtarget.com/whatis/definition/binary">binary</a> number in <a target="_blank" rel="noopener" href="https://www.techtarget.com/searchstorage/definition/virtual-memory">virtual memory</a> that enables a process to use a location in <a target="_blank" rel="noopener" href="https://www.techtarget.com/searchstorage/definition/primary-storage">primary storage</a> (main memory) independently of other processes and to use more space than actually exists in primary storage by temporarily relegating some contents to a <a target="_blank" rel="noopener" href="https://www.techtarget.com/searchstorage/definition/hard-disk">hard disk</a> or internal <a target="_blank" rel="noopener" href="https://www.techtarget.com/searchstorage/definition/flash-based-solid-state-drive-SSD">flash drive</a>.</p>
 <h2 id="compile"><a href="#compile" class="headerlink" title="compile"></a>compile</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821233759265.png" alt="image-20220821233759265"></p>
@@ -490,53 +478,35 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908104016495.png" alt="image-20220908104016495"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908112432400.png" alt="image-20220908112432400"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a)) <span class="comment"># Tuple</span></span><br></pre></td></tr></table></figure>
-
 <p>以致于<code>Tuple</code>没有专门的<code>iterable</code>的生成方法</p>
 <p>ast只是构造语法树，具体Tuple的创建在compile</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908114033276.png" alt="image-20220908114033276"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908113951135.png" alt="image-20220908113951135"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908114555070.png" alt="image-20220908114555070"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1           0 LOAD_CONST               0 (1)</span><br><span class="line">            2 STORE_NAME               0 (a)</span><br><span class="line"></span><br><span class="line">2           4 LOAD_CONST               1 (2)</span><br><span class="line">            6 STORE_NAME               1 (b)</span><br><span class="line"></span><br><span class="line">3           8 LOAD_NAME                1 (b)</span><br><span class="line">           10 LOAD_NAME                0 (a)</span><br><span class="line">           12 ROT_TWO</span><br><span class="line">           14 STORE_NAME               0 (a)</span><br><span class="line">           16 STORE_NAME               1 (b)</span><br><span class="line">           18 LOAD_CONST               2 (None)</span><br><span class="line">           20 RETURN_VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 交换两个最顶层的堆栈项</span><br><span class="line"># ps:只是取元素，并没有pop()出来</span><br><span class="line">ROT_TWO </span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908115558851.png" alt="image-20220908115558851"></p>
 <p>紧接着</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">14 STORE_NAME               0 (a)</span><br><span class="line">16 STORE_NAME               1 (b)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908120816823.png" alt="image-20220908120816823"></p>
 <p>注意！取出来的不是字节码中的index，而是py对象指针</p>
 <p>字节码和实际程序运行的堆栈不是一一对应的</p>
 <p>字节码只是指令的集合</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908135823168.png" alt="image-20220908135823168"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locals() 函数会以字典类型返回当前位置的全部局部变量</span><br></pre></td></tr></table></figure>
-
 <p><code>LOAD_NAME</code> 找变量，然后<code>push</code>入栈</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908140820387.png" alt="image-20220908140820387"></p>
 <p><code>STORE_NAME</code></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908141049239.png" alt="image-20220908141049239"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;1 2 3&quot;</span>.split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>对于可迭代的对象可以这么赋值，那么同理：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="string">&quot;abc&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>Ps：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># error</span></span><br><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;1 2 3&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
 <p>因为一位一位迭代的，迭代到空格时，无法应用<code>int()</code>则出错</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;123&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
 <p>这样可以，但是只能应对一位数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># error</span></span><br><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;1234&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
 <p>超数位的话，会报错</p>
 <p>因为map可以迭代4次， 但是左边只有3个对象</p>
 <h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828205946122.png" alt="image-20220828205946122"></p>
@@ -550,15 +520,6 @@
 <p>通过研读assert的文档, 发现断言是可以被关闭的</p>
 <p>启动命令行添加参数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -O main.py</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="id"><a href="#id" class="headerlink" title="id()"></a>id()</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901140919154.png" alt="image-20220901140919154"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901140857842.png" alt="image-20220901140857842"></p>
 <p>就是当前指针指向的内存地址</p>
@@ -566,24 +527,13 @@
 <p>序列的每个元素作为参数传递给函数进行判断，然后返回 True 或 False</p>
 <p>最后将返回 True 的元素封装到可迭代的对象filter中</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">odd</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="keyword">if</span> num%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">filter</span>(odd, lst))) <span class="comment"># [1,3,5]</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h2><p>说白了，就是迭代取每一个元素作为参数，调用指定的方法，把所有返回值封装到可迭代的map对象中，然后返回</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, [<span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>]))</span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220923154125945.png" alt="image-20220923154125945"></p>
 <p>需要注意的是，map是允许多参数的</p>
 <p><code>int()</code>需要一个参数就够了，但是对于<code>max()</code></p>
 <p>可能需要两个参数，然后这种条件下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">max</span>, (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>), (<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>))))</span><br><span class="line"><span class="comment"># [5,4,3,4,5]</span></span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220923154434851.png" alt="image-20220923154434851"></p>
 <p>以上是Python2.5.6的源码，返回的<code>result</code>是个<code>list</code></p>
 <p>但是，在python3中</p>
@@ -591,22 +541,10 @@
 <p>返回的是可迭代的<code>mapobject</code></p>
 <p>所以，可以再把map转成list</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, [<span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>]))</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="string">&quot;12345&quot;</span>)))</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="profile"><a href="#profile" class="headerlink" title="profile"></a>profile</h2><p>性能分析</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span>():</span></span><br><span class="line">    lst = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000000</span>):</span><br><span class="line">        lst.append(i)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span>():</span></span><br><span class="line">    lst = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000000</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cProfile</span><br><span class="line">cProfile.run(<span class="string">&#x27;f1()&#x27;</span>)</span><br><span class="line">cProfile.run(<span class="string">&#x27;f2()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">       1    0.127    0.127    1.780    1.780 &lt;string&gt;:1(&lt;module&gt;)</span><br><span class="line">       1    0.997    0.997    1.653    1.653 t.py:1(f1)</span><br><span class="line">       1    0.000    0.000    1.780    1.780 &#123;built-in method builtins.exec&#125;</span><br><span class="line">10000000    0.656    0.000    0.656    0.000 &#123;method &#x27;append&#x27; of &#x27;list&#x27; objects&#125;</span><br><span class="line">       1    0.000    0.000    0.000    0.000 &#123;method &#x27;disable&#x27; of &#x27;_lsprof.Profiler&#x27; objects&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        5 function calls in 0.499 seconds</span><br><span class="line"></span><br><span class="line">  Ordered by: standard name</span><br><span class="line"></span><br><span class="line">  ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">       1    0.078    0.078    0.499    0.499 &lt;string&gt;:1(&lt;module&gt;)</span><br><span class="line">       1    0.000    0.000    0.421    0.421 t.py:6(f2)</span><br><span class="line">       1    0.421    0.421    0.421    0.421 t.py:7(&lt;listcomp&gt;)</span><br><span class="line">       1    0.000    0.000    0.499    0.499 &#123;built-in method builtins.exec&#125;</span><br><span class="line">       1    0.000    0.000    0.000    0.000 &#123;method &#x27;disable&#x27; of &#x27;_lsprof.Profiler&#x27; objects&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>tottime</p>
 <p>在指定函数中消耗的总时间（不包括调用子函数的时间）</p>
 <p>cumtime</p>
@@ -614,38 +552,17 @@
 <h2 id="raise"><a href="#raise" class="headerlink" title="raise"></a>raise</h2><p>抛出异常</p>
 <h2 id="repr"><a href="#repr" class="headerlink" title="repr()"></a>repr()</h2><p>便于debug</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">5</span>) <span class="comment"># 5</span></span><br><span class="line"><span class="built_in">print</span>(‘<span class="number">5</span>’) <span class="comment"># 5</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">repr</span>(<span class="number">5</span>)) <span class="comment"># 5</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">repr</span>(‘<span class="number">5</span>’)) <span class="comment"># &#x27;5&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h1 id="Bool"><a href="#Bool" class="headerlink" title="Bool"></a>Bool</h1><p>特殊的int类型</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> PyIntObject PyBoolObject;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113420143.png" alt="image-20220916113420143"></p>
 <p>if 后面、and or 左右可以放任何类型的数据</p>
 <p>只是在进行and or 操作的时候、在if判断的时候</p>
 <p>每种类型有各自的计算bool值的方法——<code>object.c</code>里</p>
-<p>数字–是否为0</p>
-<p>序列–长度是否为0</p>
+<p>数字—是否为0</p>
+<p>序列—长度是否为0</p>
 <h2 id="compare"><a href="#compare" class="headerlink" title="compare"></a>compare</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">1</span>&gt;<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0 LOAD_CONST               0 (1)</span><br><span class="line">2 LOAD_CONST               1 (2)</span><br><span class="line">4 COMPARE_OP               4 (&gt;)</span><br><span class="line">6 STORE_NAME               0 (b)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916151025380.png" alt="image-20220916151025380"></p>
 <p>对于其他类型则各自处理</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916151048402.png" alt="image-20220916151048402"></p>
@@ -653,17 +570,8 @@
 <h2 id="expression"><a href="#expression" class="headerlink" title="expression"></a>expression</h2><p>来者不拒。。各种类型都可以放里面</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916155615173.png" alt="image-20220916155615173"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">abs</span> <span class="keyword">or</span> <span class="number">1</span>) <span class="comment"># &lt;built-in function abs&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="short-circuit"><a href="#short-circuit" class="headerlink" title="short-circuit"></a>short-circuit</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;&quot;</span> <span class="keyword">or</span> <span class="string">&quot;It is a empty string&quot;</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2           0 LOAD_CONST               0 (&#x27;&#x27;)</span><br><span class="line">            2 JUMP_IF_TRUE_OR_POP      6</span><br><span class="line">            4 LOAD_CONST               1 (&#x27;It is a empty string&#x27;)</span><br><span class="line">      &gt;&gt;    6 STORE_NAME               0 (a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916150558247.png" alt="image-20220916150558247"></p>
 <h2 id="string-to-bool"><a href="#string-to-bool" class="headerlink" title="string to bool"></a>string to bool</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113202232.png" alt="image-20220916113202232"></p>
 <p>如果是字符串，ok则为字符串长度</p>
@@ -672,105 +580,48 @@
 <p>也就是我们自定义的对象都是返回1</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916113301601.png" alt="image-20220916113301601"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="string">&quot;&quot;</span>))</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h1 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h1><p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#types">doc</a></p>
 <h2 id="rewrite"><a href="#rewrite" class="headerlink" title="rewrite"></a>rewrite</h2><p>可以自定义比较方法！</p>
 <p>如<code>__eq__()</code> <code>__gt__()</code>等</p>
 <p>甚至于其他的各种操作都能重写</p>
 <p><code>__xor__()</code></p>
 <p>但是要注意，有些只是回调函数，并不是重写，如<code>__del__()</code></p>
-<h2 id="buildin"><a href="#buildin" class="headerlink" title="buildin"></a>buildin</h2><h3 id="call"><a href="#call" class="headerlink" title="_call_"></a>_<em>call</em>_</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">o3</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;init&quot;</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;call&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t = o3() <span class="comment"># call class</span></span><br><span class="line">t() 	 <span class="comment"># call object</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="buildin"><a href="#buildin" class="headerlink" title="buildin"></a>buildin</h2><h3 id="call"><a href="#call" class="headerlink" title="_call_"></a>_<em>call_</em></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">o3</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;init&quot;</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;call&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t = o3() <span class="comment"># call class</span></span><br><span class="line">t() 	 <span class="comment"># call object</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># init</span></span><br><span class="line"><span class="comment"># call</span></span><br></pre></td></tr></table></figure>
-
 <p>发现<code>__call__</code>对应object的调用</p>
-<h3 id="dict"><a href="#dict" class="headerlink" title="_dict_"></a>_<em>dict</em>_</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.a = <span class="number">22</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c().__dict__)<span class="comment"># &#123;&#x27;a&#x27;: 22&#125;</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="dict"><a href="#dict" class="headerlink" title="_dict_"></a>_<em>dict_</em></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.a = <span class="number">22</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c().__dict__)<span class="comment"># &#123;&#x27;a&#x27;: 22&#125;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.a = <span class="number">22</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t = c()</span><br><span class="line">t.a = <span class="number">999</span></span><br><span class="line"><span class="built_in">print</span>(t.__dict__)  <span class="comment"># &#123;&#x27;a&#x27;: 999&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>说白了，就是成员变量，且<code>__dict__</code>会动态变化，不同于<code>__slot__</code>是静态的</p>
-<h3 id="del"><a href="#del" class="headerlink" title="_del_()"></a>_<em>del</em>_()</h3><p>不仅仅是主动del</p>
+<h3 id="del"><a href="#del" class="headerlink" title="_del_()"></a>_<em>del_</em>()</h3><p>不仅仅是主动del</p>
 <p>被动删除也会回调这个</p>
-<h2 id="getitem"><a href="#getitem" class="headerlink" title="_getitem_()"></a>_<em>getitem</em>_()</h2><p>重写下标访问</p>
+<h2 id="getitem"><a href="#getitem" class="headerlink" title="_getitem_()"></a>_<em>getitem_</em>()</h2><p>重写下标访问</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">d</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span>(<span class="params">self, index</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">666</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = d()</span><br><span class="line"><span class="built_in">print</span>(s[<span class="number">2</span>]) <span class="comment"># 666</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h3 id="ne-o"><a href="#ne-o" class="headerlink" title="_ne_(o)"></a>_<em>ne</em>_(o)</h3><p>Return self!=value</p>
+<h3 id="ne-o"><a href="#ne-o" class="headerlink" title="_ne_(o)"></a>_<em>ne_</em>(o)</h3><p>Return self!=value</p>
 <p>True 或 False</p>
-<h3 id="setattr-name-value"><a href="#setattr-name-value" class="headerlink" title="_setattr_(name, value)"></a>_<em>setattr</em>_(name, value)</h3><p>其实就相当于</p>
+<h3 id="setattr-name-value"><a href="#setattr-name-value" class="headerlink" title="_setattr_(name, value)"></a>_<em>setattr_</em>(name, value)</h3><p>其实就相当于</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">object</span>.name = <span class="string">&quot;cola&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="slots"><a href="#slots" class="headerlink" title="_slots_"></a>_<em>slots</em>_</h3><p>The proper use of <code>__slots__</code> is to save space in objects. Instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation. </p>
+<h3 id="slots"><a href="#slots" class="headerlink" title="_slots_"></a>_<em>slots_</em></h3><p>The proper use of <code>__slots__</code> is to save space in objects. Instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation. </p>
 <p>slot 定义后，无法动态添加成员</p>
 <p>该object的成员已经static化了</p>
 <p>而且slots只接受<strong>string类型</strong>的数据，构一个元组，作<strong>成员变量名</strong></p>
 <p>然后slots中的成员变量记得赋值后再使用，不然会报错</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c</span>:</span></span><br><span class="line">    __slots__ = (<span class="string">&quot;good&quot;</span>)</span><br><span class="line"></span><br><span class="line">t = c()</span><br><span class="line">t.good = <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(t.good)</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span>:</span></span><br><span class="line">    <span class="string">&#x27;Say hello&#x27;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20221010094155638.png" alt="image-20221010094155638"></p>
 <h2 id="object"><a href="#object" class="headerlink" title="object"></a>object</h2><p>Formally, an object is a collection of data and associated behaviors.  </p>
 <h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> h <span class="keyword">import</span> hello</span><br><span class="line"></span><br><span class="line">t = hello()</span><br></pre></td></tr></table></figure>
-
 <p>这样就不用<code>h.hello()</code>了</p>
 <h3 id="relative-import"><a href="#relative-import" class="headerlink" title="relative import"></a>relative import</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引入module所在目录下的database module</span></span><br><span class="line"><span class="keyword">from</span> .database <span class="keyword">import</span> Database</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引入module所在目录的上一级目录的database module</span></span><br><span class="line"><span class="keyword">from</span> ..database <span class="keyword">import</span> Database</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="iterable"><a href="#iterable" class="headerlink" title="iterable"></a>iterable</h2><p>实现了迭代相关的方法，那么这个方法就是iterable</p>
 <p>1.实现<code>__iter__()</code></p>
 <p>2.实现了<code>__getitem__()</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">oi</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">            <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> oi():</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">oi</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span>(<span class="params">self, item</span>):</span></span><br><span class="line">        <span class="keyword">if</span> item &lt; <span class="number">10</span>:</span><br><span class="line">            <span class="keyword">return</span> item</span><br><span class="line">        <span class="keyword">raise</span> StopIteration</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> oi():</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 0~9</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="package-and-modules"><a href="#package-and-modules" class="headerlink" title="package and modules"></a>package and modules</h2><p>A package is a collection of modules in a folder</p>
 <p>一个<code>xx.py</code>就是一个module</p>
-<h3 id="init-py"><a href="#init-py" class="headerlink" title="_init_.py"></a>_<em>init</em>_.py</h3><p>老是会遇见<code>__init__.py</code>，它其实是用来标记<code>package</code>的</p>
+<h3 id="init-py"><a href="#init-py" class="headerlink" title="_init_.py"></a>_<em>init_</em>.py</h3><p>老是会遇见<code>__init__.py</code>，它其实是用来标记<code>package</code>的</p>
 <p>具体往下看：</p>
 <p>注意！</p>
 <p>常规的folder，是无法被import的</p>
@@ -780,41 +631,17 @@
 <h2 id="pattern"><a href="#pattern" class="headerlink" title="pattern"></a>pattern</h2><h2 id="decorator-pattern"><a href="#decorator-pattern" class="headerlink" title="decorator pattern"></a>decorator pattern</h2><p>参考subclass那一章节</p>
 <h2 id="private"><a href="#private" class="headerlink" title="private"></a>private</h2><p><strong>两个</strong>下划线开头的作private，可作用于变量和方法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">o5</span>:</span></span><br><span class="line">    __name = <span class="string">&quot;cola&quot;</span></span><br><span class="line"></span><br><span class="line">t = o5()</span><br><span class="line"><span class="built_in">print</span>(t.__name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># AttributeError: &#x27;o5&#x27; object has no attribute &#x27;__name&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>可访问，但没办法直接修改</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">o6</span>:</span></span><br><span class="line">    __name = <span class="string">&quot;cola&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.__name</span><br><span class="line"></span><br><span class="line">t = o6()</span><br><span class="line"><span class="built_in">print</span>(t.name)</span><br><span class="line">t.name = <span class="number">99</span></span><br><span class="line"><span class="built_in">print</span>(t.name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># cola</span></span><br><span class="line"><span class="comment"># AttributeError: can&#x27;t set attribute</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="self"><a href="#self" class="headerlink" title="self"></a>self</h2><p>本质上self是一个变量</p>
 <p>然后在创建实例后，self就是对象实例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">isinstance</span>(self, c))</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">c() <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><h2 id="subclass"><a href="#subclass" class="headerlink" title="subclass"></a>subclass</h2><p>beverage.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Beverage</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">description</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;beverage&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_cost</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span>  <span class="number">0.0</span></span><br></pre></td></tr></table></figure>
-
 <p>coffee.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> beverage <span class="keyword">import</span> Beverage</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Coffee</span>(<span class="params">Beverage</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
 <p>t.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coffee <span class="keyword">import</span> Coffee</span><br><span class="line"></span><br><span class="line">c = Coffee()</span><br><span class="line"><span class="built_in">print</span>(c.description())</span><br></pre></td></tr></table></figure>
-
-
-
 <p>可以重写，也直接用父类的</p>
 <p>这就是最简单的Decorator pattern</p>
 <h1 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h1><h2 id="asdl"><a href="#asdl" class="headerlink" title="asdl"></a>asdl</h2><p>Abstract Syntax Definition Language</p>
@@ -822,34 +649,17 @@
 <p> 最简单的原子是标识符和字面值。 </p>
 <p>以圆括号、方括号或花括号包括的形式在语法上也被归类为原子。 原子的句法为:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">atom      ::=  identifier | literal | enclosure</span><br><span class="line">enclosure ::=  parenth_form | list_display | dict_display | set_display</span><br><span class="line">               | generator_expression | yield_atom</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="Augassign-and-Assign"><a href="#Augassign-and-Assign" class="headerlink" title="Augassign and Assign"></a>Augassign and Assign</h2><p>增强赋值</p>
 <p>+=</p>
 <p>assign 在compile</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908113725314.png" alt="image-20220908113725314"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	asdl_seq *targets;</span><br><span class="line">	expr_ty value;</span><br><span class="line">&#125; Assign;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="base"><a href="#base" class="headerlink" title="base"></a>base</h2><p>进制</p>
 <p>base = 16 表示16进制</p>
 <h2 id="callable"><a href="#callable" class="headerlink" title="callable"></a>callable</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828110216742.png" alt="image-20220828110216742"></p>
 <h2 id="Closure-functions"><a href="#Closure-functions" class="headerlink" title="Closure functions"></a>Closure functions</h2><p>闭包函数</p>
 <p>函数里面的函数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>():</span></span><br><span class="line">    count = <span class="string">&#x27;a函数里面&#x27;</span>  　　<span class="comment">#如果不事先声明，那么函数b中的nonlocal就会报错</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">b</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(count)</span><br><span class="line">        count = <span class="number">2</span></span><br><span class="line">    b()</span><br><span class="line">    <span class="built_in">print</span>(count)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    a()</span><br><span class="line">    <span class="built_in">print</span>(count)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="cxt-context？"><a href="#cxt-context？" class="headerlink" title="cxt context？"></a>cxt context？</h2><h2 id="enclose"><a href="#enclose" class="headerlink" title="enclose"></a>enclose</h2><p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20221124104850229.png" alt="image-20221124104850229"></p>
 <p>函数里定义一个函数，那么enclose就是内函数外的命名空间</p>
 <p>再就是在类里面定义一个函数，函数外，类内的命名空间</p>
@@ -858,23 +668,9 @@
 <h2 id="free-variable"><a href="#free-variable" class="headerlink" title="free variable"></a>free variable</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828203343767.png" alt="image-20220828203343767"></p>
 <h2 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h2><p><code>yield</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line">a = f()</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">1</span>           <span class="number">0</span> LOAD_CONST               <span class="number">0</span> (&lt;code <span class="built_in">object</span> f at <span class="number">0x000001AE1E313660</span>, file <span class="string">&quot;t.py&quot;</span>, line <span class="number">1</span>&gt;)</span><br><span class="line">              <span class="number">2</span> LOAD_CONST               <span class="number">1</span> (<span class="string">&#x27;f&#x27;</span>)</span><br><span class="line">              <span class="number">4</span> MAKE_FUNCTION            <span class="number">0</span></span><br><span class="line">              <span class="number">6</span> STORE_NAME               <span class="number">0</span> (f)</span><br><span class="line"></span><br><span class="line">  <span class="number">5</span>           <span class="number">8</span> LOAD_NAME                <span class="number">1</span> (<span class="built_in">print</span>)</span><br><span class="line">             <span class="number">10</span> LOAD_NAME                <span class="number">0</span> (f)</span><br><span class="line">             <span class="number">12</span> CALL_FUNCTION            <span class="number">0</span></span><br><span class="line">             <span class="number">14</span> LOAD_METHOD              <span class="number">2</span> (__next__)</span><br><span class="line">             <span class="number">16</span> CALL_METHOD              <span class="number">0</span></span><br><span class="line">             <span class="number">18</span> CALL_FUNCTION            <span class="number">1</span></span><br><span class="line">             <span class="number">20</span> POP_TOP</span><br><span class="line">             <span class="number">22</span> LOAD_CONST               <span class="number">2</span> (<span class="literal">None</span>)</span><br><span class="line">             <span class="number">24</span> RETURN_VALUE</span><br><span class="line"></span><br><span class="line">Disassembly of &lt;code <span class="built_in">object</span> f at <span class="number">0x000001AE1E313660</span>, file <span class="string">&quot;t.py&quot;</span>, line <span class="number">1</span>&gt;:</span><br><span class="line">  <span class="number">2</span>           <span class="number">0</span> LOAD_GLOBAL              <span class="number">0</span> (<span class="built_in">range</span>)</span><br><span class="line">              <span class="number">2</span> LOAD_CONST               <span class="number">1</span> (<span class="number">10</span>)</span><br><span class="line">              <span class="number">4</span> CALL_FUNCTION            <span class="number">1</span></span><br><span class="line">              <span class="number">6</span> GET_ITER</span><br><span class="line">        &gt;&gt;    <span class="number">8</span> FOR_ITER                <span class="number">10</span> (to <span class="number">20</span>)</span><br><span class="line">             <span class="number">10</span> STORE_FAST               <span class="number">0</span> (i)</span><br><span class="line"></span><br><span class="line">  <span class="number">3</span>          <span class="number">12</span> LOAD_FAST                <span class="number">0</span> (i)</span><br><span class="line">             <span class="number">14</span> YIELD_VALUE</span><br><span class="line">             <span class="number">16</span> POP_TOP</span><br><span class="line">             <span class="number">18</span> JUMP_ABSOLUTE            <span class="number">8</span></span><br><span class="line">        &gt;&gt;   <span class="number">20</span> LOAD_CONST               <span class="number">0</span> (<span class="literal">None</span>)</span><br><span class="line">             <span class="number">22</span> RETURN_VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(f())</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">  1           0 LOAD_CONST               0 (&lt;code object f at 0x00000251ACC33660, file &quot;t.py&quot;, line 1&gt;)</span><br><span class="line">              2 LOAD_CONST               1 (&#x27;f&#x27;)</span><br><span class="line">              4 MAKE_FUNCTION            0</span><br><span class="line">              6 STORE_NAME               0 (f)</span><br><span class="line"></span><br><span class="line">  5           8 LOAD_NAME                1 (print)</span><br><span class="line">             10 LOAD_NAME                0 (f)</span><br><span class="line">             12 CALL_FUNCTION            0</span><br><span class="line">             14 CALL_FUNCTION            1</span><br><span class="line">             16 POP_TOP</span><br><span class="line">             18 LOAD_CONST               2 (None)</span><br><span class="line">             20 RETURN_VALUE</span><br><span class="line"></span><br><span class="line">Disassembly of &lt;code object f at 0x00000251ACC33660, file &quot;t.py&quot;, line 1&gt;:</span><br><span class="line">  2           0 LOAD_GLOBAL              0 (range)</span><br><span class="line">              2 LOAD_CONST               1 (10)</span><br><span class="line">              4 CALL_FUNCTION            1</span><br><span class="line">              6 GET_ITER</span><br><span class="line">              8 FOR_ITER                10 (to 20)</span><br><span class="line">             10 STORE_FAST               0 (i)</span><br><span class="line"></span><br><span class="line">  3          12 LOAD_FAST                0 (i)</span><br><span class="line">             14 ROT_TWO</span><br><span class="line">             16 POP_TOP</span><br><span class="line">             18 RETURN_VALUE</span><br><span class="line">        &gt;&gt;   20 LOAD_CONST               0 (None)</span><br><span class="line">             22 RETURN_VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220923150008408.png" alt="image-20220923150008408"></p>
 <p><code>yield</code>说白了，就是作 return 把一个值返回之后，继续那个function的执行</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220923150201530.png" alt="image-20220923150201530"></p>
@@ -891,21 +687,6 @@
 <p>can be considered a way to implement private members in python</p>
 <h2 id="main不是主函数"><a href="#main不是主函数" class="headerlink" title="main不是主函数"></a>main不是主函数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220907181447776.png" alt="image-20220907181447776"></p>
 <h2 id="name"><a href="#name" class="headerlink" title="__name__"></a>__name__</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__name__ == &#x27;__main__&#x27; 就表示在当前文件中，可以在if __name__ == &#x27;__main__&#x27;:条件下写入测试代码，如此可以避免测试代码在模块被导入后执行</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="opname"><a href="#opname" class="headerlink" title="opname"></a>opname</h2><p>人类可读的操作名称</p>
 <h2 id="pyc"><a href="#pyc" class="headerlink" title="pyc"></a>pyc</h2><p>编译后的字节码文件</p>
 <p>其实就是对应PyCodeObject保存在硬盘中的存在形式</p>
@@ -923,11 +704,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912095541557.png" alt="image-20220912095541557"></p>
 <p>python3中不存在引用的说法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">red = <span class="number">999</span></span><br><span class="line">green = <span class="number">888</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    red = red + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnboundLocalError: local variable &#x27;red&#x27; referenced before assignment</span><br></pre></td></tr></table></figure>
-
-
-
 <p>这里的referenced只是的取变量对应的值</p>
 <h2 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908095829386.png" alt="image-20220908095829386"></p>
 <h2 id="stmt"><a href="#stmt" class="headerlink" title="stmt"></a>stmt</h2><p>statement</p>
@@ -935,45 +712,18 @@
 <h2 id="Suite"><a href="#Suite" class="headerlink" title="Suite"></a>Suite</h2><p>A group of individual statements, which make a single code block are called suites in Python.</p>
 <p>Header lines begin the statement (with the keyword) and terminate with a colon (: ) and are followed by one or more lines which make up the suite. </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> expr1==<span class="literal">True</span>:</span><br><span class="line">  stmt1</span><br><span class="line">  stmt2</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="symtable"><a href="#symtable" class="headerlink" title="symtable"></a>symtable</h2><p><a target="_blank" rel="noopener" href="https://eli.thegreenplace.net/2010/09/18/python-internals-symbol-tables-part-1/">https://eli.thegreenplace.net/2010/09/18/python-internals-symbol-tables-part-1/</a></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828203230431.png" alt="image-20220828203230431"></p>
 <p><a target="_blank" rel="noopener" href="https://eli.thegreenplace.net/2010/09/20/python-internals-symbol-tables-part-2">https://eli.thegreenplace.net/2010/09/20/python-internals-symbol-tables-part-2</a></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828203051815.png" alt="image-20220828203051815"></p>
 <h2 id="sys-getsizeof"><a href="#sys-getsizeof" class="headerlink" title="sys.getsizeof()"></a>sys.getsizeof()</h2><p>python2</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">1</span>) <span class="comment"># 24</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">1l</span>) <span class="comment"># 28</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int = pyobject_head + long = 20 + 4</span><br><span class="line">long = pyobjecy_var_head + unsigh short*</span><br><span class="line">	 = pyobject_head + ob_size + unsigh short* </span><br><span class="line">	 = 20 + 4 + 4 + 28</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="typeObject"><a href="#typeObject" class="headerlink" title="typeObject"></a>typeObject</h2><p>每个Object都有，用来表明type</p>
 <p>包括申请内存、相关function等meta-information</p>
 <h2 id="testlist"><a href="#testlist" class="headerlink" title="testlist"></a>testlist</h2><p>用<code>,</code>隔开的序列</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>:</span><br><span class="line">    <span class="built_in">print</span> i</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># error：参数列表不一样</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="varnames"><a href="#varnames" class="headerlink" title="varnames"></a>varnames</h2><p>变量名表</p>
 <h2 id="Var-Object"><a href="#Var-Object" class="headerlink" title="Var Object"></a>Var Object</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818102051244.png" alt="image-20220818102051244"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818102324082.png" alt="image-20220818102324082"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818102428257.png" alt="image-20220818102428257"></p>
@@ -987,25 +737,9 @@
 <h1 id="Compile"><a href="#Compile" class="headerlink" title="Compile"></a>Compile</h1><p><code>compile.c</code></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909231937202.png" alt="image-20220909231937202"></p>
 <h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m dis 2.py</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="index"><a href="#index" class="headerlink" title="index"></a>index</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">999</span></span><br><span class="line">b = <span class="number">999</span>+<span class="number">998</span></span><br><span class="line">d = <span class="string">&quot;h&quot;</span></span><br><span class="line">c = <span class="number">1000</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="LOAD-FAST"><a href="#LOAD-FAST" class="headerlink" title="LOAD_FAST"></a>LOAD_FAST</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">TARGET(LOAD_FAST)</span><br><span class="line">&#123;</span><br><span class="line">    x = GETLOCAL(oparg);</span><br><span class="line">    <span class="keyword">if</span> (x != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        Py_INCREF(x);</span><br><span class="line">        PUSH(x);</span><br><span class="line">        FAST_DISPATCH();</span><br><span class="line">    &#125;</span><br><span class="line">    format_exc_check_arg(PyExc_UnboundLocalError,</span><br><span class="line">                         UNBOUNDLOCAL_ERROR_MSG,</span><br><span class="line">                         PyTuple_GetItem(co-&gt;co_varnames, oparg));</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TARGET(LOAD_CONST)</span><br><span class="line">&#123;</span><br><span class="line">	x = GETITEM(consts, oparg);</span><br><span class="line">	Py_INCREF(x);</span><br><span class="line">	PUSH(x);</span><br><span class="line">	FAST_DISPATCH();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>区别在于，一个是直接再local中拿，一个是在consts中拿</p>
 <h2 id="optimize"><a href="#optimize" class="headerlink" title="optimize"></a>optimize</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220907003800206.png" alt="image-20220907003800206"></p>
 <h2 id="no-matter-fail"><a href="#no-matter-fail" class="headerlink" title="no matter fail"></a>no matter fail</h2><p>报错的代码也会把字节码给编出来（运行时报错，不是编译的报错）</p>
@@ -1013,7 +747,6 @@
 <h2 id="number"><a href="#number" class="headerlink" title="number+"></a>number+</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828200236499.png" alt="image-20220828200236499"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828235707513.png" alt="image-20220828235707513"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">666</span>+<span class="number">666</span></span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220828235816873.png" alt="image-20220828235816873"></p>
 <h2 id="return-0"><a href="#return-0" class="headerlink" title="return 0"></a>return 0</h2><p>return之前的<code>LOAD_CONST</code></p>
 <p>表示当前Suite执行完毕</p>
@@ -1024,61 +757,18 @@
 <p>然后，不需要掌握复杂的，可读性不好</p>
 <p>一层循环就够了</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span>():</span></span><br><span class="line">    lst = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000000</span>):</span><br><span class="line">        lst.append(i)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span>():</span></span><br><span class="line">    lst = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000000</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cProfile</span><br><span class="line">cProfile.run(<span class="string">&#x27;f1()&#x27;</span>)</span><br><span class="line">cProfile.run(<span class="string">&#x27;f2()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">       1    0.127    0.127    1.780    1.780 &lt;string&gt;:1(&lt;module&gt;)</span><br><span class="line">       1    0.997    0.997    1.653    1.653 t.py:1(f1)</span><br><span class="line">       1    0.000    0.000    1.780    1.780 &#123;built-in method builtins.exec&#125;</span><br><span class="line">10000000    0.656    0.000    0.656    0.000 &#123;method &#x27;append&#x27; of &#x27;list&#x27; objects&#125;</span><br><span class="line">       1    0.000    0.000    0.000    0.000 &#123;method &#x27;disable&#x27; of &#x27;_lsprof.Profiler&#x27; objects&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        5 function calls in 0.499 seconds</span><br><span class="line"></span><br><span class="line">  Ordered by: standard name</span><br><span class="line"></span><br><span class="line">  ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">       1    0.078    0.078    0.499    0.499 &lt;string&gt;:1(&lt;module&gt;)</span><br><span class="line">       1    0.000    0.000    0.421    0.421 t.py:6(f2)</span><br><span class="line">       1    0.421    0.421    0.421    0.421 t.py:7(&lt;listcomp&gt;)</span><br><span class="line">       1    0.000    0.000    0.499    0.499 &#123;built-in method builtins.exec&#125;</span><br><span class="line">       1    0.000    0.000    0.000    0.000 &#123;method &#x27;disable&#x27; of &#x27;_lsprof.Profiler&#x27; objects&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers = [run_calculation(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lst = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100000000</span>)]</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lst = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100000000</span>) <span class="keyword">if</span> i%<span class="number">2</span> ==<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="dict-1"><a href="#dict-1" class="headerlink" title="dict"></a>dict</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D = &#123;x: x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>)&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D = &#123;<span class="number">0</span>: <span class="string">&#x27;A&#x27;</span>, <span class="number">1</span>: <span class="string">&#x27;B&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;C&#x27;</span>, <span class="number">3</span>: <span class="string">&#x27;D&#x27;</span>, <span class="number">4</span>: <span class="string">&#x27;E&#x27;</span>, <span class="number">5</span>: <span class="string">&#x27;F&#x27;</span>&#125;</span><br><span class="line">selectedKeys = [<span class="number">0</span>, <span class="number">2</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">X = &#123;k: D[k] <span class="keyword">for</span> k <span class="keyword">in</span> selectedKeys&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=&#123;x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>)&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h1 id="Dict"><a href="#Dict" class="headerlink" title="Dict"></a>Dict</h1><p>Dictionaries and sets use hash tables to achieve their O(1) lookups and insertions.  </p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823172037306.png" alt="image-20220823172037306"></p>
 <p>entry 是dict内的每一个键值对</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823171609158.png" alt="image-20220823171609158"></p>
 <h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;v: k <span class="keyword">for</span> k, v <span class="keyword">in</span> xx&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823172803442.png" alt="image-20220823172803442"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823163552110.png" alt="image-20220823163552110"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823165856496.png" alt="image-20220823165856496"></p>
@@ -1090,119 +780,34 @@
 <p>而不是似set的一张散列表</p>
 <h2 id="swap"><a href="#swap" class="headerlink" title="swap"></a>swap</h2><p>交换key和value</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">my_dict = &#123;<span class="number">1</span>: <span class="string">&#x27;a&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;b&#x27;</span>, <span class="number">3</span>: <span class="string">&#x27;c&#x27;</span>&#125;</span><br><span class="line">   </span><br><span class="line">swapped = &#123;v: k <span class="keyword">for</span> k, v <span class="keyword">in</span> my_dict.items()&#125;</span><br><span class="line">swapped = <span class="built_in">dict</span>((v, k) <span class="keyword">for</span> k, v <span class="keyword">in</span> my_dict.iteritems())</span><br><span class="line">swapped = <span class="built_in">dict</span>(<span class="built_in">zip</span>(my_dict.values(), my_dict))</span><br><span class="line">swapped = <span class="built_in">dict</span>(<span class="built_in">zip</span>(my_dict.values(), my_dict.keys()))</span><br><span class="line">swapped = <span class="built_in">dict</span>(<span class="built_in">map</span>(<span class="built_in">reversed</span>, my_dict.items()))</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h1 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EvenOnly</span>(<span class="params"><span class="built_in">list</span></span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">append</span>(<span class="params">self, integer</span>):</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(integer, <span class="built_in">int</span>):</span><br><span class="line">			<span class="keyword">raise</span> TypeError(<span class="string">&quot;Only integers can be added&quot;</span>)</span><br><span class="line">		<span class="keyword">if</span> integer % <span class="number">2</span>:</span><br><span class="line">			<span class="keyword">raise</span> ValueError(<span class="string">&quot;Only even numbers can be added&quot;</span>)</span><br><span class="line">		<span class="built_in">super</span>().append(integer)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; e = EvenOnly()</span><br><span class="line">&gt;&gt;&gt; e.append(&quot;a string&quot;)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">File &quot;even_integers.py&quot;, line 7, in add</span><br><span class="line">raise TypeError(&quot;Only integers can be added&quot;)</span><br><span class="line">TypeError: Only integers can be added</span><br></pre></td></tr></table></figure>
-
-
-
 <p>When an exception is raised, it appears to stop program execution immediately.  </p>
 <h2 id="args"><a href="#args" class="headerlink" title="args"></a>args</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="keyword">raise</span> ValueError(<span class="string">&quot;This is an argument&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> ValueError <span class="keyword">as</span> e:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;The exception arguments were&quot;</span>, e.args)</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20221011094753557.png" alt="image-20221011094753557"></p>
 <h2 id="else"><a href="#else" class="headerlink" title="else"></a>else</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	choice = random.choice(some_exceptions)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;raising &#123;&#125;&quot;</span>.<span class="built_in">format</span>(choice))</span><br><span class="line">	<span class="keyword">if</span> choice:</span><br><span class="line">	<span class="keyword">raise</span> choice(<span class="string">&quot;An error&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> ValueError:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Caught a ValueError&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> TypeError:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Caught a TypeError&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Caught some other error: %s&quot;</span> % ( e.__class__.__name__))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;This code called if there is no exception&quot;</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;This cleanup code is always called&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	choice = random.choice(some_exceptions)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;raising &#123;&#125;&quot;</span>.<span class="built_in">format</span>(choice))</span><br><span class="line">	<span class="keyword">if</span> choice:</span><br><span class="line">	<span class="keyword">raise</span> choice(<span class="string">&quot;An error&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> ValueError:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Caught a ValueError&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> TypeError:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Caught a TypeError&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Caught some other error: %s&quot;</span> % ( e.__class__.__name__))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;This code called if there is no exception&quot;</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;This cleanup code is always called&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="own-exception"><a href="#own-exception" class="headerlink" title="own exception"></a>own exception</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InvalidWithdrawal</span>(<span class="params">Exception</span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, balance, amount</span>):</span></span><br><span class="line">		<span class="built_in">super</span>().__init__(<span class="string">&quot;account doesn&#x27;t have $&#123;&#125;&quot;</span>.<span class="built_in">format</span>(amount))</span><br><span class="line">		self.amount = amount</span><br><span class="line">		self.balance = balance</span><br><span class="line"><span class="keyword">raise</span> InvalidWithdrawal(<span class="number">25</span>, <span class="number">50</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="keyword">raise</span> InvalidWithdrawal(<span class="number">25</span>, <span class="number">50</span>)</span><br><span class="line"><span class="keyword">except</span> InvalidWithdrawal <span class="keyword">as</span> e:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;I&#x27;m sorry, but your withdrawal is more than your balance by $&#123;&#125;&quot;</span>.<span class="built_in">format</span>(e.overage()))</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="try-expect"><a href="#try-expect" class="headerlink" title="try-expect"></a>try-expect</h2><p>The problem will not be stopped </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	no_return()</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;I caught an exception&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;executed after the exception&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>Note the indentation around try and except.</p>
 <p> The try clause wraps any code that might throw an exception.  </p>
 <p>回调</p>
 <p>We can even catch two or more different exceptions and handle them</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funny_division2</span>(<span class="params">anumber</span>):</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		<span class="keyword">if</span> anumber == <span class="number">13</span>:</span><br><span class="line">			<span class="keyword">raise</span> ValueError(<span class="string">&quot;13 is an unlucky number&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">100</span> / anumber</span><br><span class="line">	<span class="keyword">except</span> (ZeroDivisionError, TypeError):</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;Enter a number other than zero&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="multi-expect"><a href="#multi-expect" class="headerlink" title="multi-expect"></a>multi-expect</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	choice = random.choice(some_exceptions)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;raising &#123;&#125;&quot;</span>.<span class="built_in">format</span>(choice))</span><br><span class="line">	<span class="keyword">if</span> choice:</span><br><span class="line">	<span class="keyword">raise</span> choice(<span class="string">&quot;An error&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> ValueError:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Caught a ValueError&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> TypeError:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Caught a TypeError&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h1 id="for"><a href="#for" class="headerlink" title="for"></a>for</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220923141359247.png" alt="image-20220923141359247"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220923142957328.png" alt="image-20220923142957328"></p>
 <p>说白了，for循环真的就是重复</p>
 <h2 id="who-is-faster"><a href="#who-is-faster" class="headerlink" title="who is faster"></a>who is faster</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100000000</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">w</span>():</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; <span class="number">100000000</span>:</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line"></span><br><span class="line">profile.run(<span class="string">&quot;f()&quot;</span>)</span><br><span class="line">profile.run(<span class="string">&quot;w()&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">      5 function calls in 1.125 seconds</span><br><span class="line"></span><br><span class="line">Ordered by: standard name</span><br><span class="line"></span><br><span class="line">ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">     1    0.000    0.000    1.125    1.125 :0(exec)</span><br><span class="line">     1    0.000    0.000    0.000    0.000 :0(setprofile)</span><br><span class="line">     1    0.000    0.000    1.125    1.125 &lt;string&gt;:1(&lt;module&gt;)</span><br><span class="line">     1    1.125    1.125    1.125    1.125 for-while.py:1(f)</span><br><span class="line">     1    0.000    0.000    1.125    1.125 profile:0(f())</span><br><span class="line">     0    0.000             0.000          profile:0(profiler)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      5 function calls in 3.281 seconds</span><br><span class="line"></span><br><span class="line">Ordered by: standard name</span><br><span class="line"></span><br><span class="line">ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">     1    0.000    0.000    3.281    3.281 :0(exec)</span><br><span class="line">     1    0.000    0.000    0.000    0.000 :0(setprofile)</span><br><span class="line">     1    0.000    0.000    3.281    3.281 &lt;string&gt;:1(&lt;module&gt;)</span><br><span class="line">     1    3.281    3.281    3.281    3.281 for-while.py:4(w)</span><br><span class="line">     0    0.000             0.000          profile:0(profiler)</span><br><span class="line">     1    0.000    0.000    3.281    3.281 profile:0(w())</span><br></pre></td></tr></table></figure>
-
-
-
 <p>for 比while快太多了。。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>           <span class="number">0</span> LOAD_NAME                <span class="number">0</span> (<span class="built_in">range</span>)</span><br><span class="line">            <span class="number">2</span> LOAD_CONST               <span class="number">0</span> (<span class="number">100000000</span>)</span><br><span class="line">            <span class="number">4</span> CALL_FUNCTION            <span class="number">1</span></span><br><span class="line">            <span class="number">6</span> GET_ITER</span><br><span class="line">      &gt;&gt;    <span class="number">8</span> FOR_ITER                 <span class="number">4</span> (to <span class="number">14</span>)</span><br><span class="line">           <span class="number">10</span> STORE_NAME               <span class="number">1</span> (i)</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>          <span class="number">12</span> JUMP_ABSOLUTE            <span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>     &gt;&gt;   <span class="number">14</span> LOAD_CONST               <span class="number">1</span> (<span class="number">0</span>)</span><br><span class="line">           <span class="number">16</span> STORE_NAME               <span class="number">1</span> (i)</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>     &gt;&gt;   <span class="number">18</span> LOAD_NAME                <span class="number">1</span> (i)</span><br><span class="line">           <span class="number">20</span> LOAD_CONST               <span class="number">0</span> (<span class="number">100000000</span>)</span><br><span class="line">           <span class="number">24</span> POP_JUMP_IF_FALSE       <span class="number">36</span></span><br><span class="line"></span><br><span class="line"><span class="number">6</span>          <span class="number">26</span> LOAD_NAME                <span class="number">1</span> (i)</span><br><span class="line">           <span class="number">28</span> LOAD_CONST               <span class="number">2</span> (<span class="number">1</span>)</span><br><span class="line">           <span class="number">30</span> INPLACE_ADD</span><br><span class="line">           <span class="number">32</span> STORE_NAME               <span class="number">1</span> (i)</span><br><span class="line">           <span class="number">34</span> JUMP_ABSOLUTE           <span class="number">18</span></span><br><span class="line">      &gt;&gt;   <span class="number">36</span> LOAD_CONST               <span class="number">3</span> (<span class="literal">None</span>)</span><br><span class="line">           <span class="number">38</span> RETURN_VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>比较宏观的一个解释是while的汇编要比for的汇编复杂</p>
 <h1 id="function"><a href="#function" class="headerlink" title="function"></a>function</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#x27;function&#x27;&gt;</span><br><span class="line">&lt;class &#x27;builtin_function_or_method&#x27;&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="args-1"><a href="#args-1" class="headerlink" title="args"></a>args</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">*args</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(args))</span><br><span class="line"></span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) <span class="comment"># tuple</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(kwargs[<span class="string">&quot;height&quot;</span>])</span><br><span class="line"></span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, height=<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>注意：重要的是星号，args只是变量名，可修改</p>
 <p>python2.7</p>
 <p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20221124105844946.png" alt="image-20221124105844946"></p>
@@ -1211,9 +816,6 @@
 <h2 id="Nested-function"><a href="#Nested-function" class="headerlink" title="Nested function"></a>Nested function</h2><p>Stack 结构</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220829002937657.png" alt="image-20220829002937657"></p>
 <h2 id="Interesting"><a href="#Interesting" class="headerlink" title="Interesting"></a>Interesting</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="number">99</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(f)</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="recursion"><a href="#recursion" class="headerlink" title="recursion"></a>recursion</h2><p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20221124110059864.png" alt="image-20221124110059864"></p>
 <h2 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h2><p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20221124104850229.png" alt="image-20221124104850229"></p>
 <p>enclose：</p>
@@ -1227,144 +829,51 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912143421146.png" alt="image-20220912143421146"></p>
 <p>python3</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.300000000000000004</span>)</span><br><span class="line"><span class="comment"># 0.3</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.30000000000000004</span>)</span><br><span class="line"><span class="comment"># 0.30000000000000004</span></span><br></pre></td></tr></table></figure>
-
 <p>17位</p>
 <p>python2.7</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">0.3000000000004</span></span><br><span class="line"><span class="comment"># 0.3</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">0.300000000004</span></span><br><span class="line"><span class="comment"># 0.300000000004</span></span><br></pre></td></tr></table></figure>
-
 <p>12位</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912142907529.png" alt="image-20220912142907529"></p>
 <p>C 库函数</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">snprintf</span><span class="params">(<span class="keyword">char</span> *str, <span class="keyword">size_t</span> size, <span class="keyword">const</span> <span class="keyword">char</span> *format, ...)</span></span></span><br></pre></td></tr></table></figure>
-
 <p>按照 format 格式化成字符串，并将字符串复制到 str 中，size 为要写入的字符的最大数目，超过 size 会被截断。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Have PyOS_snprintf do the hard work */</span></span><br><span class="line">    PyOS_snprintf(buffer, buf_size, format, d);</span><br></pre></td></tr></table></figure>
-
 <p>double值按照format去解析</p>
 <p>然后把结果放到buffer里</p>
 <p>（稀奇古怪的输出结果都是在这个函数里面。。但它是c的库函数。。。我觉得没有再往下研究的必要了）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">1.300000000004</span></span><br><span class="line"><span class="comment"># 1.3</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>小数减少一位</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">1.30000000004</span></span><br><span class="line"><span class="comment"># 1.30000000004</span></span><br><span class="line"><span class="comment"># 1个整数+1个.+11位小数 = 13</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">5.30000000004</span></span><br><span class="line"><span class="comment"># 5.30000000004</span></span><br><span class="line"><span class="comment"># 1+1+11 = 13</span></span><br></pre></td></tr></table></figure>
-
 <p>是因为申请的buffer就这么大</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">10.30000000004</span></span><br><span class="line"><span class="comment"># 10.3</span></span><br><span class="line"><span class="comment"># 2+1+11 = 14 &gt; 13 最后面的4被截断，然后除去多余的0</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> -<span class="number">1.30000000004</span></span><br><span class="line"><span class="comment"># -1.30000000004</span></span><br><span class="line"><span class="comment"># 1+1+1+11 = 14 ok 因为符号和数字不同处理的</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PyFloat_STR_PRECISION 12</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">1.00</span>)</span><br><span class="line"><span class="comment"># 1.0</span></span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912143310143.png" alt="image-20220912143310143"></p>
 <p>further</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(<span class="number">0.10000000000000001</span>))</span><br><span class="line"><span class="comment"># 0.1</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(<span class="number">0.1000000000000001</span>))</span><br><span class="line"><span class="comment"># 0.1000000000000001</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="0-1-0-2-0-3"><a href="#0-1-0-2-0-3" class="headerlink" title="0.1+0.2!=0.3"></a>0.1+0.2!=0.3</h2><p>两个误差</p>
 <p>一个误差</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.1</span>+<span class="number">0.2</span> == <span class="number">0.3</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.3</span>) <span class="comment"># 0.3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">0.29999999999999999</span>) <span class="comment">#0.3</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.30000000000000004</span></span><br><span class="line"><span class="number">0.10000000000000001</span></span><br><span class="line"><span class="number">0.20000000000000001</span></span><br><span class="line"></span><br><span class="line"><span class="number">0.29999999999999999</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h1 id="if"><a href="#if" class="headerlink" title="if"></a>if</h1><p>比较运算符的结果是True或者False</p>
 <p>and、or 的结果是栈顶元素！而不是True或者False</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="literal">True</span> <span class="keyword">and</span> <span class="string">&quot;&quot;</span>) <span class="comment"># &quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>然后if 栈顶元素的时候，则是</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220916153334550.png" alt="image-20220916153334550"></p>
 <h1 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h1><p><strong>different in interact terminal</strong></p>
 <h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">gg</span>():</span></span><br><span class="line">    <span class="comment"># iter()返回值</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line">    <span class="comment"># 迭代next</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__next__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">999</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="Byte"><a href="#Byte" class="headerlink" title="Byte"></a>Byte</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject_HEAD </span><br><span class="line">    <span class="keyword">long</span> ob_ival; </span><br><span class="line">&#125; PyIntObject; </span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">longobject</span> &#123;</span></span><br><span class="line">	PyObject_VAR_HEAD   </span><br><span class="line">	digit ob_digit[<span class="number">1</span>]; </span><br><span class="line">&#125;; 					  </span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910220254778.png" alt="image-20220910220254778"></p>
 <h2 id="Create-1"><a href="#Create-1" class="headerlink" title="Create"></a>Create</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818103459613.png" alt="image-20220818103459613"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173606048.png" alt="image-20220823173606048"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line">a += <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="number">2265003682384</span></span><br><span class="line"><span class="number">2265003682704</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220829004256082.png" alt="image-20220829004256082"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220829004633348.png" alt="image-20220829004633348"></p>
 <h2 id="Compare"><a href="#Compare" class="headerlink" title="Compare"></a>Compare</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105009850.png" alt="image-20220818105009850"></p>
@@ -1377,63 +886,29 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823173849213.png" alt="image-20220823173849213"></p>
 <p>可变对象</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject ob_base;</span><br><span class="line">    Py_ssize_t ob_size; <span class="comment">/* Number of items in variable part */</span></span><br><span class="line">&#125; PyVarObject;</span><br></pre></td></tr></table></figure>
-
 <p>为什么int也是可变对象呢？</p>
 <p>因为python 的大数机制</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sys.getsizeof(<span class="number">4000</span>))</span><br><span class="line"><span class="built_in">print</span>(sys.getsizeof(<span class="number">999999999999999999</span>))</span><br></pre></td></tr></table></figure>
-
 <p>output:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">28</span><br><span class="line">32</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="Small-Int"><a href="#Small-Int" class="headerlink" title="Small Int"></a>Small Int</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823084031141.png" alt="image-20220823084031141"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823084219648.png" alt="image-20220823084219648"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> *<span class="title">next</span>;</span></span><br><span class="line">	PyIntObject objects[N_INTOBJECTS];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a>sizeof</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910211016960.png" alt="image-20220910211016960"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910212703897.png" alt="image-20220910212703897"></p>
 <h2 id=""><a href="#" class="headerlink" title="+"></a>+</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105213076.png" alt="image-20220818105213076"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818111819810.png" alt="image-20220818111819810"></p>
 <h2 id="Small-Int-1"><a href="#Small-Int-1" class="headerlink" title="Small Int"></a>Small Int</h2><p>如果是会被频繁使用的small int的话，则不再重新申请内存</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="built_in">int</span>(<span class="number">10.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br></pre></td></tr></table></figure>
-
 <p>output:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2136571865680</span><br><span class="line">2136571865680</span><br></pre></td></tr></table></figure>
-
-
-
 <p>small int 的范围[-5, 256]</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818144334419.png" alt="image-20220818144334419"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818144452626.png" alt="image-20220818144452626"></p>
 <p>如果不是small int的话</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10000</span></span><br><span class="line">b = <span class="built_in">int</span>(<span class="number">10000.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br></pre></td></tr></table></figure>
-
 <p>output:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1775767656144</span><br><span class="line">1775764920624</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <p>为什么要有对象池</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818111915501.png" alt="image-20220818111915501"></p>
 <p>修改python源码</p>
@@ -1448,87 +923,33 @@
 <h1 id="keyword"><a href="#keyword" class="headerlink" title="keyword"></a>keyword</h1><h2 id="del-1"><a href="#del-1" class="headerlink" title="del"></a>del</h2><p>并不是直接释放内存！！！</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912111239395.png" alt="image-20220912111239395"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">lst1 = lst</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> lst</span><br><span class="line"><span class="built_in">print</span> lst1</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="nolocal"><a href="#nolocal" class="headerlink" title="nolocal"></a>nolocal</h2><p>非局部声明变量指代的已有标识符是最近外面函数的已声明变量，但是不包括全局变量。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>():</span></span><br><span class="line">    count = <span class="string">&#x27;a函数里面&#x27;</span>  　　<span class="comment">#如果不事先声明，那么函数b中的nonlocal就会报错</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">b</span>():</span></span><br><span class="line">        <span class="keyword">nonlocal</span> count</span><br><span class="line">        <span class="built_in">print</span>(count)</span><br><span class="line">        count = <span class="number">2</span></span><br><span class="line">    b()</span><br><span class="line">    <span class="built_in">print</span>(count)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    a()</span><br><span class="line">    <span class="built_in">print</span>(count)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="raise-1"><a href="#raise-1" class="headerlink" title="raise"></a>raise</h2><p>像Java里的throw</p>
 <h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><p>v.出产</p>
 <p>生成器</p>
 <p><code>yield</code> 是一个类似 <code>return</code> 的关键字，只是这个函数返回的是个生成器。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line">a = f()</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">1</span>           <span class="number">0</span> LOAD_CONST               <span class="number">0</span> (&lt;code <span class="built_in">object</span> f at <span class="number">0x000001AE1E313660</span>, file <span class="string">&quot;t.py&quot;</span>, line <span class="number">1</span>&gt;)</span><br><span class="line">              <span class="number">2</span> LOAD_CONST               <span class="number">1</span> (<span class="string">&#x27;f&#x27;</span>)</span><br><span class="line">              <span class="number">4</span> MAKE_FUNCTION            <span class="number">0</span></span><br><span class="line">              <span class="number">6</span> STORE_NAME               <span class="number">0</span> (f)</span><br><span class="line"></span><br><span class="line">  <span class="number">5</span>           <span class="number">8</span> LOAD_NAME                <span class="number">1</span> (<span class="built_in">print</span>)</span><br><span class="line">             <span class="number">10</span> LOAD_NAME                <span class="number">0</span> (f)</span><br><span class="line">             <span class="number">12</span> CALL_FUNCTION            <span class="number">0</span></span><br><span class="line">             <span class="number">14</span> LOAD_METHOD              <span class="number">2</span> (__next__)</span><br><span class="line">             <span class="number">16</span> CALL_METHOD              <span class="number">0</span></span><br><span class="line">             <span class="number">18</span> CALL_FUNCTION            <span class="number">1</span></span><br><span class="line">             <span class="number">20</span> POP_TOP</span><br><span class="line">             <span class="number">22</span> LOAD_CONST               <span class="number">2</span> (<span class="literal">None</span>)</span><br><span class="line">             <span class="number">24</span> RETURN_VALUE</span><br><span class="line"></span><br><span class="line">Disassembly of &lt;code <span class="built_in">object</span> f at <span class="number">0x000001AE1E313660</span>, file <span class="string">&quot;t.py&quot;</span>, line <span class="number">1</span>&gt;:</span><br><span class="line">  <span class="number">2</span>           <span class="number">0</span> LOAD_GLOBAL              <span class="number">0</span> (<span class="built_in">range</span>)</span><br><span class="line">              <span class="number">2</span> LOAD_CONST               <span class="number">1</span> (<span class="number">10</span>)</span><br><span class="line">              <span class="number">4</span> CALL_FUNCTION            <span class="number">1</span></span><br><span class="line">              <span class="number">6</span> GET_ITER</span><br><span class="line">        &gt;&gt;    <span class="number">8</span> FOR_ITER                <span class="number">10</span> (to <span class="number">20</span>)</span><br><span class="line">             <span class="number">10</span> STORE_FAST               <span class="number">0</span> (i)</span><br><span class="line"></span><br><span class="line">  <span class="number">3</span>          <span class="number">12</span> LOAD_FAST                <span class="number">0</span> (i)</span><br><span class="line">             <span class="number">14</span> YIELD_VALUE</span><br><span class="line">             <span class="number">16</span> POP_TOP</span><br><span class="line">             <span class="number">18</span> JUMP_ABSOLUTE            <span class="number">8</span></span><br><span class="line">        &gt;&gt;   <span class="number">20</span> LOAD_CONST               <span class="number">0</span> (<span class="literal">None</span>)</span><br><span class="line">             <span class="number">22</span> RETURN_VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220923150008408.png" alt="image-20220923150008408"></p>
 <p><code>yield</code>说白了，就是作 return 把一个值返回之后，继续那个function的执行</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220923150201530.png" alt="image-20220923150201530"></p>
 <p>我们所谓的挂起，就是说所有局部状态都会被保留下来，包括局部变量的当前绑定、指令指针、内部求值栈和任何异常处理等等。 </p>
 <h1 id="Long"><a href="#Long" class="headerlink" title="Long"></a>Long</h1><p><a target="_blank" rel="noopener" href="https://www.codementor.io/@arpitbhayani/how-python-implements-super-long-integers-12icwon5vk">https://www.codementor.io/@arpitbhayani/how-python-implements-super-long-integers-12icwon5vk</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct _longobject &#123;</span><br><span class="line">	PyObject_VAR_HEAD</span><br><span class="line">	digit ob_digit[<span class="number">1</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914102218285.png" alt="image-20220914102218285"></p>
 <p>fromstring</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914110204455.png" alt="image-20220914110204455"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> long(<span class="string">&quot;bbbbb&quot;</span>, <span class="number">16</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> long(<span class="string">&quot;zzzzz&quot;</span>, <span class="number">36</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BASE = 2**15 = 1&lt;&lt;15</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="built_in">print</span>(math.log(<span class="number">10</span>)/math.log(<span class="number">1</span>&lt;&lt;<span class="number">15</span>)) <span class="comment"># 0.22146187299249084</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">1073741823l</span>) <span class="comment"># 28</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">1073741824l</span>) <span class="comment"># 32</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p><code>scan</code> - <code>str</code> &lt; 5</p>
 <p>最大的35进制数<code>9999</code> = 397224</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="number">2</span>**<span class="number">15</span> <span class="comment"># 32768</span></span><br><span class="line"><span class="built_in">print</span> <span class="number">2</span>**<span class="number">16</span> <span class="comment"># 65536</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914144129797.png" alt="image-20220914144129797"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PyLong_BASE = 2**15 = 32768</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="bit-length"><a href="#bit-length" class="headerlink" title="bit_length"></a>bit_length</h2><p>有效bits的长度</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914141931549.png" alt="image-20220914141931549"></p>
 <p>msd</p>
@@ -1538,13 +959,6 @@
 <p>24+2x2</p>
 <p>​    </p>
 <h2 id="sign"><a href="#sign" class="headerlink" title="sign?"></a>sign?</h2><h2 id="int-and-long"><a href="#int-and-long" class="headerlink" title="int and long"></a>int and long</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">2</span>**<span class="number">30</span>) <span class="comment"># 24</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">type</span>(<span class="number">2</span>**<span class="number">30</span>) <span class="comment"># int</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(<span class="number">2</span>**<span class="number">31</span>) <span class="comment"># 32</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">type</span>(<span class="number">2</span>**<span class="number">31</span>) <span class="comment"># long</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="fromstring"><a href="#fromstring" class="headerlink" title="fromstring"></a>fromstring</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914151701426.png" alt="image-20220914151701426"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914151835010.png" alt="image-20220914151835010"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220914152128108.png" alt="image-20220914152128108"></p>
@@ -1553,7 +967,6 @@
 <p>没有浪费</p>
 <p>然后</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PyLong_BASE	((digit)1 &lt;&lt; PyLong_SHIFT)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PyLong_MASK	((digit)(PyLong_BASE - 1))</span></span><br></pre></td></tr></table></figure>
-
 <p>mask是15位全1</p>
 <p>剩下的一位，继承于<code>c&gt;&gt;=15</code></p>
 <p><strong>也就间接实现了2^15进制</strong> 好好理解！</p>
@@ -1571,14 +984,13 @@
 <h2 id="Create-2"><a href="#Create-2" class="headerlink" title="Create"></a>Create</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901150220813.png" alt="image-20220901150220813"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824095533523.png" alt="image-20220824095533523"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>()</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908100618288.png" alt="image-20220908100618288"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908102148324.png" alt="image-20220908102148324"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908100835287.png" alt="image-20220908100835287"></p>
 <p>就是对应一个结构体———listType</p>
 <p>list独有的一些function都在这（还有list对象创建、维护所需的一些字段）</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220908101021903.png" alt="image-20220908101021903"></p>
-<h2 id="Access"><a href="#Access" class="headerlink" title="Access"></a>Access</h2><p><code>lst </code>和<code>lst[0]</code> 、<code>lst[:]</code>的区别</p>
+<h2 id="Access"><a href="#Access" class="headerlink" title="Access"></a>Access</h2><p><code>lst</code>和<code>lst[0]</code> 、<code>lst[:]</code>的区别</p>
 <p>没啥区别，都是<code>PyObject*</code></p>
 <p>切片其实不会新建intobject</p>
 <h2 id="String-to-List"><a href="#String-to-List" class="headerlink" title="String to List"></a>String to List</h2><p>为什么没有FromString</p>
@@ -1589,9 +1001,6 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824100513252.png" alt="image-20220824100513252"></p>
 <h2 id="Change-value"><a href="#Change-value" class="headerlink" title="Change value"></a>Change value</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822231033293.png" alt="image-20220822231033293"></p>
 <h2 id="del-2"><a href="#del-2" class="headerlink" title="del"></a>del</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> lst[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101903987.png" alt="image-20220912101903987"></p>
 <p>(不需要重新push() 因为这里不是<code>slice</code>操作，而是<code>slice</code>赋值，二者完全不是一个东西, slice赋值是在原list的基础上进行修改)</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220912101840551.png" alt="image-20220912101840551"></p>
@@ -1627,11 +1036,7 @@
 <p>it can add up if several million lists are in use.  </p>
 <h2 id="Negative-index"><a href="#Negative-index" class="headerlink" title="Negative index"></a>Negative index</h2><p>slice中的index调整</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (*start &lt; <span class="number">0</span>) &#123;</span><br><span class="line">       *start += length;</span><br><span class="line">       <span class="keyword">if</span> (*start &lt; <span class="number">0</span>) &#123;</span><br><span class="line">           *start = (step &lt; <span class="number">0</span>) ? -<span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-
 <p>-1</p>
 <p>-1+4 = 3</p>
 <p>刚好就是最末位</p>
@@ -1648,15 +1053,7 @@
 <p>since we have a reserve of free memory already. </p>
 <p>However, this also means that the Python process will have some extra memory overhead.  </p>
 <h2 id="Time-to-create-List-and-Tuple"><a href="#Time-to-create-List-and-Tuple" class="headerlink" title="Time to create List and Tuple"></a>Time to create List and Tuple</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; %timeit l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br><span class="line">95 ns ± 1.87 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; %timeit t = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</span><br><span class="line">12.5 ns ± 0.199 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="Pointer-and-Copy"><a href="#Pointer-and-Copy" class="headerlink" title="Pointer and Copy"></a>Pointer and Copy</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1000</span>, <span class="number">2000</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a[<span class="number">0</span>]))</span><br></pre></td></tr></table></figure>
-
 <p>尝试思考输出的两个值分别是什么</p>
 <ul>
 <li>ListObject的address</li>
@@ -1666,9 +1063,6 @@
 <p><strong>所以! <code>id()</code> 其实是取指针的值</strong></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822234039747.png" alt="image-20220822234039747"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1000</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = a.copy()</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>List中存的确实是指针</p>
 <p>但是注意！</p>
 <p><strong>只是修改了<code>a[0]</code>的pointer</strong></p>
@@ -1676,12 +1070,10 @@
 <p>好好理解上面两句话！！！</p>
 <p>再看：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1000</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = a</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line">[<span class="number">10000</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">[<span class="number">10000</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-
 <p>这里是a和b指向同一个ListObject</p>
 <p>a[0] = 10000 会影响a和b列表</p>
 <p>再看！</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = a.copy()</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line">a[<span class="number">1</span>] = <span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line">[[<span class="number">10000</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">1000</span>, <span class="number">3</span>]</span><br><span class="line">[[<span class="number">10000</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-
 <p><code>copy()</code>是 shallow copy </p>
 <p>只是单纯copy全部pointer，包括List里面的List</p>
 <p>deep copy则是会确实重新构建一个List</p>
@@ -1698,22 +1090,16 @@
 <h2 id="Iteration"><a href="#Iteration" class="headerlink" title="Iteration"></a>Iteration</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823162436558.png" alt="image-20220823162436558"></p>
 <h2 id="Slice"><a href="#Slice" class="headerlink" title="Slice"></a>Slice</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901143330354.png" alt="image-20220901143330354"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">lst[<span class="number">0</span>:<span class="number">2</span>][<span class="number">0</span>] = <span class="number">999</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(lst) <span class="comment"># [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
-
 <p>因为这只是在把<code>t</code>内的指针给替换了</p>
 <p><strong>原指针的指向关系并没有发生改变</strong></p>
 <p>Ps!!!!!</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901153447402.png" alt="image-20220901153447402"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切片赋值</span></span><br><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">lst[<span class="number">0</span>:<span class="number">2</span>] = [<span class="number">99</span>, <span class="number">99</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(lst) <span class="comment"># [99, 99, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">lst[<span class="number">0</span>:<span class="number">2</span>] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(lst) <span class="comment"># [1, 2, 3, 4, 5, 6, 7, 3, 4]</span></span><br></pre></td></tr></table></figure>
-
 <p>解释如下：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220902094347411.png" alt="image-20220902094347411"></p>
 <p>再看：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">lst[<span class="number">0</span>:] = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(lst) <span class="comment"># [5, 6, 7]</span></span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220902094729701.png" alt="image-20220902094729701"></p>
 <p><code>lst[0:]</code>则表示是要把整个<code>lst</code>重新赋值</p>
 <p>也就理所当然的原List的1234全没了</p>
@@ -1725,23 +1111,13 @@
 <p>这里找到List对应的repeat方法</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220924170832107.png" alt="image-20220924170832107"></p>
 <h1 id="Profiling"><a href="#Profiling" class="headerlink" title="Profiling"></a>Profiling</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m cProfile -s cumulative 3.py</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">      12033 function calls in 10.707 seconds</span><br><span class="line"></span><br><span class="line">Ordered by: cumulative time</span><br><span class="line"></span><br><span class="line">ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">     1    0.000    0.000   10.707   10.707 &#123;built-in method builtins.exec&#125;</span><br><span class="line">     1    0.002    0.002   10.707   10.707 3.py:5(&lt;module&gt;)</span><br><span class="line">    11   10.702    0.973   10.702    0.973 &#123;built-in method builtins.input&#125;</span><br><span class="line">  7776    0.001    0.000    0.001    0.000 3.py:21(exist)</span><br><span class="line">     7    0.001    0.000    0.001    0.000 &#123;built-in method builtins.print&#125;</span><br><span class="line">  1626    0.000    0.000    0.000    0.000 &#123;method &#x27;remove&#x27; of &#x27;list&#x27; objects&#125;</span><br><span class="line">  1312    0.000    0.000    0.000    0.000 &#123;method &#x27;append&#x27; of &#x27;list&#x27; objects&#125;</span><br><span class="line">  1296    0.000    0.000    0.000    0.000 &#123;built-in method builtins.len&#125;</span><br><span class="line">     2    0.000    0.000    0.000    0.000 &#123;built-in method time.time&#125;</span><br><span class="line">     1    0.000    0.000    0.000    0.000 &#123;method &#x27;disable&#x27; of &#x27;_lsprof.Profiler&#x27; objects&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <p><code>tottime</code> 函数本身所花费的时间</p>
 <p><code>cumtime</code> 函数本身所花费的时间+其中调用其他函数的时间（调用函数的时候，cur就转到其他函数中了）</p>
 <h2 id="permutation"><a href="#permutation" class="headerlink" title="permutation"></a>permutation</h2><p>自己写的</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 23.917</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">        <span class="keyword">if</span> i == j:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="built_in">print</span>(i,j)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>permutation 库</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 24.786</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> permutations(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1000</span>)), <span class="number">2</span>):</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>稍微快一点，时间应该花在了permutations 的元组创建</p>
 <p>再就是，也意识到，permutations 应该是迭代生成</p>
 <p>不是事先全部存好</p>
@@ -1751,17 +1127,12 @@
 <p>只是每次返回一个<code>intobject</code></p>
 <p>Example</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(lst)):</span><br><span class="line">    lst.pop()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(lst)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">[]</span><br></pre></td></tr></table></figure>
-
 <p><code>range()</code>不会重复执行</p>
 <p>这一行<code>for</code>语句，其实只是在推动<code>iterator</code></p>
 <h2 id="range-和-slice"><a href="#range-和-slice" class="headerlink" title="range 和 slice"></a>range 和 slice</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(lst[<span class="built_in">len</span>(lst)-<span class="number">1</span>:-<span class="number">1</span>:-<span class="number">1</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(lst)-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">[]</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>range能正常输出，但是slice不行</p>
 <p>先看range的实现</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> PyObject *</span></span><br><span class="line"><span class="function"><span class="title">rangeiter_next</span><span class="params">(rangeiterobject *r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (r-&gt;index &lt; r-&gt;len)</span><br><span class="line">        <span class="comment">/* cast to unsigned to avoid possible signed overflow</span></span><br><span class="line"><span class="comment">           in intermediate calculations. */</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">PyLong_FromLong</span>((<span class="keyword">long</span>)(r-&gt;start +</span><br><span class="line">                                      (<span class="keyword">unsigned</span> <span class="keyword">long</span>)(r-&gt;index++) * r-&gt;step));</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>每个值都是新计算出来的，直到stop为止</p>
 <p>所以range都输出出来了</p>
 <h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><h2 id="Compare-1"><a href="#Compare-1" class="headerlink" title="Compare"></a>Compare</h2><p>首先是对比较双方两边的数据类型的确认</p>
@@ -1773,11 +1144,6 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818175355624.png" alt="image-20220818175355624"></p>
 <p>memcmp</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果返回值 &lt; 0，则表示 str1 小于 str2</span><br><span class="line">如果返回值 &gt; 0，则表示 str1 大于 str2</span><br><span class="line">如果返回值 = 0，则表示 str1 等于 str2</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>最后</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818182840543.png" alt="image-20220818182840543"></p>
 <h2 id="Int-to-String"><a href="#Int-to-String" class="headerlink" title="Int to String"></a>Int to String</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818183138878.png" alt="image-20220818183138878"></p>
@@ -1787,20 +1153,15 @@
 <p><strong>join</strong></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823000942352.png" alt="image-20220823000942352"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;&#x27;</span>.join([<span class="string">&quot;hell&quot;</span>, <span class="string">&quot;o&quot;</span>])</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220823001028210.png" alt="image-20220823001028210"></p>
 <h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220913010547399.png" alt="image-20220913010547399"></p>
 <p>取实际值做hash</p>
 <p>所以即使对象的id不一样</p>
 <p>但他们hash 的结果是一样的</p>
 <h2 id="interesting"><a href="#interesting" class="headerlink" title="interesting"></a>interesting</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;111&quot;</span></span><br><span class="line">b = <span class="string">&quot;11&quot;</span>+<span class="string">&quot;1&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br></pre></td></tr></table></figure>
-
 <p>这是Python编译时的优化，常量直接计算出来</p>
 <p>再看：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;111&quot;</span></span><br><span class="line">t = <span class="string">&quot;1&quot;</span></span><br><span class="line">b = <span class="string">&quot;11&quot;</span> + t</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a)) <span class="comment"># 2317899936048</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b)) <span class="comment"># 2317899869040</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>”+“ 的原理（其实也是优化的结果）</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220901115713035.png" alt="image-20220901115713035"></p>
 <h2 id="intern-1"><a href="#intern-1" class="headerlink" title="intern"></a>intern</h2><p>是在<code>compile.c</code>中生产字节码文件时完成的</p>
@@ -1825,15 +1186,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821223435366.png" alt="image-20220821223435366"></p>
 <p>例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">123</span></span><br><span class="line">a = <span class="built_in">str</span>(n)</span><br><span class="line">b = <span class="built_in">str</span>(n)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="number">2321637949768</span></span><br><span class="line"><span class="number">2321639465176</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="string">&quot;123&quot;</span></span><br><span class="line">a = <span class="built_in">str</span>(n)</span><br><span class="line">b = <span class="built_in">str</span>(n)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="number">2344578105672</span></span><br><span class="line"><span class="number">2344578105672</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>为什么！？</p>
 <p>fromString</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821211446609.png" alt="image-20220821211446609"></p>
@@ -1845,15 +1198,6 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220821213408548.png" alt="image-20220821213408548"></p>
 <p>concat 实现</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">memcpy(PyBytes_AS_STRING(*pv) + oldsize, wb.buf, wb.<span class="built_in">len</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="Short-strings"><a href="#Short-strings" class="headerlink" title="Short strings"></a>Short strings</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220822235232971.png" alt="image-20220822235232971"></p>
 <p>长度为1的字符串会有share处理</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818174310557.png" alt="image-20220818174310557"></p>
@@ -1862,28 +1206,13 @@
 <p>do-while on left-end  and right-ebd</p>
 <p>then return a string object</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909143031828.png" alt="image-20220909143031828"></p>
-<p>The given specified <code>str </code>as separator</p>
+<p>The given specified <code>str</code>as separator</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220909143752109.png" alt="image-20220909143752109"></p>
 <h2 id="split"><a href="#split" class="headerlink" title="split"></a>split</h2><h3 id="Byte-1"><a href="#Byte-1" class="headerlink" title="Byte"></a>Byte</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">a = <span class="string">&#x27;&#x27;</span>.split()</span><br><span class="line">b = []</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(a) <span class="comment"># 160</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(b) <span class="comment"># 64</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">a = <span class="string">&#x27;&#x27;</span>.split()</span><br><span class="line">b = [<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(a) <span class="comment"># 160</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(b) <span class="comment"># 72</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">a = <span class="string">&#x27;&#x27;</span>.split()</span><br><span class="line">b = [<span class="number">0</span>]*<span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(a) <span class="comment"># 160</span></span><br><span class="line"><span class="built_in">print</span> sys.getsizeof(b) <span class="comment"># 160</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="parameter"><a href="#parameter" class="headerlink" title="parameter"></a>parameter</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello     world&#x27;</span>.split()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;hello&#x27;, &#x27;world&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello     world&#x27;</span>.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> a</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;hello&#x27;, &#x27;&#x27;, &#x27;&#x27;, &#x27;&#x27;, &#x27;&#x27;, &#x27;world&#x27;]</span></span><br></pre></td></tr></table></figure>
-
 <p>为什么！？？</p>
 <p>默认split空格whitespace</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220910221846345.png" alt="image-20220910221846345"></p>
@@ -1895,21 +1224,9 @@
 <h2 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220824173739289.png" alt="image-20220824173739289"></p>
 <h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830133520638.png" alt="image-20220830133520638"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PySet_MINSIZE = 8</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="add"><a href="#add" class="headerlink" title="add()"></a>add()</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830133743812.png" alt="image-20220830133743812"></p>
 <h2 id="compare-1"><a href="#compare-1" class="headerlink" title="compare++"></a>compare++</h2><p>!!?</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="built_in">set</span>((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>))</span><br><span class="line">s2 = <span class="built_in">set</span>((<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(s1 &gt; s2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830153650050.png" alt="image-20220830153650050"></p>
 <h2 id="Create-3"><a href="#Create-3" class="headerlink" title="Create"></a>Create</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830140033271.png" alt="image-20220830140033271"></p>
 <p>也就是说，可迭代的对象都可以放进来生成Set</p>
@@ -1932,7 +1249,7 @@
 <h2 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830135118279.png" alt="image-20220830135118279"></p>
 <h2 id="Print-Set"><a href="#Print-Set" class="headerlink" title="Print Set"></a>Print Set</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830135358956.png" alt="image-20220830135358956"></p>
 <p>根据迭代的顺序</p>
-<p><code>table[i] </code>从左往右迭代，但它是无序的噢</p>
+<p><code>table[i]</code>从左往右迭代，但它是无序的噢</p>
 <h2 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h2><p>如果没有指定key的话，则是随机删除一个</p>
 <p>你懂的</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220830135713258.png" alt="image-20220830135713258"></p>
@@ -1948,17 +1265,10 @@
 <p>Python2:</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220818105457749.png" alt="image-20220818105457749"></p>
 <h2 id="consts-的优化"><a href="#consts-的优化" class="headerlink" title="consts 的优化"></a>consts 的优化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <p>python2</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1           0 LOAD_CONST               0 (999)</span><br><span class="line">            2 STORE_NAME               0 (a)</span><br><span class="line"></span><br><span class="line">2           4 LOAD_CONST               1 (1997)</span><br><span class="line">            6 STORE_NAME               1 (b)</span><br><span class="line"></span><br><span class="line">3           8 LOAD_CONST               2 (&#x27;h&#x27;)</span><br><span class="line">           10 STORE_NAME               2 (d)</span><br><span class="line"></span><br><span class="line">4          12 LOAD_CONST               3 (1000)</span><br><span class="line">           14 STORE_NAME               3 (c)</span><br><span class="line">           16 LOAD_CONST               4 (None)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>python3</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1           0 LOAD_CONST               0 (999)</span><br><span class="line">            2 STORE_NAME               0 (a)</span><br><span class="line"></span><br><span class="line">2           4 LOAD_CONST               5 (1997)</span><br><span class="line">            6 STORE_NAME               1 (b)</span><br><span class="line"></span><br><span class="line">3           8 LOAD_CONST               2 (&#x27;h&#x27;)</span><br><span class="line">           10 STORE_NAME               2 (d)</span><br><span class="line"></span><br><span class="line">4          12 LOAD_CONST               3 (1000)</span><br><span class="line">           14 STORE_NAME               3 (c)</span><br><span class="line">           16 LOAD_CONST               4 (None)</span><br><span class="line">           18 RETURN_VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 
     </div>
 

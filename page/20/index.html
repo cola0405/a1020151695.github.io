@@ -296,7 +296,8 @@
           <h1 id="极值点判定"><a href="#极值点判定" class="headerlink" title="极值点判定"></a>极值点判定</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917095045695.png" alt="image-20210917095045695"></p>
 <h2 id="混xy求极值点"><a href="#混xy求极值点" class="headerlink" title="混xy求极值点"></a>混xy求极值点</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917094431449.png" alt="image-20210917094431449"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917094423583.png" alt="image-20210917094423583"></p>
-<p><font color=red>y与x是有关的，导时相当于复合函数</font></p>
+<font color=red>y与x是有关的，导时相当于复合函数</font>
+
 <p>导为0，求出来的是驻点</p>
 <p>还需进一步确认极值点</p>
 <h2 id="分段函数求极值"><a href="#分段函数求极值" class="headerlink" title="分段函数求极值"></a>分段函数求极值</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210713173935279.png" alt="image-20210713173935279"></p>
@@ -305,7 +306,10 @@
 <p>连续不一定可导</p>
 <p>然后是求极值的证明规范值得学习（绿色划线部分，包括上面<font color=red>f’(x)=0或f(x)不可导的点</font>）</p>
 <p>关于f(x)不可导的点：</p>
-<p><font color=red>如果x0处，左边导数大于0，右边导数小于0则可认为该点为极大值点</font></p>
+<font color=red>如果x0处，左边导数大于0，右边导数小于0则可认为该点为极大值点</font>
+
+
+
 
       
     </div>
@@ -724,12 +728,11 @@
 
       
           <h1 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h1><p>散列表（Hash table，也叫哈希表）</p>
-<h1 id="哈希函数（映射）"><a href="#哈希函数（映射）" class="headerlink" title="哈希函数（映射）"></a>哈希函数（映射）</h1><p><font color=red>根据Key来计算存储位置的计算规则我们称之为哈希函数</font></p>
+<h1 id="哈希函数（映射）"><a href="#哈希函数（映射）" class="headerlink" title="哈希函数（映射）"></a>哈希函数（映射）</h1><font color=red>根据Key来计算存储位置的计算规则我们称之为哈希函数</font>
+
 <p>假如我们有一组数据,某位工程师每年的收入情况</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2017 -- 100000</span><br><span class="line">2018 -- 130000</span><br><span class="line">2019 -- 140000</span><br><span class="line">2020 -- 200000</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 新建一个长度为2020的数组array[]</span><br><span class="line">2. 根据H(x) = x 计算存储位置，将数据放入数组中。</span><br><span class="line">   array[2017] = 100000</span><br><span class="line">   array[2018] = 130000</span><br><span class="line">   array[2019] = 140000</span><br><span class="line">   array[2020] = 200000</span><br><span class="line">3. 查询2019年收入情况时，通过H(x) = x 计算出存储位置，直接取出数据array[2019]</span><br></pre></td></tr></table></figure>
-
 <h2 id="直接定址法"><a href="#直接定址法" class="headerlink" title="直接定址法"></a>直接定址法</h2><p><strong>Hash（Key）= A*Key + B</strong>。<br>优点：简单、均匀<br>缺点：需要事先知道关键字的分布情况(<font color=red>判断其对应关系是否为线性</font>)</p>
 <h2 id="除留余数法"><a href="#除留余数法" class="headerlink" title="除留余数法"></a>除留余数法</h2><p><strong>Hash( key ) = key % p ( p &lt;= m)</strong></p>
 <p>m为地址数</p>
@@ -739,10 +742,14 @@
 <p>若 array[i] 不存在，则插入元素，返回 ”查找失败“</p>
 <p>若 array[i] ≠ key，则进行哈希冲突处理</p>
 <h1 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h1><p>哈希函数算出来的位置已有元素, 即为冲突</p>
-<h1 id="冲突处理"><a href="#冲突处理" class="headerlink" title="冲突处理"></a>冲突处理</h1><h2 id="线性探查法"><a href="#线性探查法" class="headerlink" title="线性探查法"></a>线性探查法</h2><p><font  color=red>产生冲突，依次查看其后的下一个桶，如果发现空位置插入新元素</font></p>
+<h1 id="冲突处理"><a href="#冲突处理" class="headerlink" title="冲突处理"></a>冲突处理</h1><h2 id="线性探查法"><a href="#线性探查法" class="headerlink" title="线性探查法"></a>线性探查法</h2><font  color=red>产生冲突，依次查看其后的下一个桶，如果发现空位置插入新元素</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210712101645062.png" alt="image-20210712101645062"></p>
 <h2 id="平方探测法-二次探测法-【-】"><a href="#平方探测法-二次探测法-【-】" class="headerlink" title="平方探测法(二次探测法)【+】"></a>平方探测法(二次探测法)【+】</h2><p>相对比上面的i+1, 平方探测法为 i+(平方序列)</p>
-<p><font color=red >平方序列: </font></p>
+<font color=red >平方序列: </font>
+
 <p>1, -1, 4, -4, 9, -9</p>
 <p>线性探测容易聚集，二次探测聚集情况较线性探测要好</p>
 <p>散列表长度是某个4k＋3形式的素数时，平方探测法就可以探查到整个散列表空间</p>
@@ -762,7 +769,8 @@
 <p>而不直接依赖于n和m</p>
 <h2 id="装填因子与平均查找长度"><a href="#装填因子与平均查找长度" class="headerlink" title="装填因子与平均查找长度"></a>装填因子与平均查找长度</h2><p>装填因子越大，散列表越满，越容易发生冲突</p>
 <p>装填因子越小，越不容易发生冲突，平均查找长度就越小</p>
-<p><font color=red>散列表不满，容易查找不成功，但是其查找长度就是短了呀</font></p>
+<font color=red>散列表不满，容易查找不成功，但是其查找长度就是短了呀</font>
+
 <p>（array[i] 若不存在则插入并返回”查找失败“）</p>
 <h1 id="散列表的效率"><a href="#散列表的效率" class="headerlink" title="散列表的效率"></a>散列表的效率</h1><h2 id="影响因素"><a href="#影响因素" class="headerlink" title="影响因素"></a>影响因素</h2><p>散列函数、处理冲突的方法、装填因子</p>
 <p>散列表的平均查找长度依赖于散列表的装填因子</p>
@@ -831,11 +839,13 @@
 
       
           <h1 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h1><p>遍历一遍同时对调位置（冒泡排序）</p>
-<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p><font color=red>子序列一路换上去(即冒泡)</font></p>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><font color=red>子序列一路换上去(即冒泡)</font>
+
 <p>两两比较，两两决定相对位置</p>
 <p>最终结果是最小的到首位（或最大的到末尾）</p>
 <p>一趟确定的位置，之后不再参与</p>
-<p><font color=blue>直接插入排序是先挪好位置然后把目标元素插入</font></p>
+<font color=blue>直接插入排序是先挪好位置然后把目标元素插入</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711220546498.png" alt="image-20210711220546498"></p>
 <h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>基于分治法（递归）</p>
 <p>核心思想：</p>
@@ -912,58 +922,67 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h4><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4><h5 id="核心思想-1"><a href="#核心思想-1" class="headerlink" title="核心思想"></a>核心思想</h5><p><font color=red>新建子序列，不断挪位置, 然后最后把目标元素插入正确位置</font></p>
+          <h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h4><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4><h5 id="核心思想-1"><a href="#核心思想-1" class="headerlink" title="核心思想"></a>核心思想</h5><font color=red>新建子序列，不断挪位置, 然后最后把目标元素插入正确位置</font>
+
 <p>Ps :</p>
 <p>这和冒泡排序有所不同,冒泡排序是一路对换位置, 换上去</p>
-<p><font color=red>而直接插入排序是先挪好位置然后把目标元素插入</font></p>
+<font color=red>而直接插入排序是先挪好位置然后把目标元素插入</font>
+
 <p>(当前代码的排序规则是从小到大)</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">straightInsertSort</span><span class="params">(ElemType <span class="built_in">array</span>[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,target,temp;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">array</span>[i]&lt;<span class="built_in">array</span>[i<span class="number">-1</span>])&#123;</span><br><span class="line">            temp=<span class="built_in">array</span>[i];</span><br><span class="line">            <span class="built_in">array</span>[i]=<span class="built_in">array</span>[i<span class="number">-1</span>];        </span><br><span class="line">            <span class="keyword">for</span>(target=i<span class="number">-1</span>;temp&lt;<span class="built_in">array</span>[target<span class="number">-1</span>];target--)&#123;       </span><br><span class="line">                <span class="built_in">array</span>[target]=<span class="built_in">array</span>[target<span class="number">-1</span>];      <span class="comment">// 不断往后挪出空位，直到找到正确位置</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">array</span>[target]=temp;        <span class="comment">// 找到目标位置后，则放入</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927171701536.png" alt="image-20210927171701536"></p>
 <p>对应已经排好序的数列，插入排序的<strong>时间复杂度是O(n)</strong></p>
-<p><font color=red>只比较一次即插入</font></p>
+<font color=red>只比较一次即插入</font>
+
 <h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4><p>相对比上面的边比较边移动，这里是利用二分法先找到合适位置，然后再统一移动</p>
-<p>这样做的话，不需要每一个都进行比较O(x^2^)而是O(nlog<del>2</del>n)</p>
+<p>这样做的话，不需要每一个都进行比较O(x^2^)而是O(nlog~2~n)</p>
 <p>但是这仅仅是比较次数减少，其移动的次数没有减少</p>
 <p>故折半插入排序的<strong>时间复杂度仍为O(n^2^)</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">midInsertSort</span><span class="params">(ElemType <span class="built_in">array</span>[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,target,temp,low,mid,high;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        temp=<span class="built_in">array</span>[i];</span><br><span class="line">        low=<span class="number">0</span>;</span><br><span class="line">        high=i<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(low&lt;high)&#123;        <span class="comment">//i之前的数列已排序，可二分思想</span></span><br><span class="line">            mid=(low+high)/<span class="number">2</span>;       <span class="comment">// 二分法快速找座位（直接插入排序是一个个比较大小地来找）</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">array</span>[mid]&gt;temp)&#123;</span><br><span class="line">                high=mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                low=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(target=i;target&gt;high;target--)&#123;</span><br><span class="line">            <span class="built_in">array</span>[target]=<span class="built_in">array</span>[target<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">array</span>[target]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927171732955.png" alt="image-20210927171732955"></p>
-<p><font color=red>while的条件不可改</font></p>
+<font color=red>while的条件不可改</font>
+
 <p>直接看代码的话，这里的逻辑会把人绕晕</p>
 <p>需要明确一下方向</p>
 <p>先看while循环内部</p>
 <p>①当要插入的元素的值小于mid的值（<font color=red>这里的while没有主动跳出语句，故最后都会收敛于low=high</font>）</p>
 <p>则应该插入到mid的左边，即mid-1处</p>
-<p><font color=red>转换一下思维，相当于把mid右挪，然后把目标元素插入到空出的位置</font></p>
+<font color=red>转换一下思维，相当于把mid右挪，然后把目标元素插入到空出的位置</font>
+
 <p>然后看第二个for循环（<font color=green>用于挪元素</font>）</p>
-<p><font color=blue>结合while内的high=mid-1和 j &gt;=high+1，表示即把原mid给右挪了</font>（这里的+1花点时间理解一下就懂了）</p>
-<p>最后插入目标元素到空出的位置即可</p>
-<p><font color=red>间接实现了插入到mid左边</font></p>
+<font color=blue>结合while内的high=mid-1和 j >=high+1，表示即把原mid给右挪了</font>（这里的+1花点时间理解一下就懂了）
+
+最后插入目标元素到空出的位置即可
+
+<font color=red>间接实现了插入到mid左边</font>
+
 <p>②当要插入的元素的值大于mid的值</p>
 <p>则插入到mid+1处</p>
-<p><font color=blue>结合while内的high不变和 j &gt;=high+1，表示即把原mid+1给右挪了</font>（和上面区分开来）</p>
-<p>然后把目标元素插入到mid+1处</p>
-<p><font color=green>老铁没毛病</font></p>
+<font color=blue>结合while内的high不变和 j >=high+1，表示即把原mid+1给右挪了</font>（和上面区分开来）
+
+然后把目标元素插入到mid+1处
+
+<font color=green>老铁没毛病</font>
+
+
+
 <hr>
 <h4 id="希尔排序（该方法比较抽象，注意看解析）"><a href="#希尔排序（该方法比较抽象，注意看解析）" class="headerlink" title="希尔排序（该方法比较抽象，注意看解析）"></a>希尔排序（该方法比较抽象，注意看解析）</h4><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724102118554.png" alt="image-20210724102118554"></p>
 <p>这是一个分组插入排序的算法</p>
 <p>分组规则：根据步长将不相邻的n个元素构成一个分组</p>
 <p>然后对各个分组进行插入排序，<font color=red>即相对于上面直接插入排序，这里交换位置的规则是</font></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[j+dk] = A[j]; <span class="comment">/*间隔dk进行交换*/</span></span><br></pre></td></tr></table></figure>
-
 <p>而直接插入排序的交换规则是</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[j+<span class="number">1</span>] A[j];</span><br></pre></td></tr></table></figure>
-
-<p>步长的变换规律：o(log<del>2</del>n)</p>
+<p>步长的变换规律：o(log~2~n)</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dk=dk/<span class="number">2</span>  </span><br></pre></td></tr></table></figure>
-
 <p>直到步长为1时</p>
 <p>即为直接插入排序</p>
 <h5 id="不直接进行插入排序的原因"><a href="#不直接进行插入排序的原因" class="headerlink" title="不直接进行插入排序的原因"></a>不直接进行插入排序的原因</h5><p>直接插入排序对于已经排好序的数列时间复杂度是O(n)</p>
 <p>最坏是O(n^2^)</p>
 <p>所以这里采用希尔分组先对数列进行一个大概的排序（<font color=green>可以理解为预处理</font>）</p>
-<p><font color=red>“大概的排序”，即上面说的有步长间隔的插入排序</font></p>
+<font color=red>“大概的排序”，即上面说的有步长间隔的插入排序</font>
+
 <p>使其<strong>基本有序</strong>后，再进行直接插入排序，则可以提高直接插入排序的效率</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210724101606130.png" alt="image-20210724101606130"></p>
 <p>希尔排序的时间复杂度较为复杂</p>

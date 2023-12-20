@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="平均查找长度（ASL） 顺序查找的ASL “最少最多的一半” 这个规律算起来确实效率高 所以在线性表的情况下，就用那个规律 折半查找（二分查找） 没有想当然的先比较“高低中”，而是一直取中，直到low&#x3D;high 有一个细节的地方要注意 1234...    high&#x3D;mid-1;  &#x2F;*需要注意这里的±1，这也是low&#x3D;high的key*&#x2F;...    low&#x3D;mid+1;   注意实操 还有一个">
+  <meta name="description" content="平均查找长度（ASL） 顺序查找的ASL “最少最多的一半” 这个规律算起来确实效率高 所以在线性表的情况下，就用那个规律 折半查找（二分查找） 没有想当然的先比较“高低中”，而是一直取中，直到low&#x3D;high 有一个细节的地方要注意 1234...    high&#x3D;mid-1;  &#x2F;*需要注意这里的±1，这也是low&#x3D;high的key*&#x2F;...    low&#x3D;mid+1;  注意实操  还有一个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-查找">
 <meta property="og:url" content="http://example.com/2021/07/24/%E7%AE%97%E6%B3%95-%E6%9F%A5%E6%89%BE/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="平均查找长度（ASL） 顺序查找的ASL “最少最多的一半” 这个规律算起来确实效率高 所以在线性表的情况下，就用那个规律 折半查找（二分查找） 没有想当然的先比较“高低中”，而是一直取中，直到low&#x3D;high 有一个细节的地方要注意 1234...    high&#x3D;mid-1;  &#x2F;*需要注意这里的±1，这也是low&#x3D;high的key*&#x2F;...    low&#x3D;mid+1;   注意实操 还有一个">
+<meta property="og:description" content="平均查找长度（ASL） 顺序查找的ASL “最少最多的一半” 这个规律算起来确实效率高 所以在线性表的情况下，就用那个规律 折半查找（二分查找） 没有想当然的先比较“高低中”，而是一直取中，直到low&#x3D;high 有一个细节的地方要注意 1234...    high&#x3D;mid-1;  &#x2F;*需要注意这里的±1，这也是low&#x3D;high的key*&#x2F;...    low&#x3D;mid+1;  注意实操  还有一个">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211007213311438.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211007212043155.png">
@@ -248,31 +248,38 @@
 <p>没有想当然的先比较“高低中”，而是一直取中，<font color=blue>直到low=high</font></p>
 <p>有一个细节的地方要注意</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">    high=mid<span class="number">-1</span>;  <span class="comment">/*需要注意这里的±1，这也是low=high的key*/</span></span><br><span class="line">...</span><br><span class="line">    low=mid+<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726145929418.png" alt="image-20210726145929418"></p>
-<p><font color=red>注意实操</font></p>
-<p><font color=red>还有一个细节要注意</font></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid=(low+high)/<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<font color=red>注意实操</font>
 
+<font color=red>还有一个细节要注意</font>
+
+
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid=(low+high)/<span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>c语言默认是截断</p>
 <p>但是下面的判定树是分成向下取整和向上取整两种</p>
 <hr>
-<h2 id="折半查找的次数"><a href="#折半查找的次数" class="headerlink" title="折半查找的次数"></a>折半查找的次数</h2><p>$$x=log_{2}n +1$$</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726145621991.png" alt="image-20210726145621991"></p>
-<p><font color=blue>建议实操理解二分查找</font></p>
+<h2 id="折半查找的次数"><a href="#折半查找的次数" class="headerlink" title="折半查找的次数"></a>折半查找的次数</h2><script type="math/tex; mode=display">x=log_{2}n +1</script><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726145621991.png" alt="image-20210726145621991"></p>
+<font color=blue>建议实操理解二分查找</font>
+
 <p>“1“ 是 low==high 时的比较</p>
 <hr>
 <p>易错题</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726142900110.png" alt="image-20210726142900110"></p>
-<p><font color=green>rnm，换我代码来怎么不能实现了，退钱！！！</font></p>
+<font color=green>rnm，换我代码来怎么不能实现了，退钱！！！</font>
+
+
+
 <hr>
-<h2 id="折半查找与二叉树"><a href="#折半查找与二叉树" class="headerlink" title="折半查找与二叉树"></a>折半查找与二叉树</h2><p><font color=red>判定结果相当于平衡二叉树</font></p>
+<h2 id="折半查找与二叉树"><a href="#折半查找与二叉树" class="headerlink" title="折半查找与二叉树"></a>折半查找与二叉树</h2><font color=red>判定结果相当于平衡二叉树</font>
+
 <p>平衡二叉树：任一结点左右子树深度之差不超过1</p>
 <p>原因：A[1…11]</p>
 <p>第一个找的元素(1+11)/2=6，<font color=blue>算法的“相加除以2”，使得左右均衡，即深度之差不超过1</font></p>
 <p>相关例题：</p>
 <h2 id="折半查找的ASL"><a href="#折半查找的ASL" class="headerlink" title="折半查找的ASL"></a>折半查找的ASL</h2><p>折半查找判定树</p>
-<p><font color=red>因为二分查找是在有序的情况下进行，所以不能直接对源数列进行二分查找</font></p>
+<font color=red>因为二分查找是在有序的情况下进行，所以不能直接对源数列进行二分查找</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211007212100260.png" alt="image-20211007212100260"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211007212930433.png" alt="image-20211007212930433"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211010213314623.png" alt="image-20211010213314623"></p>
@@ -287,7 +294,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211010113649081.png" alt="image-20211010113649081"></p>
 <p>分好块，找出各块最大关键字</p>
 <p>即可建立索引表</p>
-<h1 id="分块查找ASL"><a href="#分块查找ASL" class="headerlink" title="分块查找ASL"></a>分块查找ASL</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211010152117695.png"></p>
+<h1 id="分块查找ASL"><a href="#分块查找ASL" class="headerlink" title="分块查找ASL"></a>分块查找ASL</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211010152117695.png" alt=""></p>
 
     </div>
 

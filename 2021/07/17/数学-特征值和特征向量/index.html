@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="定义 A为方阵，A和α同阶 ( nxn的矩阵 ) * ( nx1的矩阵 )，结果为nx1的矩阵，即Aα为n维列向量 几何意义这两条直线对应的就是特征向量的方向，缩放比例就是特征值 n个线性无关的特征向量即不在同一方向上的向量 性质 求特征值和特征向量核心是求行列式的值 化三角、余子式展开 例题1：    取 (n-r) 个自由变量 特征向量是特解，特解不唯一，求出基础解系后，kα都是特解 基础解系">
+  <meta name="description" content="定义 A为方阵，A和α同阶  ( nxn的矩阵 ) * ( nx1的矩阵 )，结果为nx1的矩阵，即Aα为n维列向量 几何意义这两条直线对应的就是特征向量的方向，缩放比例就是特征值 n个线性无关的特征向量即不在同一方向上的向量      性质 求特征值和特征向量核心是求行列式的值  化三角、余子式展开 例题1：    取 (n-r) 个自由变量  特征向量是特解，特解不唯一，求出基础解系后，kα都">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学-特征值和特征向量">
 <meta property="og:url" content="http://example.com/2021/07/17/%E6%95%B0%E5%AD%A6-%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="定义 A为方阵，A和α同阶 ( nxn的矩阵 ) * ( nx1的矩阵 )，结果为nx1的矩阵，即Aα为n维列向量 几何意义这两条直线对应的就是特征向量的方向，缩放比例就是特征值 n个线性无关的特征向量即不在同一方向上的向量 性质 求特征值和特征向量核心是求行列式的值 化三角、余子式展开 例题1：    取 (n-r) 个自由变量 特征向量是特解，特解不唯一，求出基础解系后，kα都是特解 基础解系">
+<meta property="og:description" content="定义 A为方阵，A和α同阶  ( nxn的矩阵 ) * ( nx1的矩阵 )，结果为nx1的矩阵，即Aα为n维列向量 几何意义这两条直线对应的就是特征向量的方向，缩放比例就是特征值 n个线性无关的特征向量即不在同一方向上的向量      性质 求特征值和特征向量核心是求行列式的值  化三角、余子式展开 例题1：    取 (n-r) 个自由变量  特征向量是特解，特解不唯一，求出基础解系后，kα都">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920233505615.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809165501550.png">
@@ -239,27 +239,44 @@
 
       
         <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920233505615.png" alt="image-20210920233505615"></p>
-<p><font color=red>A为方阵，A和α同阶</font></p>
+<font color=red>A为方阵，A和α同阶</font>
+
 <p>( nxn的矩阵 ) * ( nx1的矩阵 )，结果为nx1的矩阵<font color=red>，即Aα为n维列向量</font></p>
 <h2 id="几何意义"><a href="#几何意义" class="headerlink" title="几何意义"></a>几何意义</h2><p>这两条直线对应的就是<strong>特征向量的方向</strong>，缩放比例就是<strong>特征值</strong></p>
-<p><font color=red>n个线性无关的特征向量即不在同一方向上的向量</font></p>
+<font color=red>n个线性无关的特征向量即不在同一方向上的向量</font>
+
+
+
+
+
 <h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809165501550.png" alt="image-20210809165501550"></p>
-<h2 id="求特征值和特征向量"><a href="#求特征值和特征向量" class="headerlink" title="求特征值和特征向量"></a>求特征值和特征向量</h2><p><font color=red>核心是求行列式的值</font></p>
+<h2 id="求特征值和特征向量"><a href="#求特征值和特征向量" class="headerlink" title="求特征值和特征向量"></a>求特征值和特征向量</h2><font color=red>核心是求行列式的值</font>
+
 <p>化三角、余子式展开</p>
 <p>例题1：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210730164808736.png" alt="image-20210730164808736"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210730171724260.png" alt="image-20210730171724260"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210928215647870.png" alt="image-20210928215647870"></p>
-<p><font color=red>取 (n-r) 个自由变量</font></p>
-<p><font color=red>特征向量是特解，特解不唯一，求出基础解系后，kα都是特解</font></p>
-<p><font color=red>基础解系要线性无关</font></p>
+<font color=red>取 (n-r) 个自由变量</font>
+
+<font color=red>特征向量是特解，特解不唯一，求出基础解系后，kα都是特解</font>
+
+<font color=red>基础解系要线性无关</font>
+
+
+
+
+
 <h3 id="自由变量"><a href="#自由变量" class="headerlink" title="自由变量"></a>自由变量</h3><h4 id="自由变量的选取"><a href="#自由变量的选取" class="headerlink" title="自由变量的选取"></a>自由变量的选取</h4><p>非零行的首非零元所在列数，对应的就是约束变量，其余变量即为自由变量</p>
 <h4 id="如何确定自由变量"><a href="#如何确定自由变量" class="headerlink" title="如何确定自由变量"></a>如何确定自由变量</h4><p>特解是很多的，随便取都行，只要满足方程组即可，考虑到计算简单，所以很多教材都会取0和1</p>
 <h4 id="确定约束变量"><a href="#确定约束变量" class="headerlink" title="确定约束变量"></a>确定约束变量</h4><p>根据已经定的自由变量，逐行带入(λE-A)x=0的方程组求得</p>
 <p>例题2：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210730170505474.png" alt="image-20210730170505474"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210730171730690.png" alt="image-20210730171730690"></p>
-<p><font color=red>两个自由变量则取 (1,0) (0,1) , 剩余的再根据行阶梯的某些行来推</font></p>
+<font color=red>两个自由变量则取 (1,0) (0,1) , 剩余的再根据行阶梯的某些行来推</font>
+
+
+
 <h3 id="上下三角与特征值"><a href="#上下三角与特征值" class="headerlink" title="上下三角与特征值"></a>上下三角与特征值</h3><p>上下三角的特征值可以直接看出来</p>
 <p>对角线元素即为特征值</p>
 <hr>
@@ -277,7 +294,8 @@
 <p>同一个特征值的特征向量，随便折腾都还是特征向量<font color=blue>（但是要注意最后结果要非0）</font></p>
 <hr>
 <p>5.<img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210730164548082.png" alt="image-20210730164548082"></p>
-<h2 id="特征值性质"><a href="#特征值性质" class="headerlink" title="特征值性质"></a>特征值性质</h2><p><font color=red>直到A的特征值，其一系列的特征值都知道</font></p>
+<h2 id="特征值性质"><a href="#特征值性质" class="headerlink" title="特征值性质"></a>特征值性质</h2><font color=red>直到A的特征值，其一系列的特征值都知道</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210717201911437.png" alt="image-20210717201911437"></p>
 <p>例子</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210717202315298.png" alt="image-20210717202315298"></p>

@@ -238,16 +238,10 @@
           <p>px is for the general unit</p>
 <p>Note !</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">devices only know px</span><br><span class="line">dp and sp is just use for display the appropriate views on different screen</span><br></pre></td></tr></table></figure>
-
-
-
 <p>dp is usually use for layout</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">density-independent pixels (dip,dp)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">px = dp * (dpi / 160)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">dip2px</span><span class="params">(context: <span class="type">Context</span>?, dpValue: <span class="type">Float</span>)</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">    <span class="keyword">val</span> scale = context?.resources?.displayMetrics?.density</span><br><span class="line">    <span class="keyword">return</span> (dpValue * scale!! + <span class="number">0.5f</span>).toInt()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Note </p>
 <p>You can pass context as a parameter</p>
 <blockquote>
@@ -255,11 +249,6 @@
 </blockquote>
 <p>sp is usually use for text size</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scale-independent pixels</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 
       
     </div>
@@ -352,7 +341,6 @@
 <p>If you want to put a image in the center of the whole page</p>
 <p>Do like this </p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:orientation</span>=<span class="string">&quot;vertical&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">&quot;9&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_weight</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span>/&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_gravity</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:src</span>=<span class="string">&quot;@drawable/success_sign&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_weight</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span>/&gt;</span></span><br><span class="line">            </span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>That’s the power of weight</p>
 <p>With weight, the view can be stretched to fill the blank</p>
 <p>Beside this center </p>
@@ -364,9 +352,8 @@
 <p>3.ViewGroup</p>
 <p>Like </p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>&lt;LinearLayout&gt;&lt;/LinearLayout&gt; is allow to add view into it</p>
-<p>&lt;/LinearLayout&gt; is not allow add view into it</p>
+<p>\<LinearLayout>\</LinearLayout> is allow to add view into it</p>
+<p>\&lt;/LinearLayout&gt; is not allow add view into it</p>
 
       
     </div>
@@ -445,22 +432,19 @@
 
       
           <p>Fragment’s feature is reusable</p>
-<p>A fragment is a completed page, and you can use a fragment tag(&lt;fragment/&gt;) to insert it to any Layout</p>
+<p>A fragment is a completed page, and you can use a fragment tag(\<fragment/>) to insert it to any Layout</p>
 <p>The code in fragment activity and normal activity is different</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Yes, fragment also has it&#x27;s activity called &quot;Fragment Activity&quot;</span><br></pre></td></tr></table></figure>
-
 <p>Difference</p>
 <p>1.You can use “applicationContext” directly in normal activity </p>
 <p>But in Fragment Activity, you can’t !</p>
-<p>You need to invoke a method — getContext()</p>
+<p>You need to invoke a method —- getContext()</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kotlin can use &quot;context&quot; directly, but in fact, it invoke the method getContext()</span><br></pre></td></tr></table></figure>
-
 <p>2.You can use “runOnUiThread” directly in normal activity </p>
 <p>But in Fragment Activity,  you can’t !</p>
 <p>You need to get the Activity which is connected to UI Thread</p>
 <p>Then </p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activity?.runOnUiThread &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Conclusion:</p>
 <p>There are some difference, but that’s not a big deal</p>
 <p>Android SDK has solved that problem for us  </p>
@@ -544,10 +528,8 @@
           <p>Bundle can be  use for transport data between Fragment</p>
 <p>Send</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> bundle = Bundle()</span><br><span class="line">bundle.putString(<span class="string">&quot;key1&quot;</span>, <span class="string">&quot;GFG :- Main Activity&quot;</span>)</span><br><span class="line">NavUtil.navController?.navigate(R.id.signStateForStudent,bundle)</span><br><span class="line"><span class="comment">// When you use navigation</span></span><br></pre></td></tr></table></figure>
-
 <p>Get</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> bundle = Intent.getExtras()</span><br><span class="line">bundle.getString(<span class="string">&quot;key1&quot;</span>, <span class="string">&quot;Default&quot;</span>) </span><br><span class="line"><span class="comment">// arg2 will be return when &quot;key1&quot; can&#x27;t be foud in bundle</span></span><br></pre></td></tr></table></figure>
-
 <p>But it can just be transported one time ! !</p>
 <p>When you back to the fragment, the bundle will gone </p>
 <p>Bundle just can be use for the “one-time” issue</p>
@@ -634,19 +616,16 @@
       
           <p>Display a circle in dialog when loading something</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">configLoadingProgress</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> loadingDialogBuilder = AlertDialog.Builder(<span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">val</span> loadingProgress = ProgressBar(<span class="keyword">this</span>)</span><br><span class="line">    loadingDialogBuilder.setView(loadingProgress)</span><br><span class="line">    loadingDialogBuilder.setTitle(<span class="string">&quot;正在登陆...&quot;</span>)</span><br><span class="line">    runOnUiThread &#123;</span><br><span class="line">        loadingDialog = loadingDialogBuilder.create()</span><br><span class="line">        loadingDialog!!.show()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>The circle is just a ProgressBar widget in dialog</p>
 <p>Note !</p>
 <p>1.Create and show a dialog should be done by UI Thread</p>
 <p>2.There are some callback functions about the dialog, you can check the document</p>
 <p>If you want to close the dialog by program </p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loadingDialog?.cancel()</span><br></pre></td></tr></table></figure>
-
 <p>Note !</p>
 <p>1.You should invoke cancel() from dialog but not dialogBuilder</p>
 <p>2.dialog = dialogBuilder.create()</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> loadingDialogBuilder = AlertDialog.Builder(<span class="keyword">this</span>)</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -791,10 +770,8 @@
           <p>Example:</p>
 <p>Send data</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">toStudentPage</span><span class="params">(loginInfo: <span class="type">JSONObject</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> intent = Intent(<span class="keyword">this</span>, StudentActivity::<span class="keyword">class</span>.java).apply &#123;&#125;</span><br><span class="line">    intent.putExtra(<span class="string">&quot;studentId&quot;</span>, loginInfo[<span class="string">&quot;studentId&quot;</span>].toString())</span><br><span class="line">    intent.putExtra(<span class="string">&quot;studentName&quot;</span>, loginInfo[<span class="string">&quot;studentName&quot;</span>].toString())</span><br><span class="line">    intent.putExtra(<span class="string">&quot;classId&quot;</span>, loginInfo[<span class="string">&quot;classId&quot;</span>].toString())</span><br><span class="line">    intent.putExtra(<span class="string">&quot;className&quot;</span>, loginInfo[<span class="string">&quot;className&quot;</span>].toString())</span><br><span class="line">    startActivity(intent)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Get data</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> studentId = intent.getStringExtra(<span class="string">&quot;studentId&quot;</span>)</span><br><span class="line"><span class="keyword">val</span> studentName = intent.getStringExtra(<span class="string">&quot;studentName&quot;</span>)</span><br><span class="line"><span class="keyword">val</span> classId = intent.getStringExtra(<span class="string">&quot;classId&quot;</span>)</span><br><span class="line"><span class="keyword">val</span> className = intent.getStringExtra(<span class="string">&quot;className&quot;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>Note:</p>
 <p>Intent is like a build-in object in Kotlin</p>
 
@@ -877,12 +854,10 @@
           <p>1.Usage of “.gitignore “ file</p>
 <p>When you push, you can exclude some files using “.gitignore “ </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*.properties</span><br></pre></td></tr></table></figure>
-
 <p>means exclude all “.properties” file</p>
 <p>You can also exclude a single file, just type it’s whole file name</p>
 <p>Usually, “.gitignore “ file can’t work directly, you need to do this also</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></table></figure>
-
 <p>Then push again</p>
 <hr>
 <p>error</p>
@@ -890,7 +865,6 @@
 <p>OpenSSL SSL_read: Connection was reset, errno 10054</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify &quot;false&quot;</span><br></pre></td></tr></table></figure>
-
 <hr>
 <p>zip 和 git clone 的区别在于是否有.git的隐藏文件</p>
 
@@ -971,61 +945,24 @@
 
       
           <h1 id="gitignore"><a href="#gitignore" class="headerlink" title="gitignore"></a>gitignore</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached 文件夹名</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached 文件名</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h1 id="Push"><a href="#Push" class="headerlink" title="Push"></a>Push</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
 <p>push master branch</p>
 <hr>
 <h1 id="Pull"><a href="#Pull" class="headerlink" title="Pull"></a>Pull</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="pull-指定分支"><a href="#pull-指定分支" class="headerlink" title="pull 指定分支"></a>pull 指定分支</h2><p>切换分支然后pull即可</p>
 <h1 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支和显示其他分支</span></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果已有分支</span></span><br><span class="line">git checkout dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果本地第一次切换到目标分支</span></span><br><span class="line">git checkout -b <span class="built_in">test</span> origin/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="Remote-Address"><a href="#Remote-Address" class="headerlink" title="Remote Address"></a>Remote Address</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote show</span><br></pre></td></tr></table></figure>
-
-
-
 <p>Add remote address</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/fengcangjun/learngit.git</span><br></pre></td></tr></table></figure>
-
-
-
 <p>Delete origin remote address</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
-
-
-
 <p>Reset</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --mixed origin/main</span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="init"><a href="#init" class="headerlink" title="init"></a>init</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;&quot;   (to current branch)</span><br><span class="line">git branch -M main   (switch to main branch)</span><br><span class="line">git remote add orgin main   (origin is a remote address)</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -1106,29 +1043,19 @@
           <p>With Deploy key you can push directly, do not need to input username and password every time</p>
 <p>进入.ssh 目录</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;1020151695@qq.com&quot;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>注意！！！生成的文件默认命名为id_rsa</p>
 <p>本地 git <strong>只会默认读取 id_rsa 文件</strong>，如果自定义文件名需要添加文件指向配置</p>
 <p> Then press “Enter” twice is OK</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E-mail address like an &quot;id&quot;</span><br><span class="line">So that Github repository know who you are</span><br><span class="line">And you don&#x27;t need to input username and password again</span><br></pre></td></tr></table></figure>
-
-
-
 <p>Then it will create a new file named “deploy_key_blog.pub”</p>
 <p>Check it’s content use the command:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more deploy_key_blog.pub</span><br></pre></td></tr></table></figure>
-
 <p>Then copy the content and go to the project in Github</p>
-<p>“Setting”–”Deploy keys”</p>
+<p>“Setting”—“Deploy keys”</p>
 <p>Just do it !</p>
 <p>And SSH key absolutely just support the ssh way</p>
 <p>If you use HTTPS remote address, you need to switch it </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin      // delete origin remote address </span><br><span class="line"></span><br><span class="line">git remote add origin git@github.com:nickchou/gocode.git  // apply new remote address</span><br></pre></td></tr></table></figure>
-
-
-
 
       
     </div>

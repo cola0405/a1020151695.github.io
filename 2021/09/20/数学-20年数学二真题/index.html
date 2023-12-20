@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="选择题定积分的等价无穷小代换不用两两比较 被积函数也可以使用等价无穷小代换   严格意义上来说，这都不是定积分 因为积出来的仍然是一个函数式子 间断点的个数  不是任何极限都需要洛 因为这都不是0&#x2F;0 洛出来反而有错误 定积分  以为指导方法了，反而快，粗心 高阶导数  泰勒公式不能单纯把“-x”带入到“x” 0处的n阶导，n大于等于3，已经暗示了用泰勒展开 偏导数和分段函数偏导也有定义式   导">
+  <meta name="description" content="选择题定积分的等价无穷小代换不用两两比较  被积函数也可以使用等价无穷小代换    严格意义上来说，这都不是定积分 因为积出来的仍然是一个函数式子 间断点的个数  不是任何极限都需要洛  因为这都不是0&#x2F;0 洛出来反而有错误 定积分  以为指导方法了，反而快，粗心      高阶导数  泰勒公式不能单纯把“-x”带入到“x”  0处的n阶导，n大于等于3，已经暗示了用泰勒展开 偏导数和分段函数偏导">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学-20年数学二真题">
 <meta property="og:url" content="http://example.com/2021/09/20/%E6%95%B0%E5%AD%A6-20%E5%B9%B4%E6%95%B0%E5%AD%A6%E4%BA%8C%E7%9C%9F%E9%A2%98/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="选择题定积分的等价无穷小代换不用两两比较 被积函数也可以使用等价无穷小代换   严格意义上来说，这都不是定积分 因为积出来的仍然是一个函数式子 间断点的个数  不是任何极限都需要洛 因为这都不是0&#x2F;0 洛出来反而有错误 定积分  以为指导方法了，反而快，粗心 高阶导数  泰勒公式不能单纯把“-x”带入到“x” 0处的n阶导，n大于等于3，已经暗示了用泰勒展开 偏导数和分段函数偏导也有定义式   导">
+<meta property="og:description" content="选择题定积分的等价无穷小代换不用两两比较  被积函数也可以使用等价无穷小代换    严格意义上来说，这都不是定积分 因为积出来的仍然是一个函数式子 间断点的个数  不是任何极限都需要洛  因为这都不是0&#x2F;0 洛出来反而有错误 定积分  以为指导方法了，反而快，粗心      高阶导数  泰勒公式不能单纯把“-x”带入到“x”  0处的n阶导，n大于等于3，已经暗示了用泰勒展开 偏导数和分段函数偏导">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920200722792.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920201612141.png">
@@ -300,48 +300,60 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="定积分的等价无穷小代换"><a href="#定积分的等价无穷小代换" class="headerlink" title="定积分的等价无穷小代换"></a>定积分的等价无穷小代换</h2><p><font color=red>不用两两比较</font></p>
-<p><font color=red>被积函数也可以使用等价无穷小代换</font></p>
+        <h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="定积分的等价无穷小代换"><a href="#定积分的等价无穷小代换" class="headerlink" title="定积分的等价无穷小代换"></a>定积分的等价无穷小代换</h2><font color=red>不用两两比较</font>
+
+<font color=red>被积函数也可以使用等价无穷小代换</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920200722792.png" alt="image-20210920200722792"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920201612141.png" alt="image-20210920201612141"></p>
 <p>严格意义上来说，这都不是定积分</p>
 <p>因为积出来的仍然是一个函数式子</p>
 <h2 id="间断点的个数"><a href="#间断点的个数" class="headerlink" title="间断点的个数"></a>间断点的个数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920200749952.png" alt="image-20210920200749952"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920203015904.png" alt="image-20210920203015904"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920203024284.png" alt="image-20210920203024284"></p>
-<p><font color=red>不是任何极限都需要洛</font></p>
+<font color=red>不是任何极限都需要洛</font>
+
 <p>因为这都不是0/0</p>
 <p>洛出来反而有错误</p>
 <h2 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920200802220.png" alt="image-20210920200802220"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920203310407.png" alt="image-20210920203310407"></p>
-<p><font color=red>以为指导方法了，反而快，粗心</font></p>
+<font color=red>以为指导方法了，反而快，粗心</font>
+
+
+
+
+
 <h2 id="高阶导数"><a href="#高阶导数" class="headerlink" title="高阶导数"></a>高阶导数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920200817735.png" alt="image-20210920200817735"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920203412558.png" alt="image-20210920203412558"></p>
-<p><font color=red>泰勒公式不能单纯把“-x”带入到“x”</font></p>
+<font color=red>泰勒公式不能单纯把“-x”带入到“x”</font>
+
 <p>0处的n阶导，n大于等于3，已经暗示了用泰勒展开</p>
-<h2 id="偏导数和分段函数"><a href="#偏导数和分段函数" class="headerlink" title="偏导数和分段函数"></a>偏导数和分段函数</h2><p><font color=red>偏导也有定义式</font></p>
+<h2 id="偏导数和分段函数"><a href="#偏导数和分段函数" class="headerlink" title="偏导数和分段函数"></a>偏导数和分段函数</h2><font color=red>偏导也有定义式</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920200832753.png" alt="image-20210920200832753"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920205143868.png" alt="image-20210920205143868"></p>
 <h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920200900628.png" alt="image-20210920200900628"></p>
 <p>答案:B</p>
 <p>暴力</p>
-<p>$$f(x)=e^{2x}$$</p>
-<h2 id="A-X-0的通解【-】"><a href="#A-X-0的通解【-】" class="headerlink" title="A*X=0的通解【+++++】"></a>A*X=0的通解【+++++】</h2><p><font color=red>线性无关的理解</font></p>
+<script type="math/tex; mode=display">f(x)=e^{2x}</script><h2 id="A-X-0的通解【-】"><a href="#A-X-0的通解【-】" class="headerlink" title="A*X=0的通解【+++++】"></a>A*X=0的通解【+++++】</h2><font color=red>线性无关的理解</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920200918962.png" alt="image-20210920200918962"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920205521121.png" alt="image-20210920205521121"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921002426183.png" alt="image-20210921002426183"></p>
-<p>|A|=0故$$A^*A=0$$</p>
-<p>又$$A^*X=0$$</p>
-<p>则A的列向量为$$A^*$$的解</p>
-<p>也说A的3个线性无关的列向量为$$A^*$$的解</p>
-<h2 id="相似矩阵【-】"><a href="#相似矩阵【-】" class="headerlink" title="相似矩阵【+++++】"></a>相似矩阵【+++++】</h2><p><font color=red>特征值和特征向量的定义</font></p>
+<p>|A|=0故<script type="math/tex">A^*A=0</script></p>
+<p>又<script type="math/tex">A^*X=0</script></p>
+<p>则A的列向量为<script type="math/tex">A^*</script>的解</p>
+<p>也说A的3个线性无关的列向量为<script type="math/tex">A^*</script>的解</p>
+<h2 id="相似矩阵【-】"><a href="#相似矩阵【-】" class="headerlink" title="相似矩阵【+++++】"></a>相似矩阵【+++++】</h2><font color=red>特征值和特征向量的定义</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920200934345.png" alt="image-20210920200934345"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920205531286.png" alt="image-20210920205531286"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920233505615.png" alt="image-20210920233505615"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210805173951531.png" alt="image-20210805173951531"></p>
-<p>$$A(α_1,α_2,α_3)$$ 是矩阵乘法运算，α都是列向量</p>
-<p>看$$α_1$$那一列</p>
-<p>A的每一行都会乘$$α_1$$</p>
-<p>n行组成了$$λ_1α_1$$列向量</p>
+<script type="math/tex; mode=display">A(α_1,α_2,α_3)$$ 是矩阵乘法运算，α都是列向量
+
+看$$α_1$$那一列
+
+A的每一行都会乘$$α_1</script><p>n行组成了<script type="math/tex">λ_1α_1</script>列向量</p>
 <p>同理就得到了</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210920235511754.png" alt="image-20210920235511754"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210921000801251.png" alt="image-20210921000801251"></p>
@@ -376,14 +388,16 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210926093246936.png" alt="image-20210926093246936"></p>
 <p>我当时自己做的（做错了）</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210926093412778.png" alt="image-20210926093412778"></p>
-<p><font color=blue>定义式都没用，你就想拿这10分？</font></p>
+<font color=blue>定义式都没用，你就想拿这10分？</font>
+
 <p>我自己重新整理的题解：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210926150524968.png" alt="image-20210926150524968"></p>
 <hr>
 <h2 id="隐函数的极值"><a href="#隐函数的极值" class="headerlink" title="隐函数的极值"></a>隐函数的极值</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210926093914494.png" alt="image-20210926093914494"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210926094050057.png" alt="image-20210926094050057"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210926094058583.png" alt="image-20210926094058583"></p>
 <p> <img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210705162324894.png" alt="image-20210705162324894"></p>
-<h2 id="旋转体的体积"><a href="#旋转体的体积" class="headerlink" title="旋转体的体积"></a>旋转体的体积</h2><p><font color=red>求函数式也是这题的重点</font></p>
+<h2 id="旋转体的体积"><a href="#旋转体的体积" class="headerlink" title="旋转体的体积"></a>旋转体的体积</h2><font color=red>求函数式也是这题的重点</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210926162643659.png" alt="image-20210926162643659"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706154421591.png" alt="image-20210706154421591"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706155034325.png" alt="image-20210706155034325"></p>
@@ -403,7 +417,8 @@
 <p>有时候找解题思路的时候甚至可以这样</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210926163416074.png" alt="image-20210926163416074"></p>
 <hr>
-<h2 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h2><p><font color=red>“原式解定积分”</font></p>
+<h2 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h2><font color=red>“原式解定积分”</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163317329.png" alt="image-20210706163317329"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163630234.png" alt="image-20210706163630234"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163310523.png" alt="image-20210706163310523"></p>
@@ -415,7 +430,7 @@
 <p>积dr时，θ相当于常数可以先移到外面</p>
 <h2 id="中值定理证明题"><a href="#中值定理证明题" class="headerlink" title="中值定理证明题"></a>中值定理证明题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927104035920.png" alt="image-20210927104035920"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927104055027.png" alt="image-20210927104055027"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927104104677.png" alt="image-20210927104104677"></p>
-<p>就没见过积$$e^{t^2}$$的</p>
+<p>就没见过积<script type="math/tex">e^{t^2}</script>的</p>
 <p>说明题目有别的路走</p>
 <p>换元、构造</p>
 <p>（2）与（1）不一定有联系</p>
@@ -426,11 +441,13 @@
 <p>就试出来了</p>
 <p>并不可怕！</p>
 <hr>
-<h2 id="导数大题"><a href="#导数大题" class="headerlink" title="导数大题"></a>导数大题</h2><p><font color=red>二阶线性微分方程通解</font></p>
+<h2 id="导数大题"><a href="#导数大题" class="headerlink" title="导数大题"></a>导数大题</h2><font color=red>二阶线性微分方程通解</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927112613306.png" alt="image-20210927112613306"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927112551334.png" alt="image-20210927112551334"></p>
 <p>①涉及到二阶导的题目一般都会考到</p>
-<p><font color=red>设p=y’</font></p>
+<font color=red>设p=y'</font>
+
 <p>②答案解析中的那种切线方程的形式很便利</p>
 <p>答案解释：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210714230508553.png" alt="image-20210714230508553"></p>
@@ -444,12 +461,12 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210929170431286.png" alt="image-20210929170431286"></p>
 <p>第二题难度较大，之后再研究</p>
 <h2 id="证明可逆矩阵及相似矩阵"><a href="#证明可逆矩阵及相似矩阵" class="headerlink" title="证明可逆矩阵及相似矩阵"></a>证明可逆矩阵及相似矩阵</h2><p> <img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210929170546526.png" alt="image-20210929170546526"></p>
-<p><font color=red>反证法</font></p>
+<font color=red>反证法</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210929170854644.png" alt="image-20210929170854644"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210929170921154.png" alt="image-20210929170921154"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210929171300425.png" alt="image-20210929171300425"></p>
-<p><font color=red>相似矩阵，配凑是核心</font></p>
-
+<font color=red>相似矩阵，配凑是核心</font>
     </div>
 
     

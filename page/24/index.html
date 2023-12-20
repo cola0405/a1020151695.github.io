@@ -223,7 +223,6 @@
 
       
           <h4 id="Linux-nodejs-安装"><a href="#Linux-nodejs-安装" class="headerlink" title="Linux nodejs 安装"></a>Linux nodejs 安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nodejs</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install npm</span><br></pre></td></tr></table></figure>
 
       
@@ -290,22 +289,12 @@
 
       
           <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># docker 中下载 mysql</span><br><span class="line">docker pull mysql:5.7</span><br><span class="line"></span><br><span class="line">#启动</span><br><span class="line">sudo docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7</span><br><span class="line"></span><br><span class="line">#进入容器</span><br><span class="line">sudo docker exec -it mysql bash</span><br><span class="line"></span><br><span class="line">#登录mysql</span><br><span class="line">mysql -u root -p</span><br><span class="line"></span><br><span class="line"># 外部访问</span><br><span class="line">grant all privileges on *.* to root@&#x27;%&#x27; identified by &quot;password&quot;;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>传输sql文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp &lt;path&gt; container_name:path</span><br></pre></td></tr></table></figure>
-
-
-
 <p>执行sql文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source xxx.sql</span><br></pre></td></tr></table></figure>
-
-
-
 <p>修改密码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET PASSWORD FOR &#x27;root&#x27;@&#x27;%&#x27; = &#x27;1a1a1a1A&#x27;;</span><br></pre></td></tr></table></figure>
-
 <p>Ps</p>
 <p>如果是root@localhost的话，只是修改本地访问mysql的密码</p>
 <p>而不能修改外部访问的密码</p>
@@ -375,14 +364,8 @@
       
           <h4 id="云服务器文件传输"><a href="#云服务器文件传输" class="headerlink" title="云服务器文件传输"></a>云服务器文件传输</h4><p>Windows到Linux</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp D:\Resource\hello.txt root@192.168.0.1:/home/admin</span><br></pre></td></tr></table></figure>
-
 <p>Linux到Windows</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp root@:/home/admin/hello.txt D:\resource\</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h4 id="云服务器简陋部署vue"><a href="#云服务器简陋部署vue" class="headerlink" title="云服务器简陋部署vue"></a>云服务器简陋部署vue</h4><p>如果想要最快部署vue 的话</p>
 <p>利用git把项目部署到服务器是最快的</p>
 
@@ -450,17 +433,11 @@
 
       
           <h4 id="Encoded-password-does-not-look-like-BCrypt"><a href="#Encoded-password-does-not-look-like-BCrypt" class="headerlink" title="Encoded password does not look like BCrypt"></a>Encoded password does not look like BCrypt</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">PasswordEncoder passwordEncoder;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception </span>&#123;       auth.inMemoryAuthentication().withUser(<span class="string">&quot;user&quot;</span>).password(passwordEncoder.encode(<span class="string">&quot;123456&quot;</span>)).roles(<span class="string">&quot;USER&quot;</span>).authorities(<span class="string">&quot;USER&quot;</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PasswordUtil</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function">PasswordEncoder <span class="title">passwordEncoder</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> BCryptPasswordEncoder();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <h4 id="Spring-Security-认证之后还是403"><a href="#Spring-Security-认证之后还是403" class="headerlink" title="Spring Security 认证之后还是403"></a>Spring Security 认证之后还是403</h4><p>除了的csrf问题，有可能是userDetailsService没写好</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http.csrf().disable();</span><br></pre></td></tr></table></figure>
-
 <p>userDetailsService一定要把认证用户对应的权限加进去</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> UserDetails <span class="title">loadUserByUsername</span><span class="params">(String name)</span> <span class="keyword">throws</span> UsernameNotFoundException </span>&#123;</span><br><span class="line">    User user = userRepository.findByName(name);</span><br><span class="line">    System.out.println(<span class="string">&quot;认证中...&quot;</span>);</span><br><span class="line">    List&lt;SimpleGrantedAuthority&gt; authorities = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    authorities.add(<span class="keyword">new</span> SimpleGrantedAuthority(user.getRole()));</span><br><span class="line">    <span class="keyword">if</span> (user == <span class="keyword">null</span>)&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;nobody&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <hr>
 <h4 id="Spring-Security-不起作用"><a href="#Spring-Security-不起作用" class="headerlink" title="Spring Security 不起作用"></a>Spring Security 不起作用</h4><p>只处理POST请求，GET请求无效</p>
 
@@ -528,24 +505,17 @@
 
       
           <h4 id="页面刷新后，prototype挂载的全局变量消失"><a href="#页面刷新后，prototype挂载的全局变量消失" class="headerlink" title="页面刷新后，prototype挂载的全局变量消失"></a>页面刷新后，prototype挂载的全局变量消失</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在页面刷新时</span><br><span class="line">vue实例对象被重新构造</span><br><span class="line">所有变量都被初始化</span><br></pre></td></tr></table></figure>
-
 <p>解决：</p>
 <hr>
 <h4 id="Vue-路由传递数据"><a href="#Vue-路由传递数据" class="headerlink" title="Vue 路由传递数据"></a>Vue 路由传递数据</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleClick (row) &#123;</span><br><span class="line">      <span class="built_in">this</span>.$router.push(&#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/unpostInfo&#x27;</span>,</span><br><span class="line">        <span class="attr">query</span>: &#123;</span><br><span class="line">          <span class="attr">unpostInfoId</span>: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
 <p>数据获取</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.$route.query.unpostInfoId</span><br></pre></td></tr></table></figure>
-
 <p>Ps:是$route而不是router</p>
 <hr>
 <h4 id="Vue-表格传递数据-一行的全部数据"><a href="#Vue-表格传递数据-一行的全部数据" class="headerlink" title="Vue 表格传递数据(一行的全部数据)"></a>Vue 表格传递数据(一行的全部数据)</h4><p>scope</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick(scope.row)&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">size</span>=<span class="string">&quot;small&quot;</span> <span class="attr">v-if</span>=<span class="string">&quot;scope.row.role === &#x27;USER&#x27;&quot;</span> <span class="attr">:id</span>=<span class="string">&quot;scope.row.username&quot;</span>&gt;</span>锁定<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick(scope.row)&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">size</span>=<span class="string">&quot;small&quot;</span> <span class="attr">v-else</span> <span class="attr">:id</span>=<span class="string">&quot;scope.row.username&quot;</span>&gt;</span>取消锁定<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <hr>
 <h4 id="Vue-设置id"><a href="#Vue-设置id" class="headerlink" title="Vue 设置id"></a>Vue 设置id</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">&quot;scop.row.username&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <hr>
 
       
@@ -611,21 +581,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>–save -s</p>
+          <p>—save -s</p>
 <p>保存到<code>package.json</code>的依赖中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save xxx</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p><code>-g</code>全局安装</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g xxx</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 
       
     </div>
@@ -695,12 +655,8 @@
 </blockquote>
 <p>解决</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用一个div把template内的多个标签包起来就行</span><br></pre></td></tr></table></figure>
-
 <hr>
 <h4 id="vue-没有错误信息"><a href="#vue-没有错误信息" class="headerlink" title="vue 没有错误信息"></a>vue 没有错误信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build  //可以显示详细信息</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="包老是下载错误"><a href="#包老是下载错误" class="headerlink" title="包老是下载错误"></a>包老是下载错误</h2><p>把package.json里的依赖给删了</p>
 <p>自己另外手动安装</p>
 <p>中途改的话</p>
@@ -771,26 +727,17 @@
       
           <p>有些函数没有解释，是需要先下载源码先</p>
 <h4 id="lombok报错"><a href="#lombok报错" class="headerlink" title="lombok报错"></a>lombok报错</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalAccessError: class lombok.javac.apt.LombokProcessor cannot access class com.sun.tools.javac.processing.JavacProcessingEnvironment [duplicate]</span><br></pre></td></tr></table></figure>
-
 <p>解决</p>
 <p>Switch to at least the <code>1.18.20</code> version of Lombok that contains <a target="_blank" rel="noopener" href="https://github.com/rzwitserloot/lombok/issues/2681">the fix</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.18.20&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="无效的源发行版：14"><a href="#无效的源发行版：14" class="headerlink" title="无效的源发行版：14"></a>无效的源发行版：14</h1><p>1.Project Structure-SDK version</p>
 <p>2.Module-Language Level</p>
 <p>3.Build,Execution,Deployment - Java Compiler - project bytecode version </p>
 <h1 id="resolving-maven-depen…"><a href="#resolving-maven-depen…" class="headerlink" title="resolving maven depen…"></a>resolving maven depen…</h1><p>解决：</p>
 <p>Build, Execution, Deployment - Build Tools - Maven - Runner - VM options</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-DarchetypeCatalog=internal</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h1 id="莫名其妙扫描不到存在的文件"><a href="#莫名其妙扫描不到存在的文件" class="headerlink" title="莫名其妙扫描不到存在的文件"></a>莫名其妙扫描不到存在的文件</h1><p>解决：</p>
-<p>清缓存–重启Intellij</p>
+<p>清缓存—重启Intellij</p>
 
       
     </div>
@@ -857,7 +804,6 @@
       
           <h4 id="spring-boot-Cannot-resolve-MVC-View"><a href="#spring-boot-Cannot-resolve-MVC-View" class="headerlink" title="spring boot Cannot resolve MVC View"></a>spring boot Cannot resolve MVC View</h4><p>添加依赖</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-freemarker&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -926,19 +872,13 @@
 <p>其所在位置分两种情况</p>
 <p>1.如果使用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack projectName</span><br></pre></td></tr></table></figure>
-
 <p>构建vue项目，则再/build/webpack.dev.conf.js中</p>
 <p>然后其引用了/config/index中的value</p>
 <p>2.如果使用</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create &lt;project-name&gt;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">   	<span class="attr">port</span>:<span class="number">8081</span>,  <span class="comment">// 代理端口</span></span><br><span class="line">   	<span class="attr">host</span>: <span class="string">&#x27;0.0.0.0&#x27;</span>,</span><br><span class="line">       <span class="attr">proxy</span>:&#123;</span><br><span class="line">           <span class="string">&#x27;/health-post&#x27;</span>:&#123;</span><br><span class="line">       		<span class="attr">target</span>:<span class="string">&#x27;http://localhost:8080/&#x27;</span>,  <span class="comment">//目标服务器端口</span></span><br><span class="line">       		<span class="attr">changeOrigin</span>:<span class="literal">true</span>,</span><br><span class="line">       		<span class="attr">pathRewrite</span>: &#123;</span><br><span class="line">         		<span class="string">&#x27;^/health-post&#x27;</span>: <span class="string">&#x27;/health-post&#x27;</span>  <span class="comment">// 不可省</span></span><br><span class="line">       &#125;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>请求成功的url</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8081/health-post</span><br></pre></td></tr></table></figure>
-
 <p>就是vue的端口，而不是目标服务器端口（8080）</p>
 <p>真正和服务器交互的是vue的代理</p>
 

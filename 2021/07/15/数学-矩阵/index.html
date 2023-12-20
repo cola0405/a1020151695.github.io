@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="矩阵相乘的几何意义可以当函数映射理解 将一个坐标系中所有的点映射到另一个坐标系中去。   矩阵的阶数伴随矩阵 易错 暴力法求解时容易把C和D选项搞混 出错的原因就在于伴随矩阵的计算 p50 书写 公式 另外注意：$$(A+B)^{ *}≠A^{ *} +B^{ *}$$ 例题：  注意 $$A^{-1}$$是指取逆，这是传统代数运算不一样的地方 秩 r&lt;n，并不表示改矩阵不可逆，因为行阶梯">
+  <meta name="description" content="矩阵相乘的几何意义可以当函数映射理解 将一个坐标系中所有的点映射到另一个坐标系中去。   矩阵的阶数伴随矩阵 易错 暴力法求解时容易把C和D选项搞混  出错的原因就在于伴随矩阵的计算 p50 书写 公式 另外注意：(A+B)^{ *}≠A^{ *} +B^{ *} 例题：  注意  A^{-1}$$是指取逆，这是传统代数运算不一样的地方    ## 秩  ![image-202108091426">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学-矩阵">
 <meta property="og:url" content="http://example.com/2021/07/15/%E6%95%B0%E5%AD%A6-%E7%9F%A9%E9%98%B5/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="矩阵相乘的几何意义可以当函数映射理解 将一个坐标系中所有的点映射到另一个坐标系中去。   矩阵的阶数伴随矩阵 易错 暴力法求解时容易把C和D选项搞混 出错的原因就在于伴随矩阵的计算 p50 书写 公式 另外注意：$$(A+B)^{ *}≠A^{ *} +B^{ *}$$ 例题：  注意 $$A^{-1}$$是指取逆，这是传统代数运算不一样的地方 秩 r&lt;n，并不表示改矩阵不可逆，因为行阶梯">
+<meta property="og:description" content="矩阵相乘的几何意义可以当函数映射理解 将一个坐标系中所有的点映射到另一个坐标系中去。   矩阵的阶数伴随矩阵 易错 暴力法求解时容易把C和D选项搞混  出错的原因就在于伴随矩阵的计算 p50 书写 公式 另外注意：(A+B)^{ *}≠A^{ *} +B^{ *} 例题：  注意  A^{-1}$$是指取逆，这是传统代数运算不一样的地方    ## 秩  ![image-202108091426">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210715223824361.png">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-7c112086236c44e75053b2002f87f673_1440w.jpg">
@@ -36,18 +36,6 @@
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210728132840568.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820191637103.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809163239446.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809142648290.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210728133838070.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210728134045195.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816231715005.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816224442472.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716143513163.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820191249920.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820191403630.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211117145544285.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211109183234711.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816232344458.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816232535638.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816232707413.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809142350490.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809140455889.png">
@@ -322,63 +310,140 @@
 <p><img src="https://pic4.zhimg.com/80/v2-bd7e28dbda00e5c01393e79989f1b3d3_1440w.jpg" alt="img"></p>
 <h1 id="矩阵的阶数"><a href="#矩阵的阶数" class="headerlink" title="矩阵的阶数"></a>矩阵的阶数</h1><h1 id="伴随矩阵"><a href="#伴随矩阵" class="headerlink" title="伴随矩阵"></a>伴随矩阵</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210715225251922.png" alt="image-20210715225251922"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716142701332.png" alt="image-20210716142701332"></p>
 <h2 id="易错"><a href="#易错" class="headerlink" title="易错"></a>易错</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210818181840977.png" alt="image-20210818181840977"></p>
-<p><font color=red>暴力法求解时容易把C和D选项搞混</font></p>
+<font color=red>暴力法求解时容易把C和D选项搞混</font>
+
 <p>出错的原因就在于伴随矩阵的计算</p>
 <p>p50</p>
 <h2 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210728132840568.png" alt="image-20210728132840568"></p>
 <h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820191637103.png" alt="image-20210820191637103"></p>
-<p>另外注意：$$(A+B)^{ *}≠A^{ *} +B^{ *}$$</p>
+<p>另外注意：<script type="math/tex">(A+B)^{ *}≠A^{ *} +B^{ *}</script></p>
 <p>例题：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809163239446.png" alt="image-20210809163239446"></p>
-<p><font color=red>注意</font></p>
-<p>$$A^{-1}$$是指取逆，这是传统代数运算不一样的地方</p>
-<h2 id="秩"><a href="#秩" class="headerlink" title="秩"></a>秩</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809142648290.png" alt="image-20210809142648290"></p>
-<p><font color=red>r&lt;n，并不表示改矩阵不可逆，因为行阶梯不一定是上三角</font></p>
-<h2 id="求伴随矩阵"><a href="#求伴随矩阵" class="headerlink" title="求伴随矩阵"></a>求伴随矩阵</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210728133838070.png" alt="image-20210728133838070"></p>
-<p>例题</p>
-<h3 id="定义法"><a href="#定义法" class="headerlink" title="定义法"></a>定义法</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210728134045195.png" alt="image-20210728134045195"></p>
-<p><font color=red>总结：主对调，副变号</font></p>
-<h3 id="【方程】公式"><a href="#【方程】公式" class="headerlink" title="【方程】公式"></a>【方程】公式</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816231715005.png" alt="image-20210816231715005"></p>
-<p>会了上面的公式，这题随便做</p>
-<p><strong>求分块矩阵的行列式</strong></p>
-<p>涉及到的公式</p>
-<p>可以用用暴力求AB相乘的行列式的值</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816224442472.png" alt="image-20210816224442472"></p>
-<hr>
-<h1 id="逆矩阵"><a href="#逆矩阵" class="headerlink" title="逆矩阵"></a>逆矩阵</h1><p><font color=red>可逆这个性质很好用</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716143513163.png" alt="image-20210716143513163"></p>
-<h2 id="逆矩阵性质"><a href="#逆矩阵性质" class="headerlink" title="逆矩阵性质"></a>逆矩阵性质</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820191249920.png" alt="image-20210820191249920"></p>
-<h2 id="求逆矩阵"><a href="#求逆矩阵" class="headerlink" title="求逆矩阵"></a>求逆矩阵</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820191403630.png" alt="image-20210820191403630"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211117145544285.png"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211109183234711.png" alt="image-20211109183234711"></p>
-<h3 id="用伴随"><a href="#用伴随" class="headerlink" title="用伴随"></a>用伴随</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816232344458.png" alt="image-20210816232344458"></p>
-<p><font color=red>伴随别忘了-1系数</font></p>
-<p>知道公式随便做</p>
-<h3 id="利用逆矩阵的性质"><a href="#利用逆矩阵的性质" class="headerlink" title="利用逆矩阵的性质"></a>利用逆矩阵的性质</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816232535638.png" alt="image-20210816232535638"></p>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>$$|A^{-1}|=\frac{1}{|A|}$$</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816232707413.png" alt="image-20210816232707413"></p>
+<font color=red>注意</font>
+
+<script type="math/tex; mode=display">A^{-1}$$是指取逆，这是传统代数运算不一样的地方
+
+
+
+## 秩
+
+![image-20210809142648290](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809142648290.png)
+
+<font color=red>r<n，并不表示改矩阵不可逆，因为行阶梯不一定是上三角</font>
+
+
+
+## 求伴随矩阵
+
+![image-20210728133838070](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210728133838070.png)
+
+例题
+
+### 定义法
+
+![image-20210728134045195](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210728134045195.png)
+
+<font color=red>总结：主对调，副变号</font>
+
+
+
+### 【方程】公式
+
+![image-20210816231715005](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816231715005.png)
+
+会了上面的公式，这题随便做
+
+**求分块矩阵的行列式**
+
+涉及到的公式
+
+可以用用暴力求AB相乘的行列式的值
+
+![image-20210816224442472](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816224442472.png)
+
+
+
+---
+
+# 逆矩阵
+
+
+
+<font color=red>可逆这个性质很好用</font>
+
+![image-20210716143513163](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716143513163.png)
+
+
+
+## 逆矩阵性质
+
+![image-20210820191249920](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820191249920.png)
+
+
+
+## 求逆矩阵
+
+![image-20210820191403630](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820191403630.png)
+
+![](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211117145544285.png)
+
+![image-20211109183234711](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211109183234711.png)
+
+
+
+### 用伴随
+
+![image-20210816232344458](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816232344458.png)
+
+<font color=red>伴随别忘了-1系数</font>
+
+
+
+知道公式随便做
+
+
+
+
+
+### 利用逆矩阵的性质
+
+![image-20210816232535638](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816232535638.png)
+
+
+
+## 性质
+
+$$|A^{-1}|=\frac{1}{|A|}</script><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816232707413.png" alt="image-20210816232707413"></p>
 <hr>
 <p>补充定理：</p>
-<p><font color=red>n阶可逆矩阵的秩为n</font></p>
-<p><font color=red>矩阵的列秩等于行秩</font></p>
+<font color=red>n阶可逆矩阵的秩为n</font>
+
+<font color=red>矩阵的列秩等于行秩</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809142350490.png" alt="image-20210809142350490"></p>
 <p>例题：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809140455889.png" alt="image-20210809140455889"></p>
 <p>Ps：<font color=red>A*X</font>，不是伴随矩阵</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809140523930.png" alt="image-20210809140523930"></p>
 <p>需要补充几个定理：</p>
-<p><font color=red>n阶可逆矩阵的秩为n</font></p>
-<p><font color=red>初等矩阵都是可逆矩阵</font></p>
-<p><font color=red>奇异矩阵不可逆</font></p>
-<p><font color=red>奇异矩阵的秩不是满秩</font></p>
-<p><font color=red>矩阵的列秩等于行秩</font></p>
+<font color=red>n阶可逆矩阵的秩为n</font>
+
+<font color=red>初等矩阵都是可逆矩阵</font>
+
+<font color=red>奇异矩阵不可逆</font>
+
+<font color=red>奇异矩阵的秩不是满秩</font>
+
+<font color=red>矩阵的列秩等于行秩</font>
+
 <hr>
 <h2 id="可逆的充要条件"><a href="#可逆的充要条件" class="headerlink" title="可逆的充要条件"></a>可逆的充要条件</h2><p>n阶矩阵可逆的充要条件</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809141252619.png" alt="image-20210809141252619"></p>
 <p>例题</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716143259952.png" alt="image-20210716143259952"></p>
 <h2 id="抽象用定义"><a href="#抽象用定义" class="headerlink" title="抽象用定义"></a>抽象用定义</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716143734264.png" alt="image-20210716143734264"></p>
-<p><font color=red>厚礼蟹，这定义用的也太庙了</font></p>
+<font color=red>厚礼蟹，这定义用的也太庙了</font>
+
 <p>以后看到 “4E” 类似的都得偷着乐了~</p>
 <p>类似的题目</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210818165730705.png" alt="image-20210818165730705"></p>
@@ -399,7 +464,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820190833086.png" alt="image-20210820190833086"></p>
 <p>右列，做初等列变换</p>
 <p>把A的第1列和第2列互换</p>
-<h2 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h2><p>单位阵的转置是它自己</p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>单位阵的转置是它自己</p>
 <p>E^2^=E</p>
 <p>AE=EA=A</p>
 <p>E相当于“1”</p>
@@ -408,9 +473,8 @@
 <h1 id="上下三角阵"><a href="#上下三角阵" class="headerlink" title="上下三角阵"></a>上下三角阵</h1><p>主对角以下（上）的元素都为0</p>
 <h1 id="对称矩阵"><a href="#对称矩阵" class="headerlink" title="对称矩阵"></a>对称矩阵</h1><p>判定条件：$A^T=A$</p>
 <p>但直观表现为</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210806154645071.png"></p>
-<h1 id="反对称矩阵"><a href="#反对称矩阵" class="headerlink" title="反对称矩阵"></a>反对称矩阵</h1><p>$$A^T=-A$$</p>
-<h1 id="实对称阵"><a href="#实对称阵" class="headerlink" title="实对称阵"></a>实对称阵</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816164830923.png" alt="image-20210816164830923"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210806154645071.png" alt=""></p>
+<h1 id="反对称矩阵"><a href="#反对称矩阵" class="headerlink" title="反对称矩阵"></a>反对称矩阵</h1><script type="math/tex; mode=display">A^T=-A</script><h1 id="实对称阵"><a href="#实对称阵" class="headerlink" title="实对称阵"></a>实对称阵</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816164830923.png" alt="image-20210816164830923"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816170159635.png" alt="image-20210816170159635"></p>
 <h1 id="正交矩阵"><a href="#正交矩阵" class="headerlink" title="正交矩阵"></a>正交矩阵</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211129120547708.png" alt="image-20211129120547708"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211201235819193.png" alt="image-20211201235819193"></p>
@@ -424,7 +488,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816170410965.png" alt="image-20210816170410965"></p>
 <p>∧可取A的特征值构成的对角阵，然后解A即可</p>
 <p>相对比上面就是少了正交化的步骤</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816172028349.png"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816172028349.png" alt=""></p>
 <h1 id="正定矩阵"><a href="#正定矩阵" class="headerlink" title="正定矩阵"></a>正定矩阵</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211129155715137.png" alt="image-20211129155715137"></p>
 <p>正定矩阵的判定：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211129155849454.png" alt="image-20211129155849454"></p>
@@ -438,14 +502,19 @@
 <p>Ps：<font color=red>A*X</font>，不是伴随矩阵</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210809140523930.png" alt="image-20210809140523930"></p>
 <p>需要补充几个定理：</p>
-<p><font color=red>n阶可逆矩阵的秩为n</font></p>
-<p><font color=red>初等矩阵都是可逆矩阵</font></p>
-<p><font color=red>奇异矩阵不可逆</font></p>
-<p><font color=red>奇异矩阵的秩不是满秩</font></p>
+<font color=red>n阶可逆矩阵的秩为n</font>
+
+<font color=red>初等矩阵都是可逆矩阵</font>
+
+<font color=red>奇异矩阵不可逆</font>
+
+<font color=red>奇异矩阵的秩不是满秩</font>
+
+
+
 <h1 id="特例矩阵"><a href="#特例矩阵" class="headerlink" title="特例矩阵"></a>特例矩阵</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210729144656153.png" alt="image-20210729144656153"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210729144712611.png" alt="image-20210729144712611"></p>
-<p>$$A^3=O$$</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211109184403951.png" alt="image-20211109184403951"></p>
+<script type="math/tex; mode=display">A^3=O</script><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211109184403951.png" alt="image-20211109184403951"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211203100930506.png" alt="image-20211203100930506"></p>
 <p>答案：A</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211203100855156.png" alt="image-20211203100855156"></p>
@@ -453,9 +522,9 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824123355236.png" alt="image-20210824123355236"></p>
 <p>答案：n</p>
 <p>（填空题也可以暴力）</p>
-<h1 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h1><p>“det”— 表示行列式的值</p>
-<p>“adj” — 表示一个矩阵的伴随矩阵</p>
-<p>“∧” — 对角阵，也叫 diag</p>
+<h1 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h1><p>“det”—- 表示行列式的值</p>
+<p>“adj” —- 表示一个矩阵的伴随矩阵</p>
+<p>“∧” —- 对角阵，也叫 diag</p>
 <h1 id="矩阵初等变换"><a href="#矩阵初等变换" class="headerlink" title="矩阵初等变换"></a>矩阵初等变换</h1><p>1、交换矩阵的第i行与第j行的位置</p>
 <p>2、以非零数k乘以矩阵的第i行的每个元素</p>
 <p>3、把矩阵的第i行的每个元素的k倍加到第j行的对应元素上去</p>
@@ -472,7 +541,8 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210715225129558.png" alt="image-20210715225129558"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210715225119097.png" alt="image-20210715225119097"></p>
 <h2 id="相乘结果是矩阵还是数"><a href="#相乘结果是矩阵还是数" class="headerlink" title="相乘结果是矩阵还是数"></a>相乘结果是矩阵还是数</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210715225024739.png" alt="image-20210715225024739"><br>列阵在前</p>
 <h2 id="矩阵相乘结合律"><a href="#矩阵相乘结合律" class="headerlink" title="矩阵相乘结合律"></a>矩阵相乘结合律</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210728132401362.png" alt="image-20210728132401362"></p>
-<h2 id="特殊矩阵乘法"><a href="#特殊矩阵乘法" class="headerlink" title="特殊矩阵乘法"></a>特殊矩阵乘法</h2><p><font color=blue>乘为A、B可交换</font></p>
+<h2 id="特殊矩阵乘法"><a href="#特殊矩阵乘法" class="headerlink" title="特殊矩阵乘法"></a>特殊矩阵乘法</h2><font color=blue>乘为A、B可交换</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210715224600391.png" alt="image-20210715224600391"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210715224618783.png" alt="image-20210715224618783"></p>
 <h2 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h2><p>将A的所有元素绕着一条从第1行第1列元素出发的右下方45度的射线作镜面反转</p>
@@ -489,7 +559,8 @@
 <p>注意|A+B|≠|A|+|B|</p>
 <hr>
 <h2 id="【配凑】矩阵的代数运算"><a href="#【配凑】矩阵的代数运算" class="headerlink" title="【配凑】矩阵的代数运算"></a>【配凑】矩阵的代数运算</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816224209081.png" alt="image-20210816224209081"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816224255539.png" alt="image-20210816224255539"></p>
-<p><font color=red>这配凑搞得我头皮发麻</font></p>
+<font color=red>这配凑搞得我头皮发麻</font>
+
 <p>其中涉及到的相关公式：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816224442472.png" alt="image-20210816224442472"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210816230017127.png" alt="image-20210816230017127"></p>
@@ -498,35 +569,50 @@
 <hr>
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="规律题"><a href="#规律题" class="headerlink" title="规律题"></a>规律题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210729150618318.png" alt="image-20210729150618318"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210729150642735.png" alt="image-20210729150642735"></p>
-<p><font color=red>0,1,3,6,10 为自然数前n项和</font></p>
-<p><font color=red>下面的数学归纳法步骤不可少</font></p>
+<font color=red>0,1,3,6,10 为自然数前n项和</font>
+
+<font color=red>下面的数学归纳法步骤不可少</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210729152705802.png" alt="image-20210729152705802"></p>
 <h2 id="高次矩阵"><a href="#高次矩阵" class="headerlink" title="高次矩阵"></a>高次矩阵</h2><h3 id="成比例"><a href="#成比例" class="headerlink" title="成比例"></a>成比例</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810154403265.png" alt="image-20210810154403265"></p>
-<p><font color=red>各行成比例—拆项合并</font></p>
-<p><font color=red>列阵在前</font></p>
+<font color=red>各行成比例---拆项合并</font>
+
+<font color=red>列阵在前</font>
+
 <hr>
 <h3 id="【结合律】不成比例"><a href="#【结合律】不成比例" class="headerlink" title="【结合律】不成比例"></a>【结合律】不成比例</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810161021079.png" alt="image-20210810161021079"></p>
-<p><font color=red>不成比例，则暴力试试看</font></p>
-<p><font color=red>结合律，可随意结合，但是不可以更改前后顺序</font></p>
+<font color=red>不成比例，则暴力试试看</font>
+
+<font color=red>结合律，可随意结合，但是不可以更改前后顺序</font>
+
+
+
+
+
 <h3 id="【分数】不成比例"><a href="#【分数】不成比例" class="headerlink" title="【分数】不成比例"></a>【分数】不成比例</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810161615885.png" alt="image-20210810161615885"></p>
 <h2 id="主对角、副对角"><a href="#主对角、副对角" class="headerlink" title="主对角、副对角"></a>主对角、副对角</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810162039062.png" alt="image-20210810162039062"></p>
-<p><font color=red>AE=A</font></p>
+<font color=red>AE=A</font>
+
 <p>这道题我的做法是</p>
-<p>$$(A^{2})^{6}=E$$</p>
-<p><font color=red>主对角的n次方，可以直接放进去次方</font></p>
-<p>然后，$$A^{13}=AA^{12}=AE=A$$ 得解</p>
+<script type="math/tex; mode=display">(A^{2})^{6}=E</script><font color=red>主对角的n次方，可以直接放进去次方</font>
+
+<p>然后，<script type="math/tex">A^{13}=AA^{12}=AE=A</script> 得解</p>
 <hr>
-<h5 id="A-n-B-E-n"><a href="#A-n-B-E-n" class="headerlink" title="$$A^n=(B+E)^n$$"></a>$$A^n=(B+E)^n$$</h5><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810163942470.png" alt="image-20210810163942470"></p>
+<h5 id="A-n-B-E-n"><a href="#A-n-B-E-n" class="headerlink" title="A^n=(B+E)^n"></a><script type="math/tex">A^n=(B+E)^n</script></h5><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810163942470.png" alt="image-20210810163942470"></p>
 <h2 id="【表达式】求未知矩阵"><a href="#【表达式】求未知矩阵" class="headerlink" title="【表达式】求未知矩阵"></a>【表达式】求未知矩阵</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810170321103.png" alt="image-20210810170321103"></p>
-<p><font color=red>方程两边同时乘以逆矩阵，消！</font></p>
-<p><font color=red>可在表达式层面先进行化简</font></p>
+<font color=red>方程两边同时乘以逆矩阵，消！</font>
+
+<font color=red>可在表达式层面先进行化简</font>
+
 <h2 id="矩阵方程"><a href="#矩阵方程" class="headerlink" title="矩阵方程"></a>矩阵方程</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824123355236.png" alt="image-20210824123355236"></p>
 <p> 解析：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824123348602.png" alt="image-20210824123348602"></p>
 <p>一般用的技巧有</p>
-<p><font color=red>提公因式</font></p>
+<font color=red>提公因式</font>
+
 <p>有E出现，一般还涉及到定理：</p>
-<p><font color=red>乘积为E则有互逆</font></p>
+<font color=red>乘积为E则有互逆</font>
+
 <p>然后，有互逆则有<strong>矩阵可逆</strong></p>
 <p>也就说明了其为<strong>满秩</strong></p>
 
@@ -609,7 +695,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">矩阵相乘的几何意义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%98%B6%E6%95%B0"><span class="nav-number"></span> <span class="nav-text">矩阵的阶数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">伴随矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%93%E9%94%99"><span class="nav-number">1.</span> <span class="nav-text">易错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A6%E5%86%99"><span class="nav-number">2.</span> <span class="nav-text">书写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%A9"><span class="nav-number">4.</span> <span class="nav-text">秩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5"><span class="nav-number">5.</span> <span class="nav-text">求伴随矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">定义法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E6%96%B9%E7%A8%8B%E3%80%91%E5%85%AC%E5%BC%8F"><span class="nav-number">5.2.</span> <span class="nav-text">【方程】公式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">逆矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8"><span class="nav-number">1.</span> <span class="nav-text">逆矩阵性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-number">2.</span> <span class="nav-text">求逆矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E4%BC%B4%E9%9A%8F"><span class="nav-number">2.1.</span> <span class="nav-text">用伴随</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E9%80%86%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">2.2.</span> <span class="nav-text">利用逆矩阵的性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">3.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%86%E7%9A%84%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">可逆的充要条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%94%A8%E5%AE%9A%E4%B9%89"><span class="nav-number">5.</span> <span class="nav-text">抽象用定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8D%E5%8F%AF%E9%80%86%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number"></span> <span class="nav-text">矩阵不可逆的性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">行阶梯矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E5%9E%8B%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">同型矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%B6%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">零矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E5%90%91%E9%87%8F%E5%92%8C%E5%88%97%E5%90%91%E9%87%8F"><span class="nav-number"></span> <span class="nav-text">行向量和列向量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5E"><span class="nav-number"></span> <span class="nav-text">单位矩阵E</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E8%A1%8C%E5%8F%B3%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">左行右列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8-1"><span class="nav-number">2.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E9%87%8F%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">数量阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E8%A7%92%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">对角阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E4%B8%89%E8%A7%92%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">上下三角阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">对称矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">反对称矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">实对称阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">正交矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%AE%9A%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">正定矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A5%87%E5%BC%82%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">奇异矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E4%BE%8B%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">特例矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7"><span class="nav-number"></span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2"><span class="nav-number"></span> <span class="nav-text">矩阵初等变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%E6%8A%80%E5%B7%A7"><span class="nav-number">1.</span> <span class="nav-text">初等变换技巧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="nav-number"></span> <span class="nav-text">矩阵基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%EF%BC%88%E9%9C%80%E5%90%8C%E5%9E%8B%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">加法（需同型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E4%B9%98"><span class="nav-number">2.</span> <span class="nav-text">数乘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98%EF%BC%88%E8%A1%8C%E7%AD%89%E4%BA%8E%E5%88%97%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">矩阵与矩阵相乘（行等于列）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E4%B9%98%E7%BB%93%E6%9E%9C%E6%98%AF%E7%9F%A9%E9%98%B5%E8%BF%98%E6%98%AF%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">相乘结果是矩阵还是数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98%E7%BB%93%E5%90%88%E5%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">矩阵相乘结合律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">特殊矩阵乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">转置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE%E6%80%A7%E8%B4%A8"><span class="nav-number">8.</span> <span class="nav-text">转置性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">9.</span> <span class="nav-text">方阵的行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E9%85%8D%E5%87%91%E3%80%91%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BB%A3%E6%95%B0%E8%BF%90%E7%AE%97"><span class="nav-number">10.</span> <span class="nav-text">【配凑】矩阵的代数运算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number"></span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%84%E5%BE%8B%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">规律题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E6%AC%A1%E7%9F%A9%E9%98%B5"><span class="nav-number">2.</span> <span class="nav-text">高次矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E6%AF%94%E4%BE%8B"><span class="nav-number">2.1.</span> <span class="nav-text">成比例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E7%BB%93%E5%90%88%E5%BE%8B%E3%80%91%E4%B8%8D%E6%88%90%E6%AF%94%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">【结合律】不成比例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E5%88%86%E6%95%B0%E3%80%91%E4%B8%8D%E6%88%90%E6%AF%94%E4%BE%8B"><span class="nav-number">2.3.</span> <span class="nav-text">【分数】不成比例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%AF%B9%E8%A7%92%E3%80%81%E5%89%AF%E5%AF%B9%E8%A7%92"><span class="nav-number">3.</span> <span class="nav-text">主对角、副对角</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#A-n-B-E-n"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">$$A^n&#x3D;(B+E)^n$$</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%91%E6%B1%82%E6%9C%AA%E7%9F%A5%E7%9F%A9%E9%98%B5"><span class="nav-number">4.</span> <span class="nav-text">【表达式】求未知矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">矩阵方程</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">矩阵相乘的几何意义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%98%B6%E6%95%B0"><span class="nav-number"></span> <span class="nav-text">矩阵的阶数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">伴随矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%93%E9%94%99"><span class="nav-number">1.</span> <span class="nav-text">易错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A6%E5%86%99"><span class="nav-number">2.</span> <span class="nav-text">书写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%86%E7%9A%84%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">可逆的充要条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%94%A8%E5%AE%9A%E4%B9%89"><span class="nav-number">5.</span> <span class="nav-text">抽象用定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8D%E5%8F%AF%E9%80%86%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number"></span> <span class="nav-text">矩阵不可逆的性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">行阶梯矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E5%9E%8B%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">同型矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%B6%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">零矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E5%90%91%E9%87%8F%E5%92%8C%E5%88%97%E5%90%91%E9%87%8F"><span class="nav-number"></span> <span class="nav-text">行向量和列向量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5E"><span class="nav-number"></span> <span class="nav-text">单位矩阵E</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E8%A1%8C%E5%8F%B3%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">左行右列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">2.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E9%87%8F%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">数量阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E8%A7%92%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">对角阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E4%B8%89%E8%A7%92%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">上下三角阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">对称矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">反对称矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">实对称阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">正交矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%AE%9A%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">正定矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A5%87%E5%BC%82%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">奇异矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E4%BE%8B%E7%9F%A9%E9%98%B5"><span class="nav-number"></span> <span class="nav-text">特例矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7"><span class="nav-number"></span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2"><span class="nav-number"></span> <span class="nav-text">矩阵初等变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%E6%8A%80%E5%B7%A7"><span class="nav-number">1.</span> <span class="nav-text">初等变换技巧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="nav-number"></span> <span class="nav-text">矩阵基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%EF%BC%88%E9%9C%80%E5%90%8C%E5%9E%8B%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">加法（需同型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E4%B9%98"><span class="nav-number">2.</span> <span class="nav-text">数乘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98%EF%BC%88%E8%A1%8C%E7%AD%89%E4%BA%8E%E5%88%97%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">矩阵与矩阵相乘（行等于列）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E4%B9%98%E7%BB%93%E6%9E%9C%E6%98%AF%E7%9F%A9%E9%98%B5%E8%BF%98%E6%98%AF%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">相乘结果是矩阵还是数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98%E7%BB%93%E5%90%88%E5%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">矩阵相乘结合律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">特殊矩阵乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">转置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE%E6%80%A7%E8%B4%A8"><span class="nav-number">8.</span> <span class="nav-text">转置性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">9.</span> <span class="nav-text">方阵的行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E9%85%8D%E5%87%91%E3%80%91%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BB%A3%E6%95%B0%E8%BF%90%E7%AE%97"><span class="nav-number">10.</span> <span class="nav-text">【配凑】矩阵的代数运算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number"></span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%84%E5%BE%8B%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">规律题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E6%AC%A1%E7%9F%A9%E9%98%B5"><span class="nav-number">2.</span> <span class="nav-text">高次矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E6%AF%94%E4%BE%8B"><span class="nav-number">2.1.</span> <span class="nav-text">成比例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E7%BB%93%E5%90%88%E5%BE%8B%E3%80%91%E4%B8%8D%E6%88%90%E6%AF%94%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">【结合律】不成比例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E5%88%86%E6%95%B0%E3%80%91%E4%B8%8D%E6%88%90%E6%AF%94%E4%BE%8B"><span class="nav-number">2.3.</span> <span class="nav-text">【分数】不成比例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%AF%B9%E8%A7%92%E3%80%81%E5%89%AF%E5%AF%B9%E8%A7%92"><span class="nav-number">3.</span> <span class="nav-text">主对角、副对角</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#A-n-B-E-n"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">A^n&#x3D;(B+E)^n</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%91%E6%B1%82%E6%9C%AA%E7%9F%A5%E7%9F%A9%E9%98%B5"><span class="nav-number">4.</span> <span class="nav-text">【表达式】求未知矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">矩阵方程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

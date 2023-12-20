@@ -237,7 +237,6 @@
       
           <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line"></span><br><span class="line">xxxxxx // here is the origin content</span><br><span class="line"></span><br><span class="line">========</span><br><span class="line"></span><br><span class="line">xxxxxx // here is the content you pull</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;j43jk2293i23jk2n3</span><br></pre></td></tr></table></figure>
 
-
       
     </div>
 
@@ -317,7 +316,6 @@
           <p>How get data by request in Android?</p>
 <p>Here is an example</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">    Thread()&#123;</span><br><span class="line">        <span class="keyword">val</span> url = URL(<span class="string">&quot;https://api.thecatapi.com/v1/images/search&quot;</span>)</span><br><span class="line">        <span class="keyword">val</span> connection = url.openConnection() <span class="keyword">as</span> HttpURLConnection</span><br><span class="line">        connection.requestMethod = <span class="string">&quot;GET&quot;</span></span><br><span class="line">        <span class="keyword">val</span> inputstream = connection.inputStream</span><br><span class="line">        <span class="keyword">val</span> reader = inputstream.bufferedReader()</span><br><span class="line">        <span class="keyword">var</span> response = StringBuilder()</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">val</span> line = reader.readLine()</span><br><span class="line">            <span class="keyword">if</span> (line == <span class="literal">null</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            response.append(line)</span><br><span class="line">        &#125;</span><br><span class="line">        reader.close()</span><br><span class="line">        connection.disconnect()</span><br><span class="line">        <span class="keyword">val</span> jsons = JSONArray(response.toString())</span><br><span class="line">        runOnUiThread&#123;</span><br><span class="line">...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.start()</span><br></pre></td></tr></table></figure>
-
 <p>Note:</p>
 <p>1.You can’t request in UI thread, so you need to create a new thread to do this job</p>
 <p>2.The connection is actually established when you get inputStream from connection</p>
@@ -327,20 +325,14 @@
 <hr>
 <p>How to deal with JsonArray in Android</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> signDataList = responseJson[<span class="string">&quot;activityInfo&quot;</span>] <span class="keyword">as</span> JSONArray</span><br><span class="line"><span class="keyword">for</span>(index <span class="keyword">in</span> <span class="number">0</span> until signDataList.length())&#123;</span><br><span class="line">	signDataList[index]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <hr>
 <p>Note</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The request codes can be integrated into a util class</span><br><span class="line">So that you don&#x27;t need to write the repeat codes again and again</span><br><span class="line">That&#x27;s the power of Refactor !</span><br></pre></td></tr></table></figure>
-
 <p>Just like this</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getDataByRequest</span><span class="params">(activity:<span class="type">Activity</span>?, context:<span class="type">Context</span>, urlForLogin:<span class="type">URL</span>?)</span></span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        getDataByUrl(urlForLogin)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e: Exception) &#123;</span><br><span class="line">        e.printStackTrace()</span><br><span class="line">        buildConnectFailDialog(context)</span><br><span class="line">        activity?.runOnUiThread &#123;</span><br><span class="line">            connectFailDialog = connectFailDialogBuilder?.create()</span><br><span class="line">            connectFailDialog?.show()</span><br><span class="line">        &#125;</span><br><span class="line">        Thread.currentThread().join()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getDataByUrl</span><span class="params">(url: <span class="type">URL</span>?)</span></span>&#123;</span><br><span class="line">    connection = url?.openConnection() <span class="keyword">as</span> HttpURLConnection</span><br><span class="line">    connection?.requestMethod = <span class="string">&quot;GET&quot;</span></span><br><span class="line">    inputStream = connection?.inputStream</span><br><span class="line">    reader = inputStream?.bufferedReader()</span><br><span class="line">    response = StringBuilder()</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">val</span> line = reader?.readLine() ?: <span class="keyword">break</span></span><br><span class="line">        response?.append(line)</span><br><span class="line">    &#125;</span><br><span class="line">    reader?.close()</span><br><span class="line">    connection?.disconnect()</span><br><span class="line">    responseJson = JSONObject(response.toString())</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">buildConnectFailDialog</span><span class="params">(context: <span class="type">Context</span>?)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (connectFailDialogBuilder == <span class="literal">null</span>) &#123;</span><br><span class="line">        connectFailDialogBuilder = AlertDialog.Builder(context!!)</span><br><span class="line">        connectFailDialogBuilder?.setTitle(<span class="string">&quot;提示信息&quot;</span>)</span><br><span class="line">        connectFailDialogBuilder?.setMessage(<span class="string">&quot;连接服务器失败&quot;</span>)</span><br><span class="line">        connectFailDialogBuilder?.setPositiveButton(<span class="string">&quot;确定&quot;</span>) &#123; dialog, id -&gt; &#123;&#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>There is a problem — in a separate util class how can util get the application’s context or activity ?</p>
+<p>There is a problem —- in a separate util class how can util get the application’s context or activity ?</p>
 <p>Solution:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Just pass them as parameters !</span><br></pre></td></tr></table></figure>
-
 <p>Context, activity they are not something special</p>
 <p>In program, they are can be represent just with memory address</p>
 <p>So pass their address as parameter is the way to access them !</p>
@@ -431,6 +423,7 @@
 <hr>
 <p>Generally, Android version is associated with SDK version</p>
 <p>example:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -440,7 +433,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>30</td>
 <td>11</td>
 <td></td>
@@ -468,9 +462,10 @@
 <td>26</td>
 <td>8.0</td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>If you use lower version of API to write an App</p>
 <p>It will have better compatibility</p>
 <p>But you can’t use the new feature of the SDK</p>
@@ -554,16 +549,10 @@
 
       
           <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onBackPressed</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onBackPressed()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>This function is what your Android do when you press the back button</p>
 <p>If you don’t want user use back button somewhere</p>
 <p>Just do like this</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onBackPressed</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// super.onBackPressed()</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 
       
     </div>
@@ -753,7 +742,6 @@
 <p>Almost every time I integrate the codes, the app will breakdown  </p>
 <p>Because I am not familiar with the lifecycle of Android </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The lifecycle is really important in Android</span><br></pre></td></tr></table></figure>
-
 <p>My teacher say it a long time ago, but I miss it</p>
 <p>Oh..</p>
 <p>I didn’t pay much attention to lifecycle of Activity</p>
@@ -884,10 +872,8 @@
       
           <p>1.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Code will be more clear if you use keyword &quot;else if&quot;</span><br></pre></td></tr></table></figure>
-
 <p>2.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Use more of constant</span><br><span class="line"></span><br><span class="line">example:(Kotlin)</span><br><span class="line"></span><br><span class="line">const val FAIL = 0</span><br><span class="line">if(state == FAIL)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Code will be much more clear</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -972,7 +958,6 @@
 <p>Here is the example</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> traceback</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"> </span><br><span class="line">logging.basicConfig(filename=<span class="string">&#x27;log.log&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">error_func</span>():</span></span><br><span class="line">  b = <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    error_func()</span><br><span class="line">  <span class="keyword">except</span>:</span><br><span class="line">    s = traceback.format_exc()</span><br><span class="line">    logging.error(s)</span><br></pre></td></tr></table></figure>
 
-
       
     </div>
 
@@ -1047,15 +1032,15 @@
       
           <p>1.Alpha-Beta Search</p>
 <p>Understand this algorithm in this way</p>
-<p>First is a question — how computer know the best move?</p>
+<p>First is a question —- how computer know the best move?</p>
 <p>Answer: This algorithm will evaluate the score, which represent the chance the computer will win</p>
 <p>So the best move is the move that make the highest score</p>
-<p>Second question — how computer know to protect it’s King?</p>
+<p>Second question —- how computer know to protect it’s King?</p>
 <p>Answer: This algorithm will simulate the move for both red and black</p>
 <p>and it will simulate at least 2 depth, the algorithm will do the things follow:</p>
 <p>evaluate the current score then start to search (simulate)</p>
-<p>Simulate① – computer legal move “A”</p>
-<p>Keep on simulate② – people legal move “B”</p>
+<p>Simulate① — computer legal move “A”</p>
+<p>Keep on simulate② — people legal move “B”</p>
 <p>When reach the depth, start to evaluate the score again</p>
 <p>If Simulate② make the score reduce,</p>
 <p>Which means that the computer’s Simulate① move “A” makes computer be in dangerous</p>
@@ -1102,7 +1087,7 @@
 <hr>
 <p>8.Debug</p>
 <p>With a long time apart with C and C++</p>
-<p>I almost forget the efficient way to find a bug — “Debug”</p>
+<p>I almost forget the efficient way to find a bug —- “Debug”</p>
 <p> Step by step, checking the variable to find the bug</p>
 
       
@@ -1184,34 +1169,23 @@
           <p>simple example: (within the same package)</p>
 <p>Speaker.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Speaker</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sayHello</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>Test.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speaker</span><br><span class="line">speaker = Speaker()</span><br><span class="line">speaker.sayHello()</span><br></pre></td></tr></table></figure>
-
 <p>If in different package:</p>
 <p>Test.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> packageName.Speaker <span class="keyword">import</span> Speaker</span><br><span class="line"></span><br><span class="line">speaker = Speaker()</span><br><span class="line">speaker.sayHello()</span><br></pre></td></tr></table></figure>
-
-
-
 <p>You can also build a Constructor to initialize the object</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Speaker</span>:</span></span><br><span class="line">	name = <span class="literal">None</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name</span>):</span></span><br><span class="line">    	self.name = name</span><br><span class="line">	</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sayHello</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <hr>
 <p>Generally, we use import like this</p>
 <p>Lib.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span>():</span> <span class="comment"># this .py file do not have class, so do not need to instantiate</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>Test.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Lib</span><br><span class="line"></span><br><span class="line">Lib.hello() </span><br></pre></td></tr></table></figure>
-
 <p>How can we import a class</p>
 <p>A class Import other class and use that class’s function</p>
 <p>Test.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> packageName.Speaker <span class="keyword">import</span> Speaker</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">	speaker = Speaker() <span class="comment"># you need to instantiate the object, so that you can use it</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">testSpeak</span>():</span></span><br><span class="line">        speaker.sayHello()</span><br></pre></td></tr></table></figure>
-
-
-
 
       
     </div>

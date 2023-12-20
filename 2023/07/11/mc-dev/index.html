@@ -233,24 +233,12 @@
         <h1 id="plugin-创建"><a href="#plugin-创建" class="headerlink" title="plugin 创建"></a>plugin 创建</h1><p><a target="_blank" rel="noopener" href="https://www.spigotmc.org/wiki/creating-a-plugin-with-maven-using-intellij-idea/">https://www.spigotmc.org/wiki/creating-a-plugin-with-maven-using-intellij-idea/</a></p>
 <h3 id="1-新建-Maven-项目"><a href="#1-新建-Maven-项目" class="headerlink" title="1.新建 Maven 项目"></a>1.新建 Maven 项目</h3><p><code>pom.xml</code></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>spigot-repo<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://hub.spigotmc.org/nexus/content/repositories/snapshots/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.spigotmc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spigot-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.5-R0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>版本选择可以到<a target="_blank" rel="noopener" href="https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/spigotmc/spigot-api/">仓库</a>中看</p>
 <h3 id="2-新建-package"><a href="#2-新建-package" class="headerlink" title="2.新建 package"></a>2.新建 package</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">me.&#123;name&#125;.&#123;pluginname&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="3-新建个-Main-类"><a href="#3-新建个-Main-类" class="headerlink" title="3.新建个 Main 类"></a>3.新建个 Main 类</h3><p> (类名可以自己改)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> me.cola.demo;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.Bukkit;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.ChatColor;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.plugin.java.JavaPlugin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">JavaPlugin</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEnable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        getLogger().info(<span class="string">&quot;onEnable is called!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDisable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        getLogger().info(<span class="string">&quot;onDisable is called!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="4-resources-中新建文件-plugin-yml"><a href="#4-resources-中新建文件-plugin-yml" class="headerlink" title="4.resources 中新建文件 plugin.yml"></a>4.<code>resources</code> 中新建文件 <code>plugin.yml</code></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">demo</span></span><br><span class="line"><span class="attr">version:</span> <span class="number">1.0</span></span><br><span class="line"><span class="attr">main:</span> <span class="string">me.cola.demo.Main</span>  <span class="comment"># 用于插件启动</span></span><br><span class="line"><span class="attr">api-version:</span> <span class="number">1.16</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="5-打包"><a href="#5-打包" class="headerlink" title="5.打包"></a>5.打包</h3><p>Maven – lifecycle – package</p>
+<h3 id="5-打包"><a href="#5-打包" class="headerlink" title="5.打包"></a>5.打包</h3><p>Maven — lifecycle — package</p>
 <p>打包完后，在 target 文件夹中找即可</p>
 <p>jar包名可自己改</p>
 <p><a target="_blank" rel="noopener" href="https://helpch.at/docs/1.16.5/index.html">bukkit API</a></p>
@@ -258,18 +246,13 @@
 <p>具体的 plugin demo 可以到 <a target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/">Spigot</a> 找开源的插件学习</p>
 <h1 id="plugin-调试"><a href="#plugin-调试" class="headerlink" title="plugin 调试"></a>plugin 调试</h1><h2 id="1-Artifacts-配置"><a href="#1-Artifacts-配置" class="headerlink" title="1.Artifacts 配置"></a>1.Artifacts 配置</h2><p>把输出目录设置到</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\software\mc\1.16.5\plugins</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230711162434247.png" alt="image-20230711162434247"></p>
-<h2 id="2-新建debug项"><a href="#2-新建debug项" class="headerlink" title="2.新建debug项"></a>2.新建debug项</h2><p><code>Edit Configuration </code> – <code>JAR Application</code>  </p>
+<h2 id="2-新建debug项"><a href="#2-新建debug项" class="headerlink" title="2.新建debug项"></a>2.新建debug项</h2><p><code>Edit Configuration</code> — <code>JAR Application</code>  </p>
 <p>修改 <code>Path to JAR</code> 为 <code>spigot 服务器jar包</code> </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\software\mc\1.16.5\spigot-1.16.5.jar</span><br></pre></td></tr></table></figure>
-
 <p>修改 <code>Working directory</code> 为服务器目录</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\software\mc\1.16.5</span><br></pre></td></tr></table></figure>
-
-
-
-<p>新建 <code>before launch</code> – <code>Build xxx artifacts</code></p>
+<p>新建 <code>before launch</code> — <code>Build xxx artifacts</code></p>
 <p>(每次重新打包插件的jar包，然后重启服务器)</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230711162406396.png" alt="image-20230711162406396"></p>
 <h3 id="3-启动"><a href="#3-启动" class="headerlink" title="3.启动"></a>3.启动</h3><p>点击绿色小虫</p>
@@ -285,43 +268,14 @@
 <p><a target="_blank" rel="noopener" href="https://lingluo-hub.github.io/SpigotMC/official-plugin-development/using-the-event-api/">plugin 教程</a></p>
 <p>具体的 plugin demo 可以到 <a target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/">Spigot</a> 找开源的插件学习</p>
 <h2 id="item"><a href="#item" class="headerlink" title="item"></a>item</h2><h3 id="custom-item"><a href="#custom-item" class="headerlink" title="custom item"></a>custom item</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ItemStack item = <span class="keyword">new</span> ItemStack(Material.NETHER_STAR);</span><br><span class="line">ItemMeta itemMeta = item.getItemMeta();</span><br><span class="line"><span class="keyword">if</span>(itemMeta!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    itemMeta.setDisplayName(<span class="string">&quot;key&quot;</span>);</span><br><span class="line">    item.setItemMeta(itemMeta);</span><br><span class="line">&#125;</span><br><span class="line">inventory.setItem(<span class="number">0</span>, item);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="player"><a href="#player" class="headerlink" title="player"></a>player</h2><h2 id="点击物品"><a href="#点击物品" class="headerlink" title="点击物品"></a>点击物品</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PlayerInteractEvent</span><br><span class="line">   event.getAction() == Action.RIGHT_CLICK_AIR</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h3 id="movement"><a href="#movement" class="headerlink" title="movement"></a>movement</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.setVelocity(<span class="keyword">new</span> Vector(<span class="number">0</span>,<span class="number">5</span>,<span class="number">0</span>));</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="particle"><a href="#particle" class="headerlink" title="particle"></a>particle</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.spawnParticle(Particle.EXPLOSION_NORMAL,player.getLocation(),<span class="number">50</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h1 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h1><p>把入站规则填好，可以限定 ip</p>
 <p>！！另外注意，入站规则之间可能会有影响，新建的入站规则不生效，可能是受到其他block规则的影响</p>
 <p>解决办法：<strong>把 java相关的block入站规则全部禁用</strong>，或者把防火墙全部关闭（这样子不能控制 ip，不推荐）</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230808133700720.png" alt="image-20230808133700720"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mcpi.minecraft <span class="keyword">as</span> minecraft</span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> block</span><br><span class="line">mc = minecraft.Minecraft.create(<span class="string">&#x27;localhost&#x27;</span>)  <span class="comment"># 服务器的ip</span></span><br><span class="line">player = mc.player</span><br><span class="line"></span><br><span class="line">x,y,z = player.getTilePos()</span><br><span class="line">mc.setBlock(x, y, z, block.TNT)</span><br></pre></td></tr></table></figure>
-
-
-
 
     </div>
 

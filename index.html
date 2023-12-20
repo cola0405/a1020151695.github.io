@@ -230,56 +230,16 @@
 <p>接5 7 9</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230814182015479.png" alt="image-20230814182015479"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#回调函数，这里写敲击之后执行的方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">n</span>):</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;knocked&quot;</span>)</span><br><span class="line">	x,y,z = player.getTilePos()</span><br><span class="line">	player.setPos(x,y+<span class="number">20</span>,z)</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">====================================================</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> minecraft</span><br><span class="line">mc = minecraft.Minecraft.create()</span><br><span class="line">player = mc.player</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置输入</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)</span><br><span class="line">GPIO_PIN = <span class="number">4</span></span><br><span class="line">GPIO.setup(GPIO_PIN, GPIO.IN)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Sensor [ctrl+c to stop]&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加触发事件，当敲击后100ms触发回调函数</span></span><br><span class="line">GPIO.add_event_detect(GPIO_PIN, GPIO.FALLING, callback=f, bouncetime=<span class="number">100</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">		time.sleep(<span class="number">1</span>)  </span><br><span class="line"><span class="comment"># ctrl+c 终止程序</span></span><br><span class="line"><span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">	GPIO.cleanup()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="温湿度传感器"><a href="#温湿度传感器" class="headerlink" title="温湿度传感器"></a>温湿度传感器</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230810180456331.png" alt="image-20230810180456331"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自己来diy吧！</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    x,y,z = player.getTilePos()</span><br><span class="line">    mc.setBlock(x,y+<span class="number">2</span>,z,block.WATER)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">====================================================</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Adafruit_DHT</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> minecraft,block</span><br><span class="line"></span><br><span class="line">mc = minecraft.Minecraft.create(<span class="string">&#x27;192.168.50.169&#x27;</span>)</span><br><span class="line">player = mc.player</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set sensor type : Options are DHT11,DHT22 or AM2302</span></span><br><span class="line">sensor = Adafruit_DHT.DHT11</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set GPIO sensor is connected to</span></span><br><span class="line">gpio = <span class="number">18</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use read_retry method. This will retry up to 15 times to</span></span><br><span class="line"><span class="comment"># get a sensor reading (waiting 2 seconds between each retry).</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"><span class="comment"># Reading the DHT11 is very sensitive to timings and occasionally</span></span><br><span class="line"><span class="comment"># the Pi might fail to get a valid reading. So check if readings are valid.</span></span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    humidity, temperature = Adafruit_DHT.read_retry(sensor, gpio)</span><br><span class="line">    <span class="keyword">if</span> humidity <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">and</span> temperature <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Temp=&#123;0:0.1f&#125;*C Humidty=&#123;1:0.1f&#125;%&quot;</span>.<span class="built_in">format</span>(temperature, humidity))</span><br><span class="line">        <span class="keyword">if</span> humidity&gt;<span class="number">70</span>:</span><br><span class="line">            f()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Failed to get reading. Try again!&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="旋钮"><a href="#旋钮" class="headerlink" title="旋钮"></a>旋钮</h2><p>13 15 11 4 6</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230813151350604.png" alt="image-20230813151350604"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BtnPin = 11    # Button Pin</span><br><span class="line">RoAPin = 13    # CLK Pin</span><br><span class="line">RoBPin = 15    # DT Pin</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自己来diy吧！</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    mc.setBlock(x,y+<span class="number">2</span>,z,globalCounter)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">====================================================</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> minecraft</span><br><span class="line"></span><br><span class="line">mc = minecraft.Minecraft.create()</span><br><span class="line">player = mc.player</span><br><span class="line">x,y,z = player.getTilePos()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">RoAPin = <span class="number">13</span>    <span class="comment"># CLK Pin</span></span><br><span class="line">RoBPin = <span class="number">15</span>    <span class="comment"># DT Pin</span></span><br><span class="line">BtnPin = <span class="number">11</span>    <span class="comment"># Button Pin</span></span><br><span class="line">globalCounter = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">flag = <span class="number">0</span></span><br><span class="line">Last_RoB_Status = <span class="number">0</span></span><br><span class="line">Current_RoB_Status = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setup</span>():</span></span><br><span class="line">	GPIO.setmode(GPIO.BOARD)       <span class="comment"># Numbers GPIOs by physical location</span></span><br><span class="line">	GPIO.setup(RoAPin, GPIO.IN)    <span class="comment"># input mode</span></span><br><span class="line">	GPIO.setup(RoBPin, GPIO.IN)</span><br><span class="line">	GPIO.setup(BtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotaryDeal</span>():</span></span><br><span class="line">	<span class="keyword">global</span> flag</span><br><span class="line">	<span class="keyword">global</span> Last_RoB_Status</span><br><span class="line">	<span class="keyword">global</span> Current_RoB_Status</span><br><span class="line">	<span class="keyword">global</span> globalCounter</span><br><span class="line">	Last_RoB_Status = GPIO.<span class="built_in">input</span>(RoBPin)  </span><br><span class="line">	<span class="keyword">while</span>(<span class="keyword">not</span> GPIO.<span class="built_in">input</span>(RoAPin)):      <span class="comment">#未旋转时，GPIO.input(RoAPin)值为1，旋转时会变为0</span></span><br><span class="line">		Current_RoB_Status = GPIO.<span class="built_in">input</span>(RoBPin)  <span class="comment">#旋转时的当前值</span></span><br><span class="line">		flag = <span class="number">1</span></span><br><span class="line">	<span class="keyword">if</span> flag == <span class="number">1</span>:</span><br><span class="line">		flag = <span class="number">0</span></span><br><span class="line">		<span class="keyword">if</span> (Last_RoB_Status == <span class="number">1</span>) <span class="keyword">and</span> (Current_RoB_Status == <span class="number">0</span>):</span><br><span class="line">			globalCounter = globalCounter - <span class="number">1</span>  <span class="comment">#顺时针旋转</span></span><br><span class="line">		<span class="keyword">if</span> (Last_RoB_Status == <span class="number">0</span>) <span class="keyword">and</span> (Current_RoB_Status == <span class="number">1</span>):</span><br><span class="line">			globalCounter = globalCounter + <span class="number">1</span>  <span class="comment">#逆时针旋转</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">btnISR</span>(<span class="params">channel</span>):</span></span><br><span class="line">	<span class="keyword">global</span> globalCounter</span><br><span class="line">	globalCounter = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop</span>():</span></span><br><span class="line">	<span class="keyword">global</span> globalCounter</span><br><span class="line">	tmp = <span class="number">0</span>	<span class="comment"># Rotary Temperary</span></span><br><span class="line"></span><br><span class="line">	GPIO.add_event_detect(BtnPin, GPIO.FALLING, callback=btnISR)</span><br><span class="line">	<span class="comment">#当按下按钮时，调用回调函数btnISR</span></span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">		rotaryDeal()</span><br><span class="line">		<span class="keyword">if</span> tmp != globalCounter:</span><br><span class="line">			<span class="built_in">print</span> (<span class="string">&#x27;globalCounter = %d&#x27;</span> % globalCounter)</span><br><span class="line">			tmp = globalCounter</span><br><span class="line">			f()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">destroy</span>():</span></span><br><span class="line">	GPIO.cleanup()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>: </span><br><span class="line">	setup()</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		loop()</span><br><span class="line">	<span class="keyword">except</span> KeyboardInterrupt:  <span class="comment"># When &#x27;Ctrl+C&#x27; is pressed, the child program destroy() will be  executed.</span></span><br><span class="line">		destroy()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="RGB"><a href="#RGB" class="headerlink" title="RGB"></a>RGB</h2><p>9 11 13 15</p>
 <p><img src="C:\Users\cola\AppData\Roaming\Typora\typora-user-images\image-20230815163415165.png" alt="image-20230815163415165"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> minecraft,block</span><br><span class="line">mc = minecraft.Minecraft.create()</span><br><span class="line">player = mc.player</span><br><span class="line">GPIO.setmode(GPIO.BCM)</span><br><span class="line">RGlist = [<span class="number">17</span>,<span class="number">27</span>,<span class="number">22</span>]</span><br><span class="line">GPIO.setup(RGlist,GPIO.OUT)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        x,y,z = player.getTilePos()</span><br><span class="line">        block_id = mc.getBlock(x,y,z)</span><br><span class="line">        under = mc.getBlock(x,y-<span class="number">1</span>,z)</span><br><span class="line">        <span class="keyword">if</span> block_id == block.WATER.<span class="built_in">id</span>:</span><br><span class="line">            GPIO.output(<span class="number">22</span>,<span class="number">1</span>)</span><br><span class="line">            time.sleep(<span class="number">0.5</span>)</span><br><span class="line">            GPIO.output(<span class="number">22</span>,<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">elif</span> block_id == block.LAVA.<span class="built_in">id</span>:</span><br><span class="line">            GPIO.output(<span class="number">17</span>,<span class="number">1</span>)</span><br><span class="line">            time.sleep(<span class="number">0.5</span>)</span><br><span class="line">            GPIO.output(<span class="number">17</span>,<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">elif</span> under == block.GRASS.<span class="built_in">id</span>:</span><br><span class="line">            GPIO.output(<span class="number">27</span>,<span class="number">1</span>)</span><br><span class="line">            time.sleep(<span class="number">0.5</span>)</span><br><span class="line">            GPIO.output(<span class="number">27</span>,<span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">    GPIO.output(<span class="number">27</span>,<span class="number">0</span>)</span><br><span class="line">    GPIO.output(<span class="number">17</span>,<span class="number">0</span>)</span><br><span class="line">    GPIO.output(<span class="number">22</span>,<span class="number">0</span>)</span><br><span class="line">    GPIO.cleanup()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="按键"><a href="#按键" class="headerlink" title="按键"></a>按键</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -339,13 +299,6 @@
 
       
           <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">DRY_RUN=1 sh ./get-docker.sh</span><br><span class="line">sudo sh get-docker.sh</span><br><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 
       
     </div>
@@ -413,24 +366,12 @@
           <h1 id="plugin-创建"><a href="#plugin-创建" class="headerlink" title="plugin 创建"></a>plugin 创建</h1><p><a target="_blank" rel="noopener" href="https://www.spigotmc.org/wiki/creating-a-plugin-with-maven-using-intellij-idea/">https://www.spigotmc.org/wiki/creating-a-plugin-with-maven-using-intellij-idea/</a></p>
 <h3 id="1-新建-Maven-项目"><a href="#1-新建-Maven-项目" class="headerlink" title="1.新建 Maven 项目"></a>1.新建 Maven 项目</h3><p><code>pom.xml</code></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>spigot-repo<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://hub.spigotmc.org/nexus/content/repositories/snapshots/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.spigotmc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spigot-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.5-R0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>版本选择可以到<a target="_blank" rel="noopener" href="https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/spigotmc/spigot-api/">仓库</a>中看</p>
 <h3 id="2-新建-package"><a href="#2-新建-package" class="headerlink" title="2.新建 package"></a>2.新建 package</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">me.&#123;name&#125;.&#123;pluginname&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="3-新建个-Main-类"><a href="#3-新建个-Main-类" class="headerlink" title="3.新建个 Main 类"></a>3.新建个 Main 类</h3><p> (类名可以自己改)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> me.cola.demo;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.Bukkit;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.ChatColor;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.plugin.java.JavaPlugin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">JavaPlugin</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEnable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        getLogger().info(<span class="string">&quot;onEnable is called!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDisable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        getLogger().info(<span class="string">&quot;onDisable is called!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="4-resources-中新建文件-plugin-yml"><a href="#4-resources-中新建文件-plugin-yml" class="headerlink" title="4.resources 中新建文件 plugin.yml"></a>4.<code>resources</code> 中新建文件 <code>plugin.yml</code></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">demo</span></span><br><span class="line"><span class="attr">version:</span> <span class="number">1.0</span></span><br><span class="line"><span class="attr">main:</span> <span class="string">me.cola.demo.Main</span>  <span class="comment"># 用于插件启动</span></span><br><span class="line"><span class="attr">api-version:</span> <span class="number">1.16</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="5-打包"><a href="#5-打包" class="headerlink" title="5.打包"></a>5.打包</h3><p>Maven – lifecycle – package</p>
+<h3 id="5-打包"><a href="#5-打包" class="headerlink" title="5.打包"></a>5.打包</h3><p>Maven — lifecycle — package</p>
 <p>打包完后，在 target 文件夹中找即可</p>
 <p>jar包名可自己改</p>
 <p><a target="_blank" rel="noopener" href="https://helpch.at/docs/1.16.5/index.html">bukkit API</a></p>
@@ -438,18 +379,13 @@
 <p>具体的 plugin demo 可以到 <a target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/">Spigot</a> 找开源的插件学习</p>
 <h1 id="plugin-调试"><a href="#plugin-调试" class="headerlink" title="plugin 调试"></a>plugin 调试</h1><h2 id="1-Artifacts-配置"><a href="#1-Artifacts-配置" class="headerlink" title="1.Artifacts 配置"></a>1.Artifacts 配置</h2><p>把输出目录设置到</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\software\mc\1.16.5\plugins</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230711162434247.png" alt="image-20230711162434247"></p>
-<h2 id="2-新建debug项"><a href="#2-新建debug项" class="headerlink" title="2.新建debug项"></a>2.新建debug项</h2><p><code>Edit Configuration </code> – <code>JAR Application</code>  </p>
+<h2 id="2-新建debug项"><a href="#2-新建debug项" class="headerlink" title="2.新建debug项"></a>2.新建debug项</h2><p><code>Edit Configuration</code> — <code>JAR Application</code>  </p>
 <p>修改 <code>Path to JAR</code> 为 <code>spigot 服务器jar包</code> </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\software\mc\1.16.5\spigot-1.16.5.jar</span><br></pre></td></tr></table></figure>
-
 <p>修改 <code>Working directory</code> 为服务器目录</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\software\mc\1.16.5</span><br></pre></td></tr></table></figure>
-
-
-
-<p>新建 <code>before launch</code> – <code>Build xxx artifacts</code></p>
+<p>新建 <code>before launch</code> — <code>Build xxx artifacts</code></p>
 <p>(每次重新打包插件的jar包，然后重启服务器)</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230711162406396.png" alt="image-20230711162406396"></p>
 <h3 id="3-启动"><a href="#3-启动" class="headerlink" title="3.启动"></a>3.启动</h3><p>点击绿色小虫</p>
@@ -465,43 +401,14 @@
 <p><a target="_blank" rel="noopener" href="https://lingluo-hub.github.io/SpigotMC/official-plugin-development/using-the-event-api/">plugin 教程</a></p>
 <p>具体的 plugin demo 可以到 <a target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/">Spigot</a> 找开源的插件学习</p>
 <h2 id="item"><a href="#item" class="headerlink" title="item"></a>item</h2><h3 id="custom-item"><a href="#custom-item" class="headerlink" title="custom item"></a>custom item</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ItemStack item = <span class="keyword">new</span> ItemStack(Material.NETHER_STAR);</span><br><span class="line">ItemMeta itemMeta = item.getItemMeta();</span><br><span class="line"><span class="keyword">if</span>(itemMeta!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    itemMeta.setDisplayName(<span class="string">&quot;key&quot;</span>);</span><br><span class="line">    item.setItemMeta(itemMeta);</span><br><span class="line">&#125;</span><br><span class="line">inventory.setItem(<span class="number">0</span>, item);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="player"><a href="#player" class="headerlink" title="player"></a>player</h2><h2 id="点击物品"><a href="#点击物品" class="headerlink" title="点击物品"></a>点击物品</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PlayerInteractEvent</span><br><span class="line">   event.getAction() == Action.RIGHT_CLICK_AIR</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h3 id="movement"><a href="#movement" class="headerlink" title="movement"></a>movement</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.setVelocity(<span class="keyword">new</span> Vector(<span class="number">0</span>,<span class="number">5</span>,<span class="number">0</span>));</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="particle"><a href="#particle" class="headerlink" title="particle"></a>particle</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.spawnParticle(Particle.EXPLOSION_NORMAL,player.getLocation(),<span class="number">50</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h1 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h1><p>把入站规则填好，可以限定 ip</p>
 <p>！！另外注意，入站规则之间可能会有影响，新建的入站规则不生效，可能是受到其他block规则的影响</p>
 <p>解决办法：<strong>把 java相关的block入站规则全部禁用</strong>，或者把防火墙全部关闭（这样子不能控制 ip，不推荐）</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230808133700720.png" alt="image-20230808133700720"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mcpi.minecraft <span class="keyword">as</span> minecraft</span><br><span class="line"><span class="keyword">from</span> mcpi <span class="keyword">import</span> block</span><br><span class="line">mc = minecraft.Minecraft.create(<span class="string">&#x27;localhost&#x27;</span>)  <span class="comment"># 服务器的ip</span></span><br><span class="line">player = mc.player</span><br><span class="line"></span><br><span class="line">x,y,z = player.getTilePos()</span><br><span class="line">mc.setBlock(x, y, z, block.TNT)</span><br></pre></td></tr></table></figure>
-
-
-
 
       
     </div>
@@ -570,125 +477,63 @@
 <p>… 官网默认装的是最新的</p>
 <p>如果要下载指定版本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cuda-toolkit-11-8</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="重装驱动"><a href="#重装驱动" class="headerlink" title="重装驱动"></a>重装驱动</h3><p>首先需要卸载原驱动</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt --purge remove <span class="string">&quot;cublas*&quot;</span> <span class="string">&quot;cuda*&quot;</span></span><br><span class="line">sudo apt --purge remove <span class="string">&quot;nvidia*&quot;</span></span><br><span class="line">rm -rf /usr/<span class="built_in">local</span>/cuda*</span><br><span class="line">sudo apt-get autoremove &amp;&amp; sudo apt-get autoclean</span><br><span class="line"></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install build essentials</span></span><br><span class="line">sudo apt-get install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev</span><br></pre></td></tr></table></figure>
-
 <p>再安装CUDA，选好版本，不要选中间的(network)</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703131955810.png" alt="image-20230703131955810"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run</span><br><span class="line">sudo sh cuda_11.8.0_520.61.05_linux.run</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="安装SD"><a href="#安装SD" class="headerlink" title="安装SD"></a>安装SD</h2><p>根据不同的 linux 选一条执行</p>
 <p>ubuntu是基于 debian 的</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Debian-based:</span></span><br><span class="line">sudo apt install wget git python3 python3-venv</span><br><span class="line"><span class="comment"># Red Hat-based:</span></span><br><span class="line">sudo dnf install wget git python3</span><br><span class="line"><span class="comment"># Arch-based:</span></span><br><span class="line">sudo pacman -S wget git python3</span><br></pre></td></tr></table></figure>
-
-
-
 <p>选好安装目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)</span><br></pre></td></tr></table></figure>
-
 <p>进入目录，运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webui.sh</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="手动安装依赖"><a href="#手动安装依赖" class="headerlink" title="手动安装依赖"></a>手动安装依赖</h3><p>遇到有中断的，<strong>可以手动用 <code>venv </code> 中的 pip 或 python3 安装依赖</strong></p>
+<h3 id="手动安装依赖"><a href="#手动安装依赖" class="headerlink" title="手动安装依赖"></a>手动安装依赖</h3><p>遇到有中断的，<strong>可以手动用 <code>venv</code> 中的 pip 或 python3 安装依赖</strong></p>
 <p>阿里云网络的问题。。。一时能下载，一时下不了</p>
 <p>多试几次</p>
-<h3 id="启动参数"><a href="#启动参数" class="headerlink" title="启动参数"></a>启动参数</h3><p>启动参数的配置文件 – <strong><code>linux </code> 是 <code>sh</code>，<code>windows </code> 是 <code>bat</code></strong></p>
+<h3 id="启动参数"><a href="#启动参数" class="headerlink" title="启动参数"></a>启动参数</h3><p>启动参数的配置文件 — <strong><code>linux</code> 是 <code>sh</code>，<code>windows</code> 是 <code>bat</code></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi webui-user.bat</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 部署在0.0.0.0才允许外部访问</span></span><br><span class="line">--liten</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--listen --no-half --disable-nan-check --medvram --precision full --xformers --enable-insecure-extension-access</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weget <span class="string">&quot;url&quot;</span> -O <span class="string">&quot;xxx.safesensor&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p>具体后缀名根据文件改</p>
 <h2 id="clash"><a href="#clash" class="headerlink" title="clash"></a>clash</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash">clash</a></p>
 <p>下载对应版本</p>
 <p>linux的话amd64就行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunzip clash-linux-amd64-v1.4.1.gz</span><br></pre></td></tr></table></figure>
-
 <p>解压出来就是一个可执行文件</p>
 <p>重命名方便操作</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv clash-linux-amd64 clash</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
 <p>赋予运行权限：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x clash</span><br></pre></td></tr></table></figure>
-
 <p>移动到bin目录下，之后命令行就能直接运行了：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv clash /usr/<span class="built_in">local</span>/bin/clash</span><br></pre></td></tr></table></figure>
-
-
-
-<p>添加配置文件 – 来自你的订阅</p>
+<p>添加配置文件 — 来自你的订阅</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.config/clash/config.yaml</span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703151658705.png" alt="image-20230703151658705"></p>
 <p>然后可以试着运行一下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clash</span><br></pre></td></tr></table></figure>
-
 <p>如果数据库文件 <code>Country.mmdb</code> 下载不下来</p>
 <p>则根据链接手动下载，然后同样放在 <code>~/.config/clash/</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system/</span><br><span class="line">vim clash.service</span><br></pre></td></tr></table></figure>
-
 <p>改一下自己的 <code>/home/用户名</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description= proxy</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/usr/local/bin/clash -f /home/&#123;YOUR_USERNAME&#125;/.config/clash/config.yaml</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>一种方法是，直接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clash</span><br></pre></td></tr></table></figure>
-
 <p>一个终端挂着跑代理，别关</p>
 <p>然后，另起一个端口来用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget &quot;机场给你的订阅链接&quot; -O config.yaml</span><br></pre></td></tr></table></figure>
-
 <p>将 <code>config.yaml</code>、<code>Country.mmdb</code> 两个文件存放至 <code>/home/tao/.config/clash</code> 文件夹里</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="all-black"><a href="#all-black" class="headerlink" title="all black"></a>all black</h3><p>all black – 模型的问题(文件名有严格要求，后缀，也别另外加引号)</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="all-black"><a href="#all-black" class="headerlink" title="all black"></a>all black</h3><p>all black — 模型的问题(文件名有严格要求，后缀，也别另外加引号)</p>
 <h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>CUDA12 是可用的</p>
-<h3 id="xformer"><a href="#xformer" class="headerlink" title="xformer"></a>xformer</h3><p>启动参数加 <code>--xformerx </code> 会自动下载相关依赖</p>
-<h3 id="阿里云镜像"><a href="#阿里云镜像" class="headerlink" title="阿里云镜像"></a>阿里云镜像</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703162018078.png"></p>
-<p>所以这些东西都是存在地方服务器的 – 杭州、深圳这样（现在理解为什么要分别不同区域了）</p>
+<h3 id="xformer"><a href="#xformer" class="headerlink" title="xformer"></a>xformer</h3><p>启动参数加 <code>--xformerx</code> 会自动下载相关依赖</p>
+<h3 id="阿里云镜像"><a href="#阿里云镜像" class="headerlink" title="阿里云镜像"></a>阿里云镜像</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230703162018078.png" alt=""></p>
+<p>所以这些东西都是存在地方服务器的 — 杭州、深圳这样（现在理解为什么要分别不同区域了）</p>
 <p>如果要跨区得额外做镜像复制</p>
-<p>包括镜像的导出，还得存在**同区域自己的 oss **中，然后再下载</p>
+<p>包括镜像的导出，还得存在<strong>同区域自己的 oss </strong>中，然后再下载</p>
 <h3 id="permission-denied"><a href="#permission-denied" class="headerlink" title="permission denied"></a>permission denied</h3><p>用root用户安装的插件。。。普通用户运行脚本涉及到修改时，自然没权限了</p>
 
       
@@ -740,7 +585,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-11-01 11:30:57" itemprop="dateModified" datetime="2023-11-01T11:30:57+08:00">2023-11-01</time>
+                <time title="Modified: 2023-12-20 15:03:17" itemprop="dateModified" datetime="2023-12-20T15:03:17+08:00">2023-12-20</time>
               </span>
 
           
@@ -754,143 +599,85 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="传参问题"><a href="#传参问题" class="headerlink" title="传参问题"></a>传参问题</h2><p>默认值拷贝</p>
+          <h2 id="竞赛要求"><a href="#竞赛要求" class="headerlink" title="竞赛要求"></a>竞赛要求</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (1) 能声明固定长度就声明固定长度，内存申请更消耗时间</span></span><br><span class="line"><span class="keyword">int</span> height[<span class="number">501</span>][<span class="number">501</span>], wp[<span class="number">501</span>][<span class="number">501</span>];</span><br><span class="line"><span class="comment">// (2) 能用pair就用pair</span></span><br><span class="line">q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(wi, wj));</span><br><span class="line"><span class="comment">// (3) 能用标志位就不用unordered_set</span></span><br></pre></td></tr></table></figure>
+<h2 id="传参问题"><a href="#传参问题" class="headerlink" title="传参问题"></a>传参问题</h2><p>默认值拷贝</p>
+<h2 id="char"><a href="#char" class="headerlink" title="char"></a>char</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g[i][j]==<span class="string">&#x27;#&#x27;</span></span><br></pre></td></tr></table></figure>
 <h2 id="cmp"><a href="#cmp" class="headerlink" title="cmp"></a>cmp</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">0</span>]&lt;b[<span class="number">0</span>];  <span class="comment">// 小于则从小到大</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="精度问题"><a href="#精度问题" class="headerlink" title="精度问题"></a>精度问题</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> res = (<span class="keyword">double</span>)(p[n]-p[k] - lowest) / (n-k<span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
-
 <p>如果写成这样</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> res = (p[n]-p[k] - lowest) / (n-k<span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
-
 <p>减法得到的结果会被强制转换成 int 类型，因为第一项是 int</p>
 <p>解决方法是先把其转成浮点数，然后再进行除法运算</p>
 <h2 id="index-and-iterator"><a href="#index-and-iterator" class="headerlink" title="index and iterator"></a>index and iterator</h2><p>index to iterator</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t.<span class="built_in">erase</span>(t.<span class="built_in">begin</span>()+idx);</span><br></pre></td></tr></table></figure>
-
-
-
 <p>iterator to index</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">it-t.<span class="built_in">begin</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>将一个浮点数直接赋值给整数变量会进行隐式的类型转换。在这种情况下，浮点数会被截断为整数部分</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">3.4</span>;   <span class="comment">//a=3</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>对于整数类型，如果其中一个操作数是<code>long long</code>类型，那么表达式的结果类型将是<code>long long</code>。</p>
 <h2 id="lower-bound返回值"><a href="#lower-bound返回值" class="headerlink" title="lower_bound返回值"></a>lower_bound返回值</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> idx = <span class="built_in">lower_bound</span>(t.<span class="built_in">begin</span>(), t.<span class="built_in">end</span>(), a) - t.<span class="built_in">begin</span>();</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<p>lower_bound 最小取到0，最大取到 v.size()</p>
+<p>需要灵活处理</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; res;  <span class="comment">// lower_bound 只能找到适合的插入位置，但是无法立即确认到底是离左边近还是右边</span></span><br><span class="line"><span class="keyword">if</span>(lower<span class="number">-1</span>&gt;=<span class="number">0</span> &amp;&amp; lower<span class="number">-1</span>&lt;nodes.<span class="built_in">size</span>()) res.<span class="built_in">push_back</span>(<span class="built_in">pow</span>(nodes[lower<span class="number">-1</span>]-b, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">if</span>(upper<span class="number">-1</span>&gt;=<span class="number">0</span> &amp;&amp; upper<span class="number">-1</span>&lt;nodes.<span class="built_in">size</span>()) res.<span class="built_in">push_back</span>(<span class="built_in">pow</span>(nodes[upper<span class="number">-1</span>]-b, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">if</span>(lower&gt;=<span class="number">0</span> &amp;&amp; lower&lt;nodes.<span class="built_in">size</span>()) res.<span class="built_in">push_back</span>(<span class="built_in">pow</span>(nodes[lower]-b, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">if</span>(upper&gt;=<span class="number">0</span> &amp;&amp; upper&lt;nodes.<span class="built_in">size</span>()) res.<span class="built_in">push_back</span>(<span class="built_in">pow</span>(nodes[upper]-b, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">return</span> *<span class="built_in">min_element</span>(res.<span class="built_in">begin</span>(), res.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
 <h2 id="min-and-max"><a href="#min-and-max" class="headerlink" title="min and max"></a>min and max</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> lowest = *<span class="built_in">min_element</span>(scores.<span class="built_in">begin</span>()+k, scores.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-
 <p>vector 用 min_element()</p>
-<p>普通数字比较可以直接用 min()</p>
-<p>返回的是迭代器，所以加星号取值</p>
-<p>时间复杂度是O(n)</p>
+<p>返回的是迭代器，所以加星号取值 时间复杂度是 O(n)</p>
+<p>普通数字比较可以直接用 min() (只允许放两个同类型的值)</p>
 <h2 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100716391.png" alt="image-20230624100716391"></p>
 <p>原因是 std 下也有一个 visit</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100745188.png" alt="image-20230624100745188"></p>
-<h2 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">end_time</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; duration, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, vector&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; pq; <span class="comment">// greater means 最小堆， 默认是less&lt;int&gt; 最大堆</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; i++)&#123;</span><br><span class="line">        pq.<span class="built_in">push</span>(duration[i]);  <span class="comment">// O(logn)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i&lt;duration.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();  <span class="comment">// pop没有返回值</span></span><br><span class="line">        pq.<span class="built_in">push</span>(t+duration[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!pq.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
+<h2 id="pow"><a href="#pow" class="headerlink" title="pow()"></a>pow()</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gap*gap</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pow</span>(x, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h2><p>方便取最大值，不方便修改</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">end_time</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; duration, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, vector&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; pq; <span class="comment">// greater means 最小堆， 默认是less&lt;int&gt; 最大堆</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; i++)&#123;</span><br><span class="line">        pq.<span class="built_in">push</span>(duration[i]);  <span class="comment">// O(logn)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i&lt;duration.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();  <span class="comment">// pop没有返回值</span></span><br><span class="line">        pq.<span class="built_in">push</span>(t+duration[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!pq.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>set容器是一个有序的容器，它存储唯一的元素，默认按从小到大排序</p>
+<p>如果要自定义</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set&lt;<span class="keyword">int</span>, greater&lt;<span class="keyword">int</span>&gt;&gt; rank;</span><br></pre></td></tr></table></figure>
 <h2 id="stable-sort"><a href="#stable-sort" class="headerlink" title="stable sort"></a>stable sort</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(<span class="keyword">const</span> vector&lt;<span class="keyword">int</span>&gt;&amp; a, <span class="keyword">const</span> vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">0</span>]&lt;b[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">stable_sort</span>(cows.<span class="built_in">begin</span>(), cows.<span class="built_in">end</span>(),cmp2);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(milk.<span class="built_in">begin</span>(), milk.<span class="built_in">end</span>(), greater&lt;<span class="keyword">int</span>&gt;());</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">1</span>]&lt;b[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">sort</span>(cows.<span class="built_in">begin</span>(), cows.<span class="built_in">end</span>(),cmp);  <span class="comment">// 为什么按end_time排看开头注释</span></span><br></pre></td></tr></table></figure>
 <h2 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> total = <span class="built_in">accumulate</span>(scores.<span class="built_in">begin</span>(), scores.<span class="built_in">end</span>(),<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-
 <p>有三个参数</p>
 <p>第三个参数是初始值</p>
 <h2 id="unorder-map"><a href="#unorder-map" class="headerlink" title="unorder_map"></a>unorder_map</h2><p>init</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, unordered_map&lt;string, <span class="keyword">int</span>&gt;&gt; c;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, string&gt; win = &#123;&#123;<span class="string">&quot;H&quot;</span>,<span class="string">&quot;S&quot;</span>&#125;, &#123;<span class="string">&quot;S&quot;</span>,<span class="string">&quot;P&quot;</span>&#125;, &#123;<span class="string">&quot;P&quot;</span>,<span class="string">&quot;H&quot;</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化前缀和</span></span><br><span class="line">unordered_map&lt;string, vector&lt;<span class="keyword">int</span>&gt;&gt; count = &#123;&#123;<span class="string">&quot;P&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;,&#123;<span class="string">&quot;H&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;,&#123;<span class="string">&quot;S&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>insert</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">already.<span class="built_in">insert</span>(&#123;id, start&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
 <p>access</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map[top]</span><br></pre></td></tr></table></figure>
-
 <p>如果 top 不在map中，也不会把报错</p>
 <p>而是创建默认值 0</p>
 <p>查找key的最大值</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> pair&lt;<span class="keyword">double</span>, <span class="keyword">int</span>&gt; &amp;p1, <span class="keyword">const</span> pair&lt;<span class="keyword">double</span>, <span class="keyword">int</span>&gt; &amp;p2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> p1.first &lt; p2.first;</span><br><span class="line">&#125;</span><br><span class="line">(*<span class="built_in">max_element</span>(final_score.<span class="built_in">begin</span>(), final_score.<span class="built_in">end</span>())).first</span><br></pre></td></tr></table></figure>
-
-
-
 <p>判断元素是否存在</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (final_score.<span class="built_in">find</span>(res) != final_score.<span class="built_in">end</span>())&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>遍历</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> it: map)&#123;</span><br><span class="line">    <span class="keyword">if</span> (map.<span class="built_in">find</span>(it.second) != map.<span class="built_in">end</span>())&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="unorder-set"><a href="#unorder-set" class="headerlink" title="unorder_set"></a>unorder_set</h2><h2 id="unorder-map-and-unorder-set"><a href="#unorder-map-and-unorder-set" class="headerlink" title="unorder_map and unorder_set"></a>unorder_map and unorder_set</h2><p>map 和 set 是基于红黑树实现</p>
+<h2 id="unorder-set"><a href="#unorder-set" class="headerlink" title="unorder_set"></a>unorder_set</h2><p>创建</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">unordered_set&lt;<span class="keyword">char</span>&gt; <span class="title">after</span><span class="params">(dst.begin(), dst.end())</span></span>;</span><br></pre></td></tr></table></figure>
+<p>并集</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abandon.<span class="built_in">insert</span>(already.<span class="built_in">begin</span>(), already.<span class="built_in">end</span>())</span><br></pre></td></tr></table></figure>
+<h2 id="unorder-map-and-unorder-set"><a href="#unorder-map-and-unorder-set" class="headerlink" title="unorder_map and unorder_set"></a>unorder_map and unorder_set</h2><p>map 和 set 是基于红黑树实现</p>
 <p>unorder_map 和 unorder_set 是基于hash实现</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// int ans=0;</span></span><br><span class="line"><span class="comment">// for(auto item : s2c)&#123;</span></span><br><span class="line"><span class="comment">//     string s = item.first;</span></span><br><span class="line"><span class="comment">//     unordered_set&lt;string&gt; &amp; cities = item.second;</span></span><br><span class="line"><span class="comment">//     for(const auto &amp;c : cities)&#123;</span></span><br><span class="line"><span class="comment">//         if(c2s[c].find(s)!=c2s[c].end())&#123;</span></span><br><span class="line"><span class="comment">//             ans++;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="与python中的map做对比"><a href="#与python中的map做对比" class="headerlink" title="与python中的map做对比"></a>与python中的map做对比</h2><p>map 的遍历和Python的不太一样</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">item.first</span><br><span class="line">item.second</span><br></pre></td></tr></table></figure>
-
-
-
 <p>c++中的map不能在key时不报错</p>
 <p>且尝试访问的时候，还会创建key，只是value可能还是空</p>
-<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v.<span class="built_in">push_back</span>(&#123;city, state&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p>创建</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; stack &#123;<span class="number">2</span>&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">s</span><span class="params">(nums.begin(), nums.begin()+<span class="number">1</span>)</span></span>;  <span class="comment">// &#123;1&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; wishlist = &#123;&#123;&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reach.push_back(vector&lt;bool&gt;(n+1,false));</span><br></pre></td></tr></table></figure>
+<p>批量插入</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ans.<span class="built_in">insert</span>(ans.<span class="built_in">end</span>(), vertices.<span class="built_in">begin</span>(), vertices.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+<p>二维vector</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v.<span class="built_in">push_back</span>(&#123;city, state&#125;);</span><br></pre></td></tr></table></figure>
 <p>pop</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> top = stack.<span class="built_in">back</span>();</span><br><span class="line">stack.<span class="built_in">pop_back</span>();</span><br></pre></td></tr></table></figure>
-
-
-
+<p>find</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">find</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>(), wishlist[cow][i]) != cur.<span class="built_in">end</span>()) <span class="keyword">continue</span>;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1018,29 +805,29 @@
       
           <h1 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h1><p>mathematic</p>
 <p>equation</p>
-<p>23.89 – Twenty-three point eight-nine.</p>
-<p>2^3 – 2 to the power of 3</p>
-<p>quotient – 商</p>
-<p>decimal – 小数</p>
-<p>decimal point – 小数点</p>
+<p>23.89 — Twenty-three point eight-nine.</p>
+<p>2^3 — 2 to the power of 3</p>
+<p>quotient — 商</p>
+<p>decimal — 小数</p>
+<p>decimal point — 小数点</p>
 <p>negative 1</p>
-<p>minus b – because b may be negative number</p>
-<p>parenthese – 圆括号</p>
+<p>minus b — because b may be negative number</p>
+<p>parenthese — 圆括号</p>
 <p>a plus b is equal (to) 10</p>
-<p>square a plus b – (a+b)</p>
+<p>square a plus b — (a+b)</p>
 <p>n is divisible by 2</p>
-<p>modulo – mo du low</p>
+<p>modulo — mo du low</p>
 <p>congruent 同余</p>
 <p>a is congruent to b</p>
-<h1 id="计算机"><a href="#计算机" class="headerlink" title="计算机"></a>计算机</h1><p>command – man</p>
+<h1 id="计算机"><a href="#计算机" class="headerlink" title="计算机"></a>计算机</h1><p>command — man</p>
 <p>python three seven</p>
 <p>extension - 后缀名</p>
-<p>asterisk – 星号</p>
-<p>assignment – set it to</p>
-<p>boolean – bull lian</p>
-<h1 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h1><p>greater than sign – &gt;</p>
-<p>comma – 逗号</p>
-<p>quotes – 引号</p>
+<p>asterisk — 星号</p>
+<p>assignment — set it to</p>
+<p>boolean — bull lian</p>
+<h1 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h1><p>greater than sign — &gt;</p>
+<p>comma — 逗号</p>
+<p>quotes — 引号</p>
 
       
     </div>
@@ -1108,106 +895,36 @@
           <p><code>tottime</code> 函数本身所花费的时间</p>
 <p><code>cumtime</code> 函数本身所花费的时间+其中调用其他函数的时间（调用函数的时候，cur就转到其他函数中了）</p>
 <h1 id="operation"><a href="#operation" class="headerlink" title="operation"></a>operation</h1><h2 id=""><a href="#" class="headerlink" title="+="></a>+=</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.062</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   s = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">      s = s+i</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.062</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   s = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">      s += i</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h2 id="extend-and"><a href="#extend-and" class="headerlink" title="extend and +"></a>extend and +</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.859</span></span><br><span class="line">lst = [[<span class="number">123</span>]]*<span class="number">1000000</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   s = []</span><br><span class="line">   <span class="keyword">for</span> item <span class="keyword">in</span> lst:</span><br><span class="line">      s.extend(item)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.062</span></span><br><span class="line">lst = [[<span class="number">123</span>]]*<span class="number">1000000</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   s = []</span><br><span class="line">   <span class="keyword">for</span> item <span class="keyword">in</span> lst:</span><br><span class="line">      s += item</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.016</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    lst = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">        lst.append(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.078</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   lst = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h1 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h1><p>不是所有剪枝都是有效的</p>
 <p>有些剪枝判断后效率可能更低</p>
 <h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>用栈机械的模拟 那么非递归完全不如递归 会差好几倍！</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2068">题目链接</a></p>
 <p>测试用例（从洛谷网站下载吧。。复制前n条，改一下w的值就行）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 非递归实现</span></span><br><span class="line"><span class="comment"># 4.141 -- 20000条数据</span></span><br><span class="line"><span class="comment"># 8.984 -- 50000</span></span><br><span class="line"><span class="comment"># 9.047 -- 60000</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">SegmentTree</span>():</span>  <span class="comment"># sum</span></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, arr</span>):</span></span><br><span class="line">         self.tree = [<span class="number">0</span>] * (<span class="number">4</span> * <span class="built_in">len</span>(arr))</span><br><span class="line">         self.size = <span class="built_in">len</span>(arr)</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">query</span>(<span class="params">self, start, end</span>):</span></span><br><span class="line">         stack = [(<span class="number">0</span>, self.size - <span class="number">1</span>, start, end, <span class="number">0</span>)]</span><br><span class="line">         res = <span class="number">0</span></span><br><span class="line">         <span class="keyword">while</span> stack:</span><br><span class="line">            range_start, range_end, target_start, target_end, pos = stack.pop()</span><br><span class="line">            <span class="comment"># no cover</span></span><br><span class="line">            <span class="keyword">if</span> target_start &gt; range_end <span class="keyword">or</span> target_end &lt; range_start:</span><br><span class="line">               <span class="keyword">continue</span></span><br><span class="line">            <span class="comment"># inside</span></span><br><span class="line">            <span class="keyword">elif</span> target_start &lt;= range_start <span class="keyword">and</span> target_end &gt;= range_end:</span><br><span class="line">               res += self.tree[pos]</span><br><span class="line">            <span class="comment"># partial cover</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">               mid = (range_start + range_end) // <span class="number">2</span></span><br><span class="line">               stack.append((mid + <span class="number">1</span>, range_end, target_start, target_end, <span class="number">2</span> * pos + <span class="number">2</span>))</span><br><span class="line">               stack.append((range_start, mid, target_start, target_end, <span class="number">2</span> * pos + <span class="number">1</span>))</span><br><span class="line">         <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">update</span>(<span class="params">self, inx, val</span>):</span></span><br><span class="line">         stack = [<span class="number">0</span>]</span><br><span class="line">         start, end = <span class="number">0</span>, self.size - <span class="number">1</span></span><br><span class="line">         pos = <span class="number">0</span></span><br><span class="line">         <span class="keyword">while</span> pos &lt; <span class="built_in">len</span>(self.tree):</span><br><span class="line">            mid = (start + end) // <span class="number">2</span></span><br><span class="line">            <span class="comment"># start == end 才到endpoint</span></span><br><span class="line">            <span class="keyword">if</span> start == end:</span><br><span class="line">               self.tree[pos] = val</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">elif</span> inx &lt;= mid:</span><br><span class="line">               end = mid</span><br><span class="line">               stack.append(pos)</span><br><span class="line">               pos = pos * <span class="number">2</span> + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">               start = mid + <span class="number">1</span></span><br><span class="line">               stack.append(pos)</span><br><span class="line">               pos = pos * <span class="number">2</span> + <span class="number">2</span></span><br><span class="line"></span><br><span class="line">         <span class="comment"># update backward</span></span><br><span class="line">         <span class="keyword">while</span> stack:</span><br><span class="line">            pos = stack.pop()</span><br><span class="line">            self.tree[pos] = self.tree[pos * <span class="number">2</span> + <span class="number">1</span>] + self.tree[pos * <span class="number">2</span> + <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">   <span class="comment"># size of</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">   w = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line">   <span class="comment"># build segment tree</span></span><br><span class="line">   st = SegmentTree([<span class="number">0</span>] * n)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">      op, a, b = <span class="built_in">input</span>().split()</span><br><span class="line">      <span class="keyword">if</span> op == <span class="string">&#x27;x&#x27;</span>:</span><br><span class="line">         st.update(<span class="built_in">int</span>(a) - <span class="number">1</span>, <span class="built_in">int</span>(b))</span><br><span class="line">      <span class="keyword">else</span>:</span><br><span class="line">         <span class="built_in">print</span>(st.query(<span class="built_in">int</span>(a) - <span class="number">1</span>, <span class="built_in">int</span>(b) - <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 递归实现</span></span><br><span class="line"><span class="comment"># 1.875 -- 20000条数据</span></span><br><span class="line"><span class="comment"># 5.016 -- 50000</span></span><br><span class="line"><span class="comment"># 5.062 -- 60000</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">SegmentTree</span>():</span>  <span class="comment"># sum</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, arr</span>):</span></span><br><span class="line">            self.tree = [<span class="number">0</span>] * (<span class="number">4</span> * n)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">query</span>(<span class="params">self, start, end</span>):</span></span><br><span class="line">            <span class="keyword">return</span> self.__query(<span class="number">0</span>, n - <span class="number">1</span>, <span class="number">1</span>, start, end)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__query</span>(<span class="params">self, start, end, cur_inx, target_start, target_end</span>):</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># out of range</span></span><br><span class="line">            <span class="keyword">if</span> target_start &gt; end <span class="keyword">or</span> target_end &lt; start:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="comment"># current range right inside target, then return</span></span><br><span class="line">            <span class="keyword">elif</span> target_start &lt;= start <span class="keyword">and</span> target_end &gt;= end:</span><br><span class="line">                <span class="keyword">return</span> self.tree[cur_inx]</span><br><span class="line">            <span class="comment"># partial</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                mid = (start + end) // <span class="number">2</span></span><br><span class="line">                left_child = self.__query(start, mid, <span class="number">2</span> * cur_inx, target_start, target_end)</span><br><span class="line">                right_child = self.__query(mid + <span class="number">1</span>, end, <span class="number">2</span> * cur_inx + <span class="number">1</span>, target_start, target_end)</span><br><span class="line">                <span class="keyword">return</span> left_child + right_child</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">update</span>(<span class="params">self, inx, val</span>):</span></span><br><span class="line">            self.__update(<span class="number">0</span>, n - <span class="number">1</span>, <span class="number">1</span>, inx, val)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># start,end -- group</span></span><br><span class="line">        <span class="comment"># inx -- compare to mid for select</span></span><br><span class="line">        <span class="comment"># cur_inx -- tree -- 2*cur_inx represent go down a layer</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__update</span>(<span class="params">self, start, end, cur_inx, inx, val</span>):</span></span><br><span class="line">            <span class="keyword">if</span> start == end:</span><br><span class="line">                self.tree[cur_inx] = val</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># update subtree</span></span><br><span class="line">            mid = (start + end) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> inx &lt;= mid:</span><br><span class="line">                self.__update(start, mid, <span class="number">2</span> * cur_inx, inx, val)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.__update(mid + <span class="number">1</span>, end, <span class="number">2</span> * cur_inx + <span class="number">1</span>, inx, val)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># update sum</span></span><br><span class="line">            <span class="comment"># ps: cant just add val</span></span><br><span class="line">            self.tree[cur_inx] = self.tree[<span class="number">2</span> * cur_inx] + self.tree[<span class="number">2</span> * cur_inx + <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># size of</span></span><br><span class="line">    n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">    w = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># build segment tree</span></span><br><span class="line">    st = SegmentTree([<span class="number">0</span>] * n)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        op, a, b = <span class="built_in">input</span>().split()</span><br><span class="line">        <span class="keyword">if</span> op == <span class="string">&#x27;x&#x27;</span>:</span><br><span class="line">            st.update(<span class="built_in">int</span>(a) - <span class="number">1</span>, <span class="built_in">int</span>(b))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(st.query(<span class="built_in">int</span>(a) - <span class="number">1</span>, <span class="built_in">int</span>(b) - <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line"></span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <p>递归实现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.875 -- 20000条数据</span><br><span class="line">5.016 -- 50000</span><br><span class="line">5.062 -- 60000</span><br></pre></td></tr></table></figure>
-
 <p>非递归实现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">4.141 -- 20000条数据</span><br><span class="line">8.984 -- 50000</span><br><span class="line">9.047 -- 60000</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h1 id="lambda-and-function"><a href="#lambda-and-function" class="headerlink" title="lambda and function"></a>lambda and function</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.094</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   s = <span class="number">0</span></span><br><span class="line">   step = <span class="number">1</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">      s = <span class="keyword">lambda</span> s, step: s+step</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.23</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">s, step</span>):</span></span><br><span class="line">   <span class="keyword">return</span> s + step</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   s = <span class="number">0</span></span><br><span class="line">   step = <span class="number">1</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">      s = add(s, step)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.016</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   s = <span class="number">0</span></span><br><span class="line">   step = <span class="number">1</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">      s += step</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>封装个函数。。。效率差了近100倍</p>
 <h1 id="O-n2"><a href="#O-n2" class="headerlink" title="O(n2)"></a>O(n2)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2.0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">      <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i, <span class="number">1000</span>):</span><br><span class="line">         <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3.89</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">      <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">         <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>2倍无法弥补算法n2数量级的差距</p>
-<h1 id="queue-的popleft-–-数据结构的碾压"><a href="#queue-的popleft-–-数据结构的碾压" class="headerlink" title="queue 的popleft() – 数据结构的碾压"></a>queue 的popleft() – 数据结构的碾压</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.031</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   queue = deque([<span class="number">0</span>]*<span class="number">1000000</span>)</span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">      queue.popleft()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
+<h1 id="queue-的popleft-—-数据结构的碾压"><a href="#queue-的popleft-—-数据结构的碾压" class="headerlink" title="queue 的popleft() — 数据结构的碾压"></a>queue 的popleft() — 数据结构的碾压</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.031</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   queue = deque([<span class="number">0</span>]*<span class="number">1000000</span>)</span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">      queue.popleft()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2.172</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    lst = [<span class="number">0</span>]*<span class="number">1000000</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">       lst.pop(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line"></span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>所以，请根据各个数据结构的规则选择合适的数据结构</p>
 <h1 id="build-data-structure"><a href="#build-data-structure" class="headerlink" title="build data structure"></a>build data structure</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.031</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   queue = deque([<span class="number">0</span>]*<span class="number">1000000</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.016</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    lst = [<span class="number">0</span>]*<span class="number">1000000</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line"></span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>所以其实build 数据结构不需要画太多的时间的</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0.031</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">   s = <span class="built_in">set</span>([<span class="number">0</span>]*<span class="number">1000000</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> profile</span><br><span class="line">profile.run(<span class="string">&#x27;main()&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 
       
     </div>
@@ -1334,37 +1051,19 @@
       
           <h2 id="cls"><a href="#cls" class="headerlink" title="cls"></a>cls</h2><p><code>cls</code>参数是一个类对象，它可以用来访问类的属性或方法。</p>
 <h2 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">code = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">x = 5</span></span><br><span class="line"><span class="string">y = 10</span></span><br><span class="line"><span class="string">print(x + y)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">exec</span>(code)</span><br></pre></td></tr></table></figure>
-
 <p>输出</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="eval"><a href="#eval" class="headerlink" title="eval()"></a>eval()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">5</span></span><br><span class="line">y = <span class="number">10</span></span><br><span class="line">code = <span class="string">&quot;x + y&quot;</span></span><br><span class="line">result = <span class="built_in">eval</span>(code)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-
 <p>输出</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="lambda-表达式"><a href="#lambda-表达式" class="headerlink" title="lambda 表达式"></a>lambda 表达式</h2><ol>
 <li>Lambda表达式的语法</li>
 </ol>
 <p>Lambda表达式的语法如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> arguments: expression</span><br></pre></td></tr></table></figure>
-
 <p>其中，arguments表示Lambda表达式的参数列表，可以为空或者包含一个或多个参数；expression表示Lambda表达式的函数体，可以是一个表达式或者一段代码块。</p>
 <p>例如，下面是一个简单的Lambda表达式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> x: x * x</span><br></pre></td></tr></table></figure>
-
 <p>这个Lambda表达式的参数是一个整数x，函数体是返回x的平方。</p>
 <ol>
 <li>Lambda表达式的应用</li>
@@ -1374,93 +1073,37 @@
 <li>列表的排序和过滤：</li>
 </ul>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">list1</span> = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">4</span>]</span><br><span class="line"><span class="attr">list2</span> = sorted(list1, key=lambda x: x)</span><br><span class="line"><span class="attr">list3</span> = filter(lambda x: x % <span class="number">2</span> == <span class="number">0</span>, list1)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>GUI事件的处理：</li>
 </ul>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">button</span><span class="selector-class">.bind</span>(<span class="string">&quot;&lt;Button-1&gt;&quot;</span>, lambda <span class="attribute">event</span>: print(<span class="string">&quot;Button clicked!&quot;</span>))</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>函数的返回值：</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_incrementor</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> x: x + n</span><br></pre></td></tr></table></figure>
-
 <p>这个函数返回一个Lambda表达式，它的参数是一个整数x，函数体是返回x加上n的结果。</p>
 <p>Lambda表达式可以使代码更加简洁、易读、易维护，但也需要注意Lambda表达式的使用场景和适当性。</p>
 <h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><p>可变参数是一种用于接收任意数量参数的语法，它可以接收任意数量的位置参数和关键字参数。可变参数的语法如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
 <p>其中，args是一个元组，用于接收位置参数；kwargs是一个字典，用于接收关键字参数。例如：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def my_function(*args, **kwargs):</span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line"></span><br><span class="line">my_function(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, a=<span class="number">4</span>, b=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
 <p>这个例子中，my_function函数接收任意数量的位置参数和关键字参数，并将它们打印出来。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(1, 2, 3)</span><br><span class="line">&#123;&#x27;a&#x27;: 4, &#x27;b&#x27;: 5&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">squares = [x*x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line">even_squares = [x*x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>) <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="生成器表达式"><a href="#生成器表达式" class="headerlink" title="生成器表达式"></a>生成器表达式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">squares = (x*x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>))</span><br><span class="line">even_squares = (x*x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>) <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="slot"><a href="#slot" class="headerlink" title="__slot__"></a>__slot__</h2><p>__slots__语句：__slots__语句用于限制类实例可以具有的属性。它的语法如下：</p>
+<h2 id="slot"><a href="#slot" class="headerlink" title="__slot__"></a>__slot__</h2><p><strong>slots</strong>语句：<strong>slots</strong>语句用于限制类实例可以具有的属性。它的语法如下：</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>:</span></span><br><span class="line"><span class="class">    <span class="type">__slots__ = [&quot;x&quot;</span>, <span class="type">&quot;y&quot;]</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="staticmethod、-classmethod区别"><a href="#staticmethod、-classmethod区别" class="headerlink" title="@staticmethod、@classmethod区别"></a>@staticmethod、@classmethod区别</h2><p>@staticmethod 是静态方法</p>
 <p>@classmethod 是类方法（同一class的各个对象通用），必须传递<code>cls</code>参数（对象则是通过 self 来访问对象内属性）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        Person.count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_age</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.age</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_count</span>(<span class="params">cls</span>):</span></span><br><span class="line">        <span class="keyword">return</span> cls.count</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过类名调用类方法</span></span><br><span class="line"><span class="built_in">print</span>(Person.get_count())  <span class="comment"># 输出 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建两个 Person 对象</span></span><br><span class="line">p1 = Person(<span class="string">&quot;Alice&quot;</span>, <span class="number">25</span>)</span><br><span class="line">p2 = Person(<span class="string">&quot;Bob&quot;</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再次调用类方法</span></span><br><span class="line"><span class="built_in">print</span>(Person.get_count())  <span class="comment"># 输出 2</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><p>yield说白了，就是作 return 把一个值返回之后，继续那个function的执行</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;it is me&#x27;</span>)</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> f():</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>输出</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">it is me</span><br><span class="line">0</span><br><span class="line">it is me</span><br><span class="line">1</span><br><span class="line">it is me</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><p>装饰器是一种用于修改函数或类的行为的语法，它可以在不修改函数或类本身的情况下，增加或修改它们的功能。它的语法如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
 <p>其中，decorator是一个函数或类，用于修改function的行为。例如：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_decorator</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Before function is called.&quot;</span>)</span><br><span class="line">        func()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;After function is called.&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@my_decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say_hello</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line"></span><br><span class="line">say_hello()</span><br></pre></td></tr></table></figure>
-
 <p>这个例子中，my_decorator是一个装饰器函数，它用于在say_hello函数被调用前后输出一些信息。</p>
 
       

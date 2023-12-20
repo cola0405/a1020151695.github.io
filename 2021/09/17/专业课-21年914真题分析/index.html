@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="选择题出入栈【x】 C 没那么简单选A :)  图的DFS【+】 D “几种”的题目，要求我们系统解题，不然会漏 该题考点在于深度优先时v1后面必定是v3  哈夫曼树【+】 答案：A A：哈夫曼树只是带权最短路径树，并没有说一定是完全二叉树 而且别被A给蒙过去了 所谓 “完全二叉树” 是“前边满，最底层靠左” 而哈夫曼树可以“靠右” 且 “不满”  B：都需要左右子树 C：构造法这就是这样的 D：">
+  <meta name="description" content="选择题出入栈【x】 C 没那么简单选A :)  图的DFS【+】 D “几种”的题目，要求我们系统解题，不然会漏 该题考点在于深度优先时v1后面必定是v3   哈夫曼树【+】 答案：A A：哈夫曼树只是带权最短路径树，并没有说一定是完全二叉树 而且别被A给蒙过去了 所谓 “完全二叉树” 是“前边满，最底层靠左” 而哈夫曼树可以“靠右” 且 “不满”  B：都需要左右子树 C：构造法这就是这样的 D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="专业课-21年914真题分析">
 <meta property="og:url" content="http://example.com/2021/09/17/%E4%B8%93%E4%B8%9A%E8%AF%BE-21%E5%B9%B4914%E7%9C%9F%E9%A2%98%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="选择题出入栈【x】 C 没那么简单选A :)  图的DFS【+】 D “几种”的题目，要求我们系统解题，不然会漏 该题考点在于深度优先时v1后面必定是v3  哈夫曼树【+】 答案：A A：哈夫曼树只是带权最短路径树，并没有说一定是完全二叉树 而且别被A给蒙过去了 所谓 “完全二叉树” 是“前边满，最底层靠左” 而哈夫曼树可以“靠右” 且 “不满”  B：都需要左右子树 C：构造法这就是这样的 D：">
+<meta property="og:description" content="选择题出入栈【x】 C 没那么简单选A :)  图的DFS【+】 D “几种”的题目，要求我们系统解题，不然会漏 该题考点在于深度优先时v1后面必定是v3   哈夫曼树【+】 答案：A A：哈夫曼树只是带权最短路径树，并没有说一定是完全二叉树 而且别被A给蒙过去了 所谓 “完全二叉树” 是“前边满，最底层靠左” 而哈夫曼树可以“靠右” 且 “不满”  B：都需要左右子树 C：构造法这就是这样的 D">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917202709352.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917203452924.png">
@@ -92,10 +92,10 @@
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005133124953.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004203443187.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004203450553.png">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/IMG_0623(20211012-160236).PNG">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/IMG_0624(20211012-160251).PNG">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/IMG_0625(20211012-160302).PNG">
-<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/IMG_0626(20211012-160312).PNG">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/IMG_0623(20211012-160236">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/IMG_0624(20211012-160251">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/IMG_0625(20211012-160302">
+<meta property="og:image" content="https://gitee.com/simple_one1/pic/raw/master/IMG_0626(20211012-160312">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012161133949.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012201213428.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012202201891.png">
@@ -307,7 +307,8 @@
 <h2 id="图的DFS【-】"><a href="#图的DFS【-】" class="headerlink" title="图的DFS【+】"></a>图的DFS【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917202845490.png" alt="image-20210917202845490"></p>
 <p>D</p>
 <p>“几种”的题目，要求我们系统解题，不然会漏</p>
-<p><font color=red>该题考点在于深度优先时v1后面必定是v3</font></p>
+<font color=red>该题考点在于深度优先时v1后面必定是v3</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917203749686.png" alt="image-20210917203749686"></p>
 <h2 id="哈夫曼树【-】"><a href="#哈夫曼树【-】" class="headerlink" title="哈夫曼树【+】"></a>哈夫曼树【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917203913555.png" alt="image-20210917203913555"></p>
 <p>答案：A</p>
@@ -319,7 +320,8 @@
 <p>B：都需要左右子树</p>
 <p>C：构造法这就是这样的</p>
 <p>D：上一层=下一层的左右之和</p>
-<h2 id="无向连通图"><a href="#无向连通图" class="headerlink" title="无向连通图"></a>无向连通图</h2><p><font color=red>公式记忆不牢</font></p>
+<h2 id="无向连通图"><a href="#无向连通图" class="headerlink" title="无向连通图"></a>无向连通图</h2><font color=red>公式记忆不牢</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210917204133441.png" alt="image-20210917204133441"></p>
 <p>C</p>
 <p>之前是记公式</p>
@@ -349,7 +351,8 @@
 <p>解析：</p>
 <p>装填因子越大，散列表越满，越容易发生冲突</p>
 <p>装填因子越小，越不容易发生冲突，平均查找长度就越小</p>
-<p><font color=red>散列表不满，容易查找不成功，但是其查找长度就是短了呀</font></p>
+<font color=red>散列表不满，容易查找不成功，但是其查找长度就是短了呀</font>
+
 <p>（array[i] 若不存在则插入并返回”查找失败“）</p>
 <p>”待散列“ 的理解：</p>
 <p>另有一种说法 ” 待散列的线性表为（ 36 ， 15 ， 40 ， 63 ， 22 ）“</p>
@@ -359,8 +362,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211001094657222.png" alt="image-20211001094657222"></p>
 <h2 id="二叉树结点个数问题"><a href="#二叉树结点个数问题" class="headerlink" title="二叉树结点个数问题"></a>二叉树结点个数问题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211001102619392.png" alt="image-20211001102619392"></p>
 <p>答案：B</p>
-<p>$$20<em>4+10</em>3+1<em>2+10</em>1+1=20+10+1+10+n$$</p>
-<p>解得：n=82</p>
+<script type="math/tex; mode=display">20*4+10*3+1*2+10*1+1=20+10+1+10+n</script><p>解得：n=82</p>
 <h2 id="已知两个二叉树遍历序列推二叉树"><a href="#已知两个二叉树遍历序列推二叉树" class="headerlink" title="已知两个二叉树遍历序列推二叉树"></a>已知两个二叉树遍历序列推二叉树</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211001103025435.png" alt="image-20211001103025435"></p>
 <p>答案：C</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211121122651637.png" alt="image-20211121122651637"></p>
@@ -389,7 +391,7 @@
 <h2 id="链表的优点"><a href="#链表的优点" class="headerlink" title="链表的优点"></a>链表的优点</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003081704101.png" alt="image-20211003081654109"></p>
 <p>答案：插入</p>
 <h2 id="单链表的效率"><a href="#单链表的效率" class="headerlink" title="单链表的效率"></a>单链表的效率</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003082004446.png" alt="image-20211003082004446"></p>
-<p>答案：$$\frac{n+1}{2}$$</p>
+<p>答案：<script type="math/tex">\frac{n+1}{2}</script></p>
 <p>搜索成功所需平均次数=（最多+最少）/2</p>
 <h2 id="栈满的判断【-】"><a href="#栈满的判断【-】" class="headerlink" title="栈满的判断【+++++】"></a>栈满的判断【+++++】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003082324849.png" alt="image-20211003082324849"></p>
 <p>答案：top==MaxSize-1</p>
@@ -397,7 +399,8 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003153215804.png" alt="image-20211003153215804"></p>
 <p>捏吗，这914就尼玛离谱</p>
 <p>还是得用 ”考点“ 的思维</p>
-<p><font color=red>top=MaxSize那你就gg了</font></p>
+<font color=red>top=MaxSize那你就gg了</font>
+
 <p>正确的应该是top==MaxSize-1</p>
 <h2 id="出入栈"><a href="#出入栈" class="headerlink" title="出入栈"></a>出入栈</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003153307077.png" alt="image-20211003153307077"></p>
 <p>答案：3</p>
@@ -416,7 +419,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003163902815.png" alt="image-20211003163902815"></p>
 <p>1,1,2,5,14,42,132</p>
 <h2 id="折半查找的时间复杂度"><a href="#折半查找的时间复杂度" class="headerlink" title="折半查找的时间复杂度"></a>折半查找的时间复杂度</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003164214835.png" alt="image-20211003164214835"></p>
-<p>答案：$$O(log_2n)$$</p>
+<p>答案：<script type="math/tex">O(log_2n)</script></p>
 <h2 id="广义表【-】"><a href="#广义表【-】" class="headerlink" title="广义表【+】"></a>广义表【+】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003164255927.png" alt="image-20211003164255927"></p>
 <p>答案：( (d,e,f) )</p>
 <p>“广义表” 即 数组，只是有点特殊</p>
@@ -425,14 +428,17 @@
 <p>例：</p>
 <p>( (a,b), c, d )</p>
 <p>表头 (a,b)<br>表尾 (c,d)</p>
-<p><font color=red>((d,e,f))和(d,e,f)是有很大区别的！</font></p>
+<font color=red>((d,e,f))和(d,e,f)是有很大区别的！</font>
+
+
+
 <h2 id="图与邻接矩阵"><a href="#图与邻接矩阵" class="headerlink" title="图与邻接矩阵"></a>图与邻接矩阵</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003164956847.png" alt="image-20211003164956847"></p>
 <p>答案：有</p>
 <h2 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003165025851.png" alt="image-20211003165025851"></p>
 <p>答案：连通分量</p>
 <p>wdnmd 我自己做的时候写的是 “连通图”</p>
 <p>p-point-Prim 从某一点开始</p>
-<p>Kruskal 则是klu–路–选边</p>
+<p>Kruskal 则是klu—路—选边</p>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003191126177.png" alt="image-20211003191126177"></p>
 <p>答案：插入</p>
 <h2 id="数组的存储位置"><a href="#数组的存储位置" class="headerlink" title="数组的存储位置"></a>数组的存储位置</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003191207938.png" alt="image-20211003191207938"></p>
@@ -447,23 +453,11 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004001712517.png" alt="image-20211004001712517"></p>
 <h1 id="代码题"><a href="#代码题" class="headerlink" title="代码题"></a>代码题</h1><h2 id="符号匹配"><a href="#符号匹配" class="headerlink" title="符号匹配"></a>符号匹配</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004180303303.png" alt="image-20211004180303303"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bracketCheck</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,top;</span><br><span class="line">    InitStack(S);</span><br><span class="line">    <span class="keyword">while</span>(str[i]!=<span class="string">&#x27;\0&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">switch</span> (str[i])&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;(&#x27;</span>: &#123;</span><br><span class="line">              Push(S,<span class="string">&#x27;(&#x27;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;[&#x27;</span>: &#123;</span><br><span class="line">              Push(S,<span class="string">&#x27;[&#x27;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;&#123;&#x27;</span>: &#123;</span><br><span class="line">              Push(S,<span class="string">&#x27;&#123;&#x27;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;)&#x27;</span>: &#123;</span><br><span class="line">              Pop(S,e);</span><br><span class="line">              <span class="keyword">if</span>(e!=<span class="string">&#x27;(&#x27;</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;]&#x27;</span>:&#123;</span><br><span class="line">              Pop(S,e);</span><br><span class="line">              <span class="keyword">if</span>(e!=<span class="string">&#x27;[&#x27;</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;&#125;&#x27;</span>:&#123;</span><br><span class="line">              Pop(S,e);</span><br><span class="line">              <span class="keyword">if</span>(e!=<span class="string">&#x27;&#123;&#x27;</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">default</span>: <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isEmpty(S))<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <blockquote>
 <p>选自王道的栈与队列的应用课后习题p94</p>
 </blockquote>
 <h2 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004183302954.png" alt="image-20211004183302954"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchBST</span><span class="params">(BiTree &amp;T,ElemType x)</span></span>&#123;  <span class="comment">// &amp;为CPP的引用</span></span><br><span class="line">	BiTree s,q,f;  </span><br><span class="line">    q=T;</span><br><span class="line">	<span class="keyword">while</span> (q)&#123;</span><br><span class="line">		<span class="keyword">if</span> (q-&gt;data==x)&#123;</span><br><span class="line">		q-&gt;count++;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">		&#125;  <span class="comment">//如果找到该值则计数加一</span></span><br><span class="line">		f=q;</span><br><span class="line">		<span class="keyword">if</span> (q-&gt;data&gt;x) q=q-&gt;lling;</span><br><span class="line">		<span class="keyword">else</span> q=q-&gt;rlink;</span><br><span class="line">	&#125;  <span class="comment">//将新结点插入树中 </span></span><br><span class="line">    s=(BiTNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BiTNode));   <span class="comment">// 因为llink rlink 并不是BiTree类型，而是BiTNode</span></span><br><span class="line">	s-&gt;data=x;</span><br><span class="line">	s-&gt;count=<span class="number">0</span>;</span><br><span class="line">	s-&gt;lling=s-&gt;rlink=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span>(f-&gt;data&gt;x) f-&gt;lling=s;</span><br><span class="line">	<span class="keyword">else</span> f-&gt;rlink=s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <blockquote>
 <p>选自严蔚敏教材 课后习题 p233</p>
 </blockquote>
@@ -484,11 +478,7 @@
 <h2 id="图的遍历代码题"><a href="#图的遍历代码题" class="headerlink" title="图的遍历代码题"></a>图的遍历代码题</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004203316531.png" alt="image-20211004203316531"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004203328957.png" alt="image-20211004203328957"></p>
 <p>答案：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(ALGraph *G,<span class="keyword">int</span> v)</span></span>&#123;  <span class="comment">// v---指顶点---int型，指编号，又这里是DFS，则这个是起点的编号</span></span><br><span class="line">	ArcNode *arc;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>,v);</span><br><span class="line">	visited[v]=<span class="number">1</span>;</span><br><span class="line">    arc=G-&gt;adjlist[v].firstarc</span><br><span class="line">    <span class="keyword">while</span>(arc)&#123;</span><br><span class="line">        <span class="keyword">if</span>(visited[arc-&gt;adjvex]==<span class="number">0</span>)DFS(G,arc-&gt;adjvex);</span><br><span class="line">        arc=arc-&gt;nextarc</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(ALGraph *G,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">  ArcNode *arc</span><br><span class="line">  <span class="keyword">int</span> q[MAXV],front=<span class="number">0</span>,rear=<span class="number">0</span>,now,vex;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>,v);</span><br><span class="line">  visited[v]=<span class="number">1</span>;</span><br><span class="line">  q[rear++]=v;</span><br><span class="line">  <span class="keyword">while</span>(front!=rear)&#123;</span><br><span class="line">    now=q[front++];</span><br><span class="line">    arc=G-&gt;adjlist[now].firstarc;</span><br><span class="line">    <span class="keyword">while</span>(arc)&#123;</span><br><span class="line">      <span class="keyword">if</span>(visited[arc-&gt;adjvex]==<span class="number">0</span>)&#123;</span><br><span class="line">        vex=arc-&gt;adjvex;</span><br><span class="line">      	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>,vex);</span><br><span class="line">      	visited[vex]=<span class="number">1</span>;</span><br><span class="line">      	q[rear++]=vex;</span><br><span class="line">      &#125;</span><br><span class="line">      arc=arc-&gt;nextarc;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>对题目所给数据结构的理解：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005113743509.png" alt="image-20211005113743509"></p>
 <blockquote>
@@ -498,7 +488,7 @@
 <p>答案：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005133124953.png" alt="image-20211005133124953"></p>
 <p>我的答案：</p>
-<p>（1）该算法是希尔排序，其功能是对数组进行排序（<font color=red>考点就是“希尔排序” 别的别乱答</font>）</p>
+<p>（1）该算法是希尔排序，其功能是对数组进行排序（<font color=red>考点就是“希尔排序” 别的别乱答</font>）</p>
 <p>（2）</p>
 <p>第1趟排序：（35,44,09,21,53,67,18,29）</p>
 <p>第2趟排序：（09,21,18,29,35,44,53,67）</p>
@@ -510,39 +500,25 @@
 <h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004203443187.png" alt="image-20211004203443187"></p>
 <p>答案：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">DLinkList Locate (DLinkList &amp;L, ElemType x)&#123;</span><br><span class="line">	DNode *p=L-&gt;next,*q;</span><br><span class="line">	while(p&amp;&amp;p-&gt;data!=x)p=p-&gt;rLink;  //题干没有说元素不存在的情况</span><br><span class="line">	if(!p)&#123;</span><br><span class="line">		printf(&quot;不存在值为x的结点\n&quot;);</span><br><span class="line">		return L;</span><br><span class="line">	&#125;</span><br><span class="line">	else&#123;</span><br><span class="line">		p-&gt;freq++;</span><br><span class="line">		if(p-&gt;rLink!=NULL)&#123;</span><br><span class="line">			p-&gt;rLink-&gt;lLink=p-&gt;lLink;</span><br><span class="line">		&#125;</span><br><span class="line">		p-&gt;lLink-&gt;rLink=p-&gt;rLink;</span><br><span class="line">		q=p-&gt;lLink;</span><br><span class="line">		while(q!=L&amp;&amp;q-&gt;freq&lt;=p-&gt;freq)&#123;  // 这里开始的代码你得好好品</span><br><span class="line">			q=q-&gt;lLink;</span><br><span class="line">		&#125;</span><br><span class="line">		p-&gt;rLink=q-&gt;rLink;  </span><br><span class="line">		q-&gt;rLink-&gt;lLink=p;</span><br><span class="line">		p-&gt;lLink=q;</span><br><span class="line">		q-&gt;rLink=p;</span><br><span class="line">	&#125;</span><br><span class="line">	return p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<font color=red>链表的操作一般只需要p、q两个指针就够了</font>
 
-
-
-
-
-<p><font color=red>链表的操作一般只需要p、q两个指针就够了</font></p>
 <p>可以使用二级箭头</p>
 <blockquote>
 <p>出自王道p54</p>
 </blockquote>
 <h2 id="Floyd（带路径）"><a href="#Floyd（带路径）" class="headerlink" title="Floyd（带路径）"></a>Floyd（带路径）</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004203450553.png" alt="image-20211004203450553"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0623(20211012-160236).PNG" alt="IMG_0623(20211012-160236)"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0624(20211012-160251).PNG" alt="IMG_0624(20211012-160251)"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0625(20211012-160302).PNG" alt="IMG_0625(20211012-160302)"></p>
-<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0626(20211012-160312).PNG" alt="IMG_0626(20211012-160312)"></p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0623(20211012-160236" alt="IMG_0623(20211012-160236)">.PNG)</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0624(20211012-160251" alt="IMG_0624(20211012-160251)">.PNG)</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0625(20211012-160302" alt="IMG_0625(20211012-160302)">.PNG)</p>
+<p><img src="https://gitee.com/simple_one1/pic/raw/master/IMG_0626(20211012-160312" alt="IMG_0626(20211012-160312)">.PNG)</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012161133949.png" alt="image-20211012161133949"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path[i][j]  <span class="comment">// 表示从i到j的最短路径中，j的前驱结点</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012201213428.png" alt="image-20211012201213428"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012202201891.png" alt="image-20211012202201891"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012202454176.png" alt="image-20211012202454176"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">floyd</span><span class="params">(AMGraph G)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num=G.vexnum;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;num;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;num;j++)&#123;</span><br><span class="line">			D[i][j]=G.arcs[i][j];</span><br><span class="line">			<span class="keyword">if</span>(D[i][j]&lt;MaxInt)Path[i][j]=i;</span><br><span class="line">			<span class="keyword">else</span> Path[i][j]=<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;num;k++)&#123;		<span class="comment">// 中间点</span></span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;num;i++)&#123;	<span class="comment">// 行</span></span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;num;j++)&#123;<span class="comment">// 列</span></span><br><span class="line">				<span class="keyword">if</span>(D[i][k]+D[k][j]&lt;D[i][j])&#123;	<span class="comment">// ik到中间点 kj中间点转发</span></span><br><span class="line">					D[i][j]=D[i][k]+D[k][j];</span><br><span class="line">					Path[i][j]=Path[k][j];		</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h1 id="考情"><a href="#考情" class="headerlink" title="考情"></a>考情</h1><p>从10年数据结构里抽题目来考。。。抽了两题。。。</p>
-<p><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/0e88849602d276a200292ed6.html?fixfr=gTHB1SwQ+R+O8HC3CQ+viA==&fr=income12-wk_go_searchX-search">数据结构2010年考研分析 - 百度文库 (baidu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/0e88849602d276a200292ed6.html?fixfr=gTHB1SwQ%2BR%2BO8HC3CQ%2BviA%3D%3D&amp;fr=income12-wk_go_searchX-search">数据结构2010年考研分析 - 百度文库 (baidu.com)</a></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003201040543.png" alt="image-20211003201040543"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003201112930.png" alt="image-20211003201112930"></p>
 

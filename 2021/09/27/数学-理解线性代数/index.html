@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="向量向量与点 向量和矩阵 向量的加法  向量的乘法（数乘） 矩阵以线性变换的方式来理解矩阵 矩阵的本质一个矩阵就是一种线性变换 所谓 “变化” 是指 变化这个空间的尺度 所谓 ”线性“ 指原点固定不变，向量直线不弯曲 （可以理解为把基向量随便扯到一个新的位置—对向量进行拉伸） 下面以二维空间为例：   线性变化线性变化后（注意看绿色和红色的字） 仍然可以用基向量表示目标向量v     （关于 ”2">
+  <meta name="description" content="向量向量与点 向量和矩阵 向量的加法  向量的乘法（数乘） 矩阵以线性变换的方式来理解矩阵  矩阵的本质一个矩阵就是一种线性变换  所谓 “变化” 是指 变化这个空间的尺度 所谓 ”线性“ 指原点固定不变，向量直线不弯曲 （可以理解为把基向量随便扯到一个新的位置—-对向量进行拉伸） 下面以二维空间为例：   线性变化线性变化后（注意看绿色和红色的字） 仍然可以用基向量表示目标向量v     （关于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学-理解线性代数">
 <meta property="og:url" content="http://example.com/2021/09/27/%E6%95%B0%E5%AD%A6-%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="向量向量与点 向量和矩阵 向量的加法  向量的乘法（数乘） 矩阵以线性变换的方式来理解矩阵 矩阵的本质一个矩阵就是一种线性变换 所谓 “变化” 是指 变化这个空间的尺度 所谓 ”线性“ 指原点固定不变，向量直线不弯曲 （可以理解为把基向量随便扯到一个新的位置—对向量进行拉伸） 下面以二维空间为例：   线性变化线性变化后（注意看绿色和红色的字） 仍然可以用基向量表示目标向量v     （关于 ”2">
+<meta property="og:description" content="向量向量与点 向量和矩阵 向量的加法  向量的乘法（数乘） 矩阵以线性变换的方式来理解矩阵  矩阵的本质一个矩阵就是一种线性变换  所谓 “变化” 是指 变化这个空间的尺度 所谓 ”线性“ 指原点固定不变，向量直线不弯曲 （可以理解为把基向量随便扯到一个新的位置—-对向量进行拉伸） 下面以二维空间为例：   线性变化线性变化后（注意看绿色和红色的字） 仍然可以用基向量表示目标向量v     （关于">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927220104744.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927220157728.png">
@@ -267,11 +267,13 @@
 <h2 id="向量的加法"><a href="#向量的加法" class="headerlink" title="向量的加法"></a>向量的加法</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927220331826.png" alt="image-20210927220331826"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927220314220.png" alt="image-20210927220314220"></p>
 <h2 id="向量的乘法（数乘）"><a href="#向量的乘法（数乘）" class="headerlink" title="向量的乘法（数乘）"></a>向量的乘法（数乘）</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927220429442.png" alt="image-20210927220429442"></p>
-<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><p><font color=red>以线性变换的方式来理解矩阵</font></p>
-<h2 id="矩阵的本质"><a href="#矩阵的本质" class="headerlink" title="矩阵的本质"></a>矩阵的本质</h2><p><font color=red>一个矩阵就是一种线性变换</font></p>
+<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><font color=red>以线性变换的方式来理解矩阵</font>
+
+<h2 id="矩阵的本质"><a href="#矩阵的本质" class="headerlink" title="矩阵的本质"></a>矩阵的本质</h2><font color=red>一个矩阵就是一种线性变换</font>
+
 <p>所谓 “变化” 是指 <font color=red>变化这个空间的尺度</font></p>
 <p>所谓 ”线性“ 指原点固定不变，向量直线不弯曲</p>
-<p>（<font color=blue>可以理解为把基向量随便扯到一个新的位置—对向量进行拉伸</font>）</p>
+<p>（<font color=blue>可以理解为把基向量随便扯到一个新的位置—-对向量进行拉伸</font>）</p>
 <p>下面以二维空间为例：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927213911073.png" alt="image-20210927213911073"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/ttt.gif" alt="ttt"></p>
@@ -286,7 +288,12 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927224033984.png" alt="image-20210927224033984"></p>
 <p>这里就涉及到 ”2x2矩阵“ 与 ”2x2矩阵“ 相乘</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210927230643835.png" alt="image-20210927230643835"></p>
-<p><font color=red>2x2矩阵相乘时，是对基向量进行线性变化，即左乘一个矩阵</font></p>
+<font color=red>2x2矩阵相乘时，是对基向量进行线性变化，即左乘一个矩阵</font>
+
+
+
+
+
 <h3 id="结合律的证明"><a href="#结合律的证明" class="headerlink" title="结合律的证明"></a>结合律的证明</h3><p>(AB)C = A(BC)</p>
 <p>从几何上理解</p>
 <p>先是把旋转矩阵放左边乘</p>
@@ -325,13 +332,19 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/tezhengxiangl.gif" alt="tezhengxiangl"></p>
 <p>拉伸后方向不变的向量</p>
 <p>即为黄色和绿色的特征向量</p>
-<h1 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h1><h2 id="行列式的本质"><a href="#行列式的本质" class="headerlink" title="行列式的本质"></a>行列式的本质</h2><p><font color=red>线性变化使得面积缩放的比例</font></p>
+<h1 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h1><h2 id="行列式的本质"><a href="#行列式的本质" class="headerlink" title="行列式的本质"></a>行列式的本质</h2><font color=red>线性变化使得面积缩放的比例</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210928092652800.png" alt="image-20210928092652800"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210928092716486.png" alt="image-20210928092716486"></p>
 <p>拓展，不为0时</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210928093810043.png" alt="image-20210928093810043"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/abcdchange.gif" alt="abcdchange"></p>
-<p><font color=blue>对于3阶矩阵，则是体积的缩放比例</font></p>
+<font color=blue>对于3阶矩阵，则是体积的缩放比例</font>
+
+
+
+
+
 <h2 id="行列式的正负"><a href="#行列式的正负" class="headerlink" title="行列式的正负"></a>行列式的正负</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/2021.9.28.gif" alt="2021.9.28"></p>
 <p>在选定参考系中，基向量i,j 的相对位置改变了</p>
 <p>即原本在右边的绿色i</p>

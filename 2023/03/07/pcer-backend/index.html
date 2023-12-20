@@ -228,65 +228,24 @@
 <h1 id="controller"><a href="#controller" class="headerlink" title="controller"></a>controller</h1><p>return <code>R</code> <code>RD</code></p>
 <p>详细在仓库找</p>
 <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="性别存储"><a href="#性别存储" class="headerlink" title="性别存储"></a>性别存储</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@TableName(&quot;problem&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Problem</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@TableId(type = IdType.AUTO)</span></span><br><span class="line">    Integer id;</span><br><span class="line"></span><br><span class="line">    String name;</span><br><span class="line">    String difficulty;</span><br><span class="line"></span><br><span class="line">    String [] d = &#123;<span class="string">&quot;简单&quot;</span>,<span class="string">&quot;中等&quot;</span>,<span class="string">&quot;困难&quot;</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setDifficulty</span><span class="params">(String difficulty)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.difficulty =  d[Integer.parseInt(difficulty)];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">&quot;newProblem&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;com.pcer.entity.Problem&quot;</span>&gt;</span></span><br><span class="line">    insert into problem values(null, #&#123;name&#125;, #&#123;difficulty&#125;, #&#123;content&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="update"><a href="#update" class="headerlink" title="update"></a>update</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">&quot;removeTag&quot;</span>&gt;</span></span><br><span class="line">    update problem_tag_relation set is_valid = 0 where problem_id = #&#123;problemId&#125; and tag_id = #&#123;tagId&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="join"><a href="#join" class="headerlink" title="join"></a>join</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getProblemTagNames&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;java.lang.String&quot;</span>&gt;</span></span><br><span class="line">    select tag.name from (select tag_id from problem_tag_relation where problem_id = #&#123;id&#125; and is_valid = 1) as ptr</span><br><span class="line">        join tag on ptr.tag_id = tag.id</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="返回id"><a href="#返回id" class="headerlink" title="返回id"></a>返回id</h2><h2 id="返回hashmap"><a href="#返回hashmap" class="headerlink" title="返回hashmap"></a>返回hashmap</h2><p>没办法直接返回，只能自己转</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.pcer.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.pcer.dao.TagDao;</span><br><span class="line"><span class="keyword">import</span> com.pcer.entity.Tag;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.ComponentScan;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MapTool</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    TagDao tagDao;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HashMap&lt;String, Integer&gt; <span class="title">getTag2Id</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ArrayList&lt;Tag&gt; tagList = tagDao.getTagList();</span><br><span class="line">        HashMap&lt;String, Integer&gt; tag2Id= <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(Tag tag : tagList)&#123;</span><br><span class="line">            tag2Id.put(tag.getName(), tag.getId());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> tag2Id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="多tag-建表、数据访问"><a href="#多tag-建表、数据访问" class="headerlink" title="多tag 建表、数据访问"></a>多tag 建表、数据访问</h2><p>relation</p>
 <p>就多次查询吧</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;ProblemItem&gt; <span class="title">getProblems</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ArrayList&lt;ProblemItem&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    List&lt;Problem&gt; problems = problemDao.getProblems();</span><br><span class="line">    <span class="keyword">for</span>(Problem problem : problems)&#123;</span><br><span class="line">        ProblemItem p = <span class="keyword">new</span> ProblemItem();</span><br><span class="line">        p.setId(problem.getId());</span><br><span class="line">        p.setName(problem.getName());</span><br><span class="line">        p.setDifficulty(problem.getDifficulty());</span><br><span class="line">        p.setTags(problemDao.getProblemTags());</span><br><span class="line">        res.add(p);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="插入数据中文乱码"><a href="#插入数据中文乱码" class="headerlink" title="插入数据中文乱码"></a>插入数据中文乱码</h2><p>mybatis配置</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/pcer?serverTimezone=UTC&amp;characterEncoding=utf8</span></span><br></pre></td></tr></table></figure>
-
 <p>加上编码设置就行</p>
 <h1 id="dao"><a href="#dao" class="headerlink" title="dao"></a>dao</h1><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>利用事务处理，可以保证一组操作不会中途停止，它们会作为整体执行</p>
 <p>如果没有错误发生，整组语句提交给（写到）数据库表</p>
 <p>如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态  </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">start transaction;</span><br><span class="line">delete ...</span><br><span class="line">delete ...</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
-
 <p>当 <code>commit</code> 或 <code>rollback</code> 语句执行后，事务会自动关闭  </p>
 <p><code>savepoint</code> 回滚到 <code>savepoint</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">savepoint delete1;</span><br><span class="line">...</span><br><span class="line">rollback to delete1;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="事务问题"><a href="#事务问题" class="headerlink" title="事务问题"></a>事务问题</h2><h3 id="脏写（更新丢失）"><a href="#脏写（更新丢失）" class="headerlink" title="脏写（更新丢失）"></a>脏写（更新丢失）</h3><p>就是我刚才明明写了一个数据值，结果过了一会却没了。</p>
 <p>而它的本质就是事务 B 去修改了事务 A 修改过的值，但是此时事务 A 还没提交，所以事务 A 随时会回滚</p>
 <p>导致事务 B 修改的值也没了，这就是脏写的定义。</p>
@@ -303,20 +262,16 @@
 <p>注意，幻读特指的是你查询到了之前查询没看到过的数据，此时说明你是幻读了</p>
 <p>Ps: 不可重复读重点在于<strong>update和delete</strong>，而幻读的重点在于<strong>insert</strong></p>
 <h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isolation=Isolation.READ_UNCOMMITTED</span><br></pre></td></tr></table></figure>
-
 <p>以操作同一行数据为前提，读事务允许其他读事务和写事务，未提交的写事务<strong>禁止其他写事务（但允许其他读事务）</strong></p>
 <p>此隔离级别可以防止更新丢失，但不能防止脏读、不可重复读、幻读。此隔离级别可以通过“排他写锁”实现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.READ_COMMITTED</span><br></pre></td></tr></table></figure>
-
 <p>以操作同一行数据为前提，读事务允许其他读事务和写事务，未提交的写事务<strong>禁止其他读事务和写事务</strong></p>
 <p>此隔离级别可以防止更新丢失、脏读，但不能防止不可重复读、幻读。此隔离级别可以通过“瞬间共享读锁”和“排他写锁”实现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.REPEATABLE_READ</span><br></pre></td></tr></table></figure>
-
 <p><strong>事务的默认隔离等级</strong></p>
 <p>以操作同一行数据为前提，读事务<strong>禁止其他写事务（但允许其他读事务）</strong>，未提交的写事务<strong>禁止其他读事务和写事务</strong></p>
 <p>此隔离级别可以防止更新丢失、脏读、不可重复读，但<strong>不能防止幻读</strong>。此隔离级别可以通过“共享读锁”和“排他写锁”实现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.SERIALIZABLE</span><br></pre></td></tr></table></figure>
-
 <p>提供严格的事务隔离。它要求事务序列化执行，事务只能一个接着一个地执行，不能并发执行。</p>
 <p>此隔离级别<strong>可以防止更新丢失、脏读、不可重复读、幻读</strong></p>
 <p>如果仅仅通过“行级锁”是无法实现事务序列化的，必须通过其他机制保证新插入的数据不会被刚执行查询操作的事务访问到。</p>

@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="散列表散列表（Hash table，也叫哈希表） 哈希函数（映射）根据Key来计算存储位置的计算规则我们称之为哈希函数 假如我们有一组数据,某位工程师每年的收入情况 12342017 -- 1000002018 -- 1300002019 -- 1400002020 -- 200000  12345671. 新建一个长度为2020的数组array[]2. 根据H(x) &#x3D; x 计算存储位置，将数据">
+  <meta name="description" content="散列表散列表（Hash table，也叫哈希表） 哈希函数（映射）根据Key来计算存储位置的计算规则我们称之为哈希函数  假如我们有一组数据,某位工程师每年的收入情况 12342017 -- 1000002018 -- 1300002019 -- 1400002020 -- 200000 12345671. 新建一个长度为2020的数组array[]2. 根据H(x) &#x3D; x 计算存储位置，将数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-散列表">
 <meta property="og:url" content="http://example.com/2021/07/12/%E7%AE%97%E6%B3%95-%E6%95%A3%E5%88%97%E8%A1%A8/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="散列表散列表（Hash table，也叫哈希表） 哈希函数（映射）根据Key来计算存储位置的计算规则我们称之为哈希函数 假如我们有一组数据,某位工程师每年的收入情况 12342017 -- 1000002018 -- 1300002019 -- 1400002020 -- 200000  12345671. 新建一个长度为2020的数组array[]2. 根据H(x) &#x3D; x 计算存储位置，将数据">
+<meta property="og:description" content="散列表散列表（Hash table，也叫哈希表） 哈希函数（映射）根据Key来计算存储位置的计算规则我们称之为哈希函数  假如我们有一组数据,某位工程师每年的收入情况 12342017 -- 1000002018 -- 1300002019 -- 1400002020 -- 200000 12345671. 新建一个长度为2020的数组array[]2. 根据H(x) &#x3D; x 计算存储位置，将数据">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210712101645062.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210712104248398.png">
@@ -230,12 +230,11 @@
 
       
         <h1 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h1><p>散列表（Hash table，也叫哈希表）</p>
-<h1 id="哈希函数（映射）"><a href="#哈希函数（映射）" class="headerlink" title="哈希函数（映射）"></a>哈希函数（映射）</h1><p><font color=red>根据Key来计算存储位置的计算规则我们称之为哈希函数</font></p>
+<h1 id="哈希函数（映射）"><a href="#哈希函数（映射）" class="headerlink" title="哈希函数（映射）"></a>哈希函数（映射）</h1><font color=red>根据Key来计算存储位置的计算规则我们称之为哈希函数</font>
+
 <p>假如我们有一组数据,某位工程师每年的收入情况</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2017 -- 100000</span><br><span class="line">2018 -- 130000</span><br><span class="line">2019 -- 140000</span><br><span class="line">2020 -- 200000</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 新建一个长度为2020的数组array[]</span><br><span class="line">2. 根据H(x) = x 计算存储位置，将数据放入数组中。</span><br><span class="line">   array[2017] = 100000</span><br><span class="line">   array[2018] = 130000</span><br><span class="line">   array[2019] = 140000</span><br><span class="line">   array[2020] = 200000</span><br><span class="line">3. 查询2019年收入情况时，通过H(x) = x 计算出存储位置，直接取出数据array[2019]</span><br></pre></td></tr></table></figure>
-
 <h2 id="直接定址法"><a href="#直接定址法" class="headerlink" title="直接定址法"></a>直接定址法</h2><p><strong>Hash（Key）= A*Key + B</strong>。<br>优点：简单、均匀<br>缺点：需要事先知道关键字的分布情况(<font color=red>判断其对应关系是否为线性</font>)</p>
 <h2 id="除留余数法"><a href="#除留余数法" class="headerlink" title="除留余数法"></a>除留余数法</h2><p><strong>Hash( key ) = key % p ( p &lt;= m)</strong></p>
 <p>m为地址数</p>
@@ -245,10 +244,14 @@
 <p>若 array[i] 不存在，则插入元素，返回 ”查找失败“</p>
 <p>若 array[i] ≠ key，则进行哈希冲突处理</p>
 <h1 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h1><p>哈希函数算出来的位置已有元素, 即为冲突</p>
-<h1 id="冲突处理"><a href="#冲突处理" class="headerlink" title="冲突处理"></a>冲突处理</h1><h2 id="线性探查法"><a href="#线性探查法" class="headerlink" title="线性探查法"></a>线性探查法</h2><p><font  color=red>产生冲突，依次查看其后的下一个桶，如果发现空位置插入新元素</font></p>
+<h1 id="冲突处理"><a href="#冲突处理" class="headerlink" title="冲突处理"></a>冲突处理</h1><h2 id="线性探查法"><a href="#线性探查法" class="headerlink" title="线性探查法"></a>线性探查法</h2><font  color=red>产生冲突，依次查看其后的下一个桶，如果发现空位置插入新元素</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210712101645062.png" alt="image-20210712101645062"></p>
 <h2 id="平方探测法-二次探测法-【-】"><a href="#平方探测法-二次探测法-【-】" class="headerlink" title="平方探测法(二次探测法)【+】"></a>平方探测法(二次探测法)【+】</h2><p>相对比上面的i+1, 平方探测法为 i+(平方序列)</p>
-<p><font color=red >平方序列: </font></p>
+<font color=red >平方序列: </font>
+
 <p>1, -1, 4, -4, 9, -9</p>
 <p>线性探测容易聚集，二次探测聚集情况较线性探测要好</p>
 <p>散列表长度是某个4k＋3形式的素数时，平方探测法就可以探查到整个散列表空间</p>
@@ -268,7 +271,8 @@
 <p>而不直接依赖于n和m</p>
 <h2 id="装填因子与平均查找长度"><a href="#装填因子与平均查找长度" class="headerlink" title="装填因子与平均查找长度"></a>装填因子与平均查找长度</h2><p>装填因子越大，散列表越满，越容易发生冲突</p>
 <p>装填因子越小，越不容易发生冲突，平均查找长度就越小</p>
-<p><font color=red>散列表不满，容易查找不成功，但是其查找长度就是短了呀</font></p>
+<font color=red>散列表不满，容易查找不成功，但是其查找长度就是短了呀</font>
+
 <p>（array[i] 若不存在则插入并返回”查找失败“）</p>
 <h1 id="散列表的效率"><a href="#散列表的效率" class="headerlink" title="散列表的效率"></a>散列表的效率</h1><h2 id="影响因素"><a href="#影响因素" class="headerlink" title="影响因素"></a>影响因素</h2><p>散列函数、处理冲突的方法、装填因子</p>
 <p>散列表的平均查找长度依赖于散列表的装填因子</p>

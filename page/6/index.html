@@ -297,19 +297,14 @@
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230411154059031.png" alt="image-20230411154059031"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230411154014709.png" alt="image-20230411154014709"></p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableEurekaClient</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConsumerApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ConsumerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>@EnableEurekaClient都是能够让注册中心能够发现，扫描到该服务</p>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">restTemplate.getForObject(<span class="string">&quot;http://producer/&quot;</span>, String.class);</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220409224502792.png" alt="image-20220409224502792"></p>
 <p>负载均衡会随机分配给名为producer</p>
 <p>application.name也不用担心重复</p>
 <p>因为eureka遇到重复的application.name会把他们归在一起</p>
 <p><code>application.properties</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=producer</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -449,44 +444,13 @@
           <h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><p><a target="_blank" rel="noopener" href="https://peps.python.org/pep-0008/#blank-lines">文档</a></p>
 <h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><p>Use blank lines in functions, sparingly, to indicate logical sections.</p>
 <h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="whitespace"><a href="#whitespace" class="headerlink" title="whitespace"></a>whitespace</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">spam(ham[<span class="number">1</span>], &#123;eggs: <span class="number">2</span>&#125;)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">spam( ham[ <span class="number">1</span> ], &#123; eggs: <span class="number">2</span> &#125; )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">foo = (<span class="number">0</span>,)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">bar = (<span class="number">0</span>, )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span>: <span class="built_in">print</span>(x, y); x, y = y, x</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span> : <span class="built_in">print</span>(x , y) ; x , y = y , x</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">ham[<span class="number">1</span>:<span class="number">9</span>], ham[<span class="number">1</span>:<span class="number">9</span>:<span class="number">3</span>], ham[:<span class="number">9</span>:<span class="number">3</span>], ham[<span class="number">1</span>::<span class="number">3</span>], ham[<span class="number">1</span>:<span class="number">9</span>:]</span><br><span class="line">ham[lower:upper], ham[lower:upper:], ham[lower::step]</span><br><span class="line">ham[lower+offset : upper+offset]</span><br><span class="line">ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]</span><br><span class="line">ham[lower + offset : upper + offset]</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">ham[lower + offset:upper + offset]</span><br><span class="line">ham[<span class="number">1</span>: <span class="number">9</span>], ham[<span class="number">1</span> :<span class="number">9</span>], ham[<span class="number">1</span>:<span class="number">9</span> :<span class="number">3</span>]</span><br><span class="line">ham[lower : : upper]</span><br><span class="line">ham[ : upper]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">i = i + <span class="number">1</span></span><br><span class="line">submitted += <span class="number">1</span></span><br><span class="line">x = x*<span class="number">2</span> - <span class="number">1</span></span><br><span class="line">hypot2 = x*x + y*y</span><br><span class="line">c = (a+b) * (a-b)</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">i=i+<span class="number">1</span></span><br><span class="line">submitted +=<span class="number">1</span></span><br><span class="line">x = x * <span class="number">2</span> - <span class="number">1</span></span><br><span class="line">hypot2 = x * x + y * y</span><br><span class="line">c = (a + b) * (a - b)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Correct:</span><br><span class="line">def complex(real, imag=0.0):</span><br><span class="line">    return magic(r=real, i=imag)</span><br><span class="line"># Wrong:</span><br><span class="line">def complex(real, imag = 0.0):</span><br><span class="line">    return magic(r = real, i = imag)</span><br></pre></td></tr></table></figure>
-
 <h3 id="function-name"><a href="#function-name" class="headerlink" title="function name"></a>function name</h3><p>lowercase with words separated by underscores as necessary to improve readability.</p>
 <h3 id="function-return"><a href="#function-return" class="headerlink" title="function return"></a>function return</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line">FILES = [</span><br><span class="line">    <span class="string">&#x27;setup.cfg&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;tox.ini&#x27;</span>,</span><br><span class="line">    ]</span><br><span class="line">initialize(FILES,</span><br><span class="line">           error=<span class="literal">True</span>,</span><br><span class="line">           )</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line">FILES = [<span class="string">&#x27;setup.cfg&#x27;</span>, <span class="string">&#x27;tox.ini&#x27;</span>,]</span><br><span class="line">initialize(FILES, error=<span class="literal">True</span>,)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = x + <span class="number">1</span>                 <span class="comment"># Increment x</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="naming"><a href="#naming" class="headerlink" title="naming"></a>naming</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">b (single lowercase letter)</span><br><span class="line">B (single uppercase letter)</span><br><span class="line"></span><br><span class="line">lowercase</span><br><span class="line">lower_case_with_underscores</span><br><span class="line"></span><br><span class="line">UPPERCASE</span><br><span class="line">UPPER_CASE_WITH_UNDERSCORES</span><br><span class="line"></span><br><span class="line">CapitalizedWords</span><br><span class="line">mixedCase</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="avoid"><a href="#avoid" class="headerlink" title="avoid"></a>avoid</h3><p>Never use the characters ‘l’ (lowercase letter el),</p>
 <p> ‘O’ (uppercase letter oh)</p>
 <p>or ‘I’ (uppercase letter eye) as single character variable names</p>
@@ -500,56 +464,23 @@
 <h2 id="underscores"><a href="#underscores" class="headerlink" title="underscores"></a>underscores</h2><p>double leading underscores should be used only to avoid name conflicts </p>
 <p>with attributes in classes designed to be subclassed</p>
 <h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><h3 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> foo.startswith(<span class="string">&#x27;bar&#x27;</span>):</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> foo[:<span class="number">3</span>] == <span class="string">&#x27;bar&#x27;</span>:</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="empty"><a href="#empty" class="headerlink" title="empty"></a>empty</h3><p>(strings, lists, tuples), use the fact that empty sequences are false</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> seq:</span><br><span class="line"><span class="keyword">if</span> seq:</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(seq):</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">len</span>(seq):</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Correct:</span></span><br><span class="line"><span class="keyword">if</span> greeting:</span><br><span class="line"><span class="comment"># Wrong:</span></span><br><span class="line"><span class="keyword">if</span> greeting == <span class="literal">True</span>:</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428210603194.png" alt="image-20220428210603194"></p>
 <h2 id="comment-1"><a href="#comment-1" class="headerlink" title="comment"></a>comment</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> TRUE;            <span class="comment">/* special case */</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> isPrime(a);      <span class="comment">/* works only for odd a */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Very short comments can appear on the same line as the code they describe</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (foo &gt; <span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Do a double-flip.</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;          <span class="comment">// Explain why here.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//if (bar &gt; 1) &#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    // Do a triple-flip.</span></span><br><span class="line"><span class="comment">//    ...</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="comment">//else &#123;</span></span><br><span class="line"><span class="comment">//    return false;</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br></pre></td></tr></table></figure>
-
 <p>It shouldn’t be used on consecutive multiple lines for text comments</p>
 <p>however, it can be used in consecutive multiple lines for commenting out sections of code</p>
 <h2 id="variable"><a href="#variable" class="headerlink" title="variable"></a>variable</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> level;</span><br><span class="line"><span class="keyword">int</span> size;</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>A keyword followed by a parenthesis(括号) should be separated by a space</p>
 <h2 id="try"><a href="#try" class="headerlink" title="try"></a>try</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">catch</span> (ExceptionClass e) &#123;</span><br><span class="line">     statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="package"><a href="#package" class="headerlink" title="package"></a>package</h2><p>should be one of the top-level domain names</p>
 <p>currently com, edu, gov, mil, net, org, or one of the English two-letter codes </p>
 <p>identifying countries as specified in ISO Standard 3166, 1981</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.sun.eng</span><br><span class="line">com.apple.quicktime.v2</span><br><span class="line">edu.cmu.cs.bovik.cheese</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><p>我觉得可读性是&gt;简洁性的</p>
 <p>当然，也不能太啰嗦</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428213114022.png" alt="image-20220428213114022"></p>
@@ -558,19 +489,10 @@
 <h2 id="多层级关系"><a href="#多层级关系" class="headerlink" title="多层级关系"></a>多层级关系</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220428215046699.png" alt="image-20220428215046699"></p>
 <h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>Always use uppercase for the reserved keywords like <code>SELECT</code> and <code>WHERE</code></p>
 <h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> file_hash</span><br><span class="line">  <span class="keyword">FROM</span> file_system</span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Updating the file record after writing to the file */</span></span><br><span class="line">UPDATE file_system</span><br><span class="line">   <span class="keyword">SET</span> file_modified_date <span class="operator">=</span> <span class="string">&#x27;1980-02-22 13:19:01.00000&#x27;</span>,</span><br><span class="line">       file_size <span class="operator">=</span> <span class="number">209732</span></span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name <span class="keyword">AS</span> fn</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s1</span><br><span class="line">  <span class="keyword">JOIN</span> students <span class="keyword">AS</span> s2</span><br><span class="line">    <span class="keyword">ON</span> s2.mentor_id <span class="operator">=</span> s1.staff_num;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(s.monitor_tally) <span class="keyword">AS</span> monitor_total</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s;</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> albums (title, release_date, recording_date)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">&#x27;Charcoal Lane&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;The New Danger&#x27;</span>, <span class="string">&#x27;2008-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -819,7 +741,6 @@
 <p>区间访问是常见的一种情况，B+树由于数据全部存储在叶子节点</p>
 <p>并且通过指针串在一起，这样就很容易的进行区间遍历甚至全部遍历</p>
 <h1 id="索引-1"><a href="#索引-1" class="headerlink" title="索引*"></a>索引*</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tdb.x_test USE INDEX(x_name) <span class="keyword">WHERE</span> x_name<span class="operator">=</span><span class="string">&#x27;1830759&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
 <p>Ps：</p>
 <p>索引项需保证唯一</p>
 <p>InnoDB表中数据是按照主键顺序存放的（主键做key）</p>
@@ -840,7 +761,6 @@
 <p>对于唯一索引就非常简单的了，唯一索引的特性就是数据唯一性</p>
 <p>所以查到card = 5这条记录后就不在查找下一条记录了</p>
 <h2 id="添加索引"><a href="#添加索引" class="headerlink" title="添加索引*"></a>添加索引*</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> x_test <span class="keyword">add</span> index(x_name(<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
-
 <p>数据量大的话，添加索引需要一定时间（几秒或者十几秒）</p>
 <p>对于添加了索引的数据</p>
 <p>查询效率甚至可以从2s到0.1s</p>
@@ -870,7 +790,6 @@
 <h2 id="只有一个索引生效"><a href="#只有一个索引生效" class="headerlink" title="只有一个索引生效"></a>只有一个索引生效</h2><p>mysql查询只使用一个索引</p>
 <p>如果where子句中已经使用了索引的话，那么order by中的列是不会使用索引的</p>
 <h2 id="使用指定索引"><a href="#使用指定索引" class="headerlink" title="使用指定索引"></a>使用指定索引</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tdb.x_test USE INDEX(x_name) <span class="keyword">WHERE</span> x_name<span class="operator">=</span><span class="string">&#x27;1830759&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tdb.x_test USE INDEX(<span class="keyword">PRIMARY</span>) <span class="keyword">WHERE</span> x_name<span class="operator">=</span><span class="string">&#x27;1830759&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418130712911.png" alt="image-20220418130712911"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418130625155.png" alt="image-20220418130625155"></p>
 <h1 id="视图（VIEW）"><a href="#视图（VIEW）" class="headerlink" title="视图（VIEW）"></a>视图（VIEW）</h1><p>！！！</p>
@@ -879,12 +798,8 @@
 <p>增删改查同步原数据表</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418181233315.png" alt="image-20220418181233315"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> t_user_1 <span class="keyword">AS</span> <span class="keyword">SELECT</span> id,name <span class="keyword">FROM</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure>
-
 <p>当表查询就行</p>
 <h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> 存储过程名;</span><br></pre></td></tr></table></figure>
-
-
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418181647746.png" alt="image-20220418181647746"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418183418983.png" alt="image-20220418183418983"></p>
 <p>删除部门也被我写成了存储过程，主要是因为删除过程也要做好几件事</p>
@@ -966,33 +881,18 @@
 <h2 id="TEXT"><a href="#TEXT" class="headerlink" title="TEXT"></a>TEXT</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220419132316789.png" alt="image-20220419132316789"></p>
 <p>text，最大65535字节<br>mediumtext，最大16777215字节<br>longtext，2的32次方减1个，即4294967295个字节</p>
 <h1 id="运算-1"><a href="#运算-1" class="headerlink" title="运算"></a>运算</h1><h2 id="SUM"><a href="#SUM" class="headerlink" title="SUM"></a>SUM</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 返回分数为<span class="number">90</span>的行数</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(score<span class="operator">=</span><span class="number">90</span>) <span class="keyword">from</span> sum;</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT"></a>COUNT</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418134031267.png" alt="image-20220418134031267"></p>
 <p>计算行</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">COUNT</span>(<span class="operator">*</span>)</span><br><span class="line"></span><br><span class="line"># 结果：<span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>计算not-null的行</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">COUNT</span>(column_name)</span><br><span class="line"></span><br><span class="line"># 结果：<span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="JOIN"><a href="#JOIN" class="headerlink" title="JOIN"></a>JOIN</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.runoob_id, a.runoob_author, b.runoob_count <span class="keyword">FROM</span> runoob_tbl a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> tcount_tbl b <span class="keyword">ON</span> a.runoob_author <span class="operator">=</span> b.runoob_author;</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="INNER-JOIN（JOIN）"><a href="#INNER-JOIN（JOIN）" class="headerlink" title="INNER JOIN（JOIN）"></a>INNER JOIN（JOIN）</h2><p>连接以上两张表来读取左表中所有字段在右表对应的字段值</p>
 <h3 id="LEFT-JOIN"><a href="#LEFT-JOIN" class="headerlink" title="LEFT JOIN"></a>LEFT JOIN</h3><p>会读取左边数据表的全部数据，即便右边表无对应数据</p>
 <h1 id="Trigger"><a href="#Trigger" class="headerlink" title="Trigger"></a>Trigger</h1><p>you can’t have two triggers that fire AFTER INSERT</p>
 <p>MySQL supports only row-level triggers</p>
 <p>场景：删除某老师，顺便把老师报的课给删了</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> `teacher_AFTER_DELETE` AFTER <span class="keyword">DELETE</span> <span class="keyword">ON</span> `teacher` <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="type">ROW</span> <span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> course <span class="keyword">WHERE</span> teacher_id <span class="operator">=</span> old.id;</span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
-
 <p>可以从 <code>old</code> 中获取目标参数</p>
 <h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><p>Queries are always handled in parallel between multiple sessions </p>
 <p>常见需要考虑的问题：</p>
@@ -1003,15 +903,9 @@
 <p>如果没有错误发生，整组语句提交给（写到）数据库表</p>
 <p>如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态  </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">start transaction;</span><br><span class="line">delete ...</span><br><span class="line">delete ...</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
-
 <p>当 <code>commit</code> 或 <code>rollback</code> 语句执行后，事务会自动关闭  </p>
 <p><code>savepoint</code> 回滚到 <code>savepoint</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">savepoint delete1;</span><br><span class="line">...</span><br><span class="line">rollback to delete1;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="事务问题"><a href="#事务问题" class="headerlink" title="事务问题"></a>事务问题</h2><h3 id="脏写（更新丢失）"><a href="#脏写（更新丢失）" class="headerlink" title="脏写（更新丢失）"></a>脏写（更新丢失）</h3><p>就是我刚才明明写了一个数据值，结果过了一会却没了。</p>
 <p>而它的本质就是事务 B 去修改了事务 A 修改过的值，但是此时事务 A 还没提交，所以事务 A 随时会回滚</p>
 <p>导致事务 B 修改的值也没了，这就是脏写的定义。</p>
@@ -1028,20 +922,16 @@
 <p>注意，幻读特指的是你查询到了之前查询没看到过的数据，此时说明你是幻读了</p>
 <p>Ps: 不可重复读重点在于<strong>update和delete</strong>，而幻读的重点在于<strong>insert</strong></p>
 <h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isolation=Isolation.READ_UNCOMMITTED</span><br></pre></td></tr></table></figure>
-
 <p>以操作同一行数据为前提，读事务允许其他读事务和写事务，未提交的写事务<strong>禁止其他写事务（但允许其他读事务）</strong></p>
 <p>此隔离级别可以防止更新丢失，但不能防止脏读、不可重复读、幻读。此隔离级别可以通过“排他写锁”实现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.READ_COMMITTED</span><br></pre></td></tr></table></figure>
-
 <p>以操作同一行数据为前提，读事务允许其他读事务和写事务，未提交的写事务<strong>禁止其他读事务和写事务</strong></p>
 <p>此隔离级别可以防止更新丢失、脏读，但不能防止不可重复读、幻读。此隔离级别可以通过“瞬间共享读锁”和“排他写锁”实现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.REPEATABLE_READ</span><br></pre></td></tr></table></figure>
-
 <p><strong>事务的默认隔离等级</strong></p>
 <p>以操作同一行数据为前提，读事务<strong>禁止其他写事务（但允许其他读事务）</strong>，未提交的写事务<strong>禁止其他读事务和写事务</strong></p>
 <p>此隔离级别可以防止更新丢失、脏读、不可重复读，但<strong>不能防止幻读</strong>。此隔离级别可以通过“共享读锁”和“排他写锁”实现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iIsolation.SERIALIZABLE</span><br></pre></td></tr></table></figure>
-
 <p>提供严格的事务隔离。它要求事务序列化执行，事务只能一个接着一个地执行，不能并发执行。</p>
 <p>此隔离级别<strong>可以防止更新丢失、脏读、不可重复读、幻读</strong></p>
 <p>如果仅仅通过“行级锁”是无法实现事务序列化的，必须通过其他机制保证新插入的数据不会被刚执行查询操作的事务访问到。</p>
@@ -1075,22 +965,14 @@
 <p>如果是长篇描述</p>
 <p>那么就用TEXT吧</p>
 <h1 id="测试"><a href="#测试" class="headerlink" title="测试*"></a>测试*</h1><h2 id="插入若干数据"><a href="#插入若干数据" class="headerlink" title="插入若干数据*"></a>插入若干数据*</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `x_test` (</span><br><span class="line">  `id` <span class="type">int</span>(<span class="number">11</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  `x_name` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `x_time` <span class="type">int</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB AUTO_INCREMENT<span class="operator">=</span><span class="number">4145025</span> <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4</span><br><span class="line"></span><br><span class="line"># 首先在数据库插入一条初始数据，然后不断执行，数据会呈指数型增加</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> x_test(x_name,x_time) <span class="keyword">SELECT</span> CONCAT(rand()<span class="operator">*</span><span class="number">312123</span>,x_name),x_time <span class="keyword">FROM</span> x_test;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXPLAIN <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tdb.x_test <span class="keyword">where</span> x_name<span class="operator">=</span><span class="string">&#x27;2985141.02606898452988963.223324151212&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418134957138.png" alt="image-20220418134957138"></p>
 <p>表示扫描了1128行</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXPLAIN <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tdb.x_test USE INDEX(<span class="keyword">PRIMARY</span>) <span class="keyword">where</span> x_name<span class="operator">=</span><span class="string">&#x27;2985141.02606898452988963.223324151212&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418135204746.png" alt="image-20220418135204746"></p>
 <p>由于使用的索引不同，导致其扫描的行数天差地别</p>
 <p>（默认时，where那的字段是什么，就优先用那个做索引，如果有索引的话）</p>
 <h2 id="Benchmark"><a href="#Benchmark" class="headerlink" title="Benchmark"></a>Benchmark</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BENCHMARK(count,expr)</span><br></pre></td></tr></table></figure>
-
 <p>BENCHMARK会重复计算expr表达式count次</p>
 <p>通过这种方式就可以评估出mysql执行这个expr表达式的效率</p>
 <p>这个函数的返回值始终是0</p>
@@ -1101,7 +983,6 @@
 <p>两个表达式中哪个表达式执行速度更快怎么办？</p>
 <p>执行次数少，看不出差距则可以</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> benchmark(<span class="number">1000000</span>, <span class="number">2011</span><span class="number">-01</span><span class="number">-01</span><span class="operator">&gt;</span><span class="string">&#x27;date(&quot;Y-m-d&quot;,time())&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> benchmark(<span class="number">1000000</span>, to_days(<span class="number">2011</span><span class="number">-04</span><span class="number">-07</span>) <span class="operator">-</span> to_days(now()) <span class="operator">&lt;</span><span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
 <p>如下图</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220418115214952.png" alt="image-20220418115214952"></p>
 
@@ -1316,29 +1197,13 @@
 
       
           <h1 id="sqlite"><a href="#sqlite" class="headerlink" title="sqlite"></a>sqlite</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> password(</span><br><span class="line">	id <span class="type">INTEGER</span> <span class="keyword">PRIMARY</span> KEY AUTOINCREMENT,</span><br><span class="line">    username <span class="type">varchar</span>(<span class="number">100</span>),</span><br><span class="line">	password <span class="type">varchar</span>(<span class="number">100</span>),</span><br><span class="line">	ip <span class="type">varchar</span>(<span class="number">50</span>),</span><br><span class="line">    domain <span class="type">varchar</span>(<span class="number">100</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> password <span class="keyword">values</span>(<span class="keyword">null</span>,<span class="string">&#x27;admin&#x27;</span>,<span class="string">&#x27;admin&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;baidu.com&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="自增"><a href="#自增" class="headerlink" title="自增"></a>自增</h2><p>关键字 AUTOINCREMENT 的使用，必须满足以下两点:</p>
 <p>1、只能用于整型（INTEGER）字段，INT类型是不可以；</p>
 <p>2、只能用于PRIMARY KEY字段；</p>
 <h1 id="QT"><a href="#QT" class="headerlink" title="QT"></a>QT</h1><h2 id="启动报错"><a href="#启动报错" class="headerlink" title="启动报错"></a>启动报错</h2><p>卸了重装</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall pyqt5</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="enter响应"><a href="#enter响应" class="headerlink" title="enter响应"></a>enter响应</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">login = QtWidgets.QPushButton(<span class="string">&quot;login&quot;</span>)</span><br><span class="line">login.setShortcut(<span class="string">&#x27;Return&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220329182211173.png" alt="image-20220329182211173"></p>
 <p><a target="_blank" rel="noopener" href="https://www.pythonguis.com/tutorials/pyqt-layouts/">参考文档</a></p>
 <h3 id="QVBoxLayout"><a href="#QVBoxLayout" class="headerlink" title="QVBoxLayout"></a>QVBoxLayout</h3><p> vertical</p>
@@ -1353,59 +1218,20 @@
 <h3 id="QStackedLayout"><a href="#QStackedLayout" class="headerlink" title="QStackedLayout"></a>QStackedLayout</h3><p>你可以显示你想要的那一层的layout</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220330105321139.png" alt="image-20220330105321139"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QStackedLayout  <span class="comment"># add this import</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainWindow</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line"></span><br><span class="line">        self.setWindowTitle(<span class="string">&quot;My App&quot;</span>)</span><br><span class="line"></span><br><span class="line">        layout = QStackedLayout()</span><br><span class="line"></span><br><span class="line">        layout.addWidget(Color(<span class="string">&quot;red&quot;</span>))</span><br><span class="line">        layout.addWidget(Color(<span class="string">&quot;green&quot;</span>))</span><br><span class="line">        layout.addWidget(Color(<span class="string">&quot;blue&quot;</span>))</span><br><span class="line">        layout.addWidget(Color(<span class="string">&quot;yellow&quot;</span>))</span><br><span class="line"></span><br><span class="line">        layout.setCurrentIndex(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">        widget = QWidget()</span><br><span class="line">        widget.setLayout(layout)</span><br><span class="line">        self.setCentralWidget(widget)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="批量添加组件"><a href="#批量添加组件" class="headerlink" title="批量添加组件"></a>批量添加组件</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220330102224983.png" alt="image-20220330102224983"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> (</span><br><span class="line">    QApplication,</span><br><span class="line">    QCheckBox,</span><br><span class="line">    QComboBox,</span><br><span class="line">    QDateEdit,</span><br><span class="line">    QDateTimeEdit,</span><br><span class="line">    QDial,</span><br><span class="line">    QDoubleSpinBox,</span><br><span class="line">    QFontComboBox,</span><br><span class="line">    QLabel,</span><br><span class="line">    QLCDNumber,</span><br><span class="line">    QLineEdit,</span><br><span class="line">    QMainWindow,</span><br><span class="line">    QProgressBar,</span><br><span class="line">    QPushButton,</span><br><span class="line">    QRadioButton,</span><br><span class="line">    QSlider,</span><br><span class="line">    QSpinBox,</span><br><span class="line">    QTimeEdit,</span><br><span class="line">    QVBoxLayout,</span><br><span class="line">    QWidget,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Subclass QMainWindow to customize your application&#x27;s main window</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainWindow</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line"></span><br><span class="line">        self.setWindowTitle(<span class="string">&quot;Widgets App&quot;</span>)</span><br><span class="line"></span><br><span class="line">        layout = QVBoxLayout()</span><br><span class="line">        widgets = [</span><br><span class="line">            QCheckBox,</span><br><span class="line">            QComboBox,</span><br><span class="line">            QDateEdit,</span><br><span class="line">            QDateTimeEdit,</span><br><span class="line">            QDial,</span><br><span class="line">            QDoubleSpinBox,</span><br><span class="line">            QFontComboBox,</span><br><span class="line">            QLCDNumber,</span><br><span class="line">            QLabel,</span><br><span class="line">            QLineEdit,</span><br><span class="line">            QProgressBar,</span><br><span class="line">            QPushButton,</span><br><span class="line">            QRadioButton,</span><br><span class="line">            QSlider,</span><br><span class="line">            QSpinBox,</span><br><span class="line">            QTimeEdit,</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> widgets:</span><br><span class="line">            layout.addWidget(w())</span><br><span class="line"></span><br><span class="line">        widget = QWidget()</span><br><span class="line">        widget.setLayout(layout)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Set the central widget of the Window. Widget will expand</span></span><br><span class="line">        <span class="comment"># to take up all the space in the window by default.</span></span><br><span class="line">        self.setCentralWidget(widget)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line">window = MainWindow()</span><br><span class="line">window.show()</span><br><span class="line"></span><br><span class="line">app.<span class="built_in">exec</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="layout-嵌套"><a href="#layout-嵌套" class="headerlink" title="layout 嵌套"></a>layout 嵌套</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout1.addLayout( layout3 )</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout.addWidget(self.login, alignment=Qt.AlignHCenter)</span><br></pre></td></tr></table></figure>
-
 <p>表示水平方向居中</p>
 <h3 id="间距"><a href="#间距" class="headerlink" title="间距"></a>间距</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout.setSpacing(<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="align"><a href="#align" class="headerlink" title="align"></a>align</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Qt.AlignLeft | Qt.AlignTop</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="组件大小"><a href="#组件大小" class="headerlink" title="组件大小"></a>组件大小</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">password.setFixedSize(<span class="number">120</span>,<span class="number">30</span>)</span><br></pre></td></tr></table></figure>
-
 <p>resize不好使</p>
 <h3 id="label"><a href="#label" class="headerlink" title="label"></a>label</h3><h4 id="文字大小"><a href="#文字大小" class="headerlink" title="文字大小"></a>文字大小</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">label.setStyleSheet(&#x27;font: 30px&#x27;)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><h4 id="button-in-table"><a href="#button-in-table" class="headerlink" title="button in table"></a>button in table</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">button = QtWidgets.QPushButton(<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">tableWidget.setCellWidget(i, j, button)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setGeometry (<span class="number">0</span>, <span class="number">0</span>, <span class="number">30</span>, <span class="number">35</span>)</span><br></pre></td></tr></table></figure>
-
 <p>从屏幕上（0，0）位置开始（即为最左上角的点），显示一个30*35的界面（宽30，高35）</p>
 <h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="异常捕获"><a href="#异常捕获" class="headerlink" title="异常捕获"></a>异常捕获</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	self.tableWidget.setItem(i, j, QTableWidgetItem(<span class="built_in">str</span>(res[i][j])))</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> error:</span><br><span class="line">	<span class="built_in">print</span>(error)</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -1472,7 +1298,6 @@
       
           <h1 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h1><h2 id="This-application-failed-to-start-because-no-Qt-platform-plugin-could-be-initialized"><a href="#This-application-failed-to-start-because-no-Qt-platform-plugin-could-be-initialized" class="headerlink" title="This application failed to start because no Qt platform plugin could be initialized"></a>This application failed to start because no Qt platform plugin could be initialized</h2><p>Copy the following files:</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qminimal.dll</span><br><span class="line">\Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qoffscreen.dll</span><br><span class="line">\Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qwindows.dll</span><br></pre></td></tr></table></figure>
-
 <p>to:</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\Anaconda3\Library\plugins\platforms\</span><br></pre></td></tr></table></figure>
 

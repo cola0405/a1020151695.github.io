@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="秩的定义最常用的方法是求行阶梯非零行数   “≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0 k阶子式 k阶子式是方阵 故k≤min(n, m) 求秩秩，是非零子式的最高阶数 故暴力法的话，从$$k_{max}$$开始往下 而面对高阶矩阵，暴力法不行了 需借助矩阵的性质求秩 12经初等变化，矩阵的秩不变行阶梯矩阵的秩等于其非零行数    行阶梯矩阵最底行全为0，且每行左起第一个不为0">
+  <meta name="description" content="秩的定义最常用的方法是求行阶梯非零行数    “≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0    k阶子式 k阶子式是方阵  故k≤min(n, m)    求秩秩，是非零子式的最高阶数  故暴力法的话，从k_{max}开始往下 而面对高阶矩阵，暴力法不行了 需借助矩阵的性质求秩 12经初等变化，矩阵的秩不变行阶梯矩阵的秩等于其非零行数 行阶梯矩阵最底行全为0，且每行左起第一个不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学-秩">
 <meta property="og:url" content="http://example.com/2021/07/16/%E6%95%B0%E5%AD%A6-%E7%A7%A9/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="秩的定义最常用的方法是求行阶梯非零行数   “≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0 k阶子式 k阶子式是方阵 故k≤min(n, m) 求秩秩，是非零子式的最高阶数 故暴力法的话，从$$k_{max}$$开始往下 而面对高阶矩阵，暴力法不行了 需借助矩阵的性质求秩 12经初等变化，矩阵的秩不变行阶梯矩阵的秩等于其非零行数    行阶梯矩阵最底行全为0，且每行左起第一个不为0">
+<meta property="og:description" content="秩的定义最常用的方法是求行阶梯非零行数    “≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0    k阶子式 k阶子式是方阵  故k≤min(n, m)    求秩秩，是非零子式的最高阶数  故暴力法的话，从k_{max}开始往下 而面对高阶矩阵，暴力法不行了 需借助矩阵的性质求秩 12经初等变化，矩阵的秩不变行阶梯矩阵的秩等于其非零行数 行阶梯矩阵最底行全为0，且每行左起第一个不">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716150427858.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210729162151492.png">
@@ -40,8 +40,6 @@
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210821233319993.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210821233746933.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822162816462.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822163211931.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822164222248.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822164237617.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822164448344.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822164500901.png">
@@ -252,21 +250,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="秩的定义"><a href="#秩的定义" class="headerlink" title="秩的定义"></a>秩的定义</h1><p><font color=red>最常用的方法是求行阶梯非零行数</font></p>
+        <h1 id="秩的定义"><a href="#秩的定义" class="headerlink" title="秩的定义"></a>秩的定义</h1><font color=red>最常用的方法是求行阶梯非零行数</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716150427858.png" alt="image-20210716150427858"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210729162151492.png" alt="image-20210729162151492"></p>
-<p><font color=red>“≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0</font></p>
+<font color=red>“≠0” 的意思是行列式的值不为0，不是说行列式的元素都不为0</font>
+
+
+
 <h1 id="k阶子式"><a href="#k阶子式" class="headerlink" title="k阶子式"></a>k阶子式</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210729162013742.png" alt="image-20210729162013742"></p>
-<p><font color=red>k阶子式是方阵</font></p>
-<p><font color=blue>故k≤min(n, m)</font></p>
-<h1 id="求秩"><a href="#求秩" class="headerlink" title="求秩"></a>求秩</h1><p><font color=red>秩，是非零子式的最高阶数</font></p>
-<p>故暴力法的话，从$$k_{max}$$开始往下</p>
+<font color=red>k阶子式是方阵</font>
+
+<font color=blue>故k≤min(n, m)</font>
+
+
+
+<h1 id="求秩"><a href="#求秩" class="headerlink" title="求秩"></a>求秩</h1><font color=red>秩，是非零子式的最高阶数</font>
+
+<p>故暴力法的话，从<script type="math/tex">k_{max}</script>开始往下</p>
 <p>而面对高阶矩阵，暴力法不行了</p>
 <p>需借助矩阵的性质求秩</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">经初等变化，矩阵的秩不变</span><br><span class="line">行阶梯矩阵的秩等于其非零行数</span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="行阶梯矩阵"><a href="#行阶梯矩阵" class="headerlink" title="行阶梯矩阵"></a>行阶梯矩阵</h1><p>最底行全为0，且每行左起第一个不为0 的元素下面全是0</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716150745647.png" alt="image-20210716150745647"></p>
 <h4 id="化行阶梯的核心思想"><a href="#化行阶梯的核心思想" class="headerlink" title="化行阶梯的核心思想"></a><font color=red>化行阶梯的核心思想</font></h4><p>最有力的武器1</p>
@@ -275,30 +279,55 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210805170854460.png" alt="image-20210805170854460"></p>
 <h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820191932230.png" alt="image-20210820191932230"></p>
 <p>补充性质：</p>
-<p><font color=blue>满秩矩阵一定是可逆矩阵，可逆矩阵一定是满秩矩阵</font></p>
-<p><font color=red>非零矩阵的秩大于等于1</font></p>
+<font color=blue>满秩矩阵一定是可逆矩阵，可逆矩阵一定是满秩矩阵</font>
+
+<font color=red>非零矩阵的秩大于等于1</font>
+
 <h2 id="伴随矩阵的秩"><a href="#伴随矩阵的秩" class="headerlink" title="伴随矩阵的秩"></a>伴随矩阵的秩</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210821232028396.png" alt="image-20210821232028396"></p>
 <p>对应的性质</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210821232111703.png" alt="image-20210821232111703"></p>
 <h2 id="伴随矩阵的秩1"><a href="#伴随矩阵的秩1" class="headerlink" title="伴随矩阵的秩1"></a>伴随矩阵的秩1</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210821232414573.png" alt="image-20210821232414573"></p>
-<p><font color=red>补充说明</font></p>
+<font color=red>补充说明</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210821233319993.png" alt="image-20210821233319993"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210821233746933.png" alt="image-20210821233746933"></p>
-<p><font color=red>没见过这些题型，你怎么做，淦</font></p>
+<font color=red>没见过这些题型，你怎么做，淦</font>
+
+
+
+
+
+
+
 <hr>
 <h2 id="AB的秩【线性方程组-不可逆矩阵】"><a href="#AB的秩【线性方程组-不可逆矩阵】" class="headerlink" title="AB的秩【线性方程组+不可逆矩阵】"></a>AB的秩【线性方程组+不可逆矩阵】</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822162816462.png" alt="image-20210822162816462"></p>
 <p>补充说明：</p>
-<p><font color=red>AB其实就相当于方程组Ax</font>，又因为β都不是解，故AB≠O，即AB的秩至少是1</p>
-<p><font color=red>若B可逆，则有r(AB)=r(A)</font></p>
-<p><font color=red>不可逆矩阵有一性质，秩不满</font>，故有r(B)≤2</p>
-<p>最后PS</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822163211931.png" alt="image-20210822163211931"></p>
-<hr>
-<h2 id="分块矩阵与秩"><a href="#分块矩阵与秩" class="headerlink" title="分块矩阵与秩"></a>分块矩阵与秩</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822164222248.png" alt="image-20210822164222248"></p>
-<p><font color=red>遇到这种我知道它是什么，但不精通的，就别推理了</font></p>
-<p><font color=red>用暴力法举反例排除才是正解</font></p>
-<p><font color=blue>推理举反例排除远远不如举实例排除</font></p>
-<p><font color=green>因为推理的时候容易想当然，从而忽略很多东西</font></p>
+<font color=red>AB其实就相当于方程组Ax</font>，又因为β都不是解，故AB≠O，即AB的秩至少是1
+
+<font color=red>若B可逆，则有r(AB)=r(A)</font>
+
+<font color=red>不可逆矩阵有一性质，秩不满</font>，故有r(B)≤2
+
+最后PS
+
+![image-20210822163211931](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822163211931.png)
+
+
+
+---
+
+## 分块矩阵与秩
+
+![image-20210822164222248](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822164222248.png)
+
+<font color=red>遇到这种我知道它是什么，但不精通的，就别推理了</font>
+
+<font color=red>用暴力法举反例排除才是正解</font>
+
+<font color=blue>推理举反例排除远远不如举实例排除</font>
+
+<font color=green>因为推理的时候容易想当然，从而忽略很多东西</font>
+
 <p>选项A：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822164237617.png" alt="image-20210822164237617"></p>
 <p>选项B：</p>
@@ -307,19 +336,31 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822164500901.png" alt="image-20210822164500901"></p>
 <p>选项D：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210822165013281.png" alt="image-20210822165013281"></p>
-<p><font color=red>也别嫌麻烦，一个个试，能排除一个是一个</font></p>
-<p><font color=blue>一种例子试四下，ABCD选项，效率可能会高一些</font></p>
+<font color=red>也别嫌麻烦，一个个试，能排除一个是一个</font>
+
+<font color=blue>一种例子试四下，ABCD选项，效率可能会高一些</font>
+
+
+
 <h2 id="矩阵乘积为0，推秩不等式"><a href="#矩阵乘积为0，推秩不等式" class="headerlink" title="矩阵乘积为0，推秩不等式"></a>矩阵乘积为0，推秩不等式</h2><p>乘积与秩</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824115201334.png" alt="image-20210824115201334"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824115250329.png" alt="image-20210824115250329"></p>
-<p><font color=red>一己之力</font></p>
-<p><font color=red>非零矩阵的秩大于等于1</font></p>
+<font color=red>一己之力</font>
+
+<font color=red>非零矩阵的秩大于等于1</font>
+
+
+
+
+
 <h2 id="假设未知数推秩不等式"><a href="#假设未知数推秩不等式" class="headerlink" title="假设未知数推秩不等式"></a>假设未知数推秩不等式</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824120236974.png" alt="image-20210824120236974"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824120243020.png" alt="image-20210824120243020"></p>
 <p>解析：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824120303428.png" alt="image-20210824120303428"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824120308676.png" alt="image-20210824120308676"></p>
-<p><font color=red>含未知数也可以用行阶梯先求一个抽象的秩范围</font></p>
+<font color=red>含未知数也可以用行阶梯先求一个抽象的秩范围</font>
+
 <p>还有很容易在做题过程中忽略的一个很重要的范围条件</p>
-<p><font color=red>非零矩阵的秩大于等于1</font></p>
+<font color=red>非零矩阵的秩大于等于1</font>
+
 <p>如果忽略了这个就会出现有两个选项排除不了</p>
 <p>最后补充一个可能之前没注意过的知识点</p>
 <p>r(AB)性质中的 “n” 指的是<strong>A的列数或B的行数</strong></p>
@@ -328,9 +369,9 @@
 <h2 id="恒等式的坑"><a href="#恒等式的坑" class="headerlink" title="恒等式的坑"></a>恒等式的坑</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824121426700.png" alt="image-20210824121426700"></p>
 <p>解析：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210824121442617.png" alt="image-20210824121442617"></p>
-<p><font color=red>D的表述并不是说r(A)=1, r(A-E)=1</font></p>
-<p><font color=red>我们常用恒等式，但这存在的坑一定要小心</font></p>
+<font color=red>D的表述并不是说r(A)=1, r(A-E)=1</font>
 
+<font color=red>我们常用恒等式，但这存在的坑一定要小心</font>
     </div>
 
     
@@ -410,7 +451,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%A9%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">秩的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#k%E9%98%B6%E5%AD%90%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">k阶子式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%82%E7%A7%A9"><span class="nav-number">3.</span> <span class="nav-text">求秩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9F%A9%E9%98%B5"><span class="nav-number">4.</span> <span class="nav-text">行阶梯矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%96%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">化行阶梯的核心思想</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">例题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">6.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-number">6.1.</span> <span class="nav-text">伴随矩阵的秩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A91"><span class="nav-number">6.2.</span> <span class="nav-text">伴随矩阵的秩1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AB%E7%9A%84%E7%A7%A9%E3%80%90%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84-%E4%B8%8D%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5%E3%80%91"><span class="nav-number">6.3.</span> <span class="nav-text">AB的秩【线性方程组+不可逆矩阵】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5%E4%B8%8E%E7%A7%A9"><span class="nav-number">6.4.</span> <span class="nav-text">分块矩阵与秩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E7%A7%AF%E4%B8%BA0%EF%BC%8C%E6%8E%A8%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">6.5.</span> <span class="nav-text">矩阵乘积为0，推秩不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%87%E8%AE%BE%E6%9C%AA%E7%9F%A5%E6%95%B0%E6%8E%A8%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">6.6.</span> <span class="nav-text">假设未知数推秩不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%81%92%E7%AD%89%E5%BC%8F%E7%9A%84%E5%9D%91"><span class="nav-number">6.7.</span> <span class="nav-text">恒等式的坑</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%A9%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">秩的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#k%E9%98%B6%E5%AD%90%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">k阶子式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%82%E7%A7%A9"><span class="nav-number">3.</span> <span class="nav-text">求秩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9F%A9%E9%98%B5"><span class="nav-number">4.</span> <span class="nav-text">行阶梯矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%96%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">化行阶梯的核心思想</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">例题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">6.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-number">6.1.</span> <span class="nav-text">伴随矩阵的秩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A91"><span class="nav-number">6.2.</span> <span class="nav-text">伴随矩阵的秩1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AB%E7%9A%84%E7%A7%A9%E3%80%90%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84-%E4%B8%8D%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5%E3%80%91"><span class="nav-number">6.3.</span> <span class="nav-text">AB的秩【线性方程组+不可逆矩阵】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E7%A7%AF%E4%B8%BA0%EF%BC%8C%E6%8E%A8%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">6.4.</span> <span class="nav-text">矩阵乘积为0，推秩不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%87%E8%AE%BE%E6%9C%AA%E7%9F%A5%E6%95%B0%E6%8E%A8%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">6.5.</span> <span class="nav-text">假设未知数推秩不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%81%92%E7%AD%89%E5%BC%8F%E7%9A%84%E5%9D%91"><span class="nav-number">6.6.</span> <span class="nav-text">恒等式的坑</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

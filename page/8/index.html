@@ -225,13 +225,7 @@
           <h2 id="规律题"><a href="#规律题" class="headerlink" title="规律题"></a>规律题</h2><p>多动手推样例</p>
 <p>多观察，抽象</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="空间限制"><a href="#空间限制" class="headerlink" title="空间限制"></a>空间限制</h2><p>7个0没问题</p>
 <p>数组大小8个0有点危险</p>
 <p>9个0肯定爆了</p>
@@ -240,13 +234,6 @@
 <p>第 i 组是什么</p>
 <h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>flying window</p>
 <h2 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h2><h2 id="max取最大值"><a href="#max取最大值" class="headerlink" title="max取最大值"></a>max取最大值</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="comment">// 这个不可少，是在std库里的max</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p>多少个</p>
 <p>数值大小</p>
 <p>估计时间复杂度</p>
@@ -259,9 +246,6 @@
 <p>前缀和优化掉一个</p>
 <p>起码让小数据过</p>
 <h2 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">memset</span>(s,<span class="number">0</span>,<span class="keyword">sizeof</span>(s));	<span class="comment">// 数组清0</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="空间时间"><a href="#空间时间" class="headerlink" title="空间时间"></a>空间时间</h2><p>数据范围离谱</p>
 <p>我们就拿时间换空间</p>
 <h2 id="层次"><a href="#层次" class="headerlink" title="层次"></a>层次</h2><p>俯视算法题。。</p>
@@ -342,29 +326,14 @@
 
       
           <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="enter键入"><a href="#enter键入" class="headerlink" title="enter键入"></a>enter键入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input @keyup.enter=&quot;addTodo&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="component-命名"><a href="#component-命名" class="headerlink" title="component 命名"></a>component 命名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:Todo</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="新增项"><a href="#新增项" class="headerlink" title="新增项"></a>新增项</h2><h2 id="关闭eslint"><a href="#关闭eslint" class="headerlink" title="关闭eslint"></a>关闭eslint</h2><p>实在太烦了</p>
 <p>进package.json删了，然后</p>
 <h2 id="component引入"><a href="#component引入" class="headerlink" title="component引入"></a>component引入</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Todo <span class="keyword">from</span> <span class="string">&#x27;@/components/Todo&#x27;</span></span><br></pre></td></tr></table></figure>
-
 <p>不用在export中命名</p>
 <p>除非你要起别名</p>
 <h2 id="默认import和export-default"><a href="#默认import和export-default" class="headerlink" title="默认import和export default"></a>默认import和export default</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br></pre></td></tr></table></figure>
-
 <p>淦，一开始表示找不到，我还以为漏装了一个包，结果。。。</p>
 <p><code>./store</code>表示的是src下的目录</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220116225345082.png" alt="image-20220116225345082"></p>
@@ -372,18 +341,14 @@
 <p>此时，会默认from <code>index.js</code></p>
 <p>然后，再index.js中</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123;  </span><br><span class="line">     realconsole</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
-
 <p>然后</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> realconsole <span class="keyword">from</span> <span class="string">&#x27;./xxx&#x27;</span></span><br></pre></td></tr></table></figure>
-
 <p>但是，还需要注意export default，这叫默认导出</p>
 <p>也就是</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
 <p>此时，要import这个store的话</p>
 <p>乱来都行</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hello <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br></pre></td></tr></table></figure>
-
 <p>（相当于可以外边给名字）</p>
 <h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>父传子</p>
 <h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p>函数，返回值</p>
@@ -392,55 +357,32 @@
 <h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>v-bind是单向绑定，而v-model 是双向绑定</p>
 <h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数表达式更适用于那些本来需要匿名函数的地方</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcName</span>(<span class="params">params</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> params + <span class="number">2</span>;</span><br><span class="line"> &#125;</span><br><span class="line">funcName(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
 <p>可以简洁地表示为</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcName = <span class="function">(<span class="params">params</span>) =&gt;</span> params + <span class="number">2</span></span><br><span class="line">funcName(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
 <p>如果只有一个参数，可以省略括号: </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">params =&gt; params + <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
 <p>如果不需要参数，则</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">() =&gt;&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>如果该箭头函数有不止一条语句，则</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(params,...) =&gt;&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><p>简单声明一个函数</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>如果想让它匿名，成为没有名字的function</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>这样是会报错的</p>
 <p>需要</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
 <p>现在不会报错，但是改函数也不会被调用</p>
 <p>应该再加一个括号</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
-
 <p>如果还想要传参</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>+name);</span><br><span class="line">&#125;)(<span class="string">&quot;cola&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
 <p>应用场景</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sub=<span class="built_in">document</span>.querySelector(<span class="string">&quot;#sub&quot;</span>);</span><br><span class="line">sub.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">    <span class="attr">fn</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -511,17 +453,15 @@
 <p>与传统vue的mount并不完全一致</p>
 <h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><p>包管理工具</p>
 <h2 id="vuetify"><a href="#vuetify" class="headerlink" title="vuetify"></a>vuetify</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220116135224033.png" alt="image-20220116135224033"></p>
-<h2 id="npm-install-–save-dev"><a href="#npm-install-–save-dev" class="headerlink" title="npm install –save-dev"></a>npm install –save-dev</h2><p>save to dev的<code>dependencies</code></p>
+<h2 id="npm-install-—save-dev"><a href="#npm-install-—save-dev" class="headerlink" title="npm install —save-dev"></a>npm install —save-dev</h2><p>save to dev的<code>dependencies</code></p>
 <p>vue项目run dev 的都需要那个dev的args</p>
 <h2 id="export-default-component"><a href="#export-default-component" class="headerlink" title="export default component"></a>export default component</h2><h2 id="v-app"><a href="#v-app" class="headerlink" title="v-app"></a>v-app</h2><h2 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h2><p>占坑</p>
 <h2 id="gridsome-main"><a href="#gridsome-main" class="headerlink" title="gridsome main"></a>gridsome main</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import DefaultLayout from &#x27;~/layouts/Default.vue&#x27;</span><br><span class="line"></span><br><span class="line">export default function (Vue, &#123; router, head, isClient &#125;) &#123;</span><br><span class="line">  // Set default layout as a global component</span><br><span class="line">  Vue.component(&#x27;Layout&#x27;, DefaultLayout)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>DefaultLayout 只是相当于别名一样的东西</p>
 <p>Layout 这个标签名，则是映射到Default.vue中</p>
 <p>main中导入的这个Layout标签是全局使用的</p>
 <p>Default.vue</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;layout&quot;&gt;</span><br><span class="line">    &lt;header class=&quot;header&quot;&gt;</span><br><span class="line">      &lt;strong&gt;</span><br><span class="line">        &lt;g-link to=&quot;/&quot;&gt;&#123;&#123; $static.metadata.siteName &#125;&#125;&lt;/g-link&gt;</span><br><span class="line">      &lt;/strong&gt;</span><br><span class="line">      &lt;nav class=&quot;nav&quot;&gt;</span><br><span class="line">        &lt;g-link class=&quot;nav__link&quot; to=&quot;/&quot;&gt;Home&lt;/g-link&gt;</span><br><span class="line">        &lt;g-link class=&quot;nav__link&quot; to=&quot;/about/&quot;&gt;About&lt;/g-link&gt;</span><br><span class="line">      &lt;/nav&gt;</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;slot/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
 <p><code>g-link</code> 是页面跳转的标签</p>
 <p>导航跳转时，只有<code>slot</code>标签里的内容会发生改变</p>
 <p><code>/</code>是跳转到<code>src/pages/index.vue</code></p>
@@ -668,70 +608,31 @@
 <p>The name is intended to suggest the idea of building software on the Mac depending on the user’s taste.</p>
 <h1 id="源"><a href="#源" class="headerlink" title="源"></a>源</h1><p>查看brew.git的源</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote -v</span><br></pre></td></tr></table></figure>
-
 <p>查看homebrew-core.git的源</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo homebrew/core)</span>&quot;</span> &amp;&amp; git remote -v</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="中科大（ffmpeg装不了）"><a href="#中科大（ffmpeg装不了）" class="headerlink" title="中科大（ffmpeg装不了）"></a>中科大（ffmpeg装不了）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.ustc.edu.cn/brew.git</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git</span><br></pre></td></tr></table></figure>
-
-
-
 <p>bootle domain</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-
-
-
 <p>刷新源</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="阿里"><a href="#阿里" class="headerlink" title="阿里"></a>阿里</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span> &amp;&amp; git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git</span><br></pre></td></tr></table></figure>
-
-
-
 <p>bootle domain</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-
-
-
 <p>刷新源</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="官方"><a href="#官方" class="headerlink" title="官方"></a>官方</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> &amp;&amp; git remote set-url origin https://github.com/Homebrew/brew.git</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span> &amp;&amp; git remote set-url origin https://github.com/Homebrew/homebrew-core.git</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask&quot;</span> &amp;&amp; git remote set-url origin https://github.com/Homebrew/homebrew-cask</span><br></pre></td></tr></table></figure>
-
-
-
 <p>bootle domain，把别的源注释掉就行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.zshrc</span><br><span class="line"><span class="comment"># export HOMEBREW_BOTTLE_DOMAIN=xxxxxxxxx</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
-
-
-
 <p>刷新源</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -804,15 +705,8 @@
 <p>It’s also highly recommended to install a framework with zsh as it makes dealing with configuration, plugins and themes a lot nicer.</p>
 <h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>假设我的代理http端口是：1087，socket是：869</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export https_proxy=http://127.0.0.1:1087 http_proxy=http://127.0.0.1:1087 all_proxy=socks5://127.0.0.1:869</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="su"><a href="#su" class="headerlink" title="su"></a>su</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
-
 <p>设置了root密码之后，就可以正常使用 su 了</p>
 <h2 id="修改电脑名称"><a href="#修改电脑名称" class="headerlink" title="修改电脑名称"></a>修改电脑名称</h2><p>设置 - 共享 - 修改电脑名称</p>
 
@@ -880,46 +774,16 @@
 
       
           <h2 id="构建环境"><a href="#构建环境" class="headerlink" title="构建环境"></a>构建环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="视频转换的准备"><a href="#视频转换的准备" class="headerlink" title="视频转换的准备"></a>视频转换的准备</h2><p>借助 face-alignment 获取crop视频的参数</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/1adrianb/face-alignment</span><br><span class="line"><span class="built_in">cd</span> face-alignment</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line">python setup.py install</span><br><span class="line"></span><br><span class="line">python crop-video.py --inp super-idol.mp4 --cpu</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i super-idol.mp4 -ss 0.0 -t 14.366666666666667 -filter:v <span class="string">&quot;crop=643:643:7:134, scale=256:256&quot;</span> crop.mp4</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="numpy版本不适配的问题"><a href="#numpy版本不适配的问题" class="headerlink" title="numpy版本不适配的问题"></a>numpy版本不适配的问题</h3><p>可以单独把 crop-video.py copy使用</p>
 <p>它并不依赖于first-order-model</p>
 <h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/taichi-256.yaml --driving_video ./crop.mp4 --source_image captain.jpg --checkpoint ./taichi-cpk.pth.tar --relative --adapt_scale --cpu</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/dataset_name.yaml --driving_video path/to/driving --source_image path/to/<span class="built_in">source</span> --checkpoint path/to/checkpoint --relative --adapt_scale</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled-1"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled-1" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="这种python-项目都创建新虚拟环境吧"><a href="#这种python-项目都创建新虚拟环境吧" class="headerlink" title="这种python 项目都创建新虚拟环境吧"></a>这种python 项目都创建新虚拟环境吧</h2><p>别去影响自己原来的库</p>
 <h2 id="Anaconda可以不可创建任意版本的python解释器"><a href="#Anaconda可以不可创建任意版本的python解释器" class="headerlink" title="Anaconda可以不可创建任意版本的python解释器"></a>Anaconda可以不可创建任意版本的python解释器</h2><p>没有任意版本，但确实还有其他版本，比如说3.7等等</p>
 <p>然后再Pycharm里选conda的环境</p>
@@ -994,210 +858,78 @@
       
           <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>连接redis</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br></pre></td></tr></table></figure>
-
-
-
 <p>查询所有值</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keys *</span><br></pre></td></tr></table></figure>
-
-
-
 <p>获取值</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get key</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set </span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><p>整数</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incr</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incrby</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>浮点数</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incrbyfloat</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>追加</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set key hello</span><br><span class="line">append key &quot; world!&quot;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>获取长度</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strlen key</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h2><p>创建</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hset key field value</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hset car color white</span><br><span class="line"></span><br><span class="line">hget car color</span><br><span class="line">&gt;&quot;white&quot;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>是否存在</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexist key field</span><br></pre></td></tr></table></figure>
-
-
-
 <p>递增</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hincrby key field</span><br></pre></td></tr></table></figure>
-
-
-
 <p>删除</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdel key field</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>获取所有field</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hkeys car</span><br><span class="line">&gt;&quot;color&quot;</span><br><span class="line">&gt;&quot;price&quot;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>获取所有value</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hvals car</span><br><span class="line">&gt;&quot;white&quot;</span><br><span class="line">&gt;&quot;60&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>双向链表</p>
 <p>两端修改很快</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lpush numbers 1</span><br><span class="line">lpush numbers 2</span><br><span class="line">lpush numbers 3</span><br><span class="line">rpush numbers 0</span><br><span class="line">rpush numbers -1</span><br></pre></td></tr></table></figure>
-
 <p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20230131142740493.png" alt="image-20230131142740493"></p>
 <p>弹出两端的元素</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lpop numbers</span><br><span class="line">rpop numbers</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>获取片段</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lrange numbers 0 2</span><br><span class="line">&gt;(1)3</span><br><span class="line">&gt;(2)2</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>获取所有</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrange numbers 0 -1</span><br></pre></td></tr></table></figure>
-
 <p>索引超出范围则到最右端元素，不会报错</p>
 <p>和python很像</p>
 <p>删除指定值</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrem key count value</span><br></pre></td></tr></table></figure>
-
 <p>删除count个value</p>
 <p>当count&gt;0时，从左往右删除</p>
 <p>当count&lt;0时，从右往左删除</p>
 <p>通过index获取值</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lindex key index</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lset key index value</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>只保留部分</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ltrim key start end</span><br></pre></td></tr></table></figure>
-
 <p>类range</p>
 <p>插入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">linsert key before|after pivot value</span><br></pre></td></tr></table></figure>
-
 <p>从左往右找到pivot</p>
 <h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd nums 0</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srem nums 0</span><br></pre></td></tr></table></figure>
-
 <p>因为当前集合是无序的，所以随机pop一个元素</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spop nums</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <p>查看</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">smembers nums</span><br><span class="line">&gt;(1) &quot;0&quot;</span><br><span class="line">&gt;(2) &quot;1&quot; </span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>是否exist</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sismember nums 0</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>差集、交集、并集</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdiff key key key ...</span><br></pre></td></tr></table></figure>
-
 <p>多个值时，先计算key1-key2 再计算res-key3</p>
 <p><img src="C:\Users\10201\AppData\Roaming\Typora\typora-user-images\image-20230131144056646.png" alt="image-20230131144056646"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sinter key key key ...</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h2><h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h1><h2 id="过期时间"><a href="#过期时间" class="headerlink" title="过期时间"></a>过期时间</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expire key seconds</span><br></pre></td></tr></table></figure>
-
-
-
 <p>查看剩余时间 (秒)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ttl key</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><p>可用于顺序输出集合、列表</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort key</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort key desc</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="冒号"><a href="#冒号" class="headerlink" title="冒号"></a>冒号</h2><p>表示命名空间</p>
 
       
@@ -1340,9 +1072,6 @@
 
       
           <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220109141029319.png" alt="image-20220109141029319"></p>
 <h2 id="为什么使用Jupyter"><a href="#为什么使用Jupyter" class="headerlink" title="为什么使用Jupyter"></a>为什么使用Jupyter</h2><p>可局部运行代码</p>
 <p>保存的文件名为 .ipynb</p>

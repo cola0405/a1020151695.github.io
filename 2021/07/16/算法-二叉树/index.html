@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="二叉树节点数暴力法【规律题】 自己构一个符合条件的树 然后一个个去排除就好 答案：D、A 特殊值法 答案：D   如果是笼统的二叉树（不是完全二叉树等）则可以考虑特殊值的做法 二叉树的高度根节点，h&#x3D;1 左孩子，h&#x3D;2 第h层的结点数$$2^{(h-1)}$$ （根h&#x3D;1） 第h层以前的节点数（当前层最大节点数-1） 如：h&#x3D;7,该层最多有64个节点 之前则有63个节点 节点总数则为63+64&#x3D;1">
+  <meta name="description" content="二叉树节点数暴力法【规律题】 自己构一个符合条件的树 然后一个个去排除就好 答案：D、A 特殊值法 答案：D   如果是笼统的二叉树（不是完全二叉树等）则可以考虑特殊值的做法      二叉树的高度根节点，h&#x3D;1  左孩子，h&#x3D;2 第h层的结点数2^{(h-1)}$$ （根h&#x3D;1）  第h层以前的节点数（当前层最大节点数-1）  如：h&#x3D;7,该层最多有64个节点  之前则有63个节点  节点总数则">
 <meta property="og:type" content="article">
 <meta property="og:title" content="藏经阁">
 <meta property="og:url" content="http://example.com/2021/07/16/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="二叉树节点数暴力法【规律题】 自己构一个符合条件的树 然后一个个去排除就好 答案：D、A 特殊值法 答案：D   如果是笼统的二叉树（不是完全二叉树等）则可以考虑特殊值的做法 二叉树的高度根节点，h&#x3D;1 左孩子，h&#x3D;2 第h层的结点数$$2^{(h-1)}$$ （根h&#x3D;1） 第h层以前的节点数（当前层最大节点数-1） 如：h&#x3D;7,该层最多有64个节点 之前则有63个节点 节点总数则为63+64&#x3D;1">
+<meta property="og:description" content="二叉树节点数暴力法【规律题】 自己构一个符合条件的树 然后一个个去排除就好 答案：D、A 特殊值法 答案：D   如果是笼统的二叉树（不是完全二叉树等）则可以考虑特殊值的做法      二叉树的高度根节点，h&#x3D;1  左孩子，h&#x3D;2 第h层的结点数2^{(h-1)}$$ （根h&#x3D;1）  第h层以前的节点数（当前层最大节点数-1）  如：h&#x3D;7,该层最多有64个节点  之前则有63个节点  节点总数则">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210830113630156.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210830113044602.png">
@@ -43,15 +43,6 @@
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003235956388.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004000025629.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211617104.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211043364.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211900506.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211911317.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211932496.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211943724.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211952461.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003212104265.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003212109959.png">
-<meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003212118065.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210925111621584.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210925114231859.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211125100600797.png">
@@ -300,22 +291,38 @@
 <p>答案：D</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210830113054791.png" alt="image-20210830113054791"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210830113015560.png" alt="image-20210830113015560"></p>
-<p><font color=red>如果是笼统的二叉树（不是完全二叉树等）则可以考虑特殊值的做法</font></p>
-<h1 id="二叉树的高度"><a href="#二叉树的高度" class="headerlink" title="二叉树的高度"></a>二叉树的高度</h1><p><font color=red>根节点，h=1</font></p>
+<font color=red>如果是笼统的二叉树（不是完全二叉树等）则可以考虑特殊值的做法</font>
+
+
+
+
+
+<h1 id="二叉树的高度"><a href="#二叉树的高度" class="headerlink" title="二叉树的高度"></a>二叉树的高度</h1><font color=red>根节点，h=1</font>
+
 <p>左孩子，h=2</p>
-<h1 id="第h层的结点数"><a href="#第h层的结点数" class="headerlink" title="第h层的结点数"></a>第h层的结点数</h1><p>$$2^{(h-1)}$$ （根h=1）</p>
-<p>第h层以前的节点数（当前层最大节点数-1）</p>
-<p>如：h=7,该层最多有64个节点</p>
-<p>之前则有63个节点</p>
-<p>节点总数则为63+64=127</p>
-<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><p>二叉排序树查找算法的性能取决于二叉树的结构$$O(logn)$$</p>
-<p>其中平衡二叉树是最合适的（<strong>一种特殊类型的二叉排序树</strong>）</p>
+<h1 id="第h层的结点数"><a href="#第h层的结点数" class="headerlink" title="第h层的结点数"></a>第h层的结点数</h1><script type="math/tex; mode=display">2^{(h-1)}$$ （根h=1）
+
+第h层以前的节点数（当前层最大节点数-1）
+
+如：h=7,该层最多有64个节点
+
+之前则有63个节点
+
+节点总数则为63+64=127
+
+
+
+# 平衡二叉树
+
+二叉排序树查找算法的性能取决于二叉树的结构$$O(logn)</script><p>其中平衡二叉树是最合适的（<strong>一种特殊类型的二叉排序树</strong>）</p>
 <p>任一结点左右子树深度之差不超过1</p>
 <p>即不会存在左子树一路往下的情况</p>
-<p><font color=red>平衡二叉树本身还要求有序</font></p>
+<font color=red>平衡二叉树本身还要求有序</font>
+
 <p>也就是说，二叉树的插入需要调整</p>
 <h2 id="平衡二叉树调整的方法（注意描述）"><a href="#平衡二叉树调整的方法（注意描述）" class="headerlink" title="平衡二叉树调整的方法（注意描述）"></a>平衡二叉树调整的方法（注意描述）</h2><p>LL型（右单旋转）、RR型（左单旋转）、LR型（先左后右双旋转）、RL型（先右后左双旋转）</p>
-<p><font color=blue>看食指</font></p>
+<font color=blue>看食指</font>
+
 <p>右单旋转</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003205804405.png" alt="image-20211003205804405"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004001731267.png" alt="image-20211004001731267"></p>
@@ -333,35 +340,70 @@
 <p>下面是<font color=blue>进阶理解</font></p>
 <h2 id="进阶平衡二叉树调整的梳理"><a href="#进阶平衡二叉树调整的梳理" class="headerlink" title="进阶平衡二叉树调整的梳理"></a>进阶平衡二叉树调整的梳理</h2><p>因为最小平衡子树已经满了，简单的旋转已经解决不了问题了</p>
 <p>所以一定要放在大树中调整，往右边有空的地方挪</p>
-<p><font color=red>在最小不平衡子树中选根</font></p>
+<font color=red>在最小不平衡子树中选根</font>
+
 <p>直链选第1个，弯的选第2个</p>
 <p>然后断开的结点，按大小关系先判定放到左子树还是右子树</p>
 <p>其中的依据 “比B大，比A小”</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003232628377.png" alt="image-20211003232628377"></p>
-<p><font color=red>做题的时候，要把示意图画出来再做，脑补容易出错</font></p>
+<font color=red>做题的时候，要把示意图画出来再做，脑补容易出错</font>
+
+
+
 <h3 id="没有重视“最小不平衡子树”"><a href="#没有重视“最小不平衡子树”" class="headerlink" title="没有重视“最小不平衡子树”"></a>没有重视“最小不平衡子树”</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003235718107.png" alt="image-20211003235718107"></p>
 <p>若一昧套公式</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003235956388.png" alt="image-20211003235956388"></p>
 <p>正确的调整（选自严蔚敏的教材）</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004000025629.png" alt="image-20211004000025629"></p>
-<h2 id="平衡二叉树进阶型"><a href="#平衡二叉树进阶型" class="headerlink" title="平衡二叉树进阶型"></a>平衡二叉树进阶型</h2><p><font color=red>先处理最小不平衡树</font></p>
+<h2 id="平衡二叉树进阶型"><a href="#平衡二叉树进阶型" class="headerlink" title="平衡二叉树进阶型"></a>平衡二叉树进阶型</h2><font color=red>先处理最小不平衡树</font>
+
 <p><strong>谨遵示意图</strong></p>
 <h3 id="LL型"><a href="#LL型" class="headerlink" title="LL型"></a>LL型</h3><p>第一个L指根结点的左子树</p>
 <p>第二个L指在左子树根节点的左子树上插入新节点</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211617104.png"></p>
-<p>$$B_R$$在rushB变化后仍然是B的右子树，A的左子树 </p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211043364.png" alt="image-20211003211043364"></p>
-<h3 id="RR"><a href="#RR" class="headerlink" title="RR"></a>RR</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211900506.png" alt="image-20211003211900506"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211911317.png" alt="image-20211003211911317"></p>
-<h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211932496.png" alt="image-20211003211932496"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211943724.png" alt="image-20211003211943724"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211952461.png" alt="image-20211003211952461"></p>
-<h3 id="RL"><a href="#RL" class="headerlink" title="RL"></a>RL</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003212104265.png" alt="image-20211003212104265"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003212109959.png" alt="image-20211003212109959"></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003212118065.png" alt="image-20211003212118065"></p>
-<h2 id="平衡因子（AVL）"><a href="#平衡因子（AVL）" class="headerlink" title="平衡因子（AVL）"></a>平衡因子（AVL）</h2><p>平衡因子（BF,Balance Factor）</p>
-<p>$$h_{左子树}-h_{右子树}$$</p>
-<p>平衡二叉树中不存在平衡因子大于1的节点</p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211617104.png" alt=""></p>
+<script type="math/tex; mode=display">B_R$$在rushB变化后仍然是B的右子树，A的左子树 
+
+
+
+
+
+![image-20211003211043364](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211043364.png)
+
+### RR
+
+![image-20211003211900506](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211900506.png)
+
+![image-20211003211911317](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211911317.png)
+
+
+
+### LR
+
+![image-20211003211932496](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211932496.png)
+
+![image-20211003211943724](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211943724.png)
+
+![image-20211003211952461](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003211952461.png)
+
+### RL
+
+![image-20211003212104265](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003212104265.png)
+
+![image-20211003212109959](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003212109959.png)
+
+![image-20211003212118065](https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003212118065.png)
+
+
+
+
+
+
+
+## 平衡因子（AVL）
+
+平衡因子（BF,Balance Factor）
+
+$$h_{左子树}-h_{右子树}</script><p>平衡二叉树中不存在平衡因子大于1的节点</p>
 <p>在一棵平衡二叉树中，节点的平衡因子只能取-1、1或者0</p>
 <p>例题：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210925111621584.png" alt="image-20210925111621584"></p>
@@ -378,8 +420,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820233216849.png" alt="image-20210820233216849"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820233534149.png" alt="image-20210820233534149"></p>
 <p>答案：C</p>
-<p>$$2^{6}-1+(32-8)*2=111$$</p>
-<p>加深完全二叉树的理解</p>
+<script type="math/tex; mode=display">2^{6}-1+(32-8)*2=111</script><p>加深完全二叉树的理解</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210820234033844.png" alt="image-20210820234033844"></p>
 <p>答案：A</p>
 <p>3个叶子节点需要2个双亲结点</p>
@@ -394,7 +435,8 @@
 <hr>
 <h1 id="储存结构"><a href="#储存结构" class="headerlink" title="储存结构"></a>储存结构</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716214603785.png" alt="image-20210716214603785"></p>
 <h1 id="二叉排序树BST（二叉查找树，二叉搜索树）"><a href="#二叉排序树BST（二叉查找树，二叉搜索树）" class="headerlink" title="二叉排序树BST（二叉查找树，二叉搜索树）"></a>二叉排序树BST（二叉查找树，二叉搜索树）</h1><p>左&lt;根&lt;右</p>
-<p><font color=red>中序出来时递增序列</font></p>
+<font color=red>中序出来时递增序列</font>
+
 <h2 id="二叉排序树插入"><a href="#二叉排序树插入" class="headerlink" title="二叉排序树插入"></a>二叉排序树插入</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716215110097.png" alt="image-20210716215110097"><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716215137051.png" alt="image-20210716215137051"></p>
 <h2 id="二叉排序树构造"><a href="#二叉排序树构造" class="headerlink" title="二叉排序树构造"></a>二叉排序树构造</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716215223689.png" alt="image-20210716215223689"></p>
 <h2 id="二叉排序树查找算法"><a href="#二叉排序树查找算法" class="headerlink" title="二叉排序树查找算法"></a>二叉排序树查找算法</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210716214958703.png" alt="image-20210716214958703"></p>
@@ -410,8 +452,10 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003201828274.png" alt="image-20211003201828274"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003201804152.png" alt="image-20211003201804152"></p>
 <h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p>重点在于</p>
-<p><font color=red>选取根权值最小的两个树合并成一棵树，加入到森林，并删除原来森林中的那两棵树</font></p>
-<p><font color=blue>重新选择权值最小的树</font></p>
+<font color=red>选取根权值最小的两个树合并成一棵树，加入到森林，并删除原来森林中的那两棵树</font>
+
+<font color=blue>重新选择权值最小的树</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211003202059180.png" alt="image-20211003202059180"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004201256357.png" alt="image-20211004201256357"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211004201244922.png" alt="image-20211004201244922"></p>
@@ -437,7 +481,7 @@
 <p>可以看到有些结点上有两个值</p>
 <p>它们叫做 ”关键字“</p>
 <p>B树多路平衡查找树</p>
-<p>在$$O(log_2n)$$的基础上再压榨空间，使得查询效率更快</p>
+<p>在<script type="math/tex">O(log_2n)</script>的基础上再压榨空间，使得查询效率更快</p>
 <p>由此也需要一套新的规则</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211010160350285.png" alt="image-20211010160350285"></p>
 <h2 id="B树的高度范围"><a href="#B树的高度范围" class="headerlink" title="B树的高度范围"></a>B树的高度范围</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211010160511674.png" alt="image-20211010160511674"></p>
@@ -530,7 +574,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E8%8A%82%E7%82%B9%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">二叉树节点数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%B4%E5%8A%9B%E6%B3%95%E3%80%90%E8%A7%84%E5%BE%8B%E9%A2%98%E3%80%91"><span class="nav-number">1.1.</span> <span class="nav-text">暴力法【规律题】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%80%BC%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">特殊值法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">二叉树的高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%ACh%E5%B1%82%E7%9A%84%E7%BB%93%E7%82%B9%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">第h层的结点数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">4.</span> <span class="nav-text">平衡二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E8%B0%83%E6%95%B4%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E6%B3%A8%E6%84%8F%E6%8F%8F%E8%BF%B0%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">平衡二叉树调整的方法（注意描述）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E8%B0%83%E6%95%B4%E7%9A%84%E6%A2%B3%E7%90%86"><span class="nav-number">4.2.</span> <span class="nav-text">进阶平衡二叉树调整的梳理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%A1%E6%9C%89%E9%87%8D%E8%A7%86%E2%80%9C%E6%9C%80%E5%B0%8F%E4%B8%8D%E5%B9%B3%E8%A1%A1%E5%AD%90%E6%A0%91%E2%80%9D"><span class="nav-number">4.2.1.</span> <span class="nav-text">没有重视“最小不平衡子树”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E8%BF%9B%E9%98%B6%E5%9E%8B"><span class="nav-number">4.3.</span> <span class="nav-text">平衡二叉树进阶型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LL%E5%9E%8B"><span class="nav-number">4.3.1.</span> <span class="nav-text">LL型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RR"><span class="nav-number">4.3.2.</span> <span class="nav-text">RR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LR"><span class="nav-number">4.3.3.</span> <span class="nav-text">LR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RL"><span class="nav-number">4.3.4.</span> <span class="nav-text">RL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E5%9B%A0%E5%AD%90%EF%BC%88AVL%EF%BC%89"><span class="nav-number">4.4.</span> <span class="nav-text">平衡因子（AVL）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">5.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">6.</span> <span class="nav-text">完全二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%80%9D%E7%BB%B4%E8%AF%AF%E5%8C%BA"><span class="nav-number">6.1.</span> <span class="nav-text">完全二叉树的思维误区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0%E6%8E%A8%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">6.2.</span> <span class="nav-text">已知叶子节点个数推完全二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E4%B8%A4%E7%BB%93%E7%82%B9%E6%98%AF%E5%90%A6%E5%90%8C%E5%B1%82"><span class="nav-number">6.3.</span> <span class="nav-text">判断两结点是否同层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84"><span class="nav-number">7.</span> <span class="nav-text">储存结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91BST%EF%BC%88%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%EF%BC%89"><span class="nav-number">8.</span> <span class="nav-text">二叉排序树BST（二叉查找树，二叉搜索树）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E6%8F%92%E5%85%A5"><span class="nav-number">8.1.</span> <span class="nav-text">二叉排序树插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E6%9E%84%E9%80%A0"><span class="nav-number">8.2.</span> <span class="nav-text">二叉排序树构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95"><span class="nav-number">8.3.</span> <span class="nav-text">二叉排序树查找算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E7%9A%84%E5%88%A0%E9%99%A4"><span class="nav-number">8.4.</span> <span class="nav-text">二叉排序树的删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="nav-number">9.</span> <span class="nav-text">哈夫曼树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0"><span class="nav-number">9.1.</span> <span class="nav-text">构造</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="nav-number">10.</span> <span class="nav-text">二叉树的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%AE%E6%9E%97%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">10.1.</span> <span class="nav-text">森林转化为二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%8F%89%E6%A0%91%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">10.2.</span> <span class="nav-text">多叉树转化为二叉树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B%E6%A0%91"><span class="nav-number">11.</span> <span class="nav-text">B树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%E8%8C%83%E5%9B%B4"><span class="nav-number">11.1.</span> <span class="nav-text">B树的高度范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E7%BB%93%E7%82%B9"><span class="nav-number">11.2.</span> <span class="nav-text">外部结点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%E6%8F%92%E5%85%A5"><span class="nav-number">11.3.</span> <span class="nav-text">B树插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%E5%88%86%E8%A3%82"><span class="nav-number">11.4.</span> <span class="nav-text">B树分裂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%E5%88%A0%E9%99%A4"><span class="nav-number">11.5.</span> <span class="nav-text">B树删除</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E8%8A%82%E7%82%B9%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">二叉树节点数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%B4%E5%8A%9B%E6%B3%95%E3%80%90%E8%A7%84%E5%BE%8B%E9%A2%98%E3%80%91"><span class="nav-number">1.1.</span> <span class="nav-text">暴力法【规律题】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%80%BC%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">特殊值法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">二叉树的高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%ACh%E5%B1%82%E7%9A%84%E7%BB%93%E7%82%B9%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">第h层的结点数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E8%B0%83%E6%95%B4%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E6%B3%A8%E6%84%8F%E6%8F%8F%E8%BF%B0%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">平衡二叉树调整的方法（注意描述）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E8%B0%83%E6%95%B4%E7%9A%84%E6%A2%B3%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">进阶平衡二叉树调整的梳理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%A1%E6%9C%89%E9%87%8D%E8%A7%86%E2%80%9C%E6%9C%80%E5%B0%8F%E4%B8%8D%E5%B9%B3%E8%A1%A1%E5%AD%90%E6%A0%91%E2%80%9D"><span class="nav-number">3.2.1.</span> <span class="nav-text">没有重视“最小不平衡子树”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E8%BF%9B%E9%98%B6%E5%9E%8B"><span class="nav-number">3.3.</span> <span class="nav-text">平衡二叉树进阶型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LL%E5%9E%8B"><span class="nav-number">3.3.1.</span> <span class="nav-text">LL型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">4.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">5.</span> <span class="nav-text">完全二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%80%9D%E7%BB%B4%E8%AF%AF%E5%8C%BA"><span class="nav-number">5.1.</span> <span class="nav-text">完全二叉树的思维误区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0%E6%8E%A8%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">5.2.</span> <span class="nav-text">已知叶子节点个数推完全二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E4%B8%A4%E7%BB%93%E7%82%B9%E6%98%AF%E5%90%A6%E5%90%8C%E5%B1%82"><span class="nav-number">5.3.</span> <span class="nav-text">判断两结点是否同层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84"><span class="nav-number">6.</span> <span class="nav-text">储存结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91BST%EF%BC%88%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">二叉排序树BST（二叉查找树，二叉搜索树）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E6%8F%92%E5%85%A5"><span class="nav-number">7.1.</span> <span class="nav-text">二叉排序树插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E6%9E%84%E9%80%A0"><span class="nav-number">7.2.</span> <span class="nav-text">二叉排序树构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95"><span class="nav-number">7.3.</span> <span class="nav-text">二叉排序树查找算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E7%9A%84%E5%88%A0%E9%99%A4"><span class="nav-number">7.4.</span> <span class="nav-text">二叉排序树的删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="nav-number">8.</span> <span class="nav-text">哈夫曼树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0"><span class="nav-number">8.1.</span> <span class="nav-text">构造</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="nav-number">9.</span> <span class="nav-text">二叉树的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%AE%E6%9E%97%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">9.1.</span> <span class="nav-text">森林转化为二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%8F%89%E6%A0%91%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">9.2.</span> <span class="nav-text">多叉树转化为二叉树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B%E6%A0%91"><span class="nav-number">10.</span> <span class="nav-text">B树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%E8%8C%83%E5%9B%B4"><span class="nav-number">10.1.</span> <span class="nav-text">B树的高度范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E7%BB%93%E7%82%B9"><span class="nav-number">10.2.</span> <span class="nav-text">外部结点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%E6%8F%92%E5%85%A5"><span class="nav-number">10.3.</span> <span class="nav-text">B树插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%E5%88%86%E8%A3%82"><span class="nav-number">10.4.</span> <span class="nav-text">B树分裂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%E5%88%A0%E9%99%A4"><span class="nav-number">10.5.</span> <span class="nav-text">B树删除</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

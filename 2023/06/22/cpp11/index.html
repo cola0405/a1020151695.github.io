@@ -20,17 +20,17 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="传参问题默认值拷贝 cmp123bool cmp(vector&lt;int&gt;&amp; a, vector&lt;int&gt;&amp; b)&amp;#123;    return a[0]&lt;b[0];  &#x2F;&#x2F; 小于则从小到大&amp;#125;      精度问题1double res &#x3D; (double)(p[n]-p[k] - lowest) &#x2F; (n-k-1);  如果写成这样 1dou">
+  <meta name="description" content="竞赛要求12345&#x2F;&#x2F; (1) 能声明固定长度就声明固定长度，内存申请更消耗时间int height[501][501], wp[501][501];&#x2F;&#x2F; (2) 能用pair就用pairq.push(make_pair(wi, wj));&#x2F;&#x2F; (3) 能用标志位就不用unordered_set 传参问题默认值拷贝 char1g[i][j]&#x3D;&#x3D;&amp;#x27;#&amp;#x27; cmp123bool cm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cpp11">
 <meta property="og:url" content="http://example.com/2023/06/22/cpp11/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="传参问题默认值拷贝 cmp123bool cmp(vector&lt;int&gt;&amp; a, vector&lt;int&gt;&amp; b)&amp;#123;    return a[0]&lt;b[0];  &#x2F;&#x2F; 小于则从小到大&amp;#125;      精度问题1double res &#x3D; (double)(p[n]-p[k] - lowest) &#x2F; (n-k-1);  如果写成这样 1dou">
+<meta property="og:description" content="竞赛要求12345&#x2F;&#x2F; (1) 能声明固定长度就声明固定长度，内存申请更消耗时间int height[501][501], wp[501][501];&#x2F;&#x2F; (2) 能用pair就用pairq.push(make_pair(wi, wj));&#x2F;&#x2F; (3) 能用标志位就不用unordered_set 传参问题默认值拷贝 char1g[i][j]&#x3D;&#x3D;&amp;#x27;#&amp;#x27; cmp123bool cm">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100716391.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100745188.png">
 <meta property="article:published_time" content="2023-06-22T08:04:09.000Z">
-<meta property="article:modified_time" content="2023-11-01T03:30:57.478Z">
+<meta property="article:modified_time" content="2023-12-20T07:03:17.682Z">
 <meta property="article:author" content="FreeJim">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-11-01 11:30:57" itemprop="dateModified" datetime="2023-11-01T11:30:57+08:00">2023-11-01</time>
+                <time title="Modified: 2023-12-20 15:03:17" itemprop="dateModified" datetime="2023-12-20T15:03:17+08:00">2023-12-20</time>
               </span>
 
           
@@ -227,143 +227,85 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="传参问题"><a href="#传参问题" class="headerlink" title="传参问题"></a>传参问题</h2><p>默认值拷贝</p>
+        <h2 id="竞赛要求"><a href="#竞赛要求" class="headerlink" title="竞赛要求"></a>竞赛要求</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (1) 能声明固定长度就声明固定长度，内存申请更消耗时间</span></span><br><span class="line"><span class="keyword">int</span> height[<span class="number">501</span>][<span class="number">501</span>], wp[<span class="number">501</span>][<span class="number">501</span>];</span><br><span class="line"><span class="comment">// (2) 能用pair就用pair</span></span><br><span class="line">q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(wi, wj));</span><br><span class="line"><span class="comment">// (3) 能用标志位就不用unordered_set</span></span><br></pre></td></tr></table></figure>
+<h2 id="传参问题"><a href="#传参问题" class="headerlink" title="传参问题"></a>传参问题</h2><p>默认值拷贝</p>
+<h2 id="char"><a href="#char" class="headerlink" title="char"></a>char</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g[i][j]==<span class="string">&#x27;#&#x27;</span></span><br></pre></td></tr></table></figure>
 <h2 id="cmp"><a href="#cmp" class="headerlink" title="cmp"></a>cmp</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">0</span>]&lt;b[<span class="number">0</span>];  <span class="comment">// 小于则从小到大</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="精度问题"><a href="#精度问题" class="headerlink" title="精度问题"></a>精度问题</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> res = (<span class="keyword">double</span>)(p[n]-p[k] - lowest) / (n-k<span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
-
 <p>如果写成这样</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> res = (p[n]-p[k] - lowest) / (n-k<span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
-
 <p>减法得到的结果会被强制转换成 int 类型，因为第一项是 int</p>
 <p>解决方法是先把其转成浮点数，然后再进行除法运算</p>
 <h2 id="index-and-iterator"><a href="#index-and-iterator" class="headerlink" title="index and iterator"></a>index and iterator</h2><p>index to iterator</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t.<span class="built_in">erase</span>(t.<span class="built_in">begin</span>()+idx);</span><br></pre></td></tr></table></figure>
-
-
-
 <p>iterator to index</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">it-t.<span class="built_in">begin</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>将一个浮点数直接赋值给整数变量会进行隐式的类型转换。在这种情况下，浮点数会被截断为整数部分</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">3.4</span>;   <span class="comment">//a=3</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>对于整数类型，如果其中一个操作数是<code>long long</code>类型，那么表达式的结果类型将是<code>long long</code>。</p>
 <h2 id="lower-bound返回值"><a href="#lower-bound返回值" class="headerlink" title="lower_bound返回值"></a>lower_bound返回值</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> idx = <span class="built_in">lower_bound</span>(t.<span class="built_in">begin</span>(), t.<span class="built_in">end</span>(), a) - t.<span class="built_in">begin</span>();</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<p>lower_bound 最小取到0，最大取到 v.size()</p>
+<p>需要灵活处理</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; res;  <span class="comment">// lower_bound 只能找到适合的插入位置，但是无法立即确认到底是离左边近还是右边</span></span><br><span class="line"><span class="keyword">if</span>(lower<span class="number">-1</span>&gt;=<span class="number">0</span> &amp;&amp; lower<span class="number">-1</span>&lt;nodes.<span class="built_in">size</span>()) res.<span class="built_in">push_back</span>(<span class="built_in">pow</span>(nodes[lower<span class="number">-1</span>]-b, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">if</span>(upper<span class="number">-1</span>&gt;=<span class="number">0</span> &amp;&amp; upper<span class="number">-1</span>&lt;nodes.<span class="built_in">size</span>()) res.<span class="built_in">push_back</span>(<span class="built_in">pow</span>(nodes[upper<span class="number">-1</span>]-b, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">if</span>(lower&gt;=<span class="number">0</span> &amp;&amp; lower&lt;nodes.<span class="built_in">size</span>()) res.<span class="built_in">push_back</span>(<span class="built_in">pow</span>(nodes[lower]-b, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">if</span>(upper&gt;=<span class="number">0</span> &amp;&amp; upper&lt;nodes.<span class="built_in">size</span>()) res.<span class="built_in">push_back</span>(<span class="built_in">pow</span>(nodes[upper]-b, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">return</span> *<span class="built_in">min_element</span>(res.<span class="built_in">begin</span>(), res.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
 <h2 id="min-and-max"><a href="#min-and-max" class="headerlink" title="min and max"></a>min and max</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> lowest = *<span class="built_in">min_element</span>(scores.<span class="built_in">begin</span>()+k, scores.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-
 <p>vector 用 min_element()</p>
-<p>普通数字比较可以直接用 min()</p>
-<p>返回的是迭代器，所以加星号取值</p>
-<p>时间复杂度是O(n)</p>
+<p>返回的是迭代器，所以加星号取值 时间复杂度是 O(n)</p>
+<p>普通数字比较可以直接用 min() (只允许放两个同类型的值)</p>
 <h2 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100716391.png" alt="image-20230624100716391"></p>
 <p>原因是 std 下也有一个 visit</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20230624100745188.png" alt="image-20230624100745188"></p>
-<h2 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">end_time</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; duration, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, vector&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; pq; <span class="comment">// greater means 最小堆， 默认是less&lt;int&gt; 最大堆</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; i++)&#123;</span><br><span class="line">        pq.<span class="built_in">push</span>(duration[i]);  <span class="comment">// O(logn)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i&lt;duration.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();  <span class="comment">// pop没有返回值</span></span><br><span class="line">        pq.<span class="built_in">push</span>(t+duration[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!pq.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
+<h2 id="pow"><a href="#pow" class="headerlink" title="pow()"></a>pow()</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gap*gap</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pow</span>(x, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h2><p>方便取最大值，不方便修改</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">end_time</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; duration, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, vector&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; pq; <span class="comment">// greater means 最小堆， 默认是less&lt;int&gt; 最大堆</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; i++)&#123;</span><br><span class="line">        pq.<span class="built_in">push</span>(duration[i]);  <span class="comment">// O(logn)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i&lt;duration.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();  <span class="comment">// pop没有返回值</span></span><br><span class="line">        pq.<span class="built_in">push</span>(t+duration[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!pq.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        t = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>set容器是一个有序的容器，它存储唯一的元素，默认按从小到大排序</p>
+<p>如果要自定义</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set&lt;<span class="keyword">int</span>, greater&lt;<span class="keyword">int</span>&gt;&gt; rank;</span><br></pre></td></tr></table></figure>
 <h2 id="stable-sort"><a href="#stable-sort" class="headerlink" title="stable sort"></a>stable sort</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(<span class="keyword">const</span> vector&lt;<span class="keyword">int</span>&gt;&amp; a, <span class="keyword">const</span> vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">0</span>]&lt;b[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">stable_sort</span>(cows.<span class="built_in">begin</span>(), cows.<span class="built_in">end</span>(),cmp2);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(milk.<span class="built_in">begin</span>(), milk.<span class="built_in">end</span>(), greater&lt;<span class="keyword">int</span>&gt;());</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">1</span>]&lt;b[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">sort</span>(cows.<span class="built_in">begin</span>(), cows.<span class="built_in">end</span>(),cmp);  <span class="comment">// 为什么按end_time排看开头注释</span></span><br></pre></td></tr></table></figure>
 <h2 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> total = <span class="built_in">accumulate</span>(scores.<span class="built_in">begin</span>(), scores.<span class="built_in">end</span>(),<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-
 <p>有三个参数</p>
 <p>第三个参数是初始值</p>
 <h2 id="unorder-map"><a href="#unorder-map" class="headerlink" title="unorder_map"></a>unorder_map</h2><p>init</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, unordered_map&lt;string, <span class="keyword">int</span>&gt;&gt; c;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, string&gt; win = &#123;&#123;<span class="string">&quot;H&quot;</span>,<span class="string">&quot;S&quot;</span>&#125;, &#123;<span class="string">&quot;S&quot;</span>,<span class="string">&quot;P&quot;</span>&#125;, &#123;<span class="string">&quot;P&quot;</span>,<span class="string">&quot;H&quot;</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化前缀和</span></span><br><span class="line">unordered_map&lt;string, vector&lt;<span class="keyword">int</span>&gt;&gt; count = &#123;&#123;<span class="string">&quot;P&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;,&#123;<span class="string">&quot;H&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;,&#123;<span class="string">&quot;S&quot;</span>,&#123;<span class="number">0</span>&#125;&#125;&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>insert</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">already.<span class="built_in">insert</span>(&#123;id, start&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
 <p>access</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map[top]</span><br></pre></td></tr></table></figure>
-
 <p>如果 top 不在map中，也不会把报错</p>
 <p>而是创建默认值 0</p>
 <p>查找key的最大值</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> pair&lt;<span class="keyword">double</span>, <span class="keyword">int</span>&gt; &amp;p1, <span class="keyword">const</span> pair&lt;<span class="keyword">double</span>, <span class="keyword">int</span>&gt; &amp;p2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> p1.first &lt; p2.first;</span><br><span class="line">&#125;</span><br><span class="line">(*<span class="built_in">max_element</span>(final_score.<span class="built_in">begin</span>(), final_score.<span class="built_in">end</span>())).first</span><br></pre></td></tr></table></figure>
-
-
-
 <p>判断元素是否存在</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (final_score.<span class="built_in">find</span>(res) != final_score.<span class="built_in">end</span>())&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>遍历</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> it: map)&#123;</span><br><span class="line">    <span class="keyword">if</span> (map.<span class="built_in">find</span>(it.second) != map.<span class="built_in">end</span>())&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="unorder-set"><a href="#unorder-set" class="headerlink" title="unorder_set"></a>unorder_set</h2><h2 id="unorder-map-and-unorder-set"><a href="#unorder-map-and-unorder-set" class="headerlink" title="unorder_map and unorder_set"></a>unorder_map and unorder_set</h2><p>map 和 set 是基于红黑树实现</p>
+<h2 id="unorder-set"><a href="#unorder-set" class="headerlink" title="unorder_set"></a>unorder_set</h2><p>创建</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">unordered_set&lt;<span class="keyword">char</span>&gt; <span class="title">after</span><span class="params">(dst.begin(), dst.end())</span></span>;</span><br></pre></td></tr></table></figure>
+<p>并集</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abandon.<span class="built_in">insert</span>(already.<span class="built_in">begin</span>(), already.<span class="built_in">end</span>())</span><br></pre></td></tr></table></figure>
+<h2 id="unorder-map-and-unorder-set"><a href="#unorder-map-and-unorder-set" class="headerlink" title="unorder_map and unorder_set"></a>unorder_map and unorder_set</h2><p>map 和 set 是基于红黑树实现</p>
 <p>unorder_map 和 unorder_set 是基于hash实现</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// int ans=0;</span></span><br><span class="line"><span class="comment">// for(auto item : s2c)&#123;</span></span><br><span class="line"><span class="comment">//     string s = item.first;</span></span><br><span class="line"><span class="comment">//     unordered_set&lt;string&gt; &amp; cities = item.second;</span></span><br><span class="line"><span class="comment">//     for(const auto &amp;c : cities)&#123;</span></span><br><span class="line"><span class="comment">//         if(c2s[c].find(s)!=c2s[c].end())&#123;</span></span><br><span class="line"><span class="comment">//             ans++;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="与python中的map做对比"><a href="#与python中的map做对比" class="headerlink" title="与python中的map做对比"></a>与python中的map做对比</h2><p>map 的遍历和Python的不太一样</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">item.first</span><br><span class="line">item.second</span><br></pre></td></tr></table></figure>
-
-
-
 <p>c++中的map不能在key时不报错</p>
 <p>且尝试访问的时候，还会创建key，只是value可能还是空</p>
-<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v.<span class="built_in">push_back</span>(&#123;city, state&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p>创建</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; stack &#123;<span class="number">2</span>&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">s</span><span class="params">(nums.begin(), nums.begin()+<span class="number">1</span>)</span></span>;  <span class="comment">// &#123;1&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; wishlist = &#123;&#123;&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reach.push_back(vector&lt;bool&gt;(n+1,false));</span><br></pre></td></tr></table></figure>
+<p>批量插入</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ans.<span class="built_in">insert</span>(ans.<span class="built_in">end</span>(), vertices.<span class="built_in">begin</span>(), vertices.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+<p>二维vector</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v.<span class="built_in">push_back</span>(&#123;city, state&#125;);</span><br></pre></td></tr></table></figure>
 <p>pop</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> top = stack.<span class="built_in">back</span>();</span><br><span class="line">stack.<span class="built_in">pop_back</span>();</span><br></pre></td></tr></table></figure>
-
-
-
+<p>find</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">find</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>(), wishlist[cow][i]) != cur.<span class="built_in">end</span>()) <span class="keyword">continue</span>;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -444,7 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E5%8F%82%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">传参问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmp"><span class="nav-number">2.</span> <span class="nav-text">cmp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">精度问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index-and-iterator"><span class="nav-number">4.</span> <span class="nav-text">index and iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lower-bound%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">6.</span> <span class="nav-text">lower_bound返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#min-and-max"><span class="nav-number">7.</span> <span class="nav-text">min and max</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#namespace"><span class="nav-number">8.</span> <span class="nav-text">namespace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue"><span class="nav-number">9.</span> <span class="nav-text">priority_queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stable-sort"><span class="nav-number">10.</span> <span class="nav-text">stable sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">11.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sum"><span class="nav-number">12.</span> <span class="nav-text">sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-map"><span class="nav-number">13.</span> <span class="nav-text">unorder_map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-set"><span class="nav-number">14.</span> <span class="nav-text">unorder_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-map-and-unorder-set"><span class="nav-number">15.</span> <span class="nav-text">unorder_map and unorder_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8Epython%E4%B8%AD%E7%9A%84map%E5%81%9A%E5%AF%B9%E6%AF%94"><span class="nav-number">16.</span> <span class="nav-text">与python中的map做对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-number">17.</span> <span class="nav-text">vector</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%9E%E8%B5%9B%E8%A6%81%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">竞赛要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E5%8F%82%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">传参问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#char"><span class="nav-number">3.</span> <span class="nav-text">char</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmp"><span class="nav-number">4.</span> <span class="nav-text">cmp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">精度问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index-and-iterator"><span class="nav-number">6.</span> <span class="nav-text">index and iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">7.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lower-bound%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">8.</span> <span class="nav-text">lower_bound返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#min-and-max"><span class="nav-number">9.</span> <span class="nav-text">min and max</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#namespace"><span class="nav-number">10.</span> <span class="nav-text">namespace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pow"><span class="nav-number">11.</span> <span class="nav-text">pow()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue"><span class="nav-number">12.</span> <span class="nav-text">priority_queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">13.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stable-sort"><span class="nav-number">14.</span> <span class="nav-text">stable sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">15.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sum"><span class="nav-number">16.</span> <span class="nav-text">sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-map"><span class="nav-number">17.</span> <span class="nav-text">unorder_map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-set"><span class="nav-number">18.</span> <span class="nav-text">unorder_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unorder-map-and-unorder-set"><span class="nav-number">19.</span> <span class="nav-text">unorder_map and unorder_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8Epython%E4%B8%AD%E7%9A%84map%E5%81%9A%E5%AF%B9%E6%AF%94"><span class="nav-number">20.</span> <span class="nav-text">与python中的map做对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-number">21.</span> <span class="nav-text">vector</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

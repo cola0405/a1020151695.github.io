@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="平均查找时间本题易错  分最短时间和最长时间 分别对应最好情况和最坏情况 最好情况：都是第一个就找到 最坏情况：都是最后一个才找到 易错点在于题目在诱导，让人以为有序数列相对能更早知道查找结果 但题目问的是成功查找的平均时间，故不考虑有序数列的优势 平均查找长度例题  平均，即最好情况和最坏情况  包含概率，即考虑数学期望  $$\frac{1}{2}$$ x 1+ $$\frac{1}{3}$$">
+  <meta name="description" content="平均查找时间本题易错   分最短时间和最长时间 分别对应最好情况和最坏情况 最好情况：都是第一个就找到 最坏情况：都是最后一个才找到 易错点在于题目在诱导，让人以为有序数列相对能更早知道查找结果 但题目问的是成功查找的平均时间，故不考虑有序数列的优势 平均查找长度例题  平均，即最好情况和最坏情况  包含概率，即考虑数学期望   \frac{1}{2}$$ x 1+ $$\frac{1}{3}$$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-顺序表">
 <meta property="og:url" content="http://example.com/2021/07/11/%E7%AE%97%E6%B3%95-%E9%A1%BA%E5%BA%8F%E8%A1%A8/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="平均查找时间本题易错  分最短时间和最长时间 分别对应最好情况和最坏情况 最好情况：都是第一个就找到 最坏情况：都是最后一个才找到 易错点在于题目在诱导，让人以为有序数列相对能更早知道查找结果 但题目问的是成功查找的平均时间，故不考虑有序数列的优势 平均查找长度例题  平均，即最好情况和最坏情况  包含概率，即考虑数学期望  $$\frac{1}{2}$$ x 1+ $$\frac{1}{3}$$">
+<meta property="og:description" content="平均查找时间本题易错   分最短时间和最长时间 分别对应最好情况和最坏情况 最好情况：都是第一个就找到 最坏情况：都是最后一个才找到 易错点在于题目在诱导，让人以为有序数列相对能更早知道查找结果 但题目问的是成功查找的平均时间，故不考虑有序数列的优势 平均查找长度例题  平均，即最好情况和最坏情况  包含概率，即考虑数学期望   \frac{1}{2}$$ x 1+ $$\frac{1}{3}$$">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726141615662.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726142632133.png">
@@ -228,7 +228,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="平均查找时间"><a href="#平均查找时间" class="headerlink" title="平均查找时间"></a>平均查找时间</h4><p><font color=blue>本题易错</font></p>
+        <h4 id="平均查找时间"><a href="#平均查找时间" class="headerlink" title="平均查找时间"></a>平均查找时间</h4><font color=blue>本题易错</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726141615662.png" alt="image-20210726141615662"></p>
 <p>分最短时间和最长时间</p>
 <p>分别对应最好情况和最坏情况</p>
@@ -240,10 +241,10 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726142632133.png" alt="image-20210726142632133"></p>
 <p>平均，即最好情况和最坏情况</p>
 <hr>
-<p><font color=red>包含概率，即考虑数学期望</font></p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726142517834.png" alt="image-20210726142517834"></p>
-<p>$$\frac{1}{2}$$ x 1+ $$\frac{1}{3}$$ x 2 + $$\frac{1}{6}$$ x 3 = $$\frac{5}{3}$$</p>
+<font color=red>包含概率，即考虑数学期望</font>
 
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210726142517834.png" alt="image-20210726142517834"></p>
+<script type="math/tex; mode=display">\frac{1}{2}$$ x 1+ $$\frac{1}{3}$$ x 2 + $$\frac{1}{6}$$ x 3 = $$\frac{5}{3}</script>
     </div>
 
     

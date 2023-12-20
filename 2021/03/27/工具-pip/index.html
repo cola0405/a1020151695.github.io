@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="1-i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple --trusted-host pypi.douban.com    pip目录的位置  1pip install -r requirements.txt    ignore 1pip install -r requirements.txt --ignore-installed    SSL的问题  有些库的版本只支持Linux，不">
+  <meta name="description" content="1-i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple --trusted-host pypi.douban.com pip目录的位置  1pip install -r requirements.txt ignore 1pip install -r requirements.txt --ignore-installed SSL的问题  有些库的版本只支持Linux，不支持Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工具-pip">
 <meta property="og:url" content="http://example.com/2021/03/27/%E5%B7%A5%E5%85%B7-pip/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="1-i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple --trusted-host pypi.douban.com    pip目录的位置  1pip install -r requirements.txt    ignore 1pip install -r requirements.txt --ignore-installed    SSL的问题  有些库的版本只支持Linux，不">
+<meta property="og:description" content="1-i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple --trusted-host pypi.douban.com pip目录的位置  1pip install -r requirements.txt ignore 1pip install -r requirements.txt --ignore-installed SSL的问题  有些库的版本只支持Linux，不支持Windows">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220811143439963.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220811143956569.png">
@@ -229,42 +229,23 @@
 
       
         <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-i http://pypi.douban.com/simple --trusted-host pypi.douban.com</span><br></pre></td></tr></table></figure>
-
-
-
 <p>pip目录的位置</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220811143439963.png" alt="image-20220811143439963"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-
-
 <p><strong>ignore</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt --ignore-installed</span><br></pre></td></tr></table></figure>
-
-
-
 <p>SSL的问题</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220811143956569.png" alt="image-20220811143956569"></p>
 <p>有些库的版本只支持Linux，不支持Windows，导致pip install 失败</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220811144327978.png" alt="image-20220811144327978"></p>
 <p>update pip</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
-
 <p>use mirror</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r ./requirements.txt -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">报错</span><br><span class="line">The repository located at pypi.douban.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS it is recommended to use HTTPS instead, otherwise you may silence this warning and allow it anyways with &#x27;--trusted-host pypi.douban.com&#x27;.</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解决</span><br><span class="line">将url中的http修改为https</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux 下pip无法安装的，pip3支持</span><br></pre></td></tr></table></figure>
-
-
-
 
     </div>
 

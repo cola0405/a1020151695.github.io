@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="cmake g++ 12sudo apt-get install cmakesudo apt-get install g++    boost 1sudo apt install libboost-all-dev  openssl 1sudo apt-get install libssl-dev          源12sudo sed -i &quot;s@http:&#x2F;&#x2F;.*archive.ub">
+  <meta name="description" content="cmake g++ 12sudo apt-get install cmakesudo apt-get install g++ boost 1sudo apt install libboost-all-dev openssl 1sudo apt-get install libssl-dev 源12sudo sed -i &quot;s@http:&#x2F;&#x2F;.*archive.ubuntu.com@http">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cpp web">
 <meta property="og:url" content="http://example.com/2023/01/12/cpp-web/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="cmake g++ 12sudo apt-get install cmakesudo apt-get install g++    boost 1sudo apt install libboost-all-dev  openssl 1sudo apt-get install libssl-dev          源12sudo sed -i &quot;s@http:&#x2F;&#x2F;.*archive.ub">
+<meta property="og:description" content="cmake g++ 12sudo apt-get install cmakesudo apt-get install g++ boost 1sudo apt install libboost-all-dev openssl 1sudo apt-get install libssl-dev 源12sudo sed -i &quot;s@http:&#x2F;&#x2F;.*archive.ubuntu.com@http">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-01-12T01:37:52.000Z">
 <meta property="article:modified_time" content="2023-01-12T03:46:19.786Z">
@@ -221,37 +221,12 @@
         <p>cmake</p>
 <p>g++</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake</span><br><span class="line">sudo apt-get install g++</span><br></pre></td></tr></table></figure>
-
-
-
 <p>boost</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libboost-all-dev</span><br></pre></td></tr></table></figure>
-
 <p>openssl</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libssl-dev</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="源"><a href="#源" class="headerlink" title="源"></a>源</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i &quot;s@http://.*archive.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g&quot; /etc/apt/sources.list</span><br><span class="line">sudo sed -i &quot;s@http://.*security.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g&quot; /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="check-c-standard"><a href="#check-c-standard" class="headerlink" title="check c++ standard"></a>check c++ standard</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (__cplusplus == <span class="number">201703L</span>) std::cout &lt;&lt; <span class="string">&quot;C++17\n&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (__cplusplus == <span class="number">201402L</span>) std::cout &lt;&lt; <span class="string">&quot;C++14\n&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (__cplusplus == <span class="number">201103L</span>) std::cout &lt;&lt; <span class="string">&quot;C++11\n&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (__cplusplus == <span class="number">199711L</span>) std::cout &lt;&lt; <span class="string">&quot;C++98\n&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> std::cout &lt;&lt; <span class="string">&quot;pre-standard C++\n&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><h3 id="句柄和描述符"><a href="#句柄和描述符" class="headerlink" title="句柄和描述符"></a>句柄和描述符</h3><p>Windows 平台——“句柄”</p>
 <p> Linux 平台——“描述符”</p>
 <h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><p>插座</p>
@@ -269,34 +244,15 @@
 </ul>
 <p>你看，只要用 socket() 创建了连接，剩下的就是文件操作了，网络编程原来就是如此简单！</p>
 <h2 id="compile-and-run"><a href="#compile-and-run" class="headerlink" title="compile and run"></a>compile and run</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -o output foo.cpp</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="wsl-vs"><a href="#wsl-vs" class="headerlink" title="wsl-vs"></a>wsl-vs</h2><p>修改配置文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">port=22</span><br><span class="line">PasswordAuthentication yes</span><br><span class="line">PermitRootLogin yes</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>wsl开启ssh</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service ssh start</span><br><span class="line">sudo service ssh restart</span><br></pre></td></tr></table></figure>
-
-
-
 <p>Windows端ssh测试</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh cola@localhost</span><br></pre></td></tr></table></figure>
-
-
-
 <p>如果ok，则开始配置vs</p>
-<p>“Tool” – “Options” – “Cross Platform” – “Connection Manager” – “Add”</p>
+<p>“Tool” — “Options” — “Cross Platform” — “Connection Manager” — “Add”</p>
 
     </div>
 

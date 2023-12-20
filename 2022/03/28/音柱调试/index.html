@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="47.94.138.85 opensips147.94.138.85  1opensipsctl restart    Ps：别直接复制word文档里的指令:) 记住，半个钟！ 搭建opensips环境1apt-get update  1apt-get install mysql-server  1apt-get install gcc  1apt-get install bison  1apt-">
+  <meta name="description" content="47.94.138.85 opensips147.94.138.85 1opensipsctl restart Ps：别直接复制word文档里的指令:) 记住，半个钟！ 搭建opensips环境1apt-get update 1apt-get install mysql-server 1apt-get install gcc 1apt-get install bison 1apt-get inst">
 <meta property="og:type" content="article">
 <meta property="og:title" content="音柱调试">
 <meta property="og:url" content="http://example.com/2022/03/28/%E9%9F%B3%E6%9F%B1%E8%B0%83%E8%AF%95/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="47.94.138.85 opensips147.94.138.85  1opensipsctl restart    Ps：别直接复制word文档里的指令:) 记住，半个钟！ 搭建opensips环境1apt-get update  1apt-get install mysql-server  1apt-get install gcc  1apt-get install bison  1apt-">
+<meta property="og:description" content="47.94.138.85 opensips147.94.138.85 1opensipsctl restart Ps：别直接复制word文档里的指令:) 记住，半个钟！ 搭建opensips环境1apt-get update 1apt-get install mysql-server 1apt-get install gcc 1apt-get install bison 1apt-get inst">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220222160541281.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220222141105928.png">
@@ -238,205 +238,82 @@
       
         <p>47.94.138.85</p>
 <h1 id="opensips"><a href="#opensips" class="headerlink" title="opensips"></a>opensips</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">47.94.138.85</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opensipsctl restart</span><br></pre></td></tr></table></figure>
-
-
-
 <p>Ps：别直接复制word文档里的指令:)</p>
 <p>记住，半个钟！</p>
 <h2 id="搭建opensips环境"><a href="#搭建opensips环境" class="headerlink" title="搭建opensips环境"></a>搭建opensips环境</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install mysql-server</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install gcc</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install bison</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install flex</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install make</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install sed</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install tar</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install build-essential libtool</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install libmysqlclient-dev</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># libncurses5-dev is already the newest version (6.1-1ubuntu1.18.04)</span><br><span class="line"></span><br><span class="line">apt-get install libncurses-dev</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="安装opensips"><a href="#安装opensips" class="headerlink" title="安装opensips"></a>安装opensips</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 不要用1.11.2的那个版本，装不上</span><br><span class="line">wget https://opensips.org/pub/opensips/2.4.3/opensips-2.4.3.tar.gz</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvzf opensips-2.2.8.tar.gz</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">make menuconfig</span><br><span class="line"></span><br><span class="line"># 装上db_mysql</span><br><span class="line"># 目录改到/usr/local/</span><br><span class="line"># 然后编译安装</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="配置opensips"><a href="#配置opensips" class="headerlink" title="配置opensips"></a>配置opensips</h2><p>阿里云安全组开5060</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220222160541281.png" alt="image-20220222160541281"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/etc/opensips</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">osipsconfig</span><br></pre></td></tr></table></figure>
-
 <p>Generate OpenSIPS Script - Residential Script - Configure Residential Script</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220222141105928.png" alt="image-20220222141105928"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220222161025315.png" alt="image-20220222161025315"></p>
 <p>q - Generate Residential Script</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 改名</span><br><span class="line">mv opensips_residential_2022-2-22_9\:56\:16.cfg opensips.cfg</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi opensips.cfg</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">listen=udp:0.0.0.0:5060   # CUSTOMIZE ME</span><br><span class="line"></span><br><span class="line">listen=tcp:0.0.0.0:5060   # CUSTOMIZE ME</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi opensipsctlrc</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">SIP_DOMAIN=47.94.138.85</span><br><span class="line"></span><br><span class="line">DBENGINE=MYSQL</span><br><span class="line"></span><br><span class="line">DBHOST=localhost</span><br><span class="line"></span><br><span class="line">DBNAME=opensips</span><br><span class="line"></span><br><span class="line">DBRWUSER=opensips</span><br><span class="line"></span><br><span class="line">DBRWPW=&quot;opensipsrw&quot;</span><br><span class="line"></span><br><span class="line">DBROOTUSER=&quot;root&quot;</span><br><span class="line"></span><br><span class="line">USERCOL=&quot;username&quot;</span><br><span class="line"></span><br><span class="line">ALIASES_TYPE=&quot;DB&quot;</span><br><span class="line"></span><br><span class="line">VERIFY_ACL=1</span><br><span class="line"></span><br><span class="line">ACL_GROUPS=&quot;local ld int voicemail free-pstn&quot;</span><br><span class="line"></span><br><span class="line">VERBOSE=1</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opensipsdbctl create</span><br></pre></td></tr></table></figure>
-
 <p>两个选项选no</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opensipsctl add 1000 1234</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opensipsctl add 1001 1234</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service rsyslog restart</span><br><span class="line">opensipsctl start</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opensipsdbctl create</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opensipsctl add 1000 1234</span><br><span class="line">opensipsctl add 1001 1234</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="数据库密码"><a href="#数据库密码" class="headerlink" title="数据库密码"></a>数据库密码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">123456</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="rtp代理（必不可少）"><a href="#rtp代理（必不可少）" class="headerlink" title="rtp代理（必不可少）"></a>rtp代理（必不可少）</h2><p>不然会有VIA回环的问题</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 文档里的已经没办法下载了，直接下载压缩包，然后压解一样的</span><br><span class="line"># 都是需要下载源码，然后编译</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure&amp;&amp;make&amp;&amp;make install</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">loadmodule &quot;rtpproxy.so&quot;</span><br><span class="line">modparam(&quot;rtpproxy&quot;, &quot;rtpproxy_sock&quot;, &quot;udp:localhost:12221&quot;)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall rtpproxy</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtpproxy -l 0.0.0.0 -s udp:127.0.0.1:12221 -F -d INFO LOG_LOCAL0</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="查看端口占用"><a href="#查看端口占用" class="headerlink" title="查看端口占用"></a>查看端口占用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -l</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="opensips重启"><a href="#opensips重启" class="headerlink" title="opensips重启"></a>opensips重启</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opensipsctl restart</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="opensips启动失败"><a href="#opensips启动失败" class="headerlink" title="opensips启动失败"></a>opensips启动失败</h2><blockquote>
-<p>ERROR: PID file /var/run/opensips.pid does not exist – OpenSIPS start failed</p>
+<p>ERROR: PID file /var/run/opensips.pid does not exist — OpenSIPS start failed</p>
 </blockquote>
 <p>肯定是配置文件除了一些问题</p>
 <h2 id="opensips-日志"><a href="#opensips-日志" class="headerlink" title="opensips 日志"></a>opensips 日志</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/log/syslog</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220222154703376.png" alt="image-20220222154703376"></p>
 <h2 id="opensips查看在线"><a href="#opensips查看在线" class="headerlink" title="opensips查看在线"></a>opensips查看在线</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opensipsctl online</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="Too-Many-Hops"><a href="#Too-Many-Hops" class="headerlink" title="Too Many Hops"></a>Too Many Hops</h2><p>opensips.cfg的listen=udp:0.0.0.0:5060配置，地址为0.0.0.0导致的。可以指定真实的地址绑定，或者其他方式，具体查看opensips的文档。</p>
 <h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p>呵呵</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvzf opensips-1.11.2_src.tar.gz</span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="Asterisk"><a href="#Asterisk" class="headerlink" title="Asterisk"></a>Asterisk</h1><p>Asterisk</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">core restart now</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">asterisk -rvv</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/asterisk restart</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="Asterisk-安装"><a href="#Asterisk-安装" class="headerlink" title="Asterisk 安装"></a>Asterisk 安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get updat11e</span><br><span class="line">apt-get install asterisk</span><br></pre></td></tr></table></figure>
-
-
-
 <p>自定义安装</p>
 <p><a target="_blank" rel="noopener" href="https://www.asterisk.org/downloads/#asterisk">https://www.asterisk.org/downloads/#asterisk</a></p>
 <p>再把压缩包传到服务器</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf xx.tar</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br></pre></td></tr></table></figure>
-
 <p>缺啥装啥</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install libxml2-dev</span><br></pre></td></tr></table></figure>
-
 <p>报名后加-dev</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">问题：configure: error: *** termcap support not found (on modern systems, this typically means the ncurses development package is missing)</span><br><span class="line">解决方法：sudo apt-get install ncurses-dev</span><br><span class="line">问题：configure: error: *** uuid support not found (this typically means the uuid development package is missing)</span><br><span class="line">解决方法：sudo apt-get install uuid*</span><br><span class="line">问题：configure: error: *** JSON support not found (this typically means the libjansson development package is missing)</span><br><span class="line">解决方法：sudo apt-get install libjansson-dev</span><br><span class="line">问题：configure: *** Please install the &#x27;libxml2&#x27; development package.</span><br><span class="line">解决方法：sudo apt-get install libxml2-dev</span><br><span class="line">问题：configure: error: *** Asterisk now uses SQLite3 for the internal Asterisk database.</span><br><span class="line">解决方法：sudo apt-get install libsqlite3-dev</span><br><span class="line"></span><br><span class="line">作者：Lin_ZJ</span><br><span class="line">链接：https://www.jianshu.com/p/23538d6cca52</span><br><span class="line">来源：简书</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="Asterisk-配置"><a href="#Asterisk-配置" class="headerlink" title="Asterisk 配置"></a>Asterisk 配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/asterisk/sip.conf</span><br></pre></td></tr></table></figure>
-
 <p>开头新增</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[general]</span><br><span class="line">context = default</span><br><span class="line">bindport = 5060</span><br><span class="line">bindaddr = 0.0.0.0</span><br><span class="line">tcpbindaddr = 0.0.0.0</span><br><span class="line">tcpenable = yes</span><br><span class="line"></span><br><span class="line">[1001]</span><br><span class="line">type = friend</span><br><span class="line">callerid = User One </span><br><span class="line">secret = 1001</span><br><span class="line">host = dynamic</span><br><span class="line">canreinvite = no</span><br><span class="line">dtmfmode = rfc2833</span><br><span class="line">mailbox = 1001</span><br><span class="line">disallow = all</span><br><span class="line">allow = ulaw</span><br><span class="line">transport = udp</span><br><span class="line"></span><br><span class="line">[1002]</span><br><span class="line">type = friend </span><br><span class="line">callerid = User Two </span><br><span class="line">secret = 1002</span><br><span class="line">host = dynamic</span><br><span class="line">canreinvite = no</span><br><span class="line">dtmfmode = rfc2833</span><br><span class="line">mailbox = 1002</span><br><span class="line">disallow = all</span><br><span class="line">allow = ulaw</span><br><span class="line">transport = udp</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/asterisk/extensions.conf</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[general]</span><br><span class="line">static=yes</span><br><span class="line">writeprotect=no</span><br><span class="line"></span><br><span class="line">[default]</span><br><span class="line">exten =&gt; 1001,1,Answer()</span><br><span class="line">exten =&gt; 1001,n,Dial(SIP/1001,20,tr)</span><br><span class="line">exten =&gt; 1001,n,Hangup</span><br><span class="line"></span><br><span class="line">exten =&gt; 1002,1,Answer()</span><br><span class="line">exten =&gt; 1002,n,Dial(SIP/1002,20,tr)</span><br><span class="line">exten =&gt; 1002,n,Hangup</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/asterisk restart</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="Asterisk-接通了但是没有声音"><a href="#Asterisk-接通了但是没有声音" class="headerlink" title="Asterisk 接通了但是没有声音"></a>Asterisk 接通了但是没有声音</h2><p>不管防火墙的事</p>
 <p>RTP代理的问题</p>
 <p>解决：</p>
@@ -444,99 +321,43 @@
 <p>即10000到20000端口</p>
 <p>然后</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/asterisk/sip.conf</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[general]</span><br><span class="line"># 公网ip</span><br><span class="line">externip = 47.94.138.85</span><br><span class="line"># 阿里云服务器ifconfig打印出来的</span><br><span class="line">localnet = 172.17.252.0/255.255.240.0</span><br><span class="line">nat = yes</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="Asterisk-查看用户列表"><a href="#Asterisk-查看用户列表" class="headerlink" title="Asterisk 查看用户列表"></a>Asterisk 查看用户列表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">asterisk -r</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sip show peers</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220225144544510.png" alt="image-20220225144544510"></p>
 <h2 id="Asterisk-sqlite"><a href="#Asterisk-sqlite" class="headerlink" title="Asterisk sqlite"></a>Asterisk sqlite</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/asterisk/extconfig.conf</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[settings]</span><br><span class="line">sippeers =&gt; sqlite3,asterisk,sip_peers</span><br><span class="line"></span><br><span class="line"># asterisk 是标签名，具体对应下面的[asterisk]</span><br></pre></td></tr></table></figure>
-
-
-
 <p>配置数据库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi res_config_sqlite3.conf</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[asterisk]</span><br><span class="line">dbfile =&gt; /var/lib/asterisk/sqlite.db</span><br></pre></td></tr></table></figure>
-
-
-
 <p>防止数据库locked</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi res_config_sqlite3.conf</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">batch=0</span><br></pre></td></tr></table></figure>
-
 <p>文档原文</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> If you need to write to the database from another connection</span><br><span class="line">you will need to set batch=0 as the transactions will cause the database</span><br><span class="line">to lock for writing.</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /var/lib/asterisk</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlite3 sqlite.db</span><br></pre></td></tr></table></figure>
-
-
-
 <p>新建表</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE sip_peers(</span><br><span class="line">type varchar(50),</span><br><span class="line">name varchar(50),</span><br><span class="line">host varchar(50),</span><br><span class="line">secret varchar(128),</span><br><span class="line">ipaddr varchar(50),</span><br><span class="line">port varchar(50),</span><br><span class="line">insecure varchar(50)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-
-
 <p>实时新增用户</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 配置了type=friend就行</span><br><span class="line">insert into sip_peers(type,name,host,secret,ipaddr,port,insecure)values(&quot;friend&quot;,&quot;1003&quot;,&quot;dynamic&quot;,&quot;1003&quot;,&quot;&quot;,&quot;&quot;,&quot;port&quot;);</span><br><span class="line">insert into sip_peers(type,name,host,secret,ipaddr,port,insecure)values(&quot;friend&quot;,&quot;1004&quot;,&quot;dynamic&quot;,&quot;1004&quot;,&quot;&quot;,&quot;&quot;,&quot;port&quot;);</span><br></pre></td></tr></table></figure>
-
 <p><code>name</code>是登陆用的用户名（同样是来电显示的名字）</p>
 <p><code>secret</code>是密码</p>
 <h2 id="Asterisk拨号方案配置"><a href="#Asterisk拨号方案配置" class="headerlink" title="Asterisk拨号方案配置"></a>Asterisk拨号方案配置</h2><p>pattern匹配直接解决realtime问题</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exten =&gt; _10xx,1,Answer()</span><br><span class="line">exten =&gt; _10xx,2,Dial(SIP/$&#123;EXTEN&#125;,20,tr)</span><br><span class="line">exten =&gt; _10xx,3,Hangup</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exten =&gt; _yxxxxxxxxxx,1,Answer()</span><br><span class="line">exten =&gt; _yxxxxxxxxxx,2,Dial(SIP/$&#123;EXTEN&#125;,20,tr)</span><br><span class="line">exten =&gt; _yxxxxxxxxxx,3,Hangup</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="Asterisk-查看拨号方案"><a href="#Asterisk-查看拨号方案" class="headerlink" title="Asterisk 查看拨号方案"></a>Asterisk 查看拨号方案</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 显示[default]的拨号方案</span><br><span class="line">dialplan show default</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="Asterisk-Realtime"><a href="#Asterisk-Realtime" class="headerlink" title="Asterisk Realtime"></a>Asterisk Realtime</h2><p><a target="_blank" rel="noopener" href="http://www.asteriskdocs.org/en/2nd_Edition/asterisk-book-html-chunk/I_section12_tt1465.html">参考</a></p>
 <p>有报错说缺某一列</p>
 <p>一个个补，最后就完成啦~</p>
 <h3 id="单向通的问题"><a href="#单向通的问题" class="headerlink" title="单向通的问题"></a>单向通的问题</h3><p>原因：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Remember that we have both SIP peers and SIP users; peers are end-points we send calls to, and a user is something we receive calls from. A friend is shorthand that defines both.</span><br></pre></td></tr></table></figure>
-
 <p>解决：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 配置了type=friend就行</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="电话打不通"><a href="#电话打不通" class="headerlink" title="电话打不通"></a>电话打不通</h3><p>报错</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unable to create channel of type ‘SIP’ (cause 20 – Subscriber absent)</span><br></pre></td></tr></table></figure>
-
 <p>原因：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">目标用户不存在</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>模式匹配没问题</p>
 <p>问题出在动态添加的账户上</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220304183154628.png" alt="image-20220304183154628"></p>
@@ -544,100 +365,33 @@
 <h2 id="Asterisk-Pattern"><a href="#Asterisk-Pattern" class="headerlink" title="Asterisk Pattern"></a>Asterisk Pattern</h2><p>不干扰具体的拨号方案</p>
 <h2 id="Asterisk-大量registrations"><a href="#Asterisk-大量registrations" class="headerlink" title="Asterisk 大量registrations"></a>Asterisk 大量registrations</h2><h2 id="Asterisk-extensions-conf"><a href="#Asterisk-extensions-conf" class="headerlink" title="Asterisk extensions.conf"></a>Asterisk extensions.conf</h2><p>拨号方案</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exten =&gt; name,priority,application()</span><br></pre></td></tr></table></figure>
-
-
-
 <p>有语法的，类似正则表达式的匹配</p>
 <h2 id="Asterisk-dynamic-host"><a href="#Asterisk-dynamic-host" class="headerlink" title="Asterisk dynamic host"></a>Asterisk dynamic host</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">host=dynamic</span><br></pre></td></tr></table></figure>
-
-
-
 <p>要求号码要注册,以便Asterisk如何找到电话.(static则不需要注册)</p>
 <h2 id="Asterisk-log"><a href="#Asterisk-log" class="headerlink" title="Asterisk log"></a>Asterisk log</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">asterisk -r</span><br></pre></td></tr></table></figure>
-
-
-
 <p>一直在发送的不是保持在线的</p>
 <p>1001 一直在线也没有一直刷屏</p>
 <h2 id="控制卡"><a href="#控制卡" class="headerlink" title="控制卡"></a>控制卡</h2><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>每次你重启服务器以后，记得重启卡</p>
 <h1 id="Linphone"><a href="#Linphone" class="headerlink" title="Linphone"></a>Linphone</h1><p>Linphone不用去掉默认的勾勾</p>
 <p>还是可以显示在线的</p>
 <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /var/log</span><br></pre></td></tr></table></figure>
-
 <p>Attempt to route with preloaded Route’s [sip…</p>
 <h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / name opensips</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h1 id="sqlite（Linux）"><a href="#sqlite（Linux）" class="headerlink" title="sqlite（Linux）"></a>sqlite（Linux）</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h2 id="sqlite-使用"><a href="#sqlite-使用" class="headerlink" title="sqlite 使用"></a>sqlite 使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.databases</span><br><span class="line">.tables</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="sqlite-查看字段"><a href="#sqlite-查看字段" class="headerlink" title="sqlite 查看字段"></a>sqlite 查看字段</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.schema 表名</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="sqlite-新建表"><a href="#sqlite-新建表" class="headerlink" title="sqlite 新建表"></a>sqlite 新建表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE user(</span><br><span class="line">name varchar(50)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="sqlite-插入数据"><a href="#sqlite-插入数据" class="headerlink" title="sqlite 插入数据"></a>sqlite 插入数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into sip_peers(name,secret,type,host)values(&quot;1003&quot;,&quot;1003&quot;,&quot;friend&quot;,&quot;dynamic&quot;);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h2 id="sqlite-安装"><a href="#sqlite-安装" class="headerlink" title="sqlite 安装"></a>sqlite 安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install sqlite</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="sqlite-退出"><a href="#sqlite-退出" class="headerlink" title="sqlite 退出"></a>sqlite 退出</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.quit</span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="sqlite（Windows）"><a href="#sqlite（Windows）" class="headerlink" title="sqlite（Windows）"></a>sqlite（Windows）</h1><p><a target="_blank" rel="noopener" href="https://www.sqlite.org/download.html">下载sqlite-tools</a></p>
 <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlite3 DatabaseName.db</span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="sqlite（Java）"><a href="#sqlite（Java）" class="headerlink" title="sqlite（Java）"></a>sqlite（Java）</h1><h2 id="新建sqlite数据库"><a href="#新建sqlite数据库" class="headerlink" title="新建sqlite数据库"></a>新建sqlite数据库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd到指定目录后</span><br><span class="line">sqlite3 test.db</span><br></pre></td></tr></table></figure>
-
 <h2 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.xerial<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sqlite-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.28.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>p6spy<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>p6spy<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url=jdbc:p6spy:sqlite:G:/ProjectFolder/IdeaProject/sqlite-demo/test.db</span><br><span class="line">spring.datasource.driver-class-name=com.p6spy.engine.spy.P6SpyDriver</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="Dao"><a href="#Dao" class="headerlink" title="Dao"></a>Dao</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> <span class="keyword">extends</span> <span class="title">BaseMapper</span>&lt;<span class="title">User</span>&gt; </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line">UserMapper userMapper;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setName(<span class="string">&quot;cola&quot;</span>);</span><br><span class="line">    <span class="keyword">int</span> res = userMapper.insert(user);</span><br><span class="line">    <span class="keyword">if</span>(res == <span class="number">1</span>)&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;插入成功&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;插入失败&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
 <h1 id="SIP"><a href="#SIP" class="headerlink" title="SIP"></a>SIP</h1><p>Session initialization Protocol</p>
 <p>SIP服务器包括：登记服务器，代理服务器，位置服务器和重定向服务器。</p>
 <h2 id="SIP注册"><a href="#SIP注册" class="headerlink" title="SIP注册"></a>SIP注册</h2><p>为了实现双方的呼叫，双方的SIP终端首先需要注册到一个SIP注册服务器来完成注册服务（Registrar）</p>
@@ -645,17 +399,7 @@
 <p>如果其他SIP 终端呼叫时，SIP注册服务器知道如何路由这个呼叫，而且可以根据AOR地址解析到具体的SIP物理地址</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220223110852228.png" alt="image-20220223110852228"></p>
 <h2 id="y65设置SIP地址"><a href="#y65设置SIP地址" class="headerlink" title="y65设置SIP地址"></a>y65设置SIP地址</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://47.94.138.85:9000/command/y65-220-40254</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="y65拨号"><a href="#y65拨号" class="headerlink" title="y65拨号"></a>y65拨号</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;设备无法注册通讯账号，拨号失败&quot;,</span><br><span class="line">    &quot;_type&quot;: &quot;success&quot;,</span><br><span class="line">    &quot;_id&quot;: &quot;1fsnad4bi&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="SIP定位"><a href="#SIP定位" class="headerlink" title="SIP定位"></a>SIP定位</h2><p>呼叫方首先是执行一个定位服务</p>
 <p>然后，定位服务器对被呼叫方进行查询</p>
 <p>查询被呼叫方是否注册等状态，AOR地址等过程，最后才能实现真正的呼叫</p>
@@ -668,20 +412,8 @@
 <p>address” of the user.</p>
 <p>地址格式为</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SIP:user@domain</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="Contact地址"><a href="#Contact地址" class="headerlink" title="Contact地址"></a>Contact地址</h2><p>Contact地址表示的是我在哪里，表示SIP终端用户的具体的物理IP地址和端口。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="客户端设置"><a href="#客户端设置" class="headerlink" title="客户端设置"></a>客户端设置</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220222154949145.png" alt="image-20220222154949145"></p>
 <h2 id="RTP代理（必不可少）"><a href="#RTP代理（必不可少）" class="headerlink" title="RTP代理（必不可少）"></a>RTP代理（必不可少）</h2><p>对SIP请求及响应进行路由，它对收到的请求消息进行翻译和处理后，传递给其他的服务器。它与重定向服务器（Redirect Server）及位置服务器（Location Server）有联系。</p>
 <p><strong>Location Server -</strong> <strong>位置服务器</strong></p>
@@ -696,9 +428,6 @@
 <h1 id="读音"><a href="#读音" class="headerlink" title="读音"></a>读音</h1><h2 id="beta"><a href="#beta" class="headerlink" title="beta"></a>beta</h2><p>b ta</p>
 <h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><p>i nit</p>
 <h1 id="日志-1"><a href="#日志-1" class="headerlink" title="日志"></a>日志</h1> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 10 messages</span><br></pre></td></tr></table></figure>
-
-
-
 
     </div>
 

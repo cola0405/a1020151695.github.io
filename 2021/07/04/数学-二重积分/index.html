@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="理解二重积分一重积分积出面，二重积分积出体  复杂二重积分转极坐标“原式解定积分”    Ps： 换元后，这里不需要对dx和dy做下放处理 需要做的是把dx和dy换成dθ和dr并重新确定积分限 一般是后积θ，因为积分限角度是常数 积分限参考上面画的函数图像的范围 积dr时，θ相当于常数可以先移到外面 设计到sec的奇数次积分可参考 二重积分改变积分顺序 用积分限的上下确定积分区域    Ps： 因">
+  <meta name="description" content="理解二重积分一重积分积出面，二重积分积出体  复杂二重积分转极坐标“原式解定积分”       Ps： 换元后，这里不需要对dx和dy做下放处理 需要做的是把dx和dy换成dθ和dr并重新确定积分限 一般是后积θ，因为积分限角度是常数 积分限参考上面画的函数图像的范围 积dr时，θ相当于常数可以先移到外面 设计到sec的奇数次积分可参考 二重积分改变积分顺序 用积分限的上下确定积分区域    Ps">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学-二重积分">
 <meta property="og:url" content="http://example.com/2021/07/04/%E6%95%B0%E5%AD%A6-%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="理解二重积分一重积分积出面，二重积分积出体  复杂二重积分转极坐标“原式解定积分”    Ps： 换元后，这里不需要对dx和dy做下放处理 需要做的是把dx和dy换成dθ和dr并重新确定积分限 一般是后积θ，因为积分限角度是常数 积分限参考上面画的函数图像的范围 积dr时，θ相当于常数可以先移到外面 设计到sec的奇数次积分可参考 二重积分改变积分顺序 用积分限的上下确定积分区域    Ps： 因">
+<meta property="og:description" content="理解二重积分一重积分积出面，二重积分积出体  复杂二重积分转极坐标“原式解定积分”       Ps： 换元后，这里不需要对dx和dy做下放处理 需要做的是把dx和dy换成dθ和dr并重新确定积分限 一般是后积θ，因为积分限角度是常数 积分限参考上面画的函数图像的范围 积dr时，θ相当于常数可以先移到外面 设计到sec的奇数次积分可参考 二重积分改变积分顺序 用积分限的上下确定积分区域    Ps">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922211003119.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163317329.png">
@@ -243,7 +243,10 @@
       
         <h1 id="理解二重积分"><a href="#理解二重积分" class="headerlink" title="理解二重积分"></a>理解二重积分</h1><p>一重积分积出面，二重积分积出体</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210922211003119.png" alt="image-20210922211003119"></p>
-<h1 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h1><p><font color=red>“原式解定积分”</font></p>
+<h1 id="复杂二重积分转极坐标"><a href="#复杂二重积分转极坐标" class="headerlink" title="复杂二重积分转极坐标"></a>复杂二重积分转极坐标</h1><font color=red>“原式解定积分”</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163317329.png" alt="image-20210706163317329"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163630234.png" alt="image-20210706163630234"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210706163310523.png" alt="image-20210706163310523"></p>
@@ -256,7 +259,7 @@
 <p>设计到sec的奇数次积分可参考</p>
 <h1 id="二重积分改变积分顺序"><a href="#二重积分改变积分顺序" class="headerlink" title="二重积分改变积分顺序"></a>二重积分改变积分顺序</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704183533426.png" alt="image-20210704183533426"></p>
 <p>用积分限的上下确定积分区域</p>
-<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704185959377.png"></p>
+<p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704185959377.png" alt=""></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704183015340.png" alt="image-20210704183015340"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210704190313855.png" alt="image-20210704190313855"></p>
 <p>Ps：</p>

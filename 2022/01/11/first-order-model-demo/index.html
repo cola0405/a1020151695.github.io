@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="构建环境1pip install -r requirements.txt    视频转换的准备借助 face-alignment 获取crop视频的参数 123456git clone https:&#x2F;&#x2F;github.com&#x2F;1adrianb&#x2F;face-alignmentcd face-alignmentpip install -r requirements.txtpython setup.py i">
+  <meta name="description" content="构建环境1pip install -r requirements.txt 视频转换的准备借助 face-alignment 获取crop视频的参数 123456git clone https:&#x2F;&#x2F;github.com&#x2F;1adrianb&#x2F;face-alignmentcd face-alignmentpip install -r requirements.txtpython setup.py inst">
 <meta property="og:type" content="article">
 <meta property="og:title" content="first-order-model-demo">
 <meta property="og:url" content="http://example.com/2022/01/11/first-order-model-demo/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="构建环境1pip install -r requirements.txt    视频转换的准备借助 face-alignment 获取crop视频的参数 123456git clone https:&#x2F;&#x2F;github.com&#x2F;1adrianb&#x2F;face-alignmentcd face-alignmentpip install -r requirements.txtpython setup.py i">
+<meta property="og:description" content="构建环境1pip install -r requirements.txt 视频转换的准备借助 face-alignment 获取crop视频的参数 123456git clone https:&#x2F;&#x2F;github.com&#x2F;1adrianb&#x2F;face-alignmentcd face-alignmentpip install -r requirements.txtpython setup.py inst">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220111125244953.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20220111133302445.png">
@@ -228,46 +228,16 @@
 
       
         <h2 id="构建环境"><a href="#构建环境" class="headerlink" title="构建环境"></a>构建环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="视频转换的准备"><a href="#视频转换的准备" class="headerlink" title="视频转换的准备"></a>视频转换的准备</h2><p>借助 face-alignment 获取crop视频的参数</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/1adrianb/face-alignment</span><br><span class="line"><span class="built_in">cd</span> face-alignment</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line">python setup.py install</span><br><span class="line"></span><br><span class="line">python crop-video.py --inp super-idol.mp4 --cpu</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i super-idol.mp4 -ss 0.0 -t 14.366666666666667 -filter:v <span class="string">&quot;crop=643:643:7:134, scale=256:256&quot;</span> crop.mp4</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="numpy版本不适配的问题"><a href="#numpy版本不适配的问题" class="headerlink" title="numpy版本不适配的问题"></a>numpy版本不适配的问题</h3><p>可以单独把 crop-video.py copy使用</p>
 <p>它并不依赖于first-order-model</p>
 <h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/taichi-256.yaml --driving_video ./crop.mp4 --source_image captain.jpg --checkpoint ./taichi-cpk.pth.tar --relative --adapt_scale --cpu</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python demo.py  --config config/dataset_name.yaml --driving_video path/to/driving --source_image path/to/<span class="built_in">source</span> --checkpoint path/to/checkpoint --relative --adapt_scale</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="AssertionError-Torch-not-compiled-with-CUDA-enabled-1"><a href="#AssertionError-Torch-not-compiled-with-CUDA-enabled-1" class="headerlink" title="AssertionError: Torch not compiled with CUDA enabled"></a>AssertionError: Torch not compiled with CUDA enabled</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For non NVIDIA users: --cpu flag will fix this.</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="这种python-项目都创建新虚拟环境吧"><a href="#这种python-项目都创建新虚拟环境吧" class="headerlink" title="这种python 项目都创建新虚拟环境吧"></a>这种python 项目都创建新虚拟环境吧</h2><p>别去影响自己原来的库</p>
 <h2 id="Anaconda可以不可创建任意版本的python解释器"><a href="#Anaconda可以不可创建任意版本的python解释器" class="headerlink" title="Anaconda可以不可创建任意版本的python解释器"></a>Anaconda可以不可创建任意版本的python解释器</h2><p>没有任意版本，但确实还有其他版本，比如说3.7等等</p>
 <p>然后再Pycharm里选conda的环境</p>

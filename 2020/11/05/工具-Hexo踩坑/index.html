@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="ssh密匙1ssh-keygen -t rsa -C &quot;邮件地址&quot;  找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key： 将刚复制的内容粘贴到key那里，title随便填，保存。 Win10下的~目录就是对应User下 然后，id_rsa.">
+  <meta name="description" content="ssh密匙1ssh-keygen -t rsa -C &quot;邮件地址&quot; 找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key： 将刚复制的内容粘贴到key那里，title随便填，保存。 Win10下的~目录就是对应User下 然后，id_rsa.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工具-Hexo踩坑">
 <meta property="og:url" content="http://example.com/2020/11/05/%E5%B7%A5%E5%85%B7-Hexo%E8%B8%A9%E5%9D%91/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="ssh密匙1ssh-keygen -t rsa -C &quot;邮件地址&quot;  找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key： 将刚复制的内容粘贴到key那里，title随便填，保存。 Win10下的~目录就是对应User下 然后，id_rsa.">
+<meta property="og:description" content="ssh密匙1ssh-keygen -t rsa -C &quot;邮件地址&quot; 找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key： 将刚复制的内容粘贴到key那里，title随便填，保存。 Win10下的~目录就是对应User下 然后，id_rsa.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210609163127564.png">
 <meta property="article:published_time" content="2020-11-05T13:24:29.000Z">
@@ -239,29 +239,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="ssh密匙"><a href="#ssh密匙" class="headerlink" title="ssh密匙"></a>ssh密匙</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;邮件地址&quot;</span></span><br></pre></td></tr></table></figure>
-
+        <h4 id="ssh密匙"><a href="#ssh密匙" class="headerlink" title="　ssh密匙"></a>　ssh密匙</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;邮件地址&quot;</span></span><br></pre></td></tr></table></figure>
 <p>找到<code>.ssh\id_rsa.pub</code>文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：</p>
 <p>将刚复制的内容粘贴到key那里，title随便填，保存。</p>
 <p>Win10下的~目录就是对应User下</p>
 <p>然后，id_rsa.pub这个文件不能直接打开，需要命令行指令</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more id_rsa.pub</span><br></pre></td></tr></table></figure>
-
 <h4 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;postName&quot;</span> #新建文章</span><br><span class="line">hexo generate #生成静态页面至<span class="keyword">public</span>目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口<span class="number">4000</span>，<span class="string">&#x27;ctrl + c&#x27;</span>关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line"># 你先执行hexo clean 然后再删除文章就可以了</span><br></pre></td></tr></table></figure>
-
 <p>部署步骤：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
 <h4 id="每篇文章的配置"><a href="#每篇文章的配置" class="headerlink" title="每篇文章的配置"></a>每篇文章的配置</h4><p>示例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: Spring注解是怎么工作的</span><br><span class="line">date: 2020-11-05 17:05:39</span><br><span class="line">tags:</span><br><span class="line">- Spring</span><br><span class="line">- Java</span><br><span class="line">categories:</span><br><span class="line">- [Java,Spring]</span><br></pre></td></tr></table></figure>
-
 <h4 id="配置文件的修改"><a href="#配置文件的修改" class="headerlink" title="配置文件的修改"></a>配置文件的修改</h4><p>_config.yml</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 藏经阁</span><br><span class="line">subtitle: &#x27;&#x27;</span><br><span class="line">description: &#x27;太多东西要学啦&#x27;</span><br><span class="line">keywords: Java</span><br><span class="line">author: FreeJim</span><br><span class="line">language: zh</span><br><span class="line">timezone: &#x27;Asia/Hong_Kong&#x27;</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/a1020151695/a1020151695.github.io</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
-
 <p>具体可查<a target="_blank" rel="noopener" href="https://hexo.io/docs/configuration">官方文档</a></p>
 <h4 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h4><p>Setting中设置自定义域名，然后Save保存</p>
 <p>阿里云域名管理，要添加两个纪录</p>
@@ -269,14 +260,13 @@
 <p>其实是把xxx.github.io指向你自己的域名</p>
 <p>CNAME content(Just the domain)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">freejim.icu </span><br></pre></td></tr></table></figure>
-
 <p>第二个是@ 你自己的域名指向一个IP（即xxx.github.io的实际IP）</p>
 <p>这里我踩了坑！</p>
 <p>你不能在你自己电脑上Ping！！！！</p>
 <p>拿你的云服务器去ping才有用</p>
 <p>或者不需要服务器，直接网上找一个域名解析的网站，去查</p>
 <p>例如<a target="_blank" rel="noopener" href="https://site.ip138.com/">这个</a></p>
-<p>gtihub上看得见的文件都是在“source”文件夹里面的—CNAME–域名配置文件</p>
+<p>gtihub上看得见的文件都是在“source”文件夹里面的—-CNAME—域名配置文件</p>
 <h4 id="站长工具"><a href="#站长工具" class="headerlink" title="站长工具"></a>站长工具</h4><p>然后 如果要向google提交验证的话，我们用meta的方式</p>
 <p>如果用html的方式的话，hexo部署的时候会修改html文件里的内容</p>
 <p>导致google无法验证</p>
@@ -286,23 +276,18 @@
 <p>然后hexo是通过各主题模板来修改、生成各网页的</p>
 <p>和meta相关的head的模板在这</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">themes\landscape\layout\_partial\head.ejs</span><br></pre></td></tr></table></figure>
-
 <p>把google 给的meta 加进去就好了</p>
 <p>添加后可以在这里查看网站数据</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://search.google.com/search-console/about</span><br></pre></td></tr></table></figure>
-
 <p>查看是否验证成功</p>
 <p>几天后，google搜索：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:“你的网站”</span><br></pre></td></tr></table></figure>
-
 <p>之后我看了百度的验证</p>
 <p>不行！</p>
 <p>github把百度屏蔽掉了</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">不到一分钟前freejim.icu使用HTML标签验证</span><br><span class="line">原因：服务器连接超时，请检查服务器设置或者稍后重试。</span><br><span class="line">问题分析&amp;解决办法： 连接网站时超时，可能是网络速度过慢，请检查服务器网络线路，或者稍后再试。</span><br></pre></td></tr></table></figure>
-
 <p>不允许百度去爬</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对此github官方是这样说的 : 由于百度爬虫爬得太猛烈，已经对很多Github用户造成了可用性的问题了，而禁用百度爬虫这一举措可能会一直持续下去。</span><br></pre></td></tr></table></figure>
-
 <hr>
 <blockquote>
 <p>Please make sure you have the correct access rights</p>
@@ -315,13 +300,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210609163127564.png" alt="image-20210609163127564"></p>
 <h4 id="派生文件夹"><a href="#派生文件夹" class="headerlink" title="派生文件夹"></a>派生文件夹</h4><p>_config.yml</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="搜索功能失效"><a href="#搜索功能失效" class="headerlink" title="搜索功能失效"></a>搜索功能失效</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.json</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 100000</span><br></pre></td></tr></table></figure>
-
 <p>用 <code>search.json</code> 而不用<code>search.xml</code></p>
 
     </div>
@@ -406,7 +385,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#ssh%E5%AF%86%E5%8C%99"><span class="nav-number">1.</span> <span class="nav-text">ssh密匙</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%8F%E7%AF%87%E6%96%87%E7%AB%A0%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">每篇文章的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="nav-number">4.</span> <span class="nav-text">配置文件的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text">自定义域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AB%99%E9%95%BF%E5%B7%A5%E5%85%B7"><span class="nav-number">6.</span> <span class="nav-text">站长工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B4%BE%E7%94%9F%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">7.</span> <span class="nav-text">派生文件夹</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88"><span class="nav-number"></span> <span class="nav-text">搜索功能失效</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#ssh%E5%AF%86%E5%8C%99"><span class="nav-number">1.</span> <span class="nav-text">　ssh密匙</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%8F%E7%AF%87%E6%96%87%E7%AB%A0%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">每篇文章的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="nav-number">4.</span> <span class="nav-text">配置文件的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text">自定义域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AB%99%E9%95%BF%E5%B7%A5%E5%85%B7"><span class="nav-number">6.</span> <span class="nav-text">站长工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B4%BE%E7%94%9F%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">7.</span> <span class="nav-text">派生文件夹</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88"><span class="nav-number"></span> <span class="nav-text">搜索功能失效</span></a></div>
       </div>
       <!--/noindex-->
 

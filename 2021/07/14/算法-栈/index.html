@@ -247,48 +247,17 @@
 <p>判定空栈的条件是 <font color=red>top=base</font></p>
 <h1 id="链栈"><a href="#链栈" class="headerlink" title="链栈"></a>链栈</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211206094125929.png" alt="image-20211206094125929"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Pop_LinkedStack</span><span class="params">(LinkedStack top,elemtype *x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkedStackNode *node;</span><br><span class="line">	<span class="keyword">if</span>(top-&gt;next == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		node = top-&gt;next;</span><br><span class="line">		*x = node-&gt;data;</span><br><span class="line">		top-&gt;next = node-&gt;next;</span><br><span class="line">		<span class="built_in">free</span>(node);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Push_LinkedStack</span><span class="params">(LinkedStack top,elemtype x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkedStackNode * node = (LinkedStackNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkedStackNode));</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">if</span>(node == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		node-&gt;data = x;</span><br><span class="line">		node-&gt;next = top-&gt;next;</span><br><span class="line">		top-&gt;next = node;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
 <h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211204153253779.png" alt="image-20211204153253779"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211204153301290.png" alt="image-20211204153301290"> </p>
 <p>逆序</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(SqStack &amp;S)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(i=S.top;i&gt;=S.top/<span class="number">2</span>;i--)&#123;</span><br><span class="line">		temp=S.data[i];</span><br><span class="line">		S.data[i]=S.data[S.top-i];</span><br><span class="line">		S.data[S.top-i]=temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>返回栈底元素</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElemType <span class="title">getBase</span><span class="params">(SqStack S)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(S.top==<span class="number">-1</span>)<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> S.data[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h1 id="共享栈"><a href="#共享栈" class="headerlink" title="共享栈"></a>共享栈</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211206101308158.png" alt="image-20211206101308158"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitDupStack</span><span class="params">(DupStack &amp;S)</span></span>&#123;</span><br><span class="line">	S=(DupStack)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(DupStack));</span><br><span class="line">	S-&gt;lefttop=<span class="number">-1</span>;</span><br><span class="line">	S-&gt;righttop=MAXNUM;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pushDupStack</span><span class="params">(DupStack &amp;S,<span class="keyword">char</span> status,ElemType x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(s.lefttop+<span class="number">1</span>==S.righttop)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">if</span>(status==<span class="string">&#x27;L&#x27;</span>)S.data[++S.lefttop]=x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (status==<span class="string">&#x27;R&#x27;</span>)S.data[--S.righttop]=x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElemType <span class="title">popDupStack</span><span class="params">(DupStack &amp;S,<span class="keyword">char</span> status)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(status==<span class="string">&#x27;L&#x27;</span>)<span class="keyword">return</span> S.data[S.lefttop--];</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (status==<span class="string">&#x27;R&#x27;</span>)<span class="keyword">return</span> S.data[S.righttop--];</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 
     </div>
 

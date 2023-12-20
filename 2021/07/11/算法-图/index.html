@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="定义 由定义可知，图的边是线段，而不能是射线 性质无向图【经典、无脑】最多 无脑代公式： $$\frac{1}{2}\sum (度数*定点个数)$$&#x3D; 总边数 $$(45+34+2n)&#x2F;2&#x3D;23$$ 得n&#x3D;7 则5+4+7&#x3D;16，选D 【经典、无脑】至少 和上面不一样的是，这里我们需要根据题意 “至少” 选择度的最大的2 然后再代公式 得n&#x3D;4 3+4+4&#x3D;11，故选B  有向图就一个考点  图相">
+  <meta name="description" content="定义 由定义可知，图的边是线段，而不能是射线    性质无向图【经典、无脑】最多 无脑代公式： \frac{1}{2}\sum (度数*定点个数)$$&#x3D; 总边数  $$(4*5+3*4+2n)&#x2F;2&#x3D;23得n&#x3D;7 则5+4+7&#x3D;16，选D 【经典、无脑】至少 和上面不一样的是，这里我们需要根据题意 “至少” 选择度的最大的2 然后再代公式 得n&#x3D;4 3+4+4&#x3D;11，故选B  有向图就一个考点  图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-图">
 <meta property="og:url" content="http://example.com/2021/07/11/%E7%AE%97%E6%B3%95-%E5%9B%BE/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="定义 由定义可知，图的边是线段，而不能是射线 性质无向图【经典、无脑】最多 无脑代公式： $$\frac{1}{2}\sum (度数*定点个数)$$&#x3D; 总边数 $$(45+34+2n)&#x2F;2&#x3D;23$$ 得n&#x3D;7 则5+4+7&#x3D;16，选D 【经典、无脑】至少 和上面不一样的是，这里我们需要根据题意 “至少” 选择度的最大的2 然后再代公式 得n&#x3D;4 3+4+4&#x3D;11，故选B  有向图就一个考点  图相">
+<meta property="og:description" content="定义 由定义可知，图的边是线段，而不能是射线    性质无向图【经典、无脑】最多 无脑代公式： \frac{1}{2}\sum (度数*定点个数)$$&#x3D; 总边数  $$(4*5+3*4+2n)&#x2F;2&#x3D;23得n&#x3D;7 则5+4+7&#x3D;16，选D 【经典、无脑】至少 和上面不一样的是，这里我们需要根据题意 “至少” 选择度的最大的2 然后再代公式 得n&#x3D;4 3+4+4&#x3D;11，故选B  有向图就一个考点  图">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810210652318.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812151706440.png">
@@ -261,12 +261,15 @@
 
       
         <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810210652318.png" alt="image-20210810210652318"></p>
-<p><font color=red>由定义可知，图的边是线段，而不能是射线</font></p>
+<font color=red>由定义可知，图的边是线段，而不能是射线</font>
+
+
+
 <h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><h1 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h1><h2 id="【经典、无脑】最多"><a href="#【经典、无脑】最多" class="headerlink" title="【经典、无脑】最多"></a>【经典、无脑】最多</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812151706440.png" alt="image-20210812151706440"></p>
 <p>无脑代公式：</p>
-<p>$$\frac{1}{2}\sum (度数*定点个数)$$= 总边数</p>
-<p>$$(4<em>5+3</em>4+2n)/2=23$$</p>
-<p>得n=7</p>
+<script type="math/tex; mode=display">\frac{1}{2}\sum (度数*定点个数)$$= 总边数
+
+$$(4*5+3*4+2n)/2=23</script><p>得n=7</p>
 <p>则5+4+7=16，选D</p>
 <h2 id="【经典、无脑】至少"><a href="#【经典、无脑】至少" class="headerlink" title="【经典、无脑】至少"></a>【经典、无脑】至少</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812152525449.png" alt="image-20210812152525449"></p>
 <p>和上面不一样的是，这里我们需要根据题意 “至少” 选择度的最大的2</p>
@@ -276,15 +279,20 @@
 <hr>
 <h1 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h1><p>就一个考点</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812143546128.png" alt="image-20210812143546128"></p>
-<p><font color=red>图相关的题，第一件事就是确认是有向图还是无向图</font></p>
+<font color=red>图相关的题，第一件事就是确认是有向图还是无向图</font>
+
 <p>看到无向图，直接上票</p>
 <p> 再有一点就是，出/入度是对有向图而言的</p>
 <p>无向图只有 “度” 的概念</p>
 <h1 id="拓扑序列"><a href="#拓扑序列" class="headerlink" title="拓扑序列"></a>拓扑序列</h1><p>对于一个有向无环图，顶点活动网中将活动按发生的先后次序进行的一种排列。</p>
 <p><strong>每个活动的所有前驱活动都排在该活动的前面</strong></p>
-<p><font color=blue>如果有向图邻接矩阵对角线以下的元素都为0，则一定存在拓扑序列</font></p>
-<h1 id="环"><a href="#环" class="headerlink" title="环"></a>环</h1><p><font color=red>这是一个很容易让人混乱的考点</font></p>
-<p>（n-1）是**环的临界条件 **，一旦边数大于（n-1）则必然构成环</p>
+<font color=blue>如果有向图邻接矩阵对角线以下的元素都为0，则一定存在拓扑序列</font>
+
+
+
+<h1 id="环"><a href="#环" class="headerlink" title="环"></a>环</h1><font color=red>这是一个很容易让人混乱的考点</font>
+
+<p>（n-1）是<strong>环的临界条件 </strong>，一旦边数大于（n-1）则必然构成环</p>
 <p>逻辑证明：</p>
 <p>n个点，则（n-1）条边是图<strong>不构成环的极限</strong></p>
 <p><strong>再多一条边，无论如何都会成环</strong></p>
@@ -303,7 +311,8 @@
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>还有别的稀奇古怪的数量关系则用暴力法求解</p>
 <hr>
 <h1 id="强连通图"><a href="#强连通图" class="headerlink" title="强连通图"></a>强连通图</h1><p>即连通的有向图</p>
-<p><font color=red>前提是有向图</font></p>
+<font color=red>前提是有向图</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210810213151158.png" alt="image-20210810213151158"></p>
 <h2 id="顶点与边"><a href="#顶点与边" class="headerlink" title="顶点与边"></a>顶点与边</h2><p>强连通图至少要n条边</p>
 <h1 id="重连通（chong）"><a href="#重连通（chong）" class="headerlink" title="重连通（chong）"></a>重连通（chong）</h1><p>在无向图中，<strong>任意</strong>两个顶点之间含有不止一条通路</p>
@@ -331,21 +340,27 @@
 <hr>
 <h1 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h1><p>一棵树为树，两棵树及以上则称为森林</p>
 <hr>
-<h1 id="邻接矩阵（Adjacency-Matrix）"><a href="#邻接矩阵（Adjacency-Matrix）" class="headerlink" title="邻接矩阵（Adjacency Matrix）"></a>邻接矩阵（Adjacency Matrix）</h1><p><font color=red>是二维数组</font></p>
+<h1 id="邻接矩阵（Adjacency-Matrix）"><a href="#邻接矩阵（Adjacency-Matrix）" class="headerlink" title="邻接矩阵（Adjacency Matrix）"></a>邻接矩阵（Adjacency Matrix）</h1><font color=red>是二维数组</font>
+
 <p> “adj” 指的是邻接</p>
 <p>易错题：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812150606193.png" alt="image-20210812150606193"></p>
 <p>答案：BD</p>
 <p>首先是知识点的讲解</p>
-<p>有向图的入度，顶点 $$V_i$$ 的入度为邻接矩阵第 i 列之和</p>
-<p>有向图的入出度，顶点 $$V_i$$ 的入度为邻接矩阵第 i 行之和</p>
-<p><font color=red>这里需要明确一点，临界矩阵的元素只有 0 和 1 表示是否连通，并不包含距离信息</font></p>
-<p>无向图的度，顶点 $$V_i$$ 的度为邻接矩阵第 i 列之和或邻接矩阵第 i 行之和</p>
+<p>有向图的入度，顶点 <script type="math/tex">V_i</script> 的入度为邻接矩阵第 i 列之和</p>
+<p>有向图的入出度，顶点 <script type="math/tex">V_i</script> 的入度为邻接矩阵第 i 行之和</p>
+<font color=red>这里需要明确一点，临界矩阵的元素只有 0 和 1 表示是否连通，并不包含距离信息</font>
+
+<p>无向图的度，顶点 <script type="math/tex">V_i</script> 的度为邻接矩阵第 i 列之和或邻接矩阵第 i 行之和</p>
 <p>其次补充一下A选项为什么不选：</p>
-<p>A选项虽然表示的是列，但其<strong>仅表示第 j 列，没有明确和题目所要求的 $$V_i$$ 对应</strong>，故不选</p>
+<p>A选项虽然表示的是列，但其<strong>仅表示第 j 列，没有明确和题目所要求的 <script type="math/tex">V_i</script> 对应</strong>，故不选</p>
 <hr>
-<h1 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h1><p><font color=red>是链表</font></p>
-<p><font color=blue>邻接矩阵和邻接表是不同的</font></p>
+<h1 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h1><font color=red>是链表</font>
+
+<font color=blue>邻接矩阵和邻接表是不同的</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812160942746.png" alt="image-20210812160942746"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812161003775.png" alt="image-20210812161003775"></p>
 <p>误区：</p>
@@ -353,7 +368,10 @@
 <p>解析：</p>
 <p><strong>邻接表也可以表示无向图，只是冗余而已</strong></p>
 <p>邻接表中存在两种结点：</p>
-<p><font color=red>顶点表节点</font>和<font color=blue>边表节点</font></p>
+<font color=red>顶点表节点</font>和<font color=blue>边表节点</font>
+
+
+
 <h2 id="定点表结点"><a href="#定点表结点" class="headerlink" title="定点表结点"></a>定点表结点</h2><p>表头</p>
 <h2 id="边表结点"><a href="#边表结点" class="headerlink" title="边表结点"></a>边表结点</h2><p>边表上除表头的其他结点</p>
 <p><strong>不是指每行的表头，而是各个节点</strong></p>
@@ -363,20 +381,26 @@
 <p>而一旦出现奇数个边表结点，则说明图为有向图，选D</p>
 <h3 id="边表结点与结点"><a href="#边表结点与结点" class="headerlink" title="边表结点与结点"></a>边表结点与结点</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812160909506.png" alt="image-20210812160909506"></p>
 <p>暴力法，选B</p>
-<p><font color=red>但是有个前提，你要懂得什么是边表节点</font></p>
+<font color=red>但是有个前提，你要懂得什么是边表节点</font>
+
 <p>满满</p>
 <p>不用去重除以2</p>
-<h1 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h1><p><font color=red>仅用于有向图</font></p>
+<h1 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h1><font color=red>仅用于有向图</font>
+
+
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812164645568.png" alt="image-20210812164645568"></p>
 <p>有两种节点：<strong>弧节点和顶点节点</strong></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812162452350.png" alt="image-20210812162452350"></p>
 <h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>注意看上图画圈部分</p>
-<p><font color=red>尤其注意理解hlink和tlink</font></p>
+<font color=red>尤其注意理解hlink和tlink</font>
+
 <p>h指向弧头相同的下一条弧</p>
 <p>t指向弧尾相同的下一条弧</p>
 <p>这两个域使得十字链表可以<strong>更容易地得到顶点的度</strong>，用不着遍历整个邻接表，只需要走一遍hlink或者tlink</p>
 <p><strong>十字链表的表达不唯一</strong></p>
-<h1 id="邻接多重表"><a href="#邻接多重表" class="headerlink" title="邻接多重表"></a>邻接多重表</h1><p><font color=red>仅用于无向图</font></p>
+<h1 id="邻接多重表"><a href="#邻接多重表" class="headerlink" title="邻接多重表"></a>邻接多重表</h1><font color=red>仅用于无向图</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812164330135.png" alt="image-20210812164330135"></p>
 <p>分别有：顶点结点和边结点</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812163437756.png" alt="image-20210812163437756"></p>
@@ -384,7 +408,8 @@
 <h2 id="邻接多重表与十字链表"><a href="#邻接多重表与十字链表" class="headerlink" title="邻接多重表与十字链表"></a>邻接多重表与十字链表</h2><p>其实他们很相像，唯一的区别就是</p>
 <p>十字链表是对有向图而言，对连贯弧前后顺序有一定要求</p>
 <p>而适用于无向图的邻接多重表则是不分先后，<strong>有连通关系就行</strong></p>
-<h2 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h2><p><font color=blue>不是简单地一行过去</font></p>
+<h2 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h2><font color=blue>不是简单地一行过去</font>
+
 <p>但是按指针深度搜索，可以得到某点相邻的边和顶点的信息</p>
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="【易错】时间复杂度"><a href="#【易错】时间复杂度" class="headerlink" title="【易错】时间复杂度"></a>【易错】时间复杂度</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812161422716.png" alt="image-20210812161422716"></p>
 <p>因为边数的增长<strong>只会影响到两个边表</strong>，不是全部边表，故不选D</p>

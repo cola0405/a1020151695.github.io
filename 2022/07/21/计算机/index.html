@@ -259,11 +259,6 @@
 <p>对应的汇编</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721145259050.png" alt="image-20220721145259050"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 调整I/O模式（把开关和LED关联起来）</span><br><span class="line">LD A,207</span><br><span class="line">OUT (2),A</span><br><span class="line">LD A,255</span><br><span class="line">OUT (2),A</span><br><span class="line"></span><br><span class="line">LD A,207</span><br><span class="line">OUT (3),A</span><br><span class="line">LD A,0</span><br><span class="line">OUT (3),A</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 控制LED的核心代码</span><br><span class="line"></span><br><span class="line">IN A,(0) # 把地址()的值存放到寄存器A中</span><br><span class="line">OUT (1),A # 把寄存器A的值写入到地址()中</span><br><span class="line"></span><br><span class="line"># (0)为输入</span><br><span class="line"># (1)为LED的开关</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p>附录：</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721150525786.png" alt="image-20220721150525786"></p>
 <h1 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h1><p>加法器</p>
@@ -291,7 +286,7 @@
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725121004378.png" alt="image-20220725121004378"></p>
 <h3 id="CPU-Central-Processing-Unit"><a href="#CPU-Central-Processing-Unit" class="headerlink" title="CPU(Central Processing Unit)"></a>CPU(Central Processing Unit)</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170304484.png" alt="image-20220721170304484"></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220721170245488.png" alt="image-20220721170245488"></p>
-<h3 id="内存-Random-Access-Memory"><a href="#内存-Random-Access-Memory" class="headerlink" title="内存(Random Access Memory)"></a>内存(Random Access Memory)</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725171116116.png"></p>
+<h3 id="内存-Random-Access-Memory"><a href="#内存-Random-Access-Memory" class="headerlink" title="内存(Random Access Memory)"></a>内存(Random Access Memory)</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220725171116116.png" alt=""></p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/image-20220726093747072.png" alt="image-20220726093747072"></p>
 <h3 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h3><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/08428c427a41872f2ed43bf2a9be69da.gif" alt="08428c427a41872f2ed43bf2a9be69da"></p>
 <h3 id="显示器数据流动"><a href="#显示器数据流动" class="headerlink" title="显示器数据流动"></a>显示器数据流动</h3><p>1．从总线进入GPU（图形处理器）：将CPU送来的数据送到北桥，再送到GPU里面进行处理。<br>2．将芯片处理完的数据送到显存。<br>3．从显存读取出数据再送到随机读写存储数—模转换器进行数模转换的工作。（但是如果是DVI接口类型的显卡，则不需要经过数字信号转模拟信号。而直接输出数字信号。）<br>4．从DAC进入显示器：将转换完的模拟信号送到显示屏。</p>
@@ -318,14 +313,8 @@
 <p>（Python也有）</p>
 <h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><p>内存地址——C++展示</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    cout &lt;&lt; &amp;a[<span class="number">3</span>] &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; &amp;a[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>危险</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    a[<span class="number">2</span>] = <span class="number">666</span>;</span><br><span class="line">    cout &lt;&lt; &amp;a[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">int</span> result=*(<span class="keyword">int</span> *)<span class="number">0x61feec</span>;</span><br><span class="line">    cout &lt;&lt; result;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h1 id="GUI原理"><a href="#GUI原理" class="headerlink" title="GUI原理"></a>GUI原理</h1><p>是不是一张一张图片</p>
 <p>那么准备好相应的数据是不是就ok了</p>
 <p>最简单的文本框解释</p>

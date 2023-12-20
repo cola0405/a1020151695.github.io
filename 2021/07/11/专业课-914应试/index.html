@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="要带尺子！！！ 真的是有傻逼题不要一昧相信自己的经验，根据具体情况分析  文字描述和代码描述 答案：栈顶指针   首先明确 “指针域” 即 “next” 且Lhead 为栈顶，为链表的表头指针 “把栈顶指针的值赋给新结点的指针域” 转换化成代码就是 1node-&gt;next&#x3D;Lhead;  &#x2F;&#x2F; 自信品“赋给”  上一步做完，其实就把结点和链表连接起来了 剩下的最后一步就是把确定表头指针 1L">
+  <meta name="description" content="要带尺子！！！ 真的是有傻逼题不要一昧相信自己的经验，根据具体情况分析   文字描述和代码描述 答案：栈顶指针   首先明确 “指针域” 即 “next” 且Lhead 为栈顶，为链表的表头指针 “把栈顶指针的值赋给新结点的指针域” 转换化成代码就是 1node-&gt;next&#x3D;Lhead;  &#x2F;&#x2F; 自信品“赋给” 上一步做完，其实就把结点和链表连接起来了 剩下的最后一步就是把确定表头指针 1L">
 <meta property="og:type" content="article">
 <meta property="og:title" content="专业课-914应试">
 <meta property="og:url" content="http://example.com/2021/07/11/%E4%B8%93%E4%B8%9A%E8%AF%BE-914%E5%BA%94%E8%AF%95/index.html">
 <meta property="og:site_name" content="藏经阁">
-<meta property="og:description" content="要带尺子！！！ 真的是有傻逼题不要一昧相信自己的经验，根据具体情况分析  文字描述和代码描述 答案：栈顶指针   首先明确 “指针域” 即 “next” 且Lhead 为栈顶，为链表的表头指针 “把栈顶指针的值赋给新结点的指针域” 转换化成代码就是 1node-&gt;next&#x3D;Lhead;  &#x2F;&#x2F; 自信品“赋给”  上一步做完，其实就把结点和链表连接起来了 剩下的最后一步就是把确定表头指针 1L">
+<meta property="og:description" content="要带尺子！！！ 真的是有傻逼题不要一昧相信自己的经验，根据具体情况分析   文字描述和代码描述 答案：栈顶指针   首先明确 “指针域” 即 “next” 且Lhead 为栈顶，为链表的表头指针 “把栈顶指针的值赋给新结点的指针域” 转换化成代码就是 1node-&gt;next&#x3D;Lhead;  &#x2F;&#x2F; 自信品“赋给” 上一步做完，其实就把结点和链表连接起来了 剩下的最后一步就是把确定表头指针 1L">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711100128939.png">
 <meta property="og:image" content="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211007095359987.png">
@@ -244,7 +244,8 @@
 
       
         <p>要带尺子！！！</p>
-<h1 id="真的是有傻逼题"><a href="#真的是有傻逼题" class="headerlink" title="真的是有傻逼题"></a>真的是有傻逼题</h1><p><font color=red>不要一昧相信自己的经验，根据具体情况分析</font></p>
+<h1 id="真的是有傻逼题"><a href="#真的是有傻逼题" class="headerlink" title="真的是有傻逼题"></a>真的是有傻逼题</h1><font color=red>不要一昧相信自己的经验，根据具体情况分析</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711100128939.png" alt="image-20210711100128939"></p>
 <h1 id="文字描述和代码描述"><a href="#文字描述和代码描述" class="headerlink" title="文字描述和代码描述"></a>文字描述和代码描述</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211007095359987.png" alt="image-20211007095359987"></p>
 <p>答案：栈顶指针</p>
@@ -255,24 +256,29 @@
 <p>“把栈顶指针的值赋给新结点的指针域”</p>
 <p>转换化成代码就是</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-&gt;next=Lhead;  <span class="comment">// 自信品“赋给”</span></span><br></pre></td></tr></table></figure>
-
 <p>上一步做完，其实就把结点和链表连接起来了</p>
 <p>剩下的最后一步就是把确定表头指针</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Lhead=node;</span><br></pre></td></tr></table></figure>
-
 <p>即“把新结点的存储位置赋给栈顶指针”</p>
-<h1 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h1><p><font color=red>适用于一脸懵的n</font></p>
+<h1 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h1><font color=red>适用于一脸懵的n</font>
+
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210711105236884.png" alt="image-20210711105236884"></p>
 <p>n=2,n=3,n=4 枚举带入选项</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812142935064.png" alt="image-20210812142935064"></p>
-<p><font color=blue>这谁知道呢，反正暴力试就van了</font></p>
+<font color=blue>这谁知道呢，反正暴力试就van了</font>
+
+
+
 <hr>
 <h1 id="暴力法yyds"><a href="#暴力法yyds" class="headerlink" title="暴力法yyds"></a>暴力法yyds</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008101717542.png" alt="image-20211008101717542"></p>
 <p>答案：4</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211008101907258.png" alt="image-20211008101907258"></p>
 <h1 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h1><p>别重复写太多无关的东西</p>
 <h1 id="不正确"><a href="#不正确" class="headerlink" title="不正确"></a>不正确</h1><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20210812143225318.png" alt="image-20210812143225318"></p>
-<p><font color=red>看到不正确直接上票</font></p>
+<font color=red>看到不正确直接上票</font>
+
+
+
 <h2 id="审题"><a href="#审题" class="headerlink" title="审题"></a>审题</h2><p>需要额外小心字眼</p>
 <p>什么 “结点” “叶结点”</p>
 <p>“正确” “不正确”</p>
@@ -288,47 +294,23 @@
 <p>没有简单题。。。都是套路啊</p>
 <h2 id="最短路径的表达"><a href="#最短路径的表达" class="headerlink" title="最短路径的表达"></a>最短路径的表达</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211012202454176.png" alt="image-20211012202454176"></p>
 <h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *p;				<span class="comment">// 可以看成是 int* a</span></span><br><span class="line">    p=(<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">4</span>); <span class="comment">// 作类型时星号放后面</span></span><br><span class="line">    *p=<span class="number">2</span>;			   <span class="comment">// 访问指针*p</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*p);   <span class="comment">// printf里放数值  scanf里放地址p（p是指针，地址</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span>&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; QNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    QNode *front,*rear;</span><br><span class="line">&#125; LiQueue;		<span class="comment">// Liqueue 是实体</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(LiQueue *&amp;q,ElemType e)</span></span>&#123;&#125; <span class="comment">// 其实是没毛病的，可以看成LiQueue* &amp;q，对应LinkList &amp;L，LNode* &amp;L</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="prinf"><a href="#prinf" class="headerlink" title="prinf"></a>prinf</h2><p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211005170928343.png" alt="image-20211005170928343"></p>
 <h2 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElemType;</span><br></pre></td></tr></table></figure>
-
 <p>typedef为C语言的关键字，作用是为一种数据类型定义一个新名字。</p>
 <p>这里的数据类型包括内部数据类型（int,char等）和自定义的数据类型（struct等）</p>
 <p>进阶</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">	ElemType data;</span><br><span class="line">	Struct Lnode *next;</span><br><span class="line">&#125; LNode, *LinkList;  <span class="comment">// 看成是LNode* LinkList，即LinkList是LNode类型的指针</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(LinkList &amp;L)</span></span>&#123;	<span class="comment">// LinkList是指针类型，故对L取地址符号 L是List实体</span></span><br><span class="line">    LNode *p;</span><br><span class="line">    L=(LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));  <span class="comment">// 按LNode的大小申请内存，malloc返回的是地址，转化成LNode的指针类型</span></span><br><span class="line">    p=(LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));	<span class="comment">// 这两语句是等效的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><p>代码选自王道</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014105602209.png" alt="image-20211014105602209"></p>
 <p>1表示成功，0表示失败</p>
 <p>但是有例外</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sqeSearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> key)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(key==a[i])&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;查找成功\n&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>因为数组下标包含0，故返回-1表示查找不成功</p>
 <p>另外，914.。。自己就支持bool作返回值</p>
 <p><img src="https://picgo-freejim.oss-cn-beijing.aliyuncs.com/to_upload/image-20211014152420667.png" alt="image-20211014152420667"></p>
 <h2 id="函数调用传值"><a href="#函数调用传值" class="headerlink" title="函数调用传值"></a>函数调用传值</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BiTree* <span class="title">BSTSearch</span><span class="params">(BiTree &amp;T,<span class="keyword">int</span> key)</span></span>&#123;  <span class="comment">// 真有什么T的赋值操作也没关系，因为传过来的只是地址值，不会改变源指针</span></span><br><span class="line">	<span class="keyword">if</span>(T==<span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;data==key)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;查找成功\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> T;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;data&gt;key)<span class="keyword">return</span> BSTSearch(T-&gt;lChild,key);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> BSTSearch(T-&gt;rChild,key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><h2 id="邻接矩阵与图"><a href="#邻接矩阵与图" class="headerlink" title="邻接矩阵与图"></a>邻接矩阵与图</h2><p>adj—邻接矩阵（Adjacency Matrix）</p>
+<h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><h2 id="邻接矩阵与图"><a href="#邻接矩阵与图" class="headerlink" title="邻接矩阵与图"></a>邻接矩阵与图</h2><p>adj—-邻接矩阵（Adjacency Matrix）</p>
 <p>vertex 顶点</p>
 <p>arc 邻接关系，相当于边</p>
 <h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>ptr（pointer 指针）</p>
